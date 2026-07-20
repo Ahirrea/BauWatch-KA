@@ -2,6 +2,637 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 20.07.2026, 22:30 — 186 neu, 440 entfernt (gesamt 186)
+
+- ➕ **Herrenstraße zw. Karlstraße und Amalienstraße**
+- ➕ **Ernst-Frey-Str. 2 (BV Walter-Eucken-Schule)**
+- ➕ **Zähringerstraße zwischen Marktplatz und Lammstraße**
+- ➕ **Steinkreuzstraße zw. Ringstraße und Hohenbergstraße**
+- ➕ **Beiertheimer Allee Haus 2 und Haus 1 bis 9**
+- ➕ **Vorbergstraße zw. Hohenbergstraße/Quellenstraße und Ringstraße**
+- ➕ **Schlossplatz zw. Herrenstraße u. Zirkel**
+- ➕ **Silcher Straße, B36/ Eckener Straße, Schlagfeldweg**
+- ➕ **Zirkel zw. Ritterstraße und Lammstraße**
+- ➕ **Dornwaldstraße zw. Hans- Pfitzner-Straße und Lortzingstraße**
+- ➕ **Kriegsstraße zw. Ettlinger Straße und Meidingerstraße**
+- ➕ **Hildebrandstr./Oberwaldstr./Reichenbachstr.**
+- ➕ **Gebietsausbau Hildebrandstr./Ellmendinger Str./Grenzstr.**
+- ➕ **Weiherfeld Gebietsausbau**
+- ➕ **Rappenwörtstraße zw. Hammweg u. Pfalzstraße**
+- ➕ **Engesserstr. 2-6/8-12 und Lehmannstr. 1-3**
+- ➕ **Scheibenhardter Weg, Wehrastraße, Wutachstr., Gottlob-Schreber-Weg, Schauinslandstr.**
+- ➕ **Daimlerstraße zwischen B36/ Neureuter Straße und Bschstraße**
+- ➕ **Weltzienstraße zw. Kriegsstraße u. Wilhelm-baur-Straße**
+- ➕ **Pfinztalstraße, Kanzlerstraße, Amalienbadstraße, Gritznerstraße**
+- ➕ **Gablonzerstraße zw. B36 und Schoemperlenstraße**
+- ➕ **Ringstraße bis Steinbügelstraße**
+- ➕ **Dornwaldstr., Anton-Bruckner-Str.**
+- ➕ **Dreisamstraße, Neckarplatz, Donaustraße, Neckarstraße**
+- ➕ **Hans-Thoma-Straße zwischen Stephanienstraße und Waldstraße, Schlossplatz/Herrenstraße**
+- ➕ **An der pfinz zw. "Sauerbrücke"/ Freidrichstraße und Im Gässle**
+- ➕ **Gebietsausbau: Schehenweg, Rosmarinweg, Heideweg, Alter Postweg, Salbeiweg, Flughafenstraße, Weißdornweg, Am Wald, Klammweg**
+- ➕ **Markgrafenstraße zwischen Kreuzstraße und Rondellplatz**
+- ➕ **Helmholtzstraße zw. Röntgenstraße und Grashofstraße**
+- ➕ **Kaiserstraße zw. Kronenstraße und adlerstraße**
+- ➕ **Gebietsausbau/ Ehlersstr., Kurt-Schumacher-Str., Wilhelm-Kolb-Str.. Stresemannstr**
+- ➕ **Wolfartsweierer Straße zw. Durlacher Allee und Frühlingstraße**
+- ➕ **Killisfeldstraße/ Gudrunstraße/ Oberwaldstraße/ Dietrichstraße**
+- ➕ **Bernhardusplatz**
+- ➕ **Erzberger Straße zwischen Rhode-Island-Allee und Kanalweg**
+- ➕ **Bonner Straße zw. Siemensallee und Bonner Platz**
+- ➕ **Finterstraße zwischen Baumeiserstraße und Ettlinger Straße**
+- ➕ **Neckarstraße, Kniebisstraße, Mainstraße, Schauinslandstraße, Tauberstraße**
+- ➕ **Hebelstraße zw. Karl-Friedrich-Straße u. Lammstraße**
+- ➕ **Klosestraße zw. Schnetzlerstraße und Ebertstraße**
+- ➕ **Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße**
+- ➕ **Hirschstraße zw. Kaiserstraße und Amalienstraße**
+- ➕ **Am Entenfang: Rheinstraße zur B 36 Michelinstraße gesperrt, B 10 Südtangente AS 6 Abfahrt von Osten zur B 36 Lameystraße gesperrt, B 36 Lameystraße zur Rheinstraße gesperrt, B 36 Michelinstraße zur B 36 Lameystraße u. Rheinstraße gesperrt**
+- ➕ **Kreuzungsbereich Hirsch- / Vorholzstraße**
+- ➕ **Am Alten Bahnhof zw. Mitteltorstraße und Georg-Büchner-Straße**
+- ➕ **Breslauer Straße Wohnwege 64 A - I und 66 A -L**
+- ➕ **Kriegsstraße zw. Karl-Friedrich-Straße und Lammstraße**
+- ➕ **Augartenstraße Höhe Nr. 21**
+- ➕ **Goethestraße zw. Uhlandstraße und Gutenbergstraße**
+- ➕ **Uhlandstraße zw. Goethestraße und Sophienstraße**
+- ➕ **Yorckstraße zw. Wichernstraße u. Yorckplatz**
+- ➕ **B3/ Badener Straße zw. Breite Gass u. Karlsburgstraße**
+- ➕ **Seminarstraße zw. Stephanienstraße u. Bismarckstraße**
+- ➕ **Seminarstraße zwischen Stephanienstraße und Bismarckstraße**
+- ➕ **Hebelstraße zw. Karl-Friedrich-Straße u. Lammstraße**
+- ➕ **Klosestraße zw. Schnetzlerstraße und Gutschstraße**
+- ➕ **Eisenbahnstraße zw. Büchelbergstraße und Edelmänne**
+- ➕ **Herrenstraße zw. Amalienstraße und Blumenstraße**
+- ➕ **Beim Wasserturm, Taglöhnergärten**
+- ➕ **Scheffelstraße zw. Kaiserallee u. Sophienstraße**
+- ➕ **Gebhardstraße zw. Barbarossaplatz und Welfenstraße**
+- ➕ **Goethestraße zw. Uhlandstraße und Yorckstraße**
+- ➕ **Lessingstraße zw. Sophienstraße u. Kaiserallee**
+- ➕ **Pfaffstraße / Schinnrainstraße / Raiherwiesenstraße**
+- ➕ **Kaiserstraße zw. Hirschstraße und Leopoldstraße, Hirschstraße zw. Akademiestraße und Kaiserstraße**
+- ➕ **Posseltstraße Kreuzung Turmbergstraße**
+- ➕ **Ständehausstraße zw. Ritterstraße u. Herrenstraße, Südlicher Herrenhof zw. Ritterstraße u. Herrenstraße**
+- ➕ **Wilhelm-Tell-Str., Koelreuterstr, Robert-Blum-Str. Andreas-Hofer-Str., Zeppelinstr.**
+- ➕ **Wendtstraße zw. Dragonerstraße und Ludwig-Marum-Straße**
+- ➕ **K9659 zw. Durlacher Allee und Bahnhof Durlach**
+- ➕ **Zähringer Straße zw. Waldhornstraße und Kronenstraße**
+- ➕ **Fritz-Erler-Straße zw. Markgrafenstraße u. Kaiserstraße**
+- ➕ **Lammstraße zw. Am Schlossplatz und Zirkel**
+- ➕ **Stephanienstraße zwischen Hans-Thoma-Straße und Kaiserplatz**
+- ➕ **Gartenstraße zw. Weinbrennerplatz/ Kriegsstraße und Steinhäuserstraße**
+- ➕ **Ostmarkstraße zwischen Westmarkstraße und Kärntner Straße**
+- ➕ **Parkstraße zw. Pastor-Felke-Straße und Kornblumenstraße**
+- ➕ **Weltzienstraße zw. Wilhelm-Baur-Straße und Kriegstraße**
+- ➕ **Bernhard-Lichtenberg-Straße zw. Wilhelm-Leuschner-Straße und Elisabeth-von-Thadden-Straße**
+- ➕ **Frühlingstraße zw. Lachnerstraße und Ostendstraße**
+- ➕ **Kronenstraße, Kaiserstraße, Kronenplatz**
+- ➕ **Hirschstraße zw. Amalienstraße und Kriegsstraße**
+- ➕ **Rüppurrer Straße 104 zw. Tivoli u. Marienstraße**
+- ➕ **Sommerstraße zw. Frühligstraße und Gottesauer Straße, Gottesauerstraße zw. Sommerstraße und August-Schwall-Straße**
+- ➕ **Nancystraße zw. Zufahrt Reitinstitut und Kußmaulstraße**
+- ➕ **Klosestraße zw. Gutschstraße udn Schnetzlerstraße**
+- ➕ **Baumeisterstraße zw. Ettlinger Straße und Nowackanlage**
+- ➕ **Baumeisterstraße zw. Ettlinger Straße und Nowackanlage**
+- ➕ **Talstraße zw. Im Brunnenfeld und Henrie-Arnaud-Straße**
+- ➕ **Marstallstraße zw. Weiherstraße und B3/ Badener Straße**
+- ➕ **Brunnenhausstraße zw. Weiherstraße und Marstallstraße**
+- ➕ **Gänsbergstraße zw. Werrenstraße und Wiesentalstraße**
+- ➕ **Akademiestraße zw. Douglasstraße und Karlstraße**
+- ➕ **Kapellenstraße zw. Ludwig-Erhard-Allee und Durlacher Allee/Am Künstlerhaus zw. Waldhornstraße und Zähringer Straße**
+- ➕ **Wickinger Straße zww. VBK Betriebshof und Honsellstraße**
+- ➕ **Pfarrer-Blink-Straße zw. Untermühlstraße und Alte Karlsruher Straße**
+- ➕ **Litzenhardtstraße zw. Neue-Anlage-Straße und Martinstraße**
+- ➕ **Hinterwiesenweg zw. Koyweg und Jagdstraße**
+- ➕ **Forststraße zw. Ernststraße und Weinweg**
+- ➕ **Oosstraße, Donaustraße, Murgstraße, Enzstraße**
+- ➕ **Martin-Schongauer-Weg zw. Albrecht-Altdorf-Weg und Frans-Hals-Weg**
+- ➕ **B10/ Kriegsstraße zw. Ritterstraße und Karlstor**
+- ➕ **Lärchenweg zw. Fichtenweg und Donauschwabenstraße**
+- ➕ **Karl-Martin-Graff-Straße zw. Winkler-Dentz-Straße und Gustav-Hofmann-Straße**
+- ➕ **L623/ Am Wetterbach zw. Zur Ziegelhütte und Bachstraße**
+- ➕ **An der Sandgrube, Am Zinken**
+- ➕ **Blumentorstraße, Pfinzstraße, Engelbert-Strobl. Str., Neuensteinstr**
+- ➕ **Weiherstraße zw. Basler-Tor-Straße und Brunnenhausstraße**
+- ➕ **Vincentiusstraße zw. Südendstraße und Graf-Rhena-Straße**
+- ➕ **Brunnenhausstraße und Imberstraße**
+- ➕ **Rheinhafenstraße Kreuzungsbereich Kirschstraße**
+- ➕ **Pirolstraße zw. Siebenmannstraße und Hellenstraße**
+- ➕ **B 3 Grötzinger Straße zw. Bergbahnstraße u. Rittnertstraße**
+- ➕ **Gymnasiumstraße zw. Rittnertstraße und Hauckstraße**
+- ➕ **Christina-Schneider-Straße 2-24 und Durmersheimer Straßee 66-74**
+- ➕ **Ostmarkstraße zw. Ellmendinger Straße und Grazer Straße**
+- ➕ **Westmarkstr./Grenzstr./Brühlstr**
+- ➕ **Raiherwiesenstraße zw. Pfaffstraße und Bleichstraße**
+- ➕ **Gebietsausbau Hauptbahnstraße, Raiherwiesenstraße, Bleichstraße, Schinnrainstraße**
+- ➕ **Tulpenstraße zw. Göhrenstraße und Kleiststraße**
+- ➕ **Kaiserstraße, Hirschstraße, Amalinestraße**
+- ➕ **Hildebrandstraße zw. Reichenbachstraße und Auer Straße**
+- ➕ **Eisenlohrstraße zw. Bunsen- u. Kriegsstraße**
+- ➕ **Werderstraße 68**
+- ➕ **Silcherstr., Rabenweg, Buschwiesenweg**
+- ➕ **Millöckerstraße**
+- ➕ **Raiherwiesenstraße zw. Schinnrainstraße und Bleichstraße**
+- ➕ **Killisfeldstraße, Gudrunstraße, Oberwaldstraße, Dietrichstraße**
+- ➕ **Ostring zw. Messplatz und Otto-Dullenkopf-Park**
+- ➕ **Ellmendinger Straße, Gudrunstraße, Oberwaldstraße, Bilfinger Straße, Dietrichstraße**
+- ➕ **Auf den Lohn, Ersinger Straße**
+- ➕ **Ellmendinger Straße, Ostmarkstraße, Im Säuterich, Leutschauer Straße, Ersinger Straße**
+- ➕ **Ersinger Straße**
+- ➕ **Humboldtstraße zw. Gerwigstraße und Essenweinstraße**
+- ➕ **Kaiserstraße zw. Kreuzstraße und Kronenstraße**
+- ➕ **Kaiserstraße zw. Karlstraße und Ritterstraße**
+- ➕ **Redtenbacher Straße zw. Mathystraße und Gartenstraße**
+- ➕ **Ellmendinger Straße zwiachen Grazer Srraße und Leußlerstraße, Im Haberacker**
+- ➕ **Hildebrandstraße zw. Reichenbachstraße und Auer Straße**
+- ➕ **Brücke Dea-Scholven-Straße zw. Raffineriestraße und Maxau Papierfabrik Tor 2**
+- ➕ **Seubertstraße zw. Haitzingerstraße und Durlacher Allee**
+- ➕ **B36/ Michelinstraße zw. Franz-Abt-Straße und Entenfang**
+- ➕ **Humboldstraße zw. Gerwigstraße und Essenweinstraße**
+- ➕ **Roonstraße zw. Hirschstraße und Jollystraße**
+- ➕ **Sonntagstraße zw. Jollystraße und Mathystraße**
+- ➕ **Kaiserstraße zw. Ritterstraße und Herrenstraße**
+- ➕ **Kaiserstraße zw. Kronenstraße und Adlerstraße**
+- ➕ **Ritterstraße zw. Am Schlossplatz und Bankhof**
+- ➕ **Essenweinstraße zw. Sternbergstraße und Humboldtstraße**
+- ➕ **Johann-Strauß-Straße zw. Parkplatz Lorzingstraße/ Milliöeckerstraße und Durlacher Allee**
+- ➕ **Durlacher Allee zwischen Tullastraße und Seubertstraße**
+- ➕ **Tullastraße zwischen Haizingerstraße und Durlacher Allee**
+- ➕ **Haizingerstraße zwischen Seubertstraße und Tullastraße**
+- ➕ **Zentralhof**
+- ➕ **Lußstraße zw. Lußsteige und Geigersbergstraße**
+- ➕ **Steinbügelstraße zw. Wettersteinstraße und Hörgelstraße**
+- ➕ **Ispringer Straße zw. Wilferdinger Straße und Ellmendinger Straße**
+- ➕ **Gottesauer Str.3-25 (Nord)&6-14 (Süd);Ostendstr.1-10;Lachnerstr. 2-20 (West)&13;**
+- ➕ **Vorholzstraße zw. Beiertheimer Allee und Karlstraße**
+- ➕ **Rheinhafenstraße zw. Daxlanderstraße und Südliche Uferstraße**
+- ➕ **Rußweg zw. Langenbruchweg und Mastweidenweg**
+- ➕ **Beuthener Straße zw. Glogauer Straße und Gustav-Heinemann-Allee**
+- ➕ **Vorholzstraße zw. Beiertheimer Allee und Karlstraße**
+- ➕ **K9659 Höhe DM**
+- ➕ **Schlesier Straße zw. Westmarkstraße und Memeler Straße**
+- ➕ **Lärchenweg zw. Zehntwaldstraße und Donauschwabenstraße**
+- ➕ **Fritz-Haber-Weg**
+- ➕ **Fautenbruchstraße zw. Ettlinger Straße und Kurze Straße**
+- ➕ **Rastatter Straße 45+62, Tulpenstraße 1-4**
+- ➕ **Zweibrückener Straße zw. Rehbuckel und Ebersteinstraße**
+- ➕ **Lebrechtstr. 47a**
+- ➕ **Waldenburger Straße bis Ende Hirschberger Straße**
+- ➕ **Basler-Tor-Straße, Imberstraße, Breite Straße**
+- ➕ **Moningerstraße zw. Kriegstraßem und Sophienstraße**
+- ➕ **Belfortstraße zw. Reinhold-Frank-Straße und Leopoldstraße**
+- ➕ **Geigersbergstraße Höhe Nr. 4**
+- ➕ **Anliegerfahrbahn Ludwig-Erhard-Allee zwischen Henriette-Obermüller-Straße und Wolfartsweierer Straße**
+- ➕ **Hohenzollernstraße zw. Karlstraße u. Kronprinzenstraße**
+- ➕ **Rintheimer Hauptstraße zw. Huttenstraße und Alter Rathausplatz**
+- ➕ **Striederstraße zw. Berckmüllerstraße und Ostring**
+- ➕ **Haid-und-Neu-Straße zw. Hirtenweg und Karlsruher Straße**
+- ➕ **Im Kennental 13**
+- ➕ **Karlstraße zw.Kaiserstraße und Akademiestraße**
+- ➕ **Neckarstraße**
+- ➕ **Kanzlerstraße**
+- ➕ **Amalienbadstraße**
+- ➖ ~~Herrenstraße zw. Karlstraße und Amalienstraße~~
+- ➖ ~~Herrenstraße zw. Karlstraße und Amalienstraße~~
+- ➖ ~~Ernst-Frey-Str. 2 (BV Walter-Eucken-Schule)~~
+- ➖ ~~Ernst-Frey-Str. 2 (BV Walter-Eucken-Schule)~~
+- ➖ ~~Zähringerstraße zwischen Marktplatz und Lammstraße~~
+- ➖ ~~Zähringerstraße zwischen Marktplatz und Lammstraße~~
+- ➖ ~~Steinkreuzstraße zw. Ringstraße und Hohenbergstraße~~
+- ➖ ~~Steinkreuzstraße zw. Ringstraße und Hohenbergstraße~~
+- ➖ ~~Beiertheimer Allee Haus 2 und Haus 1 bis 9~~
+- ➖ ~~Beiertheimer Allee Haus 2 und Haus 1 bis 9~~
+- ➖ ~~Vorbergstraße zw. Hohenbergstraße/Quellenstraße und Ringstraße~~
+- ➖ ~~Vorbergstraße zw. Hohenbergstraße/Quellenstraße und Ringstraße~~
+- ➖ ~~Schlossplatz zw. Herrenstraße u. Zirkel~~
+- ➖ ~~Schlossplatz zw. Herrenstraße u. Zirkel~~
+- ➖ ~~Silcher Straße, B36/ Eckener Straße, Schlagfeldweg~~
+- ➖ ~~Silcher Straße, B36/ Eckener Straße, Schlagfeldweg~~
+- ➖ ~~Zirkel zw. Ritterstraße und Lammstraße~~
+- ➖ ~~Zirkel zw. Ritterstraße und Lammstraße~~
+- ➖ ~~Dornwaldstraße zw. Hans- Pfitzner-Straße und Lortzingstraße~~
+- ➖ ~~Dornwaldstraße zw. Hans- Pfitzner-Straße und Lortzingstraße~~
+- ➖ ~~Kriegsstraße zw. Ettlinger Straße und Meidingerstraße~~
+- ➖ ~~Hildebrandstr./Oberwaldstr./Reichenbachstr.~~
+- ➖ ~~Hildebrandstr./Oberwaldstr./Reichenbachstr.~~
+- ➖ ~~Gebietsausbau Hildebrandstr./Ellmendinger Str./Grenzstr.~~
+- ➖ ~~Weiherfeld Gebietsausbau~~
+- ➖ ~~Weiherfeld Gebietsausbau~~
+- ➖ ~~Gebietsausbau Hildebrandstr./Ellmendinger Str./Grenzstr.~~
+- ➖ ~~Rappenwörtstraße zw. Hammweg u. Pfalzstraße~~
+- ➖ ~~Rappenwörtstraße zw. Hammweg u. Pfalzstraße~~
+- ➖ ~~Engesserstr. 2-6/8-12 und Lehmannstr. 1-3~~
+- ➖ ~~Scheibenhardter Weg, Wehrastraße, Wutachstr., Gottlob-Schreber-Weg, Schauinslandstr.~~
+- ➖ ~~Scheibenhardter Weg, Wehrastraße, Wutachstr., Gottlob-Schreber-Weg, Schauinslandstr.~~
+- ➖ ~~Daimlerstraße zwischen B36/ Neureuter Straße und Bschstraße~~
+- ➖ ~~Weltzienstraße zw. Kriegsstraße u. Wilhelm-baur-Straße~~
+- ➖ ~~Weltzienstraße zw. Kriegsstraße u. Wilhelm-baur-Straße~~
+- ➖ ~~Pfinztalstraße, Kanzlerstraße, Amalienbadstraße, Gritznerstraße~~
+- ➖ ~~Pfinztalstraße, Kanzlerstraße, Amalienbadstraße, Gritznerstraße~~
+- ➖ ~~Gablonzerstraße zw. B36 und Schoemperlenstraße~~
+- ➖ ~~Ringstraße bis Steinbügelstraße~~
+- ➖ ~~Ringstraße bis Steinbügelstraße~~
+- ➖ ~~Dornwaldstr., Anton-Bruckner-Str.~~
+- ➖ ~~Dreisamstraße, Neckarplatz, Donaustraße, Neckarstraße~~
+- ➖ ~~Dreisamstraße, Neckarplatz, Donaustraße, Neckarstraße~~
+- ➖ ~~Hans-Thoma-Straße zwischen Stephanienstraße und Waldstraße, Schlossplatz/Herrenstraße~~
+- ➖ ~~Hans-Thoma-Straße zwischen Stephanienstraße und Waldstraße, Schlossplatz/Herrenstraße~~
+- ➖ ~~An der pfinz zw. "Sauerbrücke"/ Freidrichstraße und Im Gässle~~
+- ➖ ~~Dornwaldstr., Anton-Bruckner-Str.~~
+- ➖ ~~Engesserstr. 2-6/8-12 und Lehmannstr. 1-3~~
+- ➖ ~~Gebietsausbau: Schehenweg, Rosmarinweg, Heideweg, Alter Postweg, Salbeiweg, Flughafenstraße, Weißdornweg, Am Wald, Klammweg~~
+- ➖ ~~Gebietsausbau: Schehenweg, Rosmarinweg, Heideweg, Alter Postweg, Salbeiweg, Flughafenstraße, Weißdornweg, Am Wald, Klammweg~~
+- ➖ ~~Markgrafenstraße zwischen Kreuzstraße und Rondellplatz~~
+- ➖ ~~Markgrafenstraße zwischen Kreuzstraße und Rondellplatz~~
+- ➖ ~~Helmholtzstraße zw. Röntgenstraße und Grashofstraße~~
+- ➖ ~~Helmholtzstraße zw. Röntgenstraße und Grashofstraße~~
+- ➖ ~~Kaiserstraße zw. Kronenstraße und adlerstraße~~
+- ➖ ~~Kaiserstraße zw. Kronenstraße und adlerstraße~~
+- ➖ ~~Gebietsausbau/ Ehlersstr., Kurt-Schumacher-Str., Wilhelm-Kolb-Str.. Stresemannstr~~
+- ➖ ~~Wolfartsweierer Straße zw. Durlacher Allee und Frühlingstraße~~
+- ➖ ~~Killisfeldstraße/ Gudrunstraße/ Oberwaldstraße/ Dietrichstraße~~
+- ➖ ~~Killisfeldstraße/ Gudrunstraße/ Oberwaldstraße/ Dietrichstraße~~
+- ➖ ~~Bernhardusplatz~~
+- ➖ ~~Bernhardusplatz~~
+- ➖ ~~Erzberger Straße zwischen Rhode-Island-Allee und Kanalweg~~
+- ➖ ~~Erzberger Straße zwischen Rhode-Island-Allee und Kanalweg~~
+- ➖ ~~Bonner Straße zw. Siemensallee und Bonner Platz~~
+- ➖ ~~Bonner Straße zw. Siemensallee und Bonner Platz~~
+- ➖ ~~Finterstraße zwischen Baumeiserstraße und Ettlinger Straße~~
+- ➖ ~~Finterstraße zwischen Baumeiserstraße und Ettlinger Straße~~
+- ➖ ~~Daimlerstraße zwischen B36/ Neureuter Straße und Bschstraße~~
+- ➖ ~~Neckarstraße, Kniebisstraße, Mainstraße, Schauinslandstraße, Tauberstraße~~
+- ➖ ~~Neckarstraße, Kniebisstraße, Mainstraße, Schauinslandstraße, Tauberstraße~~
+- ➖ ~~Hebelstraße zw. Karl-Friedrich-Straße u. Lammstraße~~
+- ➖ ~~Hebelstraße zw. Karl-Friedrich-Straße u. Lammstraße~~
+- ➖ ~~Klosestraße zw. Schnetzlerstraße und Ebertstraße~~
+- ➖ ~~Klosestraße zw. Schnetzlerstraße und Ebertstraße~~
+- ➖ ~~Wolfartsweierer Straße zw. Durlacher Allee und Frühlingstraße~~
+- ➖ ~~Kriegsstraße zw. Ettlinger Straße und Meidingerstraße~~
+- ➖ ~~Gebietsausbau/ Ehlersstr., Kurt-Schumacher-Str., Wilhelm-Kolb-Str.. Stresemannstr~~
+- ➖ ~~Engesserstr. 2-6/8-12 und Lehmannstr. 1-3~~
+- ➖ ~~Engesserstr. 2-6/8-12 und Lehmannstr. 1-3~~
+- ➖ ~~Engesserstr. 2-6/8-12 und Lehmannstr. 1-3~~
+- ➖ ~~Engesserstr. 2-6/8-12 und Lehmannstr. 1-3~~
+- ➖ ~~Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße~~
+- ➖ ~~Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße~~
+- ➖ ~~Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße~~
+- ➖ ~~Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße~~
+- ➖ ~~Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße~~
+- ➖ ~~Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße~~
+- ➖ ~~Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße~~
+- ➖ ~~Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße~~
+- ➖ ~~Hirschstraße zw. Kaiserstraße und Amalienstraße~~
+- ➖ ~~Am Entenfang: Rheinstraße zur B 36 Michelinstraße gesperrt, B 10 Südtangente AS 6 Abfahrt von Osten zur B 36 Lameystraße gesperrt, B 36 Lameystraße zur Rheinstraße gesperrt, B 36 Michelinstraße zur B 36 Lameystraße u. Rheinstraße gesperrt~~
+- ➖ ~~Am Entenfang: Rheinstraße zur B 36 Michelinstraße gesperrt, B 10 Südtangente AS 6 Abfahrt von Osten zur B 36 Lameystraße gesperrt, B 36 Lameystraße zur Rheinstraße gesperrt, B 36 Michelinstraße zur B 36 Lameystraße u. Rheinstraße gesperrt~~
+- ➖ ~~Kreuzungsbereich Hirsch- / Vorholzstraße~~
+- ➖ ~~Kreuzungsbereich Hirsch- / Vorholzstraße~~
+- ➖ ~~Am Alten Bahnhof zw. Mitteltorstraße und Georg-Büchner-Straße~~
+- ➖ ~~Am Alten Bahnhof zw. Mitteltorstraße und Georg-Büchner-Straße~~
+- ➖ ~~Breslauer Straße Wohnwege 64 A - I und 66 A -L~~
+- ➖ ~~Breslauer Straße Wohnwege 64 A - I und 66 A -L~~
+- ➖ ~~Breslauer Straße Wohnwege 64 A - I und 66 A -L~~
+- ➖ ~~Kriegsstraße zw. Karl-Friedrich-Straße und Lammstraße~~
+- ➖ ~~Kriegsstraße zw. Karl-Friedrich-Straße und Lammstraße~~
+- ➖ ~~Kriegsstraße zw. Karl-Friedrich-Straße und Lammstraße~~
+- ➖ ~~Kriegsstraße zw. Karl-Friedrich-Straße und Lammstraße~~
+- ➖ ~~Kriegsstraße zw. Karl-Friedrich-Straße und Lammstraße~~
+- ➖ ~~Kriegsstraße zw. Karl-Friedrich-Straße und Lammstraße~~
+- ➖ ~~Augartenstraße Höhe Nr. 21~~
+- ➖ ~~Augartenstraße Höhe Nr. 21~~
+- ➖ ~~Goethestraße zw. Uhlandstraße und Gutenbergstraße~~
+- ➖ ~~Goethestraße zw. Uhlandstraße und Gutenbergstraße~~
+- ➖ ~~Uhlandstraße zw. Goethestraße und Sophienstraße~~
+- ➖ ~~Uhlandstraße zw. Goethestraße und Sophienstraße~~
+- ➖ ~~Yorckstraße zw. Wichernstraße u. Yorckplatz~~
+- ➖ ~~Yorckstraße zw. Wichernstraße u. Yorckplatz~~
+- ➖ ~~B3/ Badener Straße zw. Breite Gass u. Karlsburgstraße~~
+- ➖ ~~B3/ Badener Straße zw. Breite Gass u. Karlsburgstraße~~
+- ➖ ~~Seminarstraße zw. Stephanienstraße u. Bismarckstraße~~
+- ➖ ~~Seminarstraße zw. Stephanienstraße u. Bismarckstraße~~
+- ➖ ~~Seminarstraße zwischen Stephanienstraße und Bismarckstraße~~
+- ➖ ~~Seminarstraße zwischen Stephanienstraße und Bismarckstraße~~
+- ➖ ~~Hebelstraße zw. Karl-Friedrich-Straße u. Lammstraße~~
+- ➖ ~~Hebelstraße zw. Karl-Friedrich-Straße u. Lammstraße~~
+- ➖ ~~Klosestraße zw. Schnetzlerstraße und Gutschstraße~~
+- ➖ ~~Klosestraße zw. Schnetzlerstraße und Gutschstraße~~
+- ➖ ~~Breslauer Straße Wohnwege 64 A - I und 66 A -L~~
+- ➖ ~~Eisenbahnstraße zw. Büchelbergstraße und Edelmänne~~
+- ➖ ~~Eisenbahnstraße zw. Büchelbergstraße und Edelmänne~~
+- ➖ ~~Herrenstraße zw. Amalienstraße und Blumenstraße~~
+- ➖ ~~Herrenstraße zw. Amalienstraße und Blumenstraße~~
+- ➖ ~~Beim Wasserturm, Taglöhnergärten~~
+- ➖ ~~Beim Wasserturm, Taglöhnergärten~~
+- ➖ ~~Scheffelstraße zw. Kaiserallee u. Sophienstraße~~
+- ➖ ~~Gebhardstraße zw. Barbarossaplatz und Welfenstraße~~
+- ➖ ~~Gebhardstraße zw. Barbarossaplatz und Welfenstraße~~
+- ➖ ~~Goethestraße zw. Uhlandstraße und Yorckstraße~~
+- ➖ ~~Goethestraße zw. Uhlandstraße und Yorckstraße~~
+- ➖ ~~Goethestraße zw. Uhlandstraße und Yorckstraße~~
+- ➖ ~~Goethestraße zw. Uhlandstraße und Yorckstraße~~
+- ➖ ~~Lessingstraße zw. Sophienstraße u. Kaiserallee~~
+- ➖ ~~Lessingstraße zw. Sophienstraße u. Kaiserallee~~
+- ➖ ~~Pfaffstraße / Schinnrainstraße / Raiherwiesenstraße~~
+- ➖ ~~Pfaffstraße / Schinnrainstraße / Raiherwiesenstraße~~
+- ➖ ~~Kaiserstraße zw. Hirschstraße und Leopoldstraße, Hirschstraße zw. Akademiestraße und Kaiserstraße~~
+- ➖ ~~Kaiserstraße zw. Hirschstraße und Leopoldstraße, Hirschstraße zw. Akademiestraße und Kaiserstraße~~
+- ➖ ~~Posseltstraße Kreuzung Turmbergstraße~~
+- ➖ ~~Posseltstraße Kreuzung Turmbergstraße~~
+- ➖ ~~Ständehausstraße zw. Ritterstraße u. Herrenstraße, Südlicher Herrenhof zw. Ritterstraße u. Herrenstraße~~
+- ➖ ~~Ständehausstraße zw. Ritterstraße u. Herrenstraße, Südlicher Herrenhof zw. Ritterstraße u. Herrenstraße~~
+- ➖ ~~Wilhelm-Tell-Str., Koelreuterstr, Robert-Blum-Str. Andreas-Hofer-Str., Zeppelinstr.~~
+- ➖ ~~Wendtstraße zw. Dragonerstraße und Ludwig-Marum-Straße~~
+- ➖ ~~Wendtstraße zw. Dragonerstraße und Ludwig-Marum-Straße~~
+- ➖ ~~Gablonzerstraße zw. B36 und Schoemperlenstraße~~
+- ➖ ~~K9659 zw. Durlacher Allee und Bahnhof Durlach~~
+- ➖ ~~K9659 zw. Durlacher Allee und Bahnhof Durlach~~
+- ➖ ~~Zähringer Straße zw. Waldhornstraße und Kronenstraße~~
+- ➖ ~~Zähringer Straße zw. Waldhornstraße und Kronenstraße~~
+- ➖ ~~Fritz-Erler-Straße zw. Markgrafenstraße u. Kaiserstraße~~
+- ➖ ~~Fritz-Erler-Straße zw. Markgrafenstraße u. Kaiserstraße~~
+- ➖ ~~Lammstraße zw. Am Schlossplatz und Zirkel~~
+- ➖ ~~Lammstraße zw. Am Schlossplatz und Zirkel~~
+- ➖ ~~Stephanienstraße zwischen Hans-Thoma-Straße und Kaiserplatz~~
+- ➖ ~~Stephanienstraße zwischen Hans-Thoma-Straße und Kaiserplatz~~
+- ➖ ~~Gartenstraße zw. Weinbrennerplatz/ Kriegsstraße und Steinhäuserstraße~~
+- ➖ ~~Gartenstraße zw. Weinbrennerplatz/ Kriegsstraße und Steinhäuserstraße~~
+- ➖ ~~Wilhelm-Tell-Str., Koelreuterstr, Robert-Blum-Str. Andreas-Hofer-Str., Zeppelinstr.~~
+- ➖ ~~Ostmarkstraße zwischen Westmarkstraße und Kärntner Straße~~
+- ➖ ~~Ostmarkstraße zwischen Westmarkstraße und Kärntner Straße~~
+- ➖ ~~Parkstraße zw. Pastor-Felke-Straße und Kornblumenstraße~~
+- ➖ ~~Parkstraße zw. Pastor-Felke-Straße und Kornblumenstraße~~
+- ➖ ~~Weltzienstraße zw. Wilhelm-Baur-Straße und Kriegstraße~~
+- ➖ ~~Weltzienstraße zw. Wilhelm-Baur-Straße und Kriegstraße~~
+- ➖ ~~Bernhard-Lichtenberg-Straße zw. Wilhelm-Leuschner-Straße und Elisabeth-von-Thadden-Straße~~
+- ➖ ~~Bernhard-Lichtenberg-Straße zw. Wilhelm-Leuschner-Straße und Elisabeth-von-Thadden-Straße~~
+- ➖ ~~Gebietsausbau/ Ehlersstr., Kurt-Schumacher-Str., Wilhelm-Kolb-Str.. Stresemannstr~~
+- ➖ ~~Gebietsausbau/ Ehlersstr., Kurt-Schumacher-Str., Wilhelm-Kolb-Str.. Stresemannstr~~
+- ➖ ~~Gebietsausbau/ Ehlersstr., Kurt-Schumacher-Str., Wilhelm-Kolb-Str.. Stresemannstr~~
+- ➖ ~~Gebietsausbau/ Ehlersstr., Kurt-Schumacher-Str., Wilhelm-Kolb-Str.. Stresemannstr~~
+- ➖ ~~Frühlingstraße zw. Lachnerstraße und Ostendstraße~~
+- ➖ ~~Kronenstraße, Kaiserstraße, Kronenplatz~~
+- ➖ ~~Frühlingstraße zw. Lachnerstraße und Ostendstraße~~
+- ➖ ~~Hirschstraße zw. Amalienstraße und Kriegsstraße~~
+- ➖ ~~Rüppurrer Straße 104 zw. Tivoli u. Marienstraße~~
+- ➖ ~~Rüppurrer Straße 104 zw. Tivoli u. Marienstraße~~
+- ➖ ~~Sommerstraße zw. Frühligstraße und Gottesauer Straße, Gottesauerstraße zw. Sommerstraße und August-Schwall-Straße~~
+- ➖ ~~Sommerstraße zw. Frühligstraße und Gottesauer Straße, Gottesauerstraße zw. Sommerstraße und August-Schwall-Straße~~
+- ➖ ~~Nancystraße zw. Zufahrt Reitinstitut und Kußmaulstraße~~
+- ➖ ~~Klosestraße zw. Gutschstraße udn Schnetzlerstraße~~
+- ➖ ~~Klosestraße zw. Gutschstraße udn Schnetzlerstraße~~
+- ➖ ~~Baumeisterstraße zw. Ettlinger Straße und Nowackanlage~~
+- ➖ ~~Baumeisterstraße zw. Ettlinger Straße und Nowackanlage~~
+- ➖ ~~Baumeisterstraße zw. Ettlinger Straße und Nowackanlage~~
+- ➖ ~~Hirschstraße zw. Kaiserstraße und Amalienstraße~~
+- ➖ ~~Talstraße zw. Im Brunnenfeld und Henrie-Arnaud-Straße~~
+- ➖ ~~Talstraße zw. Im Brunnenfeld und Henrie-Arnaud-Straße~~
+- ➖ ~~Marstallstraße zw. Weiherstraße und B3/ Badener Straße~~
+- ➖ ~~Marstallstraße zw. Weiherstraße und B3/ Badener Straße~~
+- ➖ ~~Kronenstraße, Kaiserstraße, Kronenplatz~~
+- ➖ ~~Brunnenhausstraße zw. Weiherstraße und Marstallstraße~~
+- ➖ ~~Brunnenhausstraße zw. Weiherstraße und Marstallstraße~~
+- ➖ ~~Gänsbergstraße zw. Werrenstraße und Wiesentalstraße~~
+- ➖ ~~Gänsbergstraße zw. Werrenstraße und Wiesentalstraße~~
+- ➖ ~~Akademiestraße zw. Douglasstraße und Karlstraße~~
+- ➖ ~~Akademiestraße zw. Douglasstraße und Karlstraße~~
+- ➖ ~~Kapellenstraße zw. Ludwig-Erhard-Allee und Durlacher Allee/Am Künstlerhaus zw. Waldhornstraße und Zähringer Straße~~
+- ➖ ~~Kapellenstraße zw. Ludwig-Erhard-Allee und Durlacher Allee/Am Künstlerhaus zw. Waldhornstraße und Zähringer Straße~~
+- ➖ ~~Kapellenstraße zw. Ludwig-Erhard-Allee und Durlacher Allee/Am Künstlerhaus zw. Waldhornstraße und Zähringer Straße~~
+- ➖ ~~Kapellenstraße zw. Ludwig-Erhard-Allee und Durlacher Allee/Am Künstlerhaus zw. Waldhornstraße und Zähringer Straße~~
+- ➖ ~~Kapellenstraße zw. Ludwig-Erhard-Allee und Durlacher Allee/Am Künstlerhaus zw. Waldhornstraße und Zähringer Straße~~
+- ➖ ~~Kapellenstraße zw. Ludwig-Erhard-Allee und Durlacher Allee/Am Künstlerhaus zw. Waldhornstraße und Zähringer Straße~~
+- ➖ ~~Kapellenstraße zw. Ludwig-Erhard-Allee und Durlacher Allee/Am Künstlerhaus zw. Waldhornstraße und Zähringer Straße~~
+- ➖ ~~Kapellenstraße zw. Ludwig-Erhard-Allee und Durlacher Allee/Am Künstlerhaus zw. Waldhornstraße und Zähringer Straße~~
+- ➖ ~~Kapellenstraße zw. Ludwig-Erhard-Allee und Durlacher Allee/Am Künstlerhaus zw. Waldhornstraße und Zähringer Straße~~
+- ➖ ~~Kapellenstraße zw. Ludwig-Erhard-Allee und Durlacher Allee/Am Künstlerhaus zw. Waldhornstraße und Zähringer Straße~~
+- ➖ ~~Kapellenstraße zw. Ludwig-Erhard-Allee und Durlacher Allee/Am Künstlerhaus zw. Waldhornstraße und Zähringer Straße~~
+- ➖ ~~Kronenstraße, Kaiserstraße, Kronenplatz~~
+- ➖ ~~Kapellenstraße zw. Ludwig-Erhard-Allee und Durlacher Allee/Am Künstlerhaus zw. Waldhornstraße und Zähringer Straße~~
+- ➖ ~~Wickinger Straße zww. VBK Betriebshof und Honsellstraße~~
+- ➖ ~~Wickinger Straße zww. VBK Betriebshof und Honsellstraße~~
+- ➖ ~~An der pfinz zw. "Sauerbrücke"/ Freidrichstraße und Im Gässle~~
+- ➖ ~~Pfarrer-Blink-Straße zw. Untermühlstraße und Alte Karlsruher Straße~~
+- ➖ ~~Pfarrer-Blink-Straße zw. Untermühlstraße und Alte Karlsruher Straße~~
+- ➖ ~~Litzenhardtstraße zw. Neue-Anlage-Straße und Martinstraße~~
+- ➖ ~~Litzenhardtstraße zw. Neue-Anlage-Straße und Martinstraße~~
+- ➖ ~~Hinterwiesenweg zw. Koyweg und Jagdstraße~~
+- ➖ ~~Hinterwiesenweg zw. Koyweg und Jagdstraße~~
+- ➖ ~~Forststraße zw. Ernststraße und Weinweg~~
+- ➖ ~~Oosstraße, Donaustraße, Murgstraße, Enzstraße~~
+- ➖ ~~Oosstraße, Donaustraße, Murgstraße, Enzstraße~~
+- ➖ ~~Martin-Schongauer-Weg zw. Albrecht-Altdorf-Weg und Frans-Hals-Weg~~
+- ➖ ~~Martin-Schongauer-Weg zw. Albrecht-Altdorf-Weg und Frans-Hals-Weg~~
+- ➖ ~~B10/ Kriegsstraße zw. Ritterstraße und Karlstor~~
+- ➖ ~~Lärchenweg zw. Fichtenweg und Donauschwabenstraße~~
+- ➖ ~~Lärchenweg zw. Fichtenweg und Donauschwabenstraße~~
+- ➖ ~~Kronenstraße, Kaiserstraße, Kronenplatz~~
+- ➖ ~~Forststraße zw. Ernststraße und Weinweg~~
+- ➖ ~~Karl-Martin-Graff-Straße zw. Winkler-Dentz-Straße und Gustav-Hofmann-Straße~~
+- ➖ ~~Karl-Martin-Graff-Straße zw. Winkler-Dentz-Straße und Gustav-Hofmann-Straße~~
+- ➖ ~~L623/ Am Wetterbach zw. Zur Ziegelhütte und Bachstraße~~
+- ➖ ~~An der Sandgrube, Am Zinken~~
+- ➖ ~~An der Sandgrube, Am Zinken~~
+- ➖ ~~Blumentorstraße, Pfinzstraße, Engelbert-Strobl. Str., Neuensteinstr~~
+- ➖ ~~Blumentorstraße, Pfinzstraße, Engelbert-Strobl. Str., Neuensteinstr~~
+- ➖ ~~Weiherstraße zw. Basler-Tor-Straße und Brunnenhausstraße~~
+- ➖ ~~Weiherstraße zw. Basler-Tor-Straße und Brunnenhausstraße~~
+- ➖ ~~Vincentiusstraße zw. Südendstraße und Graf-Rhena-Straße~~
+- ➖ ~~Vincentiusstraße zw. Südendstraße und Graf-Rhena-Straße~~
+- ➖ ~~Brunnenhausstraße und Imberstraße~~
+- ➖ ~~Rheinhafenstraße Kreuzungsbereich Kirschstraße~~
+- ➖ ~~Pirolstraße zw. Siebenmannstraße und Hellenstraße~~
+- ➖ ~~Pirolstraße zw. Siebenmannstraße und Hellenstraße~~
+- ➖ ~~B 3 Grötzinger Straße zw. Bergbahnstraße u. Rittnertstraße~~
+- ➖ ~~B 3 Grötzinger Straße zw. Bergbahnstraße u. Rittnertstraße~~
+- ➖ ~~Gymnasiumstraße zw. Rittnertstraße und Hauckstraße~~
+- ➖ ~~Gymnasiumstraße zw. Rittnertstraße und Hauckstraße~~
+- ➖ ~~Christina-Schneider-Straße 2-24 und Durmersheimer Straßee 66-74~~
+- ➖ ~~Christina-Schneider-Straße 2-24 und Durmersheimer Straßee 66-74~~
+- ➖ ~~Ostmarkstraße zw. Ellmendinger Straße und Grazer Straße~~
+- ➖ ~~Ostmarkstraße zw. Ellmendinger Straße und Grazer Straße~~
+- ➖ ~~Westmarkstr./Grenzstr./Brühlstr~~
+- ➖ ~~Westmarkstr./Grenzstr./Brühlstr~~
+- ➖ ~~B10/ Kriegsstraße zw. Ritterstraße und Karlstor~~
+- ➖ ~~Raiherwiesenstraße zw. Pfaffstraße und Bleichstraße~~
+- ➖ ~~Gebietsausbau Hauptbahnstraße, Raiherwiesenstraße, Bleichstraße, Schinnrainstraße~~
+- ➖ ~~Gebietsausbau Hauptbahnstraße, Raiherwiesenstraße, Bleichstraße, Schinnrainstraße~~
+- ➖ ~~Tulpenstraße zw. Göhrenstraße und Kleiststraße~~
+- ➖ ~~Tulpenstraße zw. Göhrenstraße und Kleiststraße~~
+- ➖ ~~Tulpenstraße zw. Göhrenstraße und Kleiststraße~~
+- ➖ ~~Tulpenstraße zw. Göhrenstraße und Kleiststraße~~
+- ➖ ~~Kaiserstraße, Hirschstraße, Amalinestraße~~
+- ➖ ~~Kaiserstraße, Hirschstraße, Amalinestraße~~
+- ➖ ~~Hildebrandstraße zw. Reichenbachstraße und Auer Straße~~
+- ➖ ~~Hildebrandstraße zw. Reichenbachstraße und Auer Straße~~
+- ➖ ~~Eisenlohrstraße zw. Bunsen- u. Kriegsstraße~~
+- ➖ ~~Eisenlohrstraße zw. Bunsen- u. Kriegsstraße~~
+- ➖ ~~Scheffelstraße zw. Kaiserallee u. Sophienstraße~~
+- ➖ ~~Werderstraße 68~~
+- ➖ ~~Werderstraße 68~~
+- ➖ ~~Silcherstr., Rabenweg, Buschwiesenweg~~
+- ➖ ~~Silcherstr., Rabenweg, Buschwiesenweg~~
+- ➖ ~~Millöckerstraße~~
+- ➖ ~~Millöckerstraße~~
+- ➖ ~~Raiherwiesenstraße zw. Schinnrainstraße und Bleichstraße~~
+- ➖ ~~Raiherwiesenstraße zw. Schinnrainstraße und Bleichstraße~~
+- ➖ ~~Killisfeldstraße, Gudrunstraße, Oberwaldstraße, Dietrichstraße~~
+- ➖ ~~Killisfeldstraße, Gudrunstraße, Oberwaldstraße, Dietrichstraße~~
+- ➖ ~~Ostring zw. Messplatz und Otto-Dullenkopf-Park~~
+- ➖ ~~Ellmendinger Straße, Gudrunstraße, Oberwaldstraße, Bilfinger Straße, Dietrichstraße~~
+- ➖ ~~Ellmendinger Straße, Gudrunstraße, Oberwaldstraße, Bilfinger Straße, Dietrichstraße~~
+- ➖ ~~Auf den Lohn, Ersinger Straße~~
+- ➖ ~~Auf den Lohn, Ersinger Straße~~
+- ➖ ~~Raiherwiesenstraße zw. Pfaffstraße und Bleichstraße~~
+- ➖ ~~Raiherwiesenstraße zw. Pfaffstraße und Bleichstraße~~
+- ➖ ~~Raiherwiesenstraße zw. Pfaffstraße und Bleichstraße~~
+- ➖ ~~Ellmendinger Straße, Ostmarkstraße, Im Säuterich, Leutschauer Straße, Ersinger Straße~~
+- ➖ ~~Ellmendinger Straße, Ostmarkstraße, Im Säuterich, Leutschauer Straße, Ersinger Straße~~
+- ➖ ~~Ersinger Straße~~
+- ➖ ~~Ersinger Straße~~
+- ➖ ~~Humboldtstraße zw. Gerwigstraße und Essenweinstraße~~
+- ➖ ~~Kaiserstraße zw. Kreuzstraße und Kronenstraße~~
+- ➖ ~~Kaiserstraße zw. Karlstraße und Ritterstraße~~
+- ➖ ~~Kaiserstraße zw. Karlstraße und Ritterstraße~~
+- ➖ ~~Nancystraße zw. Zufahrt Reitinstitut und Kußmaulstraße~~
+- ➖ ~~Redtenbacher Straße zw. Mathystraße und Gartenstraße~~
+- ➖ ~~Redtenbacher Straße zw. Mathystraße und Gartenstraße~~
+- ➖ ~~Kaiserstraße zw. Kreuzstraße und Kronenstraße~~
+- ➖ ~~Kaiserstraße zw. Kreuzstraße und Kronenstraße~~
+- ➖ ~~Kaiserstraße zw. Kreuzstraße und Kronenstraße~~
+- ➖ ~~Ellmendinger Straße zwiachen Grazer Srraße und Leußlerstraße, Im Haberacker~~
+- ➖ ~~Ellmendinger Straße zwiachen Grazer Srraße und Leußlerstraße, Im Haberacker~~
+- ➖ ~~Hildebrandstraße zw. Reichenbachstraße und Auer Straße~~
+- ➖ ~~Hildebrandstraße zw. Reichenbachstraße und Auer Straße~~
+- ➖ ~~Brücke Dea-Scholven-Straße zw. Raffineriestraße und Maxau Papierfabrik Tor 2~~
+- ➖ ~~Brücke Dea-Scholven-Straße zw. Raffineriestraße und Maxau Papierfabrik Tor 2~~
+- ➖ ~~Seubertstraße zw. Haitzingerstraße und Durlacher Allee~~
+- ➖ ~~Seubertstraße zw. Haitzingerstraße und Durlacher Allee~~
+- ➖ ~~B36/ Michelinstraße zw. Franz-Abt-Straße und Entenfang~~
+- ➖ ~~Humboldstraße zw. Gerwigstraße und Essenweinstraße~~
+- ➖ ~~Humboldstraße zw. Gerwigstraße und Essenweinstraße~~
+- ➖ ~~L623/ Am Wetterbach zw. Zur Ziegelhütte und Bachstraße~~
+- ➖ ~~Roonstraße zw. Hirschstraße und Jollystraße~~
+- ➖ ~~Roonstraße zw. Hirschstraße und Jollystraße~~
+- ➖ ~~Sonntagstraße zw. Jollystraße und Mathystraße~~
+- ➖ ~~Sonntagstraße zw. Jollystraße und Mathystraße~~
+- ➖ ~~Kaiserstraße zw. Ritterstraße und Herrenstraße~~
+- ➖ ~~Kaiserstraße zw. Ritterstraße und Herrenstraße~~
+- ➖ ~~Kaiserstraße zw. Kronenstraße und Adlerstraße~~
+- ➖ ~~Kaiserstraße zw. Kronenstraße und Adlerstraße~~
+- ➖ ~~Ritterstraße zw. Am Schlossplatz und Bankhof~~
+- ➖ ~~Ritterstraße zw. Am Schlossplatz und Bankhof~~
+- ➖ ~~Essenweinstraße zw. Sternbergstraße und Humboldtstraße~~
+- ➖ ~~Essenweinstraße zw. Sternbergstraße und Humboldtstraße~~
+- ➖ ~~Brunnenhausstraße und Imberstraße~~
+- ➖ ~~Johann-Strauß-Straße zw. Parkplatz Lorzingstraße/ Milliöeckerstraße und Durlacher Allee~~
+- ➖ ~~Johann-Strauß-Straße zw. Parkplatz Lorzingstraße/ Milliöeckerstraße und Durlacher Allee~~
+- ➖ ~~Durlacher Allee zwischen Tullastraße und Seubertstraße~~
+- ➖ ~~Durlacher Allee zwischen Tullastraße und Seubertstraße~~
+- ➖ ~~Tullastraße zwischen Haizingerstraße und Durlacher Allee~~
+- ➖ ~~Tullastraße zwischen Haizingerstraße und Durlacher Allee~~
+- ➖ ~~Haizingerstraße zwischen Seubertstraße und Tullastraße~~
+- ➖ ~~Haizingerstraße zwischen Seubertstraße und Tullastraße~~
+- ➖ ~~Zentralhof~~
+- ➖ ~~Zentralhof~~
+- ➖ ~~Lußstraße zw. Lußsteige und Geigersbergstraße~~
+- ➖ ~~Lußstraße zw. Lußsteige und Geigersbergstraße~~
+- ➖ ~~Steinbügelstraße zw. Wettersteinstraße und Hörgelstraße~~
+- ➖ ~~Steinbügelstraße zw. Wettersteinstraße und Hörgelstraße~~
+- ➖ ~~Rheinhafenstraße Kreuzungsbereich Kirschstraße~~
+- ➖ ~~B36/ Michelinstraße zw. Franz-Abt-Straße und Entenfang~~
+- ➖ ~~Ispringer Straße zw. Wilferdinger Straße und Ellmendinger Straße~~
+- ➖ ~~Ispringer Straße zw. Wilferdinger Straße und Ellmendinger Straße~~
+- ➖ ~~Humboldtstraße zw. Gerwigstraße und Essenweinstraße~~
+- ➖ ~~Humboldtstraße zw. Gerwigstraße und Essenweinstraße~~
+- ➖ ~~Humboldtstraße zw. Gerwigstraße und Essenweinstraße~~
+- ➖ ~~Gottesauer Str.3-25 (Nord)&6-14 (Süd);Ostendstr.1-10;Lachnerstr. 2-20 (West)&13;~~
+- ➖ ~~Gottesauer Str.3-25 (Nord)&6-14 (Süd);Ostendstr.1-10;Lachnerstr. 2-20 (West)&13;~~
+- ➖ ~~Hirschstraße zw. Amalienstraße und Kriegsstraße~~
+- ➖ ~~Vorholzstraße zw. Beiertheimer Allee und Karlstraße~~
+- ➖ ~~Vorholzstraße zw. Beiertheimer Allee und Karlstraße~~
+- ➖ ~~Rheinhafenstraße zw. Daxlanderstraße und Südliche Uferstraße~~
+- ➖ ~~Rheinhafenstraße zw. Daxlanderstraße und Südliche Uferstraße~~
+- ➖ ~~Rheinhafenstraße zw. Daxlanderstraße und Südliche Uferstraße~~
+- ➖ ~~Rheinhafenstraße zw. Daxlanderstraße und Südliche Uferstraße~~
+- ➖ ~~Rheinhafenstraße zw. Daxlanderstraße und Südliche Uferstraße~~
+- ➖ ~~Rheinhafenstraße zw. Daxlanderstraße und Südliche Uferstraße~~
+- ➖ ~~Rheinhafenstraße zw. Daxlanderstraße und Südliche Uferstraße~~
+- ➖ ~~Rheinhafenstraße zw. Daxlanderstraße und Südliche Uferstraße~~
+- ➖ ~~Rußweg zw. Langenbruchweg und Mastweidenweg~~
+- ➖ ~~Rußweg zw. Langenbruchweg und Mastweidenweg~~
+- ➖ ~~Ostring zw. Messplatz und Otto-Dullenkopf-Park~~
+- ➖ ~~Beuthener Straße zw. Glogauer Straße und Gustav-Heinemann-Allee~~
+- ➖ ~~Vorholzstraße zw. Beiertheimer Allee und Karlstraße~~
+- ➖ ~~Vorholzstraße zw. Beiertheimer Allee und Karlstraße~~
+- ➖ ~~Vorholzstraße zw. Beiertheimer Allee und Karlstraße~~
+- ➖ ~~Vorholzstraße zw. Beiertheimer Allee und Karlstraße~~
+- ➖ ~~K9659 Höhe DM~~
+- ➖ ~~K9659 Höhe DM~~
+- ➖ ~~K9659 Höhe DM~~
+- ➖ ~~K9659 Höhe DM~~
+- ➖ ~~Schlesier Straße zw. Westmarkstraße und Memeler Straße~~
+- ➖ ~~Schlesier Straße zw. Westmarkstraße und Memeler Straße~~
+- ➖ ~~Lärchenweg zw. Zehntwaldstraße und Donauschwabenstraße~~
+- ➖ ~~Lärchenweg zw. Zehntwaldstraße und Donauschwabenstraße~~
+- ➖ ~~Fritz-Haber-Weg~~
+- ➖ ~~Fritz-Haber-Weg~~
+- ➖ ~~Fritz-Haber-Weg~~
+- ➖ ~~Fritz-Haber-Weg~~
+- ➖ ~~Fautenbruchstraße zw. Ettlinger Straße und Kurze Straße~~
+- ➖ ~~Fautenbruchstraße zw. Ettlinger Straße und Kurze Straße~~
+- ➖ ~~Rastatter Straße 45+62, Tulpenstraße 1-4~~
+- ➖ ~~Rastatter Straße 45+62, Tulpenstraße 1-4~~
+- ➖ ~~Rastatter Straße 45+62, Tulpenstraße 1-4~~
+- ➖ ~~Rastatter Straße 45+62, Tulpenstraße 1-4~~
+- ➖ ~~Zweibrückener Straße zw. Rehbuckel und Ebersteinstraße~~
+- ➖ ~~Zweibrückener Straße zw. Rehbuckel und Ebersteinstraße~~
+- ➖ ~~Lebrechtstr. 47a~~
+- ➖ ~~Lebrechtstr. 47a~~
+- ➖ ~~Lebrechtstr. 47a~~
+- ➖ ~~Lebrechtstr. 47a~~
+- ➖ ~~Waldenburger Straße bis Ende Hirschberger Straße~~
+- ➖ ~~Waldenburger Straße bis Ende Hirschberger Straße~~
+- ➖ ~~Basler-Tor-Straße, Imberstraße, Breite Straße~~
+- ➖ ~~Basler-Tor-Straße, Imberstraße, Breite Straße~~
+- ➖ ~~Moningerstraße zw. Kriegstraßem und Sophienstraße~~
+- ➖ ~~Moningerstraße zw. Kriegstraßem und Sophienstraße~~
+- ➖ ~~Belfortstraße zw. Reinhold-Frank-Straße und Leopoldstraße~~
+- ➖ ~~Belfortstraße zw. Reinhold-Frank-Straße und Leopoldstraße~~
+- ➖ ~~Geigersbergstraße Höhe Nr. 4~~
+- ➖ ~~Geigersbergstraße Höhe Nr. 4~~
+- ➖ ~~Anliegerfahrbahn Ludwig-Erhard-Allee zwischen Henriette-Obermüller-Straße und Wolfartsweierer Straße~~
+- ➖ ~~Anliegerfahrbahn Ludwig-Erhard-Allee zwischen Henriette-Obermüller-Straße und Wolfartsweierer Straße~~
+- ➖ ~~Hohenzollernstraße zw. Karlstraße u. Kronprinzenstraße~~
+- ➖ ~~Rintheimer Hauptstraße zw. Huttenstraße und Alter Rathausplatz~~
+- ➖ ~~Rintheimer Hauptstraße zw. Huttenstraße und Alter Rathausplatz~~
+- ➖ ~~Striederstraße zw. Berckmüllerstraße und Ostring~~
+- ➖ ~~Striederstraße zw. Berckmüllerstraße und Ostring~~
+- ➖ ~~Haid-und-Neu-Straße zw. Hirtenweg und Karlsruher Straße~~
+- ➖ ~~Haid-und-Neu-Straße zw. Hirtenweg und Karlsruher Straße~~
+- ➖ ~~Haid-und-Neu-Straße zw. Hirtenweg und Karlsruher Straße~~
+- ➖ ~~Haid-und-Neu-Straße zw. Hirtenweg und Karlsruher Straße~~
+- ➖ ~~Im Kennental 13~~
+- ➖ ~~Im Kennental 13~~
+- ➖ ~~Beuthener Straße zw. Glogauer Straße und Gustav-Heinemann-Allee~~
+- ➖ ~~Beuthener Straße zw. Glogauer Straße und Gustav-Heinemann-Allee~~
+- ➖ ~~Beuthener Straße zw. Glogauer Straße und Gustav-Heinemann-Allee~~
+- ➖ ~~Beuthener Straße zw. Glogauer Straße und Gustav-Heinemann-Allee~~
+- ➖ ~~Beuthener Straße zw. Glogauer Straße und Gustav-Heinemann-Allee~~
+- ➖ ~~Beuthener Straße zw. Glogauer Straße und Gustav-Heinemann-Allee~~
+- ➖ ~~Beuthener Straße zw. Glogauer Straße und Gustav-Heinemann-Allee~~
+- ➖ ~~Hohenzollernstraße zw. Karlstraße u. Kronprinzenstraße~~
+- ➖ ~~Hohenzollernstraße zw. Karlstraße u. Kronprinzenstraße~~
+- ➖ ~~Hohenzollernstraße zw. Karlstraße u. Kronprinzenstraße~~
+- ➖ ~~Baumeisterstraße zw. Ettlinger Straße und Nowackanlage~~
+- ➖ ~~Karlstraße zw.Kaiserstraße und Akademiestraße~~
+- ➖ ~~Karlstraße zw.Kaiserstraße und Akademiestraße~~
+- ➖ ~~Neckarstraße~~
+- ➖ ~~Neckarstraße~~
+- ➖ ~~Kanzlerstraße~~
+- ➖ ~~Kanzlerstraße~~
+- ➖ ~~Amalienbadstraße~~
+- ➖ ~~Amalienbadstraße~~
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 20.07.2026, 22:22 — 440 geändert (gesamt 440)
 
 - ✏️ Herrenstraße zw. Karlstraße und Amalienstraße
