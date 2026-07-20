@@ -64,17 +64,17 @@ export const AMPEL = {
   GERING: { level: 'gering', color: 'green', label: 'Geringe Behinderung' },
 };
 
-// Explizit „ohne Behinderung" -> muss VOR der Teilsperrung geprüft werden, damit
-// „ohne Verkehrsbehinderung" nicht fälschlich als Behinderung (teil) zählt.
-const OHNE_RE = /ohne (?:verkehrsbehinderung|behinderung|einschränkung)|keine (?:sperrung|behinderung)/i;
+// Explizit „ohne/keine Behinderung" -> muss VOR der Teilsperrung geprüft werden,
+// damit „keine Verkehrsbehinderung" nicht fälschlich als Behinderung (teil) zählt.
+const OHNE_RE = /ohne (?:verkehrs)?(?:behinderung|einschränkung)|keine (?:verkehrs)?(?:sperrung|behinderung)/i;
 // Eindeutige Voll­sperrung: nur explizite Formulierungen (ein bloßes „gesperrt"
 // ist mehrdeutig — z. B. „Gehweg gesperrt" — und zählt bewusst NICHT hier).
 const VOLL_RE =
   /vollsperrung|komplettsperrung|voll gesperrt|komplett gesperrt|gesamte fahrbahn gesperrt|durchfahrt (?:nicht möglich|gesperrt)/i;
-// Teilsperrung / Behinderung: partielle Einschränkungen und das amtliche Feld
-// `sperrung` = „mit Verkehrsbehinderung" / „mit Einschränkungen".
+// Teilsperrung / Behinderung: partielle Einschränkungen und die amtlichen
+// `sperrung`-Werte („mit Verkehrsbehinderung", „Sperrung in eine Fahrtrichtung").
 const TEIL_RE =
-  /teilsperrung|halbseitig|einseitig|einbahn|eine fahrspur|(?:fahr)?spur (?:gesperrt|verengt)|fahrstreifen|verengt|ampelregelung|wechselseitig|(?:geh|rad|fuß|fuss)weg[^.]{0,25}gesperrt|verkehrsbehinderung|behinderung|einschränkung/i;
+  /teilsperrung|halbseitig|einseitig|einbahn|eine fahrspur|(?:fahr)?spur (?:gesperrt|verengt)|fahrstreifen|verengt|ampelregelung|wechselseitig|(?:geh|rad|fuß|fuss)weg[^.]{0,25}gesperrt|verkehrsbehinderung|behinderung|einschränkung|(?:in eine|einer) (?:fahrtrichtung|richtung)/i;
 
 /**
  * Bestimmt den Sperrgrad (Ampelstufe) aus dem kombinierten Klartext. Speist man

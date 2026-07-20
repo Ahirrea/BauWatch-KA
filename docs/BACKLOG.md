@@ -9,8 +9,8 @@ Bauabfolge. Labels-Vorschlag: `setup`, `data`, `frontend`, `a11y`, `docs`,
 **Stand:** 2026-07-20 (nach v1 + Daten-Pipeline gegen echten WFS verifiziert).
 
 > Kurzfassung: Milestones 1–3 sind umgesetzt und die Seite ist über GitHub Pages
-> live (#5). Von Milestone 4 ist #15 erledigt; offen bleiben die optionalen Punkte
-> #16 (Abo-Feed), #17 (.ics-Export) und #18 (eigener Datenqualitäts-Report).
+> live (#5). Von Milestone 4 sind #15 und #18 erledigt; offen bleiben nur noch die
+> optionalen Punkte #16 (Abo-Feed) und #17 (.ics-Export).
 
 ---
 
@@ -121,12 +121,16 @@ ohne Backend machbar ist. — **offen.**
 ### ⬜ #17 Kalender-Export geplanter Baustellen
 `.ics` für „bald geplante" Sperrungen in einem gewählten Umkreis. — **offen.**
 
-### 🟡 #18 Datenqualitäts-Report
+### ✅ #18 Datenqualitäts-Report
 Auffälligkeiten protokollieren (leere Felder, unbekannte Codes) für strukturiertes
 Feedback an die Stadt.
-**Teilweise:** `artKnown`-Flag markiert unbekannte Kategorien, und `CHANGELOG.md`
-protokolliert Datenänderungen — ein eigener Qualitätsreport (z. B. Zusammenfassung
-leerer Pflichtfelder pro Lauf) fehlt aber noch.
+**Erledigt:** `scripts/quality-report.mjs` erzeugt `data/QUALITY.md` — leere
+Pflichtfelder (mit Beispielen), unbekannte art-Kategorien, Datumsauffälligkeiten
+(Ende vor Beginn, abgelaufen), Koordinaten außerhalb Karlsruhes, Vorgänge ohne
+Vorgangsnummer und die Zuordnung der `sperrung`-Werte zur Ampel. Bei jedem Lauf ins
+Action-Job-Summary geschrieben, committet nur bei Datenänderung. Der Report deckte
+prompt drei Ampel-Fehlklassifizierungen auf (u. a. „keine Verkehrsbehinderung"),
+die daraufhin behoben wurden — das amtliche `sperrung`-Feld ist jetzt autoritativ.
 
 ---
 

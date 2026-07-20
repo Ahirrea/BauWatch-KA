@@ -205,9 +205,10 @@ function buildFeature(props, geometry) {
   const verursacher = String(pick(props, FIELDS.verursacher) ?? '').trim() || null;
   const sperrung = String(pick(props, FIELDS.sperrung) ?? '').trim();
 
-  // Klassifikation: amtliches Feld `sperrung` zuerst (dominiert), dann Klartext.
+  // Ampel autoritativ aus dem amtlichen Feld `sperrung` (konsistent je Wert);
+  // nur wenn es fehlt, aus dem kombinierten Klartext ableiten.
   const combined = `${sperrung} ${art.label} ${titel} ${info}`;
-  const ampel = classifySperrgrad(combined);
+  const ampel = classifySperrgrad(sperrung || combined);
   const vm = classifyVerkehrsmittel(combined);
 
   const point = representativePoint(geometry);
