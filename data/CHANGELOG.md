@@ -2,6 +2,42 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 20.07.2026, 22:48 — 31 geändert (gesamt 186)
+
+- ✏️ Ernst-Frey-Str. 2 (BV Walter-Eucken-Schule) — Sperrgrad: teil → gering
+- ✏️ Steinkreuzstraße zw. Ringstraße und Hohenbergstraße — Sperrgrad: gering → teil
+- ✏️ Hildebrandstr./Oberwaldstr./Reichenbachstr. — Sperrgrad: teil → gering
+- ✏️ Scheibenhardter Weg, Wehrastraße, Wutachstr., Gottlob-Schreber-Weg, Schauinslandstr. — Sperrgrad: teil → gering
+- ✏️ Kaiserstraße zw. Kronenstraße und adlerstraße — Sperrgrad: voll → teil
+- ✏️ Erzberger Straße zwischen Rhode-Island-Allee und Kanalweg — Sperrgrad: gering → teil
+- ✏️ Finterstraße zwischen Baumeiserstraße und Ettlinger Straße — Sperrgrad: teil → gering
+- ✏️ Hebelstraße zw. Karl-Friedrich-Straße u. Lammstraße — Sperrgrad: teil → gering
+- ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — Sperrgrad: gering → teil
+- ✏️ Am Entenfang: Rheinstraße zur B 36 Michelinstraße gesperrt, B 10 Südtangente AS 6 Abfahrt von Osten zur B 36 Lameystraße gesperrt, B 36 Lameystraße zur Rheinstraße gesperrt, B 36 Michelinstraße zur B 36 Lameystraße u. Rheinstraße gesperrt — Sperrgrad: gering → teil
+- ✏️ Am Alten Bahnhof zw. Mitteltorstraße und Georg-Büchner-Straße — Sperrgrad: teil → gering
+- ✏️ Gebhardstraße zw. Barbarossaplatz und Welfenstraße — Sperrgrad: gering → teil
+- ✏️ Augartenstraße Höhe Nr. 21 — Sperrgrad: teil → gering
+- ✏️ Scheffelstraße zw. Kaiserallee u. Sophienstraße — Sperrgrad: teil → gering
+- ✏️ Pfaffstraße / Schinnrainstraße / Raiherwiesenstraße — Sperrgrad: teil → gering
+- ✏️ Wendtstraße zw. Dragonerstraße und Ludwig-Marum-Straße — Sperrgrad: gering → teil
+- ✏️ Weltzienstraße zw. Wilhelm-Baur-Straße und Kriegstraße — Sperrgrad: gering → teil
+- ✏️ Baumeisterstraße zw. Ettlinger Straße und Nowackanlage — Sperrgrad: gering → teil
+- ✏️ Marstallstraße zw. Weiherstraße und B3/ Badener Straße — Sperrgrad: gering → teil
+- ✏️ B 3 Grötzinger Straße zw. Bergbahnstraße u. Rittnertstraße — Sperrgrad: gering → teil
+- ✏️ Gymnasiumstraße zw. Rittnertstraße und Hauckstraße — Sperrgrad: gering → teil
+- ✏️ Ostmarkstraße zw. Ellmendinger Straße und Grazer Straße — Sperrgrad: gering → teil
+- ✏️ Raiherwiesenstraße zw. Pfaffstraße und Bleichstraße — Sperrgrad: gering → teil
+- ✏️ Eisenlohrstraße zw. Bunsen- u. Kriegsstraße — Sperrgrad: teil → gering
+- ✏️ Kaiserstraße zw. Kreuzstraße und Kronenstraße — Sperrgrad: voll → teil
+- ✏️ B36/ Michelinstraße zw. Franz-Abt-Straße und Entenfang — Sperrgrad: voll → teil
+- ✏️ Humboldstraße zw. Gerwigstraße und Essenweinstraße — Sperrgrad: gering → teil
+- ✏️ Roonstraße zw. Hirschstraße und Jollystraße — Sperrgrad: gering → teil
+- ✏️ Lußstraße zw. Lußsteige und Geigersbergstraße — Sperrgrad: teil → gering
+- ✏️ K9659 Höhe DM — Sperrgrad: teil → gering
+- ✏️ Moningerstraße zw. Kriegstraßem und Sophienstraße — Sperrgrad: teil → gering
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 20.07.2026, 22:44 — 1 geändert (gesamt 186)
 
 - ✏️ Kapellenstraße zw. Ludwig-Erhard-Allee und Durlacher Allee/Am Künstlerhaus zw. Waldhornstraße und Zähringer Straße
