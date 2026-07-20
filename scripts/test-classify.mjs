@@ -28,6 +28,10 @@ check('Vollsperrung -> voll', classifySperrgrad('Vollsperrung der Fahrbahn').lev
 check('halbseitig gesperrt -> teil', classifySperrgrad('Gehweg halbseitig gesperrt').level === 'teil');
 check('bloßes "gesperrt" nicht automatisch voll', classifySperrgrad('Radweg gesperrt').level !== 'voll');
 check('neutraler Text -> gering', classifySperrgrad('Bauliche Sondernutzung').level === 'gering');
+// Amtliches Feld `sperrung`
+check('sperrung "mit Verkehrsbehinderung" -> teil', classifySperrgrad('mit Verkehrsbehinderung').level === 'teil');
+check('sperrung "ohne Verkehrsbehinderung" -> gering', classifySperrgrad('ohne Verkehrsbehinderung').level === 'gering');
+check('sperrung "Vollsperrung" -> voll', classifySperrgrad('Vollsperrung').level === 'voll');
 
 // --- classifyVerkehrsmittel ---
 check('Gehweg -> fuss', classifyVerkehrsmittel('Gehweg gesperrt').fuss === true);

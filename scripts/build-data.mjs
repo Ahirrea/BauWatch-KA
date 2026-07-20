@@ -77,15 +77,20 @@ function pick(props, candidates) {
   return undefined;
 }
 
+// Feldnamen aus dem echten Datensatz (mit Fallback-Kandidaten für Robustheit).
 const FIELDS = {
-  id: ['id', 'objectid', 'fid', 'vorgang', 'vorgangsnummer', 'baustelle_id', 'gid'],
+  // Vorgangs-Identität: Punkt und Polygon eines Vorgangs teilen `vorgangsnummer`
+  // (die per-Geometrie-`id` NICHT). Deshalb ist das der Dedup-/Identitätsschlüssel.
+  vorgang: ['vorgangsnummer', 'vorgang', 'projektnummer', 'baustelle_id'],
+  id: ['id', 'objectid', 'fid', 'gid'],
   gemeinde: ['gemeinde', 'kommune', 'ort_gemeinde'],
   art: ['art', 'art_code', 'artcode', 'typ', 'kategorie', 'baustellenart'],
   info: ['zusatzinfo', 'info', 'beschreibung', 'bemerkung', 'hinweis', 'text'],
-  titel: ['bezeichnung', 'titel', 'name', 'strasse', 'straße', 'ort', 'lage'],
-  von: ['von', 'beginn', 'startdatum', 'datum_von', 'gueltig_von', 'beginn_datum', 'anfang'],
-  bis: ['bis', 'ende', 'enddatum', 'datum_bis', 'gueltig_bis', 'ende_datum'],
+  titel: ['lage', 'bezeichnung', 'strasse', 'straße', 'titel', 'name', 'ort'],
+  von: ['vorgangszeitraum_von', 'von', 'beginn', 'startdatum', 'datum_von', 'gueltig_von', 'anfang'],
+  bis: ['vorgangszeitraum_bis', 'bis', 'ende', 'enddatum', 'datum_bis', 'gueltig_bis'],
   verursacher: ['verursacher', 'bauherr', 'firma', 'auftraggeber', 'traeger'],
+  sperrung: ['sperrung', 'sperrgrad', 'sperrungsart', 'sperrungsgrad'],
 };
 
 // Sieht ein Koordinatenpaar nach UTM32 (Meter) aus? WGS84-Grad für KA sind
@@ -176,10 +181,11 @@ function isKarlsruhe(props) {
   return typeof g === 'string' && g.trim().toLowerCase() === 'karlsruhe';
 }
 
-// Dedup-Schlüssel: bevorzugt die Vorgangs-ID, sonst eine Kombination stabiler Felder.
+// Dedup-Schlüssel: die Vorgangsnummer (teilen sich Punkt & Polygon eines Vorgangs),
+// sonst eine Kombination stabiler Felder.
 function dedupKey(props) {
-  const id = pick(props, FIELDS.id);
-  if (id !== undefined) return `id:${id}`;
+  const v = pick(props, FIELDS.vorgang);
+  if (v !== undefined) return `v:${v}`;
   return [
     pick(props, FIELDS.art) ?? '',
     pick(props, FIELDS.titel) ?? '',
@@ -195,9 +201,10 @@ function buildFeature(props, geometry) {
   const von = toIso(pick(props, FIELDS.von));
   const bis = toIso(pick(props, FIELDS.bis));
   const verursacher = String(pick(props, FIELDS.verursacher) ?? '').trim() || null;
+  const sperrung = String(pick(props, FIELDS.sperrung) ?? '').trim();
 
-  // Klassifikation über den kombinierten Klartext (art-Label + Info).
-  const combined = `${art.label} ${titel} ${info}`;
+  // Klassifikation: amtliches Feld `sperrung` zuerst (dominiert), dann Klartext.
+  const combined = `${sperrung} ${art.label} ${titel} ${info}`;
   const ampel = classifySperrgrad(combined);
   const vm = classifyVerkehrsmittel(combined);
 
@@ -208,7 +215,9 @@ function buildFeature(props, geometry) {
     type: 'Feature',
     geometry: { type: 'Point', coordinates: [round(point[0]), round(point[1])] },
     properties: {
-      id: pick(props, FIELDS.id) ?? null,
+      // Stabile Vorgangsnummer als Identität (überdauert Läufe; Basis der
+      // Änderungsverfolgung), Fallback auf die per-Geometrie-id.
+      id: pick(props, FIELDS.vorgang) ?? pick(props, FIELDS.id) ?? null,
       titel,
       art: art.label,
       artCode: art.code || null,

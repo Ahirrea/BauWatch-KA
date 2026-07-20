@@ -64,23 +64,29 @@ export const AMPEL = {
   GERING: { level: 'gering', color: 'green', label: 'Geringe Behinderung' },
 };
 
+// Explizit „ohne Behinderung" -> muss VOR der Teilsperrung geprüft werden, damit
+// „ohne Verkehrsbehinderung" nicht fälschlich als Behinderung (teil) zählt.
+const OHNE_RE = /ohne (?:verkehrsbehinderung|behinderung|einschränkung)|keine (?:sperrung|behinderung)/i;
 // Eindeutige Voll­sperrung: nur explizite Formulierungen (ein bloßes „gesperrt"
 // ist mehrdeutig — z. B. „Gehweg gesperrt" — und zählt bewusst NICHT hier).
 const VOLL_RE =
   /vollsperrung|komplettsperrung|voll gesperrt|komplett gesperrt|gesamte fahrbahn gesperrt|durchfahrt (?:nicht möglich|gesperrt)/i;
-// Teilsperrung: partielle Einschränkungen haben Vorrang vor einem bloßen „gesperrt".
+// Teilsperrung / Behinderung: partielle Einschränkungen und das amtliche Feld
+// `sperrung` = „mit Verkehrsbehinderung" / „mit Einschränkungen".
 const TEIL_RE =
-  /teilsperrung|halbseitig|einseitig|einbahn|eine fahrspur|(?:fahr)?spur (?:gesperrt|verengt)|fahrstreifen|verengt|ampelregelung|wechselseitig|(?:geh|rad|fuß|fuss)weg[^.]{0,25}gesperrt/i;
+  /teilsperrung|halbseitig|einseitig|einbahn|eine fahrspur|(?:fahr)?spur (?:gesperrt|verengt)|fahrstreifen|verengt|ampelregelung|wechselseitig|(?:geh|rad|fuß|fuss)weg[^.]{0,25}gesperrt|verkehrsbehinderung|behinderung|einschränkung/i;
 
 /**
- * Bestimmt den Sperrgrad (Ampelstufe) aus dem kombinierten Klartext.
- * Reihenfolge: erst eindeutige Vollsperrung, dann partielle Einschränkungen,
+ * Bestimmt den Sperrgrad (Ampelstufe) aus dem kombinierten Klartext. Speist man
+ * das amtliche Feld `sperrung` mit ein, dominiert dessen Klartext.
+ * Reihenfolge: „ohne Behinderung" -> Vollsperrung -> Teilsperrung/Behinderung ->
  * sonst geringe Behinderung.
- * @param {string} text art-Label + zusatzinfo (bereits von HTML bereinigt)
+ * @param {string} text sperrung-Feld + art-Label + zusatzinfo (HTML-bereinigt)
  * @returns {{level: string, color: string, label: string}}
  */
 export function classifySperrgrad(text) {
   const t = String(text ?? '');
+  if (OHNE_RE.test(t)) return AMPEL.GERING;
   if (VOLL_RE.test(t)) return AMPEL.VOLL;
   if (TEIL_RE.test(t)) return AMPEL.TEIL;
   return AMPEL.GERING;
