@@ -378,6 +378,10 @@ body {
   font-weight: 600;
   color: var(--text);
 }
+.stand-hint {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
 
 /* --- Desktop-Layout: Karte + Liste nebeneinander --- */
 @media (min-width: 900px) {

@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "build:data": "node scripts/build-data.mjs",
-    "test": "node scripts/test-transform.mjs",
+    "test": "node scripts/test-transform.mjs && node scripts/test-diff.mjs",
     "serve": "python3 -m http.server 8080"
   },
   "devDependencies": {

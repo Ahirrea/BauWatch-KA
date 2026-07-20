@@ -44,9 +44,12 @@ src/
     format.js              Restdauer, HTML-Bereinigung, Datumsformat (geteilt)
 scripts/
   build-data.mjs           von der Action ausgeführt: holt & baut die Daten
+  diff-data.mjs            Änderungsvergleich zweier Snapshots (für Changelog)
   test-transform.mjs       Referenztest der Koordinaten-Transformation
+  test-diff.mjs            Tests der Änderungserkennung
 data/
   baustellen.geojson       generierter, committeter Snapshot (Startwert: Beispieldaten)
+  CHANGELOG.md             automatisch gepflegtes Änderungsprotokoll der Daten
 vendor/leaflet/            Leaflet lokal eingebunden (kein CDN)
 .github/workflows/
   update-data.yml          Cron + manueller Trigger
@@ -120,6 +123,35 @@ Verzeichnisse unverändert ausgeliefert werden.
   pusht auf `main`.
 
 Das Cron-Intervall lässt sich oben in der Workflow-Datei anpassen.
+
+## Änderungen nachvollziehen
+
+Das Build-Skript vergleicht den neuen Stand mit dem zuletzt committeten und
+**schreibt nur bei einer echten Änderung** (Zeitstempel allein zählen nicht).
+Daraus ergibt sich, wo man sieht, *ob* und *was* sich geändert hat:
+
+- **`data/CHANGELOG.md`** — dauerhaftes Protokoll, neueste Änderung zuerst:
+  welche Baustellen ➕ neu, ➖ entfernt oder ✏️ geändert wurden (mit Feld-Details
+  wie „Ende: … → …"). Auf der Website unten als „Änderungsverlauf" verlinkt.
+- **Commit-Verlauf von `data/baustellen.geojson`** — jeder Commit ist eine echte
+  Änderung. `git log --follow data/baustellen.geojson` zeigt die Historie; die
+  Commit-Message enthält die Kurzfassung („3 neu, 1 entfernt …").
+- **Action-Job-Summary** — pro Lauf im Actions-Tab (auch die Läufe *ohne*
+  Änderung sind dort mit Zeitstempel gelistet).
+
+### Wie oft ändern sich die Daten wirklich?
+
+Weil ohne Änderung kein Commit entsteht, ist die Antwort direkt ablesbar:
+
+- **Viele Action-Läufe, wenige Daten-Commits = die Daten ändern sich selten.**
+  Die Läufe (alle 4 h) stehen im Actions-Tab, die echten Änderungen im
+  Commit-Verlauf bzw. im `CHANGELOG.md`.
+- Die Abstände zwischen den Commits an `data/baustellen.geojson` sind das
+  Änderungsintervall. `git log --follow --format='%ci %s' data/baustellen.geojson`
+  listet sie kompakt auf.
+
+Der Footer der Website zeigt „Daten zuletzt geändert" (= `stand`), also den
+Zeitpunkt der letzten echten Änderung — nicht den letzten Prüflauf.
 
 ## Beitragen
 

@@ -5,6 +5,7 @@ package-lock.json
 
 # Build-Zwischenstände
 data/*.tmp
+build-summary.txt
 
 # Scratch / lokale Experimente
 scratch_*

@@ -7,24 +7,33 @@
 //   3. Punkt + Polygon je Vorgang deduplizieren -> ein Marker je Vorgang.
 //   4. Koordinaten EPSG:25832 -> WGS84 transformieren.
 //   5. Felder bereinigen (HTML aus zusatzinfo, art-Klartext, Ampel, Verkehrsmittel).
-//   6. Schlankes data/baustellen.geojson schreiben (nur benötigte Properties + stand).
+//   6. Mit dem vorherigen Snapshot vergleichen und NUR bei echter Änderung ein
+//      schlankes data/baustellen.geojson schreiben (nur benötigte Properties +
+//      stand = Zeitpunkt der letzten Änderung). Zusätzlich data/CHANGELOG.md
+//      fortschreiben und eine Übersicht für Commit-Message/Job-Summary erzeugen.
 //
 // Robustheit: Bei API-Fehler, ungültiger Antwort oder verdächtig leerem
 // Ergebnis bricht das Skript ab, OHNE die vorhandene Datei zu überschreiben.
 // Geschrieben wird atomar (temp + rename), damit ein Abbruch mitten im
-// Schreiben keine korrupte Datei hinterlässt.
+// Schreiben keine korrupte Datei hinterlässt. Ändern sich die Baustellen nicht,
+// bleibt die Datei unverändert -> kein Commit -> die Git-Historie von
+// data/baustellen.geojson entspricht exakt den echten Datenänderungen.
 
-import { writeFileSync, renameSync, existsSync, mkdirSync } from 'node:fs';
+import { writeFileSync, readFileSync, appendFileSync, renameSync, existsSync, mkdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
 import { utm32ToWgs84 } from '../src/lib/transform.js';
 import { classifyArt, classifySperrgrad, classifyVerkehrsmittel } from '../src/lib/classify.js';
 import { stripHtml, parseDate } from '../src/lib/format.js';
+import { diffFeatures, hasChanges, summaryLine, summaryMarkdown } from './diff-data.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
 const OUT_FILE = join(ROOT, 'data', 'baustellen.geojson');
+const CHANGELOG_FILE = join(ROOT, 'data', 'CHANGELOG.md');
+// Gitignorierte Datei; die Action liest daraus die Commit-Message.
+const BUILD_SUMMARY_FILE = join(ROOT, 'build-summary.txt');
 
 const WFS_URL =
   'https://mobil.trk.de/geoserver/TBA/ows?service=WFS&version=2.0.0' +
@@ -175,6 +184,37 @@ function writeAtomic(collection) {
   renameSync(tmp, OUT_FILE);
 }
 
+// Vorhandenen Snapshot laden (für den Änderungsvergleich). Fehlt/kaputt -> null.
+function loadPrevious() {
+  if (!existsSync(OUT_FILE)) return null;
+  try {
+    return JSON.parse(readFileSync(OUT_FILE, 'utf8'));
+  } catch {
+    console.warn('Warnung: vorhandene Datei nicht lesbar — wird als Neubefüllung behandelt.');
+    return null;
+  }
+}
+
+// Neuen Eintrag oben an den CHANGELOG anfügen (neueste Änderung zuerst).
+function prependChangelog(entryMarkdown) {
+  const header = '# Änderungsprotokoll der Baustellendaten\n\nAutomatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.\n';
+  let body = '';
+  if (existsSync(CHANGELOG_FILE)) {
+    const existing = readFileSync(CHANGELOG_FILE, 'utf8');
+    body = existing.replace(/^# [^\n]*\n(?:[^\n]*\n)*?\n/, ''); // alten Kopf entfernen
+  }
+  writeFileSync(CHANGELOG_FILE, `${header}\n${entryMarkdown}\n\n${body}`.trimEnd() + '\n', 'utf8');
+}
+
+// Menschlich lesbarer Zeitstempel (Europe/Berlin) für die Übersichten.
+function humanTimestamp(date) {
+  return date.toLocaleString('de-DE', {
+    timeZone: 'Europe/Berlin',
+    dateStyle: 'medium',
+    timeStyle: 'short',
+  });
+}
+
 async function main() {
   console.log('Rufe WFS ab …');
   let raw;
@@ -227,16 +267,42 @@ async function main() {
     process.exit(2);
   }
 
+  // 6. Mit vorherigem Snapshot vergleichen — nur bei echter Änderung schreiben.
+  //    So bleibt jeder Commit an der Datei eine tatsächliche Datenänderung, und
+  //    ein bloß wechselnder Zeitstempel erzeugt keinen Rausch-Commit.
+  const prev = loadPrevious();
+  const firstFill = !prev || prev.sample === true; // Beispieldaten -> Erstbefüllung
+  const diff = diffFeatures(prev && !prev.sample ? prev.features || [] : [], features);
+
+  if (prev && !prev.sample && !hasChanges(diff)) {
+    console.log(`Keine Änderung (${features.length} Baustellen unverändert). Datei bleibt wie sie ist.`);
+    // Bewusst KEIN Schreiben, KEIN Commit, KEIN Changelog-Eintrag.
+    return;
+  }
+
+  const now = new Date();
   const collection = {
     type: 'FeatureCollection',
-    stand: new Date().toISOString(),
+    stand: now.toISOString(), // Zeitpunkt der letzten tatsächlichen Änderung
     attribution: ATTRIBUTION,
     count: features.length,
     features,
   };
-
   writeAtomic(collection);
+
+  // Übersicht erzeugen (Changelog + Job-Summary + Commit-Message-Quelle).
+  const ts = humanTimestamp(now);
+  const line = summaryLine(diff, features.length);
+  const md = summaryMarkdown(diff, features.length, ts, { firstFill });
+
+  prependChangelog(md);
+  writeFileSync(BUILD_SUMMARY_FILE, `chore(data): ${line}\n\n${md}\n`, 'utf8');
+  if (process.env.GITHUB_STEP_SUMMARY) {
+    appendFileSync(process.env.GITHUB_STEP_SUMMARY, `${md}\n`);
+  }
+
   console.log(`OK: ${features.length} Baustellen -> ${OUT_FILE}`);
+  console.log(`Änderung: ${line}`);
 }
 
 // Nur ausführen, wenn direkt gestartet (nicht beim Import durch Tests).
@@ -248,4 +314,4 @@ if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
   });
 }
 
-export { pick, isKarlsruhe, buildFeature, representativePoint };
+export { pick, isKarlsruhe, buildFeature, representativePoint, main };

@@ -34,11 +34,16 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if git diff --quiet -- data/baustellen.geojson; then
+          if git diff --quiet -- data/; then
             echo "Keine Änderung an den Daten — kein Commit."
           else
-            git add data/baustellen.geojson
-            git commit -m "chore(data): Baustellen-Snapshot aktualisiert"
+            git add data/baustellen.geojson data/CHANGELOG.md
+            # Commit-Message aus der vom Build-Skript erzeugten Übersicht.
+            if [ -f build-summary.txt ]; then
+              git commit -F build-summary.txt
+            else
+              git commit -m "chore(data): Baustellen-Snapshot aktualisiert"
+            fi
             git push
             echo "Aktualisierte Daten committet und gepusht."
           fi
