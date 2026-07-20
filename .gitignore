@@ -1,0 +1,15 @@
+# Node
+node_modules/
+npm-debug.log*
+package-lock.json
+
+# Build-Zwischenstände
+data/*.tmp
+
+# Scratch / lokale Experimente
+scratch_*
+*.local
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,44 @@
+name: Baustellendaten aktualisieren
+
+on:
+  schedule:
+    # Alle 4 Stunden (UTC). Für tageweise gültige Baustellendaten ausreichend.
+    - cron: "0 */4 * * *"
+  workflow_dispatch: {} # manuell auslösbar
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+
+      - name: Node einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      # Das Build-Skript nutzt nur die geteilten, abhängigkeitsfreien Module
+      # aus src/lib/ (siehe ADR-001) — kein npm install nötig.
+      - name: Daten bauen
+        run: node scripts/build-data.mjs
+
+      - name: Bei Änderung committen und pushen
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- data/baustellen.geojson; then
+            echo "Keine Änderung an den Daten — kein Commit."
+          else
+            git add data/baustellen.geojson
+            git commit -m "chore(data): Baustellen-Snapshot aktualisiert"
+            git push
+            echo "Aktualisierte Daten committet und gepusht."
+          fi

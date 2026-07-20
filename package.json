@@ -1,0 +1,18 @@
+{
+  "name": "bauwatch-ka",
+  "version": "0.1.0",
+  "description": "Wo wird gebaut? — buergernahe Ansicht der Baustellen-Daten der Stadt Karlsruhe. Statische Seite auf GitHub Pages mit periodischem Daten-Snapshot (siehe docs/SPEC.md).",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "build:data": "node scripts/build-data.mjs",
+    "test": "node scripts/test-transform.mjs",
+    "serve": "python3 -m http.server 8080"
+  },
+  "devDependencies": {
+    "leaflet": "^1.9.4",
+    "playwright-core": "^1.61.1",
+    "proj4": "^2.20.9"
+  }
+}

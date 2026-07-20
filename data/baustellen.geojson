@@ -1,0 +1,212 @@
+{
+ "type": "FeatureCollection",
+ "stand": "2026-07-20T06:00:00.000Z",
+ "attribution": "BEISPIELDATEN (Platzhalter bis zum ersten Action-Lauf) — Format wie „Baustellen\", Stadt Karlsruhe, CC-BY 4.0",
+ "sample": true,
+ "count": 7,
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.409,
+     49.0094
+    ]
+   },
+   "properties": {
+    "id": "S-001",
+    "titel": "Kaiserstraße (Ost)",
+    "art": "Vollsperrung",
+    "artCode": "vollsperrung",
+    "artKnown": true,
+    "info": "Fahrbahn voll gesperrt wegen Gleisbauarbeiten. Straßenbahnlinie umgeleitet.",
+    "von": "2026-07-10",
+    "bis": "2026-08-05",
+    "verursacher": "VBK",
+    "ampel": "voll",
+    "ampelLabel": "Vollsperrung",
+    "verkehrsmittel": {
+     "fuss": false,
+     "rad": false,
+     "auto": true,
+     "oepnv": true
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.3854,
+     49.0075
+    ]
+   },
+   "properties": {
+    "id": "S-002",
+    "titel": "Sophienstraße",
+    "art": "Leitungsarbeiten",
+    "artCode": "leitungsarbeiten",
+    "artKnown": true,
+    "info": "Gehweg halbseitig gesperrt, Radweg frei.",
+    "von": "2026-07-18",
+    "bis": "2026-07-24",
+    "verursacher": "Stadtwerke",
+    "ampel": "teil",
+    "ampelLabel": "Teilsperrung",
+    "verkehrsmittel": {
+     "fuss": true,
+     "rad": true,
+     "auto": false,
+     "oepnv": false
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.43,
+     49.006
+    ]
+   },
+   "properties": {
+    "id": "S-003",
+    "titel": "Durlacher Allee",
+    "art": "Kanalarbeiten",
+    "artCode": "kanalbau",
+    "artKnown": true,
+    "info": "Eine Fahrspur gesperrt, Ampelregelung. Busverkehr betroffen.",
+    "von": "2026-06-01",
+    "bis": "2026-09-30",
+    "verursacher": "TBA",
+    "ampel": "teil",
+    "ampelLabel": "Teilsperrung",
+    "verkehrsmittel": {
+     "fuss": false,
+     "rad": false,
+     "auto": true,
+     "oepnv": true
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.4055,
+     48.993
+    ]
+   },
+   "properties": {
+    "id": "S-004",
+    "titel": "Rüppurrer Straße",
+    "art": "Straßenbau",
+    "artCode": "strassenbau",
+    "artKnown": true,
+    "info": "Fahrbahnsanierung, Verkehr verengt.",
+    "von": "2026-07-21",
+    "bis": "2026-07-30",
+    "verursacher": "TBA",
+    "ampel": "teil",
+    "ampelLabel": "Teilsperrung",
+    "verkehrsmittel": {
+     "fuss": false,
+     "rad": false,
+     "auto": true,
+     "oepnv": false
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.434,
+     49.014
+    ]
+   },
+   "properties": {
+    "id": "S-005",
+    "titel": "Haid-und-Neu-Straße",
+    "art": "Baustelle",
+    "artCode": "baustelle",
+    "artKnown": true,
+    "info": "Radweg gesperrt, bitte absteigen.",
+    "von": "2026-08-01",
+    "bis": "2026-08-15",
+    "verursacher": "Privat",
+    "ampel": "teil",
+    "ampelLabel": "Teilsperrung",
+    "verkehrsmittel": {
+     "fuss": false,
+     "rad": true,
+     "auto": false,
+     "oepnv": false
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.372,
+     48.995
+    ]
+   },
+   "properties": {
+    "id": "S-006",
+    "titel": "Südtangente / Brücke",
+    "art": "Brückenarbeiten",
+    "artCode": "brückenbau",
+    "artKnown": true,
+    "info": "Bauarbeiten an der Brücke, geringe Behinderung.",
+    "von": "2026-05-01",
+    "bis": "2026-12-31",
+    "verursacher": "RP Karlsruhe",
+    "ampel": "gering",
+    "ampelLabel": "Geringe Behinderung",
+    "verkehrsmittel": {
+     "fuss": false,
+     "rad": false,
+     "auto": true,
+     "oepnv": false
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.4044,
+     49.0094
+    ]
+   },
+   "properties": {
+    "id": "S-007",
+    "titel": "Marktplatz",
+    "art": "Vollsperrung",
+    "artCode": "vollsperrung",
+    "artKnown": true,
+    "info": "Vollsperrung für Veranstaltungsaufbau. Fußgängerbereich betroffen.",
+    "von": "2026-07-19",
+    "bis": "2026-07-22",
+    "verursacher": "Stadt Karlsruhe",
+    "ampel": "voll",
+    "ampelLabel": "Vollsperrung",
+    "verkehrsmittel": {
+     "fuss": true,
+     "rad": false,
+     "auto": false,
+     "oepnv": false
+    }
+   }
+  }
+ ]
+}

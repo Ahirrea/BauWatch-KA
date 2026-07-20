@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Wo wird gebaut? — Baustellen in Karlsruhe</title>
+    <meta
+      name="description"
+      content="Bürgernahe Karte und Liste der offenen Baustellen in Karlsruhe. Betrifft mich das — auf meinem Weg, mit meinem Verkehrsmittel, in meinem Zeitraum?"
+    />
+
+    <!-- Leaflet (lokal eingebunden, kein CDN — siehe vendor/leaflet/) -->
+    <link rel="stylesheet" href="vendor/leaflet/leaflet.css" />
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#liste">Zur Baustellen-Liste springen</a>
+
+    <header class="app-header">
+      <h1>Wo wird gebaut?</h1>
+      <p class="tagline">Offene Baustellen in Karlsruhe — betrifft mich das?</p>
+    </header>
+
+    <!-- Adress-/Umkreissuche -->
+    <form class="search" id="search-form" role="search" aria-label="Adresssuche">
+      <label class="visually-hidden" for="search-input">Adresse in Karlsruhe</label>
+      <input
+        type="text"
+        id="search-input"
+        name="q"
+        placeholder="Adresse in Karlsruhe (z. B. Kaiserstraße 1)"
+        autocomplete="off"
+      />
+      <button type="submit" id="search-btn">Umkreis&nbsp;suchen</button>
+      <button type="button" id="search-reset" hidden>Zurücksetzen</button>
+      <span class="search-status" id="search-status" role="status" aria-live="polite"></span>
+    </form>
+
+    <!-- Filter -->
+    <section class="filters" aria-label="Filter">
+      <div class="filter-group" role="group" aria-label="Zeitraum" data-filter="zeitraum">
+        <span class="filter-label">Zeitraum</span>
+        <div class="segments">
+          <button type="button" data-value="heute" aria-pressed="true" class="is-active">Heute aktiv</button>
+          <button type="button" data-value="woche" aria-pressed="false">Diese Woche</button>
+          <button type="button" data-value="geplant" aria-pressed="false">Bald geplant</button>
+          <button type="button" data-value="alle" aria-pressed="false">Alle</button>
+        </div>
+      </div>
+
+      <div class="filter-group" role="group" aria-label="Sperrgrad" data-filter="ampel">
+        <span class="filter-label">Sperrgrad</span>
+        <div class="segments">
+          <button type="button" data-value="alle" aria-pressed="true" class="is-active">Alle</button>
+          <button type="button" data-value="voll" aria-pressed="false"><span class="dot dot-red" aria-hidden="true"></span>Voll</button>
+          <button type="button" data-value="teil" aria-pressed="false"><span class="dot dot-amber" aria-hidden="true"></span>Teil</button>
+          <button type="button" data-value="gering" aria-pressed="false"><span class="dot dot-green" aria-hidden="true"></span>Gering</button>
+        </div>
+      </div>
+
+      <div class="filter-group" role="group" aria-label="Verkehrsmittel" data-filter="verkehrsmittel">
+        <span class="filter-label">Verkehrsmittel</span>
+        <div class="segments">
+          <button type="button" data-value="alle" aria-pressed="true" class="is-active">Alle</button>
+          <button type="button" data-value="fuss" aria-pressed="false">zu Fuß</button>
+          <button type="button" data-value="rad" aria-pressed="false">Rad</button>
+          <button type="button" data-value="auto" aria-pressed="false">Auto</button>
+          <button type="button" data-value="oepnv" aria-pressed="false">ÖPNV</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kennzahlen -->
+    <section class="stats" id="stats" aria-live="polite" aria-label="Kennzahlen">
+      <div class="stat"><strong id="stat-count">–</strong><span>Baustellen</span></div>
+      <div class="stat"><strong id="stat-voll">–</strong><span>Vollsperrungen</span></div>
+      <div class="stat"><strong id="stat-behinderung">–</strong><span>Behinderungen</span></div>
+    </section>
+
+    <!-- Karte + Liste -->
+    <main class="content">
+      <div class="map-wrap">
+        <div id="map" role="application" aria-label="Karte der Baustellen in Karlsruhe"></div>
+      </div>
+      <section class="list-wrap" aria-label="Baustellen-Liste">
+        <div class="list-status" id="list-status" role="status" aria-live="polite"></div>
+        <ul id="liste" class="liste"></ul>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <p class="stand">Datenstand: <span id="stand">wird geladen …</span></p>
+      <p class="attribution" id="attribution"></p>
+      <p class="disclaimer">
+        Ohne Gewähr. Verbindlich ist ausschließlich die Beschilderung vor Ort.
+      </p>
+      <p class="credits">
+        Kartendaten © <a href="https://www.openstreetmap.org/copyright" rel="noopener">OpenStreetMap</a>-Mitwirkende ·
+        Adresssuche über <a href="https://nominatim.openstreetmap.org/" rel="noopener">Nominatim</a> ·
+        <a href="https://github.com/Ahirrea/BauWatch-KA" rel="noopener">Quellcode &amp; Info</a>
+      </p>
+    </footer>
+
+    <script src="vendor/leaflet/leaflet.js"></script>
+    <script type="module" src="src/app.js"></script>
+  </body>
+</html>
