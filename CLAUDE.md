@@ -39,6 +39,8 @@ Stadt-WFS ─(Action: scripts/build-data.mjs, alle 4 h)→ data/baustellen.geojs
 - **`transform.js`-Referenztest** prüft gegen mit `proj4` erzeugte Ground-Truth. `proj4` ist **keine Laufzeit-Abhängigkeit**, nur ein Dev-Werkzeug zur Erzeugung der Referenzwerte.
 - **GitHub Pages** deployt aus `main`/root — jeder Daten-Commit ist sofort live. **Nicht** auf ein Actions-basiertes Pages-Deployment umstellen (das würde Snapshots ausliefern → veraltete Daten).
 - **Beispieldaten-Startwert:** `data/baustellen.geojson` kann `sample: true` tragen; der erste echte Action-Lauf ersetzt es (Logik `firstFill`).
+- **Die Daten-Action committet selbst auf `main`.** Nach einem manuell ausgelösten Lauf (oder bei parallelem Arbeiten) ist der lokale Stand schnell veraltet — vor dem nächsten Push `git pull --rebase origin main`, sonst wird der Push mit „fetch first" abgelehnt.
+- **Reale WFS-Struktur nur über einen Action-Lauf prüfbar** (lokaler Abruf ist per Egress geblockt). Muster bei Schema-/Feldnamen-Fragen: kleines Inspektions-Skript per temporärem `workflow_dispatch`-Workflow laufen lassen, Job-Logs auslesen, danach wieder entfernen.
 
 ## Frontend im Browser testen
 
