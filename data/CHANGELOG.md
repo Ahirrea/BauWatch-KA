@@ -2,6 +2,12 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 20.07.2026, 22:44 — 1 geändert (gesamt 186)
+
+- ✏️ Kapellenstraße zw. Ludwig-Erhard-Allee und Durlacher Allee/Am Künstlerhaus zw. Waldhornstraße und Zähringer Straße
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 20.07.2026, 22:30 — 186 neu, 440 entfernt (gesamt 186)
 
 - ➕ **Herrenstraße zw. Karlstraße und Amalienstraße**
