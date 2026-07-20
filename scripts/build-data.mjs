@@ -374,7 +374,14 @@ async function main() {
 
   if (prev && !prev.sample && !hasChanges(diff)) {
     console.log(`Keine Änderung (${features.length} Baustellen unverändert). Datei bleibt wie sie ist.`);
-    // Bewusst KEIN Schreiben, KEIN Commit, KEIN Changelog-/Quality-Update.
+    // Keine Datenänderung -> kein Snapshot-/Changelog-Update. Den Qualitäts-Report
+    // aber einmalig anlegen, falls er noch fehlt (Bootstrap), damit data/QUALITY.md
+    // existiert, ohne bei jedem Lauf einen Rausch-Commit zu erzeugen.
+    if (!existsSync(QUALITY_FILE)) {
+      writeFileSync(QUALITY_FILE, qualityMd, 'utf8');
+      writeFileSync(BUILD_SUMMARY_FILE, 'chore(data): Datenqualitäts-Report ergänzt\n');
+      console.log('Datenqualitäts-Report erstmalig erzeugt (data/QUALITY.md).');
+    }
     return;
   }
 
