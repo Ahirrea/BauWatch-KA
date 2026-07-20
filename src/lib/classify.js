@@ -18,36 +18,40 @@
 // ---------------------------------------------------------------------------
 // 1. art-Code -> Klartext
 // ---------------------------------------------------------------------------
-// Starter-Tabelle. Schlüssel werden case-insensitiv und getrimmt verglichen.
-// Erweitern, sobald reale Codes aus dem Datensatz bekannt sind (Backlog #15).
+// Der amtliche Datensatz liefert im Feld `art` bereits lesbaren Klartext — kein
+// kryptischer Code (Stand 2026-07: 15 Kategorien, u. a. „Strom bzw. TK-Versorgung",
+// „Fernwärmeversorgung", „Bauliche Sondernutzung", „Gas bzw. Wasserversorgung",
+// „Straßenbau", „Kanalbau", „Gleisbau", „Brückenbau", „Tunnelbau", „Stützwand",
+// „Abbruch/Rückbau", „Haltestellenumbau mit Straßenumgestaltung", „Kraneinsatz",
+// „Baugrunduntersuchung", „geänderte Verkehrsführung im Zuge von Baumaßnahmen").
+// Solche Werte werden unverändert übernommen. ART_MAP ist nur der Override-Punkt,
+// falls eine Kategorie doch umformuliert werden soll; Schlüssel werden
+// case-insensitiv und ohne Leer-/Sonderzeichen verglichen.
 export const ART_MAP = {
-  baustelle: 'Baustelle',
-  bauarbeiten: 'Bauarbeiten',
-  strassenbau: 'Straßenbau',
-  strassensperrung: 'Straßensperrung',
-  vollsperrung: 'Vollsperrung',
-  teilsperrung: 'Teilsperrung',
-  leitungsarbeiten: 'Leitungsarbeiten',
-  kanalbau: 'Kanalarbeiten',
-  gleisbau: 'Gleisbauarbeiten',
-  bruckenbau: 'Brückenarbeiten',
-  brückenbau: 'Brückenarbeiten',
-  veranstaltung: 'Veranstaltung',
-  sonstiges: 'Sonstiges',
+  // Beispiel-Override (aktuell keiner nötig):
+  // 'sonstiges': 'Sonstige Baustelle',
 };
 
+// Unterscheidet echten Klartext (enthält Kleinbuchstaben, z. B. „Straßenbau",
+// „Stützwand") von einem kryptischen Code (z. B. „K12", „STRB-3", „0815").
+function looksReadable(s) {
+  return s.length >= 3 && /[a-zäöüß]/.test(s);
+}
+
 /**
- * Übersetzt einen art-Code in Klartext.
- * @param {string} art Roh-Code aus dem Datensatz
+ * Übersetzt/normalisiert den art-Wert in Klartext.
+ * @param {string} art Rohwert aus dem Datensatz
  * @returns {{code: string, label: string, known: boolean}}
  */
 export function classifyArt(art) {
   const code = String(art ?? '').trim();
   if (!code) return { code: '', label: 'Baustelle', known: false };
   const key = code.toLowerCase().replace(/[\s_-]+/g, '');
-  const label = ART_MAP[code] ?? ART_MAP[code.toLowerCase()] ?? ART_MAP[key];
-  if (label) return { code, label, known: true };
-  // Ehrlicher Fallback: Code sichtbar lassen, damit fehlende Mappings auffallen.
+  const override = ART_MAP[code] ?? ART_MAP[code.toLowerCase()] ?? ART_MAP[key];
+  if (override) return { code, label: override, known: true };
+  // Bereits lesbare Kategorie -> direkt übernehmen.
+  if (looksReadable(code)) return { code, label: code, known: true };
+  // Ehrlicher Fallback: kryptischen Code sichtbar lassen, damit er auffällt.
   return { code, label: `Baustelle (${code})`, known: false };
 }
 

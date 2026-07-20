@@ -8,10 +8,9 @@ Bauabfolge. Labels-Vorschlag: `setup`, `data`, `frontend`, `a11y`, `docs`,
 **Statuslegende:** ✅ erledigt · 🟡 teilweise / offen · ⬜ offen
 **Stand:** 2026-07-20 (nach v1 + Daten-Pipeline gegen echten WFS verifiziert).
 
-> Kurzfassung: Milestones 1–3 sind im Wesentlichen umgesetzt. Offen sind das
-> manuelle Aktivieren von GitHub Pages (#5) und die optionalen Milestone-4-Punkte.
-> Bei #15 hat der echte Datensatz gezeigt: das Feld `art` enthält bereits Klartext
-> (15 Kategorien) — abschließbar, siehe Notiz dort.
+> Kurzfassung: Milestones 1–3 sind umgesetzt und die Seite ist über GitHub Pages
+> live (#5). Von Milestone 4 ist #15 erledigt; offen bleiben die optionalen Punkte
+> #16 (Abo-Feed), #17 (.ics-Export) und #18 (eigener Datenqualitäts-Report).
 
 ---
 
@@ -45,12 +44,10 @@ Cron (alle 4 h) + `workflow_dispatch`. Führt Build-Skript aus, committet nur be
 **DoD:** Action läuft grün, committet bei geänderten Daten, überspringt Commit
 bei identischen Daten. — **erledigt & verifiziert** (Lauf holte 440 Baustellen).
 
-### 🟡 #5 GitHub Pages aktivieren
+### ✅ #5 GitHub Pages aktivieren
 Deployment aus `main` (root). Domain/Pfad dokumentieren.
-**DoD:** `index.html` ist öffentlich erreichbar.
-**Offen:** erfordert die manuelle Einstellung im Repo (**Settings → Pages →
-Deploy from a branch → `main` / root**). Code, `.nojekyll` und Anleitung im
-README stehen bereit.
+**DoD:** `index.html` ist öffentlich erreichbar. — **erledigt**, Pages ist
+aktiviert und die Seite live (Deploy aus `main`/root, `.nojekyll` vorhanden).
 
 ---
 
@@ -101,19 +98,18 @@ ergänzt, Abschnitt „Änderungen nachvollziehen". **DoD erfüllt.**
 
 ## Milestone 4 — Optional / später (bewusst nach v1)
 
-### 🟡 #15 art-Code-Mapping vervollständigen
+### ✅ #15 art-Code-Mapping vervollständigen
 Alle real vorkommenden Codes übersetzen, inkl. Fallback für unbekannte.
 **Erkenntnis aus den echten Daten:** Das Feld `art` enthält **keine kryptischen
-Codes, sondern bereits Klartext** — 15 Kategorien:
-Strom bzw. TK-Versorgung, Bauliche Sondernutzung, Fernwärmeversorgung,
-Gas bzw. Wasserversorgung, Straßenbau, Kanalbau, Gleisbau, Brückenbau, Tunnelbau,
-Haltestellenumbau mit Straßenumgestaltung, Stützwand, Abbruch/Rückbau,
-geänderte Verkehrsführung im Zuge von Baumaßnahmen, Baugrunduntersuchung,
-Kraneinsatz.
-Aktuell greift für 398/440 der Fallback („Baustelle (…)"), weil die
-Starter-Tabelle diese Werte nicht kennt. **Sauber abschließbar**, indem
-`classifyArt` bereits lesbare Kategorien direkt übernimmt (statt sie zu wrappen)
-und die 15 Werte dokumentiert/überschreibbar bleiben.
+Codes, sondern bereits Klartext** — 15 Kategorien (Strom bzw. TK-Versorgung,
+Bauliche Sondernutzung, Fernwärmeversorgung, Gas bzw. Wasserversorgung,
+Straßenbau, Kanalbau, Gleisbau, Brückenbau, Tunnelbau, Haltestellenumbau mit
+Straßenumgestaltung, Stützwand, Abbruch/Rückbau, geänderte Verkehrsführung im
+Zuge von Baumaßnahmen, Baugrunduntersuchung, Kraneinsatz).
+**Erledigt:** `classifyArt` übernimmt bereits lesbare Kategorien direkt
+(`known=true`), kryptische Codes behalten den Fallback „Baustelle (…)"; ART_MAP
+bleibt als Override-Punkt, `scripts/test-classify.mjs` deckt beides ab. Die 15
+Kategorien sind im Modul dokumentiert.
 
 ### ⬜ #16 Push-/Abo-Idee evaluieren
 Prüfen, ob ein abonnierbarer Feed pro Stadtteil (von der Action vorgeneriert)
