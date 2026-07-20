@@ -37,7 +37,7 @@ jobs:
           if git diff --quiet -- data/; then
             echo "Keine Änderung an den Daten — kein Commit."
           else
-            git add data/baustellen.geojson data/CHANGELOG.md
+            git add data/baustellen.geojson data/CHANGELOG.md data/QUALITY.md
             # Commit-Message aus der vom Build-Skript erzeugten Übersicht.
             if [ -f build-summary.txt ]; then
               git commit -F build-summary.txt

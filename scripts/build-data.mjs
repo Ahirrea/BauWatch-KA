@@ -27,11 +27,13 @@ import { utm32ToWgs84 } from '../src/lib/transform.js';
 import { classifyArt, classifySperrgrad, classifyVerkehrsmittel } from '../src/lib/classify.js';
 import { stripHtml, parseDate } from '../src/lib/format.js';
 import { diffFeatures, hasChanges, summaryLine, summaryMarkdown } from './diff-data.mjs';
+import { analyzeQuality, summarizeQuality, renderQualityMarkdown } from './quality-report.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
 const OUT_FILE = join(ROOT, 'data', 'baustellen.geojson');
 const CHANGELOG_FILE = join(ROOT, 'data', 'CHANGELOG.md');
+const QUALITY_FILE = join(ROOT, 'data', 'QUALITY.md');
 // Gitignorierte Datei; die Action liest daraus die Commit-Message.
 const BUILD_SUMMARY_FILE = join(ROOT, 'build-summary.txt');
 
@@ -308,13 +310,33 @@ async function main() {
   }
   console.log(`Nach Deduplizierung: ${byKey.size} Vorgänge.`);
 
-  // 3.–5. Transformieren, bereinigen, klassifizieren.
+  // 3.–5. Transformieren, bereinigen, klassifizieren. Nebenbei Qualitäts-Records
+  //        (mit Rohwerten) für den Datenqualitäts-Report sammeln (Backlog #18).
   const features = [];
+  const qualityRecords = [];
   let skipped = 0;
   for (const f of byKey.values()) {
     const built = buildFeature(f.properties, f.geometry);
-    if (built) features.push(built);
-    else skipped++;
+    if (!built) {
+      skipped++;
+      continue;
+    }
+    features.push(built);
+    qualityRecords.push({
+      vorgang: built.properties.id,
+      titel: built.properties.titel,
+      titelRaw: String(pick(f.properties, FIELDS.titel) ?? '').trim(),
+      von: built.properties.von,
+      bis: built.properties.bis,
+      art: built.properties.art,
+      artKnown: built.properties.artKnown,
+      verursacher: built.properties.verursacher,
+      sperrung: String(pick(f.properties, FIELDS.sperrung) ?? '').trim(),
+      ampel: built.properties.ampel,
+      hasVorgangsnummer: pick(f.properties, FIELDS.vorgang) !== undefined,
+      lon: built.geometry.coordinates[0],
+      lat: built.geometry.coordinates[1],
+    });
   }
   if (skipped) console.log(`${skipped} Vorgänge ohne verwertbare Geometrie übersprungen.`);
 
@@ -328,6 +350,21 @@ async function main() {
     process.exit(2);
   }
 
+  const now = new Date();
+  const ts = humanTimestamp(now);
+
+  // Datenqualitäts-Report (Backlog #18) — bei JEDEM Lauf berechnet und ins
+  // Job-Summary geschrieben (auch ohne Datenänderung), damit Auffälligkeiten
+  // jederzeit sichtbar sind. Die committete Datei data/QUALITY.md wird nur bei
+  // echter Datenänderung geschrieben (siehe unten), um Rausch-Commits zu vermeiden.
+  const stats = { raw: raw.features.length, ka: kaFeatures.length, deduped: byKey.size, skipped };
+  const report = analyzeQuality(qualityRecords, stats, now);
+  const qualityMd = renderQualityMarkdown(report, ts);
+  console.log(`Qualität: ${summarizeQuality(report)}`);
+  if (process.env.GITHUB_STEP_SUMMARY) {
+    appendFileSync(process.env.GITHUB_STEP_SUMMARY, `${qualityMd}\n`);
+  }
+
   // 6. Mit vorherigem Snapshot vergleichen — nur bei echter Änderung schreiben.
   //    So bleibt jeder Commit an der Datei eine tatsächliche Datenänderung, und
   //    ein bloß wechselnder Zeitstempel erzeugt keinen Rausch-Commit.
@@ -337,11 +374,10 @@ async function main() {
 
   if (prev && !prev.sample && !hasChanges(diff)) {
     console.log(`Keine Änderung (${features.length} Baustellen unverändert). Datei bleibt wie sie ist.`);
-    // Bewusst KEIN Schreiben, KEIN Commit, KEIN Changelog-Eintrag.
+    // Bewusst KEIN Schreiben, KEIN Commit, KEIN Changelog-/Quality-Update.
     return;
   }
 
-  const now = new Date();
   const collection = {
     type: 'FeatureCollection',
     stand: now.toISOString(), // Zeitpunkt der letzten tatsächlichen Änderung
@@ -351,12 +387,12 @@ async function main() {
   };
   writeAtomic(collection);
 
-  // Übersicht erzeugen (Changelog + Job-Summary + Commit-Message-Quelle).
-  const ts = humanTimestamp(now);
+  // Übersicht erzeugen (Changelog + Quality-Report + Job-Summary + Commit-Message).
   const line = summaryLine(diff, features.length);
   const md = summaryMarkdown(diff, features.length, ts, { firstFill });
 
   prependChangelog(md);
+  writeFileSync(QUALITY_FILE, qualityMd, 'utf8');
   writeFileSync(BUILD_SUMMARY_FILE, `chore(data): ${line}\n\n${md}\n`, 'utf8');
   if (process.env.GITHUB_STEP_SUMMARY) {
     appendFileSync(process.env.GITHUB_STEP_SUMMARY, `${md}\n`);
