@@ -35,8 +35,11 @@ Zieht WFS-GeoJSON, filtert `gemeinde="Karlsruhe"`, dedupliziert Punkt/Polygon,
 transformiert Koordinaten, bereinigt Felder, schreibt schlankes
 `data/baustellen.geojson`.
 **DoD:** valider, verkleinerter Output; Fehlerfall bricht sauber ab ohne die
-vorhandene Datei zu zerstören. — **erledigt**, zusätzlich gehärtet: WFS-Varianten-
-Fallback (1.0.0/typeName …), CRS-Autoerkennung, Schreiben nur bei echter Änderung.
+vorhandene Datei zu zerstören. — **erledigt & gegen echtes WFS-Schema validiert**:
+Dedup über `vorgangsnummer` (Punkt+Polygon je Vorgang → 440 auf 186 Vorgänge),
+echte Feldnamen (`vorgangszeitraum_von/_bis`, `lage`), Ampel aus dem amtlichen
+Feld `sperrung`. Zusätzlich gehärtet: WFS-Varianten-Fallback (1.0.0/typeName …),
+CRS-Autoerkennung, Schreiben nur bei echter Änderung.
 
 ### ✅ #4 GitHub Action `update-data.yml`
 Cron (alle 4 h) + `workflow_dispatch`. Führt Build-Skript aus, committet nur bei
