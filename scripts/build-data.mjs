@@ -35,10 +35,27 @@ const CHANGELOG_FILE = join(ROOT, 'data', 'CHANGELOG.md');
 // Gitignorierte Datei; die Action liest daraus die Commit-Message.
 const BUILD_SUMMARY_FILE = join(ROOT, 'build-summary.txt');
 
-const WFS_URL =
-  'https://mobil.trk.de/geoserver/TBA/ows?service=WFS&version=2.0.0' +
-  '&request=GetFeature&typeName=TBA:baustellen_aktuell' +
-  '&outputFormat=application/json&srsName=EPSG:25832';
+const WFS_BASE = 'https://mobil.trk.de/geoserver/TBA/ows';
+const WFS_LAYER = 'TBA:baustellen_aktuell';
+
+// Dieser GeoServer akzeptiert bekanntermaßen WFS 1.0.0 mit `typeName` (Singular);
+// WFS 2.0.0 verlangt `typeNames` (Plural). Kein `srsName` -> Daten bleiben im
+// nativen EPSG:25832 (falsches srsName-Format war die Ursache des HTTP 400).
+// Wir probieren die Varianten der Reihe nach, bis eine gültiges GeoJSON liefert.
+function wfsCandidates() {
+  const q = (params) =>
+    WFS_BASE +
+    '?' +
+    Object.entries(params)
+      .map(([k, v]) => `${k}=${encodeURIComponent(v)}`)
+      .join('&');
+  return [
+    q({ service: 'WFS', version: '1.0.0', request: 'GetFeature', typeName: WFS_LAYER, outputFormat: 'application/json' }),
+    q({ service: 'WFS', version: '2.0.0', request: 'GetFeature', typeNames: WFS_LAYER, outputFormat: 'application/json' }),
+    q({ service: 'WFS', version: '1.1.0', request: 'GetFeature', typeName: WFS_LAYER, outputFormat: 'application/json' }),
+    q({ service: 'WFS', version: '1.0.0', request: 'GetFeature', typeName: WFS_LAYER, outputFormat: 'json' }),
+  ];
+}
 
 const ATTRIBUTION =
   'Datensatz „Baustellen", Stadt Karlsruhe, Lizenz CC-BY 4.0';
@@ -71,11 +88,23 @@ const FIELDS = {
   verursacher: ['verursacher', 'bauherr', 'firma', 'auftraggeber', 'traeger'],
 };
 
-// Repräsentativer Punkt (für Marker) aus einer beliebigen Geometrie in EPSG:25832.
+// Sieht ein Koordinatenpaar nach UTM32 (Meter) aus? WGS84-Grad für KA sind
+// einstellige lon / ~49 lat, UTM32-Werte liegen im Bereich Hunderttausende /
+// Millionen. So erkennen wir automatisch, ob transformiert werden muss —
+// robust, falls der Dienst wider Erwarten doch WGS84 liefert.
+function looksLikeUtm32(x, y) {
+  return Math.abs(x) > 1000 || Math.abs(y) > 1000;
+}
+
+function toWgs84(x, y) {
+  return looksLikeUtm32(x, y) ? utm32ToWgs84(x, y) : [x, y];
+}
+
+// Repräsentativer Punkt (für Marker) aus einer beliebigen Geometrie.
 function representativePoint(geometry) {
   if (!geometry || !geometry.coordinates) return null;
   if (geometry.type === 'Point') {
-    return utm32ToWgs84(geometry.coordinates[0], geometry.coordinates[1]);
+    return toWgs84(geometry.coordinates[0], geometry.coordinates[1]);
   }
   // Für Polygone/Linien: einfacher Mittelwert aller Stützpunkte (genügt für einen Marker).
   const acc = [0, 0];
@@ -89,7 +118,7 @@ function representativePoint(geometry) {
   };
   walk(geometry.coordinates);
   if (n === 0) return null;
-  return utm32ToWgs84(acc[0] / n, acc[1] / n);
+  return toWgs84(acc[0] / n, acc[1] / n);
 }
 
 function toIso(value) {
@@ -99,16 +128,23 @@ function toIso(value) {
 
 // --- Hauptlogik ------------------------------------------------------------
 
-async function fetchWfs() {
+async function fetchOne(url) {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 60_000);
   try {
-    const res = await fetch(WFS_URL, {
+    const res = await fetch(url, {
       signal: controller.signal,
       headers: { 'User-Agent': 'BauWatch-KA build (github.com/Ahirrea/BauWatch-KA)' },
     });
     if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
-    const json = await res.json();
+    const text = await res.text();
+    let json;
+    try {
+      json = JSON.parse(text);
+    } catch {
+      // GeoServer meldet Fehler oft als XML (ExceptionReport) mit Status 200.
+      throw new Error('Antwort war kein JSON (vermutlich WFS-ExceptionReport)');
+    }
     if (!json || !Array.isArray(json.features)) {
       throw new Error('Antwort enthält keine features[]');
     }
@@ -116,6 +152,22 @@ async function fetchWfs() {
   } finally {
     clearTimeout(timeout);
   }
+}
+
+async function fetchWfs() {
+  const candidates = wfsCandidates();
+  const errors = [];
+  for (const url of candidates) {
+    try {
+      const json = await fetchOne(url);
+      const version = new URL(url).searchParams.get('version');
+      console.log(`WFS-Abruf erfolgreich (Version ${version}).`);
+      return json;
+    } catch (err) {
+      errors.push(`  - ${url.split('?')[1]} -> ${err.message}`);
+    }
+  }
+  throw new Error('Alle WFS-Varianten fehlgeschlagen:\n' + errors.join('\n'));
 }
 
 function isKarlsruhe(props) {
