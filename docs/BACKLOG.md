@@ -1,8 +1,17 @@
 # Backlog
 
-Jeder Punkt ist als eigenständiges GitHub-Issue gedacht. Titel = Issue-Titel,
-darunter Kontext und Definition of Done. Reihenfolge = grobe Bauabfolge.
-Labels-Vorschlag: `setup`, `data`, `frontend`, `a11y`, `docs`, `enhancement`.
+Jeder Punkt war ursprünglich als eigenständiges GitHub-Issue gedacht. Titel =
+Issue-Titel, darunter Kontext und Definition of Done. Reihenfolge = grobe
+Bauabfolge. Labels-Vorschlag: `setup`, `data`, `frontend`, `a11y`, `docs`,
+`enhancement`.
+
+**Statuslegende:** ✅ erledigt · 🟡 teilweise / offen · ⬜ offen
+**Stand:** 2026-07-20 (nach v1 + Daten-Pipeline gegen echten WFS verifiziert).
+
+> Kurzfassung: Milestones 1–3 sind im Wesentlichen umgesetzt. Offen sind das
+> manuelle Aktivieren von GitHub Pages (#5) und die optionalen Milestone-4-Punkte.
+> Bei #15 hat der echte Datensatz gezeigt: das Feld `art` enthält bereits Klartext
+> (15 Kategorien) — abschließbar, siehe Notiz dort.
 
 ---
 
@@ -10,105 +19,124 @@ Labels-Vorschlag: `setup`, `data`, `frontend`, `a11y`, `docs`, `enhancement`.
 
 Ziel: Repo steht, die Action erzeugt sauberes GeoJSON, Seite ist online (leer).
 
-### #1 Repo-Grundgerüst anlegen
-Ordnerstruktur gemäß ADR-001, leeres `index.html`, `src/`, `scripts/`, `data/`,
-Lizenzdatei (MIT o. ä.), `.gitignore`, README mit Kurzbeschreibung + Link zur SPEC.
-**DoD:** Struktur existiert, Repo lässt sich klonen und öffnen.
+### ✅ #1 Repo-Grundgerüst anlegen
+Ordnerstruktur gemäß ADR-001, `index.html`, `src/`, `scripts/`, `data/`,
+Lizenzdatei (MIT), `.gitignore`, README mit Kurzbeschreibung + Link zur SPEC.
+**DoD:** Struktur existiert, Repo lässt sich klonen und öffnen. — **erledigt.**
 
-### #2 Geteilte Bibliotheksmodule (`src/lib/`)
-`transform.js` (UTM32→WGS84, aus Prototyp portiert, mit Referenztest),
-`classify.js` (art→Klartext, Sperrgrad-Ampel, Verkehrsmittel-Betroffenheit),
-`format.js` (Restdauer, HTML-Bereinigung). ES-Module, ohne DOM-Abhängigkeit,
-damit Build-Skript und Client sie teilen.
-**DoD:** Module exportieren reine Funktionen; ein Mini-Testscript prüft
-`transform` gegen bekannte Referenzkoordinaten.
+### ✅ #2 Geteilte Bibliotheksmodule (`src/lib/`)
+`transform.js` (UTM32→WGS84, mit Referenztest gegen proj4-Ground-Truth),
+`classify.js` (art→Klartext, Sperrgrad-Ampel, Verkehrsmittel), `format.js`
+(Restdauer, HTML-Bereinigung). ES-Module, ohne DOM-Abhängigkeit.
+**DoD:** reine Funktionen; `scripts/test-transform.mjs` prüft gegen bekannte
+Referenzkoordinaten. — **erledigt** (zusätzlich `scripts/test-diff.mjs`).
 
-### #3 Build-Skript `scripts/build-data.mjs`
+### ✅ #3 Build-Skript `scripts/build-data.mjs`
 Zieht WFS-GeoJSON, filtert `gemeinde="Karlsruhe"`, dedupliziert Punkt/Polygon,
 transformiert Koordinaten, bereinigt Felder, schreibt schlankes
-`data/baustellen.geojson` (nur benötigte Properties + `stand`).
-**DoD:** Lokaler Lauf erzeugt valide, verkleinerte Datei; Fehlerfall (API down)
-bricht sauber ab, ohne die vorhandene Datei zu zerstören.
+`data/baustellen.geojson`.
+**DoD:** valider, verkleinerter Output; Fehlerfall bricht sauber ab ohne die
+vorhandene Datei zu zerstören. — **erledigt**, zusätzlich gehärtet: WFS-Varianten-
+Fallback (1.0.0/typeName …), CRS-Autoerkennung, Schreiben nur bei echter Änderung.
 
-### #4 GitHub Action `update-data.yml`
-Cron (Vorschlag alle 3–6 h) + `workflow_dispatch`. Führt Build-Skript aus,
-committet `data/baustellen.geojson` nur bei Änderung.
+### ✅ #4 GitHub Action `update-data.yml`
+Cron (alle 4 h) + `workflow_dispatch`. Führt Build-Skript aus, committet nur bei
+Änderung.
 **DoD:** Action läuft grün, committet bei geänderten Daten, überspringt Commit
-bei identischen Daten.
+bei identischen Daten. — **erledigt & verifiziert** (Lauf holte 440 Baustellen).
 
-### #5 GitHub Pages aktivieren
-Deployment aus `main` (bzw. `gh-pages`). Domain/Pfad dokumentieren.
+### 🟡 #5 GitHub Pages aktivieren
+Deployment aus `main` (root). Domain/Pfad dokumentieren.
 **DoD:** `index.html` ist öffentlich erreichbar.
+**Offen:** erfordert die manuelle Einstellung im Repo (**Settings → Pages →
+Deploy from a branch → `main` / root**). Code, `.nojekyll` und Anleitung im
+README stehen bereit.
 
 ---
 
 ## Milestone 2 — Kern-UI (die Kernschleife)
 
-Ziel: Karte + Liste + Filter aus dem Prototyp, jetzt auf echten Daten.
+### ✅ #6 Karte + Marker aus statischem GeoJSON
+Leaflet-Karte, farbcodierte Marker (Ampel), Popup mit Klartext, lädt
+`data/baustellen.geojson`. **DoD erfüllt.**
 
-### #6 Karte + Marker aus statischem GeoJSON
-Leaflet-Karte, Baustellen als farbcodierte Marker (Ampel), Popup mit Klartext.
-Lädt `data/baustellen.geojson`.
-**DoD:** Alle KA-Baustellen erscheinen korrekt verortet.
+### ✅ #7 Synchronisierte Liste
+Liste neben/unter der Karte, Klick zentriert Karte und öffnet Popup; Restdauer,
+Verursacher, Verkehrsmittel sichtbar. **DoD erfüllt** (Interaktion beidseitig).
 
-### #7 Synchronisierte Liste
-Liste neben/unter der Karte, Klick zentriert Karte und öffnet Popup.
-Restdauer, Verursacher, Verkehrsmittel-Betroffenheit sichtbar.
-**DoD:** Liste und Karte zeigen dieselbe gefilterte Menge; Interaktion beidseitig.
+### ✅ #8 Filter: Zeitraum, Sperrgrad, Verkehrsmittel
+Segment-Buttons, kombinierbar; Kennzahlen-Leiste aktualisiert live.
+**DoD erfüllt** (im Browser end-to-end geprüft).
 
-### #8 Filter: Zeitraum, Sperrgrad, Verkehrsmittel
-Segment-Buttons wie im Prototyp; Filter kombinierbar; Kennzahlen-Leiste
-aktualisiert sich live.
-**DoD:** Jede Filterkombination liefert konsistente Liste + Karte + Zahlen.
+### ✅ #9 Adress-/Umkreissuche
+Nominatim-Geocoding (Referer-Identifikation, Suche nur auf Absenden), 1,5-km-
+Umkreis, Distanzsortierung, Umkreis-Kreis, Reset-Knopf.
+**DoD erfüllt**; Fehlerfall zeigt hilfreiche Meldung.
 
-### #9 Adress-/Umkreissuche
-Nominatim-Geocoding (mit korrektem `User-Agent`/Referer und Rate-Limit-Respekt),
-1,5-km-Umkreis, Distanzsortierung, Umkreis-Kreis auf Karte, Reset-Knopf.
-**DoD:** Adresse in KA führt zu Umkreisansicht; Fehlerfall zeigt hilfreiche
-Meldung, App bleibt bedienbar.
-
-### #10 Leerzustände & Ladezustände
-Aussagekräftige Texte statt leerer Fläche (kein Treffer, Laden, Datenfehler).
-**DoD:** Jeder Zustand hat eine handlungsleitende Meldung.
+### ✅ #10 Leerzustände & Ladezustände
+Aussagekräftige Texte für Laden / kein Treffer / Datenfehler. **DoD erfüllt.**
 
 ---
 
 ## Milestone 3 — Qualität & Feinschliff
 
-### #11 Responsiv & Mobil
-Layout bis Smartphone; Karte und Liste sinnvoll gestapelt.
-**DoD:** Auf 360px-Breite voll bedienbar.
+### ✅ #11 Responsiv & Mobil
+Layout stapelt Karte + Liste bis Smartphone. **DoD erfüllt** (Layout bis 360px).
 
-### #12 Barrierefreiheit
-Sichtbarer Tastaturfokus, Kontraste, ARIA für Segment-Buttons,
-`prefers-reduced-motion` respektiert.
-**DoD:** Per Tastatur vollständig bedienbar; Kontraste bestehen WCAG-AA.
+### ✅ #12 Barrierefreiheit
+Sichtbarer Tastaturfokus, Kontraste (WCAG-AA-Zielwerte), ARIA für Segment-Buttons
+(`aria-pressed`, `role=group`), Skip-Link, `prefers-reduced-motion`.
+**DoD im Wesentlichen erfüllt** — ein formales Audit mit Tool (axe/Lighthouse)
+steht als Gegenprobe noch aus.
 
-### #13 Namensnennung, Impressum-Hinweis, Datenstand
-CC-BY-Verweis, „Stand"-Anzeige, Haftungshinweis (verbindlich ist Beschilderung
-vor Ort).
-**DoD:** Rechtlich sauberer Footer; Stand sichtbar.
+### ✅ #13 Namensnennung, Impressum-Hinweis, Datenstand
+CC-BY-Verweis, „Daten zuletzt geändert", Haftungshinweis (verbindlich ist die
+Beschilderung vor Ort), Link zum Änderungsverlauf. **DoD erfüllt.**
 
-### #14 README für Beitragende
-Setup, lokaler Build, wie die Action funktioniert, wie man Klartext-Mappings
-ergänzt.
-**DoD:** Fremde Person kann Projekt lokal starten und ein art-Mapping ergänzen.
+### ✅ #14 README für Beitragende
+Setup, lokaler Build, Funktionsweise der Action, wie man Klartext-Mappings
+ergänzt, Abschnitt „Änderungen nachvollziehen". **DoD erfüllt.**
 
 ---
 
 ## Milestone 4 — Optional / später (bewusst nach v1)
 
-### #15 art-Code-Mapping vervollständigen
-Alle im Datensatz real vorkommenden Codes durchgehen und übersetzen,
-inkl. Fallback-Strategie für unbekannte.
+### 🟡 #15 art-Code-Mapping vervollständigen
+Alle real vorkommenden Codes übersetzen, inkl. Fallback für unbekannte.
+**Erkenntnis aus den echten Daten:** Das Feld `art` enthält **keine kryptischen
+Codes, sondern bereits Klartext** — 15 Kategorien:
+Strom bzw. TK-Versorgung, Bauliche Sondernutzung, Fernwärmeversorgung,
+Gas bzw. Wasserversorgung, Straßenbau, Kanalbau, Gleisbau, Brückenbau, Tunnelbau,
+Haltestellenumbau mit Straßenumgestaltung, Stützwand, Abbruch/Rückbau,
+geänderte Verkehrsführung im Zuge von Baumaßnahmen, Baugrunduntersuchung,
+Kraneinsatz.
+Aktuell greift für 398/440 der Fallback („Baustelle (…)"), weil die
+Starter-Tabelle diese Werte nicht kennt. **Sauber abschließbar**, indem
+`classifyArt` bereits lesbare Kategorien direkt übernimmt (statt sie zu wrappen)
+und die 15 Werte dokumentiert/überschreibbar bleiben.
 
-### #16 Push-/Abo-Idee evaluieren
-Da rein statisch: prüfen, ob z. B. ein abonnierbarer Feed pro Stadtteil
-(vorgeneriert von der Action) machbar ist — ohne Backend.
+### ⬜ #16 Push-/Abo-Idee evaluieren
+Prüfen, ob ein abonnierbarer Feed pro Stadtteil (von der Action vorgeneriert)
+ohne Backend machbar ist. — **offen.**
 
-### #17 Kalender-Export geplanter Baustellen
-`.ics` für „bald geplante" Sperrungen in einem gewählten Umkreis.
+### ⬜ #17 Kalender-Export geplanter Baustellen
+`.ics` für „bald geplante" Sperrungen in einem gewählten Umkreis. — **offen.**
 
-### #18 Datenqualitäts-Report
-Die Action protokolliert Auffälligkeiten (leere Felder, unbekannte Codes),
-damit man der Stadt strukturiertes Feedback geben kann.
+### 🟡 #18 Datenqualitäts-Report
+Auffälligkeiten protokollieren (leere Felder, unbekannte Codes) für strukturiertes
+Feedback an die Stadt.
+**Teilweise:** `artKnown`-Flag markiert unbekannte Kategorien, und `CHANGELOG.md`
+protokolliert Datenänderungen — ein eigener Qualitätsreport (z. B. Zusammenfassung
+leerer Pflichtfelder pro Lauf) fehlt aber noch.
+
+---
+
+## Zusätzlich umgesetzt (nicht im ursprünglichen Backlog)
+
+- **Änderungsübersicht der Daten:** Commit nur bei echter Änderung,
+  `data/CHANGELOG.md` (neu/entfernt/geändert mit Feld-Details), Kurzfassung in
+  Commit-Message und Action-Job-Summary.
+- **WFS-Robustheit:** mehrere Anfrage-Varianten mit Fallback; erkennt XML-Fehler
+  trotz HTTP 200; CRS-Autoerkennung schützt vor Fehltransformation.
+- **Leaflet lokal eingebunden** (`vendor/leaflet/`) statt CDN — keine fragile
+  Drittanbieter-Laufzeitabhängigkeit.
