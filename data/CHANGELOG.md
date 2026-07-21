@@ -2,6 +2,13 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 21.07.2026, 16:09 — 1 neu, 1 geändert (gesamt 183)
+
+- ➕ **Vorholzstraße zw. Karlstraße u. Beiertheimer Allee sowie Anliegerfahrbahn Beiertheimer Allee zw. Vorholzstraße u. Südendstraße**
+- ✏️ Bonner Straße zw. Siemensallee und Bonner Platz — Ende: 2026-07-30 → 2026-08-10
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 21.07.2026, 12:30 — 1 neu, 1 geändert (gesamt 182)
 
 - ➕ **Pforzheimer Straße - Waldshuter Straße - Turmbergbad - Campingplatz Durlach - Bundestraßenkreuz B3 / B10**
