@@ -2,6 +2,22 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 21.07.2026, 05:28 — 2 neu, 7 entfernt, 2 geändert (gesamt 181)
+
+- ➕ **Uhlandstraße zw. Gorthestraße und Sophienstraße**
+- ➕ **Gymnasiumstraße zw. Rittnertstraße und Turmbergstraße**
+- ➖ ~~Uhlandstraße zw. Goethestraße und Sophienstraße~~
+- ➖ ~~Baumeisterstraße zw. Ettlinger Straße und Nowackanlage~~
+- ➖ ~~Weiherstraße zw. Basler-Tor-Straße und Brunnenhausstraße~~
+- ➖ ~~Pirolstraße zw. Siebenmannstraße und Hellenstraße~~
+- ➖ ~~Humboldtstraße zw. Gerwigstraße und Essenweinstraße~~
+- ➖ ~~Geigersbergstraße Höhe Nr. 4~~
+- ➖ ~~Im Kennental 13~~
+- ✏️ Kapellenstraße zw. Ludwig-Erhard-Allee und Durlacher Allee/Am Künstlerhaus zw. Waldhornstraße und Zähringer Straße
+- ✏️ Beuthener Straße zw. Glogauer Straße und Gustav-Heinemann-Allee
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 20.07.2026, 22:48 — 31 geändert (gesamt 186)
 
 - ✏️ Ernst-Frey-Str. 2 (BV Walter-Eucken-Schule) — Sperrgrad: teil → gering
