@@ -2,6 +2,13 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 21.07.2026, 19:36 — 1 neu, 1 geändert (gesamt 184)
+
+- ➕ **Adlerstraße zw. Zähringerstraße u. Kaiserstraße**
+- ✏️ Kapellenstraße zw. Ludwig-Erhard-Allee und Durlacher Allee/Am Künstlerhaus zw. Waldhornstraße und Zähringer Straße
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 21.07.2026, 16:09 — 1 neu, 1 geändert (gesamt 183)
 
 - ➕ **Vorholzstraße zw. Karlstraße u. Beiertheimer Allee sowie Anliegerfahrbahn Beiertheimer Allee zw. Vorholzstraße u. Südendstraße**
