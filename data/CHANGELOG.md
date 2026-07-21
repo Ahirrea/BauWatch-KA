@@ -2,6 +2,13 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 21.07.2026, 12:30 — 1 neu, 1 geändert (gesamt 182)
+
+- ➕ **Pforzheimer Straße - Waldshuter Straße - Turmbergbad - Campingplatz Durlach - Bundestraßenkreuz B3 / B10**
+- ✏️ Gymnasiumstraße zw. Rittnertstraße und Turmbergstraße — Ende: 2026-08-11 → 2026-08-04; Info geändert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 21.07.2026, 05:28 — 2 neu, 7 entfernt, 2 geändert (gesamt 181)
 
 - ➕ **Uhlandstraße zw. Gorthestraße und Sophienstraße**
