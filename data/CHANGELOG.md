@@ -2,6 +2,17 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 22.07.2026, 19:26 — 2 neu, 4 geändert (gesamt 183)
+
+- ➕ **Weltzienstraße zw. Kriegstraße und Wilhelm-Baur-Straße**
+- ➕ **Weltzienstraße zw. Wilhelm-Baur-Straße und Kriegstraße**
+- ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — Ende: 2026-10-02 → 2026-08-28
+- ✏️ Kapellenstraße zw. Ludwig-Erhard-Allee und Durlacher Allee/Am Künstlerhaus zw. Waldhornstraße und Zähringer Straße
+- ✏️ Fritz-Haber-Weg
+- ✏️ K9659 Höhe DM
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 22.07.2026, 16:12 — 2 neu, 1 entfernt, 1 geändert (gesamt 181)
 
 - ➕ **Johann-Strauß-Straße zw. Am dm-Platz und Parkplatz Lorzingstraße/ Milliöeckerstraße**
