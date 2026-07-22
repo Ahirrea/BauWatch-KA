@@ -2,6 +2,12 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 22.07.2026, 12:31 — 1 neu (gesamt 180)
+
+- ➕ **Veilchenstraße zw. Gerwigstraße und Essenweinstraße**
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 22.07.2026, 05:26 — 5 entfernt, 2 geändert (gesamt 179)
 
 - ➖ ~~Weltzienstraße zw. Kriegsstraße u. Wilhelm-baur-Straße~~
