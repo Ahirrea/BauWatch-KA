@@ -2,6 +2,15 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 22.07.2026, 16:12 — 2 neu, 1 entfernt, 1 geändert (gesamt 181)
+
+- ➕ **Johann-Strauß-Straße zw. Am dm-Platz und Parkplatz Lorzingstraße/ Milliöeckerstraße**
+- ➕ **Zehntwaldstraße zw. Föhrenweg und Kiefernweg**
+- ➖ ~~Johann-Strauß-Straße zw. Parkplatz Lorzingstraße/ Milliöeckerstraße und Durlacher Allee~~
+- ✏️ Pforzheimer Straße - Waldshuter Straße - Turmbergbad - Campingplatz Durlach - Bundestraßenkreuz B3 / B10 — Info geändert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 22.07.2026, 12:31 — 1 neu (gesamt 180)
 
 - ➕ **Veilchenstraße zw. Gerwigstraße und Essenweinstraße**
