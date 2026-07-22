@@ -2,6 +2,18 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 22.07.2026, 05:26 — 5 entfernt, 2 geändert (gesamt 179)
+
+- ➖ ~~Weltzienstraße zw. Kriegsstraße u. Wilhelm-baur-Straße~~
+- ➖ ~~Weltzienstraße zw. Wilhelm-Baur-Straße und Kriegstraße~~
+- ➖ ~~Hohenzollernstraße zw. Karlstraße u. Kronprinzenstraße~~
+- ➖ ~~Gymnasiumstraße zw. Rittnertstraße und Hauckstraße~~
+- ➖ ~~Ostring zw. Messplatz und Otto-Dullenkopf-Park~~
+- ✏️ Kapellenstraße zw. Ludwig-Erhard-Allee und Durlacher Allee/Am Künstlerhaus zw. Waldhornstraße und Zähringer Straße
+- ✏️ K9659 Höhe DM
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 21.07.2026, 19:36 — 1 neu, 1 geändert (gesamt 184)
 
 - ➕ **Adlerstraße zw. Zähringerstraße u. Kaiserstraße**
