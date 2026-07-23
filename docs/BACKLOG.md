@@ -5,6 +5,10 @@ Issue-Titel, darunter Kontext und Definition of Done. Reihenfolge = grobe
 Bauabfolge. Labels-Vorschlag: `setup`, `data`, `frontend`, `a11y`, `docs`,
 `enhancement`.
 
+> Dieser Backlog sammelt technische Aufgaben und Fixes. **Ausgearbeitete
+> Feature-Ideen** stehen im [Feature-Backlog](./FEATURE-BACKLOG.md); sie
+> entstehen über den festen [Feature-Refinement-Prozess](./FEATURE-REFINEMENT.md).
+
 **Statuslegende:** ✅ erledigt · 🟡 teilweise / offen · ⬜ offen
 **Stand:** 2026-07-20 (nach v1 + Daten-Pipeline gegen echten WFS verifiziert).
 
@@ -120,6 +124,12 @@ ohne Backend machbar ist. — **offen.**
 
 ### ⬜ #17 Kalender-Export geplanter Baustellen
 `.ics` für „bald geplante" Sperrungen in einem gewählten Umkreis. — **offen.**
+
+### ⬜ #19 ÖPNV-/Transit-Routing für „Mein Arbeitsweg"
+Das Feature „Mein Arbeitsweg" (siehe `FEATURE-BACKLOG.md` F-1) deckt zunächst nur
+Fuß/Rad/Auto ab, weil Straßen-Routing keine Bus-/Tramlinien kennt. Für ÖPNV eine
+transit-taugliche Variante evaluieren (GTFS/Transit-Routing) — deutlich
+aufwändiger, daher bewusst später. — **offen.**
 
 ### ✅ #18 Datenqualitäts-Report
 Auffälligkeiten protokollieren (leere Felder, unbekannte Codes) für strukturiertes

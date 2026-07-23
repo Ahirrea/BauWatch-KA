@@ -48,4 +48,4 @@ Stadt-WFS ─(Action: scripts/build-data.mjs, alle 4 h)→ data/baustellen.geojs
 
 ## Weiterführend
 
-`README.md` (Setup, Action, „Änderungen nachvollziehen"), `docs/SPEC.md` (Produktziel & Nicht-Ziele), `docs/ADR-001-statisches-hosting.md` (Architekturentscheidung), `docs/BACKLOG.md` (Status je Aufgabe).
+`README.md` (Setup, Action, „Änderungen nachvollziehen"), `docs/SPEC.md` (Produktziel & Nicht-Ziele), `docs/ADR-001-statisches-hosting.md` (Architekturentscheidung), `docs/BACKLOG.md` (Status je technischer Aufgabe), `docs/FEATURE-BACKLOG.md` (ausgearbeitete Feature-Ideen), `docs/FEATURE-REFINEMENT.md` (fester Prozess: Idee → umsetzungsreife Spec).
