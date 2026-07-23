@@ -2,6 +2,12 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 23.07.2026, 12:30 — 1 geändert (gesamt 183)
+
+- ✏️ Baumeisterstraße zw. Ettlinger Straße und Nowackanlage — Info geändert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 23.07.2026, 08:36 — 2 geändert (gesamt 183)
 
 - ✏️ Raiherwiesenstraße zw. Pfaffstraße und Bleichstraße
