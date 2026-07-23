@@ -2,6 +2,15 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 23.07.2026, 16:22 — 2 entfernt, 2 geändert (gesamt 181)
+
+- ➖ ~~Daimlerstraße zwischen B36/ Neureuter Straße und Bschstraße~~
+- ➖ ~~Pforzheimer Straße - Waldshuter Straße - Turmbergbad - Campingplatz Durlach - Bundestraßenkreuz B3 / B10~~
+- ✏️ Engesserstr. 2-6/8-12 und Lehmannstr. 1-3
+- ✏️ Fritz-Haber-Weg
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 23.07.2026, 12:30 — 1 geändert (gesamt 183)
 
 - ✏️ Baumeisterstraße zw. Ettlinger Straße und Nowackanlage — Info geändert
