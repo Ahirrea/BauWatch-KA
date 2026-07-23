@@ -2,6 +2,13 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 23.07.2026, 08:36 — 2 geändert (gesamt 183)
+
+- ✏️ Raiherwiesenstraße zw. Pfaffstraße und Bleichstraße
+- ✏️ Beuthener Straße zw. Glogauer Straße und Gustav-Heinemann-Allee
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 23.07.2026, 05:32 — 1 neu, 1 entfernt, 2 geändert (gesamt 183)
 
 - ➕ **Kronennstraße zw. Zährigerstraße und Fritz-Erler-Straße**
