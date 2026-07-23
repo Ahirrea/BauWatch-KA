@@ -255,9 +255,30 @@ function selectFeature(key, { fromList, fromMarker } = {}) {
     marker.openPopup();
   }
   if (fromMarker) {
-    const li = listItemById.get(key);
-    if (li) li.scrollIntoView({ block: 'nearest', behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
+    // Nur den Listen-Container scrollen, nicht das ganze Fenster: sonst springt
+    // im mobilen Layout (Liste unter der Karte) der Viewport nach unten weg und
+    // verdeckt das gerade geöffnete Info-Popup auf der Karte.
+    scrollListItemIntoView(listItemById.get(key));
   }
+}
+
+// Bringt <li> im eigenen Scroll-Container (#liste, overflow-y:auto) in Sicht,
+// ohne window/document zu scrollen — anders als das native scrollIntoView, das
+// alle scrollbaren Vorfahren mitverschiebt.
+function scrollListItemIntoView(li) {
+  const ul = el('liste');
+  if (!ul || !li) return;
+  const liRect = li.getBoundingClientRect();
+  const ulRect = ul.getBoundingClientRect();
+  let delta = 0;
+  if (liRect.top < ulRect.top) {
+    delta = liRect.top - ulRect.top;
+  } else if (liRect.bottom > ulRect.bottom) {
+    delta = liRect.bottom - ulRect.bottom;
+  } else {
+    return; // bereits sichtbar
+  }
+  ul.scrollBy({ top: delta, behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
 }
 
 function prefersReducedMotion() {
