@@ -2,6 +2,15 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 23.07.2026, 05:32 — 1 neu, 1 entfernt, 2 geändert (gesamt 183)
+
+- ➕ **Kronennstraße zw. Zährigerstraße und Fritz-Erler-Straße**
+- ➖ ~~Anliegerfahrbahn Ludwig-Erhard-Allee zwischen Henriette-Obermüller-Straße und Wolfartsweierer Straße~~
+- ✏️ Beuthener Straße zw. Glogauer Straße und Gustav-Heinemann-Allee
+- ✏️ Raiherwiesenstraße zw. Pfaffstraße und Bleichstraße
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 22.07.2026, 19:26 — 2 neu, 4 geändert (gesamt 183)
 
 - ➕ **Weltzienstraße zw. Kriegstraße und Wilhelm-Baur-Straße**
