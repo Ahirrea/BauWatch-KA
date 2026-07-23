@@ -11,7 +11,7 @@ const KA_CENTER = [49.0094, 8.4044]; // Marktplatz
 const RADIUS_KM = 1.5;
 
 // Ampelfarben — müssen zu styles.css passen.
-const AMPEL_COLOR = { voll: '#c02626', teil: '#a85800', gering: '#197a3d' };
+const AMPEL_COLOR = { voll: '#c02626', teil: '#f08a00', gering: '#197a3d' };
 const AMPEL_LABEL = { voll: 'Vollsperrung', teil: 'Teilsperrung', gering: 'Geringe Behinderung' };
 const VM_LABEL = { fuss: 'zu Fuß', rad: 'Rad', auto: 'Auto', oepnv: 'ÖPNV' };
 

@@ -10,9 +10,12 @@
   --accent-contrast: #ffffff;
   --focus: #1b4b73;
 
-  /* Ampel — kontraststark auf Weiß (WCAG AA für Text). */
+  /* Ampel — kontraststark auf Weiß (WCAG AA für Text).
+     Teil (Amber) bewusst deutlich heller als Voll (Rot), damit sich beide
+     nicht nur im Farbton, sondern auch in der Helligkeit unterscheiden —
+     sonst sind die Marker auf der Karte kaum auseinanderzuhalten. */
   --red: #c02626;
-  --amber: #a85800;
+  --amber: #f08a00;
   --green: #197a3d;
 
   --radius: 10px;
@@ -30,7 +33,7 @@
     --accent-contrast: #10131a;
     --focus: #8cc0ec;
     --red: #ff6a5e;
-    --amber: #f2a63b;
+    --amber: #ffb02e;
     --green: #5fce88;
     --shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
   }
