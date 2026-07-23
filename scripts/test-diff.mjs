@@ -1,7 +1,7 @@
 // Testscript für diff-data.mjs — prüft die Änderungserkennung.
 // Ausführen: node scripts/test-diff.mjs (Exit 0 = ok, 1 = Fehler)
 
-import { diffFeatures, hasChanges, summaryLine } from './diff-data.mjs';
+import { diffFeatures, hasChanges, summaryLine, summaryMarkdown } from './diff-data.mjs';
 
 let failed = 0;
 function check(name, cond) {
@@ -39,6 +39,25 @@ check('gleiche Menge umsortiert -> keine Änderung', hasChanges(diffFeatures(pre
 // Nur Ampel geändert -> als Änderung erkannt
 const ampelChange = diffFeatures([mk('A', 'X', '2026-07-25', 'teil')], [mk('A', 'X', '2026-07-25', 'voll')]);
 check('Ampel-Änderung erkannt', ampelChange.changed.length === 1);
+
+// Änderung außerhalb der WATCH_FIELDS (nur Koordinaten) -> trotzdem kurze Notiz.
+const before = mk('A', 'X', '2026-07-25');
+const after = { ...before, geometry: { type: 'Point', coordinates: [8.41, 49.01] } };
+const coordChange = diffFeatures([before], [after]);
+check('Koordinaten-Änderung erkannt', coordChange.changed.length === 1);
+check('Feld-Detail leer bei unbeobachtetem Feld', coordChange.changed[0].changes.length === 0);
+const coordMd = summaryMarkdown(coordChange, 1, 'Test');
+check('geänderter Eintrag trägt immer eine Notiz', /- ✏️ X — .+/.test(coordMd));
+check('generische Notiz bei unbeobachtetem Feld', coordMd.includes('sonstige Angaben aktualisiert'));
+
+// Beobachtetes Feld geändert -> konkrete Notiz statt generischem Hinweis.
+const dateMd = summaryMarkdown(
+  diffFeatures([mk('A', 'X', '2026-07-25')], [mk('A', 'X', '2026-08-01')]),
+  1,
+  'Test'
+);
+check('konkrete Notiz nennt das Feld', dateMd.includes('Ende:'));
+check('keine generische Notiz bei konkretem Feld', !dateMd.includes('sonstige Angaben aktualisiert'));
 
 if (failed > 0) {
   console.error(`\n${failed} Test(s) fehlgeschlagen.`);

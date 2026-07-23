@@ -117,8 +117,11 @@ export function summaryMarkdown(diff, total, timestamp, { firstFill = false } = 
   for (const f of diff.added) lines.push(`- ➕ **${titleOf(f)}**`);
   for (const f of diff.removed) lines.push(`- ➖ ~~${titleOf(f)}~~`);
   for (const c of diff.changed) {
-    const detail = c.changes.length ? ` — ${c.changes.join('; ')}` : '';
-    lines.push(`- ✏️ ${titleOf(c.feature)}${detail}`);
+    // Immer eine kurze Notiz, was sich geändert hat. Betrifft die Änderung nur
+    // Felder außerhalb von WATCH_FIELDS (z. B. Koordinaten, Art, Verkehrsmittel),
+    // bleibt fieldChanges leer — dann ein generischer Hinweis statt gar keiner.
+    const detail = c.changes.length ? c.changes.join('; ') : 'sonstige Angaben aktualisiert';
+    lines.push(`- ✏️ ${titleOf(c.feature)} — ${detail}`);
   }
   return lines.join('\n');
 }

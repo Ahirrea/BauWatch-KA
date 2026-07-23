@@ -148,7 +148,9 @@ die daraufhin behoben wurden — das amtliche `sperrung`-Feld ist jetzt autorita
 
 - **Änderungsübersicht der Daten:** Commit nur bei echter Änderung,
   `data/CHANGELOG.md` (neu/entfernt/geändert mit Feld-Details), Kurzfassung in
-  Commit-Message und Action-Job-Summary.
+  Commit-Message und Action-Job-Summary. Jeder geänderte Vorgang trägt eine
+  kurze Notiz, was sich geändert hat — bei Änderungen außerhalb der beobachteten
+  Felder ein generischer Hinweis („sonstige Angaben aktualisiert").
 - **WFS-Robustheit:** mehrere Anfrage-Varianten mit Fallback; erkennt XML-Fehler
   trotz HTTP 200; CRS-Autoerkennung schützt vor Fehltransformation.
 - **Leaflet lokal eingebunden** (`vendor/leaflet/`) statt CDN — keine fragile
