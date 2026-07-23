@@ -2,6 +2,13 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 23.07.2026, 19:38 — 1 entfernt, 1 geändert (gesamt 180)
+
+- ➖ ~~Pfarrer-Blink-Straße zw. Untermühlstraße und Alte Karlsruher Straße~~
+- ✏️ Haid-und-Neu-Straße zw. Hirtenweg und Karlsruher Straße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 23.07.2026, 16:22 — 2 entfernt, 2 geändert (gesamt 181)
 
 - ➖ ~~Daimlerstraße zwischen B36/ Neureuter Straße und Bschstraße~~
