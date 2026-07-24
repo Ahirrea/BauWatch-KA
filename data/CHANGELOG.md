@@ -2,6 +2,15 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 24.07.2026, 16:00 — 3 entfernt, 1 geändert (gesamt 176)
+
+- ➖ ~~Neckarstraße~~
+- ➖ ~~Kanzlerstraße~~
+- ➖ ~~Amalienbadstraße~~
+- ✏️ Beuthener Straße zw. Glogauer Straße und Gustav-Heinemann-Allee — Ende: 2026-07-24 → 2026-07-27
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 24.07.2026, 12:26 — 1 geändert (gesamt 179)
 
 - ✏️ B 3 Grötzinger Straße zw. Bergbahnstraße u. Rittnertstraße — Ende: 2026-08-04 → 2026-08-10
