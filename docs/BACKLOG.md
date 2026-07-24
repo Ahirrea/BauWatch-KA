@@ -151,12 +151,13 @@ Feinschliff aus einem Desktop-Review (Karte + Liste, Dark-Mode). Alle post-v1,
 nicht blockierend. Der Review-Befund „Marker-Clustering in der Innenstadt" ist
 bewusst **nicht** aufgenommen (größeres Vorhaben, ggf. separater Feature-Eintrag).
 
-### ⬜ #20 `role="application"` von der Karte entfernen
-`index.html:83` setzt `role="application"` auf `#map`. Das fängt Screenreader in
+### ✅ #20 `role="application"` von der Karte entfernen
+`index.html:83` setzte `role="application"` auf `#map`. Das fing Screenreader in
 den Application-Modus, obwohl die Karte einen vollwertigen Listen-Fallback hat —
 die interaktive Bedienung läuft ohnehin über Liste und Filter.
 **DoD:** `role` entfernt oder auf `role="region"` geändert, `aria-label` bleibt;
-kurzer Screenreader-/Tastatur-Gegencheck. (Label: `a11y`)
+kurzer Screenreader-/Tastatur-Gegencheck. — **erledigt**: `role="region"` gesetzt
+(benannte Landmark statt Application-Falle), `aria-label` unverändert. (Label: `a11y`)
 
 ### ⬜ #21 Kennzahlen-Kacheln: klickbar oder klar als Anzeige
 Die Kacheln „Vollsperrungen" / „Behinderungen" (`index.html:74–78`) spiegeln den
