@@ -2,6 +2,13 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 24.07.2026, 08:33 — 2 geändert (gesamt 179)
+
+- ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
+- ✏️ Rheinhafenstraße zw. Daxlanderstraße und Südliche Uferstraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 24.07.2026, 05:27 — 1 neu, 2 entfernt, 5 geändert (gesamt 179)
 
 - ➕ **Kurt-Schumacher-Straße zw. Landauer Straße und Josef-Schofer-Straße**
