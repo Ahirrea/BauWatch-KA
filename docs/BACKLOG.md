@@ -141,11 +141,11 @@ ohne Backend machbar ist.
   (2026-07-24): nicht verfolgt** — keine zusätzliche Datenquelle. Der geografische
   „in meiner Nähe"-Bedarf wird stattdessen **clientseitig** über die vorhandene
   Umkreissuche + eine „seit letztem Besuch"-Markierung gedeckt.
-Der verbleibende Umfang — ein **globaler Atom-Feed** aus dem ohnehin berechneten
-Diff — ist als Feature-Eintrag **F-2** im [Feature-Backlog](./FEATURE-BACKLOG.md)
-ausgearbeitet (Zuschnitt-Optionen, Spezifikation, offene Weiche „Facetten-Feeds").
-— **evaluiert; Umsetzung wartet auf die Weichen-Entscheidung der Ideengeberin.**
-(Label: `enhancement`, `data`)
+Der verbleibende Umfang — ein **globaler Atom-Feed** (reiner Änderungsstrom, keine
+Facetten-Feeds) aus dem ohnehin berechneten Diff — ist als Feature-Eintrag **F-2**
+im [Feature-Backlog](./FEATURE-BACKLOG.md) ausgearbeitet und mit allen entschiedenen
+Weichen auf **umsetzungsbereit** gesetzt. — **evaluiert; Umsetzung erst nach grünem
+Licht (Feature-Refinement-Prozess Schritt 8).** (Label: `enhancement`, `data`)
 
 ### ⬜ #17 Kalender-Export geplanter Baustellen
 `.ics` für „bald geplante" Sperrungen in einem gewählten Umkreis. — **offen.**

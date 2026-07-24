@@ -162,7 +162,7 @@ README (Abschnitt „Mein Arbeitsweg"), `BACKLOG.md` #19 (ÖPNV-/Transit-Routing
 
 ---
 
-## F-2 Baustellen-Abo (statischer Feed)  🔧 in Verfeinerung
+## F-2 Baustellen-Abo (statischer Feed)  ✅ verfeinert / umsetzungsbereit
 
 **User Story:** Als Karlsruher:in möchte ich Baustellen-Änderungen abonnieren, um
 ohne täglichen Seitenbesuch mitzubekommen, wenn in Karlsruhe etwas Neues
@@ -175,9 +175,11 @@ zusätzliche Datenquelle; der Feed speist sich ausschließlich aus dem, was der 
 ohnehin erzeugt. Der geografische „in meiner Nähe"-Bedarf wird **clientseitig**
 über die vorhandene Umkreissuche + eine „seit letztem Besuch"-Markierung gedeckt
 (siehe unten), nicht über feed-seitige Partitionierung.
-**Status-Hinweis:** Evaluierung abgeschlossen mit klarer Empfehlung; die
-verbleibende Weiche (Facetten-Feeds ja/nein) wartet noch auf die Ideengeberin —
-deshalb `in Verfeinerung`, nicht `umsetzungsbereit`.
+**Entscheidung 2026-07-24 (Weichen festgezurrt):** **(1) nur ein globaler Feed**
+(keine Facetten-Feeds) und **(2) reiner Änderungsstrom** (neu/geändert/entfernt,
+kein Bestands-Feed). Jeweils die einfache Variante, die fast ohne Zusatzaufwand aus
+dem vorhandenen Build-Diff fällt; beides ist bei späterem Bedarf nachrüstbar. Damit
+sind alle Weichen entschieden → **umsetzungsbereit**.
 
 ### „Push" vs. „Abo" — zuerst die Begriffe trennen
 
@@ -255,21 +257,19 @@ der eigentliche Ersatz für „pro Stadtteil" und dockt an bestehenden Client-Co
 (`geocode`, Umkreis-Zweig in `currentFiltered`). Wird als **eigener kleiner
 Feature-Eintrag** verfeinert (komplementär zu F-2, kein Blocker).
 
-### Offene Weichen (Entscheidung der Ideengeberin)
+### Weichen (alle entschieden)
 
-1. **Facetten-Feeds:** nur globaler Feed — oder zusätzlich Feeds nach
-   Ampel/Verkehrsmittel? *(Empfehlung: nur global; Facetten bei konkretem Bedarf
-   nachrüsten.)*
-2. **Item-Umfang:** Feed als reiner **Änderungsstrom** (neu/geändert/entfernt, wie
-   CHANGELOG) — oder zusätzlich ein „Bestands-Feed" aller aktuell offenen
-   Baustellen? *(Empfehlung: Änderungsstrom, deckt sich 1:1 mit dem Diff.)*
-3. ~~Stadtteil-Zuordnung~~ — **entschieden: keine** (kein Stadtteilgrenzen-Asset,
-   kein Point-in-Polygon).
+1. **Facetten-Feeds:** **nur globaler Feed** — keine Feeds nach
+   Ampel/Verkehrsmittel. (Bei konkretem Bedarf billig nachrüstbar.)
+2. **Item-Umfang:** **reiner Änderungsstrom** (neu/geändert/entfernt, wie
+   CHANGELOG) — kein „Bestands-Feed". Deckt sich 1:1 mit dem Build-Diff.
+3. ~~Stadtteil-Zuordnung~~ — **keine** (kein Stadtteilgrenzen-Asset, kein
+   Point-in-Polygon).
 
 ### Spezifikation (Skizze, sobald Weichen stehen)
 
-**Format:** **Atom 1.0** (saubere `<id>`/`<updated>`, GeoRSS-Punkt optional). Eine
-Datei `feeds/alle.xml`; bei Weiche 1 = ja zusätzlich `feeds/<facette>.xml`.
+**Format:** **Atom 1.0** (saubere `<id>`/`<updated>`, GeoRSS-Punkt optional). Genau
+eine Datei `feeds/alle.xml` (Änderungsstrom, keine Facetten-Feeds).
 
 **Erzeugung:** neues reines Modul `src/lib/feed.js` (DOM-/netz-/abhängigkeitsfrei,
 harte Randbedingung), das aus dem vorhandenen `diff`-Objekt + Feature-Liste
