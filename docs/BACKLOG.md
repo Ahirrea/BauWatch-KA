@@ -14,8 +14,9 @@ Bauabfolge. Labels-Vorschlag: `setup`, `data`, `frontend`, `a11y`, `docs`,
 Feinschliff-Befunde aus dem Desktop-UI-Review ergänzt, #20–#23).
 
 > Kurzfassung: Milestones 1–3 sind umgesetzt und die Seite ist über GitHub Pages
-> live (#5). Von Milestone 4 sind #15 und #18 erledigt; offen bleiben nur noch die
-> optionalen Punkte #16 (Abo-Feed) und #17 (.ics-Export).
+> live (#5). Von Milestone 4 sind #15 und #18 erledigt; #16 (Push-/Abo-Idee) ist
+> evaluiert (Ergebnis → Feature-Eintrag F-2), offen bleibt als optionaler Punkt
+> noch #17 (.ics-Export).
 
 ---
 
@@ -119,9 +120,30 @@ Zuge von Baumaßnahmen, Baugrunduntersuchung, Kraneinsatz).
 bleibt als Override-Punkt, `scripts/test-classify.mjs` deckt beides ab. Die 15
 Kategorien sind im Modul dokumentiert.
 
-### ⬜ #16 Push-/Abo-Idee evaluieren
+### ✅ #16 Push-/Abo-Idee evaluieren
 Prüfen, ob ein abonnierbarer Feed pro Stadtteil (von der Action vorgeneriert)
-ohne Backend machbar ist. — **offen.**
+ohne Backend machbar ist.
+**Ergebnis der Evaluierung** — „Push" und „Abo" auseinandergehalten:
+- **Echtes Push (Web Push) ist ohne Backend nicht machbar** und kollidiert mit
+  mehreren Nicht-Zielen: es braucht einen Application Server (VAPID-Versand an
+  FCM/Mozilla/Apple) und die **persistente Speicherung der Push-Endpoints je
+  Abonnent** — de facto eigene, personenbeziehbare Datenhaltung („Keine eigene
+  Datenhaltung", „Kein Nutzerkonto"). Die Action als Sender behebt das nicht (sie
+  müsste die Endpoints trotzdem speichern). → verworfen.
+- **Abo über einen statischen Atom-Feed ist machbar und architektonisch stimmig:**
+  Die Action generiert den Feed wie das GeoJSON vor; Feed-Reader pollen selbst
+  (kein Server, keine Endpoint-Speicherung, anonym). Die Feed-Items sind genau der
+  Diff, den `diff-data.mjs` schon berechnet (added/removed/changed) — der Feed ist
+  der maschinenlesbare Zwilling von `data/CHANGELOG.md`.
+- **„Pro Stadtteil" ist machbar**, erfordert aber die **Ableitung** des Stadtteils
+  (der Datensatz hat **kein** Stadtteil-Feld, nur Straße + Koordinaten): empfohlen
+  per **Build-Zeit-Point-in-Polygon** gegen die amtlichen Stadtteilgrenzen (27
+  Karlsruher Stadtteile; offene Geodaten CC-BY — die genaue Grenz-Quelle/Layer ist
+  vor der Umsetzung zu verifizieren).
+Vollständig ausgearbeitet als Feature-Eintrag **F-2** im
+[Feature-Backlog](./FEATURE-BACKLOG.md) (Optionen, Trade-offs, Spezifikation,
+offene Weichen). — **evaluiert; Umsetzung wartet auf die Weichen-Entscheidung der
+Ideengeberin.** (Label: `enhancement`, `data`)
 
 ### ⬜ #17 Kalender-Export geplanter Baustellen
 `.ics` für „bald geplante" Sperrungen in einem gewählten Umkreis. — **offen.**
