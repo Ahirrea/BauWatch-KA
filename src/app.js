@@ -90,12 +90,7 @@ function matchesZeitraum(props, mode, now) {
 }
 
 function matchesAmpel(props, val) {
-  if (val === 'alle') return true;
-  // „Behinderungen" (Kennzahlen-Kachel) bündelt Teil- und geringe Sperrungen —
-  // alles außer Vollsperrung. Für diesen Sammelwert gibt es keinen eigenen
-  // Segment-Button; er wird nur über die Kachel gesetzt.
-  if (val === 'behinderung') return props.ampel === 'teil' || props.ampel === 'gering';
-  return props.ampel === val;
+  return val === 'alle' || props.ampel === val;
 }
 
 function matchesVerkehrsmittel(props, val) {
@@ -213,30 +208,11 @@ function renderList(list) {
 }
 
 function renderStats(list) {
+  // Reine Anzeige: die Sperrgrad-Aufschlüsselung. Die Gesamtzahl steht im
+  // Listenkopf (renderStatus), daher hier bewusst keine „Baustellen"-Kachel.
   const voll = list.filter((f) => f.properties.ampel === 'voll').length;
-  el('stat-count').textContent = list.length;
   el('stat-voll').textContent = voll;
   el('stat-behinderung').textContent = list.length - voll;
-  syncStatTiles();
-}
-
-// Markiert die aktive Kennzahlen-Kachel passend zum Sperrgrad-Filter. Eine
-// Kachel gilt als aktiv, wenn sie den aktuellen Filterwert „abdeckt": „Voll" bei
-// voll, „Behinderungen" bei teil/gering (und dem Sammelwert behinderung),
-// „Baustellen" bei alle.
-function statTileCovers(value, ampel) {
-  if (value === 'alle') return ampel === 'alle';
-  if (value === 'voll') return ampel === 'voll';
-  if (value === 'behinderung') return ['behinderung', 'teil', 'gering'].includes(ampel);
-  return false;
-}
-
-function syncStatTiles() {
-  document.querySelectorAll('.stat[data-value]').forEach((tile) => {
-    const active = statTileCovers(tile.dataset.value, state.filters.ampel);
-    tile.classList.toggle('is-active', active);
-    tile.setAttribute('aria-pressed', String(active));
-  });
 }
 
 function renderStatus(list) {
@@ -311,40 +287,20 @@ function prefersReducedMotion() {
 }
 
 // --- Filter-UI -------------------------------------------------------------
-// Zentraler Einstieg: setzt einen Filterwert, hält alle Bedien-Controls
-// (Segment-Buttons + Kennzahlen-Kacheln) synchron und rendert neu.
-function setFilter(dim, value) {
-  state.filters[dim] = value;
-  syncSegments();
-  render(); // aktualisiert u. a. die Kacheln über renderStats -> syncStatTiles
-}
-
-// Spiegelt state.filters in den Segment-Buttons. Der Sammelwert „behinderung"
-// (nur über die Kennzahlen-Kachel erreichbar) hat bewusst keinen Segment-Button —
-// dann ist in der Sperrgrad-Gruppe keiner aktiv.
-function syncSegments() {
+function wireFilters() {
   document.querySelectorAll('.filter-group').forEach((group) => {
     const dim = group.dataset.filter;
-    group.querySelectorAll('.segments button').forEach((b) => {
-      const active = b.dataset.value === state.filters[dim];
-      b.classList.toggle('is-active', active);
-      b.setAttribute('aria-pressed', String(active));
+    group.querySelectorAll('.segments button').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        state.filters[dim] = btn.dataset.value;
+        group.querySelectorAll('.segments button').forEach((b) => {
+          const active = b === btn;
+          b.classList.toggle('is-active', active);
+          b.setAttribute('aria-pressed', String(active));
+        });
+        render();
+      });
     });
-  });
-}
-
-function wireFilters() {
-  document.querySelectorAll('.filter-group .segments button').forEach((btn) => {
-    const dim = btn.closest('.filter-group').dataset.filter;
-    btn.addEventListener('click', () => setFilter(dim, btn.dataset.value));
-  });
-}
-
-// Kennzahlen-Kacheln als Schnellfilter für den Sperrgrad. Als <button> nativ
-// tastaturbedienbar (Enter/Leertaste), analog zu den Segment-Buttons.
-function wireStatTiles() {
-  document.querySelectorAll('.stat[data-value]').forEach((tile) => {
-    tile.addEventListener('click', () => setFilter('ampel', tile.dataset.value));
   });
 }
 
@@ -486,6 +442,5 @@ async function loadData() {
 // --- Start -----------------------------------------------------------------
 initMap();
 wireFilters();
-wireStatTiles();
 wireSearch();
 loadData();

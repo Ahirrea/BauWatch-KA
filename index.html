@@ -70,18 +70,13 @@
       </div>
     </section>
 
-    <!-- Kennzahlen — zugleich Schnellfilter für den Sperrgrad (spiegeln und
-         setzen state.filters.ampel, synchron zu den Sperrgrad-Segmentbuttons). -->
-    <section class="stats" id="stats" role="group" aria-label="Kennzahlen und Sperrgrad-Schnellfilter">
-      <button type="button" class="stat" data-value="alle" aria-pressed="true">
-        <strong id="stat-count" aria-live="polite">–</strong><span>Baustellen</span>
-      </button>
-      <button type="button" class="stat" data-value="voll" aria-pressed="false">
-        <strong id="stat-voll" aria-live="polite">–</strong><span>Vollsperrungen</span>
-      </button>
-      <button type="button" class="stat" data-value="behinderung" aria-pressed="false">
-        <strong id="stat-behinderung" aria-live="polite">–</strong><span>Behinderungen</span>
-      </button>
+    <!-- Kennzahlen — reine Anzeige, kein Bedien-Control (visuell bewusst von den
+         klickbaren Filter-Segmenten entkoppelt). Die Gesamtzahl der Baustellen
+         steht bereits im Listenkopf („N Baustellen"); hier nur die Sperrgrad-
+         Aufschlüsselung, die die Liste nicht anzeigt. -->
+    <section class="stats" id="stats" aria-live="polite" aria-label="Kennzahlen">
+      <div class="stat"><strong id="stat-voll">–</strong><span>Vollsperrungen</span></div>
+      <div class="stat"><strong id="stat-behinderung">–</strong><span>Behinderungen</span></div>
     </section>
 
     <!-- Karte + Liste -->
