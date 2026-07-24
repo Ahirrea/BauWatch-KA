@@ -10,7 +10,8 @@ Bauabfolge. Labels-Vorschlag: `setup`, `data`, `frontend`, `a11y`, `docs`,
 > entstehen über den festen [Feature-Refinement-Prozess](./FEATURE-REFINEMENT.md).
 
 **Statuslegende:** ✅ erledigt · 🟡 teilweise / offen · ⬜ offen
-**Stand:** 2026-07-20 (nach v1 + Daten-Pipeline gegen echten WFS verifiziert).
+**Stand:** 2026-07-24 (nach v1 + Daten-Pipeline gegen echten WFS verifiziert;
+Feinschliff-Befunde aus dem Desktop-UI-Review ergänzt, #20–#23).
 
 > Kurzfassung: Milestones 1–3 sind umgesetzt und die Seite ist über GitHub Pages
 > live (#5). Von Milestone 4 sind #15 und #18 erledigt; offen bleiben nur noch die
@@ -141,6 +142,45 @@ Vorgangsnummer und die Zuordnung der `sperrung`-Werte zur Ampel. Bei jedem Lauf 
 Action-Job-Summary geschrieben, committet nur bei Datenänderung. Der Report deckte
 prompt drei Ampel-Fehlklassifizierungen auf (u. a. „keine Verkehrsbehinderung"),
 die daraufhin behoben wurden — das amtliche `sperrung`-Feld ist jetzt autoritativ.
+
+---
+
+## Review-Befunde Desktop-UI (2026-07-24)
+
+Feinschliff aus einem Desktop-Review (Karte + Liste, Dark-Mode). Alle post-v1,
+nicht blockierend. Der Review-Befund „Marker-Clustering in der Innenstadt" ist
+bewusst **nicht** aufgenommen (größeres Vorhaben, ggf. separater Feature-Eintrag).
+
+### ⬜ #20 `role="application"` von der Karte entfernen
+`index.html:83` setzt `role="application"` auf `#map`. Das fängt Screenreader in
+den Application-Modus, obwohl die Karte einen vollwertigen Listen-Fallback hat —
+die interaktive Bedienung läuft ohnehin über Liste und Filter.
+**DoD:** `role` entfernt oder auf `role="region"` geändert, `aria-label` bleibt;
+kurzer Screenreader-/Tastatur-Gegencheck. (Label: `a11y`)
+
+### ⬜ #21 Kennzahlen-Kacheln: klickbar oder klar als Anzeige
+Die Kacheln „Vollsperrungen" / „Behinderungen" (`index.html:74–78`) spiegeln den
+Sperrgrad-Filter, sind aber nicht interaktiv — Nutzer erwarten Klick = Filter.
+Entweder klickbar machen (setzt den Sperrgrad-Filter) oder visuell klar als reine
+Anzeige kennzeichnen. Nebenbefund: Die Baustellen-Zahl erscheint doppelt (Kachel
++ Listenkopf „N Baustellen").
+**DoD:** Entscheidung getroffen und umgesetzt; bei Klickbarkeit `aria-pressed` +
+Tastaturbedienung analog zu den Segment-Buttons, sonst visuelle Entkopplung;
+Doppelzählung aufgelöst oder bewusst behalten. (Label: `frontend`, `enhancement`)
+
+### ⬜ #22 Badge-Kontrast im Dark-Mode
+`styles.css:341`: `.badge { background: var(--bg) }`. Im Dark-Mode ist `--bg`
+(#16181c) dunkler als die Kartenfläche `--surface` (#1f2329) — der Badge (z. B.
+„Auto") wirkt wie ausgestanzt statt als aufliegender Chip.
+**DoD:** Badge-Fläche im Dark-Mode nicht dunkler als die Karte (getönte Fläche
+oder Akzent-Rand); Light-Mode unverändert; WCAG-AA-Kontrast gewahrt. (Label: `frontend`)
+
+### ⬜ #23 Vertikaler Platz über der Karte (Desktop)
+Header + Suche + drei Filtergruppen + Kennzahlen stapeln vertikal; auf
+Laptop-Höhe (~1080p) startet die Karte erst bei ~40 % des Viewports. Kompaktere
+Anordnung prüfen (Filter/Kennzahlen enger oder einzeilig nebeneinander).
+**DoD:** Karte auf 1080p sichtbar höher (Zielwert festlegen); Mobile-Layout und
+Fokusreihenfolge unverändert. (Label: `frontend`)
 
 ---
 
