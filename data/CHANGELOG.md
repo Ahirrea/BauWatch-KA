@@ -2,6 +2,19 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 24.07.2026, 05:27 — 1 neu, 2 entfernt, 5 geändert (gesamt 179)
+
+- ➕ **Kurt-Schumacher-Straße zw. Landauer Straße und Josef-Schofer-Straße**
+- ➖ ~~Kronennstraße zw. Zährigerstraße und Fritz-Erler-Straße~~
+- ➖ ~~Goethestraße zw. Uhlandstraße und Gutenbergstraße~~
+- ✏️ Engesserstr. 2-6/8-12 und Lehmannstr. 1-3 — sonstige Angaben aktualisiert
+- ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
+- ✏️ Raiherwiesenstraße zw. Pfaffstraße und Bleichstraße — sonstige Angaben aktualisiert
+- ✏️ Rheinhafenstraße zw. Daxlanderstraße und Südliche Uferstraße — sonstige Angaben aktualisiert
+- ✏️ Haid-und-Neu-Straße zw. Hirtenweg und Karlsruher Straße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 23.07.2026, 19:38 — 1 entfernt, 1 geändert (gesamt 180)
 
 - ➖ ~~Pfarrer-Blink-Straße zw. Untermühlstraße und Alte Karlsruher Straße~~
