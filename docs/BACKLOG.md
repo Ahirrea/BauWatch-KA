@@ -192,18 +192,18 @@ Anzeige kennzeichnen. Nebenbefund: Die Baustellen-Zahl erscheint doppelt (Kachel
 **DoD:** Entscheidung getroffen und umgesetzt; bei Klickbarkeit `aria-pressed` +
 Tastaturbedienung analog zu den Segment-Buttons, sonst visuelle Entkopplung;
 Doppelzählung aufgelöst oder bewusst behalten. (Label: `frontend`, `enhancement`)
-**Entscheidung: klickbar gemacht** (die Erwartung „Klick = Filter" ist der Kern des
-Befunds). Die Kacheln sind jetzt `<button>` und setzen den Sperrgrad-Filter, synchron
-zu den Segment-Buttons — `aria-pressed` + native Tastaturbedienung (Enter/Leertaste),
-Aktiv-Zustand als Akzentfläche wie bei den Segmenten. Mapping: „Baustellen" → Alle,
-„Vollsperrungen" → Voll. **„Behinderungen" bündelt Teil + Gering** (alles außer Voll),
-was der angezeigten Zahl `gesamt − voll` entspricht; dafür wurde ein Sammel-Filterwert
-`behinderung` in `matchesAmpel` ergänzt. Da es dafür bewusst keinen eigenen
-Segment-Button gibt, ist bei diesem Wert kein Sperrgrad-Segment aktiv; wählt man
-umgekehrt das Segment „Teil"/„Gering", bleibt die Kachel „Behinderungen" als
-abdeckende Auswahl markiert. **Doppelzählung bewusst behalten:** Die „Baustellen"-
-Kachel dient als „Alle"-Shortcut (eigene Funktion), die Zahl im Listenkopf bleibt als
-Kontext zur Liste. Im Browser end-to-end verifiziert (Playwright). (Label: `frontend`, `enhancement`)
+**Entscheidung: reine Anzeige (nicht klickbar).** Statt die Erwartung „Klick = Filter"
+zu bedienen, werden die Kacheln visuell klar als Anzeige gekennzeichnet, damit gar
+nicht erst der Eindruck eines Bedien-Controls entsteht. Umsetzung: Kacheln sind wieder
+nicht-interaktive `<div>` (kein `<button>`, kein `aria-pressed`, keine Tastaturbedienung);
+`.stat` bekommt **bewusst keine Karten-/Button-Optik** (keine Umrandung, kein Schatten,
+kein Hover, kein Zeiger-Cursor) und ist damit optisch von den klickbaren Filter-Segmenten
+entkoppelt. Der Sperrgrad wird ausschließlich über die Segment-Buttons gesteuert; der
+frühere Sammel-Filterwert `behinderung` in `matchesAmpel` entfällt wieder.
+**Doppelzählung aufgelöst:** Die „Baustellen"-Gesamtzahl steht bereits im Listenkopf
+(„N Baustellen"); die Kachel dafür wurde entfernt. Die Kennzahlen-Leiste zeigt nur noch
+die Sperrgrad-Aufschlüsselung „Vollsperrungen"/„Behinderungen", die die Liste nicht
+anzeigt. (Label: `frontend`, `enhancement`)
 
 ### ⬜ #22 Badge-Kontrast im Dark-Mode
 `styles.css:341`: `.badge { background: var(--bg) }`. Im Dark-Mode ist `--bg`
