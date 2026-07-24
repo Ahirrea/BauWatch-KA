@@ -2,6 +2,12 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 24.07.2026, 12:26 — 1 geändert (gesamt 179)
+
+- ✏️ B 3 Grötzinger Straße zw. Bergbahnstraße u. Rittnertstraße — Ende: 2026-08-04 → 2026-08-10
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 24.07.2026, 08:33 — 2 geändert (gesamt 179)
 
 - ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
