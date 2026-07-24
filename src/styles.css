@@ -223,6 +223,8 @@ body {
   max-width: 1200px;
   margin: 0 auto;
 }
+/* Kacheln sind zugleich Schnellfilter für den Sperrgrad: klickbare <button>,
+   Aktiv-Zustand analog zu den Segment-Buttons (Akzentfläche). */
 .stat {
   flex: 1;
   background: var(--surface);
@@ -231,6 +233,17 @@ body {
   padding: 0.5rem 0.75rem;
   text-align: center;
   box-shadow: var(--shadow);
+  font: inherit;
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 0.12s ease, background-color 0.12s ease;
+}
+.stat:hover {
+  border-color: var(--accent);
+}
+.stat.is-active {
+  background: var(--accent);
+  border-color: var(--accent);
 }
 .stat strong {
   display: block;
@@ -240,6 +253,10 @@ body {
 .stat span {
   font-size: 0.8rem;
   color: var(--text-muted);
+}
+.stat.is-active strong,
+.stat.is-active span {
+  color: var(--accent-contrast);
 }
 
 /* --- Karte + Liste --- */

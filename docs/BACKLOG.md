@@ -183,7 +183,7 @@ die interaktive Bedienung läuft ohnehin über Liste und Filter.
 kurzer Screenreader-/Tastatur-Gegencheck. — **erledigt**: `role="region"` gesetzt
 (benannte Landmark statt Application-Falle), `aria-label` unverändert. (Label: `a11y`)
 
-### ⬜ #21 Kennzahlen-Kacheln: klickbar oder klar als Anzeige
+### ✅ #21 Kennzahlen-Kacheln: klickbar oder klar als Anzeige
 Die Kacheln „Vollsperrungen" / „Behinderungen" (`index.html:74–78`) spiegeln den
 Sperrgrad-Filter, sind aber nicht interaktiv — Nutzer erwarten Klick = Filter.
 Entweder klickbar machen (setzt den Sperrgrad-Filter) oder visuell klar als reine
@@ -192,6 +192,18 @@ Anzeige kennzeichnen. Nebenbefund: Die Baustellen-Zahl erscheint doppelt (Kachel
 **DoD:** Entscheidung getroffen und umgesetzt; bei Klickbarkeit `aria-pressed` +
 Tastaturbedienung analog zu den Segment-Buttons, sonst visuelle Entkopplung;
 Doppelzählung aufgelöst oder bewusst behalten. (Label: `frontend`, `enhancement`)
+**Entscheidung: klickbar gemacht** (die Erwartung „Klick = Filter" ist der Kern des
+Befunds). Die Kacheln sind jetzt `<button>` und setzen den Sperrgrad-Filter, synchron
+zu den Segment-Buttons — `aria-pressed` + native Tastaturbedienung (Enter/Leertaste),
+Aktiv-Zustand als Akzentfläche wie bei den Segmenten. Mapping: „Baustellen" → Alle,
+„Vollsperrungen" → Voll. **„Behinderungen" bündelt Teil + Gering** (alles außer Voll),
+was der angezeigten Zahl `gesamt − voll` entspricht; dafür wurde ein Sammel-Filterwert
+`behinderung` in `matchesAmpel` ergänzt. Da es dafür bewusst keinen eigenen
+Segment-Button gibt, ist bei diesem Wert kein Sperrgrad-Segment aktiv; wählt man
+umgekehrt das Segment „Teil"/„Gering", bleibt die Kachel „Behinderungen" als
+abdeckende Auswahl markiert. **Doppelzählung bewusst behalten:** Die „Baustellen"-
+Kachel dient als „Alle"-Shortcut (eigene Funktion), die Zahl im Listenkopf bleibt als
+Kontext zur Liste. Im Browser end-to-end verifiziert (Playwright). (Label: `frontend`, `enhancement`)
 
 ### ⬜ #22 Badge-Kontrast im Dark-Mode
 `styles.css:341`: `.badge { background: var(--bg) }`. Im Dark-Mode ist `--bg`
