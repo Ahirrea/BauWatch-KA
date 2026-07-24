@@ -46,6 +46,17 @@ Stadt-WFS ─(Action: scripts/build-data.mjs, alle 4 h)→ data/baustellen.geojs
 
 `playwright-core` ist installiert; Chromium liegt unter `/opt/pw-browsers/chromium-*/chrome-linux/chrome` (mit `--no-sandbox`). Muster: lokalen `http.server` starten, Seite laden, `#liste li` abwarten. In Umgebungen ohne Egress OSM-Kacheln per `page.route('**://tile.openstreetmap.org/**', r => r.abort())` abfangen — die Karte bleibt dann grau, Marker/Liste/Filter funktionieren trotzdem (Marker sind SVG-`circleMarker`, brauchen keine Kacheln).
 
+## Web-/Mobile-Workflow (Claude Code on the web)
+
+Dieses Repo wird oft aus einer **Cloud-Session** (claude.ai/code, auch vom Handy/Claude-App) heraus bearbeitet. Auf dem kleinen Screen sind Tippen und Diff-Lesen der Flaschenhals, nicht die Rechenzeit — die folgenden Punkte darauf ausgelegt:
+
+- **Verifizieren lassen statt Diffs scrollen.** Auftrag so formulieren, dass Claude selbst `npm test` **und** einen Playwright-Browser-Check fährt und nur das Ergebnis meldet („N/N Checks grün"). Reine, DOM-freie Logik-Änderungen in `src/lib/` sind über `npm test` abgedeckt; UI-/`app.js`-Änderungen zusätzlich im Browser gegenchecken (siehe „Frontend im Browser testen").
+- **`node_modules` wird nicht ausgeliefert** und ist in frischen Sessions leer. Vor Browser-Checks `PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 npm install` (Chromium ist schon da, nicht neu laden). **Danach `node_modules` wieder entfernen und `package*.json` nicht mit-committen**, falls der Install sie berührt hat — sie gehören nicht in einen Feature-Commit.
+- **Temporäre Skripte** (z. B. Verifikations-Runner) ins Scratchpad legen, aber aus dem **Projektverzeichnis** starten (`node`-ESM findet `playwright-core` sonst nicht). Danach aufräumen, nie mit-committen.
+- **Egress beachten.** `build:data` braucht `mobil.trk.de`, Umkreissuche `nominatim.openstreetmap.org`, Karte `tile.openstreetmap.org` — je nach Network-Policy der Umgebung geblockt. Kacheln in Tests abfangen (s. o.); für echte Datenläufe die Domain in der Environment-Config unter „Network access → Custom" freigeben oder die GitHub-Action nutzen.
+- **Teleport aufs richtige Gerät.** Am Laptop `claude --teleport` zieht die Handy-Session inkl. Branch und Verlauf ins Terminal — Voraussetzung: gleiches claude.ai-Konto, sauberer Git-Stand und **der Branch ist gepusht** (die VM klont von GitHub). Deshalb: Arbeit vor dem Wechsel committen und pushen.
+- **`main` bewegt sich unter dir.** Die Daten-Action committet selbst auf `main`; vor einem Push auf `main` immer erst `git fetch origin main` und den eigenen Commit darauf rebasen/cherry-picken (kein Force-Push nötig, wenn nur echte neue Arbeit dazukommt).
+
 ## Weiterführend
 
 `README.md` (Setup, Action, „Änderungen nachvollziehen"), `docs/SPEC.md` (Produktziel & Nicht-Ziele), `docs/ADR-001-statisches-hosting.md` (Architekturentscheidung), `docs/BACKLOG.md` (Status je technischer Aufgabe), `docs/FEATURE-BACKLOG.md` (ausgearbeitete Feature-Ideen), `docs/FEATURE-REFINEMENT.md` (fester Prozess: Idee → umsetzungsreife Spec).
