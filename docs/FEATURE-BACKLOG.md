@@ -162,16 +162,22 @@ README (Abschnitt „Mein Arbeitsweg"), `BACKLOG.md` #19 (ÖPNV-/Transit-Routing
 
 ---
 
-## F-2 Baustellen-Abo je Stadtteil (statischer Feed)  🔧 in Verfeinerung
+## F-2 Baustellen-Abo (statischer Feed)  🔧 in Verfeinerung
 
-**User Story:** Als Karlsruher:in möchte ich Baustellen-Änderungen in meinem
-Stadtteil abonnieren, um ohne täglichen Seitenbesuch mitzubekommen, wenn in meiner
-Nähe etwas Neues aufgemacht, geändert oder aufgehoben wird.
+**User Story:** Als Karlsruher:in möchte ich Baustellen-Änderungen abonnieren, um
+ohne täglichen Seitenbesuch mitzubekommen, wenn in Karlsruhe etwas Neues
+aufgemacht, geändert oder aufgehoben wird.
 
 **Verfeinert am:** 2026-07-24 (Evaluierung zu `BACKLOG.md` #16)
+**Entscheidung 2026-07-24:** **Stadtteil-Aufteilung wird nicht verfolgt** — kein
+Stadtteilgrenzen-Asset, kein Point-in-Polygon. Damit entfällt die einzige
+zusätzliche Datenquelle; der Feed speist sich ausschließlich aus dem, was der Build
+ohnehin erzeugt. Der geografische „in meiner Nähe"-Bedarf wird **clientseitig**
+über die vorhandene Umkreissuche + eine „seit letztem Besuch"-Markierung gedeckt
+(siehe unten), nicht über feed-seitige Partitionierung.
 **Status-Hinweis:** Evaluierung abgeschlossen mit klarer Empfehlung; die
-Granularitäts-Weichen (siehe unten) warten noch auf die Ideengeberin — deshalb
-`in Verfeinerung`, nicht `umsetzungsbereit`.
+verbleibende Weiche (Facetten-Feeds ja/nein) wartet noch auf die Ideengeberin —
+deshalb `in Verfeinerung`, nicht `umsetzungsbereit`.
 
 ### „Push" vs. „Abo" — zuerst die Begriffe trennen
 
@@ -192,9 +198,10 @@ Das ist die entscheidende Weiche, weil nur eine der beiden ohne Backend geht.
 - **Vorgeneriert-und-committen ist das etablierte Muster:** `build-data.mjs`
   schreibt statische Artefakte (GeoJSON, CHANGELOG, QUALITY) atomar und **nur bei
   echter Datenänderung**. Ein Feed reiht sich als weiteres Artefakt genau hier ein.
-- **Was fehlt:** ein **Stadtteil je Vorgang.** Der Datensatz hat **kein**
-  Stadtteil-Feld — nur `titel` (Straße) und die Punkt-Koordinaten (siehe
-  `buildFeature`). Für „pro Stadtteil" muss der Stadtteil abgeleitet werden.
+- **Nichts fehlt für einen globalen Feed:** Diff + Feature-Liste liegen im Build
+  bereits vor. (Eine Stadtteil-Aufteilung hätte einen abgeleiteten Stadtteil je
+  Vorgang gebraucht — der Datensatz hat **kein** Stadtteil-Feld, nur `titel` +
+  Koordinaten. Das ist per Entscheidung vom Tisch, siehe oben.)
 
 ### Machbarkeit ohne Backend
 
@@ -224,47 +231,51 @@ Das ist die entscheidende Weiche, weil nur eine der beiden ohne Backend geht.
 - „**Kein Nutzerkonto, kein Login**": Ein Feed-Abo ist anonym; die Beziehung
   „Nutzer ↔ Abo" lebt ausschließlich im Feed-Reader des Nutzers.
 
-### Der harte Teil: den Stadtteil ableiten — Optionen
+### Feed-Zuschnitt — nur was ohne Zusatz-Datenquelle geht
+
+Nach der Entscheidung gegen Stadtteilgrenzen bleiben zwei Zuschnitte, die sich
+**allein aus vorhandenen Feldern** speisen:
 
 | Option | Wie | Trade-off |
 |---|---|---|
-| **(A) Point-in-Polygon (empfohlen)** | Zur **Build-Zeit** in Node den Marker-Punkt gegen die amtlichen Stadtteilgrenzen testen; Stadtteil als Property/Feed-Zuordnung. | Genau & robust; +1 statisches Grenz-Asset + kleine PiP-Funktion (reine Geometrie, DOM-/netzfrei → passt in `src/lib/`). Grenz-Datenquelle muss verifiziert werden. |
-| (B) Straßenname → Stadtteil-Lookup | Tabelle `Straße → Stadtteil`, Zuordnung über `titel`. | Kein Grenz-Asset nötig, aber **fragil** (Schreibweisen, straßenübergreifende Lagen), hoher Pflegeaufwand, unvollständig. Höchstens Fallback. |
-| (C) Kein Stadtteil-Split | Nur **ein globaler** Feed (+ optional facettierte Feeds nach Ampel/Verkehrsmittel/Zeitraum aus vorhandenen Feldern). | Minimaler Aufwand, sofort machbar; erfüllt „pro Stadtteil" aber **nicht**. Guter erster Schritt / Rückfallebene. |
+| **(1) Globaler Feed (empfohlen)** | Ein Feed `feeds/alle.xml` mit dem gesamten Änderungsstrom (neu/geändert/entfernt). | Minimal, sofort machbar, deckt den Kernnutzen. Keine Geo-Vorfilterung. |
+| (2) + Facetten-Feeds | Zusätzlich ein Feed je vorhandener Dimension, z. B. `feeds/vollsperrungen.xml`, `feeds/rad.xml` (aus `ampel` / `verkehrsmittel`). | Kein neues Asset, aber mehr Dateien + Kombinationsfragen; Nutzen begrenzt, solange die Facetten grob sind. |
 
-**Empfehlung:** **(C) als Basis (globaler Feed) + (A) für die Stadtteil-Idee.**
-Der globale Feed ist immer sinnvoll und billig; die Stadtteil-Aufteilung baut per
-Build-Zeit-PiP darauf auf, ohne den Client oder den Kern-Ladepfad zu belasten.
+**Empfehlung:** **(1) als Kern.** Facetten-Feeds (2) nur, wenn die Ideengeberin
+konkreten Bedarf sieht — sie sind billig nachrüstbar, aber nicht der Kern.
 
-### Ergänzend erwähnenswert (eigener kleiner Baustein, nicht Teil von F-2)
+### Der geografische „in meiner Nähe"-Bedarf (ohne Stadtteile)
 
-Eine **clientseitige Pseudo-Subscription** „**seit deinem letzten Besuch neu**":
-letzter gesehener `stand` + gesehene Vorgangs-IDs in `localStorage`, beim nächsten
-Besuch als Banner/Markierung. Kein Feed-Reader, kein Push, anonym. Deckt den
-Alltagsnutzen für Gelegenheitsnutzer ab, die keinen Reader betreiben — komplementär
-zum Feed. Sollte bei Interesse als eigener Feature-Eintrag verfeinert werden.
+Statt feed-seitiger Geo-Partitionierung deckt eine **clientseitige
+Pseudo-Subscription** den „was ist neu bei mir?"-Bedarf ab: letzter gesehener
+`stand` + gesehene Vorgangs-IDs in `localStorage`, beim nächsten Besuch als
+Banner/Markierung — **kombiniert mit der bereits vorhandenen Umkreissuche** um eine
+gespeicherte Adresse. Kein Feed-Reader, kein Push, kein Backend, anonym. Das ist
+der eigentliche Ersatz für „pro Stadtteil" und dockt an bestehenden Client-Code an
+(`geocode`, Umkreis-Zweig in `currentFiltered`). Wird als **eigener kleiner
+Feature-Eintrag** verfeinert (komplementär zu F-2, kein Blocker).
 
 ### Offene Weichen (Entscheidung der Ideengeberin)
 
-1. **Granularität:** nur globaler Feed · global + 27 Stadtteile · zusätzlich
-   facettierte Feeds (Ampel/Verkehrsmittel)? *(Empfehlung: global + Stadtteile.)*
+1. **Facetten-Feeds:** nur globaler Feed — oder zusätzlich Feeds nach
+   Ampel/Verkehrsmittel? *(Empfehlung: nur global; Facetten bei konkretem Bedarf
+   nachrüsten.)*
 2. **Item-Umfang:** Feed als reiner **Änderungsstrom** (neu/geändert/entfernt, wie
    CHANGELOG) — oder zusätzlich ein „Bestands-Feed" aller aktuell offenen
-   Baustellen je Stadtteil? *(Empfehlung: Änderungsstrom, deckt sich mit dem Diff.)*
-3. **Stadtteil-Zuordnung:** PiP (A) sofort, oder mit globalem Feed (C) starten und
-   (A) nachziehen? *(Empfehlung: C zuerst ausliefern, A direkt danach.)*
+   Baustellen? *(Empfehlung: Änderungsstrom, deckt sich 1:1 mit dem Diff.)*
+3. ~~Stadtteil-Zuordnung~~ — **entschieden: keine** (kein Stadtteilgrenzen-Asset,
+   kein Point-in-Polygon).
 
 ### Spezifikation (Skizze, sobald Weichen stehen)
 
-**Format:** **Atom 1.0** (saubere `<id>`/`<updated>`, GeoRSS-Punkt optional). Pro
-Stadtteil eine eigene Datei (Reader filtern Kategorien beim Abruf nicht
-serverseitig) unter z. B. `feeds/<stadtteil>.xml`, plus `feeds/alle.xml`.
+**Format:** **Atom 1.0** (saubere `<id>`/`<updated>`, GeoRSS-Punkt optional). Eine
+Datei `feeds/alle.xml`; bei Weiche 1 = ja zusätzlich `feeds/<facette>.xml`.
 
 **Erzeugung:** neues reines Modul `src/lib/feed.js` (DOM-/netz-/abhängigkeitsfrei,
 harte Randbedingung), das aus dem vorhandenen `diff`-Objekt + Feature-Liste
 Atom-XML rendert; aufgerufen aus `build-data.mjs` **im selben „nur bei echter
-Änderung"-Zweig** wie GeoJSON/CHANGELOG. PiP-Zuordnung ebenfalls Build-Zeit (eigene
-reine Funktion, Grenzen aus statischem Asset).
+Änderung"-Zweig** wie GeoJSON/CHANGELOG. Keine zusätzliche Datenquelle, keine
+Geometrie-Zuordnung.
 
 **Invarianten-Schutz (Fallstrick aus CLAUDE.md):**
 - **Keine pro-Lauf-volatilen Werte** in den Feed. Jeder Eintrag bekommt eine
@@ -275,21 +286,18 @@ reine Funktion, Grenzen aus statischem Asset).
 - Feed-`<updated>` der Gesamtdatei = `collection.stand`.
 
 **Discovery:** `<link rel="alternate" type="application/atom+xml" …>` im
-`index.html` + ein UI-Hinweis „Diesen Stadtteil abonnieren" (nur wenn Weiche 1 die
-Stadtteil-Feeds enthält).
+`index.html` + ein UI-Hinweis „Änderungen abonnieren".
 
 **Randfälle:**
 | Fall | Verhalten |
 |---|---|
-| Vorgang außerhalb aller Stadtteil-Polygone (Rand/Ungenauigkeit) | in `alle.xml`; Zuordnung „ohne Stadtteil"/nächster Nachbar dokumentiert |
 | Erstbefüllung (`firstFill`) | Feed mit Startbestand statt riesiger „alles neu"-Liste, analog CHANGELOG |
 | Kein Feed-Reader beim Nutzer | Feed bleibt lesbar im Browser; ergänzend die localStorage-Lösung |
-| Grenz-Asset nicht verfügbar/veraltet | Rückfall auf globalen Feed (C), Warnung im Job-Summary |
+| Leerer Diff (keine Änderung) | kein Feed-Rewrite (Invariante „nur bei echter Änderung") |
 
 **Testplan:** `scripts/test-feed.mjs` (in `npm test`): Atom-Wohlgeformtheit,
 stabile `<id>`/`<updated>` (kein volatiler Wert), Diff→Item-Mapping (added/removed/
-changed), PiP-Zuordnung gegen bekannte Referenzpunkte, leerer Diff → kein
-Feed-Rewrite.
+changed), leerer Diff → kein Feed-Rewrite.
 
 **Doku-/Backlog-Auswirkungen:** SPEC (Nicht-Ziel „Push" präzisieren: Abo ≠ Push),
 README (Abschnitt „Abonnieren"), `BACKLOG.md` #16 (erledigt → verweist hierher).
@@ -297,8 +305,8 @@ README (Abschnitt „Abonnieren"), `BACKLOG.md` #16 (erledigt → verweist hierh
 ### Definition of Done (bei späterer Umsetzung)
 - Globaler Atom-Feed valide, von der Action nur bei echter Änderung geschrieben;
   stabile IDs, `<updated>` = letzte echte Änderung (keine Rausch-Commits).
-- (falls Weiche 1) Stadtteil-Feeds via Build-Zeit-PiP korrekt zugeordnet.
-- `src/lib/feed.js` (und ggf. PiP-Modul) DOM-/netz-/abhängigkeitsfrei;
-  `scripts/test-feed.mjs` grün in `npm test`.
+- `src/lib/feed.js` DOM-/netz-/abhängigkeitsfrei; `scripts/test-feed.mjs` grün in
+  `npm test`.
 - Feed-Autodiscovery im `index.html`; SPEC/README/BACKLOG aktualisiert.
-- Kein neuer nutzerbezogener Datenspeicher, kein Login, kein echtes Push.
+- Kein neuer nutzerbezogener Datenspeicher, kein Login, kein echtes Push, **keine
+  zusätzliche Datenquelle** (keine Stadtteilgrenzen).
