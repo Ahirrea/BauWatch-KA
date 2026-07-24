@@ -45,15 +45,19 @@ src/
 scripts/
   build-data.mjs           von der Action ausgeführt: holt & baut die Daten
   diff-data.mjs            Änderungsvergleich zweier Snapshots (für Changelog)
+  quality-report.mjs       erzeugt den Datenqualitäts-Report (data/QUALITY.md)
   test-transform.mjs       Referenztest der Koordinaten-Transformation
   test-diff.mjs            Tests der Änderungserkennung
+  test-classify.mjs        Tests der Klartext-/Ampel-/Verkehrsmittel-Einordnung
+  test-quality.mjs         Tests des Qualitäts-Reports
 data/
   baustellen.geojson       generierter, committeter Snapshot (Startwert: Beispieldaten)
   CHANGELOG.md             automatisch gepflegtes Änderungsprotokoll der Daten
+  QUALITY.md               automatisch erzeugter Datenqualitäts-Report je Build
 vendor/leaflet/            Leaflet lokal eingebunden (kein CDN)
 .github/workflows/
   update-data.yml          Cron + manueller Trigger
-docs/                      SPEC, ADR, Backlog
+docs/                      SPEC, ADR, Backlog, Feature-Backlog & -Refinement
 ```
 
 ## Lokal starten
@@ -74,13 +78,19 @@ wegen `fetch`).
 ### Daten lokal neu bauen
 
 ```bash
-node scripts/build-data.mjs
+npm run build:data        # = node scripts/build-data.mjs
 ```
 
 Das Skript ruft den Stadt-WFS ab, filtert auf Karlsruhe, dedupliziert
 Punkt/Polygon, transformiert die Koordinaten, bereinigt die Felder und schreibt
-`data/baustellen.geojson`. Bei einem API-Fehler oder einem verdächtig leeren
-Ergebnis bricht es **ab, ohne die vorhandene Datei zu überschreiben**.
+`data/baustellen.geojson` (plus den Qualitäts-Report `data/QUALITY.md`). Bei
+einem API-Fehler oder einem verdächtig leeren Ergebnis bricht es **ab, ohne die
+vorhandene Datei zu überschreiben** — mit dem Flag `--allow-empty` lässt sich
+das Schreiben auch bei 0 Treffern erzwingen.
+
+> **Netzzugriff nötig:** Der Abruf geht an `mobil.trk.de`. In manchen Umgebungen
+> ist dieser Host per Egress-Policy geblockt (die GitHub-Action-Runner erreichen
+> ihn); lokal schlägt der Build dann fehl.
 
 > Im Repo liegt zunächst ein kleiner **Beispiel-Datensatz** (`sample: true`,
 > im Footer als Beispieldaten markiert). Der erste erfolgreiche Action-Lauf
@@ -89,13 +99,21 @@ Ergebnis bricht es **ab, ohne die vorhandene Datei zu überschreiben**.
 ### Tests
 
 ```bash
-npm test    # bzw. node scripts/test-transform.mjs
+npm test    # führt alle vier Testskripte nacheinander aus
 ```
 
-Prüft `transform.js` gegen bekannte Referenzkoordinaten (u. a. Marktplatz
-Karlsruhe und den Zentralmeridian-Invariant). Die Referenzwerte wurden einmalig
-mit `proj4` erzeugt — `proj4` ist **keine Laufzeit-Abhängigkeit**, nur ein
-Dev-Werkzeug.
+`npm test` läuft `test-transform`, `test-diff`, `test-classify` und
+`test-quality` durch; einzeln z. B. `node scripts/test-transform.mjs`. Geprüft
+werden u. a.:
+
+- **`transform.js`** gegen bekannte Referenzkoordinaten (u. a. Marktplatz
+  Karlsruhe und den Zentralmeridian-Invariant),
+- die **Änderungserkennung** (`diff-data.mjs`),
+- die **fachliche Einordnung** (Klartext, Sperrgrad-Ampel, Verkehrsmittel),
+- der **Qualitäts-Report** (`quality-report.mjs`).
+
+Die Referenzwerte der Transformation wurden einmalig mit `proj4` erzeugt —
+`proj4` ist **keine Laufzeit-Abhängigkeit**, nur ein Dev-Werkzeug.
 
 ## GitHub Pages aktivieren (#5)
 
@@ -138,6 +156,9 @@ Daraus ergibt sich, wo man sieht, *ob* und *was* sich geändert hat:
   Commit-Message enthält die Kurzfassung („3 neu, 1 entfernt …").
 - **Action-Job-Summary** — pro Lauf im Actions-Tab (auch die Läufe *ohne*
   Änderung sind dort mit Zeitstempel gelistet).
+- **`data/QUALITY.md`** — beim Build erzeugter Qualitäts-Report (Feature-Zahlen
+  je Pipeline-Stufe, leere Pflichtfelder u. Ä.), um Auffälligkeiten in den
+  Rohdaten schnell zu erkennen.
 
 ### Wie oft ändern sich die Daten wirklich?
 
@@ -157,9 +178,11 @@ Zeitpunkt der letzten echten Änderung — nicht den letzten Prüflauf.
 
 ### Ein `art`-Klartext-Mapping ergänzen (#15)
 
-Die Übersetzung der Verwaltungscodes lebt in
-[`src/lib/classify.js`](src/lib/classify.js) in der Tabelle `ART_MAP`.
-Ein neues Mapping ist eine einzige Zeile:
+Das amtliche Feld `art` liefert in der Regel **bereits lesbaren Klartext**
+(z. B. „Straßenbau") — der wird unverändert übernommen. Für die Fälle, in denen
+ein Wert dennoch übersetzt oder vereinheitlicht werden soll, gibt es in
+[`src/lib/classify.js`](src/lib/classify.js) die Override-Tabelle `ART_MAP`.
+Ein neuer Eintrag ist eine einzige Zeile:
 
 ```js
 export const ART_MAP = {
@@ -169,10 +192,11 @@ export const ART_MAP = {
 ```
 
 Schlüssel werden getrimmt und case-insensitiv verglichen (auch ohne
-Leer-/Sonderzeichen). Unbekannte Codes bekommen automatisch einen ehrlichen
+Leer-/Sonderzeichen). Fehlt ein Override, wird echter Klartext direkt
+durchgereicht; ein kryptischer Code ohne Übersetzung bekommt den ehrlichen
 Fallback `Baustelle (<code>)`, damit fehlende Mappings sichtbar bleiben.
-Nach dem Ergänzen `node scripts/build-data.mjs` laufen lassen (oder die Action
-neu auslösen), damit die Änderung in die aufbereiteten Daten einfließt.
+Nach dem Ergänzen `npm run build:data` laufen lassen (oder die Action neu
+auslösen), damit die Änderung in die aufbereiteten Daten einfließt.
 
 ### Sperrgrad- und Verkehrsmittel-Erkennung
 
