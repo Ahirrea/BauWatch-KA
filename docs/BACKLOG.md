@@ -135,15 +135,17 @@ ohne Backend machbar ist.
   (kein Server, keine Endpoint-Speicherung, anonym). Die Feed-Items sind genau der
   Diff, den `diff-data.mjs` schon berechnet (added/removed/changed) — der Feed ist
   der maschinenlesbare Zwilling von `data/CHANGELOG.md`.
-- **„Pro Stadtteil" ist machbar**, erfordert aber die **Ableitung** des Stadtteils
-  (der Datensatz hat **kein** Stadtteil-Feld, nur Straße + Koordinaten): empfohlen
-  per **Build-Zeit-Point-in-Polygon** gegen die amtlichen Stadtteilgrenzen (27
-  Karlsruher Stadtteile; offene Geodaten CC-BY — die genaue Grenz-Quelle/Layer ist
-  vor der Umsetzung zu verifizieren).
-Vollständig ausgearbeitet als Feature-Eintrag **F-2** im
-[Feature-Backlog](./FEATURE-BACKLOG.md) (Optionen, Trade-offs, Spezifikation,
-offene Weichen). — **evaluiert; Umsetzung wartet auf die Weichen-Entscheidung der
-Ideengeberin.** (Label: `enhancement`, `data`)
+- **„Pro Stadtteil" wäre nur über eine Ableitung des Stadtteils möglich** (der
+  Datensatz hat **kein** Stadtteil-Feld, nur Straße + Koordinaten) — z. B. per
+  Point-in-Polygon gegen die amtlichen Stadtteilgrenzen. **Entscheidung
+  (2026-07-24): nicht verfolgt** — keine zusätzliche Datenquelle. Der geografische
+  „in meiner Nähe"-Bedarf wird stattdessen **clientseitig** über die vorhandene
+  Umkreissuche + eine „seit letztem Besuch"-Markierung gedeckt.
+Der verbleibende Umfang — ein **globaler Atom-Feed** aus dem ohnehin berechneten
+Diff — ist als Feature-Eintrag **F-2** im [Feature-Backlog](./FEATURE-BACKLOG.md)
+ausgearbeitet (Zuschnitt-Optionen, Spezifikation, offene Weiche „Facetten-Feeds").
+— **evaluiert; Umsetzung wartet auf die Weichen-Entscheidung der Ideengeberin.**
+(Label: `enhancement`, `data`)
 
 ### ⬜ #17 Kalender-Export geplanter Baustellen
 `.ics` für „bald geplante" Sperrungen in einem gewählten Umkreis. — **offen.**
