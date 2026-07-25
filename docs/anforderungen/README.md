@@ -12,6 +12,10 @@ Anforderungsdateien selbst führen keinen Status, damit nichts auseinanderlaufen
 kann. Eine erledigte Anforderung **bleibt liegen, wo sie ist**; sie ist ab dann
 das Protokoll, *warum* es so gelöst wurde.
 
+**Zeile oder Datei?** Eine rohe Idee bleibt eine Zeile in der Tabelle. Erst bei
+der Verfeinerung entsteht `A-<Nr>-<kurz-titel>.md` und die Zeile wird verlinkt —
+so füllt sich der Ordner nicht mit leeren Vorlagen.
+
 **Statuslegende:** `💡 Idee` · `✅ bereit` · `🚧 in Umsetzung` · `🏁 erledigt`
 · `🧊 zurückgestellt` · `🗑 verworfen`
 
@@ -27,9 +31,11 @@ das Protokoll, *warum* es so gelöst wurde.
 
 Schritt 7 des [Refinement-Prozesses](../PROZESS.md):
 
-1. [`_vorlage.md`](./_vorlage.md) nach `A-<nächste Nr>-<kurz-titel>.md` kopieren
-   und ausfüllen (Nummern werden nicht wiederverwendet, auch nicht bei `🗑 verworfen`).
-2. In der Tabelle oben eine Zeile ergänzen: Nummer, Link, Status, ein Satz Nutzen.
+1. Für eine rohe Idee genügt eine neue Zeile mit Status `💡 Idee`.
+2. Zur Verfeinerung [`_vorlage.md`](./_vorlage.md) nach
+   `A-<nächste Nr>-<kurz-titel>.md` kopieren und ausfüllen (Nummern werden nicht
+   wiederverwendet, auch nicht bei `🗑 verworfen`), dann die Zeile verlinken und
+   auf `✅ bereit` setzen.
 3. Status ausschließlich hier pflegen — auch später bei `🚧` und `🏁`.
 
 > Hieß bis 2026-07-25 `docs/features/` mit `F-<Nr>`-Nummern; die Umbenennung hat

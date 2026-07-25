@@ -33,6 +33,14 @@ Bevor der Prozess losgeht: gehört die Sache überhaupt hierher?
 - Es ist ein Fix mit offensichtlicher Lösung.
 - Es ist in einer Sitzung erledigt und niemand wird später fragen, *warum* so.
 
+## Zeile oder Datei?
+
+Eine **rohe Idee braucht keine Datei**. Solange sie in einem Satz erklärt ist,
+genügt eine Zeile in der [Übersicht](./anforderungen/README.md#übersicht) mit
+Status `💡 Idee`. Erst wenn mehr dazu steht — Optionen, Zahlen, Querverweise,
+getroffene Entscheidungen — bekommt sie eine eigene Datei. Die Anforderungsliste
+soll ausgearbeitete Anforderungen enthalten, keine Sammlung leerer Vorlagen.
+
 ## Die Schritte
 
 ### 1. Idee erfassen
@@ -78,8 +86,8 @@ grobe Umsetzungsschritte.
 ### 7. In die Anforderungsliste aufnehmen
 [`docs/anforderungen/_vorlage.md`](./anforderungen/_vorlage.md) nach
 `docs/anforderungen/A-<Nr>-<kurz-titel>.md` kopieren und ausfüllen, dann in
-[`docs/anforderungen/README.md`](./anforderungen/README.md) eine Zeile mit
-Nummer, Link, Status **✅ bereit** und einem Satz Nutzen ergänzen. Der Status
+[`docs/anforderungen/README.md`](./anforderungen/README.md) die Zeile auf Status
+**✅ bereit** setzen und verlinken. Der Status
 lebt **nur** in dieser Übersicht, nicht in der Anforderungsdatei.
 
 ### 8. Umsetzung erst nach grünem Licht
