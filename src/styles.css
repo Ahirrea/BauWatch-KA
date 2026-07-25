@@ -104,6 +104,52 @@ body {
   color: var(--text-muted);
 }
 
+/* --- Update-Hinweis der PWA ---
+   Erscheint nur, wenn eine neue Version bereitsteht. Kein Fokus-Raub, kein
+   Auto-Reload — die Nutzerin entscheidet (Entscheidung 4 in A-3). Solange die
+   Live-Region leer ist, belegt sie dank :empty keinen vertikalen Platz. */
+.update-banner:empty {
+  display: none;
+}
+.update-banner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.75rem;
+  align-items: center;
+  /* Rahmen um 1rem einrücken wie der Inhalt der übrigen Abschnitte, dabei
+     zentriert und auf die gleiche Maximalbreite begrenzt. */
+  width: calc(100% - 2rem);
+  max-width: calc(1200px - 2rem);
+  margin: 0 auto 0.25rem;
+  padding: 0.6rem 0.85rem;
+  background: var(--surface);
+  border: 1px solid var(--accent);
+  border-left-width: 5px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  font-size: 0.95rem;
+}
+.update-banner button {
+  padding: 0.4rem 0.9rem;
+  font: inherit;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  background: var(--accent);
+  color: var(--accent-contrast);
+  cursor: pointer;
+}
+.update-banner.is-visible {
+  animation: banner-ein 180ms ease-out;
+}
+@keyframes banner-ein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 /* --- Suche --- */
 .search {
   display: flex;
@@ -137,6 +183,12 @@ body {
   background: var(--surface);
   color: var(--text);
   border-color: var(--border);
+}
+/* Offline abgeschaltet (Nominatim braucht Netz) — sichtbar, nicht nur inaktiv. */
+.search input[type="text"]:disabled,
+.search button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
 }
 .search-status {
   flex-basis: 100%;
@@ -383,6 +435,21 @@ body {
 .stand-hint {
   color: var(--text-muted);
   font-size: 0.8rem;
+}
+/* Offline-Kennzeichnung des Datenstands: der Stand ist echt, aber die Seite
+   konnte nicht nachsehen, ob es inzwischen einen neueren Snapshot gibt.
+   Dezent, nicht als Fehler — die Daten sind ja da. */
+.stand.is-stale {
+  color: var(--text);
+}
+.stand.is-stale #stand {
+  font-weight: 600;
+}
+/* Bewusst --accent und nicht --amber/--red: --amber verfehlt als Textfarbe den
+   AA-Kontrast, --red würde einen Fehler suggerieren — es ist keiner. */
+.stand-offline {
+  color: var(--accent);
+  font-weight: 600;
 }
 
 /* --- Desktop-Layout: Karte + Liste nebeneinander --- */

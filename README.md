@@ -8,6 +8,7 @@ Zeitraum?"**
 - 🗺️ Karte + synchronisierte Liste (Leaflet + OpenStreetMap)
 - 🚦 Ampel für den Sperrgrad, Klartext statt Verwaltungscodes, Restdauer
 - 🔎 Adress-/Umkreissuche (1,5 km), Filter nach Zeitraum, Sperrgrad, Verkehrsmittel
+- 📲 Als App installierbar und offline nutzbar (siehe [Als App installieren](#als-app-installieren))
 - ⚙️ Rein statisch auf GitHub Pages — kein Server, keine laufenden Kosten
 
 Ausführliche Produktbeschreibung: [`docs/PRD.md`](docs/PRD.md).
@@ -38,6 +39,9 @@ in `src/lib/` und wird **von Build-Skript und Client gemeinsam** genutzt.
 
 ```
 index.html                 Einstieg, lädt src/app.js + Leaflet (lokal)
+manifest.webmanifest       PWA-Manifest (Name, Icons, Farben, start_url)
+sw.js                      Service Worker: Shell-Precache + Offline-Daten
+icons/                     icon.svg (Quelle) + daraus gerenderte PNGs
 src/
   app.js                   UI, Karte, Filter, Rendering
   styles.css
@@ -49,10 +53,12 @@ scripts/
   build-data.mjs           von der Action ausgeführt: holt & baut die Daten
   diff-data.mjs            Änderungsvergleich zweier Snapshots (für Changelog)
   quality-report.mjs       erzeugt den Datenqualitäts-Report (data/QUALITY.md)
+  render-icons.mjs         rendert icons/*.png aus icons/icon.svg (manuell, nicht in CI)
   test-transform.mjs       Referenztest der Koordinaten-Transformation
   test-diff.mjs            Tests der Änderungserkennung
   test-classify.mjs        Tests der Klartext-/Ampel-/Verkehrsmittel-Einordnung
   test-quality.mjs         Tests des Qualitäts-Reports
+  test-pwa.mjs             Tests von Manifest, Icons und Service Worker
 data/
   baustellen.geojson       generierter, committeter Snapshot (Startwert: Beispieldaten)
   CHANGELOG.md             automatisch gepflegtes Änderungsprotokoll der Daten
@@ -102,18 +108,21 @@ das Schreiben auch bei 0 Treffern erzwingen.
 ### Tests
 
 ```bash
-npm test    # führt alle vier Testskripte nacheinander aus
+npm test    # führt alle Testskripte nacheinander aus
 ```
 
-`npm test` läuft `test-transform`, `test-diff`, `test-classify` und
-`test-quality` durch; einzeln z. B. `node scripts/test-transform.mjs`. Geprüft
+`npm test` läuft `test-transform`, `test-diff`, `test-classify`, `test-quality`
+und `test-pwa` durch; einzeln z. B. `node scripts/test-transform.mjs`. Geprüft
 werden u. a.:
 
 - **`transform.js`** gegen bekannte Referenzkoordinaten (u. a. Marktplatz
   Karlsruhe und den Zentralmeridian-Invariant),
 - die **Änderungserkennung** (`diff-data.mjs`),
 - die **fachliche Einordnung** (Klartext, Sperrgrad-Ampel, Verkehrsmittel),
-- der **Qualitäts-Report** (`quality-report.mjs`).
+- der **Qualitäts-Report** (`quality-report.mjs`),
+- die **PWA-Artefakte** (`manifest.webmanifest`, Icons, `sw.js`): valides
+  Manifest, Icon-Dateien in der angegebenen Größe, **alle Pfade relativ** und
+  jede von `index.html` bzw. `src/app.js` referenzierte Datei auch precacht.
 
 Die Referenzwerte der Transformation wurden einmalig mit `proj4` erzeugt —
 `proj4` ist **keine Laufzeit-Abhängigkeit**, nur ein Dev-Werkzeug.
@@ -131,6 +140,43 @@ Diese Variante (Deploy aus dem Branch) ist bewusst gewählt: Jeder Commit auf
 `main` — auch die Datenaktualisierungen der Action — ist damit sofort live, ohne
 zusätzlichen Deploy-Schritt. Die Datei `.nojekyll` sorgt dafür, dass alle
 Verzeichnisse unverändert ausgeliefert werden.
+
+## Als App installieren
+
+Die Seite ist eine **Progressive Web App**: Sie lässt sich auf den
+Startbildschirm legen und funktioniert danach auch ohne Netz. Ein eigener
+„Installieren"-Knopf gibt es bewusst nicht — die Installation läuft über das
+Browser-Menü (Details und Begründung in
+[A-3](docs/anforderungen/A-3-pwa-installierbar-offline.md)):
+
+- **Android/Chrome:** Menü ⋮ → „App installieren" bzw. „Zum Startbildschirm hinzufügen"
+- **iOS/Safari:** Teilen-Symbol → „Zum Home-Bildschirm"
+- **Desktop/Chrome, Edge:** Installations-Symbol in der Adressleiste
+
+**Was offline funktioniert:** Karte (ohne Kartenkacheln — die Fläche bleibt grau),
+Marker, Liste, alle Filter und die Detailangaben, gerechnet auf dem **zuletzt
+geladenen Datenstand**. Der Footer weist das dann ausdrücklich aus:
+„Daten zuletzt geändert: … · **offline, aus dem Gerätespeicher**".
+
+**Was offline nicht funktioniert:** die Adress-/Umkreissuche — sie braucht
+Nominatim. Eingabefeld und Knopf sind offline deaktiviert und der Suchstatus
+sagt es (statt still ins Leere zu laufen).
+
+**Mit Netz gilt immer der frische Stand.** Der Datenabruf ist *network-first*:
+Es wird stets zuerst der committete Snapshot geholt, der Cache ist nur der
+Rückfall. Ein Kartenkachel-Cache existiert bewusst nicht.
+
+**Neue Version:** Änderungen an der App zeigt ein Hinweis-Banner
+(„Neue Version verfügbar" + „Neu laden"). Neu geladen wird **nur auf Klick** —
+ein automatischer Reload würde Filter, Suche und Kartenposition mitten in der
+Bedienung wegräumen.
+
+> **Für Entwickelnde:** Service Worker brauchen einen *Secure Context*.
+> `http://localhost:8080` zählt als sicher, `file://` nicht — offline testen
+> lässt sich die Seite also nur über den lokalen HTTP-Server. Und: **wer eine
+> Shell-Datei ändert, muss `CACHE_SHELL` in [`sw.js`](sw.js) hochzählen**, sonst
+> behalten installierte Clients die alte Fassung. Die App-Icons entstehen aus
+> `icons/icon.svg` per `node scripts/render-icons.mjs` (manuell, nicht in CI).
 
 ## Die Daten-Action (#4)
 

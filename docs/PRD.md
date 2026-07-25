@@ -53,6 +53,10 @@ lesen. Kein Fachpublikum, keine Verwaltung.
   `zusatzinfo`, Restdauer als „noch X Tage".
 - Kennzahlen-Leiste (Anzahl, Vollsperrungen, Behinderungen).
 - Responsiv bis Mobil; Tastaturbedienung; „stand"-Datum sichtbar.
+- **Auf den Startbildschirm installierbar und offline nutzbar** (PWA): App-Shell
+  und der zuletzt geladene Datenstand liegen auf dem Gerät, offline sichtbar
+  gekennzeichnet. Siehe
+  [A-3](./anforderungen/A-3-pwa-installierbar-offline.md).
 
 ## 4. Nicht-Ziele (bewusst ausgeschlossen)
 
@@ -62,9 +66,16 @@ lesen. Kein Fachpublikum, keine Verwaltung.
 - **Keine anderen Gemeinden.** Der Datensatz enthält sie, wir filtern sie raus.
 - **Kein Nutzerkonto, kein Login.** Alles anonym und clientseitig.
 - **Kein echtes Push.** (Abo-Variante ohne Backend siehe
-  [A-2](./anforderungen/A-2-baustellen-abo-feed.md).)
+  [A-2](./anforderungen/A-2-baustellen-abo-feed.md).) Der Service Worker aus
+  [A-3](./anforderungen/A-3-pwa-installierbar-offline.md) wäre die technische
+  Voraussetzung dafür — er hat deshalb **bewusst keinen `push`-,
+  `notificationclick`- oder `sync`-Handler**, und `scripts/test-pwa.mjs` prüft das.
 - **Kein Melde-Rückkanal** an die Stadt (evtl. später).
-- **Keine eigene Datenhaltung** über das committete GeoJSON hinaus.
+- **Keine eigene Datenhaltung** über das committete GeoJSON hinaus. Der
+  Offline-Cache aus [A-3](./anforderungen/A-3-pwa-installierbar-offline.md) hält
+  nur **dieselben ausgelieferten Dateien** auf dem Gerät vor — nichts
+  Nutzerbezogenes, nichts, was nicht ohnehin geladen wurde, jederzeit über die
+  Browser-Einstellungen löschbar.
 - **Kein Backend, kein Build-Schritt fürs Frontend.** Siehe
   [ADR-001](./entscheidungen/ADR-001-statisches-hosting.md).
 
@@ -86,6 +97,11 @@ Alles andere ist nachrangig.
   betroffen ist.
 - Die Seite lädt ohne Server und verursacht keine laufenden Kosten.
 - Die Daten sind nie älter als der letzte Action-Lauf, und der Stand ist sichtbar.
+  **Mit Netz gilt das unverändert** — der Datenabruf ist network-first, ein
+  gecachter Snapshot überstimmt den frischen nie. **Ohne Netz** zeigt die Seite
+  den zuletzt geladenen Stand, dann aber ausdrücklich als „offline, aus dem
+  Gerätespeicher" gekennzeichnet: transparent veraltet statt gar nichts
+  (siehe [A-3](./anforderungen/A-3-pwa-installierbar-offline.md)).
 
 ## 7. Rahmenbedingungen
 

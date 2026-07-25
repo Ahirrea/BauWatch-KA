@@ -25,7 +25,7 @@ so füllt sich der Ordner nicht mit leeren Vorlagen.
 |---|---|---|---|
 | A-1 | [Mein Arbeitsweg](./A-1-mein-arbeitsweg.md) | ✅ bereit | Zeigt beim Öffnen, ob auf dem hinterlegten Weg (Start → Ziel, ein Verkehrsmittel) Baustellen liegen. |
 | A-2 | [Baustellen-Abo (statischer Feed)](./A-2-baustellen-abo-feed.md) | ✅ bereit | Änderungen (neu/geändert/entfernt) als statischer Atom-Feed für den Feed-Reader — ohne Backend, ohne echtes Push. |
-| A-3 | [Als App installierbar & offline nutzbar (PWA)](./A-3-pwa-installierbar-offline.md) | ✅ bereit | Seite auf den Startbildschirm installierbar; Shell und zuletzt geladene Daten offline nutzbar, mit sichtbarem Stand. |
+| A-3 | [Als App installierbar & offline nutzbar (PWA)](./A-3-pwa-installierbar-offline.md) | 🏁 erledigt | Seite auf den Startbildschirm installierbar; Shell und zuletzt geladene Daten offline nutzbar, mit sichtbarem Stand. |
 
 ## Neue Anforderung aufnehmen
 

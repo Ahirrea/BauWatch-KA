@@ -11,13 +11,13 @@ Bauabfolge. Labels-Vorschlag: `setup`, `data`, `frontend`, `a11y`, `docs`,
 > entstehen über den festen [Refinement-Prozess](./PROZESS.md).
 
 **Statuslegende:** ✅ erledigt · 🟡 teilweise / offen · ⬜ offen
-**Stand:** 2026-07-24 (nach v1 + Daten-Pipeline gegen echten WFS verifiziert;
-Feinschliff-Befunde aus dem Desktop-UI-Review ergänzt, #20–#23).
+**Stand:** 2026-07-25 (Anforderung A-3 umgesetzt, #24).
 
 > Kurzfassung: Milestones 1–3 sind umgesetzt und die Seite ist über GitHub Pages
 > live (#5). Von Milestone 4 sind #15 und #18 erledigt; #16 (Push-/Abo-Idee) ist
 > evaluiert (Ergebnis → Anforderung A-2), offen bleibt als optionaler Punkt
-> noch #17 (.ics-Export).
+> noch #17 (.ics-Export). Aus den Anforderungen ist **A-3 (PWA) umgesetzt**
+> (#24); offen aus dem Desktop-UI-Review sind #22 und #23.
 
 ---
 
@@ -219,6 +219,35 @@ Laptop-Höhe (~1080p) startet die Karte erst bei ~40 % des Viewports. Kompaktere
 Anordnung prüfen (Filter/Kennzahlen enger oder einzeilig nebeneinander).
 **DoD:** Karte auf 1080p sichtbar höher (Zielwert festlegen); Mobile-Layout und
 Fokusreihenfolge unverändert. (Label: `frontend`)
+
+---
+
+## Umsetzung verfeinerter Anforderungen
+
+Aufgaben, die eine ausgearbeitete Anforderung aus
+[`anforderungen/`](./anforderungen/README.md) technisch umsetzen. Das *Warum* und
+die getroffenen Entscheidungen stehen dort, hier nur der Bauzustand.
+
+### ✅ #24 PWA umsetzen (installierbar & offline) — Anforderung A-3
+Technische Umsetzung der ausgearbeiteten Anforderung
+[A-3](./anforderungen/A-3-pwa-installierbar-offline.md) (dort stehen die
+Entscheidungen und die Definition of Done; der Status lebt in der
+[Übersicht](./anforderungen/README.md#übersicht)).
+**Erledigt:** `manifest.webmanifest` + `<head>`-Einbindung (Manifest, zwei
+`theme-color`-Angaben hell/dunkel, `apple-touch-icon`), `icons/icon.svg` als
+Quelle plus die daraus gerenderten PNGs (192/512/512-maskable/180-Apple,
+`scripts/render-icons.mjs`, manuell), `sw.js` mit Shell-Precache (cache-first,
+alles-oder-nichts pro `CACHE_SHELL`-Version) und **network-first** für
+`data/baustellen.geojson`, Registrierung + Update-Banner in `src/app.js`,
+Offline-Kennzeichnung des Datenstands über den SW-Header `X-Bauwatch-Cache`,
+Deaktivierung der Adresssuche offline, `scripts/test-pwa.mjs` in `npm test`.
+Nicht-Ziele eingehalten: **kein** `push`-/`notificationclick`-/`sync`-Handler
+(vom Test abgesichert), kein Kachel-Cache, kein Install-Banner, kein
+nutzerbezogener Speicher, keine Build-Toolchain.
+Über den Bedarf der Anforderung hinaus ergänzt: der `install`-Handler lädt den
+Datenstand einmal selbst nach — der allererste Seitenaufruf läuft noch
+unkontrolliert am Service Worker vorbei, sonst stünde nach einem einzigen Besuch
+offline die Shell, aber keine einzige Baustelle bereit. (Label: `frontend`, `a11y`)
 
 ---
 

@@ -8,7 +8,9 @@ Startbildschirm haben und auch bei schlechtem oder fehlendem Netz die zuletzt
 geladenen Baustellen sehen, um unterwegs verlässlich nachschauen zu können.
 
 **Verfeinert am:** 2026-07-25
-**Ziel-Branch:** `claude/app-pwa-deployment-t87mu7`
+**Umgesetzt am:** 2026-07-25 auf `claude/pwa-installierbar-offline-9bvyti`
+(der bei der Verfeinerung notierte Ziel-Branch `claude/app-pwa-deployment-t87mu7`
+wurde nicht verwendet)
 
 ## Andockpunkte im Code
 - **`index.html` nutzt durchgängig relative Pfade** (`vendor/…`, `src/…`) → auf dem

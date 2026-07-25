@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-labelledby="titel">
+  <title id="titel">Wo wird gebaut? — Absperrbake</title>
+  <!--
+    Quelle der Wahrheit für alle App-Icons (Anforderung A-3). Die PNGs entstehen
+    hieraus einmalig per `node scripts/render-icons.mjs` (lokal, nicht in CI).
+
+    Bewusst KEIN Text im Motiv — bei 48 px auf dem Startbildschirm unlesbar.
+    Farben sind die Licht-Variablen aus src/styles.css (--accent, --bg); ein Icon
+    hat nur eine Fassung, es folgt nicht dem System-Farbschema.
+
+    Das Motiv liegt vollständig innerhalb der maskable-Sicherheitszone (Kreis um
+    (256,256) mit Radius 205 = 80 % der Kantenlänge): der äußerste Punkt ist die
+    Bakenecke bei (111,127) mit Abstand 195 zur Mitte.
+
+    `rx="72"` am Hintergrund wird von scripts/render-icons.mjs für die
+    maskable- und die Apple-Variante auf 0 gesetzt (vollflächig, ohne Alpha).
+  -->
+  <defs>
+    <!-- Diagonalstreifen der Absperrbake: 48-px-Kachel, um 45° gedreht. -->
+    <pattern id="bake" width="48" height="48" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="48" height="48" fill="#1b4b73" />
+      <rect width="24" height="48" fill="#f7f7f5" />
+    </pattern>
+  </defs>
+
+  <rect id="bg" x="0" y="0" width="512" height="512" rx="72" fill="#f7f7f5" />
+
+  <!-- Pfosten -->
+  <rect x="238" y="204" width="36" height="150" rx="8" fill="#1b4b73" />
+  <!-- Standfuß -->
+  <rect x="176" y="354" width="160" height="26" rx="13" fill="#1b4b73" />
+  <!-- Bakenschild mit Diagonalstreifen -->
+  <rect x="116" y="132" width="280" height="72" rx="10" fill="url(#bake)" stroke="#1b4b73" stroke-width="10" />
+</svg>

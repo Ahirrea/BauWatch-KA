@@ -9,6 +9,15 @@
       content="Bürgernahe Karte und Liste der offenen Baustellen in Karlsruhe. Betrifft mich das — auf meinem Weg, mit meinem Verkehrsmittel, in meinem Zeitraum?"
     />
 
+    <!-- PWA: installierbar & offline nutzbar (siehe docs/anforderungen/A-3-…).
+         Alle Pfade relativ — die Seite liegt unter dem Sub-Pfad /BauWatch-KA/. -->
+    <link rel="manifest" href="manifest.webmanifest" />
+    <!-- Zwei theme-color-Angaben: sonst blitzt die Systemleiste im Dunkelmodus hell. -->
+    <meta name="theme-color" content="#1b4b73" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#16181c" media="(prefers-color-scheme: dark)" />
+    <!-- iOS ignoriert Manifest-Icons. -->
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+
     <!-- Leaflet (lokal eingebunden, kein CDN — siehe vendor/leaflet/) -->
     <link rel="stylesheet" href="vendor/leaflet/leaflet.css" />
     <link rel="stylesheet" href="src/styles.css" />
@@ -20,6 +29,11 @@
       <h1>Wo wird gebaut?</h1>
       <p class="tagline">Offene Baustellen in Karlsruhe — betrifft mich das?</p>
     </header>
+
+    <!-- Update-Hinweis der PWA. Bleibt leer, bis app.js eine neue Version
+         gefunden hat — nur so kündigt die Live-Region den Hinweis auch an.
+         Kein Fokus-Raub, kein automatischer Reload (Entscheidung 4 in A-3). -->
+    <div class="update-banner" id="update-banner" role="status" aria-live="polite"></div>
 
     <!-- Adress-/Umkreissuche -->
     <form class="search" id="search-form" role="search" aria-label="Adresssuche">
@@ -91,8 +105,9 @@
     </main>
 
     <footer class="app-footer">
-      <p class="stand">
+      <p class="stand" id="stand-zeile">
         Daten zuletzt geändert: <span id="stand">wird geladen …</span>
+        <span class="stand-offline" id="stand-offline" hidden>· offline, aus dem Gerätespeicher</span>
         <span class="stand-hint">(automatisch alle 4&nbsp;h geprüft, aktualisiert nur bei Änderungen)</span>
       </p>
       <p class="attribution" id="attribution"></p>

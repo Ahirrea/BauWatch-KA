@@ -360,9 +360,32 @@ function wireSearch() {
       console.error(err);
     } finally {
       searchBusy = false;
-      btn.disabled = false;
+      netzZustand();
     }
   });
+
+  // Offline ist der Suchknopf eine Falle: Nominatim ist der einzige Live-Aufruf
+  // der Seite und nichts davon liegt im Cache (Entscheidung 8 in A-3). Hier ist
+  // navigator.onLine das richtige Signal — es geht um das Bedien-Angebot, nicht
+  // um die Frische der Daten (dafür: X-Bauwatch-Cache in loadData).
+  let offlineHinweis = false;
+  function netzZustand() {
+    const offline = !navigator.onLine;
+    input.disabled = offline;
+    btn.disabled = offline || searchBusy;
+    if (offline) {
+      status.classList.remove('is-error');
+      status.textContent = 'Adresssuche braucht Internet.';
+      offlineHinweis = true;
+    } else if (offlineHinweis) {
+      // Nur den eigenen Hinweis zurücknehmen, keine echte Suchmeldung überschreiben.
+      status.textContent = '';
+      offlineHinweis = false;
+    }
+  }
+  window.addEventListener('online', netzZustand);
+  window.addEventListener('offline', netzZustand);
+  netzZustand();
 
   resetBtn.addEventListener('click', () => {
     state.search = null;
@@ -404,7 +427,7 @@ function initMap() {
   searchLayer = L.layerGroup().addTo(map);
 }
 
-function setFooter(collection) {
+function setFooter(collection, { ausCache = false } = {}) {
   const stand = collection.stand ? new Date(collection.stand) : null;
   el('stand').textContent = stand
     ? stand.toLocaleString('de-DE', { dateStyle: 'medium', timeStyle: 'short' })
@@ -412,6 +435,9 @@ function setFooter(collection) {
   const attr = collection.attribution || 'Stadt Karlsruhe, CC-BY 4.0';
   el('attribution').textContent =
     (collection.sample ? '⚠ Beispieldaten — ' : 'Datenquelle: ') + attr;
+  // Offline-Kennzeichnung: der Stand ist echt, aber möglicherweise überholt.
+  el('stand-offline').hidden = !ausCache;
+  el('stand-zeile').classList.toggle('is-stale', ausCache);
 }
 
 async function loadData() {
@@ -420,12 +446,16 @@ async function loadData() {
   try {
     const res = await fetch(DATA_URL, { cache: 'no-cache' });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    // Der Service Worker setzt diesen Header, wenn er die Daten aus dem
+    // Gerätespeicher beantworten musste. Bewusst NICHT navigator.onLine —
+    // das liefert in Captive Portals fälschlich true.
+    const ausCache = res.headers.get('X-Bauwatch-Cache') === 'hit';
     const collection = await res.json();
     state.features = (collection.features || []).map((f, i) => {
       f._key = featureKey(f, i);
       return f;
     });
-    setFooter(collection);
+    setFooter(collection, { ausCache });
     render();
     if (state.features.length === 0) {
       status.textContent = 'Zurzeit sind keine Baustellendaten vorhanden.';
@@ -439,8 +469,71 @@ async function loadData() {
   }
 }
 
+// --- Service Worker / PWA --------------------------------------------------
+// Progressive Enhancement: nichts in der App hängt am Service Worker. Fehlt er
+// (Privatmodus, file://, alter Browser), verhält sich die Seite exakt wie ohne.
+
+let reloadErlaubt = false; // Guard gegen Reload-Schleife: nur nach Nutzerklick
+let reloadLaeuft = false;
+
+function zeigeUpdateBanner(worker) {
+  const banner = el('update-banner');
+  if (!banner || banner.dataset.gezeigt === 'ja') return;
+  banner.dataset.gezeigt = 'ja';
+
+  const text = document.createElement('span');
+  text.textContent = 'Neue Version verfügbar.';
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.textContent = 'Neu laden';
+  btn.addEventListener('click', () => {
+    btn.disabled = true;
+    reloadErlaubt = true;
+    worker.postMessage({ type: 'SKIP_WAITING' });
+  });
+  banner.append(text, btn);
+  banner.classList.add('is-visible');
+}
+
+function initServiceWorker() {
+  if (!('serviceWorker' in navigator)) return;
+  window.addEventListener('load', async () => {
+    try {
+      const reg = await navigator.serviceWorker.register('sw.js');
+
+      // Ein wartender Worker kann schon beim Laden bereitstehen.
+      const pruefe = (worker) => {
+        if (!worker) return;
+        const check = () => {
+          // Nur mit vorhandenem controller ist es ein *Update* und keine
+          // Erstinstallation — sonst würde das Banner beim ersten Besuch kommen.
+          if (worker.state === 'installed' && navigator.serviceWorker.controller) {
+            zeigeUpdateBanner(worker);
+          }
+        };
+        check();
+        worker.addEventListener('statechange', check);
+      };
+
+      pruefe(reg.waiting);
+      pruefe(reg.installing);
+      reg.addEventListener('updatefound', () => pruefe(reg.installing));
+
+      navigator.serviceWorker.addEventListener('controllerchange', () => {
+        if (!reloadErlaubt || reloadLaeuft) return;
+        reloadLaeuft = true;
+        location.reload();
+      });
+    } catch (err) {
+      // Still: eine fehlgeschlagene Registrierung darf die Seite nicht stören.
+      console.warn('Service Worker nicht registriert:', err);
+    }
+  });
+}
+
 // --- Start -----------------------------------------------------------------
 initMap();
 wireFilters();
 wireSearch();
 loadData();
+initServiceWorker();
