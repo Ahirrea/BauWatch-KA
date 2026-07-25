@@ -10,7 +10,10 @@
   --accent-contrast: #ffffff;
   --focus: #1b4b73;
 
-  /* Ampel — kontraststark auf Weiß (WCAG AA für Text).
+  /* Ampel — kontraststark auf Weiß: --red und --green erfüllen dort auch als
+     Text WCAG AA, --amber ist mit ~2,3:1 im Hellmodus dagegen NUR für Flächen
+     und Punkte brauchbar (im Dunkelmodus ~9,7:1 — der Verstoß fällt beim
+     Testen im Dark-Mode nicht auf). Warnender Text: --accent oder --text.
      Teil (Amber) bewusst deutlich heller als Voll (Rot), damit sich beide
      nicht nur im Farbton, sondern auch in der Helligkeit unterscheiden —
      sonst sind die Marker auf der Karte kaum auseinanderzuhalten. */
