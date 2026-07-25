@@ -6,7 +6,8 @@
 Spezifikation wird — bevor eine Zeile Code entsteht.
 
 Dieser Prozess ist verbindlich für jede nicht-triviale Feature-Idee. Ergebnis
-jeder Verfeinerung ist ein Eintrag in [`FEATURE-BACKLOG.md`](./FEATURE-BACKLOG.md).
+jeder Verfeinerung ist **eine eigene Datei** im
+[Feature-Backlog](./features/README.md) (`docs/features/F-<Nr>-<kurz-titel>.md`).
 Kleine Fixes und rein technische Aufgaben laufen weiter über
 [`BACKLOG.md`](./BACKLOG.md) und brauchen dieses Verfahren nicht.
 
@@ -55,13 +56,16 @@ Fehlerbehandlung** · Barrierefreiheit · Testplan · Doku-/Backlog-Auswirkungen
 grobe Umsetzungsschritte.
 
 ### 7. In den Feature-Backlog aufnehmen
-Eintrag in `FEATURE-BACKLOG.md` nach der dortigen Vorlage anlegen, Status auf
-**verfeinert / umsetzungsbereit** setzen.
+[`docs/features/_vorlage.md`](./features/_vorlage.md) nach
+`docs/features/F-<Nr>-<kurz-titel>.md` kopieren und ausfüllen, dann in
+[`docs/features/README.md`](./features/README.md) eine Zeile mit Nummer, Link,
+Status **verfeinert / umsetzungsbereit** und einem Satz Nutzen ergänzen. Der
+Status lebt **nur** in dieser Übersicht, nicht in der Feature-Datei.
 
 ### 8. Umsetzung erst nach grünem Licht
 Implementiert wird auf einem Feature-Branch, erst wenn die Ideengeberin zustimmt.
-Am Ende gegen die **Definition of Done** prüfen und den Backlog-Status auf
-**erledigt** setzen.
+Am Ende gegen die **Definition of Done** prüfen und den Status in der
+[Übersicht](./features/README.md#übersicht) auf **erledigt** setzen.
 
 ## Status-Lebenszyklus eines Eintrags
 
