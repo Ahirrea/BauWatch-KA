@@ -1,6 +1,6 @@
 # F-2 Baustellen-Abo (statischer Feed)
 
-[← Feature-Backlog](./README.md) · [Refinement-Prozess](../FEATURE-REFINEMENT.md)
+[← Anforderungen](./README.md) · [Prozess](../PROZESS.md)
 · Status siehe [Übersicht](./README.md#übersicht)
 
 **User Story:** Als Karlsruher:in möchte ich Baustellen-Änderungen abonnieren, um

@@ -1,6 +1,6 @@
 # F-1 Mein Arbeitsweg
 
-[← Feature-Backlog](./README.md) · [Refinement-Prozess](../FEATURE-REFINEMENT.md)
+[← Anforderungen](./README.md) · [Prozess](../PROZESS.md)
 · Status siehe [Übersicht](./README.md#übersicht)
 
 **User Story:** Als Nutzer möchte ich meinen täglichen Arbeitsweg (Start → Ziel)
@@ -18,7 +18,7 @@ mit meinem gewählten Verkehrsmittel hinterlegen und beim Öffnen sofort sehen, 
   Radius-Zweig in `currentFiltered`) → kennt aber nur **einen Punkt**, nicht einen **Weg**.
 
 ## Spannung zu Nicht-Zielen — und Auflösung
-`SPEC.md` schließt „**Kein Routing / keine Navigation**" aus. Aufgelöst: Das
+`../PRD.md` schließt „**Kein Routing / keine Navigation**" aus. Aufgelöst: Das
 Nicht-Ziel gilt für den **Kern-Ladepfad** (deshalb ist Leaflet lokal statt CDN).
 „Mein Arbeitsweg" nutzt Routing nur als **optionale, nutzerausgelöste**
 Anreicherung mit Fallback — dieselbe Kategorie wie die bereits vorhandene

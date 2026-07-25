@@ -6,9 +6,9 @@ Bauabfolge. Labels-Vorschlag: `setup`, `data`, `frontend`, `a11y`, `docs`,
 `enhancement`.
 
 > Dieser Backlog sammelt technische Aufgaben und Fixes. **Ausgearbeitete
-> Feature-Ideen** stehen im [Feature-Backlog](./features/README.md) — je Feature
-> eine Datei unter `docs/features/`; sie
-> entstehen über den festen [Feature-Refinement-Prozess](./FEATURE-REFINEMENT.md).
+> Feature-Ideen** stehen im [Anforderungen](./anforderungen/README.md) — je Feature
+> eine Datei unter `docs/anforderungen/`; sie
+> entstehen über den festen [Refinement-Prozess](./PROZESS.md).
 
 **Statuslegende:** ✅ erledigt · 🟡 teilweise / offen · ⬜ offen
 **Stand:** 2026-07-24 (nach v1 + Daten-Pipeline gegen echten WFS verifiziert;
@@ -16,7 +16,7 @@ Feinschliff-Befunde aus dem Desktop-UI-Review ergänzt, #20–#23).
 
 > Kurzfassung: Milestones 1–3 sind umgesetzt und die Seite ist über GitHub Pages
 > live (#5). Von Milestone 4 sind #15 und #18 erledigt; #16 (Push-/Abo-Idee) ist
-> evaluiert (Ergebnis → Feature-Eintrag F-2), offen bleibt als optionaler Punkt
+> evaluiert (Ergebnis → Anforderung A-2), offen bleibt als optionaler Punkt
 > noch #17 (.ics-Export).
 
 ---
@@ -27,7 +27,7 @@ Ziel: Repo steht, die Action erzeugt sauberes GeoJSON, Seite ist online (leer).
 
 ### ✅ #1 Repo-Grundgerüst anlegen
 Ordnerstruktur gemäß ADR-001, `index.html`, `src/`, `scripts/`, `data/`,
-Lizenzdatei (MIT), `.gitignore`, README mit Kurzbeschreibung + Link zur SPEC.
+Lizenzdatei (MIT), `.gitignore`, README mit Kurzbeschreibung + Link zum PRD.
 **DoD:** Struktur existiert, Repo lässt sich klonen und öffnen. — **erledigt.**
 
 ### ✅ #2 Geteilte Bibliotheksmodule (`src/lib/`)
@@ -144,7 +144,7 @@ ohne Backend machbar ist.
   Umkreissuche + eine „seit letztem Besuch"-Markierung gedeckt.
 Der verbleibende Umfang — ein **globaler Atom-Feed** (reiner Änderungsstrom, keine
 Facetten-Feeds) aus dem ohnehin berechneten Diff — ist als Feature-Eintrag
-[**F-2**](./features/F-2-baustellen-abo-feed.md) ausgearbeitet und mit allen entschiedenen
+[**A-2**](./anforderungen/A-2-baustellen-abo-feed.md) ausgearbeitet und mit allen entschiedenen
 Weichen auf **umsetzungsbereit** gesetzt. — **evaluiert; Umsetzung erst nach grünem
 Licht (Feature-Refinement-Prozess Schritt 8).** (Label: `enhancement`, `data`)
 
@@ -152,7 +152,7 @@ Licht (Feature-Refinement-Prozess Schritt 8).** (Label: `enhancement`, `data`)
 `.ics` für „bald geplante" Sperrungen in einem gewählten Umkreis. — **offen.**
 
 ### ⬜ #19 ÖPNV-/Transit-Routing für „Mein Arbeitsweg"
-Das Feature „Mein Arbeitsweg" (siehe [F-1](./features/F-1-mein-arbeitsweg.md)) deckt zunächst nur
+Das Feature „Mein Arbeitsweg" (siehe [A-1](./anforderungen/A-1-mein-arbeitsweg.md)) deckt zunächst nur
 Fuß/Rad/Auto ab, weil Straßen-Routing keine Bus-/Tramlinien kennt. Für ÖPNV eine
 transit-taugliche Variante evaluieren (GTFS/Transit-Routing) — deutlich
 aufwändiger, daher bewusst später. — **offen.**

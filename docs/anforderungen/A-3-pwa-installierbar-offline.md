@@ -1,6 +1,6 @@
 # F-3 Als App installierbar & offline nutzbar (PWA)
 
-[← Feature-Backlog](./README.md) · [Refinement-Prozess](../FEATURE-REFINEMENT.md)
+[← Anforderungen](./README.md) · [Prozess](../PROZESS.md)
 · Status siehe [Übersicht](./README.md#übersicht)
 
 **User Story:** Als Nutzer möchte ich „Wo wird gebaut?" wie eine App auf meinem
@@ -34,7 +34,7 @@ geladenen Baustellen sehen, um unterwegs verlässlich nachschauen zu können.
 ## Spannung zu Nicht-Zielen — und Auflösung
 - „**Keine Push-Benachrichtigungen in v1**" (SPEC): Ein Service Worker ist die
   *technische* Voraussetzung für Push — wir implementieren aber **keins**. Das
-  Urteil aus [F-2](./F-2-baustellen-abo-feed.md) (echtes Push braucht Application
+  Urteil aus [A-2](./A-2-baustellen-abo-feed.md) (echtes Push braucht Application
   Server + Speicherung der Push-Endpoints → verworfen) bleibt unverändert.
   Verbindlich: **kein `push`- und kein `notificationclick`-Handler** im SW; die PWA
   öffnet diese Tür nicht versehentlich.
@@ -48,7 +48,7 @@ geladenen Baustellen sehen, um unterwegs verlässlich nachschauen zu können.
   für `data/baustellen.geojson` würde es brechen (die Action committet alle 4 h).
   **Aufgelöst durch network-first für die Daten**: online immer der frische
   Snapshot, offline der gecachte — dann aber **ausdrücklich als „offline, Stand
-  von X" gekennzeichnet**. Das Kriterium wird in `SPEC.md` entsprechend präzisiert
+  von X" gekennzeichnet**. Das Kriterium wird in `../PRD.md` entsprechend präzisiert
   (online unverändert; offline transparent veraltet statt gar nichts).
 - **ADR-001 („kein Actions-basiertes Pages-Deployment")** bleibt unberührt:
   Manifest, Icons und SW sind gewöhnliche statische Dateien im Repo-Root, jeder
@@ -217,7 +217,7 @@ Offline-Hinweise laufen über die bestehenden Live-Regionen. Kein Auto-Reload
   **Wichtig:** SW brauchen einen Secure Context — `http://localhost:8080` zählt
   als sicher, `file://` nicht.
 
-**Doku-/Backlog-Auswirkungen:** `SPEC.md` (Funktionsumfang „installierbar/offline
+**Doku-/Backlog-Auswirkungen:** `../PRD.md` (Funktionsumfang „installierbar/offline
 nutzbar"; Erfolgskriterium zur Datenfrische um den Offline-Fall präzisieren),
 `README.md` (Abschnitt „Als App installieren"), `CLAUDE.md` (Fallstricke:
 `CACHE_SHELL`-Version bei Shell-Änderungen hochzählen; SW nur über `localhost`

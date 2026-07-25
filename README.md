@@ -10,8 +10,11 @@ Zeitraum?"**
 - 🔎 Adress-/Umkreissuche (1,5 km), Filter nach Zeitraum, Sperrgrad, Verkehrsmittel
 - ⚙️ Rein statisch auf GitHub Pages — kein Server, keine laufenden Kosten
 
-Ausführliche Produktbeschreibung: [`docs/SPEC.md`](docs/SPEC.md).
-Architekturentscheidung (warum statisch + Action): [`docs/ADR-001-statisches-hosting.md`](docs/ADR-001-statisches-hosting.md).
+Ausführliche Produktbeschreibung: [`docs/PRD.md`](docs/PRD.md).
+Verfeinerte Anforderungen: [`docs/anforderungen/`](docs/anforderungen/README.md) —
+entstehen über den festen [Refinement-Prozess](docs/PROZESS.md).
+Architekturentscheidungen: [`docs/entscheidungen/`](docs/entscheidungen/README.md)
+(u. a. [ADR-001](docs/entscheidungen/ADR-001-statisches-hosting.md): warum statisch + Action).
 Aufgaben-Backlog: [`docs/BACKLOG.md`](docs/BACKLOG.md).
 
 ## Wie es funktioniert (Kurzfassung)
