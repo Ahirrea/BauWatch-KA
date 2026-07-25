@@ -2,6 +2,21 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 25.07.2026, 05:25 — 3 neu, 7 entfernt (gesamt 172)
+
+- ➕ **Lessingstraße Einmündungsbereich Sophienstraße**
+- ➕ **Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße**
+- ➕ **Kurt-Schumacher-Straße zw. Wilhelm-Hausenstein-Allee und Josef-Schofer-Straße**
+- ➖ ~~Eisenbahnstraße zw. Büchelbergstraße und Edelmänne~~
+- ➖ ~~Lessingstraße zw. Sophienstraße u. Kaiserallee~~
+- ➖ ~~Durlacher Allee zwischen Tullastraße und Seubertstraße~~
+- ➖ ~~Tullastraße zwischen Haizingerstraße und Durlacher Allee~~
+- ➖ ~~Haizingerstraße zwischen Seubertstraße und Tullastraße~~
+- ➖ ~~Lußstraße zw. Lußsteige und Geigersbergstraße~~
+- ➖ ~~Kurt-Schumacher-Straße zw. Landauer Straße und Josef-Schofer-Straße~~
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 24.07.2026, 23:12 — 2 geändert (gesamt 176)
 
 - ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
