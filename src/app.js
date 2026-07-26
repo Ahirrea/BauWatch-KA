@@ -432,9 +432,15 @@ function setFooter(collection, { ausCache = false } = {}) {
   el('stand').textContent = stand
     ? stand.toLocaleString('de-DE', { dateStyle: 'medium', timeStyle: 'short' })
     : 'unbekannt';
-  const attr = collection.attribution || 'Stadt Karlsruhe, CC-BY 4.0';
-  el('attribution').textContent =
-    (collection.sample ? '⚠ Beispieldaten — ' : 'Datenquelle: ') + attr;
+  // Die Namensnennung selbst wird hier NICHT geschrieben: sie steht statisch in
+  // index.html (Lizenzbedingung — sie darf nicht am Datenabruf hängen). Hier
+  // kommt nur der Zusatz für den Beispieldaten-Startwert dazu, damit niemand
+  // Platzhalter für amtliche Daten hält.
+  const hinweis = el('attribution-hinweis');
+  hinweis.textContent = collection.sample
+    ? '⚠ Beispieldaten — noch kein echter Abruf des städtischen WFS-Dienstes.'
+    : '';
+  hinweis.hidden = !collection.sample;
   // Offline-Kennzeichnung: der Stand ist echt, aber möglicherweise überholt.
   el('stand-offline').hidden = !ausCache;
   el('stand-zeile').classList.toggle('is-stale', ausCache);

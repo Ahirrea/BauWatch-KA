@@ -110,7 +110,20 @@
         <span class="stand-offline" id="stand-offline" hidden>· offline, aus dem Gerätespeicher</span>
         <span class="stand-hint">(automatisch alle 4&nbsp;h geprüft, aktualisiert nur bei Änderungen)</span>
       </p>
-      <p class="attribution" id="attribution"></p>
+      <!-- Namensnennung nach CC-BY 4.0: bewusst STATISCH im ausgelieferten HTML
+           und nicht per JS nachgetragen — sie ist Lizenzbedingung und muss auch
+           dann dastehen, wenn der Datenabruf scheitert oder JS nicht läuft.
+           Der Text ist wortgleich mit ATTRIBUTION in scripts/build-data.mjs;
+           scripts/test-attribution.mjs bewacht beides (Existenz + Gleichlaut). -->
+      <p class="attribution" id="attribution">
+        Datenquelle: Datensatz
+        <a href="https://transparenz.karlsruhe.de/dataset/baustellen" rel="noopener">„Baustellen"</a>,
+        Stadt Karlsruhe, Lizenz
+        <a href="https://creativecommons.org/licenses/by/4.0/deed.de" rel="license noopener">CC-BY 4.0</a>
+      </p>
+      <!-- Nur für den Beispieldaten-Startwert (data/baustellen.geojson mit
+           sample: true). Bleibt leer und unsichtbar, sobald echte Daten da sind. -->
+      <p class="attribution-hinweis" id="attribution-hinweis" hidden></p>
       <p class="disclaimer">
         Ohne Gewähr. Verbindlich ist ausschließlich die Beschilderung vor Ort.
       </p>

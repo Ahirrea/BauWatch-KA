@@ -454,6 +454,12 @@ body {
   color: var(--accent);
   font-weight: 600;
 }
+/* Beispieldaten-Warnung unter der Namensnennung. Gleiche Begründung wie oben für
+   die Farbwahl: --amber verfehlt als Text auf --bg im Hellmodus den AA-Kontrast. */
+.attribution-hinweis {
+  color: var(--accent);
+  font-weight: 600;
+}
 
 /* --- Desktop-Layout: Karte + Liste nebeneinander --- */
 @media (min-width: 900px) {

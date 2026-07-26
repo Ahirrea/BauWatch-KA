@@ -11,13 +11,14 @@ Bauabfolge. Labels-Vorschlag: `setup`, `data`, `frontend`, `a11y`, `docs`,
 > entstehen über den festen [Refinement-Prozess](./PROZESS.md).
 
 **Statuslegende:** ✅ erledigt · 🟡 teilweise / offen · ⬜ offen
-**Stand:** 2026-07-25 (Anforderung A-3 umgesetzt, #24).
+**Stand:** 2026-07-26 (#25 und #26 aus der Showcase-Vorprüfung erledigt).
 
 > Kurzfassung: Milestones 1–3 sind umgesetzt und die Seite ist über GitHub Pages
 > live (#5). Von Milestone 4 sind #15 und #18 erledigt; #16 (Push-/Abo-Idee) ist
 > evaluiert (Ergebnis → Anforderung A-2), offen bleibt als optionaler Punkt
 > noch #17 (.ics-Export). Aus den Anforderungen ist **A-3 (PWA) umgesetzt**
-> (#24); offen aus dem Desktop-UI-Review sind #22 und #23.
+> (#24); offen aus dem Desktop-UI-Review sind #22 und #23. Aus der
+> Showcase-Vorprüfung sind #25 und #26 erledigt.
 
 ---
 
@@ -248,6 +249,44 @@ nutzerbezogener Speicher, keine Build-Toolchain.
 Datenstand einmal selbst nach — der allererste Seitenaufruf läuft noch
 unkontrolliert am Service Worker vorbei, sonst stünde nach einem einzigen Besuch
 offline die Shell, aber keine einzige Baustelle bereit. (Label: `frontend`, `a11y`)
+
+---
+
+## Befunde aus der Showcase-Vorprüfung (2026-07-26)
+
+Rückmeldung der Open-Data-Redaktion zur Einreichung fürs Transparenzportal
+(Unterlage: [`showcase-einreichung.md`](./showcase-einreichung.md)). Der
+Impressum-/Datenschutz-Punkt aus derselben Rückmeldung ist **keine** Aufgabe,
+sondern als Anforderung `A-4` aufgenommen — er hat offene
+Produktentscheidungen (siehe [Prozess](./PROZESS.md#anforderung-oder-aufgabe-der-test)).
+
+### ✅ #25 Namensnennung statisch ins ausgelieferte HTML
+Die CC-BY-Nennung war ein **leerer** Absatz in `index.html` und wurde erst von
+`setFooter()` nach dem Datenabruf gefüllt. Im Browser sichtbar — im ausgelieferten
+Dokument, ohne JavaScript und bei fehlgeschlagenem Datenabruf aber nicht. Für eine
+Lizenzbedingung der falsche Ort. Die Redaktion hat genau das bemerkt.
+**DoD:** Nennung steht statisch im HTML, wird von JS nicht überschrieben, Test
+sichert es ab. — **erledigt:** statischer Absatz in `index.html` (mit Link auf
+Datensatz im Portal und auf den Lizenztext), `setFooter()` schreibt nur noch den
+Beispieldaten-Hinweis in den separaten Absatz `#attribution-hinweis`,
+`scripts/test-attribution.mjs` (in `npm test`) prüft Existenz, Nicht-Überschreiben
+und **Wortgleichheit mit `ATTRIBUTION`** aus `build-data.mjs`. Gegenprobe: alle
+drei Regressionen (leere Nennung, Überschreiben durch `app.js`, Drift zur
+Build-Konstante) lassen den Test rot werden. Shell-Datei geändert →
+`CACHE_SHELL` auf `v2`. (Label: `frontend`, `docs`)
+
+### ✅ #26 Screenshots für den Showcase-Eintrag
+Der Portal-Eintrag braucht ein Vorschaubild („ohne Bild sieht der Eintrag kaputt
+aus").
+**DoD:** Screenshot vorhanden und reproduzierbar erzeugbar. — **erledigt:**
+`scripts/screenshot.mjs` (manuell, wie `render-icons.mjs` bewusst **nicht** in
+`npm test`/CI) erzeugt `docs/showcase/screenshot.png` (1440 × 900) und
+`screenshot-mobil.png` (390 × 844), im Hellmodus fixiert. Das Skript **zählt die
+geladenen Kartenkacheln und bricht ab**, statt still ein graues Bild zu schreiben —
+genau der Fehler, der in einer Umgebung ohne OSM-Egress sonst unbemerkt ins Portal
+wanderte. Ist der Kachel-Host der App per Egress-Policy blockiert, ein
+Subdomain-Spiegel aber erreichbar, holt es die Kacheln von dort und sagt es im Log;
+`src/app.js` bleibt unangetastet. (Label: `docs`, `frontend`)
 
 ---
 

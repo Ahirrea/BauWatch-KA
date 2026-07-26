@@ -54,11 +54,13 @@ scripts/
   diff-data.mjs            Änderungsvergleich zweier Snapshots (für Changelog)
   quality-report.mjs       erzeugt den Datenqualitäts-Report (data/QUALITY.md)
   render-icons.mjs         rendert icons/*.png aus icons/icon.svg (manuell, nicht in CI)
+  screenshot.mjs           erzeugt docs/showcase/*.png (manuell, nicht in CI)
   test-transform.mjs       Referenztest der Koordinaten-Transformation
   test-diff.mjs            Tests der Änderungserkennung
   test-classify.mjs        Tests der Klartext-/Ampel-/Verkehrsmittel-Einordnung
   test-quality.mjs         Tests des Qualitäts-Reports
   test-pwa.mjs             Tests von Manifest, Icons und Service Worker
+  test-attribution.mjs     Tests der CC-BY-Namensnennung im ausgelieferten HTML
 data/
   baustellen.geojson       generierter, committeter Snapshot (Startwert: Beispieldaten)
   CHANGELOG.md             automatisch gepflegtes Änderungsprotokoll der Daten
@@ -66,7 +68,8 @@ data/
 vendor/leaflet/            Leaflet lokal eingebunden (kein CDN)
 .github/workflows/
   update-data.yml          Cron + manueller Trigger
-docs/                      SPEC, ADR, Backlog, Feature-Backlog & -Refinement
+docs/                      PRD, Prozess, Backlog, anforderungen/, entscheidungen/
+  showcase/                Screenshots für den Showcase-Eintrag im Transparenzportal
 ```
 
 ## Lokal starten
@@ -111,9 +114,9 @@ das Schreiben auch bei 0 Treffern erzwingen.
 npm test    # führt alle Testskripte nacheinander aus
 ```
 
-`npm test` läuft `test-transform`, `test-diff`, `test-classify`, `test-quality`
-und `test-pwa` durch; einzeln z. B. `node scripts/test-transform.mjs`. Geprüft
-werden u. a.:
+`npm test` läuft `test-transform`, `test-diff`, `test-classify`, `test-quality`,
+`test-pwa` und `test-attribution` durch; einzeln z. B.
+`node scripts/test-transform.mjs`. Geprüft werden u. a.:
 
 - **`transform.js`** gegen bekannte Referenzkoordinaten (u. a. Marktplatz
   Karlsruhe und den Zentralmeridian-Invariant),
@@ -122,7 +125,12 @@ werden u. a.:
 - der **Qualitäts-Report** (`quality-report.mjs`),
 - die **PWA-Artefakte** (`manifest.webmanifest`, Icons, `sw.js`): valides
   Manifest, Icon-Dateien in der angegebenen Größe, **alle Pfade relativ** und
-  jede von `index.html` bzw. `src/app.js` referenzierte Datei auch precacht.
+  jede von `index.html` bzw. `src/app.js` referenzierte Datei auch precacht,
+- die **CC-BY-Namensnennung**: sie steht **statisch im ausgelieferten
+  `index.html`** (nicht per JS nachgetragen), ist wortgleich mit `ATTRIBUTION`
+  aus `build-data.mjs` und wird von `app.js` nicht überschrieben. Die Nennung ist
+  Lizenzbedingung — sie darf nicht am Datenabruf oder an aktivem JavaScript
+  hängen.
 
 Die Referenzwerte der Transformation wurden einmalig mit `proj4` erzeugt —
 `proj4` ist **keine Laufzeit-Abhängigkeit**, nur ein Dev-Werkzeug.
@@ -259,5 +267,6 @@ immer sichtbar.
 ## Lizenz
 
 Code: **MIT** (siehe [`LICENSE`](LICENSE)).
-Daten: „Baustellen", Stadt Karlsruhe, **CC-BY 4.0** — Namensnennung im Footer.
+Daten: „Baustellen", Stadt Karlsruhe, **CC-BY 4.0** — Namensnennung statisch im
+Footer von `index.html`, abgesichert durch `scripts/test-attribution.mjs`.
 Ohne Gewähr; verbindlich ist ausschließlich die Beschilderung vor Ort.
