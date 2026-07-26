@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Datenschutzhinweis — Wo wird gebaut?</title>
+    <meta
+      name="description"
+      content="Datenschutzhinweis von BauWatch-KA („Wo wird gebaut?") — keine Cookies, kein Tracking; welche Daten beim Benutzen an Dritte gehen."
+    />
+
+    <!-- Reine Textseite (Anforderung A-4): kein JavaScript, kein Leaflet.
+         Alle Pfade relativ — die Seite liegt unter dem Sub-Pfad /BauWatch-KA/. -->
+    <link rel="manifest" href="manifest.webmanifest" />
+    <meta name="theme-color" content="#1b4b73" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#16181c" media="(prefers-color-scheme: dark)" />
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <div class="textseite">
+      <!-- Erste Tab-Station: zurück zur Karte. -->
+      <p class="textseite-zurueck"><a href="index.html">&larr; Zurück zur Karte</a></p>
+
+      <header class="app-header">
+        <h1>Datenschutzhinweis</h1>
+        <p class="tagline">Was beim Benutzen von „Wo wird gebaut?" passiert — und was nicht.</p>
+      </header>
+
+      <main>
+        <h2>Verantwortliche Stelle</h2>
+        <p>
+          Katharina Fröhling<br />
+          <!-- TODO (A-4 / Showcase-Unterlage, „Offene Punkte"): projekteigene
+               Adresse anlegen und hier UND im Impressum eintragen. Muss
+               wortgleich mit der Adresse im Impressum bleiben —
+               scripts/test-rechtstexte.mjs prüft das. -->
+          E-Mail: <a href="mailto:kontakt@example.invalid">kontakt@example.invalid</a><br />
+          Weitere Angaben im <a href="impressum.html">Impressum</a>.
+        </p>
+
+        <h2>Was diese Seite nicht tut</h2>
+        <p>
+          Das ist der größte Teil dieses Hinweises, deshalb steht er vorn.
+          BauWatch-KA ist eine rein statische Seite ohne eigenen
+          Anwendungsserver und ohne eigene Datenhaltung. Konkret gibt es:
+        </p>
+        <ul>
+          <li><strong>keine Cookies</strong></li>
+          <li><strong>kein Tracking</strong>, keine Analyse, keine Reichweitenmessung</li>
+          <li><strong>keine Profilbildung</strong>, kein Werbenetzwerk, keine Social-Media-Einbindung</li>
+          <li><strong>kein Nutzerkonto</strong> und keine Anmeldung</li>
+          <li><strong>keine Standortabfrage</strong> des Geräts</li>
+          <li>
+            <strong>keine eigene Speicherung personenbezogener Daten</strong> —
+            es gibt keine Datenbank, in die etwas geschrieben werden könnte
+          </li>
+          <li><strong>keine Weitergabe</strong> von Daten über die unten genannten Abrufe hinaus</li>
+        </ul>
+        <p>
+          Das ist nicht nur behauptet, sondern nachprüfbar: Der
+          <a href="https://github.com/Ahirrea/BauWatch-KA" rel="noopener">Quellcode ist offen</a>.
+        </p>
+
+        <h2>Datenflüsse an Dritte</h2>
+        <p>
+          Drei Dienste bekommen technisch bedingt Daten zu sehen, wenn Sie die
+          Seite benutzen. Mehr sind es nicht.
+        </p>
+
+        <div class="tabelle-scroll">
+          <table class="datenfluesse">
+            <caption>Übersicht der Datenflüsse an Dritte</caption>
+            <thead>
+              <tr>
+                <th scope="col">Dienst</th>
+                <th scope="col">Wann</th>
+                <th scope="col">Übertragene Daten</th>
+                <th scope="col">Zweck</th>
+                <th scope="col">Datenschutzhinweis des Dritten</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">GitHub Pages (GitHub, Inc.) — Hosting</th>
+                <td>bei jedem Aufruf der Seite</td>
+                <td>IP-Adresse, Zeitpunkt, angeforderte Datei, User-Agent (Server-Logs des Hosters)</td>
+                <td>technische Auslieferung der Seite</td>
+                <td>
+                  <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub-Datenschutzerklärung</a>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <code>tile.openstreetmap.org</code> (OpenStreetMap Foundation)
+                </th>
+                <td>automatisch beim Laden der Karte</td>
+                <td>IP-Adresse, Referer, angeforderte Kartenausschnitte (Kacheln)</td>
+                <td>Anzeige der Karte</td>
+                <td>
+                  <a href="https://osmfoundation.org/wiki/Privacy_Policy" rel="noopener">OSMF-Datenschutzerklärung</a>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <code>nominatim.openstreetmap.org</code> (OpenStreetMap Foundation)
+                </th>
+                <td><strong>nur</strong> beim Absenden der Adresssuche — nicht beim Tippen</td>
+                <td>IP-Adresse, Referer und <strong>die eingegebene Adresse</strong></td>
+                <td>Umrechnung der Adresse in Koordinaten für die Umkreissuche</td>
+                <td>
+                  <a href="https://osmfoundation.org/wiki/Privacy_Policy" rel="noopener">OSMF-Datenschutzerklärung</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          Zur Einordnung: Die Kartenkacheln lädt der Browser
+          <strong>ohne Ihr Zutun</strong>, sobald die Seite geöffnet wird — das
+          ist bei jeder Karte so, die auf OpenStreetMap aufsetzt. Die
+          Adresssuche dagegen lösen Sie selbst aus; ohne Klick auf „Umkreis
+          suchen" verlässt keine Eingabe Ihr Gerät. Es gibt bewusst keine
+          Autovervollständigung, die bei jedem Tastendruck anfragen würde.
+        </p>
+
+        <h2>Baustellendaten</h2>
+        <p>
+          Die Baustellendaten selbst werden <strong>nicht</strong> live bei der
+          Stadt Karlsruhe abgerufen. Ein automatischer Vorgang holt sie
+          regelmäßig ab und legt sie als fertige Datei neben der Seite ab; Ihr
+          Browser lädt nur diese Datei vom selben Server wie die Seite. Beim
+          Benutzen von BauWatch-KA entsteht deshalb <strong>kein</strong>
+          Kontakt zu Servern der Stadt Karlsruhe.
+        </p>
+
+        <h2>Speicherung auf Ihrem Gerät</h2>
+        <p>
+          Damit die Seite auch offline funktioniert, legt ein <em>Service
+          Worker</em> die Dateien der Anwendung und den zuletzt geladenen
+          Baustellen-Stand im Cache Ihres Browsers ab. Das sind ausschließlich
+          Dateien, die Ihnen ohnehin ausgeliefert wurden — keine Angaben über
+          Sie, keine Kennung, kein Cookie. Diese Daten bleiben auf Ihrem Gerät,
+          werden nicht übertragen und lassen sich jederzeit über die
+          Browser-Einstellungen („Websitedaten löschen") entfernen.
+        </p>
+
+        <h2>Rechtsgrundlage</h2>
+        <p>
+          Die Verarbeitung der beim Abruf technisch notwendigen Daten beruht auf
+          <strong>Art. 6 Abs. 1 lit. f DSGVO</strong> — berechtigtes Interesse am
+          technisch fehlerfreien Bereitstellen und an der Darstellung dieser
+          Seite. Die Adresssuche und die damit verbundene Übermittlung an
+          Nominatim lösen Sie durch das Absenden des Suchformulars selbst aus.
+        </p>
+
+        <h2>Speicherdauer</h2>
+        <p>
+          Auf Seiten dieses Angebots werden keine personenbezogenen Daten
+          gespeichert, also gibt es hier auch keine Löschfristen. Wie lange die
+          oben genannten Dritten ihre Server-Logs aufbewahren, richtet sich nach
+          deren jeweiligen Datenschutzerklärungen.
+        </p>
+
+        <h2>Ihre Rechte</h2>
+        <p>
+          Ihnen stehen gegenüber der verantwortlichen Stelle die Rechte auf
+          Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art. 17),
+          Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit
+          (Art. 20) und Widerspruch (Art. 21) zu.
+        </p>
+        <p>
+          Praktischer Hinweis dazu: Da hier <strong>keine personenbezogenen
+          Daten gespeichert werden</strong>, gibt es zu Ihrer Person nichts
+          herauszugeben, zu berichtigen oder zu löschen. Auskunftsansprüche zu
+          den oben beschriebenen Datenflüssen sind deshalb an die jeweils
+          genannten Dritten zu richten.
+        </p>
+
+        <h2>Beschwerderecht und Aufsichtsbehörde</h2>
+        <p>
+          Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu
+          beschweren. Zuständig ist:
+        </p>
+        <p>
+          Der Landesbeauftragte für den Datenschutz und die Informationsfreiheit
+          Baden-Württemberg —
+          <a href="https://www.baden-wuerttemberg.datenschutz.de/" rel="noopener">baden-wuerttemberg.datenschutz.de</a>
+        </p>
+
+        <h2>Stand</h2>
+        <!-- Statisch im HTML, nicht per JS — dieselbe Lehre wie bei der
+             CC-BY-Namensnennung: was rechtlich zählt, darf nicht am Skript
+             hängen. Bei inhaltlichen Änderungen mit anpassen. -->
+        <p>Dieser Datenschutzhinweis hat den Stand vom <time datetime="2026-07-26">26. Juli 2026</time>.</p>
+      </main>
+
+      <footer class="app-footer">
+        <p class="credits">
+          <a href="index.html">Karte</a> ·
+          <a href="impressum.html">Impressum</a> ·
+          <a href="https://github.com/Ahirrea/BauWatch-KA" rel="noopener">Quellcode &amp; Info</a>
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

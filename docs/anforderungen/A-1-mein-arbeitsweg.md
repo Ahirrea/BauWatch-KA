@@ -125,6 +125,14 @@ README (Abschnitt „Mein Arbeitsweg"), [`BACKLOG.md`](../BACKLOG.md) #19
 - Luftlinie-Fallback greift bei Routing-Ausfall, mit sichtbarem Hinweis.
 - Weg + Profil + Route persistiert; Auto-Laden ohne erneutes Routing.
 - `src/lib/geo.js` DOM-/netz-/abhängigkeitsfrei; `scripts/test-geo.mjs` grün in `npm test`.
+- **Datenschutzhinweis mitgepflegt** ([`datenschutz.html`](../../datenschutz.html), aus
+  [A-4](./A-4-impressum-datenschutz.md)): A-1 bringt `localStorage`
+  (Schlüssel `bauwatch.arbeitsweg`) **und** einen weiteren Drittdienst
+  (FOSSGIS-OSRM, `routing.openstreetmap.de`). Beides muss dort auftauchen —
+  die Behauptung „keine eigene Speicherung" ist dann nicht mehr haltbar und der
+  Routing-Dienst gehört in die Datenfluss-Tabelle. Das ist keine Fleißaufgabe:
+  `scripts/test-rechtstexte.mjs` prüft beide Richtungen maschinell, `npm test`
+  wird ohne die Textpflege rot.
 - A11y berücksichtigt; SPEC/README/BACKLOG aktualisiert.
 
 ## Umsetzungsschritte

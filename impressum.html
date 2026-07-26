@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Impressum — Wo wird gebaut?</title>
+    <meta
+      name="description"
+      content="Impressum von BauWatch-KA („Wo wird gebaut?") — wer die Seite betreibt, Haftung, Lizenzen."
+    />
+
+    <!-- Reine Textseite (Anforderung A-4): kein JavaScript, kein Leaflet.
+         Alle Pfade relativ — die Seite liegt unter dem Sub-Pfad /BauWatch-KA/. -->
+    <link rel="manifest" href="manifest.webmanifest" />
+    <meta name="theme-color" content="#1b4b73" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#16181c" media="(prefers-color-scheme: dark)" />
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <div class="textseite">
+      <!-- Erste Tab-Station: zurück zur Karte. -->
+      <p class="textseite-zurueck"><a href="index.html">&larr; Zurück zur Karte</a></p>
+
+      <header class="app-header">
+        <h1>Impressum</h1>
+        <p class="tagline">Angaben zu „Wo wird gebaut?" (BauWatch-KA)</p>
+      </header>
+
+      <main>
+        <h2>Verantwortlich für den Inhalt</h2>
+        <p>
+          Katharina Fröhling<br />
+          <!-- TODO (A-4 / Showcase-Unterlage, „Offene Punkte"): projekteigene
+               Adresse anlegen und hier UND im Showcase-Eintrag eintragen (E5 —
+               ein Kontaktweg, nicht zwei). scripts/test-rechtstexte.mjs meldet
+               den Platzhalter bei jedem `npm test`. -->
+          E-Mail: <a href="mailto:kontakt@example.invalid">kontakt@example.invalid</a>
+        </p>
+        <p>
+          Eine Postanschrift ist hier nicht angegeben: BauWatch-KA ist ein rein
+          privates, ehrenamtliches Angebot ohne Einnahmen, ohne Werbung und ohne
+          geschäftsmäßigen Charakter. Für Anliegen jeder Art genügt die
+          E-Mail-Adresse oben.
+        </p>
+
+        <h2>Einordnung</h2>
+        <p>
+          BauWatch-KA ist ein <strong>unabhängiges Bürgerprojekt</strong>. Es ist
+          <strong>kein Angebot der Stadt Karlsruhe</strong> und entsteht weder in
+          ihrem Auftrag noch in ihrem Namen. Die Anwendung nutzt lediglich den
+          offen veröffentlichten Datensatz „Baustellen" der Stadt.
+        </p>
+
+        <h2>Haftung für Inhalte</h2>
+        <p>
+          Die angezeigten Baustellendaten stammen aus dem offenen Datensatz der
+          Stadt Karlsruhe und werden inhaltlich unverändert übernommen; lediglich
+          Darstellung und Formulierung werden aufbereitet. Für Richtigkeit,
+          Vollständigkeit und Aktualität der zugrunde liegenden Angaben kann keine
+          Gewähr übernommen werden. <strong>Verbindlich ist ausschließlich die
+          Beschilderung vor Ort.</strong>
+        </p>
+
+        <h2>Haftung für Links</h2>
+        <p>
+          Diese Seite verlinkt auf externe Websites, auf deren Inhalte kein
+          Einfluss besteht. Für diese Inhalte ist stets der jeweilige Anbieter
+          verantwortlich. Zum Zeitpunkt der Verlinkung waren keine
+          Rechtsverstöße erkennbar.
+        </p>
+
+        <h2>Urheberrecht und Lizenzen</h2>
+        <ul>
+          <li>
+            <strong>Quellcode:</strong> MIT-Lizenz —
+            <a href="https://github.com/Ahirrea/BauWatch-KA" rel="noopener">github.com/Ahirrea/BauWatch-KA</a>
+          </li>
+          <li>
+            <strong>Baustellendaten:</strong> Datensatz
+            <a href="https://transparenz.karlsruhe.de/dataset/baustellen" rel="noopener">„Baustellen"</a>,
+            Stadt Karlsruhe, Lizenz
+            <a href="https://creativecommons.org/licenses/by/4.0/deed.de" rel="license noopener">CC-BY 4.0</a>
+          </li>
+          <li>
+            <strong>Kartendaten:</strong> ©
+            <a href="https://www.openstreetmap.org/copyright" rel="noopener">OpenStreetMap</a>-Mitwirkende,
+            Lizenz
+            <a href="https://opendatacommons.org/licenses/odbl/" rel="license noopener">ODbL</a>
+          </li>
+          <li>
+            <strong>Kartenbibliothek:</strong>
+            <a href="https://leafletjs.com/" rel="noopener">Leaflet</a> (BSD-2-Clause),
+            lokal eingebunden
+          </li>
+        </ul>
+
+        <h2>Quellcode</h2>
+        <p>
+          Die Anwendung ist vollständig quelloffen. Was sie tut — und was sie
+          nicht tut — lässt sich im Code nachlesen:
+          <a href="https://github.com/Ahirrea/BauWatch-KA" rel="noopener">github.com/Ahirrea/BauWatch-KA</a>
+        </p>
+
+        <h2>Datenschutz</h2>
+        <p>
+          Welche Daten beim Benutzen dieser Seite an Dritte gehen, steht im
+          <a href="datenschutz.html">Datenschutzhinweis</a>.
+        </p>
+      </main>
+
+      <footer class="app-footer">
+        <p class="credits">
+          <a href="index.html">Karte</a> ·
+          <a href="datenschutz.html">Datenschutz</a> ·
+          <a href="https://github.com/Ahirrea/BauWatch-KA" rel="noopener">Quellcode &amp; Info</a>
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

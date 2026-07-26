@@ -15,6 +15,7 @@ einer einzelnen Anforderung bleiben in der Anforderungsdatei.
 | Nr. | Entscheidung | Status | Kern |
 |---|---|---|---|
 | [ADR-001](./ADR-001-statisches-hosting.md) | Statisches Hosting mit periodischem Daten-Snapshot | akzeptiert | Eine GitHub Action übernimmt die Server-Rolle: sie ruft den WFS ab und committet fertiges GeoJSON ins Repo. Kein Backend, keine Kosten, kein CORS-Problem. |
+| [ADR-002](./ADR-002-mehrseitige-auslieferung.md) | Mehrseitige Auslieferung und pfadbewusste Service-Worker-Navigation | akzeptiert | Die App ist nicht mehr einseitig. `navigationAntwort()` liefert den angefragten Pfad aus dem Shell-Cache statt jeder Navigation `index.html`; jede neue HTML-Seite ist `SHELL`- und `CACHE_SHELL`-pflichtig. |
 
 ## Neuen ADR anlegen
 

@@ -102,6 +102,10 @@ function pngMaße(pfad) {
 
 const sw = lies('sw.js');
 
+// Prüfungen sollen auf echten Code schauen, nicht auf die Kommentare, die ihn
+// erklären (die nennen z. B. absichtlich das, was NICHT passieren darf).
+const ohneKommentare = (s) => s.replace(/\/\/[^\n]*/g, '').replace(/\/\*[\s\S]*?\*\//g, '');
+
 const cacheNamen = [...sw.matchAll(/const (CACHE_\w+) = '([^']+)'/g)];
 check('sw.js definiert CACHE_SHELL und CACHE_DATA', cacheNamen.length === 2);
 for (const [, konstante, wert] of cacheNamen) {
@@ -134,32 +138,72 @@ for (const eintrag of SHELL) {
 check('SHELL-Liste hat keine Doppelten', new Set(SHELL).size === SHELL.length);
 check('SHELL enthält den Navigations-Einstieg „./"', SHELL.includes('./'));
 
-// --- index.html gegen die SHELL-Liste --------------------------------------
+// --- Navigation ist pfadbewusst (ADR-002) ----------------------------------
+// Bis A-4 war die App einseitig und navigationAntwort() beantwortete JEDE
+// Navigation mit INDEX_URL. Mit einer zweiten HTML-Seite wird daraus ein
+// stiller Fehler: installierte Clients bekämen unter …/impressum.html die
+// Kartenseite zu sehen. Lokal fällt das nie auf (kein alter Cache), im Browser
+// gibt es keine Meldung — deshalb hier statisch abgesichert.
 
-const html = lies('index.html');
-const shellSet = new Set(SHELL.map(aufDatei));
-
-// Alle lokalen href/src aus index.html — Anker, externe Links und Daten-URLs raus.
-const referenzen = [...html.matchAll(/(?:href|src)="([^"]+)"/g)]
-  .map((m) => m[1])
-  .filter((p) => !p.startsWith('#') && !/^[a-z]+:/i.test(p) && !p.startsWith('//'));
-
-check('index.html referenziert nur relative lokale Pfade', referenzen.every((p) => !p.startsWith('/')),
-  referenzen.filter((p) => p.startsWith('/')).join(', '));
-
-for (const ref of referenzen) {
-  check(`aus index.html referenzierte Datei existiert: ${ref}`, existsSync(join(ROOT, ref)));
-  // manifest.webmanifest, styles.css, app.js, leaflet, apple-touch-icon …
-  check(`aus index.html referenzierte Datei ist precacht: ${ref}`, shellSet.has(ref));
+const navFn = sw.match(/async function navigationAntwort\(request\)\s*\{([\s\S]*?)\n\}/);
+check('sw.js hat eine navigationAntwort()', Boolean(navFn));
+if (navFn) {
+  const rumpf = ohneKommentare(navFn[1]);
+  check(
+    'navigationAntwort() schaut auf den angefragten Pfad (ADR-002)',
+    /SHELL_PATHS/.test(rumpf) && /pathname/.test(rumpf)
+  );
+  const posShell = rumpf.indexOf('SHELL_PATHS');
+  const posIndex = rumpf.indexOf('INDEX_URL');
+  check(
+    'navigationAntwort() prüft den Pfad VOR dem Rückfall auf INDEX_URL',
+    posShell !== -1 && (posIndex === -1 || posShell < posIndex),
+    'INDEX_URL zuerst = jede Navigation bekäme wieder index.html'
+  );
 }
 
-check('index.html verlinkt das Manifest', /<link[^>]+rel="manifest"[^>]+href="manifest\.webmanifest"/.test(html));
-check(
-  'index.html setzt theme-color für hell und dunkel',
-  /name="theme-color"[^>]*prefers-color-scheme: light/.test(html) &&
-    /name="theme-color"[^>]*prefers-color-scheme: dark/.test(html)
-);
-check('index.html verlinkt ein apple-touch-icon', /rel="apple-touch-icon"/.test(html));
+// --- Precachete HTML-Seiten gegen die SHELL-Liste --------------------------
+// Früher wurde hier nur index.html gescannt. Seit A-4 gibt es weitere Seiten;
+// eine von ihnen referenzierte, nicht precachete Datei wäre genau dieselbe
+// Precache-Lücke — online alles gut, offline fehlt sie.
+
+const shellSet = new Set(SHELL.map(aufDatei));
+const htmlSeiten = [...shellSet].filter((p) => p.endsWith('.html'));
+check('SHELL enthält mindestens eine HTML-Seite', htmlSeiten.length > 0);
+check('SHELL enthält die Rechtstexte (A-4)',
+  ['impressum.html', 'datenschutz.html'].every((p) => shellSet.has(p)),
+  [...shellSet].join(', '));
+
+for (const seite of htmlSeiten) {
+  if (!existsSync(join(ROOT, seite))) continue; // Existenz meldet schon die SHELL-Prüfung
+  const html = lies(seite);
+
+  // Alle lokalen href/src — Anker, externe Links und Daten-URLs raus.
+  const referenzen = [...html.matchAll(/(?:href|src)="([^"]+)"/g)]
+    .map((m) => m[1])
+    .filter((p) => !p.startsWith('#') && !/^[a-z]+:/i.test(p) && !p.startsWith('//'));
+
+  check(
+    `${seite} referenziert nur relative lokale Pfade`,
+    referenzen.every((p) => !p.startsWith('/')),
+    referenzen.filter((p) => p.startsWith('/')).join(', ')
+  );
+
+  for (const ref of referenzen) {
+    check(`aus ${seite} referenzierte Datei existiert: ${ref}`, existsSync(join(ROOT, ref)));
+    // manifest.webmanifest, styles.css, app.js, leaflet, apple-touch-icon,
+    // die Querverweise der Rechtstexte untereinander …
+    check(`aus ${seite} referenzierte Datei ist precacht: ${ref}`, shellSet.has(ref));
+  }
+
+  check(`${seite} verlinkt das Manifest`, /<link[^>]+rel="manifest"[^>]+href="manifest\.webmanifest"/.test(html));
+  check(
+    `${seite} setzt theme-color für hell und dunkel`,
+    /name="theme-color"[^>]*prefers-color-scheme: light/.test(html) &&
+      /name="theme-color"[^>]*prefers-color-scheme: dark/.test(html)
+  );
+  check(`${seite} verlinkt ein apple-touch-icon`, /rel="apple-touch-icon"/.test(html));
+}
 
 // --- src/app.js gegen die SHELL-Liste --------------------------------------
 // Die HTML-Prüfung oben findet keine ES-Modul-Importe. Ohne diese Prüfung könnte
@@ -183,7 +227,6 @@ check('sw.js setzt den Offline-Header X-Bauwatch-Cache', /X-Bauwatch-Cache/.test
 // navigator.onLine ist für das Bedien-Angebot der Adresssuche richtig, für die
 // Frische der Daten falsch (Captive Portals melden fälschlich „online"). Die
 // Prüfung schaut nur auf echten Code, nicht auf die Kommentare, die das erklären.
-const ohneKommentare = (s) => s.replace(/\/\/[^\n]*/g, '').replace(/\/\*[\s\S]*?\*\//g, '');
 check(
   'loadData() nutzt navigator.onLine nicht (Captive-Portal-Falle)',
   !/navigator\.onLine/.test(

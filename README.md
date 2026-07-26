@@ -15,7 +15,8 @@ Ausführliche Produktbeschreibung: [`docs/PRD.md`](docs/PRD.md).
 Verfeinerte Anforderungen: [`docs/anforderungen/`](docs/anforderungen/README.md) —
 entstehen über den festen [Refinement-Prozess](docs/PROZESS.md).
 Architekturentscheidungen: [`docs/entscheidungen/`](docs/entscheidungen/README.md)
-(u. a. [ADR-001](docs/entscheidungen/ADR-001-statisches-hosting.md): warum statisch + Action).
+(u. a. [ADR-001](docs/entscheidungen/ADR-001-statisches-hosting.md): warum statisch + Action;
+[ADR-002](docs/entscheidungen/ADR-002-mehrseitige-auslieferung.md): mehrseitige Auslieferung).
 Aufgaben-Backlog: [`docs/BACKLOG.md`](docs/BACKLOG.md).
 
 ## Wie es funktioniert (Kurzfassung)
@@ -39,6 +40,8 @@ in `src/lib/` und wird **von Build-Skript und Client gemeinsam** genutzt.
 
 ```
 index.html                 Einstieg, lädt src/app.js + Leaflet (lokal)
+impressum.html             Rechtstext, reine Textseite ohne JS (A-4)
+datenschutz.html           Rechtstext, reine Textseite ohne JS (A-4)
 manifest.webmanifest       PWA-Manifest (Name, Icons, Farben, start_url)
 sw.js                      Service Worker: Shell-Precache + Offline-Daten
 icons/                     icon.svg (Quelle) + daraus gerenderte PNGs
@@ -61,6 +64,7 @@ scripts/
   test-quality.mjs         Tests des Qualitäts-Reports
   test-pwa.mjs             Tests von Manifest, Icons und Service Worker
   test-attribution.mjs     Tests der CC-BY-Namensnennung im ausgelieferten HTML
+  test-rechtstexte.mjs     Tests von Impressum/Datenschutzhinweis (inkl. Drift zum Code)
 data/
   baustellen.geojson       generierter, committeter Snapshot (Startwert: Beispieldaten)
   CHANGELOG.md             automatisch gepflegtes Änderungsprotokoll der Daten
@@ -115,7 +119,7 @@ npm test    # führt alle Testskripte nacheinander aus
 ```
 
 `npm test` läuft `test-transform`, `test-diff`, `test-classify`, `test-quality`,
-`test-pwa` und `test-attribution` durch; einzeln z. B.
+`test-pwa`, `test-attribution` und `test-rechtstexte` durch; einzeln z. B.
 `node scripts/test-transform.mjs`. Geprüft werden u. a.:
 
 - **`transform.js`** gegen bekannte Referenzkoordinaten (u. a. Marktplatz
@@ -124,13 +128,23 @@ npm test    # führt alle Testskripte nacheinander aus
 - die **fachliche Einordnung** (Klartext, Sperrgrad-Ampel, Verkehrsmittel),
 - der **Qualitäts-Report** (`quality-report.mjs`),
 - die **PWA-Artefakte** (`manifest.webmanifest`, Icons, `sw.js`): valides
-  Manifest, Icon-Dateien in der angegebenen Größe, **alle Pfade relativ** und
-  jede von `index.html` bzw. `src/app.js` referenzierte Datei auch precacht,
+  Manifest, Icon-Dateien in der angegebenen Größe, **alle Pfade relativ**, jede
+  von einer precacheten HTML-Seite bzw. von `src/app.js` referenzierte Datei
+  auch precacht, und die Navigation im Service Worker **pfadbewusst**
+  ([ADR-002](docs/entscheidungen/ADR-002-mehrseitige-auslieferung.md)),
 - die **CC-BY-Namensnennung**: sie steht **statisch im ausgelieferten
   `index.html`** (nicht per JS nachgetragen), ist wortgleich mit `ATTRIBUTION`
   aus `build-data.mjs` und wird von `app.js` nicht überschrieben. Die Nennung ist
   Lizenzbedingung — sie darf nicht am Datenabruf oder an aktivem JavaScript
-  hängen.
+  hängen,
+- die **Rechtstexte** (`impressum.html`, `datenschutz.html`): Pflichtabschnitte
+  vorhanden, aus dem Footer verlinkt, alle Pfade relativ, ohne JavaScript
+  nutzbar — und in **beide Richtungen driftsicher** gegen den Code: jeder
+  externe Host aus `src/*.js` muss im Datenschutzhinweis genannt sein, und
+  solange dieser „keine Cookies / keine eigene Speicherung" behauptet, darf im
+  Frontend kein `localStorage`, `document.cookie`, `indexedDB` o. Ä. auftauchen.
+  Wer einen Drittdienst oder einen Client-Speicher einbaut und den Text
+  vergisst, bekommt `npm test` rot.
 
 Die Referenzwerte der Transformation wurden einmalig mit `proj4` erzeugt —
 `proj4` ist **keine Laufzeit-Abhängigkeit**, nur ein Dev-Werkzeug.
@@ -270,3 +284,8 @@ Code: **MIT** (siehe [`LICENSE`](LICENSE)).
 Daten: „Baustellen", Stadt Karlsruhe, **CC-BY 4.0** — Namensnennung statisch im
 Footer von `index.html`, abgesichert durch `scripts/test-attribution.mjs`.
 Ohne Gewähr; verbindlich ist ausschließlich die Beschilderung vor Ort.
+
+Betreiberangaben und Datenflüsse: [`impressum.html`](impressum.html) und
+[`datenschutz.html`](datenschutz.html) (Anforderung
+[A-4](docs/anforderungen/A-4-impressum-datenschutz.md)) — auf der Live-Seite aus
+dem Footer verlinkt.

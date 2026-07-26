@@ -9,17 +9,20 @@
 // installierte App still unbenutzbar machen.
 //
 // ►► WARTUNGSPFLICHT ◄◄
-// Ändert sich EINE Datei aus SHELL (index.html, styles.css, app.js, lib/*,
-// vendor/leaflet/*, icons/*, Manifest), muss CACHE_SHELL hochgezählt werden.
+// Ändert sich EINE Datei aus SHELL (index.html, impressum.html,
+// datenschutz.html, styles.css, app.js, lib/*, vendor/leaflet/*, icons/*,
+// Manifest), muss CACHE_SHELL hochgezählt werden.
 // Sonst behalten bereits installierte Clients unbegrenzt die alte Fassung.
 // Die Shell wird absichtlich alles-oder-nichts pro Version ausgetauscht: ein
 // revalidierender Mix aus alter app.js und neuer styles.css wäre inkonsistent.
+// Dasselbe gilt für JEDE neue HTML-Seite: ohne SHELL-Eintrag und Versions-Bump
+// bekommen installierte Clients sie nie zu sehen (siehe ADR-002).
 //
 // Ausdrücklich NICHT vorhanden und auch nicht nachzurüsten (Nicht-Ziel „kein
 // echtes Push", siehe docs/PRD.md und A-2): kein `push`-, kein
 // `notificationclick`-, kein `sync`-/`periodicsync`-Handler.
 
-const CACHE_SHELL = 'bauwatch-shell-v2';
+const CACHE_SHELL = 'bauwatch-shell-v3';
 const CACHE_DATA = 'bauwatch-data-v1';
 
 // App-Shell. `'./'` ist der Navigations-Einstieg (liefert index.html aus) und
@@ -29,6 +32,11 @@ const CACHE_DATA = 'bauwatch-data-v1';
 // scripts/test-pwa.mjs prüft das gegen die echten Importe in src/app.js.
 const SHELL = [
   './',
+  // Rechtstexte (A-4). Reine Textseiten ohne JS — sie sind mit drin, weil ein
+  // Impressum, das offline verschwindet während die App offline weiterläuft,
+  // eine unnötige Inkonsistenz wäre (E7 in A-4).
+  'impressum.html',
+  'datenschutz.html',
   'src/styles.css',
   'src/app.js',
   'src/lib/format.js',
@@ -112,11 +120,34 @@ async function ablegen(cacheName, request, response) {
   }
 }
 
-// Navigation: cache-first aus dem Precache. Offline = gecachtes index.html.
+// Navigation: cache-first aus dem Precache — aber PFADBEWUSST (ADR-002).
+//
+// Bis A-4 gab es genau eine Seite, und diese Funktion beantwortete jede
+// Navigation mit INDEX_URL. Mit einer zweiten HTML-Seite wird daraus ein
+// stiller Fehler: installierte Clients bekämen unter …/impressum.html die
+// Kartenseite. Kein Fehler, keine Meldung — die falsche Seite. Deshalb zuerst
+// der ANGEFRAGTE Pfad, INDEX_URL nur noch als Offline-Rückfall.
 async function navigationAntwort(request) {
-  const treffer = await caches.match(INDEX_URL);
-  if (treffer) return treffer;
-  return fetch(request);
+  const url = new URL(request.url);
+
+  // Eigene precachete Seite? Dann die — unabhängig von einem Query-String,
+  // der an einer statischen Seite ohnehin nichts ändert.
+  if (SHELL_PATHS.has(url.pathname)) {
+    const seite = await caches.match(new URL(url.pathname, self.location).href, { ignoreVary: true });
+    if (seite) return seite;
+  }
+
+  // Unbekannter Pfad: ins Netz, damit GitHub Pages seine echte 404-Seite
+  // ausliefern darf, statt dass wir sie mit der Karte überdecken.
+  try {
+    return await fetch(request);
+  } catch (netzfehler) {
+    // Offline und keine passende Seite im Cache — die Startseite ist die
+    // brauchbarere Antwort als die Browser-Fehlerseite.
+    const start = await caches.match(INDEX_URL);
+    if (start) return start;
+    throw netzfehler;
+  }
 }
 
 // Shell-Assets: cache-first, bei Miss aus dem Netz und nachlegen.

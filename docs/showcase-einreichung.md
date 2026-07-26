@@ -19,7 +19,7 @@ drei Punkte benannt, die den Eintrag aufhalten. Was daraufhin passiert ist:
 | **2. Fehlende Felder für die Anlage** | **mitgeliefert**, siehe [Feldwerte für den CKAN-Eintrag](#feldwerte-für-den-ckan-eintrag). Screenshot: [`showcase/screenshot.png`](./showcase/screenshot.png) (Desktop) und [`showcase/screenshot-mobil.png`](./showcase/screenshot-mobil.png). Offen bleibt allein **Name + Kontaktmailadresse** — persönliche Angabe, siehe [Offene Punkte](#offene-punkte). |
 | **3. Abgrenzung zum Mobilitätsportal** | **aufgenommen**, als eigener Absatz im Anschreiben und ausführlich unter [Abgrenzung zum Mobilitätsportal](#abgrenzung-zum-mobilitätsportal). |
 | Aktualisierungs-Formulierung vereinheitlichen | **behoben** — das Anschreiben nutzt jetzt die Formulierung der App. |
-| Impressum/Datenschutzhinweis | **offen, bewusst nicht nebenbei entschieden** — als Anforderung `A-4` aufgenommen (Status `💡 Idee` in der [Anforderungs-Übersicht](./anforderungen/README.md)). |
+| Impressum/Datenschutzhinweis | **erledigt.** Anforderung [`A-4`](./anforderungen/A-4-impressum-datenschutz.md) umgesetzt: zwei eigene Textseiten, aus dem Footer jeder Seite verlinkt — [`impressum.html`](../impressum.html) und [`datenschutz.html`](../datenschutz.html). Der Datenschutzhinweis benennt genau die drei realen Datenflüsse (GitHub Pages, `tile.openstreetmap.org`, `nominatim.openstreetmap.org`) und behauptet nichts, was nicht zutrifft; `scripts/test-rechtstexte.mjs` hält beides gegen den Code fest. Offen bleibt allein die **Kontaktadresse** (derselbe Punkt wie oben, siehe [Offene Punkte](#offene-punkte)). |
 | Nominatim-Nutzungsrichtlinie | **geprüft, kein Handlungsbedarf** — die Suche fragt **nicht** bei jedem Tastendruck an, siehe [Nominatim](#nominatim-nutzungsrichtlinie-geprüft). |
 | Barrierefreiheitsvorteil der Liste erwähnen | **aufgenommen** ins Anschreiben und in den Langtext. |
 
@@ -37,7 +37,9 @@ drei Punkte benannt, die den Eintrag aufhalten. Was daraufhin passiert ist:
 - [x] Screenshot vorhanden (Desktop + Mobil, siehe `docs/showcase/`)
 - [ ] Name + Kontaktmailadresse für den Eintrag eingetragen (Weg entschieden:
       eigene Projektadresse — Adresse anlegen und eintragen)
-- [ ] Impressum/Datenschutzhinweis (Anforderung `A-4`, noch nicht entschieden)
+- [x] Impressum/Datenschutzhinweis vorhanden und aus dem Footer verlinkt
+      (Anforderung `A-4` umgesetzt) — bis auf die Kontaktadresse, die am
+      offenen Punkt oben hängt
 
 ## Feldwerte für den CKAN-Eintrag
 
@@ -200,18 +202,31 @@ Richtlinie der Grund, das nur mit Entprellung und Mindestlänge zu tun.
   Hauptsache abschaltbar, ohne den Portal-Eintrag anfassen zu müssen) und
   zusammen mit dem Anzeigenamen an den beiden markierten Stellen eintragen —
   in den [Feldwerten](#feldwerte-für-den-ckan-eintrag) und im Anschreiben.
-  Dieselbe Adresse dann auch in einem etwaigen Impressum (`A-4`) verwenden,
-  damit im Portal und auf der Seite nicht zwei Kontaktwege stehen.
-- **Impressum/Datenschutzhinweis** (Anforderung `A-4`, Status `💡 Idee`). Die
-  Redaktion rechnet mit einer Rückfrage des Justiziariats, weil die Seite einen
-  Drittdienst einbindet: Bei der Adresssuche geht die IP-Adresse an Nominatim
-  (OpenStreetMap Foundation), die Kartenkacheln kommen ebenfalls von OSM. Das
-  betrifft eine Produktentscheidung (eigene Seite oder Abschnitt? welche
-  Angaben? Verhältnis zum Nicht-Ziel „keine eigene Datenhaltung"?) und läuft
-  deshalb über den [Refinement-Prozess](./PROZESS.md), nicht nebenbei.
-  Nicht-juristische Einschätzung: Der Datenschutzhinweis ist der greifbarere
-  Teil — technisch ist er ehrlich zu erfüllen, weil die Anwendung kein Tracking,
-  keine Cookies und keine eigene Datenhaltung hat.
+  **Und an drei weiteren Stellen**, weil `A-4` inzwischen umgesetzt ist:
+  `impressum.html`, `datenschutz.html` (dort steht bis dahin der klar
+  erkennbare Platzhalter `kontakt@example.invalid`) sowie der Haken oben in den
+  [Voraussetzungen](#voraussetzungen). Es muss überall **dieselbe** Adresse
+  sein — `scripts/test-rechtstexte.mjs` meldet den Platzhalter bei jedem
+  `npm test` als `[WARN]` und wird **rot**, sobald der Haken hier gesetzt wird,
+  während die Seiten noch den Platzhalter tragen.
+- **Impressum/Datenschutzhinweis** — **umgesetzt** ([`A-4`](./anforderungen/A-4-impressum-datenschutz.md)),
+  bis auf die Kontaktadresse oben. Zwei eigene Textseiten ohne JavaScript,
+  aus dem Footer verlinkt. Der Datenschutzhinweis beschreibt genau die drei
+  realen Datenflüsse (Hosting bei GitHub Pages, Kartenkacheln und Nominatim bei
+  der OSMF) und stellt voran, was die Seite **nicht** tut — keine Cookies, kein
+  Tracking, keine eigene Datenhaltung; das ist im offenen Quellcode nachprüfbar
+  und wird von `scripts/test-rechtstexte.mjs` maschinell gegen den Code
+  gehalten. **Zwei Vorbehalte** bleiben und sind bewusst nicht wegdiskutiert:
+  (a) Das Impressum nennt Name und E-Mail, **keine Postanschrift** —
+  Produktentscheidung `E2` in `A-4` für ein rein privates, ehrenamtliches
+  Angebot; ein Postfach oder eine c/o-Adresse bleibt der Rückfallplan, falls das
+  Justiziariat auf einer zustellfähigen Anschrift besteht. (b) Die
+  **Kartenkacheln laden ohne vorherige Einwilligung** — eine strenge Lesart
+  verlangt hier eine vorgeschaltete Abfrage („Karte laden?"). Das würde die
+  Kernschleife des PRD beschädigen und ist deshalb eine eigene Abwägung, nicht
+  Teil von `A-4`; der Datenschutzhinweis benennt den Datenfluss dafür umso
+  deutlicher. Beides ist eine Laieneinschätzung, keine Rechtsberatung — ein
+  juristischer Blick auf die Personenangaben ist das Geld wert.
 - **Kontaktweg zur Redaktion** vor dem Versand auf dem Portal prüfen (hier
   bewusst nicht fest hinterlegt).
 - **Formales Barrierefreiheits-Audit** (Backlog `#12`) steht noch aus. Für eine

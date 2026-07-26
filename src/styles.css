@@ -461,6 +461,90 @@ body {
   font-weight: 600;
 }
 
+/* --- Reine Textseiten (Impressum, Datenschutz — Anforderung A-4) ---
+   Kein JavaScript, kein Leaflet, nur Fließtext. Deutlich schmaler als die
+   Kartenseite: 1200px sind für eine Karte richtig und für Fließtext viel zu
+   breit (~45rem entsprechen rund 75 Zeichen pro Zeile). Farben ausschließlich
+   aus den vorhandenen Variablen, damit hell und dunkel ohne Extrawurst
+   stimmen — --amber bleibt auch hier als Textfarbe verboten. */
+.textseite {
+  max-width: 45rem;
+  margin: 0 auto;
+  padding: 0 1rem 2rem;
+}
+.textseite .app-header {
+  padding-left: 0;
+  padding-right: 0;
+}
+.textseite .app-footer {
+  padding-left: 0;
+  padding-right: 0;
+  margin-top: 2rem;
+}
+.textseite h2 {
+  margin: 1.75rem 0 0.4rem;
+  font-size: 1.15rem;
+  line-height: 1.3;
+}
+.textseite p,
+.textseite ul {
+  margin: 0.5rem 0;
+}
+.textseite ul {
+  padding-left: 1.25rem;
+}
+.textseite li {
+  margin: 0.25rem 0;
+}
+.textseite a {
+  color: var(--accent);
+}
+.textseite code {
+  font-size: 0.9em;
+  overflow-wrap: anywhere;
+}
+
+/* Rücksprung zur Karte: erste Tab-Station, deshalb ganz oben im Quelltext. */
+.textseite-zurueck {
+  margin: 0.75rem 0 0;
+  font-size: 0.95rem;
+}
+
+/* Die Datenfluss-Tabelle ist fünfspaltig und passt auf dem Handy nicht in die
+   Breite. Sie scrollt deshalb in ihrem eigenen Kasten, statt die ganze Seite
+   waagerecht scrollen zu lassen. tabindex am Container setzt der Browser
+   nicht selbst — der Kasten ist per Tastatur trotzdem scrollbar, weil er ein
+   fokussierbares Element (die Links darin) enthält. */
+.tabelle-scroll {
+  overflow-x: auto;
+  margin: 0.75rem 0;
+}
+.datenfluesse {
+  border-collapse: collapse;
+  min-width: 36rem;
+  width: 100%;
+  font-size: 0.9rem;
+}
+.datenfluesse caption {
+  text-align: left;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  padding-bottom: 0.35rem;
+}
+.datenfluesse th,
+.datenfluesse td {
+  border: 1px solid var(--border);
+  padding: 0.5rem 0.6rem;
+  text-align: left;
+  vertical-align: top;
+}
+.datenfluesse thead th {
+  background: var(--surface);
+}
+.datenfluesse tbody th {
+  font-weight: 600;
+}
+
 /* --- Desktop-Layout: Karte + Liste nebeneinander --- */
 @media (min-width: 900px) {
   .content {
