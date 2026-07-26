@@ -2,6 +2,13 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 26.07.2026, 05:38 — 2 entfernt (gesamt 170)
+
+- ➖ ~~Kaiserstraße, Hirschstraße, Amalinestraße~~
+- ➖ ~~Fautenbruchstraße zw. Ettlinger Straße und Kurze Straße~~
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 25.07.2026, 05:25 — 3 neu, 7 entfernt (gesamt 172)
 
 - ➕ **Lessingstraße Einmündungsbereich Sophienstraße**
