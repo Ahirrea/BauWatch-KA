@@ -22,7 +22,7 @@
 // echtes Push", siehe docs/PRD.md und A-2): kein `push`-, kein
 // `notificationclick`-, kein `sync`-/`periodicsync`-Handler.
 
-const CACHE_SHELL = 'bauwatch-shell-v3';
+const CACHE_SHELL = 'bauwatch-shell-v4';
 const CACHE_DATA = 'bauwatch-data-v1';
 
 // App-Shell. `'./'` ist der Navigations-Einstieg (liefert index.html aus) und

@@ -10,6 +10,15 @@
   --accent-contrast: #ffffff;
   --focus: #1b4b73;
 
+  /* Chip-Fläche der Badges. Eigener Token statt --bg: Badges liegen auf
+     --surface (Listenkarte), nicht auf dem Seitenhintergrund. Im Hellmodus
+     ist --bg zufällig passend (leicht dunkler als die weiße Karte), im
+     Dunkelmodus wäre er dunkler als die Karte — der Chip wirkte ausgestanzt
+     statt aufliegend. Deshalb dort eine getönte, hellere Fläche. Werte hier
+     sind dieselben wie --bg/--border im Hellmodus (Hellmodus unverändert). */
+  --chip: #f7f7f5;
+  --chip-border: #d9dce1;
+
   /* Ampel — kontraststark auf Weiß: --red und --green erfüllen dort auch als
      Text WCAG AA, --amber ist mit ~2,3:1 im Hellmodus dagegen NUR für Flächen
      und Punkte brauchbar (im Dunkelmodus ~9,7:1 — der Verstoß fällt beim
@@ -35,6 +44,11 @@
     --accent: #6ba7d6;
     --accent-contrast: #10131a;
     --focus: #8cc0ec;
+    /* Heller als --surface (#1f2329) → der Chip liegt sichtbar auf der Karte.
+       Eigener, hellerer Rand, weil --border (#333941) hier zu nah am
+       Chip-Ton läge und die Kante vermatschen würde. */
+    --chip: #2a3038;
+    --chip-border: #434a54;
     --red: #ff6a5e;
     --amber: #ffb02e;
     --green: #5fce88;
@@ -390,9 +404,9 @@ body {
   font-size: 0.78rem;
   padding: 0.1rem 0.45rem;
   border-radius: 999px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--chip-border);
   color: var(--text-muted);
-  background: var(--bg);
+  background: var(--chip);
 }
 .badge-dist {
   border-color: var(--accent);

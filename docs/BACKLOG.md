@@ -207,12 +207,22 @@ frühere Sammel-Filterwert `behinderung` in `matchesAmpel` entfällt wieder.
 die Sperrgrad-Aufschlüsselung „Vollsperrungen"/„Behinderungen", die die Liste nicht
 anzeigt. (Label: `frontend`, `enhancement`)
 
-### ⬜ #22 Badge-Kontrast im Dark-Mode
+### ✅ #22 Badge-Kontrast im Dark-Mode
 `styles.css:341`: `.badge { background: var(--bg) }`. Im Dark-Mode ist `--bg`
 (#16181c) dunkler als die Kartenfläche `--surface` (#1f2329) — der Badge (z. B.
 „Auto") wirkt wie ausgestanzt statt als aufliegender Chip.
 **DoD:** Badge-Fläche im Dark-Mode nicht dunkler als die Karte (getönte Fläche
 oder Akzent-Rand); Light-Mode unverändert; WCAG-AA-Kontrast gewahrt. (Label: `frontend`)
+— **erledigt**: getönte Fläche über zwei eigene Tokens `--chip`/`--chip-border`
+statt Zweitnutzung von `--bg`. Badges liegen auf `--surface`, nicht auf dem
+Seitenhintergrund; im Hellmodus passte `--bg` nur zufällig. Hellmodus-Werte sind
+wortgleich die alten (`#f7f7f5` / `#d9dce1`), im Dunkelmodus `#2a3038` (heller als
+die Karte) mit hellerem Rand `#434a54` — mit `--border` (#333941) wäre die Kante
+im Chip-Ton vermatscht. Gerechnet, nicht geschätzt (Playwright, je ein Kontext
+`colorScheme: 'light'`/`'dark'`, Werte aus `getComputedStyle`): Badge-Text
+6,57:1 hell / 5,90:1 dunkel, Entfernungs-Badge (`--accent`) 8,51:1 / 5,15:1 —
+alle über WCAG AA; im Dunkelmodus L(Chip) 0,0289 > L(Karte) 0,0165, Fläche↔Karte
+1,19:1. `CACHE_SHELL` auf `v4` (Shell-Datei geändert).
 
 ### ⬜ #23 Vertikaler Platz über der Karte (Desktop)
 Header + Suche + drei Filtergruppen + Kennzahlen stapeln vertikal; auf
