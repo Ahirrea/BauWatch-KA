@@ -11,13 +11,13 @@ Bauabfolge. Labels-Vorschlag: `setup`, `data`, `frontend`, `a11y`, `docs`,
 > entstehen über den festen [Refinement-Prozess](./PROZESS.md).
 
 **Statuslegende:** ✅ erledigt · 🟡 teilweise / offen · ⬜ offen
-**Stand:** 2026-07-26 (#25 und #26 aus der Showcase-Vorprüfung erledigt).
+**Stand:** 2026-07-26 (#22 aus dem Desktop-UI-Review erledigt).
 
 > Kurzfassung: Milestones 1–3 sind umgesetzt und die Seite ist über GitHub Pages
 > live (#5). Von Milestone 4 sind #15 und #18 erledigt; #16 (Push-/Abo-Idee) ist
 > evaluiert (Ergebnis → Anforderung A-2), offen bleibt als optionaler Punkt
 > noch #17 (.ics-Export). Aus den Anforderungen ist **A-3 (PWA) umgesetzt**
-> (#24); offen aus dem Desktop-UI-Review sind #22 und #23. Aus der
+> (#24); aus dem Desktop-UI-Review ist #22 erledigt, offen bleibt #23. Aus der
 > Showcase-Vorprüfung sind #25 und #26 erledigt.
 
 ---
