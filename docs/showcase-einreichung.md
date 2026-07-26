@@ -35,7 +35,8 @@ drei Punkte benannt, die den Eintrag aufhalten. Was daraufhin passiert ist:
       Beschilderung vor Ort")
 - [x] Als unabhängiges Bürgerprojekt erkennbar (nicht im Auftrag der Stadt)
 - [x] Screenshot vorhanden (Desktop + Mobil, siehe `docs/showcase/`)
-- [ ] Name + Kontaktmailadresse für den Eintrag festgelegt
+- [ ] Name + Kontaktmailadresse für den Eintrag eingetragen (Weg entschieden:
+      eigene Projektadresse — Adresse anlegen und eintragen)
 - [ ] Impressum/Datenschutzhinweis (Anforderung `A-4`, noch nicht entschieden)
 
 ## Feldwerte für den CKAN-Eintrag
@@ -81,7 +82,18 @@ installierbar und auch offline mit dem zuletzt geladenen Stand nutzbar.
 
 **Lizenz Anwendung:** Code MIT · Daten CC-BY 4.0 (Stadt Karlsruhe)
 
-**Name / Kontakt für den Eintrag:** `<noch festzulegen — siehe Offene Punkte>`
+**Name / Kontakt für den Eintrag:** ⚠ **vor dem Versand ausfüllen** — bewusst
+nicht vorbelegt, siehe [Offene Punkte](#offene-punkte).
+
+```
+Name:    <Anzeigename für den Eintrag>
+E-Mail:  <projekt-eigene Adresse, NICHT die private>
+```
+
+> Entschieden (2026-07-26): eine **eigene Projektadresse**, nicht die private.
+> Die Adresse steht dauerhaft öffentlich im Portal; eine Weiterleitungs- oder
+> Alias-Adresse lässt sich später abschalten oder umziehen, ohne den
+> Portal-Eintrag anfassen zu müssen.
 
 ## Anschreiben
 
@@ -140,8 +152,10 @@ installierbar und auch offline mit dem zuletzt geladenen Stand nutzbar.
 > Screenshot (Desktop und Mobil), Kurztext, Langtext und Tag-Vorschläge lege ich
 > bei, damit der Eintrag ohne Rückfragen angelegt werden kann.
 >
+> **Kontakt für den Eintrag:** [Anzeigename] · [projekt-eigene E-Mail-Adresse]
+>
 > Mit freundlichen Grüßen
-> [Name]
+> [Anzeigename]
 
 ## Abgrenzung zum Mobilitätsportal
 
@@ -179,10 +193,15 @@ Richtlinie der Grund, das nur mit Entprellung und Mindestlänge zu tun.
 
 ## Offene Punkte
 
-- **Name + Kontaktmailadresse für den Eintrag.** Bewusst nicht vorbelegt: Der
-  Eintrag ist öffentlich, die Adresse wäre dauerhaft im Portal sichtbar. Zu
-  entscheiden ist, ob die private Adresse genannt wird oder eine eigene
-  Projekt-/Weiterleitungsadresse angelegt wird (empfohlen).
+- **Name + Kontaktmailadresse für den Eintrag** — der letzte offene Punkt der
+  Redaktion. **Entschieden (2026-07-26): eine eigene Projektadresse**, nicht die
+  private; der Eintrag ist öffentlich und die Adresse dauerhaft im Portal
+  sichtbar. Noch zu tun: Adresse anlegen (Alias oder Weiterleitung genügt,
+  Hauptsache abschaltbar, ohne den Portal-Eintrag anfassen zu müssen) und
+  zusammen mit dem Anzeigenamen an den beiden markierten Stellen eintragen —
+  in den [Feldwerten](#feldwerte-für-den-ckan-eintrag) und im Anschreiben.
+  Dieselbe Adresse dann auch in einem etwaigen Impressum (`A-4`) verwenden,
+  damit im Portal und auf der Seite nicht zwei Kontaktwege stehen.
 - **Impressum/Datenschutzhinweis** (Anforderung `A-4`, Status `💡 Idee`). Die
   Redaktion rechnet mit einer Rückfrage des Justiziariats, weil die Seite einen
   Drittdienst einbindet: Bei der Adresssuche geht die IP-Adresse an Nominatim
