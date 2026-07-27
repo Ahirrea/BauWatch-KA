@@ -2,6 +2,16 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 27.07.2026, 13:32 — 4 neu, 1 geändert (gesamt 183)
+
+- ➕ **Kropsburgweg, Madenburgweg, Binsenschlauchweg, Landauer Str., Bienwaldstr.**
+- ➕ **Waldstadt**
+- ➕ **K9657/ Südtangente Höhe AS4**
+- ➕ **K9652/ Südtangente Höhe Ottostraße**
+- ✏️ Breslauer Straße Wohnwege 64 A - I und 66 A -L — Ende: 2026-07-31 → 2026-08-31; Info geändert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 27.07.2026, 09:39 — 1 neu, 2 geändert (gesamt 179)
 
 - ➕ **Hirschstraße zw. Amalinestraße und Sophienstraße**
