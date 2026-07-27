@@ -2,6 +2,7 @@
 // data/baustellen.geojson (siehe ADR-001) und macht daraus Karte + Liste.
 
 import { restdauer, formatRange } from './lib/format.js';
+import { DEFAULT_LANG, STRINGS, AMPEL_LABEL, VM_LABEL, t } from './lib/i18n.js';
 
 // Leaflet wird global über das <script>-Tag geladen.
 /* global L */
@@ -12,8 +13,9 @@ const RADIUS_KM = 1.5;
 
 // Ampelfarben — müssen zu styles.css passen.
 const AMPEL_COLOR = { voll: '#c02626', teil: '#f08a00', gering: '#197a3d' };
-const AMPEL_LABEL = { voll: 'Vollsperrung', teil: 'Teilsperrung', gering: 'Geringe Behinderung' };
-const VM_LABEL = { fuss: 'zu Fuß', rad: 'Rad', auto: 'Auto', oepnv: 'ÖPNV' };
+
+// Language preference (A-5). localStorage key: 'bauwatch.sprache'.
+const SPRACHE_KEY = 'bauwatch.sprache';
 
 // --- Zustand ---------------------------------------------------------------
 const state = {
@@ -21,7 +23,28 @@ const state = {
   filters: { zeitraum: 'heute', ampel: 'alle', verkehrsmittel: 'alle' },
   search: null, // { center: [lat, lon], label: string }
   selectedId: null,
+  lang: liesGespeicherteSprache(),
 };
+
+// Read failures (private mode, disabled storage) fall back to the German
+// default and never throw — a storage failure must not break the switch.
+function liesGespeicherteSprache() {
+  try {
+    const wert = localStorage.getItem(SPRACHE_KEY);
+    return wert === 'de' || wert === 'en' ? wert : DEFAULT_LANG;
+  } catch {
+    return DEFAULT_LANG;
+  }
+}
+
+function schreibeGespeicherteSprache(lang) {
+  try {
+    localStorage.setItem(SPRACHE_KEY, lang);
+  } catch {
+    // Quota/disabled storage: the switch itself still works, just not
+    // persisted for the next visit (same pattern as sw.js's ablegen()).
+  }
+}
 
 let map;
 let markerLayer;
@@ -126,34 +149,40 @@ function currentFiltered() {
 // --- Rendering -------------------------------------------------------------
 function popupHtml(f) {
   const p = f.properties;
-  const rest = restdauer(p.bis);
-  const vms = Object.keys(VM_LABEL)
+  const lang = state.lang;
+  const vmLabel = VM_LABEL[lang];
+  const ampelLabel = AMPEL_LABEL[lang];
+  const rest = restdauer(p.bis, undefined, lang);
+  const vms = Object.keys(vmLabel)
     .filter((k) => p.verkehrsmittel?.[k])
-    .map((k) => VM_LABEL[k])
+    .map((k) => vmLabel[k])
     .join(', ');
   return `
     <div class="popup-title">
       <span class="dot dot-${p.ampel === 'voll' ? 'red' : p.ampel === 'teil' ? 'amber' : 'green'}"></span>
       ${escapeHtml(p.titel)}
     </div>
-    <div>${escapeHtml(AMPEL_LABEL[p.ampel] || p.art)}</div>
+    <div>${escapeHtml(ampelLabel[p.ampel] || p.art)}</div>
     ${p.info ? `<div>${escapeHtml(p.info)}</div>` : ''}
-    <div><strong>${escapeHtml(rest.text)}</strong> · ${escapeHtml(formatRange(p.von, p.bis))}</div>
-    <div>Verkehr: ${escapeHtml(vms || '–')}</div>
-    ${p.verursacher ? `<div>Verursacher: ${escapeHtml(p.verursacher)}</div>` : ''}
+    <div><strong>${escapeHtml(rest.text)}</strong> · ${escapeHtml(formatRange(p.von, p.bis, lang))}</div>
+    <div>${escapeHtml(STRINGS[lang].popupVerkehr)} ${escapeHtml(vms || '–')}</div>
+    ${p.verursacher ? `<div>${escapeHtml(STRINGS[lang].popupVerursacher)} ${escapeHtml(p.verursacher)}</div>` : ''}
   `;
 }
 
 function listItemHtml(f) {
   const p = f.properties;
-  const rest = restdauer(p.bis);
+  const lang = state.lang;
+  const vmLabel = VM_LABEL[lang];
+  const ampelLabel = AMPEL_LABEL[lang];
+  const rest = restdauer(p.bis, undefined, lang);
   const dist =
     f._dist != null
       ? `<span class="badge badge-dist">${f._dist.toFixed(1)} km</span>`
       : '';
-  const vms = Object.keys(VM_LABEL)
+  const vms = Object.keys(vmLabel)
     .filter((k) => p.verkehrsmittel?.[k])
-    .map((k) => `<span class="badge">${escapeHtml(VM_LABEL[k])}</span>`)
+    .map((k) => `<span class="badge">${escapeHtml(vmLabel[k])}</span>`)
     .join('');
   return `
     <button type="button" class="list-item-btn">
@@ -163,7 +192,7 @@ function listItemHtml(f) {
       </span>
       <span class="item-meta">
         <span class="item-restdauer ${rest.expired ? 'expired' : ''}">${escapeHtml(rest.text)}</span>
-        · ${escapeHtml(AMPEL_LABEL[p.ampel] || p.art)}
+        · ${escapeHtml(ampelLabel[p.ampel] || p.art)}
         ${p.verursacher ? '· ' + escapeHtml(p.verursacher) : ''}
       </span>
       <span class="item-badges">${dist}${vms}</span>
@@ -216,17 +245,19 @@ function renderStats(list) {
 }
 
 function renderStatus(list) {
+  const s = STRINGS[state.lang];
   const status = el('list-status');
   status.classList.remove('is-error');
   if (list.length === 0) {
     if (state.search) {
-      status.textContent = `Keine Baustellen im Umkreis von ${RADIUS_KM} km um „${state.search.label}" mit diesen Filtern.`;
+      status.textContent = t(s.listStatusEmptySearch, { km: RADIUS_KM, label: state.search.label });
     } else {
-      status.textContent = 'Keine Baustellen für diese Filter. Filter lockern oder „Alle" wählen.';
+      status.textContent = s.listStatusEmptyFilters;
     }
   } else {
-    const suffix = state.search ? ` · Umkreis um „${state.search.label}"` : '';
-    status.textContent = `${list.length} Baustelle${list.length === 1 ? '' : 'n'}${suffix}`;
+    const count = list.length === 1 ? s.listStatusCountOne : t(s.listStatusCountMany, { n: list.length });
+    const suffix = state.search ? t(s.listStatusSearchSuffix, { label: state.search.label }) : '';
+    status.textContent = `${count}${suffix}`;
   }
 }
 
@@ -286,6 +317,54 @@ function prefersReducedMotion() {
   return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 }
 
+// --- Language switch (A-5) --------------------------------------------------
+// Swaps every data-i18n/data-i18n-attr static text node and document.lang;
+// dynamic content (markers/list/popups/stats/status) goes through the normal
+// render() pipeline afterwards — same "flip a control, call render()" flow
+// the filters already use, no new state model.
+function applyI18n(lang) {
+  const dict = STRINGS[lang];
+  document.querySelectorAll('[data-i18n]').forEach((elm) => {
+    elm.textContent = dict[elm.dataset.i18n];
+  });
+  document.querySelectorAll('[data-i18n-attr]').forEach((elm) => {
+    for (const spec of elm.dataset.i18nAttr.split(',')) {
+      const [attr, key] = spec.split(':');
+      elm.setAttribute(attr, dict[key]);
+    }
+  });
+  document.documentElement.lang = lang;
+}
+
+function syncLanguageButtons(lang) {
+  document.querySelectorAll('[data-lang-toggle] button').forEach((b) => {
+    const active = b.dataset.lang === lang;
+    b.classList.toggle('is-active', active);
+    b.setAttribute('aria-pressed', String(active));
+  });
+}
+
+function wireLanguageToggle() {
+  const group = document.querySelector('[data-lang-toggle]');
+  if (!group) return;
+  syncLanguageButtons(state.lang);
+  applyI18n(state.lang);
+  group.querySelectorAll('button').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const lang = btn.dataset.lang;
+      if (lang === state.lang) return;
+      state.lang = lang;
+      syncLanguageButtons(lang);
+      applyI18n(lang);
+      schreibeGespeicherteSprache(lang);
+      // Footer text (Stand/sample-data hint) depends on the last-loaded
+      // collection, not just on filters — re-apply it in the new language.
+      if (letzteCollection) setFooter(letzteCollection, { ausCache: letzterAusCache });
+      render();
+    });
+  });
+}
+
 // --- Filter-UI -------------------------------------------------------------
 function wireFilters() {
   document.querySelectorAll('.filter-group').forEach((group) => {
@@ -340,23 +419,23 @@ function wireSearch() {
     searchBusy = true;
     btn.disabled = true;
     status.classList.remove('is-error');
-    status.textContent = 'Adresse wird gesucht …';
+    status.textContent = STRINGS[state.lang].searchStatusSearching;
     try {
       const hit = await geocode(q);
       if (!hit) {
         status.classList.add('is-error');
-        status.textContent = 'Adresse in Karlsruhe nicht gefunden. Bitte genauer angeben.';
+        status.textContent = STRINGS[state.lang].searchStatusNotFound;
         return;
       }
       state.search = hit;
       drawSearchCircle(hit.center);
-      status.textContent = `Umkreis ${RADIUS_KM} km um „${hit.label}".`;
+      status.textContent = t(STRINGS[state.lang].searchStatusResult, { km: RADIUS_KM, label: hit.label });
       resetBtn.hidden = false;
       map.setView(hit.center, 14, { animate: !prefersReducedMotion() });
       render();
     } catch (err) {
       status.classList.add('is-error');
-      status.textContent = 'Adresssuche gerade nicht möglich. Bitte später erneut versuchen.';
+      status.textContent = STRINGS[state.lang].searchStatusError;
       console.error(err);
     } finally {
       searchBusy = false;
@@ -375,7 +454,7 @@ function wireSearch() {
     btn.disabled = offline || searchBusy;
     if (offline) {
       status.classList.remove('is-error');
-      status.textContent = 'Adresssuche braucht Internet.';
+      status.textContent = STRINGS[state.lang].searchOfflineHint;
       offlineHinweis = true;
     } else if (offlineHinweis) {
       // Nur den eigenen Hinweis zurücknehmen, keine echte Suchmeldung überschreiben.
@@ -427,28 +506,34 @@ function initMap() {
   searchLayer = L.layerGroup().addTo(map);
 }
 
+// Word-based date/time (unlike format.js's numeric dd.mm.yyyy, E5) — the
+// locale follows the UI language so month names don't stay German in an
+// English UI.
+const STAND_LOCALE = { de: 'de-DE', en: 'en-GB' };
+
 function setFooter(collection, { ausCache = false } = {}) {
   const stand = collection.stand ? new Date(collection.stand) : null;
   el('stand').textContent = stand
-    ? stand.toLocaleString('de-DE', { dateStyle: 'medium', timeStyle: 'short' })
-    : 'unbekannt';
+    ? stand.toLocaleString(STAND_LOCALE[state.lang], { dateStyle: 'medium', timeStyle: 'short' })
+    : STRINGS[state.lang].standUnknown;
   // Die Namensnennung selbst wird hier NICHT geschrieben: sie steht statisch in
   // index.html (Lizenzbedingung — sie darf nicht am Datenabruf hängen). Hier
   // kommt nur der Zusatz für den Beispieldaten-Startwert dazu, damit niemand
   // Platzhalter für amtliche Daten hält.
   const hinweis = el('attribution-hinweis');
-  hinweis.textContent = collection.sample
-    ? '⚠ Beispieldaten — noch kein echter Abruf des städtischen WFS-Dienstes.'
-    : '';
+  hinweis.textContent = collection.sample ? STRINGS[state.lang].sampleDataHint : '';
   hinweis.hidden = !collection.sample;
   // Offline-Kennzeichnung: der Stand ist echt, aber möglicherweise überholt.
   el('stand-offline').hidden = !ausCache;
   el('stand-zeile').classList.toggle('is-stale', ausCache);
 }
 
+let letzteCollection = null;
+let letzterAusCache = false;
+
 async function loadData() {
   const status = el('list-status');
-  status.textContent = 'Baustellen werden geladen …';
+  status.textContent = STRINGS[state.lang].listStatusLoading;
   try {
     const res = await fetch(DATA_URL, { cache: 'no-cache' });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -457,6 +542,8 @@ async function loadData() {
     // das liefert in Captive Portals fälschlich true.
     const ausCache = res.headers.get('X-Bauwatch-Cache') === 'hit';
     const collection = await res.json();
+    letzteCollection = collection;
+    letzterAusCache = ausCache;
     state.features = (collection.features || []).map((f, i) => {
       f._key = featureKey(f, i);
       return f;
@@ -464,14 +551,13 @@ async function loadData() {
     setFooter(collection, { ausCache });
     render();
     if (state.features.length === 0) {
-      status.textContent = 'Zurzeit sind keine Baustellendaten vorhanden.';
+      status.textContent = STRINGS[state.lang].listStatusNoData;
     }
   } catch (err) {
     console.error(err);
     status.classList.add('is-error');
-    status.textContent =
-      'Die Baustellendaten konnten nicht geladen werden. Bitte Seite neu laden.';
-    el('stand').textContent = 'nicht verfügbar';
+    status.textContent = STRINGS[state.lang].listStatusLoadError;
+    el('stand').textContent = STRINGS[state.lang].standUnavailable;
   }
 }
 
@@ -488,10 +574,10 @@ function zeigeUpdateBanner(worker) {
   banner.dataset.gezeigt = 'ja';
 
   const text = document.createElement('span');
-  text.textContent = 'Neue Version verfügbar.';
+  text.textContent = STRINGS[state.lang].updateBannerText;
   const btn = document.createElement('button');
   btn.type = 'button';
-  btn.textContent = 'Neu laden';
+  btn.textContent = STRINGS[state.lang].updateBannerButton;
   btn.addEventListener('click', () => {
     btn.disabled = true;
     reloadErlaubt = true;
@@ -540,6 +626,7 @@ function initServiceWorker() {
 // --- Start -----------------------------------------------------------------
 initMap();
 wireFilters();
+wireLanguageToggle();
 wireSearch();
 loadData();
 initServiceWorker();

@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Wo wird gebaut? — Baustellen in Karlsruhe</title>
+    <title data-i18n="docTitle">Wo wird gebaut? — Baustellen in Karlsruhe</title>
     <meta
       name="description"
+      data-i18n-attr="content:metaDescription"
       content="Bürgernahe Karte und Liste der offenen Baustellen in Karlsruhe. Betrifft mich das — auf meinem Weg, mit meinem Verkehrsmittel, in meinem Zeitraum?"
     />
 
@@ -23,11 +24,22 @@
     <link rel="stylesheet" href="src/styles.css" />
   </head>
   <body>
-    <a class="skip-link" href="#liste">Zur Baustellen-Liste springen</a>
+    <a class="skip-link" href="#liste" data-i18n="skipLink">Zur Baustellen-Liste springen</a>
 
     <header class="app-header">
-      <h1>Wo wird gebaut?</h1>
-      <p class="tagline">Offene Baustellen in Karlsruhe — betrifft mich das?</p>
+      <!-- Sprachumschalter (A-5). Reuses the filter segmented-button pattern
+           (role="group", aria-pressed, .is-active) but is wired separately
+           from wireFilters(), since it drives document language, not
+           state.filters. "Deutsch"/"English" are language autonyms — they
+           stay as-is regardless of the active language. -->
+      <div class="lang-toggle" role="group" aria-label="Sprache / Language" data-lang-toggle>
+        <div class="segments">
+          <button type="button" data-lang="de" aria-pressed="true" class="is-active">Deutsch</button>
+          <button type="button" data-lang="en" aria-pressed="false">English</button>
+        </div>
+      </div>
+      <h1 data-i18n="h1">Wo wird gebaut?</h1>
+      <p class="tagline" data-i18n="tagline">Offene Baustellen in Karlsruhe — betrifft mich das?</p>
     </header>
 
     <!-- Update-Hinweis der PWA. Bleibt leer, bis app.js eine neue Version
@@ -36,50 +48,51 @@
     <div class="update-banner" id="update-banner" role="status" aria-live="polite"></div>
 
     <!-- Adress-/Umkreissuche -->
-    <form class="search" id="search-form" role="search" aria-label="Adresssuche">
-      <label class="visually-hidden" for="search-input">Adresse in Karlsruhe</label>
+    <form class="search" id="search-form" role="search" aria-label="Adresssuche" data-i18n-attr="aria-label:searchAriaLabel">
+      <label class="visually-hidden" for="search-input" data-i18n="searchInputLabel">Adresse in Karlsruhe</label>
       <input
         type="text"
         id="search-input"
         name="q"
         placeholder="Adresse in Karlsruhe (z. B. Kaiserstraße 1)"
+        data-i18n-attr="placeholder:searchPlaceholder"
         autocomplete="off"
       />
-      <button type="submit" id="search-btn">Umkreis&nbsp;suchen</button>
-      <button type="button" id="search-reset" hidden>Zurücksetzen</button>
+      <button type="submit" id="search-btn" data-i18n="searchButton">Umkreis&nbsp;suchen</button>
+      <button type="button" id="search-reset" hidden data-i18n="searchReset">Zurücksetzen</button>
       <span class="search-status" id="search-status" role="status" aria-live="polite"></span>
     </form>
 
     <!-- Filter -->
-    <section class="filters" aria-label="Filter">
-      <div class="filter-group" role="group" aria-label="Zeitraum" data-filter="zeitraum">
-        <span class="filter-label">Zeitraum</span>
+    <section class="filters" aria-label="Filter" data-i18n-attr="aria-label:filtersAriaLabel">
+      <div class="filter-group" role="group" aria-label="Zeitraum" data-filter="zeitraum" data-i18n-attr="aria-label:filterZeitraumAriaLabel">
+        <span class="filter-label" data-i18n="filterZeitraumLabel">Zeitraum</span>
         <div class="segments">
-          <button type="button" data-value="heute" aria-pressed="true" class="is-active">Heute aktiv</button>
-          <button type="button" data-value="woche" aria-pressed="false">Diese Woche</button>
-          <button type="button" data-value="geplant" aria-pressed="false">Bald geplant</button>
-          <button type="button" data-value="alle" aria-pressed="false">Alle</button>
+          <button type="button" data-value="heute" aria-pressed="true" class="is-active" data-i18n="filterHeute">Heute aktiv</button>
+          <button type="button" data-value="woche" aria-pressed="false" data-i18n="filterWoche">Diese Woche</button>
+          <button type="button" data-value="geplant" aria-pressed="false" data-i18n="filterGeplant">Bald geplant</button>
+          <button type="button" data-value="alle" aria-pressed="false" data-i18n="filterAlle">Alle</button>
         </div>
       </div>
 
-      <div class="filter-group" role="group" aria-label="Sperrgrad" data-filter="ampel">
-        <span class="filter-label">Sperrgrad</span>
+      <div class="filter-group" role="group" aria-label="Sperrgrad" data-filter="ampel" data-i18n-attr="aria-label:filterAmpelAriaLabel">
+        <span class="filter-label" data-i18n="filterAmpelLabel">Sperrgrad</span>
         <div class="segments">
-          <button type="button" data-value="alle" aria-pressed="true" class="is-active">Alle</button>
-          <button type="button" data-value="voll" aria-pressed="false"><span class="dot dot-red" aria-hidden="true"></span>Voll</button>
-          <button type="button" data-value="teil" aria-pressed="false"><span class="dot dot-amber" aria-hidden="true"></span>Teil</button>
-          <button type="button" data-value="gering" aria-pressed="false"><span class="dot dot-green" aria-hidden="true"></span>Gering</button>
+          <button type="button" data-value="alle" aria-pressed="true" class="is-active" data-i18n="filterAlle">Alle</button>
+          <button type="button" data-value="voll" aria-pressed="false"><span class="dot dot-red" aria-hidden="true"></span><span data-i18n="filterVoll">Voll</span></button>
+          <button type="button" data-value="teil" aria-pressed="false"><span class="dot dot-amber" aria-hidden="true"></span><span data-i18n="filterTeil">Teil</span></button>
+          <button type="button" data-value="gering" aria-pressed="false"><span class="dot dot-green" aria-hidden="true"></span><span data-i18n="filterGering">Gering</span></button>
         </div>
       </div>
 
-      <div class="filter-group" role="group" aria-label="Verkehrsmittel" data-filter="verkehrsmittel">
-        <span class="filter-label">Verkehrsmittel</span>
+      <div class="filter-group" role="group" aria-label="Verkehrsmittel" data-filter="verkehrsmittel" data-i18n-attr="aria-label:filterVerkehrsmittelAriaLabel">
+        <span class="filter-label" data-i18n="filterVerkehrsmittelLabel">Verkehrsmittel</span>
         <div class="segments">
-          <button type="button" data-value="alle" aria-pressed="true" class="is-active">Alle</button>
-          <button type="button" data-value="fuss" aria-pressed="false">zu Fuß</button>
-          <button type="button" data-value="rad" aria-pressed="false">Rad</button>
-          <button type="button" data-value="auto" aria-pressed="false">Auto</button>
-          <button type="button" data-value="oepnv" aria-pressed="false">ÖPNV</button>
+          <button type="button" data-value="alle" aria-pressed="true" class="is-active" data-i18n="filterAlle">Alle</button>
+          <button type="button" data-value="fuss" aria-pressed="false" data-i18n="filterFuss">zu Fuß</button>
+          <button type="button" data-value="rad" aria-pressed="false" data-i18n="filterRad">Rad</button>
+          <button type="button" data-value="auto" aria-pressed="false" data-i18n="filterAuto">Auto</button>
+          <button type="button" data-value="oepnv" aria-pressed="false" data-i18n="filterOepnv">ÖPNV</button>
         </div>
       </div>
     </section>
@@ -88,17 +101,17 @@
          klickbaren Filter-Segmenten entkoppelt). Die Gesamtzahl der Baustellen
          steht bereits im Listenkopf („N Baustellen"); hier nur die Sperrgrad-
          Aufschlüsselung, die die Liste nicht anzeigt. -->
-    <section class="stats" id="stats" aria-live="polite" aria-label="Kennzahlen">
-      <div class="stat"><strong id="stat-voll">–</strong><span>Vollsperrungen</span></div>
-      <div class="stat"><strong id="stat-behinderung">–</strong><span>Behinderungen</span></div>
+    <section class="stats" id="stats" aria-live="polite" aria-label="Kennzahlen" data-i18n-attr="aria-label:statsAriaLabel">
+      <div class="stat"><strong id="stat-voll">–</strong><span data-i18n="statVoll">Vollsperrungen</span></div>
+      <div class="stat"><strong id="stat-behinderung">–</strong><span data-i18n="statBehinderung">Behinderungen</span></div>
     </section>
 
     <!-- Karte + Liste -->
     <main class="content">
       <div class="map-wrap">
-        <div id="map" role="region" aria-label="Karte der Baustellen in Karlsruhe"></div>
+        <div id="map" role="region" aria-label="Karte der Baustellen in Karlsruhe" data-i18n-attr="aria-label:mapAriaLabel"></div>
       </div>
-      <section class="list-wrap" aria-label="Baustellen-Liste">
+      <section class="list-wrap" aria-label="Baustellen-Liste" data-i18n-attr="aria-label:listAriaLabel">
         <div class="list-status" id="list-status" role="status" aria-live="polite"></div>
         <ul id="liste" class="liste"></ul>
       </section>
@@ -106,9 +119,9 @@
 
     <footer class="app-footer">
       <p class="stand" id="stand-zeile">
-        Daten zuletzt geändert: <span id="stand">wird geladen …</span>
-        <span class="stand-offline" id="stand-offline" hidden>· offline, aus dem Gerätespeicher</span>
-        <span class="stand-hint">(automatisch alle 4&nbsp;h geprüft, aktualisiert nur bei Änderungen)</span>
+        <span data-i18n="standLabel">Daten zuletzt geändert:</span> <span id="stand" data-i18n="standLoading">wird geladen …</span>
+        <span class="stand-offline" id="stand-offline" hidden data-i18n="standOffline">· offline, aus dem Gerätespeicher</span>
+        <span class="stand-hint" data-i18n="standHint">(automatisch alle 4&nbsp;h geprüft, aktualisiert nur bei Änderungen)</span>
       </p>
       <!-- Namensnennung nach CC-BY 4.0: bewusst STATISCH im ausgelieferten HTML
            und nicht per JS nachgetragen — sie ist Lizenzbedingung und muss auch
@@ -124,7 +137,7 @@
       <!-- Nur für den Beispieldaten-Startwert (data/baustellen.geojson mit
            sample: true). Bleibt leer und unsichtbar, sobald echte Daten da sind. -->
       <p class="attribution-hinweis" id="attribution-hinweis" hidden></p>
-      <p class="disclaimer">
+      <p class="disclaimer" data-i18n="disclaimer">
         Ohne Gewähr. Verbindlich ist ausschließlich die Beschilderung vor Ort.
       </p>
       <p class="credits">

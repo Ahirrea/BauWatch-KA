@@ -121,6 +121,21 @@ body {
   color: var(--text-muted);
 }
 
+/* --- Sprachumschalter (A-5) ---
+   Reuses .segments/.segments button verbatim (defined below, not scoped to
+   .filter-group) — same look, same a11y wiring, no new pattern. Positioned
+   top-right of the header; wraps to its own line on narrow screens instead
+   of squeezing the title. */
+.lang-toggle {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.5rem;
+}
+.lang-toggle .segments button {
+  font-size: 0.85rem;
+  padding: 0.35rem 0.6rem;
+}
+
 /* --- Update-Hinweis der PWA ---
    Erscheint nur, wenn eine neue Version bereitsteht. Kein Fokus-Raub, kein
    Auto-Reload — die Nutzerin entscheidet (Entscheidung 4 in A-3). Solange die

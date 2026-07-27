@@ -246,7 +246,6 @@ check('Hosting (GitHub Pages) ist im Datenschutzhinweis genannt', /GitHub Pages/
 const clientCode = frontend.map(lies).join('\n') + lies('index.html');
 const SPEICHER = [
   ['Cookies', /document\.cookie/],
-  ['localStorage', /localStorage/],
   ['sessionStorage', /sessionStorage/],
   ['IndexedDB', /indexedDB/i],
   ['Standortabfrage', /navigator\.geolocation/],
@@ -259,6 +258,43 @@ for (const [name, re] of SPEICHER) {
     `Behauptung deckt sich mit dem Code: ${name}`,
     !imCode || !behauptetKeine,
     `${name} wird im Frontend genutzt, der Datenschutzhinweis behauptet aber das Gegenteil`
+  );
+}
+
+// E6 (A-5): localStorage got a narrow, documented exception (ADR-003) for the
+// anonymous language preference — an unconditional "must not appear" check
+// would now permanently fail. Instead: every localStorage key actually used
+// in the frontend must be named in datenschutz.html's "Speicherung auf Ihrem
+// Gerät" section. An undocumented key still fails the build.
+// The call site may pass either a string literal directly or a named
+// constant (as src/app.js does with SPRACHE_KEY) — resolve the latter
+// against its own `const NAME = '…'` assignment in the same code.
+function extractLocalStorageKeys(code) {
+  const keys = new Set();
+  for (const m of code.matchAll(/localStorage\.(?:getItem|setItem)\(\s*([^,)]+)/g)) {
+    const arg = m[1].trim();
+    const literal = arg.match(/^['"]([^'"]+)['"]$/);
+    if (literal) {
+      keys.add(literal[1]);
+      continue;
+    }
+    const ident = arg.match(/^[A-Za-z_$][\w$]*$/);
+    if (!ident) continue;
+    const assign = code.match(new RegExp(`(?:const|let|var)\\s+${arg}\\s*=\\s*['"]([^'"]+)['"]`));
+    if (assign) keys.add(assign[1]);
+  }
+  return keys;
+}
+const localStorageKeys = extractLocalStorageKeys(clientCode);
+check('localStorage-Nutzung im Frontend gefunden (Absicherung greift)', localStorageKeys.size > 0);
+const speicherAbschnitt =
+  (datenschutz.match(/<h2>Speicherung auf Ihrem Gerät<\/h2>([\s\S]*?)(?=<h2>|$)/) || [])[1] || '';
+check('Abschnitt „Speicherung auf Ihrem Gerät" gefunden (Absicherung greift)', speicherAbschnitt.length > 0);
+for (const key of [...localStorageKeys].sort()) {
+  check(
+    `localStorage-Schlüssel „${key}" ist im Abschnitt „Speicherung auf Ihrem Gerät" dokumentiert (E6)`,
+    speicherAbschnitt.includes(key),
+    'neuer Schlüssel im Code, aber nicht im Datenschutzhinweis benannt'
   );
 }
 

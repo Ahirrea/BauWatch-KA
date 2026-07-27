@@ -69,20 +69,49 @@ export function daysBetween(a, b) {
   return Math.round((startOfDay(b) - startOfDay(a)) / MS);
 }
 
+// Phrase table for restdauer()/formatRange(), kept local to this module
+// (A-5, decision E4) rather than importing from src/lib/i18n.js — three
+// words don't justify coupling the two pure modules together. Numeric dates
+// themselves stay locale-neutral (E5); only the surrounding words translate.
+const PHRASES = {
+  de: {
+    open: 'Ende offen',
+    expired: 'abgelaufen',
+    today: 'endet heute',
+    oneDay: 'noch 1 Tag',
+    days: (n) => `noch ${n} Tage`,
+    from: (d) => `ab ${d}`,
+    until: (d) => `bis ${d}`,
+    unknown: 'Zeitraum unbekannt',
+  },
+  en: {
+    open: 'open-ended',
+    expired: 'expired',
+    today: 'ends today',
+    oneDay: '1 day left',
+    days: (n) => `${n} days left`,
+    from: (d) => `from ${d}`,
+    until: (d) => `until ${d}`,
+    unknown: 'period unknown',
+  },
+};
+
 /**
  * Formuliert die Restdauer einer Sperrung als Klartext ("noch X Tage").
  * @param {string|Date|null} bis Enddatum
  * @param {Date} [now=new Date()] Bezugszeitpunkt
+ * @param {'de'|'en'} [lang='de']
  * @returns {{text: string, days: number|null, expired: boolean, open: boolean}}
  */
-export function restdauer(bis, now = new Date()) {
+export function restdauer(bis, now = new Date(), lang = 'de') {
+  const p = PHRASES[lang] || PHRASES.de;
   const end = parseDate(bis);
-  if (!end) return { text: 'Ende offen', days: null, expired: false, open: true };
+  if (!end) return { text: p.open, days: null, expired: false, open: true };
   const days = daysBetween(now, end);
-  if (days < 0) return { text: 'abgelaufen', days, expired: true, open: false };
-  if (days === 0) return { text: 'endet heute', days, expired: false, open: false };
-  if (days === 1) return { text: 'noch 1 Tag', days, expired: false, open: false };
-  return { text: `noch ${days} Tage`, days, expired: false, open: false };
+  if (days < 0) return { text: p.expired, days, expired: true, open: false };
+  if (days === 0) return { text: p.today, days, expired: false, open: false };
+  if (days === 1) return { text: p.oneDay, days, expired: false, open: false };
+  return { text: p.days(days), days, expired: false, open: false };
 }
 
 /**
@@ -101,13 +130,15 @@ export function formatDate(value) {
  * Formatiert einen Zeitraum ("dd.mm.yyyy – dd.mm.yyyy").
  * @param {string|Date|null} von
  * @param {string|Date|null} bis
+ * @param {'de'|'en'} [lang='de']
  * @returns {string}
  */
-export function formatRange(von, bis) {
+export function formatRange(von, bis, lang = 'de') {
+  const p = PHRASES[lang] || PHRASES.de;
   const a = formatDate(von);
   const b = formatDate(bis);
   if (a && b) return `${a} – ${b}`;
-  if (a) return `ab ${a}`;
-  if (b) return `bis ${b}`;
-  return 'Zeitraum unbekannt';
+  if (a) return p.from(a);
+  if (b) return p.until(b);
+  return p.unknown;
 }

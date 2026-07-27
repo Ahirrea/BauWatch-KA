@@ -55,6 +55,8 @@
           <li>
             <strong>keine eigene Speicherung personenbezogener Daten</strong> —
             es gibt keine Datenbank, in die etwas geschrieben werden könnte
+            (die einzige Ausnahme: eine anonyme Spracheinstellung auf Ihrem
+            Gerät, siehe „Speicherung auf Ihrem Gerät" unten)
           </li>
           <li><strong>keine Weitergabe</strong> von Daten über die unten genannten Abrufe hinaus</li>
         </ul>
@@ -146,6 +148,19 @@
           werden nicht übertragen und lassen sich jederzeit über die
           Browser-Einstellungen („Websitedaten löschen") entfernen.
         </p>
+        <p>
+          Zusätzlich speichert die Seite Ihre gewählte Sprache (Deutsch oder
+          Englisch) im <code>localStorage</code> Ihres Browsers, Schlüssel
+          <code>bauwatch.sprache</code>, Wert <code>de</code> oder
+          <code>en</code>. Das ist die einzige eigene Speicherung dieser Art:
+          ein anonymer Zwei-Werte-Schalter, keine Kennung, keine
+          personenbezogene Angabe. Er sorgt lediglich dafür, dass Ihre
+          Sprachwahl einen Seitenaufruf überdauert. Auch dieser Wert bleibt
+          auf Ihrem Gerät, wird nicht übertragen und lässt sich über dieselben
+          Browser-Einstellungen entfernen. Ist der Speicher blockiert oder
+          voll, funktioniert die Umschaltung trotzdem — nur eben nicht über
+          einen Seitenaufruf hinaus.
+        </p>
 
         <h2>Rechtsgrundlage</h2>
         <p>
@@ -194,7 +209,7 @@
         <!-- Statisch im HTML, nicht per JS — dieselbe Lehre wie bei der
              CC-BY-Namensnennung: was rechtlich zählt, darf nicht am Skript
              hängen. Bei inhaltlichen Änderungen mit anpassen. -->
-        <p>Dieser Datenschutzhinweis hat den Stand vom <time datetime="2026-07-26">26. Juli 2026</time>.</p>
+        <p>Dieser Datenschutzhinweis hat den Stand vom <time datetime="2026-07-27">27. Juli 2026</time>.</p>
       </main>
 
       <footer class="app-footer">

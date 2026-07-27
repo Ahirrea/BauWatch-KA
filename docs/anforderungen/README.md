@@ -27,7 +27,7 @@ linked — that way the folder doesn't fill up with empty templates.
 | A-2 | [Construction-site subscription (static feed)](./A-2-baustellen-abo-feed.md) | ✅ ready | Changes (added/changed/removed) as a static Atom feed for feed readers — no backend, no real push. |
 | A-3 | [Installable as an app & usable offline (PWA)](./A-3-pwa-installierbar-offline.md) | 🏁 done | Site installable to the home screen; shell and last-loaded data usable offline, with a visible timestamp. |
 | A-4 | [Legal notice & privacy notice](./A-4-impressum-datenschutz.md) | 🏁 done | Two text pages name the operator and the three real third-party data flows — so it's readable who's behind the offering and what goes to third parties. |
-| A-5 | [Language switch (German ⇄ English)](./A-5-sprachumschalter.md) | ✅ ready | A DE/EN toggle for the map page itself — German stays the default, legal pages/PWA identity/raw dataset text stay German-only. |
+| A-5 | [Language switch (German ⇄ English)](./A-5-sprachumschalter.md) | 🏁 done | A DE/EN toggle for the map page itself — German stays the default, legal pages/PWA identity/raw dataset text stay German-only. |
 
 ## Adding a new requirement
 

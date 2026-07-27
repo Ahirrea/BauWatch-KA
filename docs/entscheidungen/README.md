@@ -16,6 +16,7 @@ within a single requirement stay in the requirement file.
 |---|---|---|---|
 | [ADR-001](./ADR-001-statisches-hosting.md) | Static hosting with a periodic data snapshot | accepted | A GitHub Action takes on the server role: it fetches the WFS and commits finished GeoJSON into the repo. No backend, no cost, no CORS problem. |
 | [ADR-002](./ADR-002-mehrseitige-auslieferung.md) | Multi-page delivery and path-aware service-worker navigation | accepted | The app is no longer single-page. `navigationAntwort()` delivers the requested path from the shell cache instead of `index.html` for every navigation; every new HTML page is required to be in `SHELL` and covered by `CACHE_SHELL`. |
+| [ADR-003](./ADR-003-sprachumschalter-localstorage.md) | A narrow `localStorage` exception for the language preference | accepted | The DE/EN toggle ([A-5](../anforderungen/A-5-sprachumschalter.md)) persists one anonymous, two-valued UI preference (`bauwatch.sprache`) in `localStorage` — the first client storage this codebase has ever used. The privacy-notice drift guard changes from an unconditional "must not appear" check into a documented-key check. |
 
 ## Creating a new ADR
 

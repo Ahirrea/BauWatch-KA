@@ -126,10 +126,15 @@ Everything else is secondary.
 - **Cost:** zero. Hosting via GitHub Pages, data updates via GitHub Actions,
   all data sources free of charge.
 - **Language:** internal artifacts (code comments, commits, docs): English,
-  since 2026-07-27. **The UI stays German** — code comments, commits, and
-  docs are one thing; the product's actual audience is German-speaking
-  Karlsruhe residents, so `index.html`, `src/app.js`, `impressum.html`,
-  `datenschutz.html`, and the manifest's `name`/`short_name`/`lang` fields
-  are a separate, deliberate exception. Translating the app itself would be
-  its own, much bigger localization decision — not something this switch
-  covers.
+  since 2026-07-27. **The interactive map page is bilingual, German by
+  default** — a DE/EN toggle
+  ([A-5](./anforderungen/A-5-sprachumschalter.md)) lets a visitor switch
+  `index.html`'s UI to English, with the choice persisted anonymously
+  (`localStorage`, see [ADR-003](./entscheidungen/ADR-003-sprachumschalter-localstorage.md)).
+  Everything else stays German-only, deliberately: `impressum.html`,
+  `datenschutz.html` (legally-worded text, riskier to translate without
+  review), and the manifest's `name`/`short_name`/`lang` fields (installed
+  PWA identity). Raw dataset text (`art`, `verursacher`, `zusatzinfo`) is the
+  city's own German-language content and isn't translated either. Auto-
+  detecting the browser/OS language is deliberately not done — German is
+  always the default, switched manually.
