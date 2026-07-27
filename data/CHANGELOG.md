@@ -2,6 +2,21 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 27.07.2026, 05:48 — 9 neu, 1 entfernt (gesamt 178)
+
+- ➕ **Schinnrainstraße, Raiherwiesenstraße, Hauptbahnstraße, Bleichstraße**
+- ➕ **Raiherwiesenstraße, Blotterstraße, Auer Straße, Karlsruher Allee, Schinnrainstraße, Christofstraße**
+- ➕ **Johann-Strauß-Straße zw. Josef-Kraus-Straße und Dornwaldstraße**
+- ➕ **Koellestraße zw. Hohleichweg und Fettweisstraße**
+- ➕ **Südendstraße zw. Brauerstraße und Boeckhstraße**
+- ➕ **Zirkel zw. Herrenstraße u. Ritterstraße**
+- ➕ **Glogauer Straße zw. Kösliner Straße und Beuthener Straße**
+- ➕ **Pforzheimer Straße und  Waldshuter Straße**
+- ➕ **Busenbacher Str. 13**
+- ➖ ~~Brücke Dea-Scholven-Straße zw. Raffineriestraße und Maxau Papierfabrik Tor 2~~
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 26.07.2026, 05:38 — 2 entfernt (gesamt 170)
 
 - ➖ ~~Kaiserstraße, Hirschstraße, Amalinestraße~~
