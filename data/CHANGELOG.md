@@ -2,6 +2,14 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 27.07.2026, 16:52 — 3 geändert (gesamt 183)
+
+- ✏️ Kriegsstraße zw. Karl-Friedrich-Straße und Lammstraße — sonstige Angaben aktualisiert
+- ✏️ Rüppurrer Straße 104 zw. Tivoli u. Marienstraße — Ende: 2026-07-31 → 2026-09-04
+- ✏️ Zentralhof — Ende: 2026-08-07 → 2026-09-04
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 27.07.2026, 13:32 — 4 neu, 1 geändert (gesamt 183)
 
 - ➕ **Kropsburgweg, Madenburgweg, Binsenschlauchweg, Landauer Str., Bienwaldstr.**
