@@ -79,6 +79,19 @@ export const STRINGS = {
 
     popupVerkehr: 'Verkehr:',
     popupVerursacher: 'Verursacher:',
+
+    whatsNewButton: 'Was ist neu?',
+    whatsNewTitle: 'Was ist neu?',
+    whatsNewClose: 'Schließen',
+    whatsNewWindowNote: 'Änderungen der letzten 30 Tage.',
+    whatsNewLoading: 'Wird geladen …',
+    whatsNewEmpty: 'Keine Änderungen in den letzten 30 Tagen.',
+    whatsNewError: 'Nicht verfügbar (z. B. offline).',
+    whatsNewAdded: 'Neu:',
+    whatsNewRemoved: 'Entfernt:',
+    whatsNewChanged: 'Geändert:',
+    whatsNewFirstFillOne: 'Erstbefüllung mit 1 Baustelle.',
+    whatsNewFirstFillMany: 'Erstbefüllung mit {n} Baustellen.',
   },
   en: {
     docTitle: 'Where’s it being built? — Construction sites in Karlsruhe',
@@ -150,6 +163,19 @@ export const STRINGS = {
 
     popupVerkehr: 'Traffic:',
     popupVerursacher: 'Caused by:',
+
+    whatsNewButton: 'What’s new?',
+    whatsNewTitle: 'What’s new?',
+    whatsNewClose: 'Close',
+    whatsNewWindowNote: 'Changes from the last 30 days.',
+    whatsNewLoading: 'Loading …',
+    whatsNewEmpty: 'No changes in the last 30 days.',
+    whatsNewError: 'Not available (e.g. offline).',
+    whatsNewAdded: 'Added:',
+    whatsNewRemoved: 'Removed:',
+    whatsNewChanged: 'Changed:',
+    whatsNewFirstFillOne: 'Initial fill with 1 construction site.',
+    whatsNewFirstFillMany: 'Initial fill with {n} construction sites.',
   },
 };
 

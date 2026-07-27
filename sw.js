@@ -22,7 +22,7 @@
 // echtes Push", siehe docs/PRD.md und A-2): kein `push`-, kein
 // `notificationclick`-, kein `sync`-/`periodicsync`-Handler.
 
-const CACHE_SHELL = 'bauwatch-shell-v5';
+const CACHE_SHELL = 'bauwatch-shell-v6';
 const CACHE_DATA = 'bauwatch-data-v1';
 
 // App-Shell. `'./'` ist der Navigations-Einstieg (liefert index.html aus) und
@@ -61,6 +61,15 @@ const SHELL = [
 const INDEX_URL = new URL('./', self.location).href;
 const DATA_URL = new URL('data/baustellen.geojson', self.location).href;
 const DATA_PATH = new URL(DATA_URL).pathname;
+// data/changelog.json (A-6) — zweiter Datenpfad, dieselbe network-first-
+// Behandlung wie baustellen.geojson (E7 in A-6: die bestehende Regel „Daten:
+// network-first, Shell: cache-first" verallgemeinert sich mechanisch auf eine
+// kleine, explizite Menge). Bewusst NICHT beim install-Prefetch dabei (siehe
+// dort) — ein fehlender/veralteter Feed ist kein Grund, den allerersten
+// Seitenaufruf zu verzögern oder scheitern zu lassen.
+const CHANGELOG_URL = new URL('data/changelog.json', self.location).href;
+const CHANGELOG_PATH = new URL(CHANGELOG_URL).pathname;
+const DATA_PATHS = new Set([DATA_PATH, CHANGELOG_PATH]);
 const SHELL_PATHS = new Set(SHELL.map((p) => new URL(p, self.location).pathname));
 
 // --- Lebenszyklus ----------------------------------------------------------
@@ -195,7 +204,7 @@ self.addEventListener('fetch', (event) => {
     event.respondWith(navigationAntwort(request));
     return;
   }
-  if (url.pathname === DATA_PATH) {
+  if (DATA_PATHS.has(url.pathname)) {
     event.respondWith(datenAntwort(request));
     return;
   }

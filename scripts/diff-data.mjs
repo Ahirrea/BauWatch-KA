@@ -92,7 +92,7 @@ export function hasChanges(diff) {
   return diff.added.length > 0 || diff.removed.length > 0 || diff.changed.length > 0;
 }
 
-const titleOf = (f) => (f.properties && f.properties.titel) || '(ohne Bezeichnung)';
+export const titleOf = (f) => (f.properties && f.properties.titel) || '(ohne Bezeichnung)';
 
 /** Einzeilige Zusammenfassung, z. B. für Commit-Message / Log. */
 export function summaryLine(diff, total) {
@@ -124,4 +124,47 @@ export function summaryMarkdown(diff, total, timestamp, { firstFill = false } = 
     lines.push(`- ✏️ ${titleOf(c.feature)} — ${detail}`);
   }
   return lines.join('\n');
+}
+
+// A-6 ("What's new?" feed) — same content as summaryMarkdown(), just
+// structured for data/changelog.json instead of rendered as Markdown for
+// data/CHANGELOG.md. Kept next to summaryMarkdown() so the two can't drift.
+
+/** Pruning window for data/changelog.json (E3 in A-6) — a plain constant, not
+ * an architectural decision; easy to retune later. */
+export const CHANGELOG_WINDOW_DAYS = 30;
+
+/**
+ * Builds one data/changelog.json entry from a diff result. `stand` is the
+ * real change timestamp (ISO string, same source as the collection's own
+ * `stand` field) — never the run time, so it stays a stable identity for
+ * pruning across runs instead of per-run-volatile noise.
+ * A `firstFill` run collapses to one synthetic entry (mirrors CHANGELOG.md's
+ * own firstFill handling) instead of flooding the feed with every seed record.
+ */
+export function changelogEntry(diff, stand, total, { firstFill = false } = {}) {
+  if (firstFill) {
+    return { stand, firstFill: true, total };
+  }
+  return {
+    stand,
+    firstFill: false,
+    hinzugefuegt: diff.added.map(titleOf),
+    entfernt: diff.removed.map(titleOf),
+    geaendert: diff.changed.map((c) => ({
+      titel: titleOf(c.feature),
+      changes: c.changes.length ? c.changes : ['sonstige Angaben aktualisiert'],
+    })),
+  };
+}
+
+/** Drops entries older than `days` — keeps data/changelog.json self-bounding
+ * without a separate cap (E3). Malformed/unparsable `stand` values are
+ * dropped rather than kept, since their age can't be judged. */
+export function pruneChangelogEntries(entries, now, days = CHANGELOG_WINDOW_DAYS) {
+  const cutoff = now.getTime() - days * 24 * 60 * 60 * 1000;
+  return entries.filter((e) => {
+    const t = Date.parse(e && e.stand);
+    return !Number.isNaN(t) && t >= cutoff;
+  });
 }

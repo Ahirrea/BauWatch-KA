@@ -27,20 +27,53 @@
     <a class="skip-link" href="#liste" data-i18n="skipLink">Zur Baustellen-Liste springen</a>
 
     <header class="app-header">
-      <!-- Sprachumschalter (A-5). Reuses the filter segmented-button pattern
-           (role="group", aria-pressed, .is-active) but is wired separately
-           from wireFilters(), since it drives document language, not
-           state.filters. "Deutsch"/"English" are language autonyms — they
-           stay as-is regardless of the active language. -->
-      <div class="lang-toggle" role="group" aria-label="Sprache / Language" data-lang-toggle>
-        <div class="segments">
-          <button type="button" data-lang="de" aria-pressed="true" class="is-active">Deutsch</button>
-          <button type="button" data-lang="en" aria-pressed="false">English</button>
+      <div class="header-top">
+        <!-- "Was ist neu?"-Feed (A-6). Modal statt eigener Seite/Panel (E1),
+             damit der ohnehin vertikal knappe Header (BACKLOG #23) keine
+             weitere feste Zeile bekommt — nur dieser eine kleine Knopf. -->
+        <button
+          type="button"
+          class="whats-new-btn"
+          id="whats-new-btn"
+          aria-haspopup="dialog"
+          aria-controls="whats-new-dialog"
+          data-i18n="whatsNewButton"
+        >
+          Was ist neu?
+        </button>
+        <!-- Sprachumschalter (A-5). Reuses the filter segmented-button pattern
+             (role="group", aria-pressed, .is-active) but is wired separately
+             from wireFilters(), since it drives document language, not
+             state.filters. "Deutsch"/"English" are language autonyms — they
+             stay as-is regardless of the active language. -->
+        <div class="lang-toggle" role="group" aria-label="Sprache / Language" data-lang-toggle>
+          <div class="segments">
+            <button type="button" data-lang="de" aria-pressed="true" class="is-active">Deutsch</button>
+            <button type="button" data-lang="en" aria-pressed="false">English</button>
+          </div>
         </div>
       </div>
       <h1 data-i18n="h1">Wo wird gebaut?</h1>
       <p class="tagline" data-i18n="tagline">Offene Baustellen in Karlsruhe — betrifft mich das?</p>
     </header>
+
+    <!-- "Was ist neu?"-Dialog (A-6). Natives <dialog> + showModal(): kostenloser
+         Fokus-Trap, Top-Layer-Rendering, Escape schließt. aria-labelledby
+         zeigt auf die eigene Überschrift. Fokus-Rückgabe an den Auslöser-Knopf
+         läuft in app.js über das 'close'-Event, das alle Schließwege (Button,
+         Escape, Backdrop-Klick) einheitlich auslösen. -->
+    <dialog class="whats-new-dialog" id="whats-new-dialog" aria-labelledby="whats-new-title">
+      <form method="dialog" class="whats-new-header">
+        <h2 id="whats-new-title" data-i18n="whatsNewTitle">Was ist neu?</h2>
+        <button type="submit" class="whats-new-close" data-i18n-attr="aria-label:whatsNewClose" aria-label="Schließen">
+          <span aria-hidden="true">✕</span>
+        </button>
+      </form>
+      <p class="whats-new-window" data-i18n="whatsNewWindowNote">Änderungen der letzten 30 Tage.</p>
+      <div class="whats-new-body" id="whats-new-body">
+        <p data-i18n="whatsNewLoading">Wird geladen …</p>
+      </div>
+    </dialog>
 
     <!-- Update-Hinweis der PWA. Bleibt leer, bis app.js eine neue Version
          gefunden hat — nur so kündigt die Live-Region den Hinweis auch an.

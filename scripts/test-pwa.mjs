@@ -219,6 +219,34 @@ for (const spez of importe) {
 
 // --- Registrierung ---------------------------------------------------------
 
+// --- Zweiter Datenpfad: data/changelog.json (A-6, E7) ----------------------
+// Die Regel „Daten: network-first, Shell: cache-first" verallgemeinert sich
+// mechanisch auf eine kleine, explizite Menge — hier abgesichert, dass der
+// Feed genau wie baustellen.geojson behandelt wird und NICHT als Shell-Datei
+// (precacht, cache-first) endet, was ihn dauerhaft veraltet servieren würde.
+
+check(
+  'sw.js kennt data/changelog.json als zweiten Datenpfad (E7)',
+  /new URL\('data\/changelog\.json', self\.location\)/.test(sw)
+);
+check(
+  'data/changelog.json ist NICHT Teil der SHELL-Liste (es ist Daten, kein Shell-Asset)',
+  !SHELL.includes('data/changelog.json')
+);
+{
+  const fetchHandlerMatch = sw.match(/self\.addEventListener\('fetch'[\s\S]*$/);
+  check('sw.js hat einen fetch-Handler (Absicherung greift)', Boolean(fetchHandlerMatch));
+  const fetchHandler = fetchHandlerMatch ? ohneKommentare(fetchHandlerMatch[0]) : '';
+  check(
+    'beide Datenpfade (DATA_PATH, CHANGELOG_PATH) laufen über dieselbe network-first-Behandlung',
+    /DATA_PATHS/.test(fetchHandler) && /datenAntwort\(request\)/.test(fetchHandler)
+  );
+  check(
+    'DATA_PATHS enthält sowohl DATA_PATH als auch CHANGELOG_PATH',
+    /new Set\(\[DATA_PATH, CHANGELOG_PATH\]\)/.test(sw)
+  );
+}
+
 check("app.js registriert 'sw.js' relativ", /register\('sw\.js'\)/.test(app));
 check('app.js registriert erst nach dem load-Event', /addEventListener\('load'/.test(app));
 check("app.js prüft 'serviceWorker' in navigator", /'serviceWorker' in navigator/.test(app));

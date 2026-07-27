@@ -26,13 +26,21 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 import { utm32ToWgs84 } from '../src/lib/transform.js';
 import { classifyArt, classifySperrgrad, classifyVerkehrsmittel } from '../src/lib/classify.js';
 import { stripHtml, parseDate } from '../src/lib/format.js';
-import { diffFeatures, hasChanges, summaryLine, summaryMarkdown } from './diff-data.mjs';
+import {
+  diffFeatures,
+  hasChanges,
+  summaryLine,
+  summaryMarkdown,
+  changelogEntry,
+  pruneChangelogEntries,
+} from './diff-data.mjs';
 import { analyzeQuality, summarizeQuality, renderQualityMarkdown } from './quality-report.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
 const OUT_FILE = join(ROOT, 'data', 'baustellen.geojson');
 const CHANGELOG_FILE = join(ROOT, 'data', 'CHANGELOG.md');
+const CHANGELOG_JSON_FILE = join(ROOT, 'data', 'changelog.json');
 const QUALITY_FILE = join(ROOT, 'data', 'QUALITY.md');
 // Gitignorierte Datei; die Action liest daraus die Commit-Message.
 const BUILD_SUMMARY_FILE = join(ROOT, 'build-summary.txt');
@@ -241,11 +249,25 @@ function round(n) {
   return Math.round(n * 1e6) / 1e6;
 }
 
-function writeAtomic(collection) {
-  mkdirSync(dirname(OUT_FILE), { recursive: true });
-  const tmp = OUT_FILE + '.tmp';
-  writeFileSync(tmp, JSON.stringify(collection) + '\n', 'utf8');
-  renameSync(tmp, OUT_FILE);
+// Generic atomic writer (temp + rename) — used for baustellen.geojson AND
+// changelog.json, so an abort mid-write never leaves either as a corrupt file.
+function writeAtomic(path, content) {
+  mkdirSync(dirname(path), { recursive: true });
+  const tmp = path + '.tmp';
+  writeFileSync(tmp, content, 'utf8');
+  renameSync(tmp, path);
+}
+
+// Vorhandenes data/changelog.json laden (für's Voranstellen + Pruning).
+// Fehlt/kaputt -> leeres Array, dieselbe Grosszügigkeit wie loadPrevious().
+function loadChangelogJson() {
+  if (!existsSync(CHANGELOG_JSON_FILE)) return [];
+  try {
+    const parsed = JSON.parse(readFileSync(CHANGELOG_JSON_FILE, 'utf8'));
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
 }
 
 // Vorhandenen Snapshot laden (für den Änderungsvergleich). Fehlt/kaputt -> null.
@@ -383,6 +405,13 @@ async function main() {
       writeFileSync(BUILD_SUMMARY_FILE, 'chore(data): Datenqualitäts-Report ergänzt\n');
       console.log('Datenqualitäts-Report erstmalig erzeugt (data/QUALITY.md).');
     }
+    // Dasselbe Bootstrap-Muster für data/changelog.json (A-6): ein leeres Array,
+    // damit ein frischer Fork/eine frische Umgebung den echten leeren Zustand
+    // zeigt ("keine Änderungen") statt eines fehlenden/404-Datensatzes.
+    if (!existsSync(CHANGELOG_JSON_FILE)) {
+      writeAtomic(CHANGELOG_JSON_FILE, '[]\n');
+      console.log('data/changelog.json erstmalig angelegt (leer).');
+    }
     return;
   }
 
@@ -393,7 +422,7 @@ async function main() {
     count: features.length,
     features,
   };
-  writeAtomic(collection);
+  writeAtomic(OUT_FILE, JSON.stringify(collection) + '\n');
 
   // Übersicht erzeugen (Changelog + Quality-Report + Job-Summary + Commit-Message).
   const line = summaryLine(diff, features.length);
@@ -401,6 +430,14 @@ async function main() {
 
   prependChangelog(md);
   writeFileSync(QUALITY_FILE, qualityMd, 'utf8');
+
+  // data/changelog.json (A-6) — dieselbe Aussage wie CHANGELOG.md, nur
+  // strukturiert statt Markdown. Neuester Eintrag zuerst, auf 30 Tage
+  // beschnitten (E3); `stand` ist der echte Änderungszeitpunkt, kein
+  // Lauf-Zeitstempel — sonst verwässert jeder Action-Lauf das Pruning-Fenster.
+  const changelogJsonEntry = changelogEntry(diff, now.toISOString(), features.length, { firstFill });
+  const changelogJson = pruneChangelogEntries([changelogJsonEntry, ...loadChangelogJson()], now);
+  writeAtomic(CHANGELOG_JSON_FILE, JSON.stringify(changelogJson) + '\n');
   writeFileSync(BUILD_SUMMARY_FILE, `chore(data): ${line}\n\n${md}\n`, 'utf8');
   if (process.env.GITHUB_STEP_SUMMARY) {
     appendFileSync(process.env.GITHUB_STEP_SUMMARY, `${md}\n`);

@@ -121,19 +121,136 @@ body {
   color: var(--text-muted);
 }
 
+/* --- Kopfzeile: "Was ist neu?"-Knopf + Sprachumschalter (A-6/A-5) ---
+   Ein Flex-Row statt zwei eigenständiger Blöcke, damit der zusätzliche Knopf
+   (A-6) keine neue feste Zeile im ohnehin knappen Header erzeugt
+   (BACKLOG #23) — beide Controls teilen sich die eine Zeile und brechen bei
+   Bedarf gemeinsam um. */
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.75rem;
+  margin-bottom: 0.5rem;
+}
+.whats-new-btn {
+  font-size: 0.85rem;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+}
+.whats-new-btn:hover {
+  border-color: var(--accent);
+}
+
 /* --- Sprachumschalter (A-5) ---
    Reuses .segments/.segments button verbatim (defined below, not scoped to
-   .filter-group) — same look, same a11y wiring, no new pattern. Positioned
-   top-right of the header; wraps to its own line on narrow screens instead
-   of squeezing the title. */
+   .filter-group) — same look, same a11y wiring, no new pattern. */
 .lang-toggle {
   display: flex;
-  justify-content: flex-end;
-  margin-bottom: 0.5rem;
 }
 .lang-toggle .segments button {
   font-size: 0.85rem;
   padding: 0.35rem 0.6rem;
+}
+
+/* --- "Was ist neu?"-Dialog (A-6) --- */
+.whats-new-dialog {
+  width: calc(100% - 2rem);
+  max-width: 32rem;
+  max-height: 80vh;
+  margin: auto;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: var(--shadow);
+}
+.whats-new-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+/* Near-instant fade — the global prefers-reduced-motion rule below zeroes the
+   duration, same restraint as the update-banner's own fade-in. */
+.whats-new-dialog[open] {
+  animation: whats-new-ein 160ms ease-out;
+}
+@keyframes whats-new-ein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.whats-new-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid var(--border);
+}
+.whats-new-header h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+.whats-new-close {
+  padding: 0.2rem 0.55rem;
+  font-size: 1.2rem;
+  line-height: 1;
+  border: 0;
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+.whats-new-close:hover {
+  background: var(--chip);
+  color: var(--text);
+}
+.whats-new-window {
+  margin: 0.75rem 1rem 0;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+.whats-new-body {
+  padding: 0.5rem 1rem 1rem;
+  max-height: calc(80vh - 6rem);
+  overflow-y: auto;
+}
+.whats-new-run {
+  margin: 0.75rem 0;
+}
+.whats-new-run:first-child {
+  margin-top: 0.25rem;
+}
+.whats-new-run h3 {
+  margin: 0 0 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.whats-new-run ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.whats-new-run li {
+  font-size: 0.92rem;
+}
+.whats-new-error {
+  color: var(--red);
 }
 
 /* --- Update-Hinweis der PWA ---

@@ -69,9 +69,11 @@ scripts/
   test-pwa.mjs             tests of manifest, icons, and service worker
   test-attribution.mjs     tests of the CC-BY attribution in the served HTML
   test-rechtstexte.mjs     tests of the legal notice/privacy notice (incl. drift against the code)
+  test-changelog-feed.mjs  tests of the data/changelog.json artifact behind the "What's new?" feed (A-6)
 data/
   baustellen.geojson       generated, committed snapshot (starting value: sample data)
-  CHANGELOG.md             automatically maintained change log of the data
+  CHANGELOG.md             automatically maintained change log of the data (raw Markdown, on GitHub)
+  changelog.json           same change log, structured — feeds the in-app "What's new?" dialog (A-6)
   QUALITY.md               automatically generated data-quality report per build
 vendor/leaflet/            Leaflet bundled locally (no CDN)
 .github/workflows/
@@ -121,13 +123,17 @@ existing file** — the `--allow-empty` flag forces the write even with 0 matche
 npm test    # runs all test scripts in sequence
 ```
 
-`npm test` runs `test-transform`, `test-diff`, `test-classify`, `test-quality`,
-`test-pwa`, `test-attribution`, and `test-rechtstexte`; individually e.g.
-`node scripts/test-transform.mjs`. Among the things checked:
+`npm test` runs `test-transform`, `test-diff`, `test-changelog-feed`,
+`test-classify`, `test-quality`, `test-pwa`, `test-attribution`, and
+`test-rechtstexte`; individually e.g. `node scripts/test-transform.mjs`.
+Among the things checked:
 
 - **`transform.js`** against known reference coordinates (including
   Karlsruhe's market square and the central-meridian invariant),
 - **change detection** (`diff-data.mjs`),
+- **the "What's new?" feed artifact** (`data/changelog.json`): content
+  matches `data/CHANGELOG.md` 1:1 for the same run, 30-day pruning, and a
+  `firstFill` run collapses to one synthetic entry instead of per-item noise,
 - the **domain classification** (plain text, closure-severity traffic light, mode of transport),
 - the **quality report** (`quality-report.mjs`),
 - the **PWA artifacts** (`manifest.webmanifest`, icons, `sw.js`): valid
@@ -226,6 +232,10 @@ follow the places where you can see *whether* and *what* changed:
   construction sites were ➕ added, ➖ removed, or ✏️ changed (with field
   details like "End: … → …"). Linked at the bottom of the website as
   "change history".
+- **The "What's new?" button on the map page (A-6)** — the same content as
+  `data/CHANGELOG.md`, just structured (`data/changelog.json`) and rendered
+  in a modal dialog instead of raw Markdown on GitHub, limited to the last 30
+  days. No personalization, no login, same fixed window for every visitor.
 - **Commit history of `data/baustellen.geojson`** — every commit is a real
   change. `git log --follow data/baustellen.geojson` shows the history; the
   commit message contains the short summary ("3 new, 1 removed …").
