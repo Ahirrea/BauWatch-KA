@@ -2,6 +2,8 @@
 
 *("Where's it being built?" — construction sites in Karlsruhe)*
 
+**Live site:** https://ahirrea.github.io/BauWatch-KA/
+
 A citizen-friendly map plus list of the open construction sites in Karlsruhe.
 It answers the question Karlsruhe residents actually have:
 **"Does this affect me — on my route, with my mode of transport, in this
