@@ -2,6 +2,14 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 27.07.2026, 09:39 — 1 neu, 2 geändert (gesamt 179)
+
+- ➕ **Hirschstraße zw. Amalinestraße und Sophienstraße**
+- ✏️ Am Entenfang: Rheinstraße zur B 36 Michelinstraße gesperrt, B 10 Südtangente AS 6 Abfahrt von Osten zur B 36 Lameystraße gesperrt, B 36 Lameystraße zur Rheinstraße gesperrt, B 36 Michelinstraße zur B 36 Lameystraße u. Rheinstraße gesperrt — Ende: 2026-07-29 → 2026-07-30; Info geändert
+- ✏️ B36/ Michelinstraße zw. Franz-Abt-Straße und Entenfang — Ende: 2026-07-29 → 2026-07-30
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 27.07.2026, 05:48 — 9 neu, 1 entfernt (gesamt 178)
 
 - ➕ **Schinnrainstraße, Raiherwiesenstraße, Hauptbahnstraße, Bleichstraße**
