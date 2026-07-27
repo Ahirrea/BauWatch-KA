@@ -2,6 +2,12 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 27.07.2026, 19:48 — 1 geändert (gesamt 183)
+
+- ✏️ Raiherwiesenstraße zw. Pfaffstraße und Bleichstraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 27.07.2026, 16:52 — 3 geändert (gesamt 183)
 
 - ✏️ Kriegsstraße zw. Karl-Friedrich-Straße und Lammstraße — sonstige Angaben aktualisiert
