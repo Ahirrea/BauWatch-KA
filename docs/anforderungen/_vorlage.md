@@ -1,41 +1,41 @@
-# A-&lt;Nr&gt; &lt;Titel&gt;
+# A-&lt;no.&gt; &lt;title&gt;
 
 <!--
-Vorlage für eine verfeinerte Anforderung. Kopieren nach
-A-<Nr>-<kurz-titel>.md, ausfüllen, Kommentare entfernen und in
-README.md eine Tabellenzeile ergänzen (dort lebt der Status).
+Template for an elaborated requirement. Copy to
+A-<no.>-<short-title>.md, fill it in, remove the comments, and add a
+table row in README.md (that's where the status lives).
 -->
 
-[← Anforderungen](./README.md) · [Prozess](../PROZESS.md)
-· Status siehe [Übersicht](./README.md#übersicht)
+[← Requirements](./README.md) · [Process](../PROZESS.md)
+· status: see [Overview](./README.md#overview)
 
-**User Story:** Als &lt;Rolle&gt; möchte ich &lt;Ziel&gt;, um &lt;Nutzen&gt;.
+**User story:** As a &lt;role&gt;, I want &lt;goal&gt;, so that &lt;benefit&gt;.
 
-**Verfeinert am:** &lt;Datum&gt;
-**Bedient PRD:** &lt;Abschnitt in `../PRD.md`, z. B. „Ziele — Betroffenheit erkennen"&gt;
-**Eingeschränkt durch:** &lt;ADR-Nr. aus `../entscheidungen/` oder „—"&gt;
-**Ziel-Branch:** &lt;falls vergeben&gt;
+**Refined on:** &lt;date&gt;
+**Addresses PRD:** &lt;section in `../PRD.md`, e.g. "Goals — recognizing relevance"&gt;
+**Constrained by:** &lt;ADR no. from `../entscheidungen/` or "—"&gt;
+**Target branch:** &lt;if assigned&gt;
 
-## Andockpunkte im Code
-&lt;Module, Funktionen, Felder — was ist wiederverwendbar, was fehlt&gt;
+## Touchpoints in the code
+&lt;modules, functions, fields — what's reusable, what's missing&gt;
 
-## Spannung zu Nicht-Zielen — und Auflösung
-&lt;Konflikt mit `../PRD.md` / ADR / Fallstricken benennen und auflösen&gt;
+## Tension with non-goals — and resolution
+&lt;name and resolve the conflict with `../PRD.md` / an ADR / pitfalls&gt;
 
-## Entscheidungen (mit Begründung)
-&lt;getroffene Weichen, jeweils mit Kurzbegründung und verworfenen Alternativen&gt;
+## Decisions (with rationale)
+&lt;forks taken, each with a short rationale and discarded alternatives&gt;
 
-## Umfang / Nicht-Umfang
-- **Rein:** &lt;…&gt;
-- **Raus:** &lt;bewusst ausgeschlossen&gt;
+## Scope / Non-scope
+- **In:** &lt;…&gt;
+- **Out:** &lt;deliberately excluded&gt;
 
-## Spezifikation
-&lt;UX-Ablauf & Zustände · Interaktion mit Bestehendem · Datenmodell/Persistenz ·
-externe Abhängigkeiten & Fallback · Randfälle & Fehlerbehandlung ·
-Barrierefreiheit · Testplan · Doku-/Backlog-Auswirkungen&gt;
+## Specification
+&lt;UX flow & states · interaction with existing features · data model/persistence ·
+external dependencies & fallback · edge cases & error handling ·
+accessibility · test plan · docs/backlog impact&gt;
 
 ## Definition of Done
-&lt;prüfbare Kriterien&gt;
+&lt;checkable criteria&gt;
 
-## Umsetzungsschritte
+## Implementation steps
 1. &lt;…&gt;

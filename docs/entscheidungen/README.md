@@ -1,61 +1,63 @@
-# Entscheidungen (ADRs)
+# Decisions (ADRs)
 
-Architektur- und Grundsatzentscheidungen, je Entscheidung eine Datei
-(`ADR-<Nr>-<kurz-titel>.md`). Dieser Ordner ist **append-only**: ein ADR wird
-nie umgeschrieben. Kehrt eine Entscheidung sich um, entsteht ein **neuer** ADR
-und der alte bekommt `Status: ersetzt durch ADR-<Nr>`. So bleibt nachvollziehbar,
-was wann warum galt.
+Architectural and foundational decisions, one file per decision
+(`ADR-<no.>-<short-title>.md`). This folder is **append-only**: an ADR is
+never rewritten. If a decision is reversed, a **new** ADR is created and the
+old one gets `Status: replaced by ADR-<no.>`. That way it stays traceable
+what applied when and why.
 
-Ein ADR entsteht, wenn eine Entscheidung die Architektur ändert oder das Projekt
-langfristig bindet (Schritt 5 des [Prozesses](../PROZESS.md)). Weichen innerhalb
-einer einzelnen Anforderung bleiben in der Anforderungsdatei.
+An ADR comes into being when a decision changes the architecture or binds
+the project long-term (step 5 of the [process](../PROZESS.md)). Forks
+within a single requirement stay in the requirement file.
 
-## Übersicht
+## Overview
 
-| Nr. | Entscheidung | Status | Kern |
+| No. | Decision | Status | Gist |
 |---|---|---|---|
-| [ADR-001](./ADR-001-statisches-hosting.md) | Statisches Hosting mit periodischem Daten-Snapshot | akzeptiert | Eine GitHub Action übernimmt die Server-Rolle: sie ruft den WFS ab und committet fertiges GeoJSON ins Repo. Kein Backend, keine Kosten, kein CORS-Problem. |
-| [ADR-002](./ADR-002-mehrseitige-auslieferung.md) | Mehrseitige Auslieferung und pfadbewusste Service-Worker-Navigation | akzeptiert | Die App ist nicht mehr einseitig. `navigationAntwort()` liefert den angefragten Pfad aus dem Shell-Cache statt jeder Navigation `index.html`; jede neue HTML-Seite ist `SHELL`- und `CACHE_SHELL`-pflichtig. |
+| [ADR-001](./ADR-001-statisches-hosting.md) | Static hosting with a periodic data snapshot | accepted | A GitHub Action takes on the server role: it fetches the WFS and commits finished GeoJSON into the repo. No backend, no cost, no CORS problem. |
+| [ADR-002](./ADR-002-mehrseitige-auslieferung.md) | Multi-page delivery and path-aware service-worker navigation | accepted | The app is no longer single-page. `navigationAntwort()` delivers the requested path from the shell cache instead of `index.html` for every navigation; every new HTML page is required to be in `SHELL` and covered by `CACHE_SHELL`. |
 
-## Neuen ADR anlegen
+## Creating a new ADR
 
-1. Nächste freie Nummer nehmen (dreistellig, `ADR-002`, …). Nummern werden nie
-   wiederverwendet.
-2. Datei nach dem Muster unten anlegen.
-3. Zeile in der Tabelle oben ergänzen.
-4. Kehrt der ADR eine frühere Entscheidung um: im alten ADR `Status:` auf
-   `ersetzt durch ADR-<Nr>` setzen — das ist die **einzige** erlaubte Änderung an
-   einem bestehenden ADR.
+1. Take the next free number (three digits, `ADR-002`, …). Numbers are
+   never reused.
+2. Create the file following the pattern below.
+3. Add a line to the table above.
+4. If the ADR reverses an earlier decision: set `Status:` in the old ADR to
+   `replaced by ADR-<no.>` — that's the **only** permitted change to an
+   existing ADR.
 
-## Aufbau
+## Structure
 
 ```markdown
-# ADR-<Nr>: <Titel>
+# ADR-<no.>: <title>
 
-**Status:** vorgeschlagen | akzeptiert | ersetzt durch ADR-<Nr>
-**Datum:** <Datum>
+**Status:** proposed | accepted | replaced by ADR-<no.>
+**Date:** <date>
 
-## Kontext
-<Welche Kräfte wirken? Was war die Ausgangslage?>
+## Context
+<What forces are at play? What was the starting situation?>
 
-## Entscheidung
-<Was wird getan — im Aktiv, ein Satz.>
+## Decision
+<What is being done — in the active voice, one sentence.>
 
-## Begründung
-<Warum diese und nicht die Alternativen.>
+## Rationale
+<Why this and not the alternatives.>
 
-## Verworfene Alternativen
-<je Alternative ein Satz, warum nicht.>
+## Discarded alternatives
+<one sentence per alternative, why not.>
 
-## Konsequenzen
-<Was folgt daraus, auch das Unangenehme. Was darf jetzt nicht mehr passieren?>
+## Consequences
+<What follows from this, including the unpleasant parts. What must not
+happen anymore?>
 ```
 
-> `ADR-001` lag bis 2026-07-25 direkt unter `docs/`. Die Nummer bleibt
-> dreistellig, weil Code-Kommentare in `src/app.js`, `src/lib/transform.js`,
-> `scripts/build-data.mjs` und der Workflow auf „ADR-001" verweisen.
+> `ADR-001` sat directly under `docs/` until 2026-07-25. The number stays
+> three digits, because code comments in `src/app.js`,
+> `src/lib/transform.js`, `scripts/build-data.mjs`, and the workflow refer
+> to "ADR-001".
 >
-> Der Abschnitt „Repo-Struktur (daraus abgeleitet)" in ADR-001 zeigt den Stand vom
-> **2026-07-20** und nennt `docs/SPEC.md` — heute `docs/PRD.md`. Das ist Absicht:
-> ADRs werden nicht nachträglich geglättet, sonst verliert man, was damals
-> tatsächlich beschlossen wurde.
+> The "Repo structure (derived from this)" section in ADR-001 shows the
+> state as of **2026-07-20** and names `docs/SPEC.md` — today `docs/PRD.md`.
+> That's deliberate: ADRs aren't smoothed over after the fact, or you lose
+> what was actually decided back then.

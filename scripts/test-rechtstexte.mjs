@@ -185,7 +185,7 @@ check(
 const PLATZHALTER = /@example\.(invalid|com|org|net)$/i;
 const istPlatzhalter = [...mailsImpressum, ...mailsDatenschutz].some((m) => PLATZHALTER.test(m));
 const showcase = lies('docs/showcase-einreichung.md');
-const nochOffen = /- \[ \] Name \+ Kontaktmailadresse/.test(showcase);
+const nochOffen = /- \[ \] Name \+ contact email address/.test(showcase);
 if (istPlatzhalter) {
   check(
     'Platzhalter-Adresse ist in der Showcase-Unterlage als offener Punkt geführt',

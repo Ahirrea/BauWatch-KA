@@ -1,317 +1,327 @@
-# A-4 Impressum & Datenschutzhinweis
+# A-4 Impressum & Datenschutzhinweis (Legal Notice & Privacy Notice)
 
-[← Anforderungen](./README.md) · [Prozess](../PROZESS.md)
-· Status siehe [Übersicht](./README.md#übersicht)
+[← Requirements](./README.md) · [Process](../PROZESS.md)
+· status: see [Overview](./README.md#overview)
 
-**User Story:** Als Besucherin von BauWatch-KA möchte ich nachlesen können, wer
-die Seite betreibt und welche Daten beim Benutzen an Dritte gehen, um
-einschätzen zu können, wem ich das Angebot anvertraue.
+**User story:** As a visitor to BauWatch-KA, I want to be able to read who
+operates the site and which data goes to third parties when I use it, so
+that I can judge who I'm trusting with this offering.
 
-**Verfeinert am:** 2026-07-26
-**Bedient PRD:** „Rahmenbedingungen" (Geocoding über Nominatim als einziger
-Live-Aufruf; Lizenzen) — und ist Voraussetzung für die Listung im
-Transparenzportal, siehe [`../showcase-einreichung.md`](../showcase-einreichung.md)
-**Eingeschränkt durch:** [ADR-001](../entscheidungen/ADR-001-statisches-hosting.md)
-(statisches Hosting, kein Backend, kein Build-Schritt fürs Frontend)
-**Ziel-Branch:** —
+**Refined on:** 2026-07-26
+**Addresses PRD:** "Constraints" (geocoding via Nominatim as the only live
+call; licenses) — and is a prerequisite for listing in the transparency
+portal, see [`../showcase-einreichung.md`](../showcase-einreichung.md)
+**Constrained by:** [ADR-001](../entscheidungen/ADR-001-statisches-hosting.md)
+(static hosting, no backend, no build step for the frontend)
+**Target branch:** —
 
-**Auslöser:** Vorprüfung der Open-Data-Redaktion (2026-07-26): „Bei einer von der
-Stadt verlinkten Seite mit Drittdienst-Einbindung (Nominatim) fragt unser
-Justiziariat erfahrungsgemäß danach." Die Redaktion hat das ausdrücklich **nicht**
-zur Bedingung für den Showcase-Eintrag gemacht (das sind nur Namensnennung und die
-Feldwerte) — es ist eine begründete Vorwarnung.
+**Trigger:** pre-review by the open-data editorial team (2026-07-26): "For a
+site linked by the city with a third-party integration (Nominatim), our
+legal department typically asks about that." The editorial team explicitly
+did **not** make this a condition for the showcase entry (that's only the
+attribution and the field values) — it's a well-founded heads-up.
 
-## Andockpunkte im Code
+## Touchpoints in the code
 
-**Nachgesehen, nicht vermutet.** Ausgangslage im Client:
+**Checked, not guessed.** Starting point in the client:
 
-| Was | Wo | Bedeutung für diese Anforderung |
+| What | Where | Meaning for this requirement |
 |---|---|---|
-| Footer-Links | `index.html`, `<p class="credits">` | Hier kommen die zwei neuen Links hinein. **`#attribution` und `#attribution-hinweis` nicht anfassen** — `scripts/test-attribution.mjs` bewacht sie. |
-| Kartenkacheln | `src/app.js`, `initMap()` → `https://tile.openstreetmap.org/{z}/{x}/{y}.png` | Drittdienst, lädt **automatisch** beim Seitenaufruf. |
-| Geocoding | `src/app.js`, `geocode()` → `nominatim.openstreetmap.org` | Drittdienst, **nur beim Absenden** der Suche (keine Autovervollständigung). Überträgt die eingegebene Adresse. |
-| Kein Client-Speicher | `src/`, `index.html`, `sw.js` | `localStorage`, `sessionStorage`, `document.cookie`, `indexedDB`, `navigator.geolocation`: **keine Treffer.** Der Hinweis kann „keine Cookies, kein Tracking" also ehrlich behaupten. |
-| Service-Worker-Cache | `sw.js`, `CACHE_SHELL` / `CACHE_DATA` | Gerätespeicher, hält nur ausgelieferte Dateien. Keine Übertragung, jederzeit löschbar. |
-| Shell-Precache | `sw.js`, `SHELL` (handgepflegt), `SHELL_PATHS` | Neue Seiten müssen hier eingetragen werden, sonst sind sie offline weg, während die App läuft. |
-| **Navigations-Antwort** | `sw.js:117`, `navigationAntwort()` | **Der wichtigste Befund:** beantwortet **jede** Navigation mit dem gecachten `INDEX_URL` (`'./'`). Eine zweite HTML-Seite würde bei installierten Clients still von `index.html` überdeckt. |
-| Precache-Test | `scripts/test-pwa.mjs` | Scannt heute **nur** die Referenzen aus `index.html`. Neue Seiten fallen durch das Raster. |
-| Textseiten-Optik | `src/styles.css`, `.app-footer`, `.app-footer a` | Es gibt noch **keine** Klasse für eine reine Textseite; die muss dazu. `--amber` bleibt als Textfarbe verboten. |
+| Footer links | `index.html`, `<p class="credits">` | This is where the two new links go. **Don't touch `#attribution` and `#attribution-hinweis`** — `scripts/test-attribution.mjs` guards them. |
+| Map tiles | `src/app.js`, `initMap()` → `https://tile.openstreetmap.org/{z}/{x}/{y}.png` | Third-party service, loads **automatically** on page load. |
+| Geocoding | `src/app.js`, `geocode()` → `nominatim.openstreetmap.org` | Third-party service, **only on submitting** the search (no autocomplete). Transmits the entered address. |
+| No client storage | `src/`, `index.html`, `sw.js` | `localStorage`, `sessionStorage`, `document.cookie`, `indexedDB`, `navigator.geolocation`: **no hits.** So the notice can honestly claim "no cookies, no tracking". |
+| Service-worker cache | `sw.js`, `CACHE_SHELL` / `CACHE_DATA` | Device storage, holds only served files. No transmission, deletable at any time. |
+| Shell precache | `sw.js`, `SHELL` (hand-maintained), `SHELL_PATHS` | New pages must be entered here, or they're gone offline while the app keeps running. |
+| **Navigation response** | `sw.js:117`, `navigationAntwort()` | **The most important finding:** answers **every** navigation with the cached `INDEX_URL` (`'./'`). A second HTML page would be silently covered by `index.html` for installed clients. |
+| Precache test | `scripts/test-pwa.mjs` | Today scans **only** the references from `index.html`. New pages fall through the net. |
+| Text-page look | `src/styles.css`, `.app-footer`, `.app-footer a` | There's still **no** class for a plain text page; that has to be added. `--amber` stays forbidden as a text color. |
 
-**Wiederverwendbar:** Farbvariablen und Typografie aus `styles.css`, die
-Footer-Struktur, das Muster „manuelles Skript + Test" aus A-3.
-**Fehlt:** die beiden Seiten selbst, eine Textseiten-Klasse, pfadbewusste
-Navigation im Service Worker, ein Test für die Rechtstexte.
+**Reusable:** color variables and typography from `styles.css`, the footer
+structure, the "manual script + test" pattern from A-3.
+**Missing:** the two pages themselves, a text-page class, path-aware
+navigation in the service worker, a test for the legal texts.
 
-## Spannung zu Nicht-Zielen — und Auflösung
+## Tension with non-goals — and resolution
 
-1. **„Kein Backend, kein Build-Schritt fürs Frontend" (ADR-001).**
-   → Aufgelöst: zwei gewöhnliche statische HTML-Dateien, **kein Kontaktformular**
-   (das bräuchte einen Server). Kontakt per `mailto:`. ADR-001 bleibt unberührt.
+1. **"No backend, no build step for the frontend" (ADR-001).**
+   → Resolved: two ordinary static HTML files, **no contact form** (that
+   would need a server). Contact via `mailto:`. ADR-001 stays untouched.
 
-2. **„Keine eigene Datenhaltung."** Das Impressum enthält personenbezogene Daten —
-   aber die **der Betreiberin**, nicht der Nutzerinnen. Das Nicht-Ziel richtet sich
-   gegen das Speichern von Nutzerdaten; kein Widerspruch. Explizit benannt, damit
-   später niemand darüber stolpert.
+2. **"No data storage of our own."** The legal notice contains personal
+   data — but **the operator's**, not the users'. The non-goal targets
+   storing user data; no contradiction. Explicitly named so nobody trips
+   over it later.
 
-3. **Die App ist bisher einseitig — der Service Worker verlässt sich darauf.**
-   `navigationAntwort()` liefert für jede Navigation `index.html`. Ohne Anpassung
-   bekämen **installierte** Clients unter `/impressum.html` die Kartenseite zu
-   sehen: kein Fehler, keine Meldung, einfach die falsche Seite. Lokal fällt das
-   nie auf (dort gibt es keinen alten Cache).
-   → Aufgelöst: `navigationAntwort()` wird pfadbewusst — Treffer im Shell-Cache für
-   den **angefragten** Pfad zuerst, `INDEX_URL` nur noch als Fallback für die
-   Wurzel. Weil das die Navigationsstrategie der App dauerhaft festlegt, gehört es
-   zusätzlich als **ADR-002** nach `../entscheidungen/` (siehe Umsetzungsschritte).
+3. **The app has been single-page so far — the service worker relies on
+   that.** `navigationAntwort()` delivers `index.html` for every
+   navigation. Without an adjustment, **installed** clients would see the
+   map page under `/impressum.html`: no error, no message, just the wrong
+   page. Locally this never shows up (there's no old cache there).
+   → Resolved: `navigationAntwort()` becomes path-aware — a hit in the
+   shell cache for the **requested** path first, `INDEX_URL` only as a
+   fallback for the root. Because this permanently sets the app's
+   navigation strategy, it additionally belongs as **ADR-002** under
+   `../entscheidungen/` (see implementation steps).
 
-4. **PWA-Fallstricke** (`CLAUDE.md`): Shell-Datei geändert → `CACHE_SHELL` von `v2`
-   auf `v3`, sonst sehen installierte Clients die neuen Seiten unbegrenzt nicht.
-   `SHELL` ist alles-oder-nichts pro Version: ein Tippfehler lässt `cache.addAll`
-   scheitern und der SW installiert sich nie. → Beides vom erweiterten
-   `test-pwa.mjs` abgedeckt.
+4. **PWA pitfalls** (`CLAUDE.md`): shell file changed → `CACHE_SHELL` from
+   `v2` to `v3`, or installed clients won't see the new pages indefinitely.
+   `SHELL` is all-or-nothing per version: a typo makes `cache.addAll` fail
+   and the SW never installs. → Both covered by the extended
+   `test-pwa.mjs`.
 
-5. **GitHub Pages liefert vom Sub-Pfad** `…github.io/BauWatch-KA/`. → Alle Pfade in
-   den neuen Seiten **relativ** (`src/styles.css`, nicht `/src/styles.css`), sonst
-   brechen sie still.
+5. **GitHub Pages serves from a sub-path** `…github.io/BauWatch-KA/`. → All
+   paths in the new pages **relative** (`src/styles.css`, not
+   `/src/styles.css`), or they break silently.
 
-6. **Namensnennung.** Der Footer-Umbau darf die statische CC-BY-Zeile nicht
-   berühren. → `scripts/test-attribution.mjs` läuft in `npm test` und schlägt an,
-   falls doch.
+6. **Attribution.** The footer rework must not touch the static CC-BY
+   line. → `scripts/test-attribution.mjs` runs in `npm test` and fails if
+   it does.
 
-7. **Vorgriff auf [A-1](./A-1-mein-arbeitsweg.md) (`✅ bereit`).** A-1 bringt
-   `localStorage` (Schlüssel `bauwatch.arbeitsweg`) **und einen weiteren
-   Drittdienst** (FOSSGIS-OSRM, `routing.openstreetmap.de`). Sobald A-1 umgesetzt
-   wird, wäre ein heute geschriebener Datenschutzhinweis unvollständig — also
-   falsch.
-   → Aufgelöst auf zwei Wegen: (a) die Definition of Done von A-1 wird um „Datenschutz­hinweis
-   mitgepflegt" ergänzt, und (b) der neue Test prüft **maschinell**, dass jeder im
-   Frontend-Code vorkommende externe Host auch im Hinweis genannt ist. Damit
-   scheitert `npm test`, wenn jemand einen Drittdienst einbaut und den Text
-   vergisst — dieselbe Drift-Absicherung wie bei der Namensnennung.
+7. **Anticipating [A-1](./A-1-mein-arbeitsweg.md) (`✅ ready`).** A-1 brings
+   `localStorage` (key `bauwatch.arbeitsweg`) **and another third-party
+   service** (FOSSGIS OSRM, `routing.openstreetmap.de`). Once A-1 is
+   implemented, a privacy notice written today would be incomplete — hence
+   wrong.
+   → Resolved two ways: (a) A-1's Definition of Done gets "privacy notice
+   kept up to date" added, and (b) the new test checks **mechanically**
+   that every external host occurring in the frontend code is also named
+   in the notice. That way `npm test` fails if someone adds a third-party
+   service and forgets the text — the same drift guard as for the
+   attribution.
 
-## Entscheidungen (mit Begründung)
+## Decisions (with rationale)
 
-**E1 — Zwei getrennte Seiten** (`impressum.html`, `datenschutz.html`).
-Konventionellste Form, eigene stabile URLs, gut erweiterbar. *Verworfen:* eine
-Seite mit den Ankern `#impressum`/`#datenschutz` (weniger Aufwand, aber
-unüblicher); ein Ausklapp-Abschnitt in `index.html` (am billigsten — kein
-SW-Umbau —, aber ein Impressum in einer Ausklapp-Sektion einer Kartenseite ist
-schwer als „leicht erkennbar und unmittelbar erreichbar" zu verteidigen).
+**E1 — Two separate pages** (`impressum.html`, `datenschutz.html`). The
+most conventional form, its own stable URLs, easy to extend. *Discarded:*
+one page with anchors `#impressum`/`#datenschutz` (less effort, but
+unusual); a collapsible section in `index.html` (cheapest — no SW rework —
+but a legal notice in a collapsible section of a map page is hard to defend
+as "easily recognizable and directly accessible").
 
-**E2 — Name + projekteigene E-Mail-Adresse, ohne Postanschrift.** Begründung:
-rein privates, ehrenamtliches Angebot ohne Einnahmen, Werbung oder
-Geschäftsmäßigkeit; die Anschriftspflicht wird für solche Seiten überwiegend als
-nicht anwendbar angesehen. Die Redaktion hat selbst von einem Hinweis gesprochen,
-nicht von einer Bedingung. *Verworfen:* volle Wohnanschrift (nimmt jede
-Diskussion vorweg, veröffentlicht aber die Privatadresse dauerhaft auf einer von
-der Stadt verlinkten Seite); Postfach/c/o (formal sauber, kostet Einrichtung —
-bleibt der Rückfallplan, falls das Justiziariat auf einer zustellfähigen Adresse
-besteht).
-**Vorbehalt, ausdrücklich:** Das ist eine Produktentscheidung auf Basis einer
-Laieneinschätzung, **keine Rechtsberatung.** Von allen Punkten dieser Anforderung
-ist das der, bei dem ein juristischer Blick am meisten wert ist.
+**E2 — Name + a project-owned email address, no postal address.**
+Rationale: a purely private, volunteer-run offering without revenue,
+advertising, or commercial character; the postal-address requirement is
+mostly considered inapplicable to such sites. The editorial team itself
+spoke of a heads-up, not a condition. *Discarded:* a full home address
+(pre-empts any discussion, but permanently publishes the private address on
+a page linked by the city); a PO box/c-o address (formally clean, costs
+setup — remains the fallback plan if the legal department insists on a
+deliverable address).
+**Reservation, explicitly stated:** this is a product decision based on a
+layperson's judgment, **not legal advice.** Of all the points in this
+requirement, this is the one where a legal opinion is worth the most.
 
-**E3 — Klartext plus Pflichtangaben.** Die vier realen Datenflüsse konkret
-beschrieben, dazu Verantwortlicher, Rechtsgrundlage, Betroffenenrechte und
-Aufsichtsbehörde. *Verworfen:* nur die Datenflüsse (formale Angaben fehlen →
-Rückfrage wahrscheinlich); Muster-Erklärung aus einem Generator (behauptet
-typischerweise Cookies, Analyse und Newsletter — hier sachlich falsch, und
-Unwahrheiten im Datenschutzhinweis sind schlimmer als Lücken).
+**E3 — Plain text plus the required items.** The four real data flows
+described concretely, plus the responsible party, the legal basis, data
+subject rights, and the supervisory authority. *Discarded:* just the data
+flows (formal items missing → a follow-up question is likely); a
+boilerplate notice from a generator (typically claims cookies, analytics,
+and a newsletter — factually wrong here, and untruths in a privacy notice
+are worse than gaps).
 
-**E4 — Kein Kontaktformular, `mailto:`.** Folgt zwingend aus ADR-001.
+**E4 — No contact form, `mailto:`.** Follows directly from ADR-001.
 
-**E5 — Dieselbe E-Mail-Adresse wie im Showcase-Eintrag.** Ein Kontaktweg, nicht
-zwei; sonst driften Portal-Eintrag und Impressum auseinander.
+**E5 — Same email address as in the showcase entry.** One contact channel,
+not two; otherwise the portal entry and the legal notice drift apart.
 
-**E6 — Die neuen Seiten kommen ohne JavaScript und ohne Leaflet aus.** Reine
-Textseiten. Sie funktionieren damit auch ohne JS und sind schnell — und sie
-brauchen `app.js` nicht im Precache-Pfad.
+**E6 — The new pages get by without JavaScript and without Leaflet.**
+Plain text pages. That means they also work without JS and are fast — and
+they don't need `app.js` in the precache path.
 
-**E7 — Beide Seiten in die `SHELL`.** Sie sind offline erreichbar. Eine App, die
-offline läuft, deren Impressum aber offline verschwindet, wäre eine unnötige
-Inkonsistenz — es sind zwei kleine Textdateien.
+**E7 — Both pages go into `SHELL`.** They're reachable offline. An app
+that runs offline but whose legal notice disappears offline would be an
+unnecessary inconsistency — they're two small text files.
 
-**E8 — Kein Cookie-Banner, kein Consent-Dialog.** Es gibt nichts einzuwilligen:
-keine Cookies, kein Tracking, keine Reichweitenmessung.
+**E8 — No cookie banner, no consent dialog.** There's nothing to consent
+to: no cookies, no tracking, no reach measurement.
 
-## Umfang / Nicht-Umfang
+## Scope / Non-scope
 
-- **Rein:** `impressum.html` und `datenschutz.html`; zwei Footer-Links in
-  `index.html`; Textseiten-Styles in `src/styles.css`; `sw.js`
-  (`SHELL`-Einträge, `CACHE_SHELL` → `v3`, pfadbewusste `navigationAntwort()`);
-  `scripts/test-pwa.mjs` erweitert; neues `scripts/test-rechtstexte.mjs`;
-  ADR-002; Doku-Nachzug.
-- **Raus:** Kontaktformular (ADR-001); Cookie-/Consent-Banner (E8);
-  Barrierefreiheitserklärung nach BITV (eigenes Thema, gilt für öffentliche
-  Stellen — BauWatch-KA ist keine); Mehrsprachigkeit; Rechtsberatung.
-- **Raus, aber ausdrücklich benannt:** **Kartenkacheln erst nach Einwilligung
-  laden.** Die OSM-Kacheln übertragen die IP-Adresse beim Seitenaufruf an die
-  OSMF, ohne dass die Nutzerin etwas getan hat. Eine strenge Lesart verlangt dafür
-  eine vorgeschaltete Einwilligung („Karte laden?"). Das würde die Kernschleife des
-  PRD („ohne Interaktion sofort sichtbar") direkt beschädigen und ist deshalb eine
-  eigene Abwägung — nicht Teil von A-4. Der Datenschutzhinweis benennt den
-  Datenfluss dafür umso deutlicher. Falls das Justiziariat darauf zurückkommt:
-  eigene Anforderung.
+- **In:** `impressum.html` and `datenschutz.html`; two footer links in
+  `index.html`; text-page styles in `src/styles.css`; `sw.js`
+  (`SHELL` entries, `CACHE_SHELL` → `v3`, path-aware
+  `navigationAntwort()`); `scripts/test-pwa.mjs` extended; new
+  `scripts/test-rechtstexte.mjs`; ADR-002; docs follow-up.
+- **Out:** contact form (ADR-001); cookie/consent banner (E8); a BITV
+  accessibility statement (its own topic, applies to public bodies —
+  BauWatch-KA isn't one); multiple languages; legal advice.
+- **Out, but explicitly named:** **loading map tiles only after
+  consent.** The OSM tiles transmit the IP address to the OSMF on page
+  load, without the user doing anything. A strict reading would require a
+  prior consent step ("load the map?") for that. That would directly
+  damage the PRD's core loop ("visible immediately, without interaction")
+  and is therefore its own trade-off — not part of A-4. The privacy notice
+  names that data flow all the more clearly because of it. If the legal
+  department comes back to this: its own requirement.
 
-## Spezifikation
+## Specification
 
-### UX-Ablauf & Zustände
+### UX flow & states
 
-Im Footer von `index.html`, im Absatz `.credits`, zwei zusätzliche Links:
-`Impressum` und `Datenschutz`. Beide Seiten sind schlanke Textdokumente mit
-`<h1>`, gegliederten `<h2>`-Abschnitten, einem Rücksprung „← Zurück zur Karte"
-als **erster** Tab-Station und untereinander verlinkt. Kopf- und Fußoptik wie die
-Hauptseite, damit sie erkennbar zum Angebot gehören. Zustände gibt es keine —
-kein Laden, kein Fehlerfall, kein JS.
+In the footer of `index.html`, in the `.credits` paragraph, two additional
+links: "Impressum" and "Datenschutz". Both pages are lean text documents
+with an `<h1>`, structured `<h2>` sections, a "← Back to the map" link as
+the **first** tab stop, and linked to each other. Header and footer look
+like the main page, so they're recognizable as part of the same offering.
+There are no states — no loading, no error case, no JS.
 
-### Inhalt `impressum.html`
+### Content of `impressum.html`
 
-- **Verantwortlich für den Inhalt:** Name, E-Mail (`mailto:`), keine Anschrift (E2).
-- **Einordnung:** privates, ehrenamtliches Bürgerprojekt; **kein** Angebot der
-  Stadt Karlsruhe, nicht in ihrem Auftrag. (Deckt sich mit der Einordnung im
-  Anschreiben.)
-- **Haftung für Inhalte und Links:** Baustellendaten stammen von der Stadt und
-  werden unverändert übernommen; verbindlich ist die Beschilderung vor Ort.
-- **Urheberrecht / Lizenzen:** Code MIT; Daten CC-BY 4.0 (Stadt Karlsruhe);
-  Kartendaten OpenStreetMap (ODbL) — jeweils verlinkt.
-- **Quellcode:** Link aufs Repository.
+- **Verantwortlich für den Inhalt** ("Responsible for the content"): name,
+  email (`mailto:`), no postal address (E2).
+- **Classification:** a private, volunteer-run citizen project; **not** an
+  offering of the City of Karlsruhe, not on its behalf. (Matches the
+  framing in the cover letter.)
+- **Liability for content and links:** the construction-site data comes
+  from the city and is carried over unchanged; the on-site signage is
+  binding.
+- **Copyright/licenses:** code MIT; data CC-BY 4.0 (City of Karlsruhe);
+  map data OpenStreetMap (ODbL) — each linked.
+- **Source code:** a link to the repository.
 
-### Inhalt `datenschutz.html`
+### Content of `datenschutz.html`
 
-1. **Verantwortliche Stelle** — wie im Impressum.
-2. **Was diese Seite nicht tut** (an den Anfang, weil es das meiste ist): keine
-   Cookies, kein Tracking, keine Reichweitenmessung, kein Nutzerkonto, keine
-   Weitergabe von Daten, keine eigene Speicherung von Nutzerdaten. Im Code
-   nachprüfbar — der Quellcode ist offen.
-3. **Datenflüsse an Dritte** als Tabelle mit Spalten *Dienst · Wann · Übertragene
-   Daten · Zweck · Datenschutzhinweis des Dritten*:
+1. **Verantwortliche Stelle** ("Responsible party") — as in the legal
+   notice.
+2. **"What this page doesn't do"** (at the top, because it's most of it):
+   no cookies, no tracking, no reach measurement, no user account, no
+   sharing of data, no storage of user data of its own. Verifiable in the
+   code — the source is open.
+3. **Data flows to third parties** as a table with columns *service ·
+   when · data transmitted · purpose · the third party's privacy notice*:
 
-   | Dienst | Wann | Übertragene Daten |
+   | Service | When | Data transmitted |
    |---|---|---|
-   | GitHub Pages (Hosting) | bei jedem Aufruf | IP-Adresse, Zeitpunkt, angeforderte Datei, User-Agent (Server-Logs des Hosters) |
-   | `tile.openstreetmap.org` (OSMF) | automatisch beim Laden der Karte | IP-Adresse, Referer, angeforderte Kacheln |
-   | `nominatim.openstreetmap.org` (OSMF) | **nur** beim Absenden der Adresssuche | IP-Adresse, Referer, **die eingegebene Adresse** |
+   | GitHub Pages (hosting) | on every visit | IP address, timestamp, requested file, user agent (the host's server logs) |
+   | `tile.openstreetmap.org` (OSMF) | automatically when the map loads | IP address, referer, requested tiles |
+   | `nominatim.openstreetmap.org` (OSMF) | **only** on submitting the address search | IP address, referer, **the entered address** |
 
-4. **Speicherung auf dem eigenen Gerät:** Der Service Worker legt App-Dateien und
-   den letzten Datenstand im Browser-Cache ab, damit die Seite offline
-   funktioniert. Das bleibt auf dem Gerät, wird nicht übertragen und ist über die
-   Browser-Einstellungen jederzeit löschbar.
-5. **Rechtsgrundlage:** Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse am
-   technischen Bereitstellen der Seite). Die Adresssuche löst die Nutzerin selbst
-   aus.
-6. **Betroffenenrechte:** Auskunft, Berichtigung, Löschung, Einschränkung,
-   Widerspruch, Beschwerde — mit dem Hinweis, dass hier keine personenbezogenen
-   Daten gespeichert werden und Auskunftsansprüche daher an die genannten Dritten
-   zu richten sind. Aufsichtsbehörde: Landesbeauftragter für den Datenschutz und
-   die Informationsfreiheit Baden-Württemberg.
-7. **Stand:** Datum der letzten Änderung, statisch im HTML (nicht per JS —
-   dieselbe Lehre wie bei der Namensnennung).
+4. **Storage on the user's own device:** the service worker stores app
+   files and the last data snapshot in the browser cache so the site works
+   offline. That stays on the device, isn't transmitted, and can be
+   deleted at any time via the browser settings.
+5. **Legal basis:** Art. 6(1)(f) GDPR (legitimate interest in the
+   technical provision of the site). The user triggers the address search
+   herself.
+6. **Data subject rights:** access, rectification, erasure, restriction,
+   objection, complaint — noting that no personal data is stored here, so
+   access requests should be directed to the named third parties.
+   Supervisory authority: the data protection and freedom of information
+   commissioner for Baden-Württemberg.
+7. **Timestamp:** the date of the last change, static in the HTML (not via
+   JS — the same lesson as with the attribution).
 
-### Interaktion mit Bestehendem
+### Interaction with existing features
 
-- `sw.js`: `'impressum.html'` und `'datenschutz.html'` in `SHELL`; `CACHE_SHELL`
-  auf `'bauwatch-shell-v3'`; `navigationAntwort()` prüft **zuerst** den
-  angefragten Pfad im Shell-Cache und fällt erst dann auf `INDEX_URL` zurück.
-- `src/styles.css`: neue Klasse (z. B. `.textseite`) mit lesbarer Maximalbreite;
-  Farben aus den vorhandenen Variablen, hell und dunkel.
-- Namensnennung, Haftungshinweis und Datenstand in `index.html` bleiben
-  unverändert.
+- `sw.js`: `'impressum.html'` and `'datenschutz.html'` in `SHELL`;
+  `CACHE_SHELL` to `'bauwatch-shell-v3'`; `navigationAntwort()` checks the
+  requested path in the shell cache **first** and only then falls back to
+  `INDEX_URL`.
+- `src/styles.css`: a new class (e.g. `.textseite`) with a readable max
+  width; colors from the existing variables, light and dark.
+- Attribution, liability notice, and data timestamp in `index.html` stay
+  unchanged.
 
-### Datenmodell / Persistenz
+### Data model / persistence
 
-Keins. Zwei statische Dateien, kein neuer Speicher, kein neues Feld im GeoJSON.
+None. Two static files, no new storage, no new field in the GeoJSON.
 
-### Externe Abhängigkeiten & Fallback
+### External dependencies & fallback
 
-Keine neuen. Die Seiten sind offline aus dem Cache verfügbar (E7); ohne Service
-Worker liefert sie der Server wie jede andere statische Datei.
+None new. The pages are available offline from the cache (E7); without a
+service worker, the server delivers them like any other static file.
 
-### Randfälle & Fehlerbehandlung
+### Edge cases & error handling
 
-| Fall | Verhalten |
+| Case | Behavior |
 |---|---|
-| Kein JavaScript | Seiten voll nutzbar (E6) |
-| Offline, PWA installiert | Seiten aus dem Shell-Cache |
-| Installierter Client mit alter SW-Version | bekommt die neuen Seiten erst nach dem `CACHE_SHELL`-Bump — **deshalb** ist der Bump Teil der DoD |
-| Direkter Aufruf von `…/impressum.html` | pfadbewusste Navigation liefert die richtige Seite, nicht `index.html` |
-| Dunkelmodus | wie die Hauptseite; `--amber` nicht als Textfarbe |
+| No JavaScript | pages fully usable (E6) |
+| Offline, PWA installed | pages from the shell cache |
+| Installed client with an old SW version | only gets the new pages after the `CACHE_SHELL` bump — **that's why** the bump is part of the DoD |
+| Direct request for `…/impressum.html` | path-aware navigation delivers the right page, not `index.html` |
+| Dark mode | like the main page; `--amber` not used as a text color |
 
-### Barrierefreiheit
+### Accessibility
 
-`lang="de"`; eine `<h1>` pro Seite, danach lückenlose `<h2>`-Hierarchie;
-Tabellen mit `<th scope="col">`; Rücksprung als erste Tab-Station; sichtbarer
-Fokus und Kontraste wie auf der Hauptseite; keine Ausklapp-Mechanik, die Inhalte
-vor Screenreadern verbirgt. Fließtext, keine Layout-Tabellen. Kein Skip-Link
-nötig (keine umfangreiche Navigation davor).
+`lang="de"`; one `<h1>` per page, then a gap-free `<h2>` hierarchy; tables
+with `<th scope="col">`; the back link as the first tab stop; visible
+focus and contrasts like the main page; no collapsible mechanism that
+hides content from screen readers. Running text, no layout tables. No skip
+link needed (no extensive navigation before it).
 
-### Testplan
+### Test plan
 
-**`scripts/test-pwa.mjs` erweitern:** die zwei Seiten stehen in `SHELL`; jede von
-**ihnen** referenzierte Datei ist ebenfalls precacht (heute wird nur
-`index.html` gescannt); `navigationAntwort()` ist pfadbewusst.
+**Extend `scripts/test-pwa.mjs`:** the two pages are in `SHELL`; every file
+**they** reference is also precached (today only `index.html` is scanned);
+`navigationAntwort()` is path-aware.
 
-**`scripts/test-rechtstexte.mjs` (neu, in `npm test`):**
-1. Beide Dateien existieren und sind aus dem Footer von `index.html` verlinkt.
-2. Alle Pfade darin relativ (kein führender `/`) — Sub-Pfad-Falle.
-3. Pflichtabschnitte vorhanden (Verantwortlicher, Rechtsgrundlage,
-   Betroffenenrechte, Aufsichtsbehörde, Stand).
-4. **Drift-Absicherung:** Jeder externe Host, der in `src/*.js` vorkommt, muss im
-   Datenschutzhinweis genannt sein. Baut jemand einen Drittdienst ein — etwa
-   `routing.openstreetmap.de` bei A-1 — wird `npm test` rot.
-5. Gegenprobe wie bei `test-attribution.mjs`: die Regressionen einmal künstlich
-   herbeiführen und belegen, dass der Test sie fängt.
+**`scripts/test-rechtstexte.mjs` (new, in `npm test`):**
+1. Both files exist and are linked from the footer of `index.html`.
+2. All paths in them are relative (no leading `/`) — the sub-path trap.
+3. Required sections present (responsible party, legal basis, data
+   subject rights, supervisory authority, timestamp).
+4. **Drift guard:** every external host occurring in `src/*.js` must be
+   named in the privacy notice. If someone adds a third-party service —
+   say, `routing.openstreetmap.de` for A-1 — `npm test` goes red.
+5. Cross-check like `test-attribution.mjs`: trigger the regressions
+   artificially once and prove the test catches them.
 
-**Browser (Playwright):** Links im Footer erreichbar; Seiten offline aus dem
-Cache; unter `localhost` ein installierter SW liefert `impressum.html` und
-**nicht** `index.html` (genau der Befund aus Spannung 3).
+**Browser (Playwright):** links reachable in the footer; pages available
+offline from the cache; under `localhost`, an installed SW serves
+`impressum.html` and **not** `index.html` (exactly the finding from tension
+3).
 
-### Doku-/Backlog-Auswirkungen
+### Docs/backlog impact
 
-- **ADR-002** (neu, append-only): pfadbewusste SW-Navigation / die App wird
-  mehrseitig.
-- `README.md`: Struktur (neue Dateien, neues Testskript), Testabschnitt.
-- `CLAUDE.md`: Fallstrick „`navigationAntwort()` überdeckt jede Navigation" und
-  der neue Drift-Test.
-- [`../showcase-einreichung.md`](../showcase-einreichung.md): Häkchen bei
-  Impressum/Datenschutz, offener Punkt schließen.
-- [`A-1`](./A-1-mein-arbeitsweg.md): Definition of Done um „Datenschutzhinweis um
-  `localStorage` und Routing-Dienst ergänzt" erweitern (Spannung 7).
-- `docs/BACKLOG.md`: keine neue Aufgabe — läuft vollständig über diese Anforderung.
+- **ADR-002** (new, append-only): path-aware SW navigation / the app
+  becomes multi-page.
+- `README.md`: structure (new files, new test script), test section.
+- `CLAUDE.md`: the pitfall "`navigationAntwort()` covers every navigation"
+  and the new drift test.
+- [`../showcase-einreichung.md`](../showcase-einreichung.md): check the
+  legal-notice/privacy-notice box, close the open item.
+- [`A-1`](./A-1-mein-arbeitsweg.md): extend the Definition of Done with
+  "privacy notice extended for `localStorage` and the routing service"
+  (tension 7).
+- `docs/BACKLOG.md`: no new task — runs entirely through this requirement.
 
 ## Definition of Done
 
-- `impressum.html` und `datenschutz.html` existieren, sind aus dem Footer
-  verlinkt und enthalten die unter „Inhalt" gelisteten Abschnitte.
-- Inhalte stimmen mit dem Code überein: genau die drei Drittdienste, keine
-  Behauptung über Cookies/Tracking, die nicht zutrifft.
-- Beide Seiten ohne JavaScript nutzbar und offline aus dem Cache verfügbar.
-- `sw.js`: Seiten in `SHELL`, `CACHE_SHELL` auf `v3`, `navigationAntwort()`
-  pfadbewusst; ein installierter Client bekommt unter `/impressum.html` das
-  Impressum.
-- `npm test` grün, inklusive erweitertem `test-pwa.mjs` und neuem
-  `test-rechtstexte.mjs`; die Drift-Absicherung ist per Gegenprobe belegt.
-- Namensnennung, Haftungshinweis und Datenstand unverändert
-  (`test-attribution.mjs` grün).
-- Barrierefreiheit wie oben; Kontraste hell **und** dunkel geprüft.
-- ADR-002 abgelegt; README, CLAUDE.md, Showcase-Unterlage und A-1 nachgezogen.
-- Status in der [Übersicht](./README.md#übersicht) auf `🏁 erledigt`.
+- `impressum.html` and `datenschutz.html` exist, are linked from the
+  footer, and contain the sections listed under "Content".
+- The content matches the code: exactly the three third-party services, no
+  untrue claim about cookies/tracking.
+- Both pages usable without JavaScript and available offline from the
+  cache.
+- `sw.js`: pages in `SHELL`, `CACHE_SHELL` at `v3`, `navigationAntwort()`
+  path-aware; an installed client gets the legal notice at
+  `/impressum.html`.
+- `npm test` green, including the extended `test-pwa.mjs` and the new
+  `test-rechtstexte.mjs`; the drift guard is proven by a cross-check.
+- Attribution, liability notice, and data timestamp unchanged
+  (`test-attribution.mjs` green).
+- Accessibility as above; contrasts checked light **and** dark.
+- ADR-002 filed; README, CLAUDE.md, the showcase document, and A-1 updated.
+- Status in the [overview](./README.md#overview) set to `🏁 done`.
 
-## Umsetzungsschritte
+## Implementation steps
 
-1. **ADR-002** schreiben (mehrseitige Auslieferung + pfadbewusste
-   SW-Navigation) — vor dem Code, weil er die Entscheidung festhält.
-2. `sw.js`: `navigationAntwort()` pfadbewusst machen, `SHELL` ergänzen,
+1. Write **ADR-002** (multi-page delivery + path-aware SW navigation) —
+   before the code, because it records the decision.
+2. `sw.js`: make `navigationAntwort()` path-aware, extend `SHELL`,
    `CACHE_SHELL` → `v3`.
-3. `impressum.html` und `datenschutz.html` schreiben; Name und E-Mail einsetzen
-   (dieselbe Adresse wie im Showcase-Eintrag, E5).
-4. Footer-Links in `index.html`; Textseiten-Styles in `src/styles.css`.
-5. `scripts/test-rechtstexte.mjs` schreiben, `test-pwa.mjs` erweitern, beides in
-   `npm test`; Gegenprobe der Drift-Absicherung.
-6. Browser-Check inklusive Offline- und SW-Navigations-Fall.
-7. Doku nachziehen (README, CLAUDE.md, Showcase-Unterlage, A-1-DoD), Status auf
-   `🏁 erledigt`.
+3. Write `impressum.html` and `datenschutz.html`; insert name and email
+   (the same address as in the showcase entry, E5).
+4. Footer links in `index.html`; text-page styles in `src/styles.css`.
+5. Write `scripts/test-rechtstexte.mjs`, extend `test-pwa.mjs`, both into
+   `npm test`; cross-check the drift guard.
+6. Browser check including the offline and SW-navigation case.
+7. Update docs (README, CLAUDE.md, showcase document, A-1's DoD), status to
+   `🏁 done`.
 
-> **Offen und bewusst nicht hier entschieden:** die projekteigene E-Mail-Adresse
-> muss existieren, bevor Schritt 3 laufen kann (siehe „Offene Punkte" in der
-> [Showcase-Unterlage](../showcase-einreichung.md#offene-punkte)). Und der
-> Vorbehalt aus **E2** bleibt: eine juristische Gegenlesung ist bei den Angaben
-> zur Person das Geld wert.
+> **Open and deliberately not decided here:** the project's own email
+> address must exist before step 3 can run (see "Open items" in the
+> [showcase document](../showcase-einreichung.md#open-items)). And the
+> reservation from **E2** stands: a legal review is worth the money for
+> the personal-details items.

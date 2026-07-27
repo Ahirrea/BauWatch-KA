@@ -1,121 +1,135 @@
 # PRD — Wo wird gebaut? (BauWatch-KA)
 
-Produktdefinition: Problem, Zielnutzer:in, Ziele, **Nicht-Ziele**, Kernschleife,
-Erfolgskriterien, Rahmenbedingungen. Ändert sich selten — Anforderungen und
-Aufgaben leiten sich hieraus ab, nicht umgekehrt.
+Product definition: problem, target user, goals, **non-goals**, core loop,
+success criteria, constraints. Changes rarely — requirements and tasks are
+derived from this, not the other way around.
 
-Verfeinerte Anforderungen: [`anforderungen/README.md`](./anforderungen/README.md) ·
-Architekturentscheidungen: [`entscheidungen/README.md`](./entscheidungen/README.md) ·
-Technische Aufgaben: [`BACKLOG.md`](./BACKLOG.md)
+Elaborated requirements: [`anforderungen/README.md`](./anforderungen/README.md) ·
+Architectural decisions: [`entscheidungen/README.md`](./entscheidungen/README.md) ·
+Technical tasks: [`BACKLOG.md`](./BACKLOG.md)
 
-> Hieß bis 2026-07-25 `docs/SPEC.md`. Inhaltlich unverändert, nur nach den sieben
-> PRD-Abschnitten neu geordnet und um einen expliziten „Ziele"-Abschnitt ergänzt.
+> Was called `docs/SPEC.md` until 2026-07-25. Unchanged in substance, just
+> reordered into the seven PRD sections and given an explicit "Goals" section.
 
 ## 1. Problem
 
-Der offizielle Datensatz liegt im Transparenzportal als reiner Katalogeintrag
-(WFS/GeoJSON, Lizenz, Download-Link). Für einen normalen Menschen ist er
-unbrauchbar: kein Filter, keine Suche, kryptische Verwaltungscodes, und der
-Datensatz enthält weit mehr als Karlsruhe (Elsass, Bruchsal, Baden-Baden,
-Ettlingen, Rheinstetten).
+The official dataset sits in the transparency portal as a plain catalog entry
+(WFS/GeoJSON, license, download link). For an ordinary person it's unusable:
+no filter, no search, cryptic administrative codes, and the dataset covers
+far more than Karlsruhe (Alsace, Bruchsal, Baden-Baden, Ettlingen,
+Rheinstetten).
 
-Dieses Produkt macht aus den Rohdaten ein Werkzeug für den Alltag: statt eines
-Datenkatalog-Eintrags für Entwickler eine Karte plus Liste, die die Frage
-beantwortet, die Karlsruher tatsächlich haben — **„Betrifft mich das, auf meinem
-Weg, mit meinem Verkehrsmittel, in meinem Zeitraum?"**
+This product turns the raw data into a tool for everyday life: instead of a
+data-catalog entry for developers, a map plus list that answers the question
+Karlsruhe residents actually have — **"Does this affect me, on my route,
+with my mode of transport, in this time period?"**
 
-## 2. Zielnutzer:in
+## 2. Target user
 
-Eine Einwohnerin von Karlsruhe, die zu Fuß, mit dem Rad, dem Auto oder dem ÖPNV
-unterwegs ist und wissen will, was ihren Weg oder ihre Straße betrifft. Sie
-öffnet die Seite auf dem Handy, hat 30 Sekunden Zeit und will keine Anleitung
-lesen. Kein Fachpublikum, keine Verwaltung.
+A Karlsruhe resident traveling on foot, by bike, by car, or by public
+transit, who wants to know what affects her route or street. She opens the
+site on her phone, has 30 seconds, and doesn't want to read instructions. No
+expert audience, no administration.
 
-## 3. Ziele
+## 3. Goals
 
-- Alle heute aktiven Baustellen in Karlsruhe sind ohne Interaktion sofort
-  sichtbar — auf einer Karte und in einer synchronisierten Liste.
-- Betroffenheit ist in Klartext ablesbar: Ampel für den Sperrgrad, verständliche
-  Art-Bezeichnung, Restdauer als „noch X Tage".
-- Die Ansicht lässt sich auf das Relevante verengen: Umkreis um eine Adresse
-  (1,5 km), Zeitraum, Sperrungsgrad, Verkehrsmittel.
-- Bedienbar auf dem Handy, per Tastatur und mit Screenreader.
-- Der Datenstand ist jederzeit sichtbar.
+- All construction sites currently active in Karlsruhe are visible
+  immediately, without interaction — on a map and in a synchronized list.
+- Relevance is readable in plain text: a traffic light for the closure
+  severity, an understandable type label, remaining duration as "X days
+  left".
+- The view can be narrowed to what's relevant: radius around an address
+  (1.5 km), time period, closure severity, mode of transport.
+- Usable on the phone, by keyboard, and with a screen reader.
+- The data's timestamp is visible at all times.
 
-### Funktionsumfang (v1)
+### Feature scope (v1)
 
-- Karte (Leaflet + OpenStreetMap) mit Baustellen als farbcodierten Markern.
-- Synchronisierte Liste; Klick auf Listeneintrag zentriert die Karte.
-- Filter: Zeitraum (aktiv heute / diese Woche / bald geplant / alle),
-  Sperrungsgrad (Ampel), Verkehrsmittel (Fuß / Rad / Auto).
-- Adress-/Umkreissuche (Geocoding über Nominatim), Umkreis 1,5 km.
-- Klartext-Übersetzung der `art`-Codes, Bereinigung der HTML-Fragmente in
-  `zusatzinfo`, Restdauer als „noch X Tage".
-- Kennzahlen-Leiste (Anzahl, Vollsperrungen, Behinderungen).
-- Responsiv bis Mobil; Tastaturbedienung; „stand"-Datum sichtbar.
-- **Auf den Startbildschirm installierbar und offline nutzbar** (PWA): App-Shell
-  und der zuletzt geladene Datenstand liegen auf dem Gerät, offline sichtbar
-  gekennzeichnet. Siehe
+- Map (Leaflet + OpenStreetMap) with construction sites as color-coded
+  markers.
+- Synchronized list; clicking a list entry centers the map.
+- Filters: time period (active today / this week / planned soon / all),
+  closure severity (traffic light), mode of transport (foot / bike / car).
+- Address/radius search (geocoding via Nominatim), 1.5 km radius.
+- Plain-text translation of the `art` codes, cleanup of the HTML fragments in
+  `zusatzinfo`, remaining duration as "X days left".
+- Stats bar (count, full closures, obstructions).
+- Responsive down to mobile; keyboard operable; `stand` (snapshot) date
+  visible.
+- **Installable to the home screen and usable offline** (PWA): the app
+  shell and the last loaded data snapshot live on the device, marked as
+  offline when applicable. See
   [A-3](./anforderungen/A-3-pwa-installierbar-offline.md).
 
-## 4. Nicht-Ziele (bewusst ausgeschlossen)
+## 4. Non-goals (deliberately excluded)
 
-- **Kein Routing / keine Navigation.** Wir zeigen Betroffenheit, nicht Umwege.
-  (Aufgelöst für [A-1](./anforderungen/A-1-mein-arbeitsweg.md): Routing nur als
-  optionale, nutzerausgelöste Anreicherung mit Fallback.)
-- **Keine anderen Gemeinden.** Der Datensatz enthält sie, wir filtern sie raus.
-- **Kein Nutzerkonto, kein Login.** Alles anonym und clientseitig.
-- **Kein echtes Push.** (Abo-Variante ohne Backend siehe
-  [A-2](./anforderungen/A-2-baustellen-abo-feed.md).) Der Service Worker aus
-  [A-3](./anforderungen/A-3-pwa-installierbar-offline.md) wäre die technische
-  Voraussetzung dafür — er hat deshalb **bewusst keinen `push`-,
-  `notificationclick`- oder `sync`-Handler**, und `scripts/test-pwa.mjs` prüft das.
-- **Kein Melde-Rückkanal** an die Stadt (evtl. später).
-- **Keine eigene Datenhaltung** über das committete GeoJSON hinaus. Der
-  Offline-Cache aus [A-3](./anforderungen/A-3-pwa-installierbar-offline.md) hält
-  nur **dieselben ausgelieferten Dateien** auf dem Gerät vor — nichts
-  Nutzerbezogenes, nichts, was nicht ohnehin geladen wurde, jederzeit über die
-  Browser-Einstellungen löschbar.
-- **Kein Backend, kein Build-Schritt fürs Frontend.** Siehe
+- **No routing / no navigation.** We show relevance, not detours.
+  (Resolved for [A-1](./anforderungen/A-1-mein-arbeitsweg.md): routing only
+  as an optional, user-triggered enrichment with a fallback.)
+- **No other municipalities.** The dataset contains them, we filter them out.
+- **No user account, no login.** Everything anonymous and client-side.
+- **No real push.** (Subscription variant without a backend, see
+  [A-2](./anforderungen/A-2-baustellen-abo-feed.md).) The service worker from
+  [A-3](./anforderungen/A-3-pwa-installierbar-offline.md) would be the
+  technical prerequisite for it — that's why it **deliberately has no
+  `push`, `notificationclick`, or `sync` handler**, which
+  `scripts/test-pwa.mjs` checks.
+- **No reporting channel back** to the city (possibly later).
+- **No data storage of our own** beyond the committed GeoJSON. The offline
+  cache from [A-3](./anforderungen/A-3-pwa-installierbar-offline.md) only
+  keeps **the same served files** on the device — nothing user-related,
+  nothing that wasn't loaded anyway, deletable at any time via the browser
+  settings.
+- **No backend, no build step for the frontend.** See
   [ADR-001](./entscheidungen/ADR-001-statisches-hosting.md).
 
-## 5. Kernschleife
+## 5. Core loop
 
-1. Nutzerin öffnet die Seite → sieht sofort alle heute aktiven Baustellen in
-   Karlsruhe auf Karte und in einer Liste.
-2. Sie gibt eine Adresse ein → Ansicht verengt sich auf den Umkreis, sortiert
-   nach Entfernung.
-3. Sie filtert nach Verkehrsmittel, Sperrungsgrad, Zeitraum → sieht nur noch
-   Relevantes, in Klartext, mit Ampel und Restdauer.
+1. User opens the site → immediately sees all construction sites currently
+   active in Karlsruhe on the map and in a list.
+2. She enters an address → the view narrows to the radius, sorted by
+   distance.
+3. She filters by mode of transport, closure severity, time period → sees
+   only what's relevant, in plain text, with a traffic light and remaining
+   duration.
 
-Diese Schleife muss schnell, verständlich und ohne Anleitung bedienbar sein.
-Alles andere ist nachrangig.
+This loop must be fast, understandable, and operable without instructions.
+Everything else is secondary.
 
-## 6. Erfolgskriterien
+## 6. Success criteria
 
-- Ein Ortsunkundiger findet in unter 30 Sekunden heraus, ob seine Straße
-  betroffen ist.
-- Die Seite lädt ohne Server und verursacht keine laufenden Kosten.
-- Die Daten sind nie älter als der letzte Action-Lauf, und der Stand ist sichtbar.
-  **Mit Netz gilt das unverändert** — der Datenabruf ist network-first, ein
-  gecachter Snapshot überstimmt den frischen nie. **Ohne Netz** zeigt die Seite
-  den zuletzt geladenen Stand, dann aber ausdrücklich als „offline, aus dem
-  Gerätespeicher" gekennzeichnet: transparent veraltet statt gar nichts
-  (siehe [A-3](./anforderungen/A-3-pwa-installierbar-offline.md)).
+- Someone unfamiliar with the area finds out in under 30 seconds whether
+  their street is affected.
+- The site loads without a server and causes no running costs.
+- The data is never older than the last Action run, and the snapshot date
+  is visible. **With a network, this holds unchanged** — the data fetch is
+  network-first, a cached snapshot never overrides the fresh one.
+  **Without a network**, the site shows the last loaded state, but then
+  explicitly marked as "offline, from device storage": transparently stale
+  instead of nothing at all
+  (see [A-3](./anforderungen/A-3-pwa-installierbar-offline.md)).
 
-## 7. Rahmenbedingungen
+## 7. Constraints
 
-- **Datenquelle:** WFS-Endpoint der Stadt Karlsruhe (`mobil.trk.de/geoserver`),
-  Layer `TBA:baustellen_aktuell`, Format GeoJSON. Koordinaten in EPSG:25832
-  (UTM 32N), müssen nach WGS84 transformiert werden. Jeder Vorgang erscheint
-  doppelt (Punkt + Polygon) und wird über `vorgangsnummer` dedupliziert. Feld
-  `gemeinde` filtert auf `"Karlsruhe"` (Elsass-Einträge haben `null`).
-- **Geocoding:** Nominatim (OpenStreetMap) für die Adress-/Umkreissuche — der
-  einzige Live-Aufruf aus dem Browser. Nutzungsrichtlinie beachten (Rate-Limit,
-  `User-Agent`/Referer).
-- **Lizenz Daten:** Creative Commons Namensnennung 4.0 (CC-BY 4.0). Der
-  Quellenverweis „Datensatz ‚Baustellen', Stadt Karlsruhe" wird im Footer geführt.
-- **Lizenz Code:** MIT (siehe `LICENSE`).
-- **Kosten:** null. Hosting über GitHub Pages, Datenaktualisierung über GitHub
-  Actions, alle Datenquellen kostenfrei.
-- **Sprache:** Deutsch — Code-Kommentare, Commits, Docs und UI.
+- **Data source:** the City of Karlsruhe's WFS endpoint (`mobil.trk.de/geoserver`),
+  layer `TBA:baustellen_aktuell`, GeoJSON format. Coordinates in EPSG:25832
+  (UTM 32N), must be transformed to WGS84. Every case appears twice
+  (point + polygon) and is deduplicated via `vorgangsnummer`. Field
+  `gemeinde` filters on `"Karlsruhe"` (Alsace entries have `null`).
+- **Geocoding:** Nominatim (OpenStreetMap) for the address/radius search —
+  the only live call from the browser. Follow the usage policy (rate limit,
+  `User-Agent`/referer).
+- **Data license:** Creative Commons Attribution 4.0 (CC-BY 4.0). The
+  source reference "Dataset 'Baustellen', City of Karlsruhe" is carried in
+  the footer.
+- **Code license:** MIT (see `LICENSE`).
+- **Cost:** zero. Hosting via GitHub Pages, data updates via GitHub Actions,
+  all data sources free of charge.
+- **Language:** internal artifacts (code comments, commits, docs): English,
+  since 2026-07-27. **The UI stays German** — code comments, commits, and
+  docs are one thing; the product's actual audience is German-speaking
+  Karlsruhe residents, so `index.html`, `src/app.js`, `impressum.html`,
+  `datenschutz.html`, and the manifest's `name`/`short_name`/`lang` fields
+  are a separate, deliberate exception. Translating the app itself would be
+  its own, much bigger localization decision — not something this switch
+  covers.

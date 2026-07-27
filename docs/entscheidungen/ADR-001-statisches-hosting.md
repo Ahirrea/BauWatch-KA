@@ -1,93 +1,99 @@
-# ADR-001: Statisches Hosting mit periodischem Daten-Snapshot
+# ADR-001: Static Hosting with a Periodic Data Snapshot
 
-**Status:** akzeptiert
-**Datum:** 2026-07-20
-**Kontext:** Wie kommen die Live-Daten der Stadt in eine rein statische Seite?
+**Status:** accepted
+**Date:** 2026-07-20
+**Context:** how does the city's live data get into a purely static site?
 
 ## Problem
 
-Der WFS-Endpoint der Stadt (`mobil.trk.de`) sendet keine CORS-Header, die einen
-direkten `fetch` aus dem Browser einer fremden Domain erlauben. Ein Zugriff
-direkt aus dem clientseitigen Code schlägt daher fehl. Gleichzeitig soll das
-Produkt statisch auf GitHub Pages laufen — ohne Server, ohne laufende Kosten.
+The city's WFS endpoint (`mobil.trk.de`) sends no CORS headers that would
+allow a direct `fetch` from a foreign domain's browser. A direct access from
+client-side code therefore fails. At the same time, the product should run
+statically on GitHub Pages — no server, no running costs.
 
-Zusätzliche Randbedingungen aus den Daten:
-- Rohdaten enthalten die ganze Region; nur `gemeinde = "Karlsruhe"` ist relevant.
-- Koordinaten in EPSG:25832, müssen nach WGS84 transformiert werden.
-- Punkt + Polygon je Vorgang → Deduplizierung nötig.
-- Der Rohdatensatz ist groß; der Client soll ihn nicht bei jedem Aufruf ziehen.
+Additional constraints from the data:
+- The raw data covers the whole region; only `gemeinde = "Karlsruhe"` is
+  relevant.
+- Coordinates in EPSG:25832, must be transformed to WGS84.
+- Point + polygon per case → deduplication needed.
+- The raw dataset is large; the client shouldn't fetch it on every visit.
 
-## Entscheidung
+## Decision
 
-Eine **GitHub Action** übernimmt periodisch die Rolle, die sonst ein Server
-hätte. Sie läuft zeitgesteuert (Cron) und bei manuellem Auslösen:
+A **GitHub Action** periodically takes on the role a server would otherwise
+have. It runs on a schedule (cron) and on manual trigger:
 
-1. Ruft den WFS-Endpoint serverseitig ab (kein CORS im Action-Runner).
-2. Filtert auf `gemeinde = "Karlsruhe"`, dedupliziert Punkt/Polygon.
-3. Transformiert Koordinaten nach WGS84.
-4. Bereinigt Felder (HTML aus `zusatzinfo`, Klartext-Mapping der `art`-Codes).
-5. Schreibt ein schlankes, fertig aufbereitetes `data/baustellen.geojson`
-   ins Repo (Commit nur bei tatsächlicher Änderung).
+1. Fetches the WFS endpoint server-side (no CORS in the Action runner).
+2. Filters to `gemeinde = "Karlsruhe"`, deduplicates point/polygon.
+3. Transforms coordinates to WGS84.
+4. Cleans up fields (HTML from `zusatzinfo`, plain-text mapping of the
+   `art` codes).
+5. Writes a lean, fully processed `data/baustellen.geojson`
+   into the repo (commit only on an actual change).
 
-Der clientseitige Code lädt ausschließlich diese statische Datei aus demselben
-Origin. Kein CORS-Problem, keine Laufzeit-Abhängigkeit von der Stadt-API,
-schnelle Ladezeit, Datenstand im Commit-Verlauf nachvollziehbar.
+The client-side code exclusively loads this static file from the same
+origin. No CORS problem, no runtime dependency on the city's API, fast load
+time, the data's state traceable in the commit history.
 
-## Konsequenzen
+## Consequences
 
-**Positiv**
-- Null laufende Kosten, kein Server, kein Secret-Handling.
-- Daten-Aufbereitung an einer Stelle (Build), Client bleibt simpel.
-- Ausfall der Stadt-API bricht die Seite nicht — letzter Snapshot bleibt.
-- Änderungshistorie der Baustellen ergibt sich gratis aus Git.
+**Positive**
+- Zero running costs, no server, no secret handling.
+- Data processing in one place (the build), the client stays simple.
+- An outage of the city's API doesn't break the site — the last snapshot
+  remains.
+- The construction sites' change history comes for free out of Git.
 
-**Negativ / Kompromisse**
-- Daten sind nur so frisch wie das Cron-Intervall (Vorschlag: alle 3–6 h).
-  Für Baustellendaten, die tageweise gelten, völlig ausreichend.
-- Aufbereitungslogik lebt in zwei Sprachen, wenn das Build-Skript nicht JS ist.
-  → **Festlegung:** Build-Skript in Node.js, damit Transformations- und
-  Mapping-Logik mit dem Frontend geteilt werden kann (`src/lib/` als gemeinsame
-  Module, importiert von Build-Skript und Client).
-- Adress-Geocoding (Nominatim) bleibt ein Live-Call aus dem Browser; Nominatim
-  erlaubt CORS. Nutzungsrichtlinie beachten (Rate-Limit, `User-Agent`/Referer).
+**Negative / trade-offs**
+- The data is only as fresh as the cron interval (suggestion: every
+  3–6 h). Entirely sufficient for construction-site data that holds for
+  days at a time.
+- The processing logic lives in two languages if the build script isn't
+  JS. → **Decision:** the build script is in Node.js, so the
+  transformation and mapping logic can be shared with the frontend
+  (`src/lib/` as shared modules, imported by the build script and the
+  client).
+- Address geocoding (Nominatim) stays a live call from the browser;
+  Nominatim allows CORS. Follow the usage policy (rate limit,
+  `User-Agent`/referer).
 
-## Repo-Struktur (daraus abgeleitet)
+## Repo structure (derived from this)
 
 ```
 /
-├─ index.html              # Einstieg, lädt src/app.js + Leaflet
+├─ index.html              # entry point, loads src/app.js + Leaflet
 ├─ src/
-│  ├─ app.js               # UI, Karte, Filter, Rendering
+│  ├─ app.js               # UI, map, filters, rendering
 │  ├─ styles.css
 │  └─ lib/
-│     ├─ transform.js      # UTM32 -> WGS84 (geteilt)
-│     ├─ classify.js       # art-Codes, Sperrgrad, Verkehrsmittel (geteilt)
-│     └─ format.js         # Restdauer, Textbereinigung (geteilt)
+│     ├─ transform.js      # UTM32 -> WGS84 (shared)
+│     ├─ classify.js       # art codes, closure severity, mode of transport (shared)
+│     └─ format.js         # remaining duration, text cleanup (shared)
 ├─ scripts/
-│  ├─ build-data.mjs       # von der Action ausgeführt
-│  └─ test-transform.mjs   # Referenztest der Koordinaten-Transformation
+│  ├─ build-data.mjs       # run by the Action
+│  └─ test-transform.mjs   # reference test of the coordinate transformation
 ├─ data/
-│  └─ baustellen.geojson   # generiert, committet
+│  └─ baustellen.geojson   # generated, committed
 ├─ vendor/
-│  └─ leaflet/             # lokal eingebundene Kartenbibliothek (kein CDN)
+│  └─ leaflet/             # map library bundled locally (no CDN)
 ├─ .github/workflows/
-│  └─ update-data.yml      # Cron + manueller Trigger
+│  └─ update-data.yml      # cron + manual trigger
 └─ docs/
    ├─ SPEC.md
    └─ ADR-001-statisches-hosting.md
 ```
 
-> Hinweis zur Umsetzung: Leaflet wird lokal unter `vendor/leaflet/` eingebunden
-> statt über ein CDN. Das entspricht dem Grundgedanken „keine fragile
-> Drittanbieter-Laufzeitabhängigkeit" und macht die Seite auch bei CDN-Ausfall
-> voll funktionsfähig (die Kartenkacheln von OpenStreetMap bleiben ein
-> Live-Aufruf — das ist bei jeder Karte unvermeidbar).
+> Implementation note: Leaflet is bundled locally under `vendor/leaflet/`
+> instead of via a CDN. That matches the underlying principle "no fragile
+> third-party runtime dependency" and keeps the site fully functional even
+> on a CDN outage (the OpenStreetMap map tiles remain a live call — that's
+> unavoidable for any map).
 
-## Verworfene Alternativen
+## Discarded alternatives
 
-- **Serverless-Proxy (Vercel/Netlify):** würde Live-Abruf erlauben, bringt aber
-  eine Laufzeitabhängigkeit, ein weiteres Hosting-Konto und potenziell Kosten/
-  Cold-Starts. Für tageweise gültige Daten unnötig.
-- **Direkter Browser-Fetch mit öffentlichem CORS-Proxy:** fragil, langsam,
-  Datenschutz- und Verfügbarkeitsrisiko durch Dritt-Proxy. Abgelehnt.
-- **Daten manuell committen:** nicht wartbar, veraltet sofort.
+- **Serverless proxy (Vercel/Netlify):** would allow a live fetch, but
+  brings a runtime dependency, another hosting account, and potential
+  costs/cold starts. Unnecessary for data that's valid day by day.
+- **Direct browser fetch via a public CORS proxy:** fragile, slow, a
+  privacy and availability risk via a third-party proxy. Rejected.
+- **Committing data manually:** not maintainable, stale immediately.

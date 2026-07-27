@@ -1,313 +1,340 @@
 # Backlog
 
-Jeder Punkt war ursprünglich als eigenständiges GitHub-Issue gedacht. Titel =
-Issue-Titel, darunter Kontext und Definition of Done. Reihenfolge = grobe
-Bauabfolge. Labels-Vorschlag: `setup`, `data`, `frontend`, `a11y`, `docs`,
-`enhancement`.
+Every item was originally meant to be its own GitHub issue. Title = issue
+title, context and Definition of Done below it. Order = rough build sequence.
+Suggested labels: `setup`, `data`, `frontend`, `a11y`, `docs`, `enhancement`.
 
-> Dieser Backlog sammelt technische Aufgaben und Fixes. **Ausgearbeitete
-> Feature-Ideen** stehen im [Anforderungen](./anforderungen/README.md) — je Feature
-> eine Datei unter `docs/anforderungen/`; sie
-> entstehen über den festen [Refinement-Prozess](./PROZESS.md).
+> This backlog collects technical tasks and fixes. **Elaborated feature
+> ideas** live in [Requirements](./anforderungen/README.md) — one file per
+> feature under `docs/anforderungen/`; they come out of the fixed
+> [refinement process](./PROZESS.md).
 
-**Statuslegende:** ✅ erledigt · 🟡 teilweise / offen · ⬜ offen
-**Stand:** 2026-07-26 (#22 aus dem Desktop-UI-Review erledigt).
+**Status legend:** ✅ done · 🟡 partial / open · ⬜ open
+**As of:** 2026-07-26 (#22 from the desktop UI review done.)
 
-> Kurzfassung: Milestones 1–3 sind umgesetzt und die Seite ist über GitHub Pages
-> live (#5). Von Milestone 4 sind #15 und #18 erledigt; #16 (Push-/Abo-Idee) ist
-> evaluiert (Ergebnis → Anforderung A-2), offen bleibt als optionaler Punkt
-> noch #17 (.ics-Export). Aus den Anforderungen ist **A-3 (PWA) umgesetzt**
-> (#24); aus dem Desktop-UI-Review ist #22 erledigt, offen bleibt #23. Aus der
-> Showcase-Vorprüfung sind #25 und #26 erledigt.
+> Summary: Milestones 1–3 are implemented and the site is live via GitHub
+> Pages (#5). From Milestone 4, #15 and #18 are done; #16 (push/subscription
+> idea) is evaluated (result → requirement A-2), what remains open as an
+> optional item is #17 (.ics export). From the requirements, **A-3 (PWA) is
+> implemented** (#24); from the desktop UI review, #22 is done, #23 remains
+> open. From the showcase pre-review, #25 and #26 are done.
 
 ---
 
-## Milestone 1 — Gerüst & Daten-Pipeline
+## Milestone 1 — Scaffolding & Data Pipeline
 
-Ziel: Repo steht, die Action erzeugt sauberes GeoJSON, Seite ist online (leer).
+Goal: the repo is in place, the Action produces clean GeoJSON, the site is
+online (empty).
 
-### ✅ #1 Repo-Grundgerüst anlegen
-Ordnerstruktur gemäß ADR-001, `index.html`, `src/`, `scripts/`, `data/`,
-Lizenzdatei (MIT), `.gitignore`, README mit Kurzbeschreibung + Link zum PRD.
-**DoD:** Struktur existiert, Repo lässt sich klonen und öffnen. — **erledigt.**
+### ✅ #1 Set up repo scaffolding
+Folder structure per ADR-001, `index.html`, `src/`, `scripts/`, `data/`,
+license file (MIT), `.gitignore`, README with short description + link to
+the PRD.
+**DoD:** structure exists, repo can be cloned and opened. — **done.**
 
-### ✅ #2 Geteilte Bibliotheksmodule (`src/lib/`)
-`transform.js` (UTM32→WGS84, mit Referenztest gegen proj4-Ground-Truth),
-`classify.js` (art→Klartext, Sperrgrad-Ampel, Verkehrsmittel), `format.js`
-(Restdauer, HTML-Bereinigung). ES-Module, ohne DOM-Abhängigkeit.
-**DoD:** reine Funktionen; `scripts/test-transform.mjs` prüft gegen bekannte
-Referenzkoordinaten. — **erledigt** (zusätzlich `scripts/test-diff.mjs`).
+### ✅ #2 Shared library modules (`src/lib/`)
+`transform.js` (UTM32→WGS84, with a reference test against proj4 ground
+truth), `classify.js` (art→plain text, closure-severity traffic light, mode
+of transport), `format.js` (remaining duration, HTML cleanup). ES modules,
+no DOM dependency.
+**DoD:** pure functions; `scripts/test-transform.mjs` checks against known
+reference coordinates. — **done** (plus `scripts/test-diff.mjs`).
 
-### ✅ #3 Build-Skript `scripts/build-data.mjs`
-Zieht WFS-GeoJSON, filtert `gemeinde="Karlsruhe"`, dedupliziert Punkt/Polygon,
-transformiert Koordinaten, bereinigt Felder, schreibt schlankes
+### ✅ #3 Build script `scripts/build-data.mjs`
+Fetches WFS GeoJSON, filters `gemeinde="Karlsruhe"`, deduplicates
+point/polygon, transforms coordinates, cleans up fields, writes lean
 `data/baustellen.geojson`.
-**DoD:** valider, verkleinerter Output; Fehlerfall bricht sauber ab ohne die
-vorhandene Datei zu zerstören. — **erledigt & gegen echtes WFS-Schema validiert**:
-Dedup über `vorgangsnummer` (Punkt+Polygon je Vorgang → 440 auf 186 Vorgänge),
-echte Feldnamen (`vorgangszeitraum_von/_bis`, `lage`), Ampel aus dem amtlichen
-Feld `sperrung`. Zusätzlich gehärtet: WFS-Varianten-Fallback (1.0.0/typeName …),
-CRS-Autoerkennung, Schreiben nur bei echter Änderung.
+**DoD:** valid, slimmed-down output; error case aborts cleanly without
+destroying the existing file. — **done & validated against the real WFS
+schema**: dedup via `vorgangsnummer` (point+polygon per case → 440 down to
+186 cases), real field names (`vorgangszeitraum_von/_bis`, `lage`), traffic
+light from the official field `sperrung`. Additionally hardened: WFS-variant
+fallback (1.0.0/typeName …), CRS auto-detection, writes only on a real
+change.
 
 ### ✅ #4 GitHub Action `update-data.yml`
-Cron (alle 4 h) + `workflow_dispatch`. Führt Build-Skript aus, committet nur bei
-Änderung.
-**DoD:** Action läuft grün, committet bei geänderten Daten, überspringt Commit
-bei identischen Daten. — **erledigt & verifiziert** (Lauf holte 440 Baustellen).
+Cron (every 4 h) + `workflow_dispatch`. Runs the build script, commits only
+on a change.
+**DoD:** Action runs green, commits on changed data, skips the commit on
+identical data. — **done & verified** (a run fetched 440 construction sites).
 
-### ✅ #5 GitHub Pages aktivieren
-Deployment aus `main` (root). Domain/Pfad dokumentieren.
-**DoD:** `index.html` ist öffentlich erreichbar. — **erledigt**, Pages ist
-aktiviert und die Seite live (Deploy aus `main`/root, `.nojekyll` vorhanden).
-
----
-
-## Milestone 2 — Kern-UI (die Kernschleife)
-
-### ✅ #6 Karte + Marker aus statischem GeoJSON
-Leaflet-Karte, farbcodierte Marker (Ampel), Popup mit Klartext, lädt
-`data/baustellen.geojson`. **DoD erfüllt.**
-
-### ✅ #7 Synchronisierte Liste
-Liste neben/unter der Karte, Klick zentriert Karte und öffnet Popup; Restdauer,
-Verursacher, Verkehrsmittel sichtbar. **DoD erfüllt** (Interaktion beidseitig).
-
-### ✅ #8 Filter: Zeitraum, Sperrgrad, Verkehrsmittel
-Segment-Buttons, kombinierbar; Kennzahlen-Leiste aktualisiert live.
-**DoD erfüllt** (im Browser end-to-end geprüft).
-
-### ✅ #9 Adress-/Umkreissuche
-Nominatim-Geocoding (Referer-Identifikation, Suche nur auf Absenden), 1,5-km-
-Umkreis, Distanzsortierung, Umkreis-Kreis, Reset-Knopf.
-**DoD erfüllt**; Fehlerfall zeigt hilfreiche Meldung.
-
-### ✅ #10 Leerzustände & Ladezustände
-Aussagekräftige Texte für Laden / kein Treffer / Datenfehler. **DoD erfüllt.**
+### ✅ #5 Enable GitHub Pages
+Deployment from `main` (root). Document domain/path.
+**DoD:** `index.html` is publicly reachable. — **done**, Pages is enabled
+and the site is live (deploy from `main`/root, `.nojekyll` present).
 
 ---
 
-## Milestone 3 — Qualität & Feinschliff
+## Milestone 2 — Core UI (the core loop)
 
-### ✅ #11 Responsiv & Mobil
-Layout stapelt Karte + Liste bis Smartphone. **DoD erfüllt** (Layout bis 360px).
+### ✅ #6 Map + markers from static GeoJSON
+Leaflet map, color-coded markers (traffic light), popup with plain text,
+loads `data/baustellen.geojson`. **DoD met.**
 
-### ✅ #12 Barrierefreiheit
-Sichtbarer Tastaturfokus, Kontraste (WCAG-AA-Zielwerte), ARIA für Segment-Buttons
-(`aria-pressed`, `role=group`), Skip-Link, `prefers-reduced-motion`.
-**DoD im Wesentlichen erfüllt** — ein formales Audit mit Tool (axe/Lighthouse)
-steht als Gegenprobe noch aus.
+### ✅ #7 Synchronized list
+List next to/below the map, clicking centers the map and opens the popup;
+remaining duration, originator, mode of transport visible. **DoD met**
+(interaction works both ways).
 
-### ✅ #13 Namensnennung, Impressum-Hinweis, Datenstand
-CC-BY-Verweis, „Daten zuletzt geändert", Haftungshinweis (verbindlich ist die
-Beschilderung vor Ort), Link zum Änderungsverlauf. **DoD erfüllt.**
+### ✅ #8 Filters: time period, closure severity, mode of transport
+Segment buttons, combinable; stats bar updates live.
+**DoD met** (checked end-to-end in the browser).
 
-### ✅ #14 README für Beitragende
-Setup, lokaler Build, Funktionsweise der Action, wie man Klartext-Mappings
-ergänzt, Abschnitt „Änderungen nachvollziehen". **DoD erfüllt.**
+### ✅ #9 Address/radius search
+Nominatim geocoding (referer identification, search only on submit), 1.5 km
+radius, distance sorting, radius circle, reset button.
+**DoD met**; the error case shows a helpful message.
 
----
-
-## Milestone 4 — Optional / später (bewusst nach v1)
-
-### ✅ #15 art-Code-Mapping vervollständigen
-Alle real vorkommenden Codes übersetzen, inkl. Fallback für unbekannte.
-**Erkenntnis aus den echten Daten:** Das Feld `art` enthält **keine kryptischen
-Codes, sondern bereits Klartext** — 15 Kategorien (Strom bzw. TK-Versorgung,
-Bauliche Sondernutzung, Fernwärmeversorgung, Gas bzw. Wasserversorgung,
-Straßenbau, Kanalbau, Gleisbau, Brückenbau, Tunnelbau, Haltestellenumbau mit
-Straßenumgestaltung, Stützwand, Abbruch/Rückbau, geänderte Verkehrsführung im
-Zuge von Baumaßnahmen, Baugrunduntersuchung, Kraneinsatz).
-**Erledigt:** `classifyArt` übernimmt bereits lesbare Kategorien direkt
-(`known=true`), kryptische Codes behalten den Fallback „Baustelle (…)"; ART_MAP
-bleibt als Override-Punkt, `scripts/test-classify.mjs` deckt beides ab. Die 15
-Kategorien sind im Modul dokumentiert.
-
-### ✅ #16 Push-/Abo-Idee evaluieren
-Prüfen, ob ein abonnierbarer Feed pro Stadtteil (von der Action vorgeneriert)
-ohne Backend machbar ist.
-**Ergebnis der Evaluierung** — „Push" und „Abo" auseinandergehalten:
-- **Echtes Push (Web Push) ist ohne Backend nicht machbar** und kollidiert mit
-  mehreren Nicht-Zielen: es braucht einen Application Server (VAPID-Versand an
-  FCM/Mozilla/Apple) und die **persistente Speicherung der Push-Endpoints je
-  Abonnent** — de facto eigene, personenbeziehbare Datenhaltung („Keine eigene
-  Datenhaltung", „Kein Nutzerkonto"). Die Action als Sender behebt das nicht (sie
-  müsste die Endpoints trotzdem speichern). → verworfen.
-- **Abo über einen statischen Atom-Feed ist machbar und architektonisch stimmig:**
-  Die Action generiert den Feed wie das GeoJSON vor; Feed-Reader pollen selbst
-  (kein Server, keine Endpoint-Speicherung, anonym). Die Feed-Items sind genau der
-  Diff, den `diff-data.mjs` schon berechnet (added/removed/changed) — der Feed ist
-  der maschinenlesbare Zwilling von `data/CHANGELOG.md`.
-- **„Pro Stadtteil" wäre nur über eine Ableitung des Stadtteils möglich** (der
-  Datensatz hat **kein** Stadtteil-Feld, nur Straße + Koordinaten) — z. B. per
-  Point-in-Polygon gegen die amtlichen Stadtteilgrenzen. **Entscheidung
-  (2026-07-24): nicht verfolgt** — keine zusätzliche Datenquelle. Der geografische
-  „in meiner Nähe"-Bedarf wird stattdessen **clientseitig** über die vorhandene
-  Umkreissuche + eine „seit letztem Besuch"-Markierung gedeckt.
-Der verbleibende Umfang — ein **globaler Atom-Feed** (reiner Änderungsstrom, keine
-Facetten-Feeds) aus dem ohnehin berechneten Diff — ist als Feature-Eintrag
-[**A-2**](./anforderungen/A-2-baustellen-abo-feed.md) ausgearbeitet und mit allen entschiedenen
-Weichen auf **umsetzungsbereit** gesetzt. — **evaluiert; Umsetzung erst nach grünem
-Licht (Feature-Refinement-Prozess Schritt 8).** (Label: `enhancement`, `data`)
-
-### ⬜ #17 Kalender-Export geplanter Baustellen
-`.ics` für „bald geplante" Sperrungen in einem gewählten Umkreis. — **offen.**
-
-### ⬜ #19 ÖPNV-/Transit-Routing für „Mein Arbeitsweg"
-Das Feature „Mein Arbeitsweg" (siehe [A-1](./anforderungen/A-1-mein-arbeitsweg.md)) deckt zunächst nur
-Fuß/Rad/Auto ab, weil Straßen-Routing keine Bus-/Tramlinien kennt. Für ÖPNV eine
-transit-taugliche Variante evaluieren (GTFS/Transit-Routing) — deutlich
-aufwändiger, daher bewusst später. — **offen.**
-
-### ✅ #18 Datenqualitäts-Report
-Auffälligkeiten protokollieren (leere Felder, unbekannte Codes) für strukturiertes
-Feedback an die Stadt.
-**Erledigt:** `scripts/quality-report.mjs` erzeugt `data/QUALITY.md` — leere
-Pflichtfelder (mit Beispielen), unbekannte art-Kategorien, Datumsauffälligkeiten
-(Ende vor Beginn, abgelaufen), Koordinaten außerhalb Karlsruhes, Vorgänge ohne
-Vorgangsnummer und die Zuordnung der `sperrung`-Werte zur Ampel. Bei jedem Lauf ins
-Action-Job-Summary geschrieben, committet nur bei Datenänderung. Der Report deckte
-prompt drei Ampel-Fehlklassifizierungen auf (u. a. „keine Verkehrsbehinderung"),
-die daraufhin behoben wurden — das amtliche `sperrung`-Feld ist jetzt autoritativ.
+### ✅ #10 Empty states & loading states
+Meaningful text for loading / no results / data error. **DoD met.**
 
 ---
 
-## Review-Befunde Desktop-UI (2026-07-24)
+## Milestone 3 — Quality & Polish
 
-Feinschliff aus einem Desktop-Review (Karte + Liste, Dark-Mode). Alle post-v1,
-nicht blockierend. Der Review-Befund „Marker-Clustering in der Innenstadt" ist
-bewusst **nicht** aufgenommen (größeres Vorhaben, ggf. separater Feature-Eintrag).
+### ✅ #11 Responsive & mobile
+Layout stacks map + list down to smartphone. **DoD met** (layout down to
+360px).
 
-### ✅ #20 `role="application"` von der Karte entfernen
-`index.html:83` setzte `role="application"` auf `#map`. Das fing Screenreader in
-den Application-Modus, obwohl die Karte einen vollwertigen Listen-Fallback hat —
-die interaktive Bedienung läuft ohnehin über Liste und Filter.
-**DoD:** `role` entfernt oder auf `role="region"` geändert, `aria-label` bleibt;
-kurzer Screenreader-/Tastatur-Gegencheck. — **erledigt**: `role="region"` gesetzt
-(benannte Landmark statt Application-Falle), `aria-label` unverändert. (Label: `a11y`)
+### ✅ #12 Accessibility
+Visible keyboard focus, contrast (WCAG AA targets), ARIA for segment
+buttons (`aria-pressed`, `role=group`), skip link, `prefers-reduced-motion`.
+**DoD essentially met** — a formal audit with a tool (axe/Lighthouse) is
+still outstanding as a cross-check.
 
-### ✅ #21 Kennzahlen-Kacheln: klickbar oder klar als Anzeige
-Die Kacheln „Vollsperrungen" / „Behinderungen" (`index.html:74–78`) spiegeln den
-Sperrgrad-Filter, sind aber nicht interaktiv — Nutzer erwarten Klick = Filter.
-Entweder klickbar machen (setzt den Sperrgrad-Filter) oder visuell klar als reine
-Anzeige kennzeichnen. Nebenbefund: Die Baustellen-Zahl erscheint doppelt (Kachel
-+ Listenkopf „N Baustellen").
-**DoD:** Entscheidung getroffen und umgesetzt; bei Klickbarkeit `aria-pressed` +
-Tastaturbedienung analog zu den Segment-Buttons, sonst visuelle Entkopplung;
-Doppelzählung aufgelöst oder bewusst behalten. (Label: `frontend`, `enhancement`)
-**Entscheidung: reine Anzeige (nicht klickbar).** Statt die Erwartung „Klick = Filter"
-zu bedienen, werden die Kacheln visuell klar als Anzeige gekennzeichnet, damit gar
-nicht erst der Eindruck eines Bedien-Controls entsteht. Umsetzung: Kacheln sind wieder
-nicht-interaktive `<div>` (kein `<button>`, kein `aria-pressed`, keine Tastaturbedienung);
-`.stat` bekommt **bewusst keine Karten-/Button-Optik** (keine Umrandung, kein Schatten,
-kein Hover, kein Zeiger-Cursor) und ist damit optisch von den klickbaren Filter-Segmenten
-entkoppelt. Der Sperrgrad wird ausschließlich über die Segment-Buttons gesteuert; der
-frühere Sammel-Filterwert `behinderung` in `matchesAmpel` entfällt wieder.
-**Doppelzählung aufgelöst:** Die „Baustellen"-Gesamtzahl steht bereits im Listenkopf
-(„N Baustellen"); die Kachel dafür wurde entfernt. Die Kennzahlen-Leiste zeigt nur noch
-die Sperrgrad-Aufschlüsselung „Vollsperrungen"/„Behinderungen", die die Liste nicht
-anzeigt. (Label: `frontend`, `enhancement`)
+### ✅ #13 Attribution, legal-notice pointer, data timestamp
+CC-BY reference, "data last changed", liability notice (on-site signage is
+binding), link to the change history. **DoD met.**
 
-### ✅ #22 Badge-Kontrast im Dark-Mode
-`styles.css:341`: `.badge { background: var(--bg) }`. Im Dark-Mode ist `--bg`
-(#16181c) dunkler als die Kartenfläche `--surface` (#1f2329) — der Badge (z. B.
-„Auto") wirkt wie ausgestanzt statt als aufliegender Chip.
-**DoD:** Badge-Fläche im Dark-Mode nicht dunkler als die Karte (getönte Fläche
-oder Akzent-Rand); Light-Mode unverändert; WCAG-AA-Kontrast gewahrt. (Label: `frontend`)
-— **erledigt**: getönte Fläche über zwei eigene Tokens `--chip`/`--chip-border`
-statt Zweitnutzung von `--bg`. Badges liegen auf `--surface`, nicht auf dem
-Seitenhintergrund; im Hellmodus passte `--bg` nur zufällig. Hellmodus-Werte sind
-wortgleich die alten (`#f7f7f5` / `#d9dce1`), im Dunkelmodus `#2a3038` (heller als
-die Karte) mit hellerem Rand `#434a54` — mit `--border` (#333941) wäre die Kante
-im Chip-Ton vermatscht. Gerechnet, nicht geschätzt (Playwright, je ein Kontext
-`colorScheme: 'light'`/`'dark'`, Werte aus `getComputedStyle`): Badge-Text
-6,57:1 hell / 5,90:1 dunkel, Entfernungs-Badge (`--accent`) 8,51:1 / 5,15:1 —
-alle über WCAG AA; im Dunkelmodus L(Chip) 0,0289 > L(Karte) 0,0165, Fläche↔Karte
-1,19:1. `CACHE_SHELL` auf `v4` (Shell-Datei geändert).
-
-### ⬜ #23 Vertikaler Platz über der Karte (Desktop)
-Header + Suche + drei Filtergruppen + Kennzahlen stapeln vertikal; auf
-Laptop-Höhe (~1080p) startet die Karte erst bei ~40 % des Viewports. Kompaktere
-Anordnung prüfen (Filter/Kennzahlen enger oder einzeilig nebeneinander).
-**DoD:** Karte auf 1080p sichtbar höher (Zielwert festlegen); Mobile-Layout und
-Fokusreihenfolge unverändert. (Label: `frontend`)
+### ✅ #14 README for contributors
+Setup, local build, how the Action works, how to add plain-text mappings,
+a "tracking changes" section. **DoD met.**
 
 ---
 
-## Umsetzung verfeinerter Anforderungen
+## Milestone 4 — Optional / later (deliberately post-v1)
 
-Aufgaben, die eine ausgearbeitete Anforderung aus
-[`anforderungen/`](./anforderungen/README.md) technisch umsetzen. Das *Warum* und
-die getroffenen Entscheidungen stehen dort, hier nur der Bauzustand.
+### ✅ #15 Complete the `art`-code mapping
+Translate all codes that actually occur, including a fallback for unknown
+ones.
+**Insight from the real data:** the `art` field contains **no cryptic
+codes, it's already plain text** — 15 categories (electricity/telecom
+supply, special construction use, district-heating supply, gas/water
+supply, road construction, sewer construction, rail construction, bridge
+construction, tunnel construction, stop conversion with street
+redesign, retaining wall, demolition, changed traffic routing due to
+construction work, ground investigation, crane use).
+**Done:** `classifyArt` already passes readable categories through directly
+(`known=true`), cryptic codes keep the fallback "Baustelle (…)"; `ART_MAP`
+remains an override point, `scripts/test-classify.mjs` covers both. The 15
+categories are documented in the module.
 
-### ✅ #24 PWA umsetzen (installierbar & offline) — Anforderung A-3
-Technische Umsetzung der ausgearbeiteten Anforderung
-[A-3](./anforderungen/A-3-pwa-installierbar-offline.md) (dort stehen die
-Entscheidungen und die Definition of Done; der Status lebt in der
-[Übersicht](./anforderungen/README.md#übersicht)).
-**Erledigt:** `manifest.webmanifest` + `<head>`-Einbindung (Manifest, zwei
-`theme-color`-Angaben hell/dunkel, `apple-touch-icon`), `icons/icon.svg` als
-Quelle plus die daraus gerenderten PNGs (192/512/512-maskable/180-Apple,
-`scripts/render-icons.mjs`, manuell), `sw.js` mit Shell-Precache (cache-first,
-alles-oder-nichts pro `CACHE_SHELL`-Version) und **network-first** für
-`data/baustellen.geojson`, Registrierung + Update-Banner in `src/app.js`,
-Offline-Kennzeichnung des Datenstands über den SW-Header `X-Bauwatch-Cache`,
-Deaktivierung der Adresssuche offline, `scripts/test-pwa.mjs` in `npm test`.
-Nicht-Ziele eingehalten: **kein** `push`-/`notificationclick`-/`sync`-Handler
-(vom Test abgesichert), kein Kachel-Cache, kein Install-Banner, kein
-nutzerbezogener Speicher, keine Build-Toolchain.
-Über den Bedarf der Anforderung hinaus ergänzt: der `install`-Handler lädt den
-Datenstand einmal selbst nach — der allererste Seitenaufruf läuft noch
-unkontrolliert am Service Worker vorbei, sonst stünde nach einem einzigen Besuch
-offline die Shell, aber keine einzige Baustelle bereit. (Label: `frontend`, `a11y`)
+### ✅ #16 Evaluate the push/subscription idea
+Check whether a subscribable feed per district (pre-generated by the
+Action) is feasible without a backend.
+**Result of the evaluation** — keeping "push" and "subscription" apart:
+- **Real push (Web Push) is not feasible without a backend** and collides
+  with several non-goals: it needs an application server (VAPID delivery to
+  FCM/Mozilla/Apple) and the **persistent storage of the push endpoint per
+  subscriber** — de facto its own, personally identifiable data store ("no
+  data storage of our own", "no user account"). The Action as the sender
+  doesn't fix that (it would still have to store the endpoints). → discarded.
+- **Subscription via a static Atom feed is feasible and architecturally
+  consistent:** the Action generates the feed the same way it pre-generates
+  the GeoJSON; feed readers poll it themselves (no server, no endpoint
+  storage, anonymous). The feed items are exactly the diff that
+  `diff-data.mjs` already computes (added/removed/changed) — the feed is
+  the machine-readable twin of `data/CHANGELOG.md`.
+- **"Per district" would only be possible via a derived district** (the
+  dataset has **no** district field, only street + coordinates) — e.g. via
+  point-in-polygon against the official district boundaries. **Decision
+  (2026-07-24): not pursued** — no additional data source. The geographic
+  "near me" need is instead covered **client-side** via the existing radius
+  search + a "since last visit" marker.
+The remaining scope — a **global Atom feed** (a pure stream of changes, no
+faceted feeds) built from the diff that's computed anyway — is elaborated as
+feature entry [**A-2**](./anforderungen/A-2-baustellen-abo-feed.md) and set
+to **implementation-ready** with all forks decided. — **evaluated;
+implementation only after a green light (refinement process step 8).**
+(Label: `enhancement`, `data`)
+
+### ⬜ #17 Calendar export of planned construction sites
+`.ics` for "planned soon" closures in a chosen radius. — **open.**
+
+### ⬜ #19 Public-transit routing for "Mein Arbeitsweg"
+The "Mein Arbeitsweg" ("my commute") feature (see
+[A-1](./anforderungen/A-1-mein-arbeitsweg.md)) initially only covers
+foot/bike/car, because street routing doesn't know bus/tram lines. Evaluate
+a transit-capable variant for public transit (GTFS/transit routing) —
+notably more effort, hence deliberately later. — **open.**
+
+### ✅ #18 Data-quality report
+Log anomalies (empty fields, unknown codes) for structured feedback to the
+city.
+**Done:** `scripts/quality-report.mjs` generates `data/QUALITY.md` — empty
+required fields (with examples), unknown art categories, date anomalies
+(end before start, expired), coordinates outside Karlsruhe, cases without a
+process number, and the mapping of `sperrung` values to the traffic light.
+Written into the Action job summary on every run, committed only on a data
+change. The report promptly surfaced three traffic-light misclassifications
+(among others "no traffic obstruction"), which were then fixed — the
+official `sperrung` field is now authoritative.
 
 ---
 
-## Befunde aus der Showcase-Vorprüfung (2026-07-26)
+## Desktop UI review findings (2026-07-24)
 
-Rückmeldung der Open-Data-Redaktion zur Einreichung fürs Transparenzportal
-(Unterlage: [`showcase-einreichung.md`](./showcase-einreichung.md)). Der
-Impressum-/Datenschutz-Punkt aus derselben Rückmeldung ist **keine** Aufgabe,
-sondern als Anforderung `A-4` aufgenommen — er hat offene
-Produktentscheidungen (siehe [Prozess](./PROZESS.md#anforderung-oder-aufgabe-der-test)).
+Polish from a desktop review (map + list, dark mode). All post-v1,
+non-blocking. The review finding "marker clustering downtown" is
+deliberately **not** included (a bigger undertaking, possibly a separate
+feature entry).
 
-### ✅ #25 Namensnennung statisch ins ausgelieferte HTML
-Die CC-BY-Nennung war ein **leerer** Absatz in `index.html` und wurde erst von
-`setFooter()` nach dem Datenabruf gefüllt. Im Browser sichtbar — im ausgelieferten
-Dokument, ohne JavaScript und bei fehlgeschlagenem Datenabruf aber nicht. Für eine
-Lizenzbedingung der falsche Ort. Die Redaktion hat genau das bemerkt.
-**DoD:** Nennung steht statisch im HTML, wird von JS nicht überschrieben, Test
-sichert es ab. — **erledigt:** statischer Absatz in `index.html` (mit Link auf
-Datensatz im Portal und auf den Lizenztext), `setFooter()` schreibt nur noch den
-Beispieldaten-Hinweis in den separaten Absatz `#attribution-hinweis`,
-`scripts/test-attribution.mjs` (in `npm test`) prüft Existenz, Nicht-Überschreiben
-und **Wortgleichheit mit `ATTRIBUTION`** aus `build-data.mjs`. Gegenprobe: alle
-drei Regressionen (leere Nennung, Überschreiben durch `app.js`, Drift zur
-Build-Konstante) lassen den Test rot werden. Shell-Datei geändert →
-`CACHE_SHELL` auf `v2`. (Label: `frontend`, `docs`)
+### ✅ #20 Remove `role="application"` from the map
+`index.html:83` set `role="application"` on `#map`. That trapped screen
+readers in application mode, even though the map has a full-fledged list
+fallback — interactive operation runs through the list and filters anyway.
+**DoD:** `role` removed or changed to `role="region"`, `aria-label` stays;
+a brief screen-reader/keyboard cross-check. — **done**: `role="region"` set
+(a named landmark instead of an application trap), `aria-label` unchanged.
+(Label: `a11y`)
 
-### ✅ #26 Screenshots für den Showcase-Eintrag
-Der Portal-Eintrag braucht ein Vorschaubild („ohne Bild sieht der Eintrag kaputt
-aus").
-**DoD:** Screenshot vorhanden und reproduzierbar erzeugbar. — **erledigt:**
-`scripts/screenshot.mjs` (manuell, wie `render-icons.mjs` bewusst **nicht** in
-`npm test`/CI) erzeugt `docs/showcase/screenshot.png` (1440 × 900) und
-`screenshot-mobil.png` (390 × 844), im Hellmodus fixiert. Das Skript **zählt die
-geladenen Kartenkacheln und bricht ab**, statt still ein graues Bild zu schreiben —
-genau der Fehler, der in einer Umgebung ohne OSM-Egress sonst unbemerkt ins Portal
-wanderte. Ist der Kachel-Host der App per Egress-Policy blockiert, ein
-Subdomain-Spiegel aber erreichbar, holt es die Kacheln von dort und sagt es im Log;
-`src/app.js` bleibt unangetastet. (Label: `docs`, `frontend`)
+### ✅ #21 Stat tiles: clickable or clearly marked as display-only
+The "full closures"/"obstructions" tiles (`index.html:74–78`) mirror the
+closure-severity filter but aren't interactive — users expect click =
+filter. Either make them clickable (sets the closure-severity filter) or
+visually mark them clearly as pure display. Side finding: the
+construction-site count appears twice (tile + list header "N construction
+sites").
+**DoD:** decision made and implemented; if clickable, `aria-pressed` +
+keyboard operation analogous to the segment buttons, otherwise visual
+decoupling; the double count resolved or deliberately kept. (Label:
+`frontend`, `enhancement`)
+**Decision: display-only (not clickable).** Instead of meeting the "click =
+filter" expectation, the tiles are visually marked clearly as display-only,
+so the impression of a control never arises in the first place.
+Implementation: the tiles are non-interactive `<div>`s again (no
+`<button>`, no `aria-pressed`, no keyboard operation); `.stat` deliberately
+gets **no card/button look** (no border, no shadow, no hover, no pointer
+cursor) and is thus visually decoupled from the clickable filter segments.
+The closure severity is controlled exclusively via the segment buttons; the
+earlier catch-all filter value `behinderung` in `matchesAmpel` is removed
+again.
+**Double count resolved:** the total construction-site count already
+appears in the list header ("N construction sites"); the tile for it was
+removed. The stats bar now only shows the closure-severity breakdown "full
+closures"/"obstructions", which the list doesn't show. (Label: `frontend`,
+`enhancement`)
+
+### ✅ #22 Badge contrast in dark mode
+`styles.css:341`: `.badge { background: var(--bg) }`. In dark mode, `--bg`
+(#16181c) is darker than the map surface `--surface` (#1f2329) — the badge
+(e.g. "car") looks punched-out instead of like a resting chip.
+**DoD:** badge surface in dark mode not darker than the map (a tinted
+surface or accent border); light mode unchanged; WCAG AA contrast held.
+(Label: `frontend`)
+— **done**: a tinted surface via two dedicated tokens `--chip`/`--chip-border`
+instead of reusing `--bg`. Badges sit on `--surface`, not on the page
+background; in light mode, `--bg` only happened to fit by coincidence.
+Light-mode values are word-for-word the old ones (`#f7f7f5` / `#d9dce1`), in
+dark mode `#2a3038` (lighter than the map) with a lighter border `#434a54`
+— with `--border` (#333941) the edge would be smeared into the chip's tone.
+Calculated, not estimated (Playwright, one context each with
+`colorScheme: 'light'`/`'dark'`, values from `getComputedStyle`): badge text
+6.57:1 light / 5.90:1 dark, distance badge (`--accent`) 8.51:1 / 5.15:1 —
+all above WCAG AA; in dark mode L(chip) 0.0289 > L(map) 0.0165,
+surface↔map 1.19:1. `CACHE_SHELL` bumped to `v4` (shell file changed).
+
+### ⬜ #23 Vertical space above the map (desktop)
+Header + search + three filter groups + stats stack vertically; at laptop
+height (~1080p) the map only starts at ~40% of the viewport. Check a more
+compact arrangement (filters/stats tighter or in one row side by side).
+**DoD:** map visibly taller on 1080p (define a target value); mobile
+layout and focus order unchanged. (Label: `frontend`)
 
 ---
 
-## Zusätzlich umgesetzt (nicht im ursprünglichen Backlog)
+## Implementing elaborated requirements
 
-- **Änderungsübersicht der Daten:** Commit nur bei echter Änderung,
-  `data/CHANGELOG.md` (neu/entfernt/geändert mit Feld-Details), Kurzfassung in
-  Commit-Message und Action-Job-Summary. Jeder geänderte Vorgang trägt eine
-  kurze Notiz, was sich geändert hat — bei Änderungen außerhalb der beobachteten
-  Felder ein generischer Hinweis („sonstige Angaben aktualisiert").
-- **WFS-Robustheit:** mehrere Anfrage-Varianten mit Fallback; erkennt XML-Fehler
-  trotz HTTP 200; CRS-Autoerkennung schützt vor Fehltransformation.
-- **Leaflet lokal eingebunden** (`vendor/leaflet/`) statt CDN — keine fragile
-  Drittanbieter-Laufzeitabhängigkeit.
+Tasks that technically implement an elaborated requirement from
+[`anforderungen/`](./anforderungen/README.md). The *why* and the decisions
+made live there, here only the build status.
+
+### ✅ #24 Implement the PWA (installable & offline) — requirement A-3
+Technical implementation of the elaborated requirement
+[A-3](./anforderungen/A-3-pwa-installierbar-offline.md) (the decisions and
+the Definition of Done live there; the status lives in the
+[overview](./anforderungen/README.md#overview)).
+**Done:** `manifest.webmanifest` + `<head>` wiring (manifest, two
+`theme-color` entries light/dark, `apple-touch-icon`), `icons/icon.svg` as
+the source plus the PNGs rendered from it (192/512/512-maskable/180-Apple,
+`scripts/render-icons.mjs`, manual), `sw.js` with shell precache
+(cache-first, all-or-nothing per `CACHE_SHELL` version) and
+**network-first** for `data/baustellen.geojson`, registration + update
+banner in `src/app.js`, offline marking of the data timestamp via the SW
+header `X-Bauwatch-Cache`, disabling the address search offline,
+`scripts/test-pwa.mjs` in `npm test`.
+Non-goals honored: **no** `push`/`notificationclick`/`sync` handler
+(guarded by the test), no tile cache, no install banner, no user-related
+storage, no build toolchain.
+Added beyond what the requirement needed: the `install` handler loads the
+data snapshot once itself — the very first page load still bypasses the
+service worker uncontrolled, otherwise after a single visit the shell would
+be ready offline but not a single construction site would be. (Label:
+`frontend`, `a11y`)
+
+---
+
+## Findings from the showcase pre-review (2026-07-26)
+
+Feedback from the open-data editorial team on the submission for the
+transparency portal (document:
+[`showcase-einreichung.md`](./showcase-einreichung.md)). The
+legal-notice/privacy-notice item from the same feedback is **not** a task,
+it was taken up as requirement `A-4` — it has open product decisions (see
+[process](./PROZESS.md#requirement-or-task-the-test)).
+
+### ✅ #25 Attribution static in the served HTML
+The CC-BY attribution was an **empty** paragraph in `index.html` and was
+only filled in by `setFooter()` after the data fetch. Visible in the
+browser — not in the served document, without JavaScript, or on a failed
+data fetch. The wrong place for a license condition. The editorial team
+noticed exactly that.
+**DoD:** the attribution is static in the HTML, not overwritten by JS, a
+test guards it. — **done:** a static paragraph in `index.html` (with a link
+to the dataset in the portal and to the license text), `setFooter()` now
+only writes the sample-data notice into the separate paragraph
+`#attribution-hinweis`, `scripts/test-attribution.mjs` (in `npm test`)
+checks existence, non-overwriting, and **word-for-word match with
+`ATTRIBUTION`** from `build-data.mjs`. Cross-check: all three regressions
+(empty attribution, overwritten by `app.js`, drift from the build constant)
+turn the test red. Shell file changed →
+`CACHE_SHELL` to `v2`. (Label: `frontend`, `docs`)
+
+### ✅ #26 Screenshots for the showcase entry
+The portal entry needs a preview image ("without an image the entry looks
+broken").
+**DoD:** a screenshot exists and can be reproducibly generated. — **done:**
+`scripts/screenshot.mjs` (manual, like `render-icons.mjs` deliberately
+**not** in `npm test`/CI) generates `docs/showcase/screenshot.png`
+(1440 × 900) and `screenshot-mobil.png` (390 × 844), fixed to light mode.
+The script **counts the loaded map tiles and aborts** instead of silently
+writing a gray image — exactly the bug that would otherwise sneak into the
+portal unnoticed in an environment without OSM egress. If the app's tile
+host is blocked by egress policy but a subdomain mirror is reachable, it
+fetches tiles from there and says so in the log; `src/app.js` stays
+untouched. (Label: `docs`, `frontend`)
+
+---
+
+## Also implemented (not in the original backlog)
+
+- **Data change overview:** commit only on a real change,
+  `data/CHANGELOG.md` (new/removed/changed with field details), a short
+  summary in the commit message and the Action job summary. Every changed
+  case carries a short note on what changed — for changes outside the
+  observed fields, a generic notice ("other details updated").
+- **WFS robustness:** several request variants with fallback; detects XML
+  errors despite HTTP 200; CRS auto-detection guards against a wrong
+  transform.
+- **Leaflet bundled locally** (`vendor/leaflet/`) instead of a CDN — no
+  fragile third-party runtime dependency.

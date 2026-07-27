@@ -1,259 +1,261 @@
 # Wo wird gebaut? — Baustellen in Karlsruhe (BauWatch-KA)
 
-Eine bürgernahe Karte plus Liste der offenen Baustellen in Karlsruhe.
-Sie beantwortet die Frage, die Karlsruher wirklich haben:
-**„Betrifft mich das — auf meinem Weg, mit meinem Verkehrsmittel, in meinem
-Zeitraum?"**
+*("Where's it being built?" — construction sites in Karlsruhe)*
 
-- 🗺️ Karte + synchronisierte Liste (Leaflet + OpenStreetMap)
-- 🚦 Ampel für den Sperrgrad, Klartext statt Verwaltungscodes, Restdauer
-- 🔎 Adress-/Umkreissuche (1,5 km), Filter nach Zeitraum, Sperrgrad, Verkehrsmittel
-- 📲 Als App installierbar und offline nutzbar (siehe [Als App installieren](#als-app-installieren))
-- ⚙️ Rein statisch auf GitHub Pages — kein Server, keine laufenden Kosten
+A citizen-friendly map plus list of the open construction sites in Karlsruhe.
+It answers the question Karlsruhe residents actually have:
+**"Does this affect me — on my route, with my mode of transport, in this
+time period?"**
 
-Ausführliche Produktbeschreibung: [`docs/PRD.md`](docs/PRD.md).
-Verfeinerte Anforderungen: [`docs/anforderungen/`](docs/anforderungen/README.md) —
-entstehen über den festen [Refinement-Prozess](docs/PROZESS.md).
-Architekturentscheidungen: [`docs/entscheidungen/`](docs/entscheidungen/README.md)
-(u. a. [ADR-001](docs/entscheidungen/ADR-001-statisches-hosting.md): warum statisch + Action;
-[ADR-002](docs/entscheidungen/ADR-002-mehrseitige-auslieferung.md): mehrseitige Auslieferung).
-Aufgaben-Backlog: [`docs/BACKLOG.md`](docs/BACKLOG.md).
+- 🗺️ Map + synchronized list (Leaflet + OpenStreetMap)
+- 🚦 Traffic light for the closure severity, plain text instead of administrative codes, remaining duration
+- 🔎 Address/radius search (1.5 km), filters by time period, closure severity, mode of transport
+- 📲 Installable as an app and usable offline (see [Install as an App](#install-as-an-app))
+- ⚙️ Purely static on GitHub Pages — no server, no running costs
 
-## Wie es funktioniert (Kurzfassung)
+Detailed product description: [`docs/PRD.md`](docs/PRD.md).
+Elaborated requirements: [`docs/anforderungen/`](docs/anforderungen/README.md) —
+produced by the fixed [refinement process](docs/PROZESS.md).
+Architectural decisions: [`docs/entscheidungen/`](docs/entscheidungen/README.md)
+(among others [ADR-001](docs/entscheidungen/ADR-001-statisches-hosting.md): why static + an Action;
+[ADR-002](docs/entscheidungen/ADR-002-mehrseitige-auslieferung.md): multi-page delivery).
+Task backlog: [`docs/BACKLOG.md`](docs/BACKLOG.md).
 
-Der WFS-Endpoint der Stadt sendet kein CORS und ist zu groß für den direkten
-Browser-Abruf. Deshalb erledigt eine **GitHub Action** periodisch, was sonst ein
-Server täte (siehe ADR-001):
+## How it works (short version)
+
+The city's WFS endpoint sends no CORS headers and is too large to fetch
+directly from the browser. So a **GitHub Action** periodically does what a
+server would otherwise do (see ADR-001):
 
 ```
-Stadt-WFS  ──(GitHub Action, alle 4 h)──►  scripts/build-data.mjs  ──►  data/baustellen.geojson (committet)
+City WFS  ──(GitHub Action, every 4 h)──►  scripts/build-data.mjs  ──►  data/baustellen.geojson (committed)
                                                                               │
-                                                        Browser lädt statische Datei vom selben Origin
+                                                        Browser loads static file from the same origin
                                                                               │
-                                                                   index.html + src/app.js  ──►  Karte + Liste
+                                                                   index.html + src/app.js  ──►  map + list
 ```
 
-Die eigentliche Aufbereitungslogik (Koordinaten, Klartext, Formatierung) liegt
-in `src/lib/` und wird **von Build-Skript und Client gemeinsam** genutzt.
+The actual processing logic (coordinates, plain-text mapping, formatting)
+lives in `src/lib/` and is used **jointly by the build script and the client**.
 
-## Projektstruktur
+## Project structure
 
 ```
-index.html                 Einstieg, lädt src/app.js + Leaflet (lokal)
-impressum.html             Rechtstext, reine Textseite ohne JS (A-4)
-datenschutz.html           Rechtstext, reine Textseite ohne JS (A-4)
-manifest.webmanifest       PWA-Manifest (Name, Icons, Farben, start_url)
-sw.js                      Service Worker: Shell-Precache + Offline-Daten
-icons/                     icon.svg (Quelle) + daraus gerenderte PNGs
+index.html                 entry point, loads src/app.js + Leaflet (local)
+impressum.html             legal notice, plain text page without JS (A-4)
+datenschutz.html           privacy notice, plain text page without JS (A-4)
+manifest.webmanifest       PWA manifest (name, icons, colors, start_url)
+sw.js                      service worker: shell precache + offline data
+icons/                     icon.svg (source) + PNGs rendered from it
 src/
-  app.js                   UI, Karte, Filter, Rendering
+  app.js                   UI, map, filters, rendering
   styles.css
   lib/
-    transform.js           UTM32 (EPSG:25832) -> WGS84   (geteilt)
-    classify.js            art-Codes, Sperrgrad-Ampel, Verkehrsmittel (geteilt)
-    format.js              Restdauer, HTML-Bereinigung, Datumsformat (geteilt)
+    transform.js           UTM32 (EPSG:25832) -> WGS84   (shared)
+    classify.js            art codes, closure-severity traffic light, mode of transport (shared)
+    format.js              remaining duration, HTML cleanup, date format (shared)
 scripts/
-  build-data.mjs           von der Action ausgeführt: holt & baut die Daten
-  diff-data.mjs            Änderungsvergleich zweier Snapshots (für Changelog)
-  quality-report.mjs       erzeugt den Datenqualitäts-Report (data/QUALITY.md)
-  render-icons.mjs         rendert icons/*.png aus icons/icon.svg (manuell, nicht in CI)
-  screenshot.mjs           erzeugt docs/showcase/*.png (manuell, nicht in CI)
-  test-transform.mjs       Referenztest der Koordinaten-Transformation
-  test-diff.mjs            Tests der Änderungserkennung
-  test-classify.mjs        Tests der Klartext-/Ampel-/Verkehrsmittel-Einordnung
-  test-quality.mjs         Tests des Qualitäts-Reports
-  test-pwa.mjs             Tests von Manifest, Icons und Service Worker
-  test-attribution.mjs     Tests der CC-BY-Namensnennung im ausgelieferten HTML
-  test-rechtstexte.mjs     Tests von Impressum/Datenschutzhinweis (inkl. Drift zum Code)
+  build-data.mjs           run by the Action: fetches & builds the data
+  diff-data.mjs            change comparison between two snapshots (for the changelog)
+  quality-report.mjs       generates the data-quality report (data/QUALITY.md)
+  render-icons.mjs         renders icons/*.png from icons/icon.svg (manual, not in CI)
+  screenshot.mjs           generates docs/showcase/*.png (manual, not in CI)
+  test-transform.mjs       reference test of the coordinate transformation
+  test-diff.mjs            tests of change detection
+  test-classify.mjs        tests of the plain-text/traffic-light/mode-of-transport classification
+  test-quality.mjs         tests of the quality report
+  test-pwa.mjs             tests of manifest, icons, and service worker
+  test-attribution.mjs     tests of the CC-BY attribution in the served HTML
+  test-rechtstexte.mjs     tests of the legal notice/privacy notice (incl. drift against the code)
 data/
-  baustellen.geojson       generierter, committeter Snapshot (Startwert: Beispieldaten)
-  CHANGELOG.md             automatisch gepflegtes Änderungsprotokoll der Daten
-  QUALITY.md               automatisch erzeugter Datenqualitäts-Report je Build
-vendor/leaflet/            Leaflet lokal eingebunden (kein CDN)
+  baustellen.geojson       generated, committed snapshot (starting value: sample data)
+  CHANGELOG.md             automatically maintained change log of the data
+  QUALITY.md               automatically generated data-quality report per build
+vendor/leaflet/            Leaflet bundled locally (no CDN)
 .github/workflows/
-  update-data.yml          Cron + manueller Trigger
-docs/                      PRD, Prozess, Backlog, anforderungen/, entscheidungen/
-  showcase/                Screenshots für den Showcase-Eintrag im Transparenzportal
+  update-data.yml          cron + manual trigger
+docs/                      PRD, process, backlog, anforderungen/, entscheidungen/
+  showcase/                screenshots for the showcase entry in the transparency portal
 ```
 
-## Lokal starten
+## Running locally
 
-Es gibt keinen Build-Schritt für das Frontend — reine statische Dateien.
-Wegen der ES-Module (`type="module"`) muss über einen kleinen HTTP-Server
-geöffnet werden (nicht per `file://`):
+There is no build step for the frontend — plain static files. Because of ES
+modules (`type="module"`) it must be opened via a small HTTP server (not via
+`file://`):
 
 ```bash
-# beliebiger statischer Server, z. B.:
+# any static server, e.g.:
 python3 -m http.server 8080
-# dann http://localhost:8080 öffnen
+# then open http://localhost:8080
 ```
 
-Node wird nur für das Daten-Build-Skript und die Tests gebraucht (Node ≥ 18,
-wegen `fetch`).
+Node is only needed for the data build script and the tests (Node ≥ 18,
+because of `fetch`).
 
-### Daten lokal neu bauen
+### Rebuild data locally
 
 ```bash
 npm run build:data        # = node scripts/build-data.mjs
 ```
 
-Das Skript ruft den Stadt-WFS ab, filtert auf Karlsruhe, dedupliziert
-Punkt/Polygon, transformiert die Koordinaten, bereinigt die Felder und schreibt
-`data/baustellen.geojson` (plus den Qualitäts-Report `data/QUALITY.md`). Bei
-einem API-Fehler oder einem verdächtig leeren Ergebnis bricht es **ab, ohne die
-vorhandene Datei zu überschreiben** — mit dem Flag `--allow-empty` lässt sich
-das Schreiben auch bei 0 Treffern erzwingen.
+The script fetches the city WFS, filters to Karlsruhe, deduplicates
+point/polygon, transforms the coordinates, cleans up the fields, and writes
+`data/baustellen.geojson` (plus the quality report `data/QUALITY.md`). On an
+API error or a suspiciously empty result it **aborts without overwriting the
+existing file** — the `--allow-empty` flag forces the write even with 0 matches.
 
-> **Netzzugriff nötig:** Der Abruf geht an `mobil.trk.de`. In manchen Umgebungen
-> ist dieser Host per Egress-Policy geblockt (die GitHub-Action-Runner erreichen
-> ihn); lokal schlägt der Build dann fehl.
+> **Network access needed:** the fetch goes to `mobil.trk.de`. In some
+> environments this host is blocked by egress policy (the GitHub Action
+> runners do reach it); locally, the build then fails.
 
-> Im Repo liegt zunächst ein kleiner **Beispiel-Datensatz** (`sample: true`,
-> im Footer als Beispieldaten markiert). Der erste erfolgreiche Action-Lauf
-> ersetzt ihn durch echte Daten.
+> A small **sample dataset** initially ships in the repo (`sample: true`,
+> marked as sample data in the footer). The first successful Action run
+> replaces it with real data.
 
 ### Tests
 
 ```bash
-npm test    # führt alle Testskripte nacheinander aus
+npm test    # runs all test scripts in sequence
 ```
 
-`npm test` läuft `test-transform`, `test-diff`, `test-classify`, `test-quality`,
-`test-pwa`, `test-attribution` und `test-rechtstexte` durch; einzeln z. B.
-`node scripts/test-transform.mjs`. Geprüft werden u. a.:
+`npm test` runs `test-transform`, `test-diff`, `test-classify`, `test-quality`,
+`test-pwa`, `test-attribution`, and `test-rechtstexte`; individually e.g.
+`node scripts/test-transform.mjs`. Among the things checked:
 
-- **`transform.js`** gegen bekannte Referenzkoordinaten (u. a. Marktplatz
-  Karlsruhe und den Zentralmeridian-Invariant),
-- die **Änderungserkennung** (`diff-data.mjs`),
-- die **fachliche Einordnung** (Klartext, Sperrgrad-Ampel, Verkehrsmittel),
-- der **Qualitäts-Report** (`quality-report.mjs`),
-- die **PWA-Artefakte** (`manifest.webmanifest`, Icons, `sw.js`): valides
-  Manifest, Icon-Dateien in der angegebenen Größe, **alle Pfade relativ**, jede
-  von einer precacheten HTML-Seite bzw. von `src/app.js` referenzierte Datei
-  auch precacht, und die Navigation im Service Worker **pfadbewusst**
+- **`transform.js`** against known reference coordinates (including
+  Karlsruhe's market square and the central-meridian invariant),
+- **change detection** (`diff-data.mjs`),
+- the **domain classification** (plain text, closure-severity traffic light, mode of transport),
+- the **quality report** (`quality-report.mjs`),
+- the **PWA artifacts** (`manifest.webmanifest`, icons, `sw.js`): valid
+  manifest, icon files at the stated size, **all paths relative**, every file
+  referenced by a precached HTML page or by `src/app.js` also precached, and
+  the service worker's navigation **path-aware**
   ([ADR-002](docs/entscheidungen/ADR-002-mehrseitige-auslieferung.md)),
-- die **CC-BY-Namensnennung**: sie steht **statisch im ausgelieferten
-  `index.html`** (nicht per JS nachgetragen), ist wortgleich mit `ATTRIBUTION`
-  aus `build-data.mjs` und wird von `app.js` nicht überschrieben. Die Nennung ist
-  Lizenzbedingung — sie darf nicht am Datenabruf oder an aktivem JavaScript
-  hängen,
-- die **Rechtstexte** (`impressum.html`, `datenschutz.html`): Pflichtabschnitte
-  vorhanden, aus dem Footer verlinkt, alle Pfade relativ, ohne JavaScript
-  nutzbar — und in **beide Richtungen driftsicher** gegen den Code: jeder
-  externe Host aus `src/*.js` muss im Datenschutzhinweis genannt sein, und
-  solange dieser „keine Cookies / keine eigene Speicherung" behauptet, darf im
-  Frontend kein `localStorage`, `document.cookie`, `indexedDB` o. Ä. auftauchen.
-  Wer einen Drittdienst oder einen Client-Speicher einbaut und den Text
-  vergisst, bekommt `npm test` rot.
+- the **CC-BY attribution**: it's **static in the served `index.html`**
+  (not added later via JS), word-for-word identical to `ATTRIBUTION` from
+  `build-data.mjs`, and not overwritten by `app.js`. The attribution is a
+  license condition — it must not depend on the data fetch or on active
+  JavaScript,
+- the **legal texts** (`impressum.html`, `datenschutz.html`): required
+  sections present, linked from the footer, all paths relative, usable
+  without JavaScript — and **drift-safe in both directions** against the
+  code: every external host from `src/*.js` must be named in the privacy
+  notice, and as long as it states "no cookies / no own storage," neither
+  `localStorage`, `document.cookie`, `indexedDB`, nor similar may show up in
+  the frontend. Anyone who adds a third-party service or client-side storage
+  and forgets the text gets `npm test` red.
 
-Die Referenzwerte der Transformation wurden einmalig mit `proj4` erzeugt —
-`proj4` ist **keine Laufzeit-Abhängigkeit**, nur ein Dev-Werkzeug.
+The reference values for the transformation were generated once with `proj4` —
+`proj4` is **not a runtime dependency**, just a dev tool.
 
-## GitHub Pages aktivieren (#5)
+## Enable GitHub Pages (#5)
 
-Die Seite ist eine statische Site im Repo-Wurzelverzeichnis:
+The site is a static site in the repo's root directory:
 
 1. Repo → **Settings → Pages**
-2. **Source:** „Deploy from a branch"
-3. **Branch:** `main`, Ordner `/ (root)` → Save
+2. **Source:** "Deploy from a branch"
+3. **Branch:** `main`, folder `/ (root)` → Save
 
-Danach ist die Seite unter `https://<user>.github.io/BauWatch-KA/` erreichbar.
-Diese Variante (Deploy aus dem Branch) ist bewusst gewählt: Jeder Commit auf
-`main` — auch die Datenaktualisierungen der Action — ist damit sofort live, ohne
-zusätzlichen Deploy-Schritt. Die Datei `.nojekyll` sorgt dafür, dass alle
-Verzeichnisse unverändert ausgeliefert werden.
+After that, the site is reachable under `https://<user>.github.io/BauWatch-KA/`.
+This variant (deploy from the branch) is deliberately chosen: every commit on
+`main` — including the Action's data updates — is thus live immediately,
+without an extra deploy step. The `.nojekyll` file ensures that all
+directories are served unchanged.
 
-## Als App installieren
+## Install as an App
 
-Die Seite ist eine **Progressive Web App**: Sie lässt sich auf den
-Startbildschirm legen und funktioniert danach auch ohne Netz. Ein eigener
-„Installieren"-Knopf gibt es bewusst nicht — die Installation läuft über das
-Browser-Menü (Details und Begründung in
+The site is a **Progressive Web App**: it can be added to the home screen and
+then works even without a network. There's deliberately no dedicated
+"Install" button — installation goes through the browser menu (details and
+rationale in
 [A-3](docs/anforderungen/A-3-pwa-installierbar-offline.md)):
 
-- **Android/Chrome:** Menü ⋮ → „App installieren" bzw. „Zum Startbildschirm hinzufügen"
-- **iOS/Safari:** Teilen-Symbol → „Zum Home-Bildschirm"
-- **Desktop/Chrome, Edge:** Installations-Symbol in der Adressleiste
+- **Android/Chrome:** Menu ⋮ → "Install app" or "Add to Home screen"
+- **iOS/Safari:** Share icon → "Add to Home Screen"
+- **Desktop/Chrome, Edge:** install icon in the address bar
 
-**Was offline funktioniert:** Karte (ohne Kartenkacheln — die Fläche bleibt grau),
-Marker, Liste, alle Filter und die Detailangaben, gerechnet auf dem **zuletzt
-geladenen Datenstand**. Der Footer weist das dann ausdrücklich aus:
-„Daten zuletzt geändert: … · **offline, aus dem Gerätespeicher**".
+**What works offline:** the map (without map tiles — the area stays gray),
+markers, list, all filters, and the detail info, computed on the **last
+loaded data snapshot**. The footer then explicitly states this:
+"Data last changed: … · **offline, from device storage**".
 
-**Was offline nicht funktioniert:** die Adress-/Umkreissuche — sie braucht
-Nominatim. Eingabefeld und Knopf sind offline deaktiviert und der Suchstatus
-sagt es (statt still ins Leere zu laufen).
+**What doesn't work offline:** the address/radius search — it needs
+Nominatim. The input field and button are disabled offline, and the search
+status says so (instead of silently failing).
 
-**Mit Netz gilt immer der frische Stand.** Der Datenabruf ist *network-first*:
-Es wird stets zuerst der committete Snapshot geholt, der Cache ist nur der
-Rückfall. Ein Kartenkachel-Cache existiert bewusst nicht.
+**With a network, the fresh state always wins.** The data fetch is
+*network-first*: the committed snapshot is always fetched first, the cache is
+only the fallback. A map-tile cache deliberately does not exist.
 
-**Neue Version:** Änderungen an der App zeigt ein Hinweis-Banner
-(„Neue Version verfügbar" + „Neu laden"). Neu geladen wird **nur auf Klick** —
-ein automatischer Reload würde Filter, Suche und Kartenposition mitten in der
-Bedienung wegräumen.
+**New version:** changes to the app are shown by a notice banner ("New
+version available" + "Reload"). Reloading happens **only on click** — an
+automatic reload would sweep away filters, search, and map position in the
+middle of use.
 
-> **Für Entwickelnde:** Service Worker brauchen einen *Secure Context*.
-> `http://localhost:8080` zählt als sicher, `file://` nicht — offline testen
-> lässt sich die Seite also nur über den lokalen HTTP-Server. Und: **wer eine
-> Shell-Datei ändert, muss `CACHE_SHELL` in [`sw.js`](sw.js) hochzählen**, sonst
-> behalten installierte Clients die alte Fassung. Die App-Icons entstehen aus
-> `icons/icon.svg` per `node scripts/render-icons.mjs` (manuell, nicht in CI).
+> **For developers:** service workers need a *secure context*.
+> `http://localhost:8080` counts as secure, `file://` does not — so the site
+> can only be tested offline via the local HTTP server. Also: **whoever
+> changes a shell file must bump `CACHE_SHELL` in [`sw.js`](sw.js)**, or
+> installed clients keep the old version. The app icons are generated from
+> `icons/icon.svg` via `node scripts/render-icons.mjs` (manual, not in CI).
 
-## Die Daten-Action (#4)
+## The data Action (#4)
 
 `.github/workflows/update-data.yml`:
 
-- läuft per Cron **alle 4 Stunden** (UTC) und lässt sich manuell auslösen
-  (**Actions → „Baustellendaten aktualisieren" → Run workflow**),
-- führt `scripts/build-data.mjs` aus (kein `npm install` nötig — das Skript
-  nutzt nur die abhängigkeitsfreien Module aus `src/lib/`),
-- committet `data/baustellen.geojson` **nur bei tatsächlicher Änderung** und
-  pusht auf `main`.
+- runs on a cron schedule **every 4 hours** (UTC) and can be triggered
+  manually (**Actions → "Baustellendaten aktualisieren" → Run workflow**),
+- runs `scripts/build-data.mjs` (no `npm install` needed — the script only
+  uses the dependency-free modules from `src/lib/`),
+- commits `data/baustellen.geojson` **only on an actual change** and pushes
+  to `main`.
 
-Das Cron-Intervall lässt sich oben in der Workflow-Datei anpassen.
+The cron interval can be adjusted at the top of the workflow file.
 
-## Änderungen nachvollziehen
+## Tracking changes
 
-Das Build-Skript vergleicht den neuen Stand mit dem zuletzt committeten und
-**schreibt nur bei einer echten Änderung** (Zeitstempel allein zählen nicht).
-Daraus ergibt sich, wo man sieht, *ob* und *was* sich geändert hat:
+The build script compares the new state against the last committed one and
+**only writes on a real change** (timestamps alone don't count). From that
+follow the places where you can see *whether* and *what* changed:
 
-- **`data/CHANGELOG.md`** — dauerhaftes Protokoll, neueste Änderung zuerst:
-  welche Baustellen ➕ neu, ➖ entfernt oder ✏️ geändert wurden (mit Feld-Details
-  wie „Ende: … → …"). Auf der Website unten als „Änderungsverlauf" verlinkt.
-- **Commit-Verlauf von `data/baustellen.geojson`** — jeder Commit ist eine echte
-  Änderung. `git log --follow data/baustellen.geojson` zeigt die Historie; die
-  Commit-Message enthält die Kurzfassung („3 neu, 1 entfernt …").
-- **Action-Job-Summary** — pro Lauf im Actions-Tab (auch die Läufe *ohne*
-  Änderung sind dort mit Zeitstempel gelistet).
-- **`data/QUALITY.md`** — beim Build erzeugter Qualitäts-Report (Feature-Zahlen
-  je Pipeline-Stufe, leere Pflichtfelder u. Ä.), um Auffälligkeiten in den
-  Rohdaten schnell zu erkennen.
+- **`data/CHANGELOG.md`** — a permanent log, newest change first: which
+  construction sites were ➕ added, ➖ removed, or ✏️ changed (with field
+  details like "End: … → …"). Linked at the bottom of the website as
+  "change history".
+- **Commit history of `data/baustellen.geojson`** — every commit is a real
+  change. `git log --follow data/baustellen.geojson` shows the history; the
+  commit message contains the short summary ("3 new, 1 removed …").
+- **Action job summary** — per run, in the Actions tab (runs *without* a
+  change are also listed there, with a timestamp).
+- **`data/QUALITY.md`** — a quality report generated during the build
+  (feature counts per pipeline stage, empty required fields, etc.), to
+  quickly spot anomalies in the raw data.
 
-### Wie oft ändern sich die Daten wirklich?
+### How often do the data actually change?
 
-Weil ohne Änderung kein Commit entsteht, ist die Antwort direkt ablesbar:
+Because no commit happens without a change, the answer is directly readable:
 
-- **Viele Action-Läufe, wenige Daten-Commits = die Daten ändern sich selten.**
-  Die Läufe (alle 4 h) stehen im Actions-Tab, die echten Änderungen im
-  Commit-Verlauf bzw. im `CHANGELOG.md`.
-- Die Abstände zwischen den Commits an `data/baustellen.geojson` sind das
-  Änderungsintervall. `git log --follow --format='%ci %s' data/baustellen.geojson`
-  listet sie kompakt auf.
+- **Many Action runs, few data commits = the data rarely changes.** The runs
+  (every 4 h) show up in the Actions tab, the real changes in the commit
+  history or in `CHANGELOG.md`.
+- The gaps between commits to `data/baustellen.geojson` are the change
+  interval. `git log --follow --format='%ci %s' data/baustellen.geojson`
+  lists them compactly.
 
-Der Footer der Website zeigt „Daten zuletzt geändert" (= `stand`), also den
-Zeitpunkt der letzten echten Änderung — nicht den letzten Prüflauf.
+The website's footer shows "Data last changed" (= `stand`), i.e. the time of
+the last real change — not the last check run.
 
-## Beitragen
+## Contributing
 
-### Ein `art`-Klartext-Mapping ergänzen (#15)
+### Add an `art` plain-text mapping (#15)
 
-Das amtliche Feld `art` liefert in der Regel **bereits lesbaren Klartext**
-(z. B. „Straßenbau") — der wird unverändert übernommen. Für die Fälle, in denen
-ein Wert dennoch übersetzt oder vereinheitlicht werden soll, gibt es in
-[`src/lib/classify.js`](src/lib/classify.js) die Override-Tabelle `ART_MAP`.
-Ein neuer Eintrag ist eine einzige Zeile:
+The official `art` field usually already delivers **readable plain text**
+(e.g. "Straßenbau") — that's carried over unchanged. For cases where a value
+should still be translated or normalized, there's the override table
+`ART_MAP` in [`src/lib/classify.js`](src/lib/classify.js). A new entry is a
+single line:
 
 ```js
 export const ART_MAP = {
@@ -262,30 +264,31 @@ export const ART_MAP = {
 };
 ```
 
-Schlüssel werden getrimmt und case-insensitiv verglichen (auch ohne
-Leer-/Sonderzeichen). Fehlt ein Override, wird echter Klartext direkt
-durchgereicht; ein kryptischer Code ohne Übersetzung bekommt den ehrlichen
-Fallback `Baustelle (<code>)`, damit fehlende Mappings sichtbar bleiben.
-Nach dem Ergänzen `npm run build:data` laufen lassen (oder die Action neu
-auslösen), damit die Änderung in die aufbereiteten Daten einfließt.
+Keys are trimmed and compared case-insensitively (also ignoring
+whitespace/special characters). If no override exists, real plain text is
+passed straight through; a cryptic code without a translation gets the
+honest fallback `Baustelle (<code>)`, so that missing mappings stay visible.
+After adding an entry, run `npm run build:data` (or re-trigger the Action) so
+the change flows into the processed data.
 
-### Sperrgrad- und Verkehrsmittel-Erkennung
+### Closure-severity and mode-of-transport detection
 
-Diese arbeiten schlüsselwortbasiert über den kombinierten Klartext
-(`classifySperrgrad`, `classifyVerkehrsmittel` in `classify.js`), weil der
-Rohdatensatz dafür keine sauber getrennten Felder garantiert. Die Muster lassen
-sich dort erweitern. Grenze der Methode: Verneinungen im Freitext
-(„Radweg frei") werden nicht erkannt — der Originaltext bleibt im Popup aber
-immer sichtbar.
+These work keyword-based over the combined plain text (`classifySperrgrad`,
+`classifyVerkehrsmittel` in `classify.js`), because the raw dataset doesn't
+guarantee cleanly separated fields for this. The patterns can be extended
+there. Limit of the method: negations in free text ("Radweg frei" = "bike
+lane clear") are not recognized — the original text always stays visible in
+the popup, though.
 
-## Lizenz
+## License
 
-Code: **MIT** (siehe [`LICENSE`](LICENSE)).
-Daten: „Baustellen", Stadt Karlsruhe, **CC-BY 4.0** — Namensnennung statisch im
-Footer von `index.html`, abgesichert durch `scripts/test-attribution.mjs`.
-Ohne Gewähr; verbindlich ist ausschließlich die Beschilderung vor Ort.
+Code: **MIT** (see [`LICENSE`](LICENSE)).
+Data: "Baustellen" ("construction sites"), City of Karlsruhe, **CC-BY 4.0** —
+attribution static in the footer of `index.html`, guarded by
+`scripts/test-attribution.mjs`.
+No warranty; only the on-site signage is binding.
 
-Betreiberangaben und Datenflüsse: [`impressum.html`](impressum.html) und
-[`datenschutz.html`](datenschutz.html) (Anforderung
-[A-4](docs/anforderungen/A-4-impressum-datenschutz.md)) — auf der Live-Seite aus
-dem Footer verlinkt.
+Operator details and data flows: [`impressum.html`](impressum.html) and
+[`datenschutz.html`](datenschutz.html) (requirement
+[A-4](docs/anforderungen/A-4-impressum-datenschutz.md)) — linked from the
+footer on the live site.

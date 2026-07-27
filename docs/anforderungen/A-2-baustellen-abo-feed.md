@@ -1,152 +1,159 @@
-# F-2 Baustellen-Abo (statischer Feed)
+# F-2 Baustellen-Abo (Construction-Site Subscription, static feed)
 
-[← Anforderungen](./README.md) · [Prozess](../PROZESS.md)
-· Status siehe [Übersicht](./README.md#übersicht)
+[← Requirements](./README.md) · [Process](../PROZESS.md)
+· status: see [Overview](./README.md#overview)
 
-**User Story:** Als Karlsruher:in möchte ich Baustellen-Änderungen abonnieren, um
-ohne täglichen Seitenbesuch mitzubekommen, wenn in Karlsruhe etwas Neues
-aufgemacht, geändert oder aufgehoben wird.
+**User story:** As a Karlsruhe resident, I want to subscribe to
+construction-site changes, so that I find out — without a daily site visit
+— when something new opens, changes, or is lifted in Karlsruhe.
 
-**Verfeinert am:** 2026-07-24 (Evaluierung zu [`BACKLOG.md`](../BACKLOG.md) #16)
-**Entscheidung 2026-07-24:** **Stadtteil-Aufteilung wird nicht verfolgt** — kein
-Stadtteilgrenzen-Asset, kein Point-in-Polygon. Damit entfällt die einzige
-zusätzliche Datenquelle; der Feed speist sich ausschließlich aus dem, was der Build
-ohnehin erzeugt. Der geografische „in meiner Nähe"-Bedarf wird **clientseitig**
-über die vorhandene Umkreissuche + eine „seit letztem Besuch"-Markierung gedeckt
-(siehe unten), nicht über feed-seitige Partitionierung.
-**Entscheidung 2026-07-24 (Weichen festgezurrt):** **(1) nur ein globaler Feed**
-(keine Facetten-Feeds) und **(2) reiner Änderungsstrom** (neu/geändert/entfernt,
-kein Bestands-Feed). Jeweils die einfache Variante, die fast ohne Zusatzaufwand aus
-dem vorhandenen Build-Diff fällt; beides ist bei späterem Bedarf nachrüstbar. Damit
-sind alle Weichen entschieden → **umsetzungsbereit**.
+**Refined on:** 2026-07-24 (evaluation of [`BACKLOG.md`](../BACKLOG.md) #16)
+**Decision 2026-07-24:** **district partitioning is not pursued** — no
+district-boundary asset, no point-in-polygon. That removes the only
+additional data source; the feed is fed exclusively from what the build
+produces anyway. The geographic "near me" need is covered **client-side**
+via the existing radius search + a "since last visit" marker (see below),
+not via feed-side partitioning.
+**Decision 2026-07-24 (forks locked in):** **(1) only one global feed**
+(no faceted feeds) and **(2) a pure change stream** (added/changed/removed,
+no full-inventory feed). Both are the simple variant that falls out of the
+existing build diff at almost no extra cost; both can be retrofitted later
+if needed. With that, all forks are decided → **implementation-ready**.
 
-## „Push" vs. „Abo" — zuerst die Begriffe trennen
+## "Push" vs. "subscription" — separating the terms first
 
-Hinter der Idee stecken zwei sehr unterschiedliche Mechanismen:
+Two very different mechanisms hide behind the idea:
 
-- **Push** = das System benachrichtigt ungefragt aufs Gerät (Web Push API).
-- **Abo** = der Nutzer bzw. sein Feed-Reader holt aktiv (Pull) neue Einträge.
+- **Push** = the system notifies the device unprompted (Web Push API).
+- **Subscription** = the user, or their feed reader, actively pulls new
+  entries.
 
-Das ist die entscheidende Weiche, weil nur eine der beiden ohne Backend geht.
+That's the decisive fork, because only one of the two works without a
+backend.
 
-## Andockpunkte im Code
+## Touchpoints in the code
 
-- **Der Änderungs-Diff existiert bereits vollständig:** `diffFeatures` in
-  `scripts/diff-data.mjs` liefert `added` / `removed` / `changed` (inkl.
-  menschenlesbarer Feldnotizen) und speist heute `data/CHANGELOG.md` + Commit-/
-  Job-Summary. **Ein Feed ist der maschinenlesbare Zwilling dieses Changelogs** —
-  die Item-Liste ist schon berechnet, sie muss nur als Atom/RSS serialisiert werden.
-- **Vorgeneriert-und-committen ist das etablierte Muster:** `build-data.mjs`
-  schreibt statische Artefakte (GeoJSON, CHANGELOG, QUALITY) atomar und **nur bei
-  echter Datenänderung**. Ein Feed reiht sich als weiteres Artefakt genau hier ein.
-- **Nichts fehlt für einen globalen Feed:** Diff + Feature-Liste liegen im Build
-  bereits vor. (Eine Stadtteil-Aufteilung hätte einen abgeleiteten Stadtteil je
-  Vorgang gebraucht — der Datensatz hat **kein** Stadtteil-Feld, nur `titel` +
-  Koordinaten. Das ist per Entscheidung vom Tisch, siehe oben.)
+- **The change diff already exists in full:** `diffFeatures` in
+  `scripts/diff-data.mjs` delivers `added` / `removed` / `changed`
+  (including human-readable field notes) and already feeds
+  `data/CHANGELOG.md` + the commit/job summary. **A feed is the
+  machine-readable twin of this changelog** — the item list is already
+  computed, it just needs to be serialized as Atom/RSS.
+- **Pre-generate-and-commit is the established pattern:** `build-data.mjs`
+  writes static artifacts (GeoJSON, CHANGELOG, QUALITY) atomically and
+  **only on a real data change**. A feed slots in right here as another
+  artifact.
+- **Nothing is missing for a global feed:** the diff + feature list are
+  already available in the build. (A district split would have needed a
+  derived district per case — the dataset has **no** district field, only
+  `titel` + coordinates. That's off the table by decision, see above.)
 
-## Machbarkeit ohne Backend
+## Feasibility without a backend
 
-- **Echtes Push: NICHT machbar / verworfen.** Web Push braucht (1) einen Service
-  Worker (statisch ok), aber zwingend auch (2) einen **Application Server**, der
-  die Nachricht via VAPID an den Push-Dienst des Browsers (Google FCM, Mozilla,
-  Apple) sendet, und (3) die **persistente Speicherung der Push-Subscription
-  (Endpoint-URL je Browser)**. Punkt (2)+(3) verletzen die Nicht-Ziele „Keine
-  eigene Datenhaltung" und „Kein Nutzerkonto" — die Endpoints sind
-  personenbeziehbar. Die GitHub Action als Sender löst das **nicht** (sie müsste
-  die Endpoints trotzdem irgendwo speichern und pflegen). Zusatzhürden: iOS-Safari
-  verlangt eine als PWA installierte Seite, Zustellung ist „best effort".
-  → **verworfen, solange „kein Backend / keine Datenhaltung" gilt.**
-- **Abo per statischem Feed: MACHBAR und architektonisch stimmig.** Ein Atom-Feed
-  ist eine statische Datei. Die Action generiert ihn wie das GeoJSON vor, GitHub
-  Pages liefert ihn same-origin aus. Der **Feed-Reader des Nutzers pollt selbst** —
-  kein Server, keine Endpoint-Speicherung, vollständig anonym. Passt lückenlos zu
-  ADR-001.
+- **Real push: NOT feasible / discarded.** Web Push needs (1) a service
+  worker (fine statically), but strictly also (2) an **application server**
+  that sends the message via VAPID to the browser's push service (Google
+  FCM, Mozilla, Apple), and (3) the **persistent storage of the push
+  subscription (endpoint URL per browser)**. Points (2)+(3) violate the
+  non-goals "no data storage of our own" and "no user account" — the
+  endpoints are personally identifiable. The GitHub Action as the sender
+  does **not** solve this (it would still have to store and maintain the
+  endpoints somewhere). Extra hurdles: iOS Safari requires a page installed
+  as a PWA, delivery is "best effort".
+  → **discarded, as long as "no backend / no data storage" holds.**
+- **Subscription via a static feed: FEASIBLE and architecturally
+  consistent.** An Atom feed is a static file. The Action pre-generates it
+  the same way it pre-generates the GeoJSON, GitHub Pages serves it
+  same-origin. The **user's feed reader polls itself** — no server, no
+  endpoint storage, fully anonymous. Fits ADR-001 seamlessly.
 
-## Spannung zu Nicht-Zielen — und Auflösung
+## Tension with non-goals — and resolution
 
-- „**Keine Push-Benachrichtigungen in v1**" (SPEC): Wir liefern **kein** Push,
-  sondern ein **Abo** (Pull). Der Nicht-Ziel-Punkt bleibt für echtes Push gewahrt.
-- „**Keine eigene Datenhaltung** über das committete GeoJSON hinaus": Der Feed ist
-  ein weiteres **committetes, aus denselben Daten abgeleitetes** Artefakt — keine
-  neue, nutzerbezogene Datenhaltung. Kein Speichern von Abonnenten.
-- „**Kein Nutzerkonto, kein Login**": Ein Feed-Abo ist anonym; die Beziehung
-  „Nutzer ↔ Abo" lebt ausschließlich im Feed-Reader des Nutzers.
+- "**No push notifications in v1**" (PRD): we deliver **no** push, but a
+  **subscription** (pull). The non-goal item stays intact for real push.
+- "**No data storage of our own** beyond the committed GeoJSON": the feed
+  is another **committed artifact derived from the same data** — no new,
+  user-related data store. No storing of subscribers.
+- "**No user account, no login**": a feed subscription is anonymous; the
+  "user ↔ subscription" relationship lives exclusively in the user's feed
+  reader.
 
-## Feed-Zuschnitt — nur was ohne Zusatz-Datenquelle geht
+## Feed scope — only what's possible without an extra data source
 
-Nach der Entscheidung gegen Stadtteilgrenzen bleiben zwei Zuschnitte, die sich
-**allein aus vorhandenen Feldern** speisen:
+After the decision against district boundaries, two cuts remain that feed
+**purely from existing fields**:
 
-| Option | Wie | Trade-off |
+| Option | How | Trade-off |
 |---|---|---|
-| **(1) Globaler Feed (empfohlen)** | Ein Feed `feeds/alle.xml` mit dem gesamten Änderungsstrom (neu/geändert/entfernt). | Minimal, sofort machbar, deckt den Kernnutzen. Keine Geo-Vorfilterung. |
-| (2) + Facetten-Feeds | Zusätzlich ein Feed je vorhandener Dimension, z. B. `feeds/vollsperrungen.xml`, `feeds/rad.xml` (aus `ampel` / `verkehrsmittel`). | Kein neues Asset, aber mehr Dateien + Kombinationsfragen; Nutzen begrenzt, solange die Facetten grob sind. |
+| **(1) Global feed (recommended)** | One feed `feeds/alle.xml` with the entire change stream (added/changed/removed). | Minimal, immediately feasible, covers the core value. No geo pre-filtering. |
+| (2) + Faceted feeds | Additionally, one feed per existing dimension, e.g. `feeds/vollsperrungen.xml`, `feeds/rad.xml` (from `ampel` / `verkehrsmittel`). | No new asset, but more files + combination questions; limited benefit as long as the facets are coarse. |
 
-**Empfehlung:** **(1) als Kern.** Facetten-Feeds (2) nur, wenn die Ideengeberin
-konkreten Bedarf sieht — sie sind billig nachrüstbar, aber nicht der Kern.
+**Recommendation:** **(1) as the core.** Faceted feeds (2) only if the
+idea's originator sees concrete demand — they're cheap to retrofit, but not
+the core.
 
-## Der geografische „in meiner Nähe"-Bedarf (ohne Stadtteile)
+## The geographic "near me" need (without districts)
 
-Statt feed-seitiger Geo-Partitionierung deckt eine **clientseitige
-Pseudo-Subscription** den „was ist neu bei mir?"-Bedarf ab: letzter gesehener
-`stand` + gesehene Vorgangs-IDs in `localStorage`, beim nächsten Besuch als
-Banner/Markierung — **kombiniert mit der bereits vorhandenen Umkreissuche** um eine
-gespeicherte Adresse. Kein Feed-Reader, kein Push, kein Backend, anonym. Das ist
-der eigentliche Ersatz für „pro Stadtteil" und dockt an bestehenden Client-Code an
-(`geocode`, Umkreis-Zweig in `currentFiltered`). Wird als **eigener kleiner
-Feature-Eintrag** verfeinert (komplementär zu F-2, kein Blocker).
+Instead of feed-side geo-partitioning, a **client-side pseudo-subscription**
+covers the "what's new near me?" need: last seen `stand` + seen case IDs in
+`localStorage`, shown as a banner/marker on the next visit — **combined with
+the already-existing radius search** around a saved address. No feed reader,
+no push, no backend, anonymous. That's the actual substitute for "per
+district" and connects to existing client code (`geocode`, the radius branch
+in `currentFiltered`). It will be refined as its **own small feature entry**
+(complementary to F-2, not a blocker).
 
-## Weichen (alle entschieden)
+## Forks (all decided)
 
-1. **Facetten-Feeds:** **nur globaler Feed** — keine Feeds nach
-   Ampel/Verkehrsmittel. (Bei konkretem Bedarf billig nachrüstbar.)
-2. **Item-Umfang:** **reiner Änderungsstrom** (neu/geändert/entfernt, wie
-   CHANGELOG) — kein „Bestands-Feed". Deckt sich 1:1 mit dem Build-Diff.
-3. ~~Stadtteil-Zuordnung~~ — **keine** (kein Stadtteilgrenzen-Asset, kein
-   Point-in-Polygon).
+1. **Faceted feeds:** **global feed only** — no feeds by traffic light/mode
+   of transport. (Cheap to retrofit on concrete demand.)
+2. **Item scope:** **a pure change stream** (added/changed/removed, like
+   CHANGELOG) — no "full-inventory feed". Matches the build diff 1:1.
+3. ~~District assignment~~ — **none** (no district-boundary asset, no
+   point-in-polygon).
 
-## Spezifikation (Skizze, sobald Weichen stehen)
+## Specification (sketch, now that the forks are set)
 
-**Format:** **Atom 1.0** (saubere `<id>`/`<updated>`, GeoRSS-Punkt optional). Genau
-eine Datei `feeds/alle.xml` (Änderungsstrom, keine Facetten-Feeds).
+**Format:** **Atom 1.0** (clean `<id>`/`<updated>`, GeoRSS point optional).
+Exactly one file `feeds/alle.xml` (change stream, no faceted feeds).
 
-**Erzeugung:** neues reines Modul `src/lib/feed.js` (DOM-/netz-/abhängigkeitsfrei,
-harte Randbedingung), das aus dem vorhandenen `diff`-Objekt + Feature-Liste
-Atom-XML rendert; aufgerufen aus `build-data.mjs` **im selben „nur bei echter
-Änderung"-Zweig** wie GeoJSON/CHANGELOG. Keine zusätzliche Datenquelle, keine
-Geometrie-Zuordnung.
+**Generation:** a new pure module `src/lib/feed.js` (DOM-/network-/
+dependency-free, a hard constraint) that renders Atom XML from the existing
+`diff` object + feature list; called from `build-data.mjs` **in the same
+"only on a real change" branch** as GeoJSON/CHANGELOG. No additional data
+source, no geometry assignment.
 
-**Invarianten-Schutz (Fallstrick aus CLAUDE.md):**
-- **Keine pro-Lauf-volatilen Werte** in den Feed. Jeder Eintrag bekommt eine
-  **stabile `<id>`** (aus `vorgangsnummer` + Änderungsart) und ein **`<updated>`,
-  das die letzte *echte* Änderung** widerspiegelt (nicht die Laufzeit) — sonst
-  Rausch-Commits und kaputte Git-Historie. Feed wird nur bei Datenänderung neu
-  geschrieben.
-- Feed-`<updated>` der Gesamtdatei = `collection.stand`.
+**Invariant protection (pitfall from CLAUDE.md):**
+- **No per-run-volatile values** in the feed. Every entry gets a **stable
+  `<id>`** (from `vorgangsnummer` + change type) and an **`<updated>` that
+  reflects the last *real* change** (not the run time) — otherwise noise
+  commits and a broken Git history. The feed is only rewritten on a data
+  change.
+- The overall file's feed `<updated>` = `collection.stand`.
 
-**Discovery:** `<link rel="alternate" type="application/atom+xml" …>` im
-`index.html` + ein UI-Hinweis „Änderungen abonnieren".
+**Discovery:** `<link rel="alternate" type="application/atom+xml" …>` in
+`index.html` + a UI notice "subscribe to changes".
 
-**Randfälle:**
-| Fall | Verhalten |
+**Edge cases:**
+| Case | Behavior |
 |---|---|
-| Erstbefüllung (`firstFill`) | Feed mit Startbestand statt riesiger „alles neu"-Liste, analog CHANGELOG |
-| Kein Feed-Reader beim Nutzer | Feed bleibt lesbar im Browser; ergänzend die localStorage-Lösung |
-| Leerer Diff (keine Änderung) | kein Feed-Rewrite (Invariante „nur bei echter Änderung") |
+| First fill (`firstFill`) | feed with the starting inventory instead of a giant "everything new" list, analogous to CHANGELOG |
+| No feed reader on the user's side | the feed stays readable in the browser; the localStorage solution supplements it |
+| Empty diff (no change) | no feed rewrite (invariant "only on a real change") |
 
-**Testplan:** `scripts/test-feed.mjs` (in `npm test`): Atom-Wohlgeformtheit,
-stabile `<id>`/`<updated>` (kein volatiler Wert), Diff→Item-Mapping (added/removed/
-changed), leerer Diff → kein Feed-Rewrite.
+**Test plan:** `scripts/test-feed.mjs` (in `npm test`): Atom well-formedness,
+stable `<id>`/`<updated>` (no volatile value), diff→item mapping
+(added/removed/changed), empty diff → no feed rewrite.
 
-**Doku-/Backlog-Auswirkungen:** SPEC (Nicht-Ziel „Push" präzisieren: Abo ≠ Push),
-README (Abschnitt „Abonnieren"), [`BACKLOG.md`](../BACKLOG.md) #16 (erledigt →
-verweist hierher).
+**Docs/backlog impact:** PRD (tighten the "push" non-goal: subscription ≠
+push), README ("Subscribing" section), [`BACKLOG.md`](../BACKLOG.md) #16
+(done → points here).
 
-## Definition of Done (bei späterer Umsetzung)
-- Globaler Atom-Feed valide, von der Action nur bei echter Änderung geschrieben;
-  stabile IDs, `<updated>` = letzte echte Änderung (keine Rausch-Commits).
-- `src/lib/feed.js` DOM-/netz-/abhängigkeitsfrei; `scripts/test-feed.mjs` grün in
-  `npm test`.
-- Feed-Autodiscovery im `index.html`; SPEC/README/BACKLOG aktualisiert.
-- Kein neuer nutzerbezogener Datenspeicher, kein Login, kein echtes Push, **keine
-  zusätzliche Datenquelle** (keine Stadtteilgrenzen).
+## Definition of Done (on later implementation)
+- Global Atom feed valid, written by the Action only on a real change;
+  stable IDs, `<updated>` = last real change (no noise commits).
+- `src/lib/feed.js` DOM-/network-/dependency-free; `scripts/test-feed.mjs`
+  green in `npm test`.
+- Feed autodiscovery in `index.html`; PRD/README/BACKLOG updated.
+- No new user-related data store, no login, no real push, **no additional
+  data source** (no district boundaries).

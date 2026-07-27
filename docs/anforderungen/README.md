@@ -1,43 +1,44 @@
-# Anforderungen
+# Requirements
 
-Verfeinerte Ideen — Ergebnis des [Refinement-Prozesses](../PROZESS.md). Hier
-stehen **ausgearbeitete Anforderungen** mit getroffenen Entscheidungen und
-Definition of Done, nicht rohe Einfälle. Rein technische Aufgaben und kleine
-Fixes laufen weiter über [`BACKLOG.md`](../BACKLOG.md) — die Trennlinie steht im
-[Prozess](../PROZESS.md#anforderung-oder-aufgabe-der-test).
+Refined ideas — the result of the [refinement process](../PROZESS.md). This
+holds **elaborated requirements** with decisions made and a Definition of
+Done, not raw ideas. Purely technical tasks and small fixes still go through
+[`BACKLOG.md`](../BACKLOG.md) — the dividing line is in the
+[process](../PROZESS.md#requirement-or-task-the-test).
 
-**Je Anforderung eine Datei** in diesem Ordner (`A-<Nr>-<kurz-titel>.md`). Diese
-Übersicht ist der Einstieg — und die **einzige Quelle für den Status**: die
-Anforderungsdateien selbst führen keinen Status, damit nichts auseinanderlaufen
-kann. Eine erledigte Anforderung **bleibt liegen, wo sie ist**; sie ist ab dann
-das Protokoll, *warum* es so gelöst wurde.
+**One file per requirement** in this folder (`A-<no.>-<short-title>.md`).
+This overview is the entry point — and the **only source of status**: the
+requirement files themselves carry no status, so nothing can drift apart. A
+completed requirement **stays where it is**; from then on it's the record of
+*why* it was solved this way.
 
-**Zeile oder Datei?** Eine rohe Idee bleibt eine Zeile in der Tabelle. Erst bei
-der Verfeinerung entsteht `A-<Nr>-<kurz-titel>.md` und die Zeile wird verlinkt —
-so füllt sich der Ordner nicht mit leeren Vorlagen.
+**Line or file?** A raw idea stays a line in the table. Only during
+refinement does `A-<no.>-<short-title>.md` come into being and the line gets
+linked — that way the folder doesn't fill up with empty templates.
 
-**Statuslegende:** `💡 Idee` · `✅ bereit` · `🚧 in Umsetzung` · `🏁 erledigt`
-· `🧊 zurückgestellt` · `🗑 verworfen`
+**Status legend:** `💡 idea` · `✅ ready` · `🚧 in progress` · `🏁 done`
+· `🧊 deferred` · `🗑 discarded`
 
-## Übersicht
+## Overview
 
-| Nr. | Anforderung | Status | Worum es geht |
+| No. | Requirement | Status | What it's about |
 |---|---|---|---|
-| A-1 | [Mein Arbeitsweg](./A-1-mein-arbeitsweg.md) | ✅ bereit | Zeigt beim Öffnen, ob auf dem hinterlegten Weg (Start → Ziel, ein Verkehrsmittel) Baustellen liegen. |
-| A-2 | [Baustellen-Abo (statischer Feed)](./A-2-baustellen-abo-feed.md) | ✅ bereit | Änderungen (neu/geändert/entfernt) als statischer Atom-Feed für den Feed-Reader — ohne Backend, ohne echtes Push. |
-| A-3 | [Als App installierbar & offline nutzbar (PWA)](./A-3-pwa-installierbar-offline.md) | 🏁 erledigt | Seite auf den Startbildschirm installierbar; Shell und zuletzt geladene Daten offline nutzbar, mit sichtbarem Stand. |
-| A-4 | [Impressum & Datenschutzhinweis](./A-4-impressum-datenschutz.md) | 🏁 erledigt | Zwei Textseiten nennen Betreiberin und die drei realen Drittdienst-Datenflüsse — damit nachlesbar ist, wer hinter dem Angebot steht und was an Dritte geht. |
+| A-1 | [My commute](./A-1-mein-arbeitsweg.md) | ✅ ready | Shows on opening whether construction sites lie on the saved route (start → destination, one mode of transport). |
+| A-2 | [Construction-site subscription (static feed)](./A-2-baustellen-abo-feed.md) | ✅ ready | Changes (added/changed/removed) as a static Atom feed for feed readers — no backend, no real push. |
+| A-3 | [Installable as an app & usable offline (PWA)](./A-3-pwa-installierbar-offline.md) | 🏁 done | Site installable to the home screen; shell and last-loaded data usable offline, with a visible timestamp. |
+| A-4 | [Legal notice & privacy notice](./A-4-impressum-datenschutz.md) | 🏁 done | Two text pages name the operator and the three real third-party data flows — so it's readable who's behind the offering and what goes to third parties. |
 
-## Neue Anforderung aufnehmen
+## Adding a new requirement
 
-Schritt 7 des [Refinement-Prozesses](../PROZESS.md):
+Step 7 of the [refinement process](../PROZESS.md):
 
-1. Für eine rohe Idee genügt eine neue Zeile mit Status `💡 Idee`.
-2. Zur Verfeinerung [`_vorlage.md`](./_vorlage.md) nach
-   `A-<nächste Nr>-<kurz-titel>.md` kopieren und ausfüllen (Nummern werden nicht
-   wiederverwendet, auch nicht bei `🗑 verworfen`), dann die Zeile verlinken und
-   auf `✅ bereit` setzen.
-3. Status ausschließlich hier pflegen — auch später bei `🚧` und `🏁`.
+1. For a raw idea, a new line with status `💡 idea` is enough.
+2. To refine it, copy [`_vorlage.md`](./_vorlage.md) to
+   `A-<next no.>-<short-title>.md` and fill it in (numbers are never
+   reused, not even for `🗑 discarded`), then link the line and set it to
+   `✅ ready`.
+3. Maintain status only here — later too, at `🚧` and `🏁`.
 
-> Hieß bis 2026-07-25 `docs/features/` mit `F-<Nr>`-Nummern; die Umbenennung hat
-> an den Inhalten nichts geändert. `F-1`/`F-2`/`F-3` entsprechen `A-1`/`A-2`/`A-3`.
+> Was called `docs/features/` with `F-<no.>` numbers until 2026-07-25; the
+> rename changed nothing in substance. `F-1`/`F-2`/`F-3` correspond to
+> `A-1`/`A-2`/`A-3`.

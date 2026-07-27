@@ -1,47 +1,64 @@
-# BauWatch-KA im Transparenzportal listen lassen
+# Getting BauWatch-KA Listed in the Transparency Portal
 
-Leitfaden und Einreichungsunterlage für den Bereich **„Anwendungen"** (Showcase)
-des Karlsruher Transparenzportals: <https://transparenz.karlsruhe.de/showcase>
+Guide and submission document for the **"Anwendungen"** ("Applications")
+section (showcase) of the Karlsruhe transparency portal:
+<https://transparenz.karlsruhe.de/showcase>
 
-Das Showcase ist **redaktionell kuratiert** — man trägt sich nicht selbst ein,
-sondern schlägt das Projekt dem Open-Data-Team vor, das den Eintrag anlegt.
-Kontakt über das Kontaktformular bzw. die Open-Data-Redaktion auf
-`transparenz.karlsruhe.de` (aktuelle Kontaktangabe bitte dort prüfen).
+> **Note on language:** this file is internal tracking/reference and is in
+> English like the rest of the docs — except for the **"Cover Letter"** and
+> **"Field Values for the CKAN Entry"** sections below (and, for the same
+> reason, the "Distinction from the Mobility Portal" section): those are the
+> literal German-language text meant to be sent to Karlsruhe's Open Data
+> team and pasted into their German-language portal. Translating that
+> content would defeat its purpose, so it's kept in German on purpose — see
+> the language note in `CLAUDE.md`.
 
-## Stand: Rückmeldung der Redaktion vom 2026-07-26
+The showcase is **editorially curated** — you don't add yourself, you
+propose the project to the open-data team, which creates the entry.
+Contact via the contact form or the open-data editorial team at
+`transparenz.karlsruhe.de` (please check the current contact details
+there).
 
-Die Vorprüfung war grundsätzlich positiv („passt gut ins Showcase"), hat aber
-drei Punkte benannt, die den Eintrag aufhalten. Was daraufhin passiert ist:
+## Status: Editorial Team's Feedback from 2026-07-26
 
-| Punkt der Redaktion | Stand |
+The pre-review was fundamentally positive ("fits well into the showcase"),
+but named three points holding up the entry. What happened as a result:
+
+| Editorial team's point | Status |
 |---|---|
-| **1. Namensnennung auf der Live-Seite nicht auffindbar** | **behoben.** Die Nennung stand als leerer Absatz im HTML und wurde erst nach dem Datenabruf per JavaScript eingefügt — im Browser sichtbar, im ausgelieferten Dokument nicht. Sie steht jetzt **statisch** in `index.html`, verlinkt Datensatz und Lizenztext. `scripts/test-attribution.mjs` hält das dauerhaft fest (Teil von `npm test`). |
-| **2. Fehlende Felder für die Anlage** | **mitgeliefert**, siehe [Feldwerte für den CKAN-Eintrag](#feldwerte-für-den-ckan-eintrag). Screenshot: [`showcase/screenshot.png`](./showcase/screenshot.png) (Desktop) und [`showcase/screenshot-mobil.png`](./showcase/screenshot-mobil.png). Offen bleibt allein **Name + Kontaktmailadresse** — persönliche Angabe, siehe [Offene Punkte](#offene-punkte). |
-| **3. Abgrenzung zum Mobilitätsportal** | **aufgenommen**, als eigener Absatz im Anschreiben und ausführlich unter [Abgrenzung zum Mobilitätsportal](#abgrenzung-zum-mobilitätsportal). |
-| Aktualisierungs-Formulierung vereinheitlichen | **behoben** — das Anschreiben nutzt jetzt die Formulierung der App. |
-| Impressum/Datenschutzhinweis | **erledigt.** Anforderung [`A-4`](./anforderungen/A-4-impressum-datenschutz.md) umgesetzt: zwei eigene Textseiten, aus dem Footer jeder Seite verlinkt — [`impressum.html`](../impressum.html) und [`datenschutz.html`](../datenschutz.html). Der Datenschutzhinweis benennt genau die drei realen Datenflüsse (GitHub Pages, `tile.openstreetmap.org`, `nominatim.openstreetmap.org`) und behauptet nichts, was nicht zutrifft; `scripts/test-rechtstexte.mjs` hält beides gegen den Code fest. Offen bleibt allein die **Kontaktadresse** (derselbe Punkt wie oben, siehe [Offene Punkte](#offene-punkte)). |
-| Nominatim-Nutzungsrichtlinie | **geprüft, kein Handlungsbedarf** — die Suche fragt **nicht** bei jedem Tastendruck an, siehe [Nominatim](#nominatim-nutzungsrichtlinie-geprüft). |
-| Barrierefreiheitsvorteil der Liste erwähnen | **aufgenommen** ins Anschreiben und in den Langtext. |
+| **1. Attribution not findable on the live site** | **fixed.** The attribution was an empty paragraph in the HTML and was only inserted via JavaScript after the data fetch — visible in the browser, not in the served document. It's now **static** in `index.html`, linking the dataset and the license text. `scripts/test-attribution.mjs` locks this in permanently (part of `npm test`). |
+| **2. Missing fields for the entry** | **supplied**, see [Field Values for the CKAN Entry](#field-values-for-the-ckan-entry). Screenshot: [`showcase/screenshot.png`](./showcase/screenshot.png) (desktop) and [`showcase/screenshot-mobil.png`](./showcase/screenshot-mobil.png). The only thing left open is **name + contact email address** — a personal detail, see [Open Items](#open-items). |
+| **3. Distinction from the mobility portal** | **added**, as its own paragraph in the cover letter and in detail under [Distinction from the Mobility Portal](#distinction-from-the-mobility-portal). |
+| Unify the update-frequency wording | **fixed** — the cover letter now uses the app's own wording. |
+| Legal notice/privacy notice | **done.** Requirement [`A-4`](./anforderungen/A-4-impressum-datenschutz.md) implemented: two dedicated text pages, linked from every page's footer — [`impressum.html`](../impressum.html) and [`datenschutz.html`](../datenschutz.html). The privacy notice names exactly the three real data flows (GitHub Pages, `tile.openstreetmap.org`, `nominatim.openstreetmap.org`) and claims nothing that isn't true; `scripts/test-rechtstexte.mjs` locks both in against the code. The only thing left open is the **contact address** (the same point as above, see [Open Items](#open-items)). |
+| Nominatim usage policy | **checked, no action needed** — the search does **not** query on every keystroke, see [Nominatim](#nominatim-usage-policy-checked). |
+| Mention the list's accessibility benefit | **added** to the cover letter and the long text. |
 
-## Voraussetzungen
+## Prerequisites
 
-- [x] Anwendung live erreichbar: <https://ahirrea.github.io/BauWatch-KA/>
-- [x] Quellcode öffentlich: <https://github.com/Ahirrea/BauWatch-KA>
-- [x] Nutzt einen Portal-Datensatz: „Baustellen", Stadt Karlsruhe —
-      <https://transparenz.karlsruhe.de/dataset/baustellen>
-- [x] Lizenzkonform: CC-BY-4.0-Namensnennung **statisch im ausgelieferten HTML**
-      (nicht erst per JavaScript), mit Link auf Datensatz und Lizenztext
-- [x] Haftungshinweis vorhanden („Ohne Gewähr, verbindlich ist die
-      Beschilderung vor Ort")
-- [x] Als unabhängiges Bürgerprojekt erkennbar (nicht im Auftrag der Stadt)
-- [x] Screenshot vorhanden (Desktop + Mobil, siehe `docs/showcase/`)
-- [ ] Name + Kontaktmailadresse für den Eintrag eingetragen (Weg entschieden:
-      eigene Projektadresse — Adresse anlegen und eintragen)
-- [x] Impressum/Datenschutzhinweis vorhanden und aus dem Footer verlinkt
-      (Anforderung `A-4` umgesetzt) — bis auf die Kontaktadresse, die am
-      offenen Punkt oben hängt
+- [x] Application reachable live: <https://ahirrea.github.io/BauWatch-KA/>
+- [x] Source code public: <https://github.com/Ahirrea/BauWatch-KA>
+- [x] Uses a portal dataset: "Baustellen" ("construction sites"), City of
+      Karlsruhe — <https://transparenz.karlsruhe.de/dataset/baustellen>
+- [x] License-compliant: CC-BY-4.0 attribution **static in the served
+      HTML** (not only via JavaScript), with a link to the dataset and the
+      license text
+- [x] Liability notice present ("No warranty; the on-site signage is
+      binding")
+- [x] Recognizable as an independent citizen project (not on the city's
+      behalf)
+- [x] Screenshot present (desktop + mobile, see `docs/showcase/`)
+- [ ] Name + contact email address for the entry filled in (path decided:
+      a dedicated project address — create and enter the address)
+- [x] Legal notice/privacy notice present and linked from the footer
+      (requirement `A-4` implemented) — except for the contact address,
+      which hangs on the open item above
 
-## Feldwerte für den CKAN-Eintrag
+## Field Values for the CKAN Entry
+
+*(Kept in German — see the note at the top of this file. These values go
+directly into the fields of a CKAN showcase entry on the German-language
+portal.)*
 
 Direkt übernehmbar in die Felder eines CKAN-Showcase.
 
@@ -85,7 +102,7 @@ installierbar und auch offline mit dem zuletzt geladenen Stand nutzbar.
 **Lizenz Anwendung:** Code MIT · Daten CC-BY 4.0 (Stadt Karlsruhe)
 
 **Name / Kontakt für den Eintrag:** ⚠ **vor dem Versand ausfüllen** — bewusst
-nicht vorbelegt, siehe [Offene Punkte](#offene-punkte).
+nicht vorbelegt, siehe [Open Items](#open-items).
 
 ```
 Name:    <Anzeigename für den Eintrag>
@@ -97,7 +114,10 @@ E-Mail:  <projekt-eigene Adresse, NICHT die private>
 > Alias-Adresse lässt sich später abschalten oder umziehen, ohne den
 > Portal-Eintrag anfassen zu müssen.
 
-## Anschreiben
+## Cover Letter
+
+*(Kept in German — see the note at the top of this file. This is the literal
+draft email to send to the city's Open Data team.)*
 
 > **Betreff:** Vorschlag für den Bereich „Anwendungen": BauWatch-KA – Baustellen
 > in Karlsruhe
@@ -159,9 +179,12 @@ E-Mail:  <projekt-eigene Adresse, NICHT die private>
 > Mit freundlichen Grüßen
 > [Anzeigename]
 
-## Abgrenzung zum Mobilitätsportal
+## Distinction from the Mobility Portal
 
-Ausführlicher als im Anschreiben — als Rückhalt für Rückfragen in der Redaktion.
+*(Kept in German — see the note at the top of this file. This is backup
+material for follow-up questions from the editorial team, more detailed than
+the cover letter.)*
+
 Der bestehende Showcase-Eintrag ist das
 [TRK-Mobilitätsportal](https://transparenz.karlsruhe.de/showcase/mobilitatsportal)
 (regionale Informationsplattform, verknüpft mit ~29 Datensätzen).
@@ -181,67 +204,71 @@ beantwortet eine persönliche Frage.** Der doppelte Tag „Baustellen" ist desha
 Duplikat, sondern zeigt zwei Verwendungen desselben Datensatzes — für ein
 Transparenzportal eher ein Argument dafür als dagegen.
 
-## Nominatim-Nutzungsrichtlinie (geprüft)
+## Nominatim Usage Policy (Checked)
 
-Die Rückfrage der Redaktion war berechtigt, trifft die Anwendung aber nicht:
-Die Adresssuche fragt **nur beim Absenden** des Formulars an, nicht beim Tippen —
-es gibt bewusst keine Autovervollständigung (Backlog `#9`). Im Browser
-nachgemessen: 14 getippte Zeichen → **0 Anfragen**, ein Klick auf „Umkreis
-suchen" → **genau 1 Anfrage**. Zusätzlich: `limit=1`, eine Bounding-Box um
-Karlsruhe, Identifikation über den Referer (ein eigener `User-Agent` ist per
-`fetch` nicht setzbar), und offline ist der Suchknopf deaktiviert statt in einen
-Fehler zu laufen. Sollte später eine Autovervollständigung dazukommen, ist die
-Richtlinie der Grund, das nur mit Entprellung und Mindestlänge zu tun.
+The editorial team's question was justified but doesn't apply to this app:
+the address search only queries **when the form is submitted**, not while
+typing — there's deliberately no autocomplete (Backlog `#9`). Measured in
+the browser: 14 typed characters → **0 requests**, one click on "search
+radius" → **exactly 1 request**. In addition: `limit=1`, a bounding box
+around Karlsruhe, identification via the referer (a custom `User-Agent`
+isn't settable via `fetch`), and offline the search button is disabled
+instead of running into an error. Should autocomplete be added later, the
+policy is the reason to only do that with debouncing and a minimum length.
 
-## Offene Punkte
+## Open Items
 
-- **Name + Kontaktmailadresse für den Eintrag** — der letzte offene Punkt der
-  Redaktion. **Entschieden (2026-07-26): eine eigene Projektadresse**, nicht die
-  private; der Eintrag ist öffentlich und die Adresse dauerhaft im Portal
-  sichtbar. Noch zu tun: Adresse anlegen (Alias oder Weiterleitung genügt,
-  Hauptsache abschaltbar, ohne den Portal-Eintrag anfassen zu müssen) und
-  zusammen mit dem Anzeigenamen an den beiden markierten Stellen eintragen —
-  in den [Feldwerten](#feldwerte-für-den-ckan-eintrag) und im Anschreiben.
-  **Und an drei weiteren Stellen**, weil `A-4` inzwischen umgesetzt ist:
-  `impressum.html`, `datenschutz.html` (dort steht bis dahin der klar
-  erkennbare Platzhalter `kontakt@example.invalid`) sowie der Haken oben in den
-  [Voraussetzungen](#voraussetzungen). Es muss überall **dieselbe** Adresse
-  sein — `scripts/test-rechtstexte.mjs` meldet den Platzhalter bei jedem
-  `npm test` als `[WARN]` und wird **rot**, sobald der Haken hier gesetzt wird,
-  während die Seiten noch den Platzhalter tragen.
-- **Impressum/Datenschutzhinweis** — **umgesetzt** ([`A-4`](./anforderungen/A-4-impressum-datenschutz.md)),
-  bis auf die Kontaktadresse oben. Zwei eigene Textseiten ohne JavaScript,
-  aus dem Footer verlinkt. Der Datenschutzhinweis beschreibt genau die drei
-  realen Datenflüsse (Hosting bei GitHub Pages, Kartenkacheln und Nominatim bei
-  der OSMF) und stellt voran, was die Seite **nicht** tut — keine Cookies, kein
-  Tracking, keine eigene Datenhaltung; das ist im offenen Quellcode nachprüfbar
-  und wird von `scripts/test-rechtstexte.mjs` maschinell gegen den Code
-  gehalten. **Zwei Vorbehalte** bleiben und sind bewusst nicht wegdiskutiert:
-  (a) Das Impressum nennt Name und E-Mail, **keine Postanschrift** —
-  Produktentscheidung `E2` in `A-4` für ein rein privates, ehrenamtliches
-  Angebot; ein Postfach oder eine c/o-Adresse bleibt der Rückfallplan, falls das
-  Justiziariat auf einer zustellfähigen Anschrift besteht. (b) Die
-  **Kartenkacheln laden ohne vorherige Einwilligung** — eine strenge Lesart
-  verlangt hier eine vorgeschaltete Abfrage („Karte laden?"). Das würde die
-  Kernschleife des PRD beschädigen und ist deshalb eine eigene Abwägung, nicht
-  Teil von `A-4`; der Datenschutzhinweis benennt den Datenfluss dafür umso
-  deutlicher. Beides ist eine Laieneinschätzung, keine Rechtsberatung — ein
-  juristischer Blick auf die Personenangaben ist das Geld wert.
-- **Kontaktweg zur Redaktion** vor dem Versand auf dem Portal prüfen (hier
-  bewusst nicht fest hinterlegt).
-- **Formales Barrierefreiheits-Audit** (Backlog `#12`) steht noch aus. Für eine
-  BITV-gebundene Stelle relevant — im Anschreiben deshalb offen benannt statt
-  behauptet.
+- **Name + contact email address for the entry** — the editorial team's
+  last open item. **Decided (2026-07-26): a dedicated project address**,
+  not the private one; the entry is public and the address permanently
+  visible in the portal. Still to do: create the address (an alias or
+  forward is enough, the main thing is that it can be disabled without
+  touching the portal entry) and enter it, together with the display name,
+  at the two marked spots — in the
+  [field values](#field-values-for-the-ckan-entry) and in the cover letter.
+  **And at three more spots**, because `A-4` has since been implemented:
+  `impressum.html`, `datenschutz.html` (which until then carry the clearly
+  recognizable placeholder `kontakt@example.invalid`) as well as the
+  checkbox above under [Prerequisites](#prerequisites). It must be the
+  **same** address everywhere — `scripts/test-rechtstexte.mjs` reports the
+  placeholder as a `[WARN]` on every `npm test` and turns **red** as soon
+  as the checkbox here is checked while the pages still carry the
+  placeholder.
+- **Legal notice/privacy notice** — **implemented**
+  ([`A-4`](./anforderungen/A-4-impressum-datenschutz.md)), except for the
+  contact address above. Two dedicated text pages without JavaScript,
+  linked from the footer. The privacy notice describes exactly the three
+  real data flows (hosting at GitHub Pages, map tiles and Nominatim at the
+  OSMF) and states up front what the site **doesn't** do — no cookies, no
+  tracking, no data storage of its own; that's verifiable in the open
+  source code and is held mechanically against the code by
+  `scripts/test-rechtstexte.mjs`. **Two reservations** remain and are
+  deliberately not argued away: (a) the legal notice names name and email,
+  **no postal address** — product decision `E2` in `A-4` for a purely
+  private, volunteer-run offering; a PO box or a c/o address remains the
+  fallback plan if the legal department insists on a deliverable address.
+  (b) **The map tiles load without prior consent** — a strict reading would
+  require a prior prompt here ("load the map?"). That would damage the
+  PRD's core loop and is therefore its own trade-off, not part of `A-4`;
+  the privacy notice names the data flow all the more clearly because of
+  it. Both are a layperson's judgment, not legal advice — a legal look at
+  the personal-details items is worth the money.
+- **Contact channel to the editorial team** to check on the portal before
+  sending (deliberately not hard-coded here).
+- **Formal accessibility audit** (Backlog `#12`) is still outstanding.
+  Relevant for a BITV-bound body — named openly in the cover letter rather
+  than claimed.
 
-## Vor dem Absenden bedenken
+## Points to Consider Before Submitting
 
-- **Reine Karlsruhe-Sicht:** Der Rohdatensatz enthält auch Umland/Elsass;
-  BauWatch-KA filtert bewusst auf `gemeinde = "Karlsruhe"`. Das ist für ein
-  von der Stadt verlinktes Showcase eher ein Plus — transparent benennen.
-- **Aktualität:** Da die Stadt darauf verlinkt, sollte die Seite stabil laufen.
-  Formulierung überall gleich halten: **alle 4 h geprüft, aktualisiert nur bei
-  Änderungen** (nicht „mindestens alle 4 Stunden aktualisiert" — das verspricht
-  eine Änderungsfrequenz, die die Daten nicht haben). Der Stand ist in der
-  Anwendung sichtbar.
-- **Screenshot nachziehen**, wenn sich die Oberfläche sichtbar ändert:
+- **Karlsruhe-only view:** the raw dataset also contains the surrounding
+  area/Alsace; BauWatch-KA deliberately filters to `gemeinde = "Karlsruhe"`.
+  For a showcase linked by the city, that's more of a plus — state it
+  transparently.
+- **Currency:** since the city links to it, the site should run stably.
+  Keep the wording consistent everywhere: **checked every 4 h, updated
+  only on changes** (not "updated at least every 4 hours" — that promises
+  a change frequency the data doesn't have). The timestamp is visible in
+  the application.
+- **Update the screenshot** whenever the interface changes visibly:
   `node scripts/screenshot.mjs`.

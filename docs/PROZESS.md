@@ -1,127 +1,131 @@
-# Prozess: Von der Idee zur umsetzungsreifen Anforderung
+# Process: From Idea to Implementation-Ready Requirement
 
-**Status:** akzeptiert
-**Datum:** 2026-07-25 (ersetzt `FEATURE-REFINEMENT.md` vom 2026-07-23)
-**Zweck:** Wie aus einer rohen Idee eine umsetzungsreife, dokumentierte
-Anforderung wird — bevor eine Zeile Code entsteht.
+**Status:** accepted
+**Date:** 2026-07-25 (replaces `FEATURE-REFINEMENT.md` from 2026-07-23)
+**Purpose:** how a raw idea becomes an implementation-ready, documented
+requirement — before a single line of code exists.
 
-Dieser Prozess ist verbindlich für jede nicht-triviale Idee. Ergebnis jeder
-Verfeinerung ist **eine eigene Datei** unter
-[`docs/anforderungen/`](./anforderungen/README.md) (`A-<Nr>-<kurz-titel>.md`).
-Kleine Fixes und rein technische Aufgaben laufen weiter über
-[`BACKLOG.md`](./BACKLOG.md) und brauchen dieses Verfahren nicht.
+This process is binding for every non-trivial idea. The result of every
+refinement is **its own file** under
+[`docs/anforderungen/`](./anforderungen/README.md) (`A-<no.>-<short-title>.md`).
+Small fixes and purely technical tasks still go through
+[`BACKLOG.md`](./BACKLOG.md) and don't need this procedure.
 
-## Leitgedanke
+## Guiding principle
 
-Erst **verstehen und entscheiden**, dann bauen. Die teuerste Zeile Code ist die,
-die man schreibt, bevor die Idee gegen die Randbedingungen des Projekts geprüft
-wurde. Verfeinerung macht die Spannungen sichtbar, spannt den Lösungsraum auf und
-trifft die Entscheidungen bewusst — gemeinsam mit der Ideengeberin.
+**Understand and decide first**, then build. The most expensive line of
+code is the one written before the idea was checked against the project's
+constraints. Refinement makes the tensions visible, maps out the solution
+space, and makes the decisions deliberately — together with the idea's
+originator.
 
-## Anforderung oder Aufgabe? Der Test
+## Requirement or Task? The Test
 
-Bevor der Prozess losgeht: gehört die Sache überhaupt hierher?
+Before the process starts: does this even belong here?
 
-**Anforderung** (`docs/anforderungen/A-…`), wenn *einer* dieser Punkte zutrifft:
-- Das Nutzererlebnis ändert sich sichtbar.
-- Eine Produktentscheidung ist noch offen.
-- Sie steht in Spannung zu einem Nicht-Ziel in [`PRD.md`](./PRD.md).
-- Datenmodell oder Persistenz sind betroffen.
+**Requirement** (`docs/anforderungen/A-…`), if *any one* of these applies:
+- The user experience changes visibly.
+- A product decision is still open.
+- It's in tension with a non-goal in [`PRD.md`](./PRD.md).
+- The data model or persistence is affected.
 
-**Aufgabe** ([`BACKLOG.md`](./BACKLOG.md)), wenn:
-- Das Verhalten bleibt gleich (Refactoring, Tests, Doku, Abhängigkeiten).
-- Es ist ein Fix mit offensichtlicher Lösung.
-- Es ist in einer Sitzung erledigt und niemand wird später fragen, *warum* so.
+**Task** ([`BACKLOG.md`](./BACKLOG.md)), if:
+- Behavior stays the same (refactoring, tests, docs, dependencies).
+- It's a fix with an obvious solution.
+- It's done in one sitting and nobody will later ask *why* it was done that way.
 
-## Zeile oder Datei?
+## Line or file?
 
-Eine **rohe Idee braucht keine Datei**. Solange sie in einem Satz erklärt ist,
-genügt eine Zeile in der [Übersicht](./anforderungen/README.md#übersicht) mit
-Status `💡 Idee`. Erst wenn mehr dazu steht — Optionen, Zahlen, Querverweise,
-getroffene Entscheidungen — bekommt sie eine eigene Datei. Die Anforderungsliste
-soll ausgearbeitete Anforderungen enthalten, keine Sammlung leerer Vorlagen.
+A **raw idea doesn't need a file**. As long as it's explained in one
+sentence, a line in the [overview](./anforderungen/README.md#overview) with
+status `💡 idea` is enough. Only once more is written down — options,
+figures, cross-references, decisions made — does it get its own file. The
+requirements list should hold elaborated requirements, not a collection of
+empty templates.
 
-## Die Schritte
+## The steps
 
-### 1. Idee erfassen
-User Story in einem Satz: **Als \<Rolle\> möchte ich \<Ziel\>, um \<Nutzen\>.**
-Noch keine Lösung, nur das Bedürfnis.
+### 1. Capture the idea
+User story in one sentence: **As a \<role\>, I want \<goal\>, so that \<benefit\>.**
+No solution yet, just the need.
 
-### 2. Bestandsaufnahme im Code
-Was existiert schon und dockt an? Welche Module, Felder, Funktionen sind
-betroffen? Ehrlich benennen, was wiederverwendbar ist und was fehlt. (Beispiel
-Arbeitsweg: Verkehrsmittel-Filter und Nominatim-Suche waren schon da, es fehlte
-nur Weg-Geometrie und Persistenz.)
+### 2. Survey the code
+What already exists and connects here? Which modules, fields, functions are
+affected? Honestly name what's reusable and what's missing. (Example
+"Mein Arbeitsweg"/commute: the mode-of-transport filter and Nominatim search
+already existed, only route geometry and persistence were missing.)
 
-### 3. Spannungen & Randbedingungen sichtbar machen
-Gegen die Projekt-DNA prüfen: [`PRD.md`](./PRD.md) (Ziele/**Nicht-Ziele**), die
-[Entscheidungen](./entscheidungen/README.md), die Fallstricke in `CLAUDE.md`.
-Widerspricht die Idee einem Nicht-Ziel? Das ist kein K.-o., aber es muss
-**explizit** benannt und aufgelöst werden. (Beispiel: „kein Routing" — aufgelöst,
-indem Routing nur als optionale, nutzerausgelöste Anreicherung mit Fallback
-dazukommt, nicht im Kern-Ladepfad.)
+### 3. Surface tensions & constraints
+Check against the project's DNA: [`PRD.md`](./PRD.md) (goals/**non-goals**),
+the [decisions](./entscheidungen/README.md), the pitfalls in `CLAUDE.md`.
+Does the idea contradict a non-goal? That's not a dealbreaker, but it must be
+**explicitly** named and resolved. (Example: "no routing" — resolved by
+adding routing only as an optional, user-triggered enrichment with a
+fallback, not in the core load path.)
 
-### 4. Lösungsraum aufspannen
-**Mehrere** Optionen mit ehrlichen Trade-offs, nicht nur die Lieblingslösung.
-Jede Option gegen die Randbedingungen bewerten. Eine **begründete Empfehlung**
-aussprechen. Bereitschaft, die eigene erste Einschätzung zu revidieren, wenn ein
-Argument sie kippt.
+### 4. Map the solution space
+**Multiple** options with honest trade-offs, not just the preferred
+solution. Evaluate each option against the constraints. State a
+**well-reasoned recommendation**. Be willing to revise your own first
+impression if an argument tips it.
 
-### 5. Entscheidungen gemeinsam treffen
-Offene Weichen klar zur Wahl stellen (Weg-Modell, Persistenz, Pufferbreiten …).
-Entscheidungen samt Begründung festhalten — sie gehören in die
-Anforderungsdatei, damit später nachvollziehbar ist, *warum* so und nicht anders.
+### 5. Make decisions together
+Put open forks clearly up for a choice (route model, persistence, buffer
+widths, …). Record the decisions along with the reasoning — they belong in
+the requirement file, so it's traceable later *why* it was done this way and
+not another.
 
-Ändert die Entscheidung die **Architektur** oder bindet sie das Projekt
-langfristig, gehört sie zusätzlich als
-[ADR](./entscheidungen/README.md) festgehalten.
+If the decision changes the **architecture** or binds the project long-term,
+it additionally belongs as an
+[ADR](./entscheidungen/README.md).
 
-### 6. Voll ausarbeiten
-Die Spezifikation deckt mindestens ab:
-Ziele/Nicht-Ziele · UX-Ablauf & Zustände · Interaktion mit Bestehendem ·
-Datenmodell/Persistenz · externe Abhängigkeiten & Fallback · **Randfälle &
-Fehlerbehandlung** · Barrierefreiheit · Testplan · Doku-/Backlog-Auswirkungen ·
-grobe Umsetzungsschritte.
+### 6. Fully elaborate
+The specification covers at least:
+goals/non-goals · UX flow & states · interaction with existing features ·
+data model/persistence · external dependencies & fallback · **edge cases &
+error handling** · accessibility · test plan · docs/backlog impact ·
+rough implementation steps.
 
-### 7. In die Anforderungsliste aufnehmen
-[`docs/anforderungen/_vorlage.md`](./anforderungen/_vorlage.md) nach
-`docs/anforderungen/A-<Nr>-<kurz-titel>.md` kopieren und ausfüllen, dann in
-[`docs/anforderungen/README.md`](./anforderungen/README.md) die Zeile auf Status
-**✅ bereit** setzen und verlinken. Der Status
-lebt **nur** in dieser Übersicht, nicht in der Anforderungsdatei.
+### 7. Add to the requirements list
+Copy [`docs/anforderungen/_vorlage.md`](./anforderungen/_vorlage.md) to
+`docs/anforderungen/A-<no.>-<short-title>.md` and fill it in, then in
+[`docs/anforderungen/README.md`](./anforderungen/README.md) set the line's
+status to **✅ ready** and link it. The status
+lives **only** in this overview, not in the requirement file.
 
-### 8. Umsetzung erst nach grünem Licht
-Implementiert wird, wenn die Ideengeberin zustimmt — **ein vorgegebener
-Branch-Name ist kein grünes Licht.** Am Ende gegen die **Definition of Done**
-prüfen und den Status in der [Übersicht](./anforderungen/README.md#übersicht) auf
-**🏁 erledigt** setzen. Die Datei bleibt liegen, wo sie ist: sie ist ab dann das
-Protokoll, *warum* es so gelöst wurde.
+### 8. Implementation only after a green light
+Implementation happens once the idea's originator agrees — **a pre-chosen
+branch name is not a green light.** At the end, check against the
+**Definition of Done** and set the status in the
+[overview](./anforderungen/README.md#overview) to
+**🏁 done**. The file stays where it is: from then on it's the
+record of *why* it was solved this way.
 
-## Status-Lebenszyklus
+## Status lifecycle
 
-`💡 Idee` → `✅ bereit` → `🚧 in Umsetzung` → `🏁 erledigt`
-(Abzweig jederzeit: `🧊 zurückgestellt` oder `🗑 verworfen`, jeweils mit Begründung.)
+`💡 idea` → `✅ ready` → `🚧 in progress` → `🏁 done`
+(branch off at any point: `🧊 deferred` or `🗑 discarded`, each with a reason.)
 
-Nummern sind stabil und werden **nie wiederverwendet** — auch nicht bei
-`🗑 verworfen`. Lücken sind erwünscht, kaputte Querverweise nicht.
+Numbers are stable and are **never reused** — not even for
+`🗑 discarded`. Gaps are fine, broken cross-references are not.
 
-## Definition of Ready (Schritt 7 abgeschlossen)
-- User Story steht, Nutzen ist klar.
-- Konflikte mit Nicht-Zielen sind benannt und aufgelöst.
-- Lösungsweg entschieden, Alternativen dokumentiert.
-- Randfälle, Fehlerpfade und Testansatz beschrieben.
-- Betroffene Dateien/Module grob benannt.
+## Definition of Ready (step 7 complete)
+- The user story is set, the benefit is clear.
+- Conflicts with non-goals are named and resolved.
+- The solution path is decided, alternatives documented.
+- Edge cases, error paths, and test approach are described.
+- Affected files/modules are roughly named.
 
-## Definition of Done (Schritt 8 abgeschlossen) — projektspezifisch
-- Umgesetzt gemäß Spec; Nicht-Ziele eingehalten.
-- Tests grün (`npm test`), inkl. neuer Tests für neue reine Logik.
-- `src/lib/` bleibt DOM-/netz-/abhängigkeitsfrei.
-- Barrierefreiheit berücksichtigt (Fokus, ARIA, `prefers-reduced-motion`).
-- Doku aktualisiert (PRD/README/BACKLOG, wo betroffen), Status in der Übersicht
-  gepflegt.
+## Definition of Done (step 8 complete) — project-specific
+- Implemented per spec; non-goals honored.
+- Tests green (`npm test`), including new tests for new pure logic.
+- `src/lib/` stays DOM-/network-/dependency-free.
+- Accessibility considered (focus, ARIA, `prefers-reduced-motion`).
+- Docs updated (PRD/README/BACKLOG, where affected), status maintained in
+  the overview.
 
-## Rollen
-- **Ideengeberin / Produktverantwortung:** bringt die Idee, entscheidet an den
-  Weichen, gibt grünes Licht.
-- **Umsetzung (Entwicklung/Claude):** nimmt Bestand auf, spannt Optionen auf,
-  empfiehlt, arbeitet aus, baut nach Freigabe.
+## Roles
+- **Idea's originator / product ownership:** brings the idea, decides at
+  the forks, gives the green light.
+- **Implementation (development/Claude):** surveys the current state, maps
+  out options, recommends, elaborates, builds after approval.
