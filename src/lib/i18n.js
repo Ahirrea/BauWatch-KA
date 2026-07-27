@@ -52,10 +52,6 @@ export const STRINGS = {
     filterAuto: 'Auto',
     filterOepnv: 'ÖPNV',
 
-    statsAriaLabel: 'Kennzahlen',
-    statVoll: 'Vollsperrungen',
-    statBehinderung: 'Behinderungen',
-
     mapAriaLabel: 'Karte der Baustellen in Karlsruhe',
     listAriaLabel: 'Baustellen-Liste',
 
@@ -135,10 +131,6 @@ export const STRINGS = {
     filterRad: 'Bike',
     filterAuto: 'Car',
     filterOepnv: 'Public transit',
-
-    statsAriaLabel: 'Stats',
-    statVoll: 'Full closures',
-    statBehinderung: 'Obstructions',
 
     mapAriaLabel: 'Map of construction sites in Karlsruhe',
     listAriaLabel: 'Construction-site list',

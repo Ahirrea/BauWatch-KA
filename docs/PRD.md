@@ -53,7 +53,6 @@ expert audience, no administration.
 - Address/radius search (geocoding via Nominatim), 1.5 km radius.
 - Plain-text translation of the `art` codes, cleanup of the HTML fragments in
   `zusatzinfo`, remaining duration as "X days left".
-- Stats bar (count, full closures, obstructions).
 - Responsive down to mobile; keyboard operable; `stand` (snapshot) date
   visible.
 - **Installable to the home screen and usable offline** (PWA): the app

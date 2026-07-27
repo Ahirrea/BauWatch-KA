@@ -237,14 +237,6 @@ function renderList(list) {
   }
 }
 
-function renderStats(list) {
-  // Reine Anzeige: die Sperrgrad-Aufschlüsselung. Die Gesamtzahl steht im
-  // Listenkopf (renderStatus), daher hier bewusst keine „Baustellen"-Kachel.
-  const voll = list.filter((f) => f.properties.ampel === 'voll').length;
-  el('stat-voll').textContent = voll;
-  el('stat-behinderung').textContent = list.length - voll;
-}
-
 function renderStatus(list) {
   const s = STRINGS[state.lang];
   const status = el('list-status');
@@ -266,7 +258,6 @@ function render() {
   const list = currentFiltered();
   renderMarkers(list);
   renderList(list);
-  renderStats(list);
   renderStatus(list);
   // Auswahl beibehalten, falls noch sichtbar
   if (state.selectedId && listItemById.has(state.selectedId)) {

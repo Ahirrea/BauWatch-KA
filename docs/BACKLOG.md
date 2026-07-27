@@ -10,14 +10,14 @@ Suggested labels: `setup`, `data`, `frontend`, `a11y`, `docs`, `enhancement`.
 > [refinement process](./PROZESS.md).
 
 **Status legend:** ✅ done · 🟡 partial / open · ⬜ open
-**As of:** 2026-07-26 (#22 from the desktop UI review done.)
+**As of:** 2026-07-27 (#23 from the desktop UI review done — stats bar removed.)
 
 > Summary: Milestones 1–3 are implemented and the site is live via GitHub
 > Pages (#5). From Milestone 4, #15 and #18 are done; #16 (push/subscription
 > idea) is evaluated (result → requirement A-2), what remains open as an
 > optional item is #17 (.ics export). From the requirements, **A-3 (PWA) is
-> implemented** (#24); from the desktop UI review, #22 is done, #23 remains
-> open. From the showcase pre-review, #25 and #26 are done.
+> implemented** (#24); from the desktop UI review, #22 and #23 are done.
+> From the showcase pre-review, #25 and #26 are done.
 
 ---
 
@@ -244,12 +244,21 @@ Calculated, not estimated (Playwright, one context each with
 all above WCAG AA; in dark mode L(chip) 0.0289 > L(map) 0.0165,
 surface↔map 1.19:1. `CACHE_SHELL` bumped to `v4` (shell file changed).
 
-### ⬜ #23 Vertical space above the map (desktop)
+### ✅ #23 Vertical space above the map (desktop)
 Header + search + three filter groups + stats stack vertically; at laptop
 height (~1080p) the map only starts at ~40% of the viewport. Check a more
 compact arrangement (filters/stats tighter or in one row side by side).
 **DoD:** map visibly taller on 1080p (define a target value); mobile
 layout and focus order unchanged. (Label: `frontend`)
+**Decision: remove the stats bar entirely** rather than compact it. The
+closure-severity breakdown ("full closures"/"obstructions") was requested to
+be dropped outright to reclaim the space, on mobile in particular — not
+reflowed into a tighter row. `docs/PRD.md`'s feature scope no longer lists a
+stats bar. Implementation: `#stats` section removed from `index.html`,
+`renderStats()` removed from `src/app.js`, `.stats`/`.stat` rules removed
+from `src/styles.css`, the now-unused `statsAriaLabel`/`statVoll`/
+`statBehinderung` keys removed from `src/lib/i18n.js`. `CACHE_SHELL` bumped
+to `v7` (shell files changed).
 
 ---
 

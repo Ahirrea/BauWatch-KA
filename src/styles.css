@@ -416,32 +416,6 @@ body {
   background: var(--green);
 }
 
-/* --- Kennzahlen --- */
-.stats {
-  display: flex;
-  gap: 0.75rem;
-  padding: 0.25rem 1rem 0.75rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-/* Kennzahlen sind reine Anzeige (kein Bedien-Control). Bewusst OHNE Karten-/
-   Button-Optik — keine Umrandung, kein Schatten, kein Hover, kein Zeiger-Cursor —
-   damit sie visuell klar von den klickbaren Filter-Segmenten entkoppelt sind. */
-.stat {
-  flex: 1;
-  padding: 0.25rem 0.75rem;
-  text-align: center;
-}
-.stat strong {
-  display: block;
-  font-size: 1.4rem;
-  line-height: 1.1;
-}
-.stat span {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-}
-
 /* --- Karte + Liste --- */
 .content {
   display: flex;
