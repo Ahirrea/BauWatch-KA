@@ -2,6 +2,194 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 28.07.2026, 21:45 — 183 geändert (gesamt 183)
+
+- ✏️ Herrenstraße zw. Karlstraße und Amalienstraße — sonstige Angaben aktualisiert
+- ✏️ Ernst-Frey-Str. 2 (BV Walter-Eucken-Schule) — sonstige Angaben aktualisiert
+- ✏️ Zähringerstraße zwischen Marktplatz und Lammstraße — sonstige Angaben aktualisiert
+- ✏️ Steinkreuzstraße zw. Ringstraße und Hohenbergstraße — sonstige Angaben aktualisiert
+- ✏️ Beiertheimer Allee Haus 2 und Haus 1 bis 9 — sonstige Angaben aktualisiert
+- ✏️ Schinnrainstraße, Raiherwiesenstraße, Hauptbahnstraße, Bleichstraße — sonstige Angaben aktualisiert
+- ✏️ Vorbergstraße zw. Hohenbergstraße/Quellenstraße und Ringstraße — sonstige Angaben aktualisiert
+- ✏️ Silcher Straße, B36/ Eckener Straße, Schlagfeldweg — sonstige Angaben aktualisiert
+- ✏️ Zirkel zw. Ritterstraße und Lammstraße — sonstige Angaben aktualisiert
+- ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
+- ✏️ Hildebrandstr./Oberwaldstr./Reichenbachstr. — sonstige Angaben aktualisiert
+- ✏️ Gebietsausbau Hildebrandstr./Ellmendinger Str./Grenzstr. — sonstige Angaben aktualisiert
+- ✏️ Weiherfeld Gebietsausbau — sonstige Angaben aktualisiert
+- ✏️ Rappenwörtstraße zw. Hammweg u. Pfalzstraße — sonstige Angaben aktualisiert
+- ✏️ Scheibenhardter Weg, Wehrastraße, Wutachstr., Gottlob-Schreber-Weg, Schauinslandstr. — sonstige Angaben aktualisiert
+- ✏️ Vorholzstraße zw. Karlstraße u. Beiertheimer Allee sowie Anliegerfahrbahn Beiertheimer Allee zw. Vorholzstraße u. Südendstraße — sonstige Angaben aktualisiert
+- ✏️ Pfinztalstraße, Kanzlerstraße, Amalienbadstraße, Gritznerstraße — sonstige Angaben aktualisiert
+- ✏️ Gablonzerstraße zw. B36 und Schoemperlenstraße — sonstige Angaben aktualisiert
+- ✏️ Ringstraße bis Steinbügelstraße — sonstige Angaben aktualisiert
+- ✏️ Wolfartsweierer Straße zw. Durlacher Allee und Frühlingstraße — sonstige Angaben aktualisiert
+- ✏️ Dreisamstraße, Neckarplatz, Donaustraße, Neckarstraße — sonstige Angaben aktualisiert
+- ✏️ Hans-Thoma-Straße zwischen Stephanienstraße und Waldstraße, Schlossplatz/Herrenstraße — sonstige Angaben aktualisiert
+- ✏️ An der pfinz zw. "Sauerbrücke"/ Freidrichstraße und Im Gässle — sonstige Angaben aktualisiert
+- ✏️ Wilhelm-Tell-Str., Koelreuterstr, Robert-Blum-Str. Andreas-Hofer-Str., Zeppelinstr. — sonstige Angaben aktualisiert
+- ✏️ Gebietsausbau: Schehenweg, Rosmarinweg, Heideweg, Alter Postweg, Salbeiweg, Flughafenstraße, Weißdornweg, Am Wald, Klammweg — sonstige Angaben aktualisiert
+- ✏️ Markgrafenstraße zwischen Kreuzstraße und Rondellplatz — sonstige Angaben aktualisiert
+- ✏️ Helmholtzstraße zw. Röntgenstraße und Grashofstraße — sonstige Angaben aktualisiert
+- ✏️ Kaiserstraße zw. Kronenstraße und adlerstraße — sonstige Angaben aktualisiert
+- ✏️ Kriegsstraße zw. Ettlinger Straße und Meidingerstraße — sonstige Angaben aktualisiert
+- ✏️ Engesserstr. 2-6/8-12 und Lehmannstr. 1-3 — sonstige Angaben aktualisiert
+- ✏️ Killisfeldstraße/ Gudrunstraße/ Oberwaldstraße/ Dietrichstraße — sonstige Angaben aktualisiert
+- ✏️ Bernhardusplatz — sonstige Angaben aktualisiert
+- ✏️ Erzberger Straße zwischen Rhode-Island-Allee und Kanalweg — sonstige Angaben aktualisiert
+- ✏️ Bonner Straße zw. Siemensallee und Bonner Platz — sonstige Angaben aktualisiert
+- ✏️ Schlossplatz zw. Herrenstraße u. Zirkel — sonstige Angaben aktualisiert
+- ✏️ Raiherwiesenstraße, Blotterstraße, Auer Straße, Karlsruher Allee, Schinnrainstraße, Christofstraße — sonstige Angaben aktualisiert
+- ✏️ Finterstraße zwischen Baumeiserstraße und Ettlinger Straße — sonstige Angaben aktualisiert
+- ✏️ Schopfheimer Straße zwischen Waldshuter Straße und Funkerstraße — sonstige Angaben aktualisiert
+- ✏️ Dornwaldstraße zw. Hans- Pfitzner-Straße und Lortzingstraße — sonstige Angaben aktualisiert
+- ✏️ Dornwaldstr., Anton-Bruckner-Str. — sonstige Angaben aktualisiert
+- ✏️ Neckarstraße, Kniebisstraße, Mainstraße, Schauinslandstraße, Tauberstraße — sonstige Angaben aktualisiert
+- ✏️ Hebelstraße zw. Karl-Friedrich-Straße u. Lammstraße — sonstige Angaben aktualisiert
+- ✏️ Klosestraße zw. Schnetzlerstraße und Ebertstraße — sonstige Angaben aktualisiert
+- ✏️ Gebietsausbau/ Ehlersstr., Kurt-Schumacher-Str., Wilhelm-Kolb-Str.. Stresemannstr — sonstige Angaben aktualisiert
+- ✏️ Hirschstraße zw. Kaiserstraße und Amalienstraße — sonstige Angaben aktualisiert
+- ✏️ Am Entenfang: Rheinstraße zur B 36 Michelinstraße gesperrt, B 10 Südtangente AS 6 Abfahrt von Osten zur B 36 Lameystraße gesperrt, B 36 Lameystraße zur Rheinstraße gesperrt, B 36 Michelinstraße zur B 36 Lameystraße u. Rheinstraße gesperrt — sonstige Angaben aktualisiert
+- ✏️ Lessingstraße Einmündungsbereich Sophienstraße — sonstige Angaben aktualisiert
+- ✏️ Kreuzungsbereich Hirsch- / Vorholzstraße — sonstige Angaben aktualisiert
+- ✏️ Am Alten Bahnhof zw. Mitteltorstraße und Georg-Büchner-Straße — sonstige Angaben aktualisiert
+- ✏️ Breslauer Straße Wohnwege 64 A - I und 66 A -L — sonstige Angaben aktualisiert
+- ✏️ Kriegsstraße zw. Karl-Friedrich-Straße und Lammstraße — sonstige Angaben aktualisiert
+- ✏️ Augartenstraße Höhe Nr. 21 — sonstige Angaben aktualisiert
+- ✏️ Uhlandstraße zw. Gorthestraße und Sophienstraße — sonstige Angaben aktualisiert
+- ✏️ Yorckstraße zw. Wichernstraße u. Yorckplatz — sonstige Angaben aktualisiert
+- ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
+- ✏️ B3/ Badener Straße zw. Breite Gass u. Karlsburgstraße — sonstige Angaben aktualisiert
+- ✏️ Seminarstraße zw. Stephanienstraße u. Bismarckstraße — sonstige Angaben aktualisiert
+- ✏️ Seminarstraße zwischen Stephanienstraße und Bismarckstraße — sonstige Angaben aktualisiert
+- ✏️ Hebelstraße zw. Karl-Friedrich-Straße u. Lammstraße — sonstige Angaben aktualisiert
+- ✏️ Klosestraße zw. Schnetzlerstraße und Gutschstraße — sonstige Angaben aktualisiert
+- ✏️ Herrenstraße zw. Amalienstraße und Blumenstraße — sonstige Angaben aktualisiert
+- ✏️ Adlerstraße zw. Zähringerstraße u. Kaiserstraße — sonstige Angaben aktualisiert
+- ✏️ Beim Wasserturm, Taglöhnergärten — sonstige Angaben aktualisiert
+- ✏️ Scheffelstraße zw. Kaiserallee u. Sophienstraße — sonstige Angaben aktualisiert
+- ✏️ Kurt-Schumacher-Straße zw. Wilhelm-Hausenstein-Allee und Josef-Schofer-Straße — sonstige Angaben aktualisiert
+- ✏️ Gebhardstraße zw. Barbarossaplatz und Welfenstraße — sonstige Angaben aktualisiert
+- ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
+- ✏️ Pfaffstraße / Schinnrainstraße / Raiherwiesenstraße — sonstige Angaben aktualisiert
+- ✏️ Kaiserstraße zw. Hirschstraße und Leopoldstraße, Hirschstraße zw. Akademiestraße und Kaiserstraße — sonstige Angaben aktualisiert
+- ✏️ Posseltstraße Kreuzung Turmbergstraße — sonstige Angaben aktualisiert
+- ✏️ Oosstraße, Donaustraße, Murgstraße, Enzstraße — sonstige Angaben aktualisiert
+- ✏️ Ständehausstraße zw. Ritterstraße u. Herrenstraße, Südlicher Herrenhof zw. Ritterstraße u. Herrenstraße — sonstige Angaben aktualisiert
+- ✏️ Wendtstraße zw. Dragonerstraße und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
+- ✏️ K9659 zw. Durlacher Allee und Bahnhof Durlach — sonstige Angaben aktualisiert
+- ✏️ Zähringer Straße zw. Waldhornstraße und Kronenstraße — sonstige Angaben aktualisiert
+- ✏️ Fritz-Erler-Straße zw. Markgrafenstraße u. Kaiserstraße — sonstige Angaben aktualisiert
+- ✏️ Lammstraße zw. Am Schlossplatz und Zirkel — sonstige Angaben aktualisiert
+- ✏️ Stephanienstraße zwischen Hans-Thoma-Straße und Kaiserplatz — sonstige Angaben aktualisiert
+- ✏️ Ostmarkstraße zwischen Westmarkstraße und Kärntner Straße — sonstige Angaben aktualisiert
+- ✏️ Parkstraße zw. Pastor-Felke-Straße und Kornblumenstraße — sonstige Angaben aktualisiert
+- ✏️ Weltzienstraße zw. Kriegstraße und Wilhelm-Baur-Straße — sonstige Angaben aktualisiert
+- ✏️ Weltzienstraße zw. Wilhelm-Baur-Straße und Kriegstraße — sonstige Angaben aktualisiert
+- ✏️ Bernhard-Lichtenberg-Straße zw. Wilhelm-Leuschner-Straße und Elisabeth-von-Thadden-Straße — sonstige Angaben aktualisiert
+- ✏️ Frühlingstraße zw. Lachnerstraße und Ostendstraße — sonstige Angaben aktualisiert
+- ✏️ Hirschstraße zw. Amalienstraße und Kriegsstraße — sonstige Angaben aktualisiert
+- ✏️ Rüppurrer Straße 104 zw. Tivoli u. Marienstraße — sonstige Angaben aktualisiert
+- ✏️ Sommerstraße zw. Frühligstraße und Gottesauer Straße, Gottesauerstraße zw. Sommerstraße und August-Schwall-Straße — sonstige Angaben aktualisiert
+- ✏️ Nancystraße zw. Zufahrt Reitinstitut und Kußmaulstraße — sonstige Angaben aktualisiert
+- ✏️ Klosestraße zw. Gutschstraße udn Schnetzlerstraße — sonstige Angaben aktualisiert
+- ✏️ Baumeisterstraße zw. Ettlinger Straße und Nowackanlage — sonstige Angaben aktualisiert
+- ✏️ Talstraße zw. Im Brunnenfeld und Henrie-Arnaud-Straße — sonstige Angaben aktualisiert
+- ✏️ Marstallstraße zw. Weiherstraße und B3/ Badener Straße — sonstige Angaben aktualisiert
+- ✏️ Brunnenhausstraße zw. Weiherstraße und Marstallstraße — sonstige Angaben aktualisiert
+- ✏️ Gänsbergstraße zw. Werrenstraße und Wiesentalstraße — sonstige Angaben aktualisiert
+- ✏️ Akademiestraße zw. Douglasstraße und Karlstraße — sonstige Angaben aktualisiert
+- ✏️ Kapellenstraße zw. Ludwig-Erhard-Allee und Durlacher Allee/Am Künstlerhaus zw. Waldhornstraße und Zähringer Straße — sonstige Angaben aktualisiert
+- ✏️ Wickinger Straße zww. VBK Betriebshof und Honsellstraße — sonstige Angaben aktualisiert
+- ✏️ Martin-Schongauer-Weg zw. Albrecht-Altdorf-Weg und Frans-Hals-Weg — sonstige Angaben aktualisiert
+- ✏️ B10/ Kriegsstraße zw. Ritterstraße und Karlstor — sonstige Angaben aktualisiert
+- ✏️ Lärchenweg zw. Fichtenweg und Donauschwabenstraße — sonstige Angaben aktualisiert
+- ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
+- ✏️ Litzenhardtstraße zw. Neue-Anlage-Straße und Martinstraße — sonstige Angaben aktualisiert
+- ✏️ Hinterwiesenweg zw. Koyweg und Jagdstraße — sonstige Angaben aktualisiert
+- ✏️ Forststraße zw. Ernststraße und Weinweg — sonstige Angaben aktualisiert
+- ✏️ Karl-Martin-Graff-Straße zw. Winkler-Dentz-Straße und Gustav-Hofmann-Straße — sonstige Angaben aktualisiert
+- ✏️ Hirschstraße zw. Amalinestraße und Sophienstraße — sonstige Angaben aktualisiert
+- ✏️ L623/ Am Wetterbach zw. Zur Ziegelhütte und Bachstraße — sonstige Angaben aktualisiert
+- ✏️ An der Sandgrube, Am Zinken — sonstige Angaben aktualisiert
+- ✏️ AS Karlsruhe Nord Zufahrt von der Elfmorgenbruchstraße zur A 5 Fahrtrichtung Süd — sonstige Angaben aktualisiert
+- ✏️ Blumentorstraße, Pfinzstraße, Engelbert-Strobl. Str., Neuensteinstr — sonstige Angaben aktualisiert
+- ✏️ Vincentiusstraße zw. Südendstraße und Graf-Rhena-Straße — sonstige Angaben aktualisiert
+- ✏️ Seubertstraße zw. Haitzingerstraße und Durlacher Allee — sonstige Angaben aktualisiert
+- ✏️ Brunnenhausstraße und Imberstraße — sonstige Angaben aktualisiert
+- ✏️ Rheinhafenstraße Kreuzungsbereich Kirschstraße — sonstige Angaben aktualisiert
+- ✏️ B 3 Grötzinger Straße zw. Bergbahnstraße u. Rittnertstraße — sonstige Angaben aktualisiert
+- ✏️ Gymnasiumstraße zw. Rittnertstraße und Turmbergstraße — sonstige Angaben aktualisiert
+- ✏️ Christina-Schneider-Straße 2-24 und Durmersheimer Straßee 66-74 — sonstige Angaben aktualisiert
+- ✏️ Ostmarkstraße zw. Ellmendinger Straße und Grazer Straße — sonstige Angaben aktualisiert
+- ✏️ Westmarkstr./Grenzstr./Brühlstr — sonstige Angaben aktualisiert
+- ✏️ Ellmendinger Straße, Gudrunstraße, Oberwaldstraße, Bilfinger Straße, Dietrichstraße — sonstige Angaben aktualisiert
+- ✏️ Johann-Strauß-Straße zw. Am dm-Platz und Parkplatz Lorzingstraße/ Milliöeckerstraße — sonstige Angaben aktualisiert
+- ✏️ Gebietsausbau Hauptbahnstraße, Raiherwiesenstraße, Bleichstraße, Schinnrainstraße — sonstige Angaben aktualisiert
+- ✏️ Tulpenstraße zw. Göhrenstraße und Kleiststraße — sonstige Angaben aktualisiert
+- ✏️ Hildebrandstraße zw. Reichenbachstraße und Auer Straße — sonstige Angaben aktualisiert
+- ✏️ Eisenlohrstraße zw. Bunsen- u. Kriegsstraße — sonstige Angaben aktualisiert
+- ✏️ Johann-Strauß-Straße zw. Josef-Kraus-Straße und Dornwaldstraße — sonstige Angaben aktualisiert
+- ✏️ Werderstraße 68 — sonstige Angaben aktualisiert
+- ✏️ Waldenburger Straße bis Ende Hirschberger Straße — sonstige Angaben aktualisiert
+- ✏️ Silcherstr., Rabenweg, Buschwiesenweg — sonstige Angaben aktualisiert
+- ✏️ Millöckerstraße — sonstige Angaben aktualisiert
+- ✏️ Kropsburgweg, Madenburgweg, Binsenschlauchweg, Landauer Str., Bienwaldstr. — sonstige Angaben aktualisiert
+- ✏️ Raiherwiesenstraße zw. Schinnrainstraße und Bleichstraße — sonstige Angaben aktualisiert
+- ✏️ Ellmendinger Straße zwiachen Grazer Srraße und Leußlerstraße, Im Haberacker — sonstige Angaben aktualisiert
+- ✏️ Hildebrandstraße zw. Reichenbachstraße und Auer Straße — sonstige Angaben aktualisiert
+- ✏️ Killisfeldstraße, Gudrunstraße, Oberwaldstraße, Dietrichstraße — sonstige Angaben aktualisiert
+- ✏️ Ellmendinger Straße, Ostmarkstraße, Im Säuterich, Leutschauer Straße, Ersinger Straße — sonstige Angaben aktualisiert
+- ✏️ Ersinger Straße — sonstige Angaben aktualisiert
+- ✏️ Auf den Lohn, Ersinger Straße — sonstige Angaben aktualisiert
+- ✏️ Raiherwiesenstraße zw. Pfaffstraße und Bleichstraße — sonstige Angaben aktualisiert
+- ✏️ Kaiserstraße zw. Kreuzstraße und Kronenstraße — sonstige Angaben aktualisiert
+- ✏️ Kaiserstraße zw. Karlstraße und Ritterstraße — sonstige Angaben aktualisiert
+- ✏️ Redtenbacher Straße zw. Mathystraße und Gartenstraße — sonstige Angaben aktualisiert
+- ✏️ B36/ Michelinstraße zw. Franz-Abt-Straße und Entenfang — sonstige Angaben aktualisiert
+- ✏️ Humboldstraße zw. Gerwigstraße und Essenweinstraße — sonstige Angaben aktualisiert
+- ✏️ Roonstraße zw. Hirschstraße und Jollystraße — sonstige Angaben aktualisiert
+- ✏️ Sonntagstraße zw. Jollystraße und Mathystraße — sonstige Angaben aktualisiert
+- ✏️ Kaiserstraße zw. Ritterstraße und Herrenstraße — sonstige Angaben aktualisiert
+- ✏️ Kaiserstraße zw. Kronenstraße und Adlerstraße — sonstige Angaben aktualisiert
+- ✏️ Ritterstraße zw. Am Schlossplatz und Bankhof — sonstige Angaben aktualisiert
+- ✏️ Essenweinstraße zw. Sternbergstraße und Humboldtstraße — sonstige Angaben aktualisiert
+- ✏️ Zentralhof — sonstige Angaben aktualisiert
+- ✏️ Steinbügelstraße zw. Wettersteinstraße und Hörgelstraße — sonstige Angaben aktualisiert
+- ✏️ Ispringer Straße zw. Wilferdinger Straße und Ellmendinger Straße — sonstige Angaben aktualisiert
+- ✏️ Gottesauer Str.3-25 (Nord)&6-14 (Süd);Ostendstr.1-10;Lachnerstr. 2-20 (West)&13; — sonstige Angaben aktualisiert
+- ✏️ Vorholzstraße zw. Beiertheimer Allee und Karlstraße — sonstige Angaben aktualisiert
+- ✏️ Koellestraße zw. Hohleichweg und Fettweisstraße — sonstige Angaben aktualisiert
+- ✏️ Rheinhafenstraße zw. Daxlanderstraße und Südliche Uferstraße — sonstige Angaben aktualisiert
+- ✏️ Rußweg zw. Langenbruchweg und Mastweidenweg — sonstige Angaben aktualisiert
+- ✏️ Vorholzstraße zw. Beiertheimer Allee und Karlstraße — sonstige Angaben aktualisiert
+- ✏️ Kriegsstraße (oberirdisch) zw. Ettlinger Straße und Meidingerstraße — sonstige Angaben aktualisiert
+- ✏️ K9659 Höhe DM — sonstige Angaben aktualisiert
+- ✏️ Schlesier Straße zw. Westmarkstraße und Memeler Straße — sonstige Angaben aktualisiert
+- ✏️ Lärchenweg zw. Zehntwaldstraße und Donauschwabenstraße — sonstige Angaben aktualisiert
+- ✏️ Zehntwaldstraße zw. Föhrenweg und Kiefernweg — sonstige Angaben aktualisiert
+- ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
+- ✏️ Rastatter Straße 45+62, Tulpenstraße 1-4 — sonstige Angaben aktualisiert
+- ✏️ Zweibrückener Straße zw. Rehbuckel und Ebersteinstraße — sonstige Angaben aktualisiert
+- ✏️ Lebrechtstr. 47a — sonstige Angaben aktualisiert
+- ✏️ Basler-Tor-Straße, Imberstraße, Breite Straße — sonstige Angaben aktualisiert
+- ✏️ Moningerstraße zw. Kriegstraßem und Sophienstraße — sonstige Angaben aktualisiert
+- ✏️ Belfortstraße zw. Reinhold-Frank-Straße und Leopoldstraße — sonstige Angaben aktualisiert
+- ✏️ Zirkel zw. Herrenstraße u. Ritterstraße — sonstige Angaben aktualisiert
+- ✏️ Rintheimer Hauptstraße zw. Huttenstraße und Alter Rathausplatz — sonstige Angaben aktualisiert
+- ✏️ Glogauer Straße zw. Kösliner Straße und Beuthener Straße — sonstige Angaben aktualisiert
+- ✏️ Waldstadt — sonstige Angaben aktualisiert
+- ✏️ Striederstraße zw. Berckmüllerstraße und Ostring — sonstige Angaben aktualisiert
+- ✏️ Haid-und-Neu-Straße zw. Hirtenweg und Karlsruher Straße — sonstige Angaben aktualisiert
+- ✏️ Karlstraße zw.Kaiserstraße und Akademiestraße — sonstige Angaben aktualisiert
+- ✏️ Südendstraße zw. Brauerstraße und Boeckhstraße — sonstige Angaben aktualisiert
+- ✏️ Moosalbstraße zw. Frauenalber Straße und Spessarter Straße — sonstige Angaben aktualisiert
+- ✏️ Veilchenstraße zw. Gerwigstraße und Essenweinstraße — sonstige Angaben aktualisiert
+- ✏️ Pforzheimer Straße und  Waldshuter Straße — sonstige Angaben aktualisiert
+- ✏️ Busenbacher Str. 13 — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 28.07.2026, 19:41 — 2 geändert (gesamt 183)
 
 - ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert

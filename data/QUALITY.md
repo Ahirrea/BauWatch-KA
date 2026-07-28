@@ -1,6 +1,6 @@
 # Datenqualitäts-Report
 
-_Automatisch beim Daten-Build erzeugt. Stand: 28.07.2026, 19:41._
+_Automatisch beim Daten-Build erzeugt. Stand: 28.07.2026, 21:45._
 
 ## Pipeline
 - Rohdaten: **761** Features
@@ -37,3 +37,7 @@ _Automatisch beim Daten-Build erzeugt. Stand: 28.07.2026, 19:41._
 - **Koordinaten außerhalb des Karlsruher Rahmens:** keine
 
 - **Vorgänge ohne Vorgangsnummer (Dedup-Fallback):** keine
+
+- **Vorgänge mit Fläche (properties.area):** 183 von 183
+
+- **Vorgänge ohne Fläche (nur Punkt-Geometrie):** keine
