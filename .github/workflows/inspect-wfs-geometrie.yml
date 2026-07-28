@@ -1,0 +1,27 @@
+# TEMPORÄR — Schritt 10 aus docs/anforderungen/A-7-baustellenflaechen.md.
+# Nach der Auswertung wird diese Datei zusammen mit dem Skript wieder entfernt.
+# Nur lesend: kein Commit, kein Push, contents: read.
+name: WFS-Geometrie inspizieren (temporär)
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+
+      - name: Node einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      # Wie das Daten-Build: nur die abhängigkeitsfreien Module aus src/lib/,
+      # kein npm install nötig.
+      - name: Geometrien inspizieren
+        run: node scripts/inspect-wfs-geometrie.mjs
