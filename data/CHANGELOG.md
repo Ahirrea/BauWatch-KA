@@ -2,6 +2,16 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 28.07.2026, 12:42 — 2 neu, 3 geändert (gesamt 183)
+
+- ➕ **Schopfheimer Straße zwischen Waldshuter Straße und Funkerstraße**
+- ➕ **Moosalbstraße zw. Frauenalber Straße und Spessarter Straße**
+- ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
+- ✏️ Raiherwiesenstraße zw. Pfaffstraße und Bleichstraße — sonstige Angaben aktualisiert
+- ✏️ Zentralhof — Sperrgrad: teil → gering
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 28.07.2026, 05:19 — 2 neu, 4 entfernt, 3 geändert (gesamt 181)
 
 - ➕ **AS Karlsruhe Nord Zufahrt von der Elfmorgenbruchstraße zur A 5 Fahrtrichtung Süd**
