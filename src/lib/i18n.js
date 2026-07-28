@@ -31,6 +31,15 @@ export const STRINGS = {
     searchStatusError: 'Adresssuche gerade nicht möglich. Bitte später erneut versuchen.',
     searchOfflineHint: 'Adresssuche braucht Internet.',
 
+    // Colour-scheme switch (A-8). The buttons are icon-only, so these strings
+    // are their accessible names (aria-label) and tooltips (title) — not
+    // visible labels. Wording says what the button *does*, since a lone glyph
+    // gives a screen-reader user nothing to go on.
+    themeToggleAriaLabel: 'Farbschema',
+    themeSystem: 'Systemvorgabe folgen',
+    themeLight: 'Helles Farbschema',
+    themeDark: 'Dunkles Farbschema',
+
     filtersAriaLabel: 'Filter',
     filterZeitraumAriaLabel: 'Zeitraum',
     filterZeitraumLabel: 'Zeitraum',
@@ -110,6 +119,11 @@ export const STRINGS = {
     searchStatusResult: '{km} km radius around “{label}.”',
     searchStatusError: 'Address search is currently unavailable. Please try again later.',
     searchOfflineHint: 'Address search needs an internet connection.',
+
+    themeToggleAriaLabel: 'Colour scheme',
+    themeSystem: 'Follow the system setting',
+    themeLight: 'Light colour scheme',
+    themeDark: 'Dark colour scheme',
 
     filtersAriaLabel: 'Filters',
     filterZeitraumAriaLabel: 'Time period',

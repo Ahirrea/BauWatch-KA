@@ -1,6 +1,14 @@
-/* BauWatch-KA — Styles. Mobile-first, systemabhängiges Farbschema, WCAG-AA. */
+/* BauWatch-KA — Styles. Mobile-first, umschaltbares Farbschema (Systemvorgabe
+   als Voreinstellung), WCAG-AA. */
 
 :root {
+  /* Sagt dem Browser, in welchem Schema die Seite steckt, damit sein eigenes
+     Beiwerk mitkommt: Formularfelder, Scrollbalken, Textauswahl. „light dark"
+     = der Systemvorgabe folgen; die beiden data-theme-Regeln unten nageln es
+     auf eine der beiden Möglichkeiten fest (A-8). Ohne das bliebe ein
+     Eingabefeld hell gerendert, obwohl die Nutzerin dunkel gewählt hat. */
+  color-scheme: light dark;
+
   --bg: #f7f7f5;
   --surface: #ffffff;
   --text: #1a1a1a;
@@ -34,8 +42,22 @@
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
 }
 
+/* --- Dunkle Palette (A-8) ---
+   Sie muss auf ZWEI Wegen erreichbar sein: über die Systemvorgabe (niemand hat
+   etwas gewählt) und über die ausdrückliche Wahl am Umschalter. CSS kann einen
+   Deklarationsblock nicht zwischen einer Media Query und einem gewöhnlichen
+   Selektor teilen, deshalb steht die Palette zweimal da — Wort für Wort gleich.
+   `scripts/test-theme.mjs` vergleicht beide Blöcke und wird rot, sobald einer
+   der beiden einen Wert oder einen Token verliert. Nicht „aufräumen", indem
+   einer davon gelöscht wird: ohne die Media Query verliert die Seite das
+   Dunkelschema für alle, die nie etwas gewählt haben; ohne den
+   [data-theme="dark"]-Block greift die ausdrückliche Wahl nicht.
+
+   Das :not([data-theme="light"]) ist der Kern der Umschaltung: wer bei
+   dunklem System ausdrücklich hell wählt, fällt hier heraus und behält die
+   helle Palette aus :root. */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --bg: #16181c;
     --surface: #1f2329;
     --text: #f0f1f3;
@@ -54,6 +76,35 @@
     --green: #5fce88;
     --shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
   }
+}
+:root[data-theme="dark"] {
+  --bg: #16181c;
+  --surface: #1f2329;
+  --text: #f0f1f3;
+  --text-muted: #a8adb5;
+  --border: #333941;
+  --accent: #6ba7d6;
+  --accent-contrast: #10131a;
+  --focus: #8cc0ec;
+  /* Heller als --surface (#1f2329) → der Chip liegt sichtbar auf der Karte.
+     Eigener, hellerer Rand, weil --border (#333941) hier zu nah am
+     Chip-Ton läge und die Kante vermatschen würde. */
+  --chip: #2a3038;
+  --chip-border: #434a54;
+  --red: #ff6a5e;
+  --amber: #ffb02e;
+  --green: #5fce88;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* Ausdrückliche Wahl: Schema festnageln, nicht mehr der Systemvorgabe folgen.
+   Getrennt von den Token-Blöcken oben, damit deren Drift-Vergleich nur
+   Farbwerte sieht. */
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
 }
 
 * {
@@ -156,6 +207,40 @@ body {
 .lang-toggle .segments button {
   font-size: 0.85rem;
   padding: 0.35rem 0.6rem;
+}
+
+/* --- Farbschema-Umschalter (A-8) ---
+   Dieselbe .segments-Mechanik wie Sprachumschalter und Filter, aber
+   ausschließlich mit Zeichen statt Text: der Header ist waagerecht knapp
+   (BACKLOG #23), und drei sichtbare Wörter mehr hätten ihn auf dem Handy in
+   eine zweite Zeile gedrückt. Die Bedeutung hängt deshalb an aria-label und
+   title (aus i18n.js), nicht an einem sichtbaren Wort — die Zeichen selbst
+   sind aria-hidden. Welcher Knopf gilt, zeigt wie überall .is-active. */
+.theme-toggle {
+  display: flex;
+}
+.theme-toggle .segments button {
+  /* Feste Breite, damit die drei Zeichen trotz unterschiedlicher Laufweite
+     gleich große Ziele bleiben. */
+  justify-content: center;
+  min-width: 2.25rem;
+  padding: 0.35rem 0.4rem;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+/* Die Zeichen (◐ ☀ ☾) fallen in manchen Systemschriften kleiner aus als der
+   umgebende Text — hier auf eine gemeinsame Größe gebracht. */
+.theme-toggle .segments button > span {
+  font-size: 1.05em;
+}
+
+/* Zwei Controls im rechten Header-Bereich: sie gehören zusammen (beides
+   Darstellung, kein Inhalt) und sollen gemeinsam umbrechen, nicht einzeln. */
+.header-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.5rem;
 }
 
 /* --- "Was ist neu?"-Dialog (A-6) --- */

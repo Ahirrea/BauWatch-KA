@@ -30,6 +30,7 @@ linked — that way the folder doesn't fill up with empty templates.
 | A-5 | [Language switch (German ⇄ English)](./A-5-sprachumschalter.md) | 🏁 done | A DE/EN toggle for the map page itself — German stays the default, legal pages/PWA identity/raw dataset text stay German-only. |
 | A-6 | ["What's new?" feed](./A-6-was-ist-neu-feed.md) | 🏁 done | A modal on the map page showing construction-site changes from the last 30 days, without personalization or a new `localStorage` key — no page reload, no login, complementary to A-2's static feed. |
 | A-7 | [Construction-site areas on the map](./A-7-baustellenflaechen.md) | ✅ ready | Shows each closure's/site's actual spatial extent as a shaded polygon on the map, alongside the existing point marker, instead of discarding the WFS's second geometry. |
+| A-8 | [Colour-scheme switch (light / dark)](./A-8-farbschema-umschalter.md) | 🏁 done | A system/light/dark toggle for the map page — the existing dark palette becomes choosable instead of only system-driven; "follow the system setting" stays the default and stores nothing. |
 
 ## Adding a new requirement
 

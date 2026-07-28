@@ -137,3 +137,12 @@ Everything else is secondary.
   city's own German-language content and isn't translated either. Auto-
   detecting the browser/OS language is deliberately not done — German is
   always the default, switched manually.
+- **Appearance:** two palettes, light and dark, both WCAG AA. The default is
+  the **system setting** (`prefers-color-scheme`), and on the map page a
+  three-state switch (system / light / dark,
+  [A-8](./anforderungen/A-8-farbschema-umschalter.md)) lets a visitor
+  override it; that choice is persisted anonymously
+  (`localStorage`, see [ADR-004](./entscheidungen/ADR-004-farbschema-zweiter-localstorage-schluessel.md))
+  and **nothing is stored while the system default is in effect**. The legal
+  pages follow the system setting only — they stay script-free and so can't
+  read the choice.

@@ -55,8 +55,9 @@
           <li>
             <strong>keine eigene Speicherung personenbezogener Daten</strong> —
             es gibt keine Datenbank, in die etwas geschrieben werden könnte
-            (die einzige Ausnahme: eine anonyme Spracheinstellung auf Ihrem
-            Gerät, siehe „Speicherung auf Ihrem Gerät" unten)
+            (die einzige Ausnahme: zwei anonyme Anzeige-Einstellungen auf
+            Ihrem Gerät — gewählte Sprache und gewähltes Farbschema, siehe
+            „Speicherung auf Ihrem Gerät" unten)
           </li>
           <li><strong>keine Weitergabe</strong> von Daten über die unten genannten Abrufe hinaus</li>
         </ul>
@@ -152,14 +153,31 @@
           Zusätzlich speichert die Seite Ihre gewählte Sprache (Deutsch oder
           Englisch) im <code>localStorage</code> Ihres Browsers, Schlüssel
           <code>bauwatch.sprache</code>, Wert <code>de</code> oder
-          <code>en</code>. Das ist die einzige eigene Speicherung dieser Art:
-          ein anonymer Zwei-Werte-Schalter, keine Kennung, keine
-          personenbezogene Angabe. Er sorgt lediglich dafür, dass Ihre
+          <code>en</code>. Er sorgt lediglich dafür, dass Ihre
           Sprachwahl einen Seitenaufruf überdauert. Auch dieser Wert bleibt
           auf Ihrem Gerät, wird nicht übertragen und lässt sich über dieselben
           Browser-Einstellungen entfernen. Ist der Speicher blockiert oder
           voll, funktioniert die Umschaltung trotzdem — nur eben nicht über
           einen Seitenaufruf hinaus.
+        </p>
+        <p>
+          Auf dieselbe Weise wird Ihr gewähltes Farbschema festgehalten,
+          Schlüssel <code>bauwatch.theme</code>, Wert <code>light</code> oder
+          <code>dark</code>. Solange Sie am Umschalter die Einstellung
+          <code>system</code> („Systemvorgabe folgen") stehen lassen — die
+          Voreinstellung —, wird dafür <em>nichts</em> gespeichert; der
+          Schlüssel entsteht erst, wenn Sie ausdrücklich hell oder dunkel
+          wählen, und verschwindet wieder, sobald Sie zur Systemvorgabe
+          zurückkehren. Für alles Übrige gilt das Gleiche wie eine Zeile
+          höher: auf Ihrem Gerät, nicht übertragen, jederzeit löschbar, und
+          bei blockiertem Speicher wirkt die Umschaltung trotzdem — nur nicht
+          über den Seitenaufruf hinaus.
+        </p>
+        <p>
+          Mehr als diese zwei Schlüssel sind es nicht. Beide sind anonyme
+          Anzeige-Einstellungen mit einer Handvoll möglicher Werte: keine
+          Kennung, keine personenbezogene Angabe, nichts, woraus sich auf Ihre
+          Person schließen ließe.
         </p>
 
         <h2>Rechtsgrundlage</h2>

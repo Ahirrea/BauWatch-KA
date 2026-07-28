@@ -13,11 +13,34 @@
     <!-- PWA: installierbar & offline nutzbar (siehe docs/anforderungen/A-3-…).
          Alle Pfade relativ — die Seite liegt unter dem Sub-Pfad /BauWatch-KA/. -->
     <link rel="manifest" href="manifest.webmanifest" />
-    <!-- Zwei theme-color-Angaben: sonst blitzt die Systemleiste im Dunkelmodus hell. -->
-    <meta name="theme-color" content="#1b4b73" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#16181c" media="(prefers-color-scheme: dark)" />
+    <!-- Zwei theme-color-Angaben: sonst blitzt die Systemleiste im Dunkelmodus hell.
+         data-scheme sagt app.js, welche der beiden welche ist — bei einer
+         ausdrücklichen Wahl am Umschalter (A-8) folgt die Systemleiste nicht
+         mehr der Systemvorgabe, sondern der Wahl. -->
+    <meta name="theme-color" content="#1b4b73" media="(prefers-color-scheme: light)" data-scheme="light" />
+    <meta name="theme-color" content="#16181c" media="(prefers-color-scheme: dark)" data-scheme="dark" />
     <!-- iOS ignoriert Manifest-Icons. -->
     <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+
+    <!-- Farbschema-Wahl (A-8) — bewusst INLINE und bewusst vor dem Stylesheet.
+         app.js ist ein Modul und läuft damit erst nach dem ersten Aufbau der
+         Seite: wer dunkel gewählt hat, bekäme sonst für einen Moment die helle
+         Fassung zu sehen. Diese drei Zeilen setzen nur das Attribut, an dem
+         styles.css die Palette festmacht. Schlägt der Zugriff auf den Speicher
+         fehl (Privatmodus, blockiert), bleibt das Attribut weg und die Seite
+         folgt wie bisher der Systemvorgabe — kein Fehlerfall, nur der
+         Ausgangszustand. Der Schlüssel ist derselbe wie THEME_KEY in
+         src/app.js; scripts/test-theme.mjs vergleicht beide. -->
+    <script>
+      try {
+        var bauwatchTheme = localStorage.getItem('bauwatch.theme');
+        if (bauwatchTheme === 'light' || bauwatchTheme === 'dark') {
+          document.documentElement.dataset.theme = bauwatchTheme;
+        }
+      } catch (e) {
+        /* Speicher nicht verfügbar — Systemvorgabe gilt weiter. */
+      }
+    </script>
 
     <!-- Leaflet (lokal eingebunden, kein CDN — siehe vendor/leaflet/) -->
     <link rel="stylesheet" href="vendor/leaflet/leaflet.css" />
@@ -41,15 +64,67 @@
         >
           Was ist neu?
         </button>
-        <!-- Sprachumschalter (A-5). Reuses the filter segmented-button pattern
-             (role="group", aria-pressed, .is-active) but is wired separately
-             from wireFilters(), since it drives document language, not
-             state.filters. "Deutsch"/"English" are language autonyms — they
-             stay as-is regardless of the active language. -->
-        <div class="lang-toggle" role="group" aria-label="Sprache / Language" data-lang-toggle>
-          <div class="segments">
-            <button type="button" data-lang="de" aria-pressed="true" class="is-active">Deutsch</button>
-            <button type="button" data-lang="en" aria-pressed="false">English</button>
+        <div class="header-controls">
+          <!-- Farbschema-Umschalter (A-8). Dritte Instanz desselben
+               segmented-button-Musters, aber nur mit Zeichen: ◐ = Systemvorgabe
+               folgen, ☀ = hell, ☾ = dunkel. Die Zeichen sind aria-hidden, den
+               Namen liefert aria-label (title zusätzlich als Tooltip fürs
+               Sehen) — sonst läse ein Screenreader „Kreis links gefüllt" vor.
+               „Systemvorgabe folgen" steht bewusst voran und ist die
+               Voreinstellung: ohne Wahl verhält sich die Seite exakt wie
+               vorher. -->
+          <div
+            class="theme-toggle"
+            role="group"
+            aria-label="Farbschema"
+            data-i18n-attr="aria-label:themeToggleAriaLabel"
+            data-theme-toggle
+          >
+            <div class="segments">
+              <button
+                type="button"
+                data-theme-value="system"
+                aria-pressed="true"
+                class="is-active"
+                aria-label="Systemvorgabe folgen"
+                title="Systemvorgabe folgen"
+                data-i18n-attr="aria-label:themeSystem,title:themeSystem"
+              >
+                <span aria-hidden="true">◐</span>
+              </button>
+              <button
+                type="button"
+                data-theme-value="light"
+                aria-pressed="false"
+                aria-label="Helles Farbschema"
+                title="Helles Farbschema"
+                data-i18n-attr="aria-label:themeLight,title:themeLight"
+              >
+                <span aria-hidden="true">☀︎</span>
+              </button>
+              <button
+                type="button"
+                data-theme-value="dark"
+                aria-pressed="false"
+                aria-label="Dunkles Farbschema"
+                title="Dunkles Farbschema"
+                data-i18n-attr="aria-label:themeDark,title:themeDark"
+              >
+                <span aria-hidden="true">☾</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Sprachumschalter (A-5). Reuses the filter segmented-button pattern
+               (role="group", aria-pressed, .is-active) but is wired separately
+               from wireFilters(), since it drives document language, not
+               state.filters. "Deutsch"/"English" are language autonyms — they
+               stay as-is regardless of the active language. -->
+          <div class="lang-toggle" role="group" aria-label="Sprache / Language" data-lang-toggle>
+            <div class="segments">
+              <button type="button" data-lang="de" aria-pressed="true" class="is-active">Deutsch</button>
+              <button type="button" data-lang="en" aria-pressed="false">English</button>
+            </div>
           </div>
         </div>
       </div>
