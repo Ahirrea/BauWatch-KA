@@ -3,6 +3,7 @@
 
 import { restdauer, formatRange } from './lib/format.js';
 import { DEFAULT_LANG, STRINGS, AMPEL_LABEL, VM_LABEL, t } from './lib/i18n.js';
+import { filterChangelogEntries } from './lib/changelog.js';
 
 // Leaflet wird global über das <script>-Tag geladen.
 /* global L */
@@ -728,7 +729,12 @@ async function loadChangelog() {
     const res = await fetch(CHANGELOG_URL, { cache: 'no-cache' });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
-    changelogEntries = Array.isArray(data) ? data : [];
+    // filterChangelogEntries() drops changes that carry only GENERIC_CHANGE_NOTE
+    // and any run left empty by that (#28) — the literal lives in
+    // src/lib/changelog.js, nowhere else. Current builds already write the file
+    // that way; this covers the entries still in the 30-day window from before
+    // — and a copy an installed Service Worker cached earlier.
+    changelogEntries = filterChangelogEntries(Array.isArray(data) ? data : []);
   } catch (err) {
     console.error(err);
     changelogEntries = 'error';

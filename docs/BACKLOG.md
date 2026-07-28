@@ -10,7 +10,8 @@ Suggested labels: `setup`, `data`, `frontend`, `a11y`, `docs`, `enhancement`.
 > [refinement process](./PROZESS.md).
 
 **Status legend:** ✅ done · 🟡 partial / open · ⬜ open
-**As of:** 2026-07-28 (#27, unstyled Leaflet chrome in dark mode, done.)
+**As of:** 2026-07-28 (#28, generic-only changes out of the "What's new?" feed,
+done.)
 
 > Summary: Milestones 1–3 are implemented and the site is live via GitHub
 > Pages (#5). From Milestone 4, #15 and #18 are done; #16 (push/subscription
@@ -18,7 +19,7 @@ Suggested labels: `setup`, `data`, `frontend`, `a11y`, `docs`, `enhancement`.
 > optional item is #17 (.ics export). From the requirements, **A-3 (PWA) is
 > implemented** (#24); from the desktop UI review, #22 and #23 are done.
 > From the showcase pre-review, #25 and #26 are done. #27 (a follow-up
-> desktop UI fix) is done.
+> desktop UI fix) and #28 (a follow-up on the "What's new?" feed) are done.
 
 ---
 
@@ -286,6 +287,39 @@ to `v8` (shell file changed). (Label: `frontend`)
 
 ---
 
+## Follow-up on the "What's new?" feed (2026-07-28)
+
+### ✅ #28 Keep generic-only changes out of the "What's new?" feed
+A screenshot of the feed showed three of five items reading
+"<Straße> — sonstige Angaben aktualisiert". That's the fallback note for a case
+that changed only outside the observed fields (coordinates, `art`, mode of
+transport): it says *something* is different but not what, so it can't answer
+the app's actual question ("does this affect me?"). Whole runs consisted of
+nothing else, and the noise pushed the items that do carry information out of
+view. `data/CHANGELOG.md` is the opposite case — there the note belongs, it's
+the record of what the data did.
+**DoD:** no item with the generic note appears in the feed any more, runs left
+empty by that show no bare timestamp heading, and `data/CHANGELOG.md` still
+records the change. — **done:** the literal and the filter live in the new
+shared, pure module `src/lib/changelog.js` (`GENERIC_CHANGE_NOTE`,
+`meaningfulChanges`, `cleanChangelogEntry`, `hasFeedContent`,
+`filterChangelogEntries`), imported by **both** sides so the string exists once:
+`changelogEntry()` in `scripts/diff-data.mjs` no longer emits such a change,
+`build-data.mjs` skips an entry that comes out empty, and `src/app.js` filters
+on read as well — which is what cleans the entries already committed inside the
+30-day window and any copy an installed service worker still holds. The
+parity between `data/CHANGELOG.md` and `data/changelog.json` is **directional**
+from now on (feed ⊆ Markdown); `scripts/test-changelog-feed.mjs` was extended
+accordingly (writer side, reader side, mixed case, idempotency, malformed
+entries, plus static checks that both sides are wired up and that `app.js`
+carries no second copy of the literal). `data/changelog.json` cleaned in the
+same pass. `CACHE_SHELL` bumped to `v10` (new shell file `src/lib/changelog.js`,
+`src/app.js` changed). Follow-up on requirement
+[A-6](./anforderungen/A-6-was-ist-neu-feed.md), which stays `🏁 done`.
+(Label: `frontend`, `data`)
+
+---
+
 ## Implementing elaborated requirements
 
 Tasks that technically implement an elaborated requirement from
@@ -365,7 +399,9 @@ untouched. (Label: `docs`, `frontend`)
   `data/CHANGELOG.md` (new/removed/changed with field details), a short
   summary in the commit message and the Action job summary. Every changed
   case carries a short note on what changed — for changes outside the
-  observed fields, a generic notice ("other details updated").
+  observed fields, a generic notice ("other details updated"). That generic
+  notice stays in `data/CHANGELOG.md` only; the user-facing "What's new?"
+  feed leaves it out (#28).
 - **WFS robustness:** several request variants with fallback; detects XML
   errors despite HTTP 200; CRS auto-detection guards against a wrong
   transform.

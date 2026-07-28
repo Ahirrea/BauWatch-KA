@@ -3,10 +3,12 @@
 // (exit 0 = ok, 1 = failure)
 //
 // Pure Node, NO network, no browser. Covers:
-//   1. changelogEntry() carries the same added/removed/changed content as
+//   1. changelogEntry() carries the added/removed/changed content of
 //      summaryMarkdown() for the same diff — no drift between data/CHANGELOG.md
 //      and data/changelog.json (same anti-drift discipline as
-//      test-attribution.mjs/test-rechtstexte.mjs).
+//      test-attribution.mjs/test-rechtstexte.mjs). Since #28 the parity is
+//      *directional*: the one thing the Markdown keeps and the feed drops is
+//      the generic "sonstige Angaben aktualisiert" note.
 //   2. A firstFill run collapses to one synthetic entry, not per-item noise.
 //   3. pruneChangelogEntries() drops entries older than the 30-day window
 //      and keeps the rest.
@@ -15,6 +17,10 @@
 //      into the same real-change branch as prependChangelog() — a static
 //      source check, since build-data.mjs needs network access to run
 //      end-to-end and can't be exercised here.
+//   6. #28: generic-only changes never reach the feed — not from the writer
+//      (changelogEntry / build-data.mjs) and not from the reader (src/lib/
+//      changelog.js, which src/app.js applies to already-committed entries),
+//      and a run left empty by that produces no bare timestamp heading.
 
 import { readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
@@ -26,6 +32,13 @@ import {
   pruneChangelogEntries,
   CHANGELOG_WINDOW_DAYS,
 } from './diff-data.mjs';
+import {
+  GENERIC_CHANGE_NOTE,
+  meaningfulChanges,
+  cleanChangelogEntry,
+  hasFeedContent,
+  filterChangelogEntries,
+} from '../src/lib/changelog.js';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -72,15 +85,71 @@ check('added titles match summaryMarkdown 1:1', entry.hinzugefuegt.every((titel)
 check('removed titles match summaryMarkdown 1:1', entry.entfernt.every((titel) => md.includes(titel)));
 check('changed titles match summaryMarkdown 1:1', entry.geaendert.every((c) => md.includes(c.titel)));
 
-// Unwatched-field change still gets a note, same fallback as summaryMarkdown.
+// --- 1b. #28: the generic note is the one deliberate divergence -------------
+// An unwatched-field change (here: coordinates only) still gets its generic note
+// in data/CHANGELOG.md — it IS a real data change and belongs in the record —
+// but says nothing to a resident, so it must not appear in the feed at all.
 const before = mk('A', 'X', '2026-07-25');
 const after = { ...before, geometry: { type: 'Point', coordinates: [8.41, 49.01] } };
 const coordDiff = diffFeatures([before], [after]);
 const coordEntry = changelogEntry(coordDiff, stand, 1);
 check(
-  'unwatched-field change still gets a generic note (mirrors summaryMarkdown)',
-  coordEntry.geaendert[0].changes.includes('sonstige Angaben aktualisiert')
+  'data/CHANGELOG.md keeps the generic note for an unwatched-field change',
+  summaryMarkdown(coordDiff, 1, 'Test').includes(GENERIC_CHANGE_NOTE)
 );
+check(
+  'changelogEntry drops a generic-only change instead of listing it',
+  coordEntry.geaendert.length === 0
+);
+check(
+  'the feed entry carries no generic note anywhere',
+  !JSON.stringify(coordEntry).includes(GENERIC_CHANGE_NOTE)
+);
+check(
+  'a run whose only change was generic has no feed content (no bare timestamp)',
+  hasFeedContent(coordEntry) === false
+);
+check(
+  'the same run still counts as a real change for the snapshot/CHANGELOG.md',
+  coordDiff.changed.length === 1
+);
+
+// Mixed case: a real note next to the generic one keeps the case, drops the note.
+const mixed = {
+  stand,
+  firstFill: false,
+  hinzugefuegt: [],
+  entfernt: [],
+  geaendert: [
+    { titel: 'Zentralhof', changes: ['Sperrgrad: teil → gering', GENERIC_CHANGE_NOTE] },
+    { titel: 'Nur-Rauschen', changes: [GENERIC_CHANGE_NOTE] },
+  ],
+};
+const mixedClean = cleanChangelogEntry(mixed);
+check('meaningfulChanges strips only the generic note', JSON.stringify(meaningfulChanges(['a', GENERIC_CHANGE_NOTE, 'b'])) === JSON.stringify(['a', 'b']));
+check('a case with a real note survives, without the generic note', mixedClean.geaendert.length === 1 && mixedClean.geaendert[0].titel === 'Zentralhof' && !mixedClean.geaendert[0].changes.includes(GENERIC_CHANGE_NOTE));
+check('cleaning does not mutate the original entry', mixed.geaendert.length === 2 && mixed.geaendert[0].changes.length === 2);
+check('an added/removed-only run stays in the feed', hasFeedContent(cleanChangelogEntry({ stand, firstFill: false, hinzugefuegt: ['Neu'], entfernt: [], geaendert: [{ titel: 'X', changes: [GENERIC_CHANGE_NOTE] }] })));
+check('a firstFill entry passes cleaning untouched', hasFeedContent(cleanChangelogEntry(firstFillEntryProbe())) === true);
+function firstFillEntryProbe() {
+  return { stand, firstFill: true, total: 183 };
+}
+
+// Read path (what src/app.js applies to the already-committed 30-day tail).
+const legacyFeed = [
+  { stand, firstFill: false, hinzugefuegt: [], entfernt: [], geaendert: [{ titel: 'Goethestraße', changes: [GENERIC_CHANGE_NOTE] }] },
+  mixed,
+];
+const filtered = filterChangelogEntries(legacyFeed);
+check('filterChangelogEntries drops a run left empty by the filter', filtered.length === 1);
+check('filterChangelogEntries keeps the run that still says something', filtered[0].geaendert[0].titel === 'Zentralhof');
+check('filterChangelogEntries output is free of the generic note', !JSON.stringify(filtered).includes(GENERIC_CHANGE_NOTE));
+check('filterChangelogEntries is idempotent', JSON.stringify(filterChangelogEntries(filtered)) === JSON.stringify(filtered));
+check('filterChangelogEntries survives malformed entries', filterChangelogEntries([null, {}, { firstFill: false }]).length === 0);
+
+// The committed feed itself must not carry generic notes any more.
+const committedFeed = readFileSync(join(ROOT, 'data', 'changelog.json'), 'utf8');
+check('data/changelog.json carries no generic-note entries', !committedFeed.includes(GENERIC_CHANGE_NOTE));
 
 // --- 2. firstFill collapses to one synthetic entry -------------------------
 
@@ -175,6 +244,39 @@ check(
 check(
   'no-change branch bootstraps data/changelog.json as an empty array if missing (fresh-fork edge case)',
   /CHANGELOG_JSON_FILE/.test(noChangeBranch) && /\[\]/.test(noChangeBranch)
+);
+
+// --- 6. #28 wiring on both sides (static source checks) ---------------------
+
+check(
+  'build-data.mjs imports the feed filter from src/lib/changelog.js',
+  /from '\.\.\/src\/lib\/changelog\.js'/.test(build) && /hasFeedContent/.test(build)
+);
+check(
+  'build-data.mjs only prepends an entry that has feed content',
+  /hasFeedContent\(changelogJsonEntry\)\s*\?/.test(build)
+);
+
+const app = lies('src/app.js');
+check(
+  'src/app.js imports filterChangelogEntries from src/lib/changelog.js',
+  /import \{[^}]*filterChangelogEntries[^}]*\} from '\.\/lib\/changelog\.js'/.test(app)
+);
+check(
+  'src/app.js runs the loaded feed through filterChangelogEntries()',
+  /changelogEntries = filterChangelogEntries\(/.test(app)
+);
+check(
+  'src/app.js does not carry its own copy of the generic-note literal',
+  !app.includes(GENERIC_CHANGE_NOTE)
+);
+
+// src/lib/ hard constraint: pure, DOM-free, dependency-free (imported by both
+// the Node build and the browser client).
+const lib = lies('src/lib/changelog.js');
+check(
+  'src/lib/changelog.js stays DOM-free and import-free',
+  !/\bdocument\b|\bwindow\b|^import /m.test(lib)
 );
 
 if (failed > 0) {

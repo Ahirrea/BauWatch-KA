@@ -26,6 +26,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 import { utm32ToWgs84 } from '../src/lib/transform.js';
 import { classifyArt, classifySperrgrad, classifyVerkehrsmittel } from '../src/lib/classify.js';
 import { stripHtml, parseDate } from '../src/lib/format.js';
+import { cleanChangelogEntry, hasFeedContent } from '../src/lib/changelog.js';
 import {
   diffFeatures,
   hasChanges,
@@ -435,9 +436,21 @@ async function main() {
   // strukturiert statt Markdown. Neuester Eintrag zuerst, auf 30 Tage
   // beschnitten (E3); `stand` ist der echte Änderungszeitpunkt, kein
   // Lauf-Zeitstempel — sonst verwässert jeder Action-Lauf das Pruning-Fenster.
+  // Läufe, deren einzige Änderung "sonstige Angaben aktualisiert" wäre, tragen
+  // für Anwohner nichts bei (#28) — changelogEntry() lässt sie weg, und bleibt
+  // der Eintrag dadurch leer, kommt er gar nicht in den Feed. Sonst stünde im
+  // Dialog eine Uhrzeit mit leerer Liste darunter. data/CHANGELOG.md protokolliert
+  // die Änderung weiterhin, der Snapshot wird ohnehin geschrieben.
   const changelogJsonEntry = changelogEntry(diff, now.toISOString(), features.length, { firstFill });
-  const changelogJson = pruneChangelogEntries([changelogJsonEntry, ...loadChangelogJson()], now);
+  const vorherige = loadChangelogJson().map(cleanChangelogEntry).filter(hasFeedContent);
+  const changelogJson = pruneChangelogEntries(
+    hasFeedContent(changelogJsonEntry) ? [changelogJsonEntry, ...vorherige] : vorherige,
+    now
+  );
   writeAtomic(CHANGELOG_JSON_FILE, JSON.stringify(changelogJson) + '\n');
+  if (!hasFeedContent(changelogJsonEntry)) {
+    console.log('„Was ist neu?"-Feed: kein Eintrag (nur sonstige Angaben geändert).');
+  }
   writeFileSync(BUILD_SUMMARY_FILE, `chore(data): ${line}\n\n${md}\n`, 'utf8');
   if (process.env.GITHUB_STEP_SUMMARY) {
     appendFileSync(process.env.GITHUB_STEP_SUMMARY, `${md}\n`);

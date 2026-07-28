@@ -22,7 +22,7 @@
 // echtes Push", siehe docs/PRD.md und A-2): kein `push`-, kein
 // `notificationclick`-, kein `sync`-/`periodicsync`-Handler.
 
-const CACHE_SHELL = 'bauwatch-shell-v9';
+const CACHE_SHELL = 'bauwatch-shell-v10';
 const CACHE_DATA = 'bauwatch-data-v1';
 
 // App-Shell. `'./'` ist der Navigations-Einstieg (liefert index.html aus) und
@@ -39,6 +39,7 @@ const SHELL = [
   'datenschutz.html',
   'src/styles.css',
   'src/app.js',
+  'src/lib/changelog.js',
   'src/lib/format.js',
   'src/lib/i18n.js',
   'vendor/leaflet/leaflet.css',

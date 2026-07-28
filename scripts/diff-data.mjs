@@ -30,6 +30,8 @@ export function signature(feature) {
   return stableStringify({ c: feature.geometry?.coordinates, p: props });
 }
 
+import { GENERIC_CHANGE_NOTE, cleanChangelogEntry } from '../src/lib/changelog.js';
+
 // Menschlich lesbare Feld-Änderungen für einen geänderten Vorgang.
 const WATCH_FIELDS = [
   ['ampel', 'Sperrgrad'],
@@ -120,7 +122,7 @@ export function summaryMarkdown(diff, total, timestamp, { firstFill = false } = 
     // Immer eine kurze Notiz, was sich geändert hat. Betrifft die Änderung nur
     // Felder außerhalb von WATCH_FIELDS (z. B. Koordinaten, Art, Verkehrsmittel),
     // bleibt fieldChanges leer — dann ein generischer Hinweis statt gar keiner.
-    const detail = c.changes.length ? c.changes.join('; ') : 'sonstige Angaben aktualisiert';
+    const detail = c.changes.length ? c.changes.join('; ') : GENERIC_CHANGE_NOTE;
     lines.push(`- ✏️ ${titleOf(c.feature)} — ${detail}`);
   }
   return lines.join('\n');
@@ -141,21 +143,29 @@ export const CHANGELOG_WINDOW_DAYS = 30;
  * pruning across runs instead of per-run-volatile noise.
  * A `firstFill` run collapses to one synthetic entry (mirrors CHANGELOG.md's
  * own firstFill handling) instead of flooding the feed with every seed record.
+ *
+ * ONE deliberate divergence from summaryMarkdown() (#28): a case that changed
+ * only outside WATCH_FIELDS gets GENERIC_CHANGE_NOTE there, but is left out
+ * here entirely — "sonstige Angaben aktualisiert" tells a resident nothing, and
+ * those runs made up the bulk of the feed. data/CHANGELOG.md keeps them: it's
+ * the record of what the data did, the feed answers "does this affect me?".
+ * So the parity between the two artifacts is directional now — everything in
+ * the feed is in the Markdown, not the other way round.
  */
 export function changelogEntry(diff, stand, total, { firstFill = false } = {}) {
   if (firstFill) {
     return { stand, firstFill: true, total };
   }
-  return {
+  return cleanChangelogEntry({
     stand,
     firstFill: false,
     hinzugefuegt: diff.added.map(titleOf),
     entfernt: diff.removed.map(titleOf),
     geaendert: diff.changed.map((c) => ({
       titel: titleOf(c.feature),
-      changes: c.changes.length ? c.changes : ['sonstige Angaben aktualisiert'],
+      changes: c.changes.length ? c.changes : [GENERIC_CHANGE_NOTE],
     })),
-  };
+  });
 }
 
 /** Drops entries older than `days` — keeps data/changelog.json self-bounding
