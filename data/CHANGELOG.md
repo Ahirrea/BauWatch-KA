@@ -2,6 +2,20 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 28.07.2026, 05:19 — 2 neu, 4 entfernt, 3 geändert (gesamt 181)
+
+- ➕ **AS Karlsruhe Nord Zufahrt von der Elfmorgenbruchstraße zur A 5 Fahrtrichtung Süd**
+- ➕ **Kriegsstraße (oberirdisch) zw. Ettlinger Straße und Meidingerstraße**
+- ➖ ~~Gartenstraße zw. Weinbrennerplatz/ Kriegsstraße und Steinhäuserstraße~~
+- ➖ ~~Beuthener Straße zw. Glogauer Straße und Gustav-Heinemann-Allee~~
+- ➖ ~~K9657/ Südtangente Höhe AS4~~
+- ➖ ~~K9652/ Südtangente Höhe Ottostraße~~
+- ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
+- ✏️ Kriegsstraße zw. Karl-Friedrich-Straße und Lammstraße — sonstige Angaben aktualisiert
+- ✏️ Raiherwiesenstraße zw. Pfaffstraße und Bleichstraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 27.07.2026, 19:48 — 1 geändert (gesamt 183)
 
 - ✏️ Raiherwiesenstraße zw. Pfaffstraße und Bleichstraße — sonstige Angaben aktualisiert
