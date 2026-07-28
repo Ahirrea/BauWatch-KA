@@ -2,6 +2,12 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 28.07.2026, 16:26 — 1 geändert (gesamt 183)
+
+- ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 28.07.2026, 12:42 — 2 neu, 3 geändert (gesamt 183)
 
 - ➕ **Schopfheimer Straße zwischen Waldshuter Straße und Funkerstraße**
