@@ -20,7 +20,14 @@ const AMPEL_COLOR = { voll: '#c02626', teil: '#f08a00', gering: '#197a3d' };
 // Die Zoom-Obergrenze begrenzt nur das enge Ende: eine winzige Fläche (eine
 // Kreuzung) soll nicht dichter heranspringen als ein gewöhnlicher Marker.
 const AREA_FIT_MAX_ZOOM = 17;
-const AREA_FIT_PADDING = [40, 40];
+const AREA_FIT_PADDING = 40;
+// Zusätzlicher Platz OBEN für das Popup, das direkt nach dem Einpassen aufgeht.
+// Ohne diesen Streifen verschiebt Leaflets autoPan die Karte anschließend, damit
+// das Popup ganz sichtbar ist — und schiebt dabei genau das aus dem Bild, was
+// gerade eingepasst wurde (gemessen: ein Rand von ~25–50 m fiel heraus). Anteilig
+// gedeckelt, weil auf dem Telefon eine feste Pixelzahl fast die ganze Karte wäre.
+const AREA_FIT_POPUP_ROOM = 170;
+const AREA_FIT_POPUP_ROOM_MAX_SHARE = 0.35;
 
 // Language preference (A-5). localStorage key: 'bauwatch.sprache'.
 const SPRACHE_KEY = 'bauwatch.sprache';
@@ -247,6 +254,19 @@ function listItemHtml(f) {
   `;
 }
 
+// Linien-Geometrien haben kein Inneres: Leaflet zeichnet sie als Polyline und
+// ignoriert jede Füllung. Etwa ein Fünftel der amtlichen Flächen kommt so
+// (LineString/MultiLineString) — als Haarlinie sähe das aus wie eine Route,
+// nicht wie eine Ausdehnung. Deshalb dort ein kräftigerer, halbtransparenter
+// Strich anstelle der Füllung, die ein Polygon bekommt. Gleiche Farbe, gleiche
+// Bedeutung (E4) — nur die Technik unterscheidet sich.
+const AREA_LINE_TYPES = new Set(['LineString', 'MultiLineString']);
+
+function areaStyle(color, geometryType) {
+  if (AREA_LINE_TYPES.has(geometryType)) return { color, weight: 6, opacity: 0.45 };
+  return { color, weight: 2, opacity: 0.9, fillColor: color, fillOpacity: 0.18 };
+}
+
 // Baustellenflächen (A-7). Eigene Ebene UNTER den Markern: der Marker bleibt
 // das einzige anklickbare Objekt (E2), die Fläche ist rein zusätzlich.
 //
@@ -263,14 +283,22 @@ function renderAreas(list) {
   areaById.clear();
   for (const f of list) {
     const area = f.properties.area;
-    if (!area || !area.coordinates) continue;
+    if (!area) continue;
     const color = AMPEL_COLOR[f.properties.ampel] || '#666';
-    const layer = L.geoJSON(area, {
-      interactive: false,
-      style: { color, weight: 2, opacity: 0.9, fillColor: color, fillOpacity: 0.18 },
-    });
-    layer.addTo(areaLayer);
-    areaById.set(f._key, layer);
+    // Eine GeometryCollection (ein Vorgang, dessen Teile Polygone UND Linien
+    // mischen) wird hier aufgeteilt: die style-Option von L.geoJSON bekommt bei
+    // einer Collection für jeden Teil dasselbe Feature zu sehen und könnte die
+    // Typen gar nicht unterscheiden.
+    const teile = area.type === 'GeometryCollection' ? area.geometries || [] : [area];
+    // featureGroup, nicht layerGroup: nur die kann getBounds() (für E5).
+    const gruppe = L.featureGroup();
+    for (const g of teile) {
+      if (!g || !g.coordinates) continue;
+      L.geoJSON(g, { interactive: false, style: areaStyle(color, g.type) }).addTo(gruppe);
+    }
+    if (gruppe.getLayers().length === 0) continue;
+    gruppe.addTo(areaLayer);
+    areaById.set(f._key, gruppe);
   }
 }
 
@@ -287,7 +315,14 @@ function renderMarkers(list) {
       fillColor: AMPEL_COLOR[f.properties.ampel] || '#666',
       fillOpacity: 0.9,
     });
-    marker.bindPopup(popupHtml(f));
+    // Bei einer Fläche das Auto-Schwenken des Popups abschalten (A-7/E5):
+    // Leaflet schiebt die Karte beim Öffnen so, dass das Popup am KARTENRAND
+    // sitzt — und setzt damit das gerade Eingepasste außer Kraft, gemessen um
+    // bis zu ~200 px. Den Platz dafür reserviert schon fitBounds oben
+    // (AREA_FIT_POPUP_ROOM), das Schwenken hat also nichts zu tun. Ohne Fläche
+    // bleibt es beim Leaflet-Standard — dort ist es sinnvoll, weil setView()
+    // den Marker nur zentriert und über keinen Platz für das Popup wacht.
+    marker.bindPopup(popupHtml(f), f.properties.area ? { autoPan: false } : undefined);
     marker.on('click', () => selectFeature(f._key, { fromMarker: true }));
     marker.addTo(markerLayer);
     markerById.set(f._key, marker);
@@ -355,7 +390,13 @@ function selectFeature(key, { fromList, fromMarker } = {}) {
   const bounds = areaById.get(key)?.getBounds();
   const animate = !prefersReducedMotion();
   if (bounds && bounds.isValid()) {
-    map.fitBounds(bounds, { padding: AREA_FIT_PADDING, maxZoom: AREA_FIT_MAX_ZOOM, animate });
+    const platz = Math.min(AREA_FIT_POPUP_ROOM, Math.round(map.getSize().y * AREA_FIT_POPUP_ROOM_MAX_SHARE));
+    map.fitBounds(bounds, {
+      paddingTopLeft: [AREA_FIT_PADDING, AREA_FIT_PADDING + platz],
+      paddingBottomRight: [AREA_FIT_PADDING, AREA_FIT_PADDING],
+      maxZoom: AREA_FIT_MAX_ZOOM,
+      animate,
+    });
   } else if (marker) {
     map.setView(marker.getLatLng(), Math.max(map.getZoom(), 15), { animate });
   }

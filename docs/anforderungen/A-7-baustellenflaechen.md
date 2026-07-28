@@ -128,6 +128,35 @@ whether this occurs — see Edge cases): the first one encountered in WFS
 feature order wins, no error. Simple, deterministic default; revisit only if
 the new quality signal (E9) shows it's a real, recurring case.
 
+**E8 revised (2026-07-28, after implementation step 10).** The one-off WFS
+inspection ran and answered the open question, so first-wins is replaced by
+**combining all of a case's non-Point geometries** into one geometry
+(`MultiPolygon` when they're all polygonal, `MultiLineString` when all linear,
+`GeometryCollection` when mixed; a lone shape stays untouched). Measured on
+444 Karlsruhe features / 183 cases:
+
+| Observation | Figure |
+|---|---|
+| Points vs. non-Point geometries | 222 / 222 — exactly paired |
+| Cases with exactly one shape | 159 (87 %) |
+| Cases with 2–6 shapes | **24 (13 %)** |
+| Geometry types | Polygon 156 · MultiLineString 36 · MultiPolygon 22 · **LineString 8** |
+
+Two things followed. First, 13 % is too many to discard: those cases are one
+closure split across several street segments or building entrances, and
+drawing one segment of it would be *worse* than drawing nothing, because a
+partial shape still looks authoritative. Second, **`LineString`/
+`MultiLineString` is confirmed and is ~20 % of all shapes** — no longer the
+hypothetical edge case the "Out of scope" list below assumed. Leaflet draws
+those as polylines and ignores any fill, so they'd have rendered as
+hairlines; they now get a heavier, semi-transparent stroke instead of the
+fill a polygon gets (same colour, same meaning — E4 is untouched).
+
+The originally-stated argument for first-wins ("simple, deterministic
+default") survives only its determinism: combining is equally deterministic
+and loses nothing. Retained from E8: no error, no warning — a multi-part case
+is normal data, not a defect.
+
 **E9 — Extend the quality report with a `hasArea` signal**, same pattern as
 the existing `hasVorgangsnummer`/`artKnown` per-case booleans in
 `scripts/quality-report.mjs`, surfaced in `data/QUALITY.md`. Gives ongoing
@@ -159,9 +188,11 @@ with real data over time, instead of a one-off manual inspection.
     the authoritative plain-text explanation.
   - Any change to `art`/`ampel`/`verkehrsmittel` classification — untouched,
     reused as-is.
-  - A dedicated `LineString`-specific styling path — `transformGeometry()`
-    would already handle one generically if the WFS ever delivers it (E8's
-    edge case), but nothing preemptive is added before that's confirmed.
+  - ~~A dedicated `LineString`-specific styling path~~ → **pulled in scope**
+    (E8 revised): the inspection confirmed line geometries are ~20 % of all
+    shapes, which was the stated condition for adding one. It stayed minimal —
+    a heavier, semi-transparent stroke where a polygon gets a fill, nothing
+    else.
 
 ## Specification
 
@@ -210,7 +241,7 @@ unchanged).
 |---|---|
 | No second geometry for a `vorgangsnummer` (point-only) | `area` omitted/`null`; marker-only rendering, exactly today's behavior. |
 | Point missing, only a polygon delivered | Unchanged existing fallback: `representativePoint()` already derives a centroid from the polygon for the marker; the polygon itself now also becomes `area`. |
-| More than one non-Point geometry for the same `vorgangsnummer` | First one encountered (WFS feature order) wins, no error (E8); tracked via the new `hasArea` signal (E9) so real-world frequency becomes visible over time. |
+| More than one non-Point geometry for the same `vorgangsnummer` | ~~First one encountered (WFS feature order) wins, no error (E8)~~ → **all shapes are combined into one geometry** (E8 revised); no error either way. Occurs for 24 of 183 cases. |
 | Malformed/empty polygon coordinates | Guarded the same way `representativePoint()` already guards against `null`/empty — a malformed shape is dropped (no `area`), never crashes the build. |
 | WFS delivers a `LineString` instead of a thin polygon (unconfirmed — see risk note below) | `transformGeometry()` already handles `LineString` generically and would still populate `area`; it would render as a thin path via Leaflet's GeoJSON layer with no dedicated styling (Out of scope) until confirmed common enough to warrant one. |
 | Selecting a feature with a very large area (e.g. a full building footprint) | `fitBounds()` naturally zooms out to fit; the `maxZoom:17` cap (E5) only bounds the *tight* end, for small shapes. |

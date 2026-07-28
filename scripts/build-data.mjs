@@ -148,21 +148,60 @@ function firstCoordinate(coords) {
   return firstCoordinate(coords[0]);
 }
 
-// Construction-site area (A-7): the sibling non-Point geometry of the same
-// `vorgangsnummer`, kept as `properties.area` instead of being discarded.
+// One non-Point geometry, transformed and rounded, ready for the snapshot.
 //
 // `transformGeometry()` transforms unconditionally, so the UTM check happens
 // here — otherwise a source that unexpectedly answers in WGS84 would get its
 // area mangled while its point came through untouched. Rounded to the same 6
 // decimals as the Point coordinates: an area is drawn, not measured, and the
 // raw float tails would otherwise bloat the committed snapshot.
-function buildArea(geometry) {
-  if (!geometry || geometry.type === 'Point') return null;
+function prepareArea(geometry) {
+  if (!geometry || geometry.type === 'Point' || geometry.type === 'MultiPoint') return null;
   const first = firstCoordinate(geometry.coordinates);
   if (!first) return null; // malformed/empty shape -> no area, never a crash
   const wgs = looksLikeUtm32(first[0], first[1]) ? transformGeometry(geometry) : geometry;
   const roundDeep = (c) => (typeof c[0] === 'number' ? [round(c[0]), round(c[1])] : c.map(roundDeep));
   return { type: wgs.type, coordinates: roundDeep(wgs.coordinates) };
+}
+
+const POLYGONAL = new Set(['Polygon', 'MultiPolygon']);
+const LINEAR = new Set(['LineString', 'MultiLineString']);
+
+// Coordinates of a geometry lifted to the member level of its Multi* form, so
+// several geometries of the same family can be concatenated into one.
+function areaParts(g) {
+  return g.type === 'MultiPolygon' || g.type === 'MultiLineString' ? g.coordinates : [g.coordinates];
+}
+
+/**
+ * Construction-site area (A-7): ALL sibling non-Point geometries of the same
+ * `vorgangsnummer`, combined into one geometry for `properties.area`.
+ *
+ * E8 originally said "the first one wins" for a case with more than one shape,
+ * noting it was unconfirmed whether that even occurs. The live inspection
+ * (2026-07-28, 444 Karlsruhe features) says it does: 24 of 183 cases carry
+ * between 2 and 6 shapes — a closure split across several street segments or
+ * building entrances. Keeping only the first would draw one segment of such a
+ * closure and silently drop the rest, which is worse than drawing nothing:
+ * a partial shape still looks authoritative. So they're combined instead.
+ *
+ * A single shape stays exactly as it is (the 159-case majority) rather than
+ * being wrapped in a pointless `MultiPolygon`.
+ */
+function buildArea(geometries) {
+  const list = (geometries || []).map(prepareArea).filter(Boolean);
+  if (list.length === 0) return null;
+  if (list.length === 1) return list[0];
+  if (list.every((g) => POLYGONAL.has(g.type))) {
+    return { type: 'MultiPolygon', coordinates: list.flatMap(areaParts) };
+  }
+  if (list.every((g) => LINEAR.has(g.type))) {
+    return { type: 'MultiLineString', coordinates: list.flatMap(areaParts) };
+  }
+  // Polygons and lines in the same case can't share a Multi* type. Not seen in
+  // the inspected data, but cheap to survive: L.geoJSON renders a
+  // GeometryCollection, and the client styles each member by its own type.
+  return { type: 'GeometryCollection', geometries: list };
 }
 
 function toIso(value) {
@@ -235,14 +274,20 @@ function dedupKey(props) {
 
 /**
  * Groups the Karlsruhe features by `vorgangsnummer`: one marker feature per
- * case, plus that case's sibling non-Point geometry (A-7).
+ * case, plus ALL of that case's sibling non-Point geometries (A-7).
  *
  * Pulled out of main() so it's testable without a live WFS fetch — the dedup
  * rule is the one place where a mistake silently doubles or halves the dataset
  * (see the `id` vs. `vorgangsnummer` pitfall in CLAUDE.md).
  *
+ * The marker keeps being the FIRST Point of the case, unchanged. For the 24
+ * multi-part cases that means the marker sits on one of several points while
+ * the area spans them all — acceptable, since the marker is the handle for the
+ * popup, not a claim about where the work is; moving it to a computed centroid
+ * would shift marker positions in the committed snapshot for no gain.
+ *
  * @param {object[]} features WFS features, already filtered to Karlsruhe
- * @returns {Map<string, {feature: object, area: object|null}>}
+ * @returns {Map<string, {feature: object, areas: object[]}>}
  */
 function dedupeFeatures(features) {
   const byKey = new Map();
@@ -251,21 +296,18 @@ function dedupeFeatures(features) {
     const isPoint = f.geometry?.type === 'Point';
     let entry = byKey.get(key);
     if (!entry) {
-      entry = { feature: f, area: null };
+      entry = { feature: f, areas: [] };
       byKey.set(key, entry);
     } else if (isPoint && entry.feature.geometry?.type !== 'Point') {
       // Punkt-Geometrie ist als Marker-Position präziser als ein Polygon-Mittelwert.
       entry.feature = f;
     }
-    // More than one non-Point geometry per case: the first one in WFS feature
-    // order wins, no error (E8 in A-7). Deterministic, and the `hasArea` signal
-    // in the quality report makes the real-world frequency visible over time.
-    if (!isPoint && !entry.area && f.geometry) entry.area = f.geometry;
+    if (!isPoint && f.geometry) entry.areas.push(f.geometry);
   }
   return byKey;
 }
 
-function buildFeature(props, geometry, areaGeometry) {
+function buildFeature(props, geometry, areaGeometries) {
   const art = classifyArt(pick(props, FIELDS.art));
   const info = stripHtml(pick(props, FIELDS.info) ?? '');
   const titel = String(pick(props, FIELDS.titel) ?? '').trim() || art.label;
@@ -305,7 +347,7 @@ function buildFeature(props, geometry, areaGeometry) {
       // name on purpose, unlike the German properties above — new identifiers
       // are named in English since 2026-07-27 (E7 in A-7). Additive: `geometry`
       // stays the marker Point, so search, filters, and the list are untouched.
-      area: buildArea(areaGeometry),
+      area: buildArea(areaGeometries),
     },
   };
 }
@@ -394,8 +436,8 @@ async function main() {
   const features = [];
   const qualityRecords = [];
   let skipped = 0;
-  for (const { feature: f, area } of byKey.values()) {
-    const built = buildFeature(f.properties, f.geometry, area);
+  for (const { feature: f, areas } of byKey.values()) {
+    const built = buildFeature(f.properties, f.geometry, areas);
     if (!built) {
       skipped++;
       continue;

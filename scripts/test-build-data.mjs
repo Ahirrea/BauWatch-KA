@@ -6,7 +6,13 @@
 // Polygon eines Vorgangs zu EINEM Feature zusammenfallen, dass dabei die
 // Polygon-Geometrie als properties.area erhalten bleibt statt verworfen zu
 // werden, und dass die Randfälle aus A-7 (nur Punkt, nur Polygon, mehrere
-// Polygone, kaputte Koordinaten) sich wie dort beschrieben verhalten.
+// Flächen, Linien statt Flächen, kaputte Koordinaten) sich wie beschrieben
+// verhalten.
+//
+// Die Mengenverhältnisse dahinter stammen aus der einmaligen WFS-Inspektion
+// (2026-07-28, 444 Karlsruher Features): 159 Vorgänge mit genau einer Fläche,
+// 24 mit zwei bis sechs, und ein Fünftel aller Flächen sind Linien
+// (LineString/MultiLineString) statt Polygone.
 
 import { buildFeature, buildArea, dedupeFeatures } from './build-data.mjs';
 
@@ -64,7 +70,7 @@ for (const [name, features] of [
   check(`${name}: ein Vorgang statt zwei`, byKey.size === 1);
   const entry = [...byKey.values()][0];
   check(`${name}: Punkt bleibt Marker-Geometrie`, entry.feature.geometry.type === 'Point');
-  check(`${name}: Polygon als Fläche behalten`, entry.area?.type === 'Polygon');
+  check(`${name}: Polygon als Fläche behalten`, entry.areas.length === 1);
 }
 
 // Der Dedup-Schlüssel ist die Vorgangsnummer, nicht die per-Geometrie-id —
@@ -76,20 +82,22 @@ const zweiVorgaenge = dedupeFeatures([
 ]);
 check('Dedup nach vorgangsnummer, nicht nach id', zweiVorgaenge.size === 2);
 
-// E8: mehr als eine Nicht-Punkt-Geometrie je Vorgang -> die erste gewinnt.
+// E8 (revidiert nach der WFS-Inspektion): mehrere Nicht-Punkt-Geometrien je
+// Vorgang werden ZUSAMMENGEFASST, nicht auf die erste reduziert. 24 der 183
+// Vorgänge sind echt mehrteilig — bei „erste gewinnt" fehlten dort Teile der
+// Sperrung, und eine unvollständige Fläche wirkt trotzdem verbindlich.
 const mehrere = dedupeFeatures([
   feat(PUNKT),
   feat(POLYGON, { id: 'a' }),
   feat(POLYGON2, { id: 'b' }),
 ]);
-const ersteFlaeche = [...mehrere.values()][0].area;
-check('E8: erste Nicht-Punkt-Geometrie gewinnt', ersteFlaeche.coordinates[0][0][0] === RING[0][0]);
+check('E8: alle Nicht-Punkt-Geometrien werden behalten', [...mehrere.values()][0].areas.length === 2);
 
 // Nur Punkt -> keine Fläche. Nur Polygon -> Fläche UND abgeleiteter Marker.
 const nurPunkt = [...dedupeFeatures([feat(PUNKT)]).values()][0];
-check('nur Punkt: keine Fläche', nurPunkt.area === null);
+check('nur Punkt: keine Fläche', nurPunkt.areas.length === 0);
 const nurPolygon = [...dedupeFeatures([feat(POLYGON)]).values()][0];
-check('nur Polygon: Fläche vorhanden', nurPolygon.area?.type === 'Polygon');
+check('nur Polygon: Fläche vorhanden', nurPolygon.areas.length === 1);
 
 // Ein Feature ohne Geometrie darf den Dedup nicht zum Absturz bringen.
 let ohneGeometrieOk = true;
@@ -102,7 +110,7 @@ check('Feature ohne Geometrie stürzt nicht ab', ohneGeometrieOk);
 
 // --- properties.area im gebauten Feature ------------------------------------
 
-const mitFlaeche = buildFeature(props(), PUNKT, POLYGON);
+const mitFlaeche = buildFeature(props(), PUNKT, [POLYGON]);
 check('area gesetzt, wenn zweite Geometrie da ist', mitFlaeche.properties.area?.type === 'Polygon');
 check('area ist in WGS84 umgerechnet', mitFlaeche.properties.area.coordinates[0][0][0] === 8.403798);
 check(
@@ -114,16 +122,18 @@ check(
 check('geometry bleibt der Marker-Punkt (E1)', mitFlaeche.geometry.type === 'Point');
 check('Ring bleibt geschlossen', mitFlaeche.properties.area.coordinates[0].length === RING.length);
 
-const ohneFlaeche = buildFeature(props(), PUNKT, null);
-check('area null, wenn keine zweite Geometrie da ist', ohneFlaeche.properties.area === null);
-check(
-  'area ist im Feature immer vorhanden (kein fehlendes Feld)',
-  'area' in ohneFlaeche.properties
-);
+for (const [name, leer] of [
+  ['leeres Array', []],
+  ['null', null],
+]) {
+  const ohneFlaeche = buildFeature(props(), PUNKT, leer);
+  check(`area null bei ${name}`, ohneFlaeche.properties.area === null);
+  check(`area ist auch bei ${name} als Feld vorhanden`, 'area' in ohneFlaeche.properties);
+}
 
 // Ein Vorgang, der nur als Polygon geliefert wird: Marker aus dem Mittelwert
 // (bisheriges Verhalten) UND dieselbe Geometrie als Fläche.
-const nurPolygonFeature = buildFeature(props(), POLYGON, POLYGON);
+const nurPolygonFeature = buildFeature(props(), POLYGON, [POLYGON]);
 check(
   'nur Polygon: Marker abgeleitet und Fläche gesetzt',
   nurPolygonFeature.geometry.type === 'Point' && nurPolygonFeature.properties.area?.type === 'Polygon'
@@ -131,28 +141,69 @@ check(
 
 // --- buildArea() im Detail --------------------------------------------------
 
-check('buildArea: Punkt ergibt keine Fläche', buildArea(PUNKT) === null);
+check('buildArea: Punkt ergibt keine Fläche', buildArea([PUNKT]) === null);
+check('buildArea: leeres Array ergibt keine Fläche', buildArea([]) === null);
 check('buildArea: null ergibt keine Fläche', buildArea(null) === null);
-check('buildArea: leere Koordinaten ergeben keine Fläche', buildArea({ type: 'Polygon', coordinates: [] }) === null);
+check('buildArea: Liste aus null ergibt keine Fläche', buildArea([null, undefined]) === null);
+check('buildArea: leere Koordinaten ergeben keine Fläche', buildArea([{ type: 'Polygon', coordinates: [] }]) === null);
 check(
   'buildArea: kaputte Koordinaten stürzen nicht ab',
-  buildArea({ type: 'Polygon', coordinates: [[]] }) === null
+  buildArea([{ type: 'Polygon', coordinates: [[]] }]) === null
 );
 check(
   'buildArea: MultiPolygon bleibt MultiPolygon',
-  buildArea({ type: 'MultiPolygon', coordinates: [[RING], [RING2]] })?.coordinates.length === 2
+  buildArea([{ type: 'MultiPolygon', coordinates: [[RING], [RING2]] }])?.coordinates.length === 2
 );
 check(
-  'buildArea: LineString wird generisch mitgenommen (E8-Randfall)',
-  buildArea({ type: 'LineString', coordinates: RING })?.type === 'LineString'
+  'buildArea: LineString bleibt LineString (ein Fünftel der echten Flächen)',
+  buildArea([{ type: 'LineString', coordinates: RING }])?.type === 'LineString'
+);
+check(
+  'buildArea: eine einzelne Fläche wird NICHT in Multi* verpackt',
+  buildArea([POLYGON])?.type === 'Polygon'
+);
+
+// Zusammenfassen mehrerer Flächen (E8 revidiert).
+const zweiPolygone = buildArea([POLYGON, POLYGON2]);
+check('buildArea: zwei Polygone -> MultiPolygon', zweiPolygone.type === 'MultiPolygon');
+check('buildArea: beide Polygone sind enthalten', zweiPolygone.coordinates.length === 2);
+check(
+  'buildArea: kein Teil geht beim Zusammenfassen verloren',
+  zweiPolygone.coordinates[0][0].length === RING.length &&
+    zweiPolygone.coordinates[1][0].length === RING2.length
+);
+const polyPlusMulti = buildArea([POLYGON, { type: 'MultiPolygon', coordinates: [[RING2], [RING]] }]);
+check(
+  'buildArea: Polygon + MultiPolygon werden flach zusammengeführt',
+  polyPlusMulti.type === 'MultiPolygon' && polyPlusMulti.coordinates.length === 3
+);
+const zweiLinien = buildArea([
+  { type: 'LineString', coordinates: RING },
+  { type: 'MultiLineString', coordinates: [RING2, RING] },
+]);
+check(
+  'buildArea: Linien -> MultiLineString mit allen Teilen',
+  zweiLinien.type === 'MultiLineString' && zweiLinien.coordinates.length === 3
+);
+const gemischt = buildArea([POLYGON, { type: 'LineString', coordinates: RING2 }]);
+check('buildArea: Polygon + Linie -> GeometryCollection', gemischt.type === 'GeometryCollection');
+check(
+  'buildArea: GeometryCollection behält beide Typen',
+  gemischt.geometries.map((g) => g.type).join(',') === 'Polygon,LineString'
+);
+check(
+  'buildArea: eine kaputte Geometrie kippt die anderen nicht',
+  buildArea([{ type: 'Polygon', coordinates: [[]] }, POLYGON])?.type === 'Polygon'
 );
 
 // CRS-Autoerkennung: liefert die Quelle wider Erwarten schon WGS84, darf die
 // Fläche NICHT ein zweites Mal transformiert werden (looksLikeUtm32, CLAUDE.md).
-const schonWgs84 = buildArea({
-  type: 'Polygon',
-  coordinates: [[[8.4038, 49.0088], [8.4052, 49.0088], [8.4052, 49.0097], [8.4038, 49.0088]]],
-});
+const schonWgs84 = buildArea([
+  {
+    type: 'Polygon',
+    coordinates: [[[8.4038, 49.0088], [8.4052, 49.0088], [8.4052, 49.0097], [8.4038, 49.0088]]],
+  },
+]);
 check(
   'buildArea: bereits WGS84 bleibt unverändert',
   schonWgs84.coordinates[0][0][0] === 8.4038 && schonWgs84.coordinates[0][0][1] === 49.0088
