@@ -16,6 +16,12 @@ const RADIUS_KM = 1.5;
 // Ampelfarben — müssen zu styles.css passen.
 const AMPEL_COLOR = { voll: '#c02626', teil: '#f08a00', gering: '#197a3d' };
 
+// Kartenausschnitt bei der Auswahl einer Baustelle MIT Fläche (A-7/E5).
+// Die Zoom-Obergrenze begrenzt nur das enge Ende: eine winzige Fläche (eine
+// Kreuzung) soll nicht dichter heranspringen als ein gewöhnlicher Marker.
+const AREA_FIT_MAX_ZOOM = 17;
+const AREA_FIT_PADDING = [40, 40];
+
 // Language preference (A-5). localStorage key: 'bauwatch.sprache'.
 const SPRACHE_KEY = 'bauwatch.sprache';
 
@@ -86,9 +92,11 @@ function schreibeGespeichertesFarbschema(theme) {
 }
 
 let map;
+let areaLayer;
 let markerLayer;
 let searchLayer;
 const markerById = new Map(); // key -> Leaflet-Marker
+const areaById = new Map(); // key -> Leaflet-Layer der Fläche (A-7)
 const listItemById = new Map(); // key -> <li>
 
 // --- Hilfsfunktionen -------------------------------------------------------
@@ -239,6 +247,33 @@ function listItemHtml(f) {
   `;
 }
 
+// Baustellenflächen (A-7). Eigene Ebene UNTER den Markern: der Marker bleibt
+// das einzige anklickbare Objekt (E2), die Fläche ist rein zusätzlich.
+//
+// `interactive: false` (E3) ist hier mehr als Kosmetik — ohne das läge über
+// jedem Marker einer langen Straßensperrung eine Fläche, die Klicks abfängt,
+// und der Marker wäre kaum noch treffbar. Zugleich taucht die Fläche so nirgends
+// in der Tab-Reihenfolge auf: sie ist dekorativ, die Erklärung steht im Popup.
+//
+// Die Farbe kommt aus AMPEL_COLOR, wie beim Marker — keine zweite Farbbedeutung
+// auf derselben Karte (E4). Die [lon,lat]→[lat,lng]-Umkehrung übernimmt L.geoJSON
+// selbst; anders als bei latLngOf() ist hier also nichts zu drehen.
+function renderAreas(list) {
+  areaLayer.clearLayers();
+  areaById.clear();
+  for (const f of list) {
+    const area = f.properties.area;
+    if (!area || !area.coordinates) continue;
+    const color = AMPEL_COLOR[f.properties.ampel] || '#666';
+    const layer = L.geoJSON(area, {
+      interactive: false,
+      style: { color, weight: 2, opacity: 0.9, fillColor: color, fillOpacity: 0.18 },
+    });
+    layer.addTo(areaLayer);
+    areaById.set(f._key, layer);
+  }
+}
+
 function renderMarkers(list) {
   markerLayer.clearLayers();
   markerById.clear();
@@ -294,6 +329,9 @@ function renderStatus(list) {
 
 function render() {
   const list = currentFiltered();
+  // Flächen vor den Markern: dieselbe gefilterte Liste, beide Ebenen bleiben
+  // dadurch von sich aus synchron (A-7) — die Fläche ist kein eigener Zustand.
+  renderAreas(list);
   renderMarkers(list);
   renderList(list);
   renderStatus(list);
@@ -310,12 +348,18 @@ function selectFeature(key, { fromList, fromMarker } = {}) {
   for (const [k, li] of listItemById) li.classList.toggle('is-selected', k === key);
 
   const marker = markerById.get(key);
-  if (marker) {
-    map.setView(marker.getLatLng(), Math.max(map.getZoom(), 15), {
-      animate: !prefersReducedMotion(),
-    });
-    marker.openPopup();
+  // Mit Fläche: auf deren Ausdehnung einpassen statt auf einen festen Zoom
+  // (A-7/E5). Ein fester Punkt/Zoom nimmt bei einer langen Straßensperrung
+  // genau den räumlichen Zusammenhang weg, den die Fläche zeigen soll.
+  // Ohne Fläche bleibt es exakt beim bisherigen Verhalten.
+  const bounds = areaById.get(key)?.getBounds();
+  const animate = !prefersReducedMotion();
+  if (bounds && bounds.isValid()) {
+    map.fitBounds(bounds, { padding: AREA_FIT_PADDING, maxZoom: AREA_FIT_MAX_ZOOM, animate });
+  } else if (marker) {
+    map.setView(marker.getLatLng(), Math.max(map.getZoom(), 15), { animate });
   }
+  if (marker) marker.openPopup();
   if (fromMarker) {
     // Nur den Listen-Container scrollen, nicht das ganze Fenster: sonst springt
     // im mobilen Layout (Liste unter der Karte) der Viewport nach unten weg und
@@ -602,6 +646,9 @@ function initMap() {
     maxZoom: 19,
     attribution: '© OpenStreetMap-Mitwirkende',
   }).addTo(map);
+  // Reihenfolge = Zeichenreihenfolge: Flächen zuerst, damit Marker und
+  // Suchkreis darüber liegen (A-7/E2).
+  areaLayer = L.layerGroup().addTo(map);
   markerLayer = L.layerGroup().addTo(map);
   searchLayer = L.layerGroup().addTo(map);
 }

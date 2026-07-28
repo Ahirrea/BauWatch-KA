@@ -6,7 +6,8 @@
 //   - unbekannte art-Kategorien (Fallback statt Klartext),
 //   - Datumsauffälligkeiten (Ende vor Beginn, fehlend, bereits abgelaufen),
 //   - Koordinaten außerhalb des Karlsruher Rahmens,
-//   - Vorgänge ohne Vorgangsnummer (Dedup-Fallback).
+//   - Vorgänge ohne Vorgangsnummer (Dedup-Fallback),
+//   - Vorgänge ohne Fläche (kein gepaartes Polygon im WFS, A-7/E9).
 //
 // Eingabe: normalisierte Records (von build-data.mjs erzeugt) + Zähler-Statistik.
 
@@ -36,6 +37,7 @@ export function analyzeQuality(records, stats, now = new Date()) {
   const dateIssues = { endeVorBeginn: [], abgelaufen: [] };
   const coordsOutside = [];
   const ohneVorgangsnummer = [];
+  const ohneFlaeche = [];
   const unknownArt = new Map(); // label -> count
   const sperrungWerte = new Map(); // rohwert -> { count, ampel:Set }
 
@@ -62,6 +64,12 @@ export function analyzeQuality(records, stats, now = new Date()) {
 
     if (!r.hasVorgangsnummer) ohneVorgangsnummer.push(label(r));
 
+    // A-7/E9: how often a case really carries a paired polygon. Not a data
+    // *defect* — a point-only case renders exactly as before — but the only
+    // ongoing view on the geometry mix, which can't be checked outside an
+    // Action run (egress, see CLAUDE.md).
+    if (!r.hasArea) ohneFlaeche.push(label(r));
+
     if (r.artKnown === false) unknownArt.set(r.art, (unknownArt.get(r.art) || 0) + 1);
 
     if (r.sperrung) {
@@ -79,6 +87,8 @@ export function analyzeQuality(records, stats, now = new Date()) {
     dateIssues,
     coordsOutside,
     ohneVorgangsnummer,
+    ohneFlaeche,
+    mitFlaeche: records.length - ohneFlaeche.length,
     unknownArt: [...unknownArt.entries()].map(([label, count]) => ({ label, count })).sort((a, b) => b.count - a.count),
     sperrungWerte: [...sperrungWerte.entries()]
       .map(([wert, e]) => ({ wert, count: e.count, ampel: [...e.ampel].join('/') }))
@@ -95,7 +105,8 @@ export function summarizeQuality(report) {
   return (
     `${report.total} Vorgänge · ${problems} Feld-/Datenauffälligkeiten · ` +
     `${report.unknownArt.length} unbekannte Kategorien · ` +
-    `${report.dateIssues.abgelaufen.length} abgelaufen (zum Build-Zeitpunkt)`
+    `${report.dateIssues.abgelaufen.length} abgelaufen (zum Build-Zeitpunkt) · ` +
+    `${report.mitFlaeche} mit Fläche`
   );
 }
 
@@ -143,5 +154,10 @@ export function renderQualityMarkdown(report, stand) {
   L.push('## Geometrie & Identität');
   L.push(block('Koordinaten außerhalb des Karlsruher Rahmens', report.coordsOutside));
   L.push(block('Vorgänge ohne Vorgangsnummer (Dedup-Fallback)', report.ohneVorgangsnummer));
+  // Kein Mangel, sondern die Beobachtung selbst (A-7/E9): wie viele Vorgänge
+  // liefert der WFS mit gepaartem Polygon? Ohne Action-Lauf nicht prüfbar.
+  L.push(`- **Vorgänge mit Fläche (properties.area):** ${report.mitFlaeche} von ${report.total}`);
+  L.push('');
+  L.push(block('Vorgänge ohne Fläche (nur Punkt-Geometrie)', report.ohneFlaeche));
   return L.join('\n').replace(/\n{3,}/g, '\n\n').trimEnd() + '\n';
 }
