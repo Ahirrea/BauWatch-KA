@@ -10,8 +10,8 @@ Suggested labels: `setup`, `data`, `frontend`, `a11y`, `docs`, `enhancement`.
 > [refinement process](./PROZESS.md).
 
 **Status legend:** ✅ done · 🟡 partial / open · ⬜ open
-**As of:** 2026-07-28 (#28, generic-only changes out of the "What's new?" feed,
-done.)
+**As of:** 2026-07-28 (#29, measured popup room on area selection, done; #30,
+hairline rendering of very large areas, deliberately left open.)
 
 > Summary: Milestones 1–3 are implemented and the site is live via GitHub
 > Pages (#5). From Milestone 4, #15 and #18 are done; #16 (push/subscription
@@ -20,6 +20,8 @@ done.)
 > implemented** (#24); from the desktop UI review, #22 and #23 are done.
 > From the showcase pre-review, #25 and #26 are done. #27 (a follow-up
 > desktop UI fix) and #28 (a follow-up on the "What's new?" feed) are done.
+> **A-7 (construction-site areas) is implemented**; of its two follow-ups,
+> #29 is done and #30 is deliberately open (not planned).
 
 ---
 
@@ -317,6 +319,49 @@ same pass. `CACHE_SHELL` bumped to `v10` (new shell file `src/lib/changelog.js`,
 `src/app.js` changed). Follow-up on requirement
 [A-6](./anforderungen/A-6-was-ist-neu-feed.md), which stays `🏁 done`.
 (Label: `frontend`, `data`)
+
+### ✅ #29 Popup room on area selection: measure, don't guess
+Follow-up on [A-7](./anforderungen/A-7-baustellenflaechen.md). Selecting a case
+with an area fits the map to it and opens the marker popup. Leaflet's popup
+`autoPan` pans the map so the popup sits at the **map** edge — computed from
+popup and marker alone, so it lands in the same place no matter what the fit
+just did, and pushed 25–50 m of the just-fitted shape back out of view. The
+first fix disabled `autoPan` for these markers and reserved a **fixed 170 px**
+strip at the top of the fit. That worked but was a guessed number: a short
+popup paid the same 170 px as a long one, and on a phone the strip squeezed the
+shape into the lower third.
+**DoD:** the reserved strip matches the popup that is actually shown, the
+popup is never clipped, and the point-only path keeps today's exact `setView`
+behaviour. — **done:** the popup is opened **before** `fitBounds` (safe now
+that `autoPan` is off for these markers, so opening moves nothing), then
+`popupPlatz()` reads its real `offsetHeight` and reserves exactly that, capped
+at `AREA_FIT_POPUP_MAX_SHARE` (40 %) of the map height so a long info text
+can't crush the shape on a small display. Measured against the live snapshot:
+116–153 px reserved instead of a flat 170 (map 491 px tall on mobile, 628 px on
+desktop; cap 196/251 px), so nothing came near the cap and no popup is clipped
+— the common short popup gives 54 px of map back. Deliberately *not* "reserve
+nothing when the popup exceeds the cap", which was the first idea: with
+`autoPan` off that clips the popup at the map edge, and unreadable is worse
+than shifted. Verified by 32 Playwright checks against real city geometry
+(each multi-part case's fit spans all parts, popup stays inside the map,
+point-only selection byte-identical to the pre-A-7 checkout).
+(Label: `frontend`, `a11y`)
+
+### ⬜ #30 Very large areas fit at a zoom where they read as a hairline
+Also from [A-7](./anforderungen/A-7-baustellenflaechen.md). A case like
+`2025V6065` (Waldstadt) is a ~1.9 km corridor whose polygon ring has 180
+vertices; `fitBounds` correctly zooms out to ~13 to show all of it, where the
+shape is about two pixels wide. E5 anticipated this ("`fitBounds()` naturally
+zooms out to fit; the `maxZoom` cap only bounds the *tight* end"), so it is not
+a defect — but it is the one case where the area adds little over the marker.
+**Deliberately open, not planned.** Every option costs more than it returns
+today: a `minZoom` floor would hide the extent, which is the whole point of the
+feature; zoom-adaptive stroke weight is real complexity for a handful of cases;
+and the line-geometry corridors already get the heavier 6 px stroke, so this
+only touches polygons whose ring happens to be long and thin. Note also that
+this was judged from screenshots with the OSM tiles intercepted — against real
+street context a hairline corridor reads considerably better than against grey.
+Revisit only if it comes up in practice. (Label: `frontend`, `enhancement`)
 
 ---
 

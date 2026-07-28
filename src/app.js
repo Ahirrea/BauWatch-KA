@@ -21,13 +21,9 @@ const AMPEL_COLOR = { voll: '#c02626', teil: '#f08a00', gering: '#197a3d' };
 // Kreuzung) soll nicht dichter heranspringen als ein gewöhnlicher Marker.
 const AREA_FIT_MAX_ZOOM = 17;
 const AREA_FIT_PADDING = 40;
-// Zusätzlicher Platz OBEN für das Popup, das direkt nach dem Einpassen aufgeht.
-// Ohne diesen Streifen verschiebt Leaflets autoPan die Karte anschließend, damit
-// das Popup ganz sichtbar ist — und schiebt dabei genau das aus dem Bild, was
-// gerade eingepasst wurde (gemessen: ein Rand von ~25–50 m fiel heraus). Anteilig
-// gedeckelt, weil auf dem Telefon eine feste Pixelzahl fast die ganze Karte wäre.
-const AREA_FIT_POPUP_ROOM = 170;
-const AREA_FIT_POPUP_ROOM_MAX_SHARE = 0.35;
+// Anteil der Kartenhöhe, den der Popup-Streifen höchstens beanspruchen darf —
+// siehe popupPlatz().
+const AREA_FIT_POPUP_MAX_SHARE = 0.4;
 
 // Language preference (A-5). localStorage key: 'bauwatch.sprache'.
 const SPRACHE_KEY = 'bauwatch.sprache';
@@ -318,8 +314,8 @@ function renderMarkers(list) {
     // Bei einer Fläche das Auto-Schwenken des Popups abschalten (A-7/E5):
     // Leaflet schiebt die Karte beim Öffnen so, dass das Popup am KARTENRAND
     // sitzt — und setzt damit das gerade Eingepasste außer Kraft, gemessen um
-    // bis zu ~200 px. Den Platz dafür reserviert schon fitBounds oben
-    // (AREA_FIT_POPUP_ROOM), das Schwenken hat also nichts zu tun. Ohne Fläche
+    // bis zu ~200 px. Den Platz dafür reserviert fitBounds selbst, gemessen
+    // an diesem Popup (popupPlatz), das Schwenken hat also nichts zu tun. Ohne Fläche
     // bleibt es beim Leaflet-Standard — dort ist es sinnvoll, weil setView()
     // den Marker nur zentriert und über keinen Platz für das Popup wacht.
     marker.bindPopup(popupHtml(f), f.properties.area ? { autoPan: false } : undefined);
@@ -389,24 +385,44 @@ function selectFeature(key, { fromList, fromMarker } = {}) {
   // Ohne Fläche bleibt es exakt beim bisherigen Verhalten.
   const bounds = areaById.get(key)?.getBounds();
   const animate = !prefersReducedMotion();
-  if (bounds && bounds.isValid()) {
-    const platz = Math.min(AREA_FIT_POPUP_ROOM, Math.round(map.getSize().y * AREA_FIT_POPUP_ROOM_MAX_SHARE));
+  const hatFlaeche = bounds && bounds.isValid();
+  if (hatFlaeche) {
+    // Popup ZUERST öffnen, dann einpassen — nur so ist seine Höhe messbar, und
+    // bei diesen Markern ist autoPan aus (siehe renderMarkers), das Öffnen
+    // verschiebt also nichts, was das Einpassen danach wieder gutmachen müsste.
+    if (marker) marker.openPopup();
     map.fitBounds(bounds, {
-      paddingTopLeft: [AREA_FIT_PADDING, AREA_FIT_PADDING + platz],
+      paddingTopLeft: [AREA_FIT_PADDING, AREA_FIT_PADDING + popupPlatz(marker)],
       paddingBottomRight: [AREA_FIT_PADDING, AREA_FIT_PADDING],
       maxZoom: AREA_FIT_MAX_ZOOM,
       animate,
     });
   } else if (marker) {
     map.setView(marker.getLatLng(), Math.max(map.getZoom(), 15), { animate });
+    marker.openPopup();
   }
-  if (marker) marker.openPopup();
   if (fromMarker) {
     // Nur den Listen-Container scrollen, nicht das ganze Fenster: sonst springt
     // im mobilen Layout (Liste unter der Karte) der Viewport nach unten weg und
     // verdeckt das gerade geöffnete Info-Popup auf der Karte.
     scrollListItemIntoView(listItemById.get(key));
   }
+}
+
+// Platz, den fitBounds oben für das schon offene Popup freihalten muss (A-7/E5).
+// GEMESSEN, nicht geschätzt: ein kurzes Popup soll nicht so viel Karte kosten wie
+// ein langes. Ohne diesen Streifen läge das Popup über der gerade eingepassten
+// Fläche, und mit abgeschaltetem autoPan würde es am oberen Kartenrand
+// abgeschnitten — unlesbar, also schlimmer als jede Verschiebung.
+//
+// Nach oben gedeckelt: mehr als AREA_FIT_POPUP_MAX_SHARE der Kartenhöhe darf der
+// Streifen nicht fressen, sonst quetscht ein langer Infotext die Fläche auf einem
+// kleinen Display in einen Streifen. Im Extremfall (Popup höher als der Deckel)
+// verdeckt es einen Teil der Fläche — bewusst, denn lesbar schlägt vollständig.
+function popupPlatz(marker) {
+  const el = marker?.getPopup()?.getElement();
+  if (!el) return 0;
+  return Math.min(el.offsetHeight, Math.round(map.getSize().y * AREA_FIT_POPUP_MAX_SHARE));
 }
 
 // Bringt <li> im eigenen Scroll-Container (#liste, overflow-y:auto) in Sicht,
