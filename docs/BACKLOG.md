@@ -10,14 +10,15 @@ Suggested labels: `setup`, `data`, `frontend`, `a11y`, `docs`, `enhancement`.
 > [refinement process](./PROZESS.md).
 
 **Status legend:** ✅ done · 🟡 partial / open · ⬜ open
-**As of:** 2026-07-27 (#23 from the desktop UI review done — stats bar removed.)
+**As of:** 2026-07-28 (#27, unstyled Leaflet chrome in dark mode, done.)
 
 > Summary: Milestones 1–3 are implemented and the site is live via GitHub
 > Pages (#5). From Milestone 4, #15 and #18 are done; #16 (push/subscription
 > idea) is evaluated (result → requirement A-2), what remains open as an
 > optional item is #17 (.ics export). From the requirements, **A-3 (PWA) is
 > implemented** (#24); from the desktop UI review, #22 and #23 are done.
-> From the showcase pre-review, #25 and #26 are done.
+> From the showcase pre-review, #25 and #26 are done. #27 (a follow-up
+> desktop UI fix) is done.
 
 ---
 
@@ -259,6 +260,29 @@ stats bar. Implementation: `#stats` section removed from `index.html`,
 from `src/styles.css`, the now-unused `statsAriaLabel`/`statVoll`/
 `statBehinderung` keys removed from `src/lib/i18n.js`. `CACHE_SHELL` bumped
 to `v7` (shell files changed).
+
+---
+
+## Follow-up desktop UI fix (2026-07-28)
+
+### ✅ #27 Unstyled Leaflet chrome in dark mode
+A dark-mode desktop screenshot showed the zoom control, the map attribution
+box, and marker popups as stark white boxes on the dark map —
+`vendor/leaflet/leaflet.css` hardcodes white/black for all three and was
+never themed, unlike every other control in the app. Same root cause as #22
+(a vendored/default style not adapted for dark mode), just a different
+element.
+**DoD:** zoom control, attribution box, and popups themed with the app's
+existing tokens in dark mode; light mode unchanged (it already matched
+Leaflet's white defaults by coincidence, same as `--bg` did for badges
+before #22). — **done:** `src/styles.css` overrides `.leaflet-bar a`,
+`.leaflet-control-attribution`, `.leaflet-popup-content-wrapper`,
+`.leaflet-popup-tip`, and `.leaflet-container a.leaflet-popup-close-button`
+with `--surface`/`--text`/`--text-muted`/`--border`/`--accent`/`--chip`/
+`--shadow` — no new dark-mode media query needed, since those tokens already
+flip per scheme. Verified with Playwright screenshots (light + dark, map
+view and an opened popup) and `npm test` (all green). `CACHE_SHELL` bumped
+to `v8` (shell file changed). (Label: `frontend`)
 
 ---
 

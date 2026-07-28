@@ -526,6 +526,37 @@ body {
   font-weight: 400;
 }
 
+/* --- Leaflet-Bedienelemente ---
+   leaflet.css bringt weiß/schwarz fest verdrahtet mit (kein Theme-Support).
+   Im Hellmodus fällt das nicht auf (--surface ist ohnehin weiß), im
+   Dunkelmodus stachen Zoom-Buttons, Attributions-Box und Popup als helle
+   Kästen aus der dunklen Karte heraus. Fix über dieselben Tokens wie der
+   Rest der App — dadurch automatisch korrekt in beiden Farbschemata, ganz
+   ohne eigene Media Query (die Tokens selbst schalten um). */
+.leaflet-bar {
+  box-shadow: var(--shadow);
+}
+.leaflet-bar a {
+  background-color: var(--surface);
+  color: var(--text);
+  border-bottom-color: var(--border);
+}
+.leaflet-bar a:hover,
+.leaflet-bar a:focus {
+  background-color: var(--chip);
+}
+.leaflet-bar a.leaflet-disabled {
+  background-color: var(--chip);
+  color: var(--text-muted);
+}
+.leaflet-control-attribution {
+  background: var(--surface);
+  color: var(--text-muted);
+}
+.leaflet-control-attribution a {
+  color: var(--accent);
+}
+
 /* Popup */
 .popup-title {
   font-weight: 600;
@@ -534,6 +565,19 @@ body {
 .leaflet-popup-content {
   margin: 0.6rem 0.8rem;
   line-height: 1.4;
+}
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: var(--shadow);
+}
+.leaflet-container a.leaflet-popup-close-button {
+  color: var(--text-muted);
+}
+.leaflet-container a.leaflet-popup-close-button:hover,
+.leaflet-container a.leaflet-popup-close-button:focus {
+  color: var(--text);
 }
 
 /* --- Footer --- */
