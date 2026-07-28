@@ -29,6 +29,7 @@ linked — that way the folder doesn't fill up with empty templates.
 | A-4 | [Legal notice & privacy notice](./A-4-impressum-datenschutz.md) | 🏁 done | Two text pages name the operator and the three real third-party data flows — so it's readable who's behind the offering and what goes to third parties. |
 | A-5 | [Language switch (German ⇄ English)](./A-5-sprachumschalter.md) | 🏁 done | A DE/EN toggle for the map page itself — German stays the default, legal pages/PWA identity/raw dataset text stay German-only. |
 | A-6 | ["What's new?" feed](./A-6-was-ist-neu-feed.md) | 🏁 done | A modal on the map page showing construction-site changes from the last 30 days, without personalization or a new `localStorage` key — no page reload, no login, complementary to A-2's static feed. |
+| A-7 | [Construction-site areas on the map](./A-7-baustellenflaechen.md) | ✅ ready | Shows each closure's/site's actual spatial extent as a shaded polygon on the map, alongside the existing point marker, instead of discarding the WFS's second geometry. |
 
 ## Adding a new requirement
 
