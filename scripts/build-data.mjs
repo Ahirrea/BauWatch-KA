@@ -198,9 +198,10 @@ function buildArea(geometries) {
   if (list.every((g) => LINEAR.has(g.type))) {
     return { type: 'MultiLineString', coordinates: list.flatMap(areaParts) };
   }
-  // Polygons and lines in the same case can't share a Multi* type. Not seen in
-  // the inspected data, but cheap to survive: L.geoJSON renders a
-  // GeometryCollection, and the client styles each member by its own type.
+  // Polygons and lines in the same case can't share a Multi* type. This is rare
+  // but real — the first full build produced 2 such cases out of 183 — so the
+  // client has to handle it: L.geoJSON renders a GeometryCollection, and
+  // renderAreas() splits it so each member is styled by its own type.
   return { type: 'GeometryCollection', geometries: list };
 }
 
