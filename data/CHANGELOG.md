@@ -2,6 +2,12 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 29.07.2026, 23:04 — 1 geändert (gesamt 185)
+
+- ✏️ K9659 Höhe DM — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 29.07.2026, 19:22 — 1 neu, 2 geändert (gesamt 185)
 
 - ➕ **Humboldtstraße zw. Gerwigstraße und Essenweinstraße**
