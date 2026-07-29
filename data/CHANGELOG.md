@@ -2,6 +2,14 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 29.07.2026, 19:22 — 1 neu, 2 geändert (gesamt 185)
+
+- ➕ **Humboldtstraße zw. Gerwigstraße und Essenweinstraße**
+- ✏️ Sophienstraße Kreuzung Reinhold-Frank-Straße — sonstige Angaben aktualisiert
+- ✏️ Glogauer Straße zw. Kösliner Straße und Beuthener Straße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 29.07.2026, 12:45 — 2 entfernt, 4 geändert (gesamt 184)
 
 - ➖ ~~Kropsburgweg, Madenburgweg, Binsenschlauchweg, Landauer Str., Bienwaldstr.~~
