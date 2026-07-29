@@ -2,6 +2,17 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 29.07.2026, 12:45 — 2 entfernt, 4 geändert (gesamt 184)
+
+- ➖ ~~Kropsburgweg, Madenburgweg, Binsenschlauchweg, Landauer Str., Bienwaldstr.~~
+- ➖ ~~Belfortstraße zw. Reinhold-Frank-Straße und Leopoldstraße~~
+- ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
+- ✏️ Glogauer Straße zw. Kösliner Straße und Beuthener Straße — sonstige Angaben aktualisiert
+- ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
+- ✏️ Sophienstraße Kreuzung Reinhold-Frank-Straße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 29.07.2026, 05:20 — 3 neu (gesamt 186)
 
 - ➕ **Sophienstraße Kreuzung Reinhold-Frank-Straße**
