@@ -2,6 +2,14 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 29.07.2026, 05:20 — 3 neu (gesamt 186)
+
+- ➕ **Sophienstraße Kreuzung Reinhold-Frank-Straße**
+- ➕ **Hirschstraße zw. Amalienstraße und Kaiserstraße**
+- ➕ **An der Bahn zw. Hagdornstraße und Gerhardtstraße**
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 28.07.2026, 21:45 — 183 geändert (gesamt 183)
 
 - ✏️ Herrenstraße zw. Karlstraße und Amalienstraße — sonstige Angaben aktualisiert
