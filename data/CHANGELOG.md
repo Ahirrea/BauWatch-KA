@@ -2,6 +2,14 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 30.07.2026, 19:42 — 1 neu, 2 geändert (gesamt 199)
+
+- ➕ **Weinweg zw. Rintheimer Haupstraße und Koyweg**
+- ✏️ K9659 Höhe DM — sonstige Angaben aktualisiert
+- ✏️ Redtenbacher Straße zw. Mathystraße und Gartenstraße — Ende: 2026-07-31 → 2026-07-30
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 30.07.2026, 16:21 — 1 neu (gesamt 198)
 
 - ➕ **Glogauer Straße zw. Kösliner Straße und Lauenburger Straße**
