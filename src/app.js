@@ -46,6 +46,10 @@ const state = {
   filters: { zeitraum: 'heute', ampel: 'alle', verkehrsmittel: 'alle' },
   search: null, // { center: [lat, lon], label: string }
   selectedId: null,
+  // A-9: Feature unter dem Zeiger bzw. mit Tastaturfokus — flüchtig, überlebt
+  // absichtlich kein render() (die Zeile und die Ebene darunter werden dort
+  // zerstört, ihr mouseleave käme nie an → Geist-Hervorhebung).
+  hoverKey: null,
   lang: liesGespeicherteSprache(),
   theme: liesGespeichertesFarbschema(),
 };
@@ -258,9 +262,27 @@ function listItemHtml(f) {
 // Bedeutung (E4) — nur die Technik unterscheidet sich.
 const AREA_LINE_TYPES = new Set(['LineString', 'MultiLineString']);
 
-function areaStyle(color, geometryType) {
-  if (AREA_LINE_TYPES.has(geometryType)) return { color, weight: 6, opacity: 0.45 };
-  return { color, weight: 2, opacity: 0.9, fillColor: color, fillOpacity: 0.18 };
+// Hervorhebungsstufen der Flächen (A-9): idle → hover → selected. Die Rampe
+// muss je Geometrietyp getrennt bleiben — Linien haben kein Inneres, dort
+// bewirkt fillOpacity nichts, also steigen Strichstärke und Deckkraft (E5).
+// idle entspricht exakt den bisherigen Werten (E1: alle Flächen bleiben
+// gezeichnet, Hervorhebung ist nur ein Gradunterschied).
+const AREA_TIER_STYLE = {
+  line: {
+    idle: { weight: 6, opacity: 0.45 },
+    hover: { weight: 7, opacity: 0.65 },
+    selected: { weight: 8, opacity: 0.85 },
+  },
+  polygon: {
+    idle: { weight: 2, opacity: 0.9, fillOpacity: 0.18 },
+    hover: { weight: 3, opacity: 0.9, fillOpacity: 0.28 },
+    selected: { weight: 3, opacity: 0.9, fillOpacity: 0.38 },
+  },
+};
+
+function areaStyle(color, geometryType, tier = 'idle') {
+  if (AREA_LINE_TYPES.has(geometryType)) return { color, ...AREA_TIER_STYLE.line[tier] };
+  return { color, fillColor: color, ...AREA_TIER_STYLE.polygon[tier] };
 }
 
 // Baustellenflächen (A-7). Eigene Ebene UNTER den Markern: der Marker bleibt
@@ -286,16 +308,73 @@ function renderAreas(list) {
     // einer Collection für jeden Teil dasselbe Feature zu sehen und könnte die
     // Typen gar nicht unterscheiden.
     const teile = area.type === 'GeometryCollection' ? area.geometries || [] : [area];
-    // featureGroup, nicht layerGroup: nur die kann getBounds() (für E5).
+    // featureGroup, nicht layerGroup: nur die kann getBounds() (für E5) und
+    // bringToFront() (für A-9/E10).
     const gruppe = L.featureGroup();
     for (const g of teile) {
       if (!g || !g.coordinates) continue;
-      L.geoJSON(g, { interactive: false, style: areaStyle(color, g.type) }).addTo(gruppe);
+      const teil = L.geoJSON(g, { interactive: false, style: areaStyle(color, g.type) });
+      // Für den Stufenwechsel (A-9) gemerkt: der Restyle muss je Teil
+      // typbewusst laufen — ein pauschales setStyle auf die Gruppe gäbe der
+      // Polyline eine Füllung und dem Polygon einen 6-px-Strich.
+      teil._bauwatchTyp = g.type;
+      teil.addTo(gruppe);
     }
     if (gruppe.getLayers().length === 0) continue;
+    gruppe._bauwatchFarbe = color;
     gruppe.addTo(areaLayer);
     areaById.set(f._key, gruppe);
   }
+}
+
+// --- Hervorhebungsstufen (A-9) ----------------------------------------------
+// Stufe eines Features aus dem Zustand ableiten: Auswahl schlägt Hover auf
+// demselben Feature (E4) — beide zugleich sichtbar heißt „A ist gewählt, B
+// wird gerade angesehen".
+function areaTier(key) {
+  if (key === state.selectedId) return 'selected';
+  if (key === state.hoverKey) return 'hover';
+  return 'idle';
+}
+
+// Wendet die aktuelle Stufe eines Features auf seine Flächengruppe an, je
+// Kind-Layer typbewusst (die eine GeometryCollection mischt Polygon UND
+// Linie). Hervorgehobenes nach vorn (E10): Leaflet zeichnet in
+// Einfüge-Reihenfolge, sonst läge die Betonung ausgerechnet in der dichten
+// Innenstadt unter der Füllung eines Nachbarn.
+function applyAreaTier(key) {
+  const gruppe = areaById.get(key);
+  if (!gruppe) return;
+  const tier = areaTier(key);
+  gruppe.eachLayer((teil) => teil.setStyle(areaStyle(gruppe._bauwatchFarbe, teil._bauwatchTyp, tier)));
+  if (tier !== 'idle') gruppe.bringToFront();
+}
+
+// Hover/Fokus-Ziel wechseln: Fläche umstufen, Gegenstück-Zeile tönen (E2/E7).
+// Endet ein Hover, kommt die gewählte Fläche wieder nach ganz vorn (E10).
+// Bewegt hier NIE die Karte oder die Liste (E9).
+function setHoverKey(key) {
+  if (key === state.hoverKey) return;
+  const vorher = state.hoverKey;
+  state.hoverKey = key;
+  if (vorher) {
+    applyAreaTier(vorher);
+    listItemById.get(vorher)?.classList.remove('is-hovered');
+  }
+  if (key) {
+    applyAreaTier(key);
+    listItemById.get(key)?.classList.add('is-hovered');
+  }
+  if (!key && state.selectedId) areaById.get(state.selectedId)?.bringToFront();
+}
+
+// Nur auf Geräten mit echtem Hover verdrahten (E3): auf Touch-Geräten löst ein
+// Tipp synthetische mouseover aus, die bis zum nächsten Tipp kleben — neben
+// der echten Auswahl stünde eine zweite, veraltete Hervorhebung. Der Fokus-Pfad
+// (E8) hängt bewusst NICHT an diesem Gatter — an einem Touch-Gerät kann eine
+// Tastatur hängen.
+function hoverFaehig() {
+  return window.matchMedia('(hover: hover)').matches;
 }
 
 function renderMarkers(list) {
@@ -320,6 +399,13 @@ function renderMarkers(list) {
     // den Marker nur zentriert und über keinen Platz für das Popup wacht.
     marker.bindPopup(popupHtml(f), f.properties.area ? { autoPan: false } : undefined);
     marker.on('click', () => selectFeature(f._key, { fromMarker: true }));
+    // Marker-Hover hebt die Fläche hervor und tönt die Listenzeile (A-9/E2) —
+    // der Marker selbst bleibt unverändert (E6). Leaflet feuert mouseover/
+    // mouseout, keine Pointer-Events.
+    if (hoverFaehig()) {
+      marker.on('mouseover', () => setHoverKey(f._key));
+      marker.on('mouseout', () => setHoverKey(null));
+    }
     marker.addTo(markerLayer);
     markerById.set(f._key, marker);
   });
@@ -329,16 +415,42 @@ function renderList(list) {
   const ul = el('liste');
   ul.innerHTML = '';
   listItemById.clear();
+  const mitHover = hoverFaehig();
   for (const f of list) {
     const li = document.createElement('li');
     li.className = `amp-${f.properties.ampel}`;
+    li.dataset.key = f._key; // Rückweg DOM → Feature für den Fokus-Pfad (A-9/E8)
     li.innerHTML = listItemHtml(f);
     li.querySelector('.list-item-btn').addEventListener('click', () =>
       selectFeature(f._key, { fromList: true })
     );
+    // Zeilen-Hover als Vorschau der Ausdehnung (A-9/E2), nur auf
+    // hover-fähigen Geräten (E3).
+    if (mitHover) {
+      li.addEventListener('mouseenter', () => setHoverKey(f._key));
+      li.addEventListener('mouseleave', () => setHoverKey(null));
+    }
     ul.appendChild(li);
     listItemById.set(f._key, li);
   }
+}
+
+// Tastaturfokus spiegelt Hover (A-9/E8): beim Durch-Tabben dieselbe Vorschau
+// wie mit der Maus, auf jedem Gerät (deshalb ohne das E3-Gatter). Einmal
+// delegiert auf #liste verdrahtet — focusin/focusout steigen auf, anders als
+// mouseenter, und überleben so jedes render(). :focus-visible filtert den
+// Fokus heraus, den ein Mausklick setzt: dort wirkt die Auswahl des Klicks.
+function wireListFocus() {
+  const ul = el('liste');
+  ul.addEventListener('focusin', (e) => {
+    const btn = e.target.closest('.list-item-btn');
+    if (!btn || !btn.matches(':focus-visible')) return;
+    const key = btn.closest('li')?.dataset.key;
+    if (key) setHoverKey(key);
+  });
+  ul.addEventListener('focusout', (e) => {
+    if (e.target.closest('.list-item-btn')) setHoverKey(null);
+  });
 }
 
 function renderStatus(list) {
@@ -359,6 +471,12 @@ function renderStatus(list) {
 }
 
 function render() {
+  // Hover-Zustand VOR dem Neuaufbau räumen (A-9): Zeile und Fläche darunter
+  // werden gleich zerstört, ihr mouseleave feuert nie — ohne diesen Schritt
+  // bliebe nach einem Filterwechsel unter ruhendem Zeiger eine
+  // Geist-Hervorhebung stehen. Der nächste Zeiger-/Fokuswechsel baut den
+  // Zustand von selbst wieder auf.
+  setHoverKey(null);
   const list = currentFiltered();
   // Flächen vor den Markern: dieselbe gefilterte Liste, beide Ebenen bleiben
   // dadurch von sich aus synchron (A-7) — die Fläche ist kein eigener Zustand.
@@ -369,14 +487,23 @@ function render() {
   // Auswahl beibehalten, falls noch sichtbar
   if (state.selectedId && listItemById.has(state.selectedId)) {
     listItemById.get(state.selectedId).classList.add('is-selected');
+    // Die frisch aufgebauten Flächen stehen alle auf idle — die gewählte
+    // wieder auf ihre Stufe heben (A-9/E4) und nach vorn bringen (E10).
+    applyAreaTier(state.selectedId);
   } else {
     state.selectedId = null;
   }
 }
 
 function selectFeature(key, { fromList, fromMarker } = {}) {
+  const vorher = state.selectedId;
   state.selectedId = key;
   for (const [k, li] of listItemById) li.classList.toggle('is-selected', k === key);
+  // Flächen-Stufen nachziehen (A-9): die alte Auswahl fällt zurück (auf idle
+  // oder hover, je nach Zeiger), die neue bekommt die stärkste Stufe und
+  // kommt nach vorn (E4, E10).
+  if (vorher && vorher !== key) applyAreaTier(vorher);
+  applyAreaTier(key);
 
   const marker = markerById.get(key);
   // Mit Fläche: auf deren Ausdehnung einpassen statt auf einen festen Zoom
@@ -944,5 +1071,6 @@ wireFilters();
 wireLanguageToggle();
 wireSearch();
 wireWhatsNew();
+wireListFocus();
 loadData();
 initServiceWorker();
