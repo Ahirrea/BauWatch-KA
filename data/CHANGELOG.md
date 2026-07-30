@@ -2,6 +2,33 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 30.07.2026, 04:54 — 15 neu, 3 entfernt, 4 geändert (gesamt 197)
+
+- ➕ **Reinhold-Frank-Straße zw. Viktoriastraße und Kriegstraße**
+- ➕ **Knoten Brauerstraße / Reinhod-Frank-Straße / Kriegsstraße / Gartenstraße**
+- ➕ **Neubrunnenstraße Gleisüberfahrt Karlsruher Straße**
+- ➕ **Gartenstraße zw. Steinhäuserstraße u. Kriegsstraße (Weinbrennerplatz)**
+- ➕ **B 10 Kriegsstraße zw. Leopoldstraße u. Lessingstraße**
+- ➕ **Belfortstraße zw. Reinhold-Frank-Straße und Leopoldstraße**
+- ➕ **Reinhold-Frank-Straße zwischen Belfortstraße und Kaiserallee**
+- ➕ **Haselweg zw. Pulverhausstraße und Birkenweg**
+- ➕ **Karlsruher Straße zw. Haid-und-Neu-Straße und Gondelsheimer Straße/ Hofäcker Straße**
+- ➕ **L605 Höhe Ausfahrt Pulverhausstraße**
+- ➕ **B3/ Beunstraße Ausfahrt Grötzinger Baggeersee**
+- ➕ **Durlacher Allee/ K9654 zw. Abfahrt Durlacher Allee und Brückenbauwerk**
+- ➕ **Im Eichbäumle**
+- ➕ **Glogauer Straße zw. Liegnitzer Straße und Im Eichbäumle**
+- ➕ **Albert-Schweitzer-Straße zw. Theodor Heuss Allee und Berha-von-Suttner-Straße**
+- ➖ ~~Kriegsstraße (oberirdisch) zw. Ettlinger Straße und Meidingerstraße~~
+- ➖ ~~Zehntwaldstraße zw. Föhrenweg und Kiefernweg~~
+- ➖ ~~Glogauer Straße zw. Kösliner Straße und Beuthener Straße~~
+- ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
+- ✏️ Raiherwiesenstraße zw. Pfaffstraße und Bleichstraße — sonstige Angaben aktualisiert
+- ✏️ Rheinhafenstraße zw. Daxlanderstraße und Südliche Uferstraße — sonstige Angaben aktualisiert
+- ✏️ K9659 Höhe DM — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 29.07.2026, 23:04 — 1 geändert (gesamt 185)
 
 - ✏️ K9659 Höhe DM — sonstige Angaben aktualisiert
