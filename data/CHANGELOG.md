@@ -2,6 +2,12 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 30.07.2026, 16:21 — 1 neu (gesamt 198)
+
+- ➕ **Glogauer Straße zw. Kösliner Straße und Lauenburger Straße**
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 30.07.2026, 12:31 — 1 entfernt, 3 geändert (gesamt 197)
 
 - ➖ ~~Am Entenfang: Rheinstraße zur B 36 Michelinstraße gesperrt, B 10 Südtangente AS 6 Abfahrt von Osten zur B 36 Lameystraße gesperrt, B 36 Lameystraße zur Rheinstraße gesperrt, B 36 Michelinstraße zur B 36 Lameystraße u. Rheinstraße gesperrt~~
