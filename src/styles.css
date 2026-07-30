@@ -574,6 +574,18 @@ body {
 .liste li.is-selected {
   outline: 2px solid var(--accent);
 }
+/* Zeilen-Tönung bei Hover/Fokus (A-9/E7). --chip statt --bg: der Token für
+   „Fläche, die AUF der Listenkarte liegt", in allen drei Schemazuständen
+   abgestimmt — Badges und .whats-new-close:hover nutzen ihn genauso. Als
+   Klasse statt :hover, weil app.js sie auch bei Marker-Hover und Tastatur-
+   fokus setzt (E2/E8); das (hover: hover)-Gatter sitzt in der Verdrahtung,
+   nicht hier — sonst verlöre der ungegatterte Fokus-Pfad die Tönung.
+   Anderes CSS-Property als .is-selected: gewählt UND überfahren ergibt
+   Tönung PLUS Umriss, kein Konflikt. Keine Transition → nichts, was
+   prefers-reduced-motion dämpfen müsste. */
+.liste li.is-hovered {
+  background: var(--chip);
+}
 .item-title {
   font-weight: 600;
   display: flex;
