@@ -31,6 +31,7 @@ linked — that way the folder doesn't fill up with empty templates.
 | A-6 | ["What's new?" feed](./A-6-was-ist-neu-feed.md) | 🏁 done | A modal on the map page showing construction-site changes from the last 30 days, without personalization or a new `localStorage` key — no page reload, no login, complementary to A-2's static feed. |
 | A-7 | [Construction-site areas on the map](./A-7-baustellenflaechen.md) | 🏁 done | Shows each closure's/site's actual spatial extent as a shaded polygon on the map, alongside the existing point marker, instead of discarding the WFS's second geometry. |
 | A-8 | [Colour-scheme switch (light / dark)](./A-8-farbschema-umschalter.md) | 🏁 done | A system/light/dark toggle for the map page — the existing dark palette becomes choosable instead of only system-driven; "follow the system setting" stays the default and stores nothing. |
+| A-9 | [Selection and hover emphasis for areas](./A-9-flaechen-hervorhebung.md) | ✅ ready | Makes the selected or hovered site's shape stand out from the ~200 others A-7 draws — three emphasis tiers on the area layer, geometry-type aware; markers, data and storage stay untouched. |
 
 ## Adding a new requirement
 
@@ -42,6 +43,11 @@ Step 7 of the [refinement process](../PROZESS.md):
    reused, not even for `🗑 discarded`), then link the line and set it to
    `✅ ready`.
 3. Maintain status only here — later too, at `🚧` and `🏁`.
+
+**A new idea landing on a requirement that already exists** does not
+automatically get a new number — whether it's amended in place, gets its own
+number, or revises a decision depends on how far that requirement has got. See
+[step 7a of the process](../PROZESS.md#7a-amending-an-already-refined-requirement).
 
 > Was called `docs/features/` with `F-<no.>` numbers until 2026-07-25; the
 > rename changed nothing in substance. `F-1`/`F-2`/`F-3` correspond to

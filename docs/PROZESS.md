@@ -93,6 +93,44 @@ Copy [`docs/anforderungen/_vorlage.md`](./anforderungen/_vorlage.md) to
 status to **✅ ready** and link it. The status
 lives **only** in this overview, not in the requirement file.
 
+### 7a. Amending an already-refined requirement
+
+A new idea sometimes lands on a requirement that already exists. Which of
+three things to do depends on **where that requirement stands** — and the
+answer is not obvious enough to re-derive each time:
+
+- **Refined, not yet implemented → amend in place.** Add a dated block
+  (`### Amendment decisions (<date>)`), continue the decision numbering
+  (never renumber existing decisions — cross-references point at them), and
+  extend Scope, Specification, Test plan, Definition of Done and the
+  implementation steps. Note the date in the header next to `Refined on:`, and
+  state explicitly which earlier decisions **survive** untouched — that's the
+  part a later reader cannot reconstruct.
+- **Implementation started or finished → its own number.** The file is by then
+  the record of why it was solved *that* way; extending it would leave a
+  Definition of Done that is half-met and a status that has to travel
+  `🏁 → 🚧 → 🏁`. Reference the earlier requirement under `Constrained by:`
+  and name the decisions of it you are relying on.
+- **A decision that implementation *disproved* → revise in place**, whatever
+  the status: keep the original `E<n>` visible and follow it with an
+  `E<n> revised (<date>)` block naming the evidence, per `CLAUDE.md`. That is
+  a correction, not an extension, and it belongs in the file whose decision
+  was wrong — see A-7's `E8 revised` for the pattern.
+
+Either way the [overview](./anforderungen/README.md) stays the only source of
+status, and requirement files are **not** append-only — that rule holds only
+for [`entscheidungen/`](./entscheidungen/README.md), whose ADRs are never
+rewritten.
+
+An amendment is a **fresh pass through steps 1–6**, not an edit bolted on
+beside them: it gets the same survey of the current code, the same check
+against non-goals, and the same options-with-a-recommendation as any other
+idea. Re-survey rather than trusting the existing file — the code may have
+moved a long way since it was written, and a decision built on a stale survey
+is worse than no decision. If the survey invalidates decisions that were
+already made, say so and record what changed, rather than quietly dropping
+them.
+
 ### 8. Implementation only after a green light
 Implementation happens once the idea's originator agrees — **a pre-chosen
 branch name is not a green light.** At the end, check against the
