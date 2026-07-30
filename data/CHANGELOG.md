@@ -2,6 +2,16 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 30.07.2026, 08:34 — 1 neu, 4 geändert (gesamt 198)
+
+- ➕ **Karlstraße, Kaiserstraße, Passagehof**
+- ✏️ K9659 Höhe DM — sonstige Angaben aktualisiert
+- ✏️ Raiherwiesenstraße zw. Pfaffstraße und Bleichstraße — sonstige Angaben aktualisiert
+- ✏️ Rheinhafenstraße zw. Daxlanderstraße und Südliche Uferstraße — sonstige Angaben aktualisiert
+- ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 30.07.2026, 04:54 — 15 neu, 3 entfernt, 4 geändert (gesamt 197)
 
 - ➕ **Reinhold-Frank-Straße zw. Viktoriastraße und Kriegstraße**
