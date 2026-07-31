@@ -2,6 +2,32 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 31.07.2026, 05:37 — 8 neu, 11 entfernt, 2 geändert (gesamt 196)
+
+- ➕ **Südtangente zw. AS3 und AS4**
+- ➕ **Rittnerstraße zw. Erbprinzenstraße und Ständehausstraße**
+- ➕ **Welschneureuter Straße. zw. Neureuter Hauptstraße. und Oberfeldstraße**
+- ➕ **Michiganstraße zw. Tenesseeallee und Erzberger Straße**
+- ➕ **B10 zw. A5 und K9659**
+- ➕ **B10  Südtangente zw. AS 11 und AS 10**
+- ➕ **Hangstraße zw. Siebenmannstraße und Maiblumenstraße**
+- ➕ **Isoldestraße zw. Stösserstraße und Niebelungenstraße**
+- ➖ ~~Parkstraße zw. Pastor-Felke-Straße und Kornblumenstraße~~
+- ➖ ~~Christina-Schneider-Straße 2-24 und Durmersheimer Straßee 66-74~~
+- ➖ ~~Koellestraße zw. Hohleichweg und Fettweisstraße~~
+- ➖ ~~Redtenbacher Straße zw. Mathystraße und Gartenstraße~~
+- ➖ ~~B36/ Michelinstraße zw. Franz-Abt-Straße und Entenfang~~
+- ➖ ~~Roonstraße zw. Hirschstraße und Jollystraße~~
+- ➖ ~~Haselweg zw. Pulverhausstraße und Birkenweg~~
+- ➖ ~~Rintheimer Hauptstraße zw. Huttenstraße und Alter Rathausplatz~~
+- ➖ ~~L605 Höhe Ausfahrt Pulverhausstraße~~
+- ➖ ~~B3/ Beunstraße Ausfahrt Grötzinger Baggeersee~~
+- ➖ ~~Durlacher Allee/ K9654 zw. Abfahrt Durlacher Allee und Brückenbauwerk~~
+- ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
+- ✏️ K9659 Höhe DM — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 30.07.2026, 19:42 — 1 neu, 2 geändert (gesamt 199)
 
 - ➕ **Weinweg zw. Rintheimer Haupstraße und Koyweg**
