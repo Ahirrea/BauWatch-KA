@@ -10,8 +10,8 @@ Suggested labels: `setup`, `data`, `frontend`, `a11y`, `docs`, `enhancement`.
 > [refinement process](./PROZESS.md).
 
 **Status legend:** ✅ done · 🟡 partial / open · ⬜ open
-**As of:** 2026-07-28 (#29, measured popup room on area selection, done; #30,
-hairline rendering of very large areas, deliberately left open.)
+**As of:** 2026-07-31 (#31, installed PWA overrode the device rotation lock,
+done.)
 
 > Summary: Milestones 1–3 are implemented and the site is live via GitHub
 > Pages (#5). From Milestone 4, #15 and #18 are done; #16 (push/subscription
@@ -21,7 +21,8 @@ hairline rendering of very large areas, deliberately left open.)
 > From the showcase pre-review, #25 and #26 are done. #27 (a follow-up
 > desktop UI fix) and #28 (a follow-up on the "What's new?" feed) are done.
 > **A-7 (construction-site areas) is implemented**; of its two follow-ups,
-> #29 is done and #30 is deliberately open (not planned).
+> #29 is done and #30 is deliberately open (not planned). #31 (a PWA
+> manifest fix) is done.
 
 ---
 
@@ -362,6 +363,29 @@ only touches polygons whose ring happens to be long and thin. Note also that
 this was judged from screenshots with the OSM tiles intercepted — against real
 street context a hairline corridor reads considerably better than against grey.
 Revisit only if it comes up in practice. (Label: `frontend`, `enhancement`)
+
+---
+
+## Mobile finding (2026-07-31)
+
+### ✅ #31 Installed PWA ignores the device rotation lock
+`manifest.webmanifest` declared `"orientation": "any"`. On Android, Chrome
+maps that value to the WebAPK's `screenOrientation="fullSensor"`, which
+rotates by sensor **regardless of the user's system rotation lock** —
+`"any"` means "actively request all four orientations", not "defer to the
+system". In a browser tab the manifest field is ignored, so the bug only
+showed on the installed app, where it read as the app overriding a device
+setting. The frontend itself never calls `screen.orientation.lock()`, so
+the manifest was the sole cause.
+**DoD:** the installed app follows the device rotation lock again; nothing
+else about installation or display changes. — **done:** the `orientation`
+member removed entirely (omitting it yields Android's default `user` mode:
+rotates with the device but respects the lock — there is no manifest value
+that expresses this, which is why the fix is a removal, not a different
+value). `CACHE_SHELL` bumped to `v13` (the manifest is a shell file).
+Already-installed users pick this up only when Chrome's periodic WebAPK
+update check runs (typically within a few days of an app start), not on the
+next launch. (Label: `frontend`)
 
 ---
 
