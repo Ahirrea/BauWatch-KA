@@ -2,6 +2,25 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 31.07.2026, 16:25 — 4 neu, 1 entfernt, 9 geändert (gesamt 199)
+
+- ➕ **Industriestraße, Hohleichweg, August-Ketterer-Straße, Waidweg, Babbergerstraße, Daxlander Straße, Hermann-Schneider-Allee**
+- ➕ **Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee**
+- ➕ **Parkstraße zw. Pastor-Felke-Straße und Kornblumenstraße**
+- ➕ **Karlstraße zw. Kaiserstraße und Akademiestraße**
+- ➖ ~~Ritterstraße zw. Am Schlossplatz und Bankhof~~
+- ✏️ Klosestraße zw. Schnetzlerstraße und Ebertstraße — Ende: 2026-08-02 → 2026-07-31
+- ✏️ Hirschstraße zw. Kaiserstraße und Amalienstraße — Ende: 2026-08-21 → 2026-07-31
+- ✏️ Klosestraße zw. Schnetzlerstraße und Gutschstraße — Ende: 2026-08-31 → 2026-07-31
+- ✏️ Nancystraße zw. Zufahrt Reitinstitut und Kußmaulstraße — Ende: 2026-07-31 → 2026-08-14
+- ✏️ Klosestraße zw. Gutschstraße udn Schnetzlerstraße — Ende: 2026-12-31 → 2026-07-31
+- ✏️ Litzenhardtstraße zw. Neue-Anlage-Straße und Martinstraße — Ende: 2026-08-03 → 2026-08-05
+- ✏️ B 3 Grötzinger Straße zw. Bergbahnstraße u. Rittnertstraße — Ende: 2026-08-10 → 2026-08-07
+- ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
+- ✏️ Essenweinstraße zw. Sternbergstraße und Humboldtstraße — Beginn: 2026-07-13 → 2026-07-30; Ende: 2026-10-16 → 2026-09-11
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 31.07.2026, 05:37 — 8 neu, 11 entfernt, 2 geändert (gesamt 196)
 
 - ➕ **Südtangente zw. AS3 und AS4**
