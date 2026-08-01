@@ -2,6 +2,60 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 01.08.2026, 05:36 — 3 neu, 42 entfernt, 4 geändert (gesamt 160)
+
+- ➕ **Gleiwitzerstraße zw. Liegnitzer Straße und Glogauer Straße**
+- ➕ **Lußstraße**
+- ➕ **Lußstraße zw. Schlössleweg und Lußsteige**
+- ➖ ~~Engesserstr. 2-6/8-12 und Lehmannstr. 1-3~~
+- ➖ ~~Gebietsausbau Hildebrandstr./Ellmendinger Str./Grenzstr.~~
+- ➖ ~~Scheibenhardter Weg, Wehrastraße, Wutachstr., Gottlob-Schreber-Weg, Schauinslandstr.~~
+- ➖ ~~Ringstraße bis Steinbügelstraße~~
+- ➖ ~~Hebelstraße zw. Karl-Friedrich-Straße u. Lammstraße~~
+- ➖ ~~Klosestraße zw. Schnetzlerstraße und Ebertstraße~~
+- ➖ ~~Markgrafenstraße zwischen Kreuzstraße und Rondellplatz~~
+- ➖ ~~Killisfeldstraße/ Gudrunstraße/ Oberwaldstraße/ Dietrichstraße~~
+- ➖ ~~Neckarstraße, Kniebisstraße, Mainstraße, Schauinslandstraße, Tauberstraße~~
+- ➖ ~~Hirschstraße zw. Kaiserstraße und Amalienstraße~~
+- ➖ ~~Am Alten Bahnhof zw. Mitteltorstraße und Georg-Büchner-Straße~~
+- ➖ ~~Yorckstraße zw. Wichernstraße u. Yorckplatz~~
+- ➖ ~~B3/ Badener Straße zw. Breite Gass u. Karlsburgstraße~~
+- ➖ ~~Hebelstraße zw. Karl-Friedrich-Straße u. Lammstraße~~
+- ➖ ~~Klosestraße zw. Schnetzlerstraße und Gutschstraße~~
+- ➖ ~~Südtangente zw. AS3 und AS4~~
+- ➖ ~~Kurt-Schumacher-Straße zw. Wilhelm-Hausenstein-Allee und Josef-Schofer-Straße~~
+- ➖ ~~Posseltstraße Kreuzung Turmbergstraße~~
+- ➖ ~~Sommerstraße zw. Frühligstraße und Gottesauer Straße, Gottesauerstraße zw. Sommerstraße und August-Schwall-Straße~~
+- ➖ ~~Klosestraße zw. Gutschstraße udn Schnetzlerstraße~~
+- ➖ ~~Marstallstraße zw. Weiherstraße und B3/ Badener Straße~~
+- ➖ ~~Brunnenhausstraße zw. Weiherstraße und Marstallstraße~~
+- ➖ ~~Oosstraße, Donaustraße, Murgstraße, Enzstraße~~
+- ➖ ~~Martin-Schongauer-Weg zw. Albrecht-Altdorf-Weg und Frans-Hals-Weg~~
+- ➖ ~~Westmarkstr./Grenzstr./Brühlstr~~
+- ➖ ~~Ostmarkstraße zw. Ellmendinger Straße und Grazer Straße~~
+- ➖ ~~Killisfeldstraße, Gudrunstraße, Oberwaldstraße, Dietrichstraße~~
+- ➖ ~~Ellmendinger Straße, Gudrunstraße, Oberwaldstraße, Bilfinger Straße, Dietrichstraße~~
+- ➖ ~~Auf den Lohn, Ersinger Straße~~
+- ➖ ~~Ellmendinger Straße, Ostmarkstraße, Im Säuterich, Leutschauer Straße, Ersinger Straße~~
+- ➖ ~~Ersinger Straße~~
+- ➖ ~~Kaiserstraße zw. Kreuzstraße und Kronenstraße~~
+- ➖ ~~Kaiserstraße zw. Karlstraße und Ritterstraße~~
+- ➖ ~~Ellmendinger Straße zwiachen Grazer Srraße und Leußlerstraße, Im Haberacker~~
+- ➖ ~~Humboldstraße zw. Gerwigstraße und Essenweinstraße~~
+- ➖ ~~Rastatter Straße 45+62, Tulpenstraße 1-4~~
+- ➖ ~~Lebrechtstr. 47a~~
+- ➖ ~~Striederstraße zw. Berckmüllerstraße und Ostring~~
+- ➖ ~~Michiganstraße zw. Tenesseeallee und Erzberger Straße~~
+- ➖ ~~B10 zw. A5 und K9659~~
+- ➖ ~~B10  Südtangente zw. AS 11 und AS 10~~
+- ➖ ~~Hangstraße zw. Siebenmannstraße und Maiblumenstraße~~
+- ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
+- ✏️ Kapellenstraße zw. Ludwig-Erhard-Allee und Durlacher Allee/Am Künstlerhaus zw. Waldhornstraße und Zähringer Straße — sonstige Angaben aktualisiert
+- ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
+- ✏️ Rheinhafenstraße zw. Daxlanderstraße und Südliche Uferstraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 31.07.2026, 16:25 — 4 neu, 1 entfernt, 9 geändert (gesamt 199)
 
 - ➕ **Industriestraße, Hohleichweg, August-Ketterer-Straße, Waidweg, Babbergerstraße, Daxlander Straße, Hermann-Schneider-Allee**
