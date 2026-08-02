@@ -2,6 +2,20 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 02.08.2026, 05:36 — 1 neu, 6 entfernt, 2 geändert (gesamt 155)
+
+- ➕ **Herrenstraße zw. Karlstraße und Amalienstraße**
+- ➖ ~~Dreisamstraße, Neckarplatz, Donaustraße, Neckarstraße~~
+- ➖ ~~Kapellenstraße zw. Ludwig-Erhard-Allee und Durlacher Allee/Am Künstlerhaus zw. Waldhornstraße und Zähringer Straße~~
+- ➖ ~~Tulpenstraße zw. Göhrenstraße und Kleiststraße~~
+- ➖ ~~Raiherwiesenstraße zw. Schinnrainstraße und Bleichstraße~~
+- ➖ ~~Gottesauer Str.3-25 (Nord)&6-14 (Süd);Ostendstr.1-10;Lachnerstr. 2-20 (West)&13;~~
+- ➖ ~~Karlstraße zw.Kaiserstraße und Akademiestraße~~
+- ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
+- ✏️ Rheinhafenstraße zw. Daxlanderstraße und Südliche Uferstraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 01.08.2026, 05:36 — 3 neu, 42 entfernt, 4 geändert (gesamt 160)
 
 - ➕ **Gleiwitzerstraße zw. Liegnitzer Straße und Glogauer Straße**
