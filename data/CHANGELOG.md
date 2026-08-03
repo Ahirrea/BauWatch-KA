@@ -2,6 +2,17 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 03.08.2026, 16:56 — 2 neu, 4 geändert (gesamt 171)
+
+- ➕ **Georg-Friedrich-Straße, Ludwig-Wilhelm-Straße, Gerwigstraße**
+- ➕ **Bernhardusplatz, Adenauerring, Karl-Wilhelm-Straße, Bernhardtstraße**
+- ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
+- ✏️ Vorholzstraße zw. Karlstraße und Hirschstraße — sonstige Angaben aktualisiert
+- ✏️ Gymnasiumstraße zw. Rittnertstraße und Turmbergstraße — Ende: 2026-08-04 → 2026-08-14
+- ✏️ K9659 Höhe DM — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 03.08.2026, 13:35 — 1 neu, 1 entfernt, 3 geändert (gesamt 169)
 
 - ➕ **Babbergerstraße, Waidweg, Hermann-Schneider-Allee**
