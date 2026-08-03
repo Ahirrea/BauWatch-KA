@@ -2,6 +2,16 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 03.08.2026, 13:35 — 1 neu, 1 entfernt, 3 geändert (gesamt 169)
+
+- ➕ **Babbergerstraße, Waidweg, Hermann-Schneider-Allee**
+- ➖ ~~Rheinhafestraße zw. B36/ Eckenerstraße und Hopfenstraße~~
+- ✏️ Blechenstraße und Links der Alb — Sperrgrad: teil → gering
+- ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
+- ✏️ K9659 Höhe DM — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 03.08.2026, 09:36 — 2 neu, 3 geändert (gesamt 169)
 
 - ➕ **Blechenstraße und Links der Alb**
