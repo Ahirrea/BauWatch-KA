@@ -2,6 +2,33 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 03.08.2026, 05:38 — 16 neu, 4 entfernt, 2 geändert (gesamt 167)
+
+- ➕ **Vorholzstraße zw. Karlstraße und Hirschstraße**
+- ➕ **Steinkreuzstraße zw. Ringstraße und Hohenbergstraße**
+- ➕ **Gartenstraße zw. Brauerstraße und Einmündung Jollystraße**
+- ➕ **Rheinhafestraße zw. B36/ Eckenerstraße und Hopfenstraße**
+- ➕ **Litzenhardtstraße zw. Martinstraße u. Neue-Anlage-Straße**
+- ➕ **Gartenstraße zwischen Steinhäuserstraße und Weinbrennerplatz/Kriegstraße**
+- ➕ **Gartenstraße zw. Steinhäuserstraße u. Weinbrennerplatz**
+- ➕ **Böhmerwaldstraße zw. Ludwigsburger Straße und Mecklenburger Straße/Thüringer Straße zw. Esslinger Srraße und Egerlandstraße**
+- ➕ **Thüringer Straße zw. Böhmerwaldstraße und Esslinger Straße**
+- ➕ **Siemensallee zw. B36/ Neureuter Straße und Laubenweg**
+- ➕ **Striederstraße zw. Tullastraße und Berckmüllerstraße**
+- ➕ **Kriegsstraße zw. Leopoldstraße u. Lessingstraße, Reinhold-Frank-Straße zwischen Kriegstraße u. Viktoriastraße**
+- ➕ **Hirschstraße zw. Amalinenstraße und Sophienstraße**
+- ➕ **Danziger Straße 18, Etttlinger Allee vor Am Rüppurrer Schloß 1**
+- ➕ **Pfinztalstraße zw. Ernst-Friedrich-Straße und Palmaienstraße**
+- ➕ **Links der Alb zw. Enzstraße und Belchenstraße**
+- ➖ ~~Knoten Brauerstraße / Reinhod-Frank-Straße / Kriegsstraße / Gartenstraße~~
+- ➖ ~~Gartenstraße zw. Steinhäuserstraße u. Kriegsstraße (Weinbrennerplatz)~~
+- ➖ ~~B 10 Kriegsstraße zw. Leopoldstraße u. Lessingstraße~~
+- ➖ ~~Herrenstraße zw. Karlstraße und Amalienstraße~~
+- ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
+- ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 02.08.2026, 05:36 — 1 neu, 6 entfernt, 2 geändert (gesamt 155)
 
 - ➕ **Herrenstraße zw. Karlstraße und Amalienstraße**
