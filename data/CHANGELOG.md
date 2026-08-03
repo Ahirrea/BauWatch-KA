@@ -2,6 +2,16 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 03.08.2026, 09:36 — 2 neu, 3 geändert (gesamt 169)
+
+- ➕ **Blechenstraße und Links der Alb**
+- ➕ **Am Rüppurrer Schloss 1 - 7**
+- ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
+- ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
+- ✏️ Vorholzstraße zw. Karlstraße und Hirschstraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 03.08.2026, 05:38 — 16 neu, 4 entfernt, 2 geändert (gesamt 167)
 
 - ➕ **Vorholzstraße zw. Karlstraße und Hirschstraße**
