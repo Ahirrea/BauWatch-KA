@@ -2,6 +2,14 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 04.08.2026, 16:31 — 1 neu, 2 geändert (gesamt 174)
+
+- ➕ **Holländerstraße, Hinter der Kirche, Turnerstraße, Krämerstraße, Valentinstraße, Hammweg**
+- ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
+- ✏️ Brücke über Pfinzentlastungskanal Stusenseer Allee — Ende: 2026-11-30 → 2026-11-17
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 04.08.2026, 12:46 — 2 neu, 1 entfernt, 1 geändert (gesamt 173)
 
 - ➕ **Brücke über Pfinzentlastungskanal Stusenseer Allee**
