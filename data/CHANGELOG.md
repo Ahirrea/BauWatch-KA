@@ -2,6 +2,13 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 04.08.2026, 19:56 — 2 geändert (gesamt 174)
+
+- ✏️ Raiherwiesenstraße zw. Pfaffstraße und Bleichstraße — sonstige Angaben aktualisiert
+- ✏️ Reinhold-Frank-Straße zwischen Belfortstraße und Kaiserallee — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 04.08.2026, 16:31 — 1 neu, 2 geändert (gesamt 174)
 
 - ➕ **Holländerstraße, Hinter der Kirche, Turnerstraße, Krämerstraße, Valentinstraße, Hammweg**
