@@ -2,6 +2,15 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 04.08.2026, 12:46 — 2 neu, 1 entfernt, 1 geändert (gesamt 173)
+
+- ➕ **Brücke über Pfinzentlastungskanal Stusenseer Allee**
+- ➕ **Brücke über Pfinzentlastungskanal Friedrichstaler Allee**
+- ➖ ~~L623/ Am Wetterbach zw. Zur Ziegelhütte und Bachstraße~~
+- ✏️ Raiherwiesenstraße zw. Pfaffstraße und Bleichstraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 04.08.2026, 05:22 — 3 neu, 2 entfernt, 2 geändert (gesamt 172)
 
 - ➕ **B3/ Südtangente zw. Fiduciastraße und B3/ K9652/ Badene Straße/ Tiefentalstraße**
