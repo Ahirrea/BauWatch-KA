@@ -2,6 +2,18 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 04.08.2026, 05:22 — 3 neu, 2 entfernt, 2 geändert (gesamt 172)
+
+- ➕ **B3/ Südtangente zw. Fiduciastraße und B3/ K9652/ Badene Straße/ Tiefentalstraße**
+- ➕ **B3/ Südtangente Höhe Bahnübergang Schindweg (Haltestelle Durlach Zündhütle)**
+- ➕ **K9653/ Karlsbader Straß ezw. Pfefferäckerstraße und abzweig L623/ Ochsenstraße**
+- ➖ ~~Striederstraße zw. Tullastraße und Berckmüllerstraße~~
+- ➖ ~~Hirschstraße zw. Amalinenstraße und Sophienstraße~~
+- ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
+- ✏️ Reinhold-Frank-Straße zwischen Belfortstraße und Kaiserallee — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 03.08.2026, 19:58 — 3 geändert (gesamt 171)
 
 - ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
