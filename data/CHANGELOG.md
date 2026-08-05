@@ -2,6 +2,19 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 05.08.2026, 12:43 — 3 neu, 2 entfernt, 3 geändert (gesamt 174)
+
+- ➕ **Auf den Lohn, Elmmendinger Straße, Ispringer Straße, Lissenstraße**
+- ➕ **Martin-Schongauer-Weg zw. Albrecht-Altdorf-Weg und Frans-Hals-Weg**
+- ➕ **Tulpenstraße zw. Göhrenstraße und Kleiststraße**
+- ➖ ~~Hildebrandstraße zw. Reichenbachstraße und Auer Straße~~
+- ➖ ~~Hildebrandstraße zw. Reichenbachstraße und Auer Straße~~
+- ✏️ Gymnasiumstraße zw. Rittnertstraße und Turmbergstraße — Ende: 2026-08-14 → 2026-08-16
+- ✏️ Reinhold-Frank-Straße zwischen Belfortstraße und Kaiserallee — sonstige Angaben aktualisiert
+- ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 05.08.2026, 05:17 — 1 neu, 2 entfernt, 1 geändert (gesamt 173)
 
 - ➕ **Kronenstraße zw. Zähringerstraße und Fritz-Erler-Straße**
