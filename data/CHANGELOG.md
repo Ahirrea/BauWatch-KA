@@ -2,6 +2,15 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 05.08.2026, 05:17 — 1 neu, 2 entfernt, 1 geändert (gesamt 173)
+
+- ➕ **Kronenstraße zw. Zähringerstraße und Fritz-Erler-Straße**
+- ➖ ~~B3/ Südtangente zw. Fiduciastraße und B3/ K9652/ Badene Straße/ Tiefentalstraße~~
+- ➖ ~~B3/ Südtangente Höhe Bahnübergang Schindweg (Haltestelle Durlach Zündhütle)~~
+- ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 04.08.2026, 19:56 — 2 geändert (gesamt 174)
 
 - ✏️ Raiherwiesenstraße zw. Pfaffstraße und Bleichstraße — sonstige Angaben aktualisiert
