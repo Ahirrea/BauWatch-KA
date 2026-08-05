@@ -2,6 +2,13 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 05.08.2026, 16:25 — 2 neu (gesamt 176)
+
+- ➕ **Brunnenhausstraße zw. Weiherstraße und Marstallstraße**
+- ➕ **Westmarkstr./Grenzstr./Brühlstr**
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 05.08.2026, 12:43 — 3 neu, 2 entfernt, 3 geändert (gesamt 174)
 
 - ➕ **Auf den Lohn, Elmmendinger Straße, Ispringer Straße, Lissenstraße**
