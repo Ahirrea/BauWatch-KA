@@ -2,6 +2,13 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 05.08.2026, 23:19 — 2 geändert (gesamt 176)
+
+- ✏️ Reinhold-Frank-Straße zwischen Belfortstraße und Kaiserallee — sonstige Angaben aktualisiert
+- ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 05.08.2026, 16:25 — 2 neu (gesamt 176)
 
 - ➕ **Brunnenhausstraße zw. Weiherstraße und Marstallstraße**
