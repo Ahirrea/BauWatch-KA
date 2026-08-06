@@ -2,6 +2,12 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 06.08.2026, 16:28 — 1 geändert (gesamt 173)
+
+- ✏️ Wolfartsweierer Straße zw. Durlacher Allee und Frühlingstraße — Ende: 2026-08-10 → 2026-08-31
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 06.08.2026, 05:20 — 1 neu, 4 entfernt, 1 geändert (gesamt 173)
 
 - ➕ **Kropsburgweg, Madenburgweg, Binsenschlauchweg, Landauer Str., Bienwaldstr.**
