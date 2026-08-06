@@ -2,6 +2,17 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 06.08.2026, 05:20 — 1 neu, 4 entfernt, 1 geändert (gesamt 173)
+
+- ➕ **Kropsburgweg, Madenburgweg, Binsenschlauchweg, Landauer Str., Bienwaldstr.**
+- ➖ ~~Blechenstraße und Links der Alb~~
+- ➖ ~~Litzenhardtstraße zw. Neue-Anlage-Straße und Martinstraße~~
+- ➖ ~~Kronenstraße zw. Zähringerstraße und Fritz-Erler-Straße~~
+- ➖ ~~Links der Alb zw. Enzstraße und Belchenstraße~~
+- ✏️ Reinhold-Frank-Straße zwischen Belfortstraße und Kaiserallee — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 05.08.2026, 23:19 — 2 geändert (gesamt 176)
 
 - ✏️ Reinhold-Frank-Straße zwischen Belfortstraße und Kaiserallee — sonstige Angaben aktualisiert
