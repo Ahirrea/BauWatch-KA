@@ -10,8 +10,8 @@ Suggested labels: `setup`, `data`, `frontend`, `a11y`, `docs`, `enhancement`.
 > [refinement process](./PROZESS.md).
 
 **Status legend:** ✅ done · 🟡 partial / open · ⬜ open
-**As of:** 2026-07-31 (#31, installed PWA overrode the device rotation lock,
-done.)
+**As of:** 2026-08-07 (#32 added and open — the amber traffic-light dot
+reaches only ~2.5:1 in light mode, found while measuring A-10.)
 
 > Summary: Milestones 1–3 are implemented and the site is live via GitHub
 > Pages (#5). From Milestone 4, #15 and #18 are done; #16 (push/subscription
@@ -22,7 +22,8 @@ done.)
 > desktop UI fix) and #28 (a follow-up on the "What's new?" feed) are done.
 > **A-7 (construction-site areas) is implemented**; of its two follow-ups,
 > #29 is done and #30 is deliberately open (not planned). #31 (a PWA
-> manifest fix) is done.
+> manifest fix) is done. **A-10 (result metrics) is implemented**; #32, an
+> a11y finding it surfaced in the shared traffic-light dot, is open.
 
 ---
 
@@ -386,6 +387,31 @@ value). `CACHE_SHELL` bumped to `v13` (the manifest is a shell file).
 Already-installed users pick this up only when Chrome's periodic WebAPK
 update check runs (typically within a few days of an app start), not on the
 next launch. (Label: `frontend`)
+
+### ⬜ #32 The amber traffic-light dot reaches only ~2.5:1 in light mode
+Found while measuring A-10, and it predates it: `--amber` (`#f08a00`) as a
+**dot** against the surface it sits on gives **2.52:1** in a list item and in
+a Sperrgrad filter button, **2.35:1** in an A-10 metrics chip — light mode
+each time. Dark mode is fine throughout (7.3–8.6:1), which is exactly why
+this never surfaced: it is the same "only visible if you test in light mode"
+trap `CLAUDE.md` already records for `--amber` **as text**, one component
+over. Red and green are unproblematic (5.5:1 / 5.0:1 in light).
+
+Not currently a WCAG failure: every dot is `aria-hidden`, sits next to the
+category in words, and has its own 1 px rim, so no information depends on it
+(SC 1.4.11 covers graphical objects *required* to understand the content).
+It is still the weakest link in the traffic-light palette, and the moment a
+dot ever appears without its label, it becomes a real one.
+
+**Deliberately not fixed inside A-10** ([see *E2 revised*](./anforderungen/A-10-kennzahlen-ergebnisliste.md#decisions-with-rationale)):
+a chip-only amber would put a second amber on the page and break A-7/E4;
+changing `--amber` globally also moves the marker and area colours of A-7/A-9
+and needs its own pass over all three components.
+**DoD:** either `--amber` darkened far enough for ≥ 3:1 in light mode against
+`--surface`/`--chip` **with** markers and areas re-checked in both schemes, or
+a documented decision that the dot stays decorative and the ratio is accepted.
+Measured, not estimated, in all three theme states. (Label: `a11y`,
+`frontend`)
 
 ---
 

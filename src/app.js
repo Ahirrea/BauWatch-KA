@@ -4,6 +4,7 @@
 import { restdauer, formatRange } from './lib/format.js';
 import { DEFAULT_LANG, STRINGS, AMPEL_LABEL, VM_LABEL, t } from './lib/i18n.js';
 import { filterChangelogEntries } from './lib/changelog.js';
+import { summarize, ENDET_BALD_TAGE } from './lib/stats.js';
 
 // Leaflet wird global über das <script>-Tag geladen.
 /* global L */
@@ -470,6 +471,48 @@ function renderStatus(list) {
   }
 }
 
+// Kennzahlen zum Ergebnis (A-10). Beschreiben immer die GEFILTERTE Menge (E1)
+// — dieselbe Liste, die auch Karte und Liste bekommen, inklusive Umkreissuche.
+//
+// Die Ampelfarbe steckt im Punkt, nie im Text (E2): --amber erreicht als Text
+// auf --bg im hellen Schema nur ~2,3:1, „98 Teil" in Orange wäre also ein
+// WCAG-Verstoß, der beim Prüfen im dunklen Schema (dort ~9,7:1) unsichtbar
+// bleibt. Die Chips erben mit .badge eine in beiden Schemata erprobte Fläche.
+function renderMetrics(list) {
+  const box = el('kennzahlen');
+  if (list.length === 0) {
+    // Bei leerem Ergebnis sagt die Statuszeile bereits alles; eine Reihe
+    // Nullen darunter trägt nichts bei (E6).
+    box.hidden = true;
+    box.innerHTML = '';
+    return;
+  }
+  const s = STRINGS[state.lang];
+  const k = summarize(list);
+  const chips = [
+    ['red', s.filterVoll, k.voll],
+    ['amber', s.filterTeil, k.teil],
+    ['green', s.filterGering, k.gering],
+  ]
+    // Ein Zähler auf 0 entfällt (E6): bei aktivem Sperrgrad-Filter sind zwei
+    // der drei Stufen zwangsläufig leer — „0 Teil" wäre Rauschen, das die
+    // Nutzerin selbst erzeugt hat.
+    .filter(([, , n]) => n > 0)
+    .map(
+      ([dot, label, n]) =>
+        `<span class="badge"><span class="dot dot-${dot}" aria-hidden="true"></span>${n} ${escapeHtml(label)}</span>`
+    );
+  if (k.endetBald > 0) {
+    const text =
+      k.endetBald === 1
+        ? t(s.metricsEndetBaldOne, { d: ENDET_BALD_TAGE })
+        : t(s.metricsEndetBaldMany, { n: k.endetBald, d: ENDET_BALD_TAGE });
+    chips.push(`<span class="badge">${escapeHtml(text)}</span>`);
+  }
+  box.innerHTML = chips.join('');
+  box.hidden = false;
+}
+
 function render() {
   // Hover-Zustand VOR dem Neuaufbau räumen (A-9): Zeile und Fläche darunter
   // werden gleich zerstört, ihr mouseleave feuert nie — ohne diesen Schritt
@@ -484,6 +527,7 @@ function render() {
   renderMarkers(list);
   renderList(list);
   renderStatus(list);
+  renderMetrics(list);
   // Auswahl beibehalten, falls noch sichtbar
   if (state.selectedId && listItemById.has(state.selectedId)) {
     listItemById.get(state.selectedId).classList.add('is-selected');

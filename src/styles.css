@@ -533,6 +533,26 @@ body {
   color: var(--red);
 }
 
+/* Kennzahlen zum Ergebnis (A-10). Umbruchfähig, damit auf 414 px nichts
+   abgeschnitten wird oder waagerecht scrollt. Kein eigenes Farb-Token: die
+   Chips sind .badge (--chip/--chip-border/--text-muted), die Farbe steckt im
+   .dot. Die [hidden]-Regel ist nötig, weil display:flex das Attribut sonst
+   überstimmt. */
+.kennzahlen {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0 0 0.5rem;
+}
+.kennzahlen[hidden] {
+  display: none;
+}
+.kennzahlen .badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
 .liste {
   list-style: none;
   margin: 0;

@@ -73,6 +73,14 @@ export const STRINGS = {
     listStatusNoData: 'Zurzeit sind keine Baustellendaten vorhanden.',
     listStatusLoadError: 'Die Baustellendaten konnten nicht geladen werden. Bitte Seite neu laden.',
 
+    // Kennzahlen zum Ergebnis (A-10). Die drei Sperrgrade nutzen bewusst die
+    // vorhandenen Filter-Labels (filterVoll/filterTeil/filterGering) statt
+    // eines dritten Wortschatzes für dieselben drei Stufen. {d} kommt aus
+    // ENDET_BALD_TAGE in stats.js — Text und Schwelle können so nicht
+    // auseinanderlaufen.
+    metricsEndetBaldOne: '1 endet in {d} Tagen',
+    metricsEndetBaldMany: '{n} enden in {d} Tagen',
+
     standLoading: 'wird geladen …',
     standUnavailable: 'nicht verfügbar',
     standUnknown: 'unbekannt',
@@ -157,6 +165,9 @@ export const STRINGS = {
     listStatusSearchSuffix: ' · within radius of “{label}”',
     listStatusNoData: 'No construction-site data is currently available.',
     listStatusLoadError: 'The construction-site data couldn’t be loaded. Please reload the page.',
+
+    metricsEndetBaldOne: '1 ends within {d} days',
+    metricsEndetBaldMany: '{n} end within {d} days',
 
     standLoading: 'loading …',
     standUnavailable: 'not available',

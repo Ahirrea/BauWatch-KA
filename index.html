@@ -212,6 +212,11 @@
       </div>
       <section class="list-wrap" aria-label="Baustellen-Liste" data-i18n-attr="aria-label:listAriaLabel">
         <div class="list-status" id="list-status" role="status" aria-live="polite"></div>
+        <!-- Kennzahlen zum Ergebnis (A-10). Bewusst NEBEN der Live-Region, nicht
+             darin (E4): #list-status wird bei jedem Filterklick vorgelesen, die
+             Aufschlüsselung soll dabei nicht mitsprechen. Inhalt kommt aus
+             app.js, deshalb ohne data-i18n. -->
+        <p class="kennzahlen" id="kennzahlen" hidden></p>
         <ul id="liste" class="liste"></ul>
       </section>
     </main>

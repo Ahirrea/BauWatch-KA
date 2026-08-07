@@ -32,7 +32,7 @@ linked — that way the folder doesn't fill up with empty templates.
 | A-7 | [Construction-site areas on the map](./A-7-baustellenflaechen.md) | 🏁 done | Shows each closure's/site's actual spatial extent as a shaded polygon on the map, alongside the existing point marker, instead of discarding the WFS's second geometry. |
 | A-8 | [Colour-scheme switch (light / dark)](./A-8-farbschema-umschalter.md) | 🏁 done | A system/light/dark toggle for the map page — the existing dark palette becomes choosable instead of only system-driven; "follow the system setting" stays the default and stores nothing. |
 | A-9 | [Selection and hover emphasis for areas](./A-9-flaechen-hervorhebung.md) | 🏁 done | Makes the selected or hovered site's shape stand out from the ~200 others A-7 draws — three emphasis tiers on the area layer, geometry-type aware; markers, data and storage stay untouched. |
-| A-10 | [Result metrics above the list](./A-10-kennzahlen-ergebnisliste.md) | ✅ ready | Summarizes the currently filtered result in one chip strip — how many sites, split by closure severity, and how many end within 7 days; derived client-side, no new data and explicitly no usage statistics. |
+| A-10 | [Result metrics above the list](./A-10-kennzahlen-ergebnisliste.md) | 🏁 done | Summarizes the currently filtered result in one chip strip — how many sites, split by closure severity, and how many end within 7 days; derived client-side, no new data and explicitly no usage statistics. |
 
 ## Adding a new requirement
 

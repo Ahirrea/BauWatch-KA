@@ -98,6 +98,35 @@ long unbroken line on 414 px), and chips plus a proportional bar (fastest to
 grasp, but a second coloured surface competing with the map for a secondary
 statement).
 
+**E2 revised (2026-08-07) — the dot itself does not reach 3:1 in light mode,
+and that is accepted here rather than fixed.** The decision above stands
+unchanged; what implementation disproved is the *verification criterion* this
+requirement attached to it (the "dots ≥ 3:1 against the chip surface" line in
+the Definition of Done), which was written before measuring. Measured, amber
+`#f08a00` against the surface it actually sits on:
+
+| Dot | Light | Dark |
+|---|---|---|
+| Existing, in a list item (`--surface`) | **2.52:1** | 8.64:1 |
+| Existing, in a Sperrgrad filter button | **2.52:1** | 8.64:1 |
+| New, in a metrics chip (`--chip`) | **2.35:1** | 7.29:1 |
+
+Red and green clear 3:1 everywhere (light: 5.52:1 and 5.03:1). So the amber
+dot has been at ~2.5:1 in light mode since the traffic light existed; the chip
+is 0.17 lower only because `--chip` (#f7f7f5) is a shade darker than the white
+list card. This is **not a regression introduced here**, and it is not a WCAG
+1.4.11 failure either: the criterion covers graphical objects *required to
+understand the content*, while this dot is `aria-hidden`, duplicates the
+category word standing right next to it, and carries a 1 px dark rim of its
+own. Colour is never the sole carrier — which is exactly what E2 secured.
+
+Two alternatives were rejected. Darkening amber only for the chips would put a
+**second amber** on one page and break A-7/E4 ("one colour, one meaning, one
+source"). Darkening `--amber` globally reaches into the marker and area colours
+of A-7/A-9 and is a colour-system change, far outside a metrics strip — it is
+recorded as [`BACKLOG.md` #32](../BACKLOG.md) instead, with the numbers above,
+so the finding survives this requirement.
+
 **E3 — "Ends soon" means ≤ 7 days, and reuses the "Diese Woche"
 vocabulary.** *Decided by the idea's originator.* `restdauer().days ≤ 7`,
 excluding expired and open-ended entries. Seven days is not a fresh threshold
@@ -299,8 +328,10 @@ simply describes the cached data, consistent with the rest of the page.
 - [ ] `src/lib/stats.js` is DOM-free, dependency-free, and covered by
       `scripts/test-stats.mjs`; `npm test` green including the new script.
 - [ ] `src/lib/stats.js` in `SHELL`, `CACHE_SHELL` bumped to `v14`.
-- [ ] Contrast computed in system-follow, explicit light and explicit dark;
-      all text pairs ≥ 4.5:1, the dots ≥ 3:1 against the chip surface.
+- [ ] Contrast computed in system-follow, explicit light and explicit dark; all
+      text pairs ≥ 4.5:1. For the dots, the criterion is **parity with the
+      traffic-light dots already on the page**, not an absolute 3:1 — see
+      *E2 revised*, which records why and with which measurements.
 - [ ] No new `localStorage` key, no new external host, no change to
       `data/baustellen.geojson`.
 - [ ] Screenshots (mobile/desktop × light/dark + close-up) delivered with the
