@@ -2,6 +2,18 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 07.08.2026, 15:18 — 1 neu, 3 entfernt, 3 geändert (gesamt 173)
+
+- ➕ **Humboldstraße zw. Gerwigstraße und Essenweinstraße**
+- ➖ ~~Sonntagstraße zw. Jollystraße und Mathystraße~~
+- ➖ ~~Eisenlohrstraße zw. Bunsen- u. Kriegsstraße~~
+- ➖ ~~Seubertstraße zw. Haitzingerstraße und Durlacher Allee~~
+- ✏️ Sophienstraße Kreuzung Reinhold-Frank-Straße — sonstige Angaben aktualisiert
+- ✏️ Pfinztalstraße zw. Ernst-Friedrich-Straße und Palmaienstraße — Ende: 2026-08-08 → 2026-08-15
+- ✏️ Am Rüppurrer Schloss 1 - 7 — Ende: 2026-08-08 → 2026-08-14
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 07.08.2026, 11:07 — 1 neu, 4 geändert (gesamt 175)
 
 - ➕ **Killisfeldstr./Bleichstr./Schinnrainstr.**
