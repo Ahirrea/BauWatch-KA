@@ -14,10 +14,15 @@ function check(name, cond, detail) {
 }
 
 const NOW = new Date(2026, 7, 7); // 07.08.2026, lokale Mitternacht
+// Bewusst KEIN toISOString(): das serialisiert UTC und verschiebt den
+// Kalendertag in jeder Zeitzone östlich von UTC um -1 (lokal Mitternacht
+// 07.08. ist 06.08. 22:00 UTC). Die Grenzfälle unten wären dann in CI (UTC)
+// grün und auf einem Rechner in Europa rot.
 const tagePlus = (n) => {
   const d = new Date(NOW);
   d.setDate(d.getDate() + n);
-  return d.toISOString().slice(0, 10);
+  const p = (x) => String(x).padStart(2, '0');
+  return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`;
 };
 const feature = (ampel, bis) => ({ properties: { ampel, bis } });
 
