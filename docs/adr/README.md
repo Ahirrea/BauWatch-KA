@@ -60,6 +60,7 @@ happen anymore?>
 > to "ADR-001".
 >
 > The "Repo structure (derived from this)" section in ADR-001 shows the
-> state as of **2026-07-20** and names `docs/SPEC.md` — today `docs/PRD.md`.
+> state as of **2026-07-20** and names `docs/SPEC.md` — later `docs/PRD.md`,
+> since removed.
 > That's deliberate: ADRs aren't smoothed over after the fact, or you lose
 > what was actually decided back then.

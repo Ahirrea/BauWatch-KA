@@ -13,7 +13,7 @@ my situation without reading every entry in the list.
 core loop's step 3 (*"sees only what's relevant, in plain text, with a traffic
 light"*). Answers for the **whole result** the question every single list
 entry already answers for itself.
-**Constrained by:** [ADR-001](../entscheidungen/ADR-001-statisches-hosting.md)
+**Constrained by:** [ADR-001](../adr/ADR-001-statisches-hosting.md)
 (everything client-side, no backend). — No new ADR needed: no data artifact, no
 persistence, no external host, no new subsystem; the change lives entirely in
 the render path (see E7). Depends on nothing else; A-7's and A-9's decisions

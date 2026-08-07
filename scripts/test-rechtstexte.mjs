@@ -179,30 +179,14 @@ check(
   [...new Set([...mailsImpressum, ...mailsDatenschutz])].join(' ≠ ')
 );
 
-// Der Platzhalter ist erlaubt, SOLANGE die Showcase-Unterlage die Adresse als
-// offenen Punkt führt. Wird dort abgehakt, ohne die Seiten nachzuziehen, ist
-// der Platzhalter live — und dieser Test rot.
+// Der Platzhalter ist erlaubt, bleibt aber bei jedem Lauf als Warnung
+// sichtbar, bis eine projekteigene Adresse eingetragen ist.
 const PLATZHALTER = /@example\.(invalid|com|org|net)$/i;
 const istPlatzhalter = [...mailsImpressum, ...mailsDatenschutz].some((m) => PLATZHALTER.test(m));
-const showcase = lies('docs/showcase-einreichung.md');
-const nochOffen = /- \[ \] Name \+ contact email address/.test(showcase);
 if (istPlatzhalter) {
-  check(
-    'Platzhalter-Adresse ist in der Showcase-Unterlage als offener Punkt geführt',
-    nochOffen,
-    'Haken gesetzt, aber die Rechtstexte tragen noch den Platzhalter'
-  );
-  if (nochOffen) {
-    warn(
-      'Kontaktadresse ist noch ein Platzhalter',
-      `${mailsImpressum[0]} — projekteigene Adresse anlegen und in impressum.html, datenschutz.html und docs/showcase-einreichung.md eintragen`
-    );
-  }
-} else {
-  check(
-    'echte Kontaktadresse eingetragen und in der Showcase-Unterlage abgehakt',
-    !nochOffen,
-    'Adresse steht auf den Seiten, der offene Punkt in docs/showcase-einreichung.md ist aber noch nicht abgehakt'
+  warn(
+    'Kontaktadresse ist noch ein Platzhalter',
+    `${mailsImpressum[0]} — projekteigene Adresse anlegen und in impressum.html und datenschutz.html eintragen`
   );
 }
 

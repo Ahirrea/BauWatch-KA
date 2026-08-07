@@ -55,7 +55,7 @@ Checked against every non-goal in `PRD.md` §4:
    **Resolved trivially:** `properties.area` lives inside the same,
    already-committed `data/baustellen.geojson`; no new file, no client
    storage.
-7. **No backend, no frontend build step ([ADR-001](../entscheidungen/ADR-001-statisches-hosting.md)).** →
+7. **No backend, no frontend build step ([ADR-001](../adr/ADR-001-statisches-hosting.md)).** →
    Untouched — still a build-time-only enrichment inside the existing
    Action, static hosting model unchanged.
 8. **`CLAUDE.md` pitfall: `src/lib/` must stay DOM-/network-/dependency-free.** →

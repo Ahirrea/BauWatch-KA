@@ -12,15 +12,14 @@ table row in README.md (that's where the status lives).
 **User story:** As a &lt;role&gt;, I want &lt;goal&gt;, so that &lt;benefit&gt;.
 
 **Refined on:** &lt;date&gt;
-**Addresses PRD:** &lt;section in `../PRD.md`, e.g. "Goals — recognizing relevance"&gt;
-**Constrained by:** &lt;ADR no. from `../entscheidungen/` or "—"&gt;
+**Constrained by:** &lt;ADR no. from `../adr/` or "—"&gt;
 **Target branch:** &lt;if assigned&gt;
 
 ## Touchpoints in the code
 &lt;modules, functions, fields — what's reusable, what's missing&gt;
 
 ## Tension with non-goals — and resolution
-&lt;name and resolve the conflict with `../PRD.md` / an ADR / pitfalls&gt;
+&lt;name and resolve the conflict with an ADR from `../adr/`&gt;
 
 ## Decisions (with rationale)
 &lt;forks taken, each with a short rationale and discarded alternatives&gt;

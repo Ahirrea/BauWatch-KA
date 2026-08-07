@@ -15,12 +15,11 @@ time period?"**
 - 📲 Installable as an app and usable offline (see [Install as an App](#install-as-an-app))
 - ⚙️ Purely static on GitHub Pages — no server, no running costs
 
-Detailed product description: [`docs/PRD.md`](docs/PRD.md).
 Elaborated requirements: [`docs/anforderungen/`](docs/anforderungen/README.md) —
 produced by the fixed [refinement process](docs/PROZESS.md).
-Architectural decisions: [`docs/entscheidungen/`](docs/entscheidungen/README.md)
-(among others [ADR-001](docs/entscheidungen/ADR-001-statisches-hosting.md): why static + an Action;
-[ADR-002](docs/entscheidungen/ADR-002-mehrseitige-auslieferung.md): multi-page delivery).
+Architectural decisions: [`docs/adr/`](docs/adr/README.md)
+(among others [ADR-001](docs/adr/ADR-001-statisches-hosting.md): why static + an Action;
+[ADR-002](docs/adr/ADR-002-mehrseitige-auslieferung.md): multi-page delivery).
 Task backlog: [`docs/BACKLOG.md`](docs/BACKLOG.md).
 
 ## How it works (short version)
@@ -62,7 +61,6 @@ scripts/
   diff-data.mjs            change comparison between two snapshots (for the changelog)
   quality-report.mjs       generates the data-quality report (data/QUALITY.md)
   render-icons.mjs         renders icons/*.png from icons/icon.svg (manual, not in CI)
-  screenshot.mjs           generates docs/showcase/*.png (manual, not in CI)
   test-transform.mjs       reference test of the coordinate transformation
   test-diff.mjs            tests of change detection
   test-classify.mjs        tests of the plain-text/traffic-light/mode-of-transport classification
@@ -80,8 +78,7 @@ data/
 vendor/leaflet/            Leaflet bundled locally (no CDN)
 .github/workflows/
   update-data.yml          cron + manual trigger
-docs/                      PRD, process, backlog, anforderungen/, entscheidungen/
-  showcase/                screenshots for the showcase entry in the transparency portal
+docs/                      process, backlog, anforderungen/, adr/
 ```
 
 ## Running locally
@@ -144,7 +141,7 @@ Among the things checked:
   manifest, icon files at the stated size, **all paths relative**, every file
   referenced by a precached HTML page or by `src/app.js` also precached, and
   the service worker's navigation **path-aware**
-  ([ADR-002](docs/entscheidungen/ADR-002-mehrseitige-auslieferung.md)),
+  ([ADR-002](docs/adr/ADR-002-mehrseitige-auslieferung.md)),
 - the **CC-BY attribution**: it's **static in the served `index.html`**
   (not added later via JS), word-for-word identical to `ATTRIBUTION` from
   `build-data.mjs`, and not overwritten by `app.js`. The attribution is a

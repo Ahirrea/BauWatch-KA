@@ -12,7 +12,7 @@ happening around me without relying on a translator.
 the UI stays German and calls translating the app "its own, much bigger
 localization decision — not something this switch covers." This requirement
 *is* that decision.
-**Constrained by:** [ADR-001](../entscheidungen/ADR-001-statisches-hosting.md)
+**Constrained by:** [ADR-001](../adr/ADR-001-statisches-hosting.md)
 (static hosting, no backend) · proposes **ADR-003** (see "Decisions" below)
 **Target branch:** —
 
@@ -284,7 +284,7 @@ convention (tiles intercepted, gray map noted as expected).
   Non-scope there" pointer, plus a new pitfall for the storage-drift-guard
   carve-out (E6) so it isn't rediscovered the hard way later.
 - `docs/anforderungen/README.md`: this row → `🏁 done` on completion.
-- `docs/entscheidungen/README.md`: new ADR-003 row.
+- `docs/adr/README.md`: new ADR-003 row.
 - `docs/BACKLOG.md`: no new task — runs entirely through this requirement
   (same pattern as A-2/A-4).
 
@@ -330,5 +330,5 @@ convention (tiles intercepted, gray map noted as expected).
    `scripts/test-rechtstexte.mjs`; both into `npm test`; run the E6
    cross-check.
 9. Browser check (DE/EN, light/dark, mobile/desktop) with screenshots.
-10. Update `PRD.md`, `CLAUDE.md`, `docs/entscheidungen/README.md`; set
+10. Update `PRD.md`, `CLAUDE.md`, `docs/adr/README.md`; set
     status to `🏁 done` in the [overview](./README.md#overview).

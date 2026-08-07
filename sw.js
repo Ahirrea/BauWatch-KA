@@ -19,7 +19,7 @@
 // bekommen installierte Clients sie nie zu sehen (siehe ADR-002).
 //
 // Ausdrücklich NICHT vorhanden und auch nicht nachzurüsten (Nicht-Ziel „kein
-// echtes Push", siehe docs/PRD.md und A-2): kein `push`-, kein
+// echtes Push", siehe A-2): kein `push`-, kein
 // `notificationclick`-, kein `sync`-/`periodicsync`-Handler.
 
 const CACHE_SHELL = 'bauwatch-shell-v14';
@@ -172,7 +172,7 @@ async function shellAntwort(request) {
 }
 
 // Daten: network-first — schützt das Erfolgskriterium „nie älter als der letzte
-// Action-Lauf" (docs/PRD.md). Nur im Netzfehlerfall aus dem Cache, dann aber
+// Action-Lauf". Nur im Netzfehlerfall aus dem Cache, dann aber
 // gekennzeichnet, damit die Seite „offline, Stand von X" anzeigen kann.
 async function datenAntwort(request) {
   try {

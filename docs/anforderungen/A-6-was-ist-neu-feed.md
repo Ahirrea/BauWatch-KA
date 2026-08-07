@@ -14,7 +14,7 @@ the current state; this adds the *recent-change* view) and the non-goal "No
 real push" — this is the explicitly-allowed pull/on-demand counterpart,
 same category as [A-2](./A-2-baustellen-abo-feed.md).
 **Constrained by:** — (no ADR needed; see "Decisions" for why this
-deliberately does *not* touch [ADR-003](../entscheidungen/ADR-003-sprachumschalter-localstorage.md)'s
+deliberately does *not* touch [ADR-003](../adr/ADR-003-sprachumschalter-localstorage.md)'s
 `localStorage` boundary)
 **Target branch:** `claude/whats-new-feed-mo822j`
 
@@ -30,7 +30,7 @@ deliberately does *not* touch [ADR-003](../entscheidungen/ADR-003-sprachumschalt
 | Data fetch + offline marking | `loadData()` in `src/app.js`, `datenAntwort()`/network-first handling for `data/baustellen.geojson` in `sw.js` | The pattern this feature's own data fetch should mirror — same network-first-with-offline-marker treatment, extended to a second data file. |
 | Segmented UI patterns, header layout | `index.html` header, `src/styles.css` | A new header **button** (not a filter) is the natural trigger; the header is already flagged as vertically tight on desktop ([BACKLOG.md](../BACKLOG.md) #23, still open) — a strong argument *against* adding another permanent block there. |
 | Bilingual chrome | `src/lib/i18n.js` (A-5) | Directly reusable: the feed's UI chrome (button label, dialog title, empty/error text, "added"/"removed"/"changed" labels) is exactly the kind of string this dictionary already holds. |
-| `localStorage` boundary | [ADR-003](../entscheidungen/ADR-003-sprachumschalter-localstorage.md) | Explicitly scopes its exception to **one** anonymous value (the language flag) and explicitly lists "no usage history" as a thing that must not happen under it. Directly relevant because a naive "since you were last here" marker would be exactly that — see Tensions and Decisions. |
+| `localStorage` boundary | [ADR-003](../adr/ADR-003-sprachumschalter-localstorage.md) | Explicitly scopes its exception to **one** anonymous value (the language flag) and explicitly lists "no usage history" as a thing that must not happen under it. Directly relevant because a naive "since you were last here" marker would be exactly that — see Tensions and Decisions. |
 | Shell precache | `sw.js`, `SHELL`, `CACHE_SHELL` (currently `v5`) | `index.html` and `src/app.js` change (new trigger + dialog) → shell files change → version bump required, same trap as every prior feature. |
 
 **Missing (net-new):** a JSON changelog artifact (`data/changelog.json`), a
@@ -50,7 +50,7 @@ strings.
    resolves it: `data/changelog.json` is another **committed artifact
    derived from data the build already produces**, not a new, user-related
    store. Nothing about a visitor is recorded anywhere.
-3. **[ADR-003](../entscheidungen/ADR-003-sprachumschalter-localstorage.md)'s
+3. **[ADR-003](../adr/ADR-003-sprachumschalter-localstorage.md)'s
    narrow `localStorage` exception, "no usage history" clause.** A
    personalized "what's new *for me*" marker would need to remember what a
    given visitor has already seen — precisely the kind of per-visitor

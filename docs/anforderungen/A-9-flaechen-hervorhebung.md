@@ -67,7 +67,7 @@ pitfalls:
    is in-memory, derived from `state.selectedId` and the live pointer, and
    gone on reload.
 7. **No backend, no frontend build step
-   ([ADR-001](../entscheidungen/ADR-001-statisches-hosting.md)).** →
+   ([ADR-001](../adr/ADR-001-statisches-hosting.md)).** →
    Untouched — plain static files, as before.
 8. **`src/lib/` must stay DOM-/network-/dependency-free.** → **No risk at
    all:** every change lands in `src/app.js` and `src/styles.css`; `src/lib/`
@@ -76,8 +76,8 @@ pitfalls:
    what E11 (no tooltip) preserves. `src/lib/i18n.js` gains nothing and
    `scripts/test-i18n.mjs` stays green unmodified.
 10. **`test-rechtstexte.mjs`'s storage guards
-    (A-5/E6, [ADR-003](../entscheidungen/ADR-003-sprachumschalter-localstorage.md),
-    [ADR-004](../entscheidungen/ADR-004-farbschema-zweiter-localstorage-schluessel.md)).** →
+    (A-5/E6, [ADR-003](../adr/ADR-003-sprachumschalter-localstorage.md),
+    [ADR-004](../adr/ADR-004-farbschema-zweiter-localstorage-schluessel.md)).** →
     **No new `localStorage` key**, no cookie, no `sessionStorage`, no
     geolocation. Two documented keys exist (language, colour scheme); this
     adds no third, which is also why E1 rejected a persisted "show areas"

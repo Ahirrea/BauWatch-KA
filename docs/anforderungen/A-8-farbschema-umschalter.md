@@ -12,9 +12,9 @@ my device's setting for everything else.
 **Refined on:** 2026-07-28
 **Addresses PRD:** "Goals — usable on the phone, by keyboard, and with a
 screen reader" (this is a readability/comfort item, not a new data feature)
-**Constrained by:** [ADR-003](../entscheidungen/ADR-003-sprachumschalter-localstorage.md)
+**Constrained by:** [ADR-003](../adr/ADR-003-sprachumschalter-localstorage.md)
 (one-key `localStorage` exception) → widened by
-[ADR-004](../entscheidungen/ADR-004-farbschema-zweiter-localstorage-schluessel.md)
+[ADR-004](../adr/ADR-004-farbschema-zweiter-localstorage-schluessel.md)
 **Target branch:** `claude/dark-light-mode-toggle-3e7a4l`
 
 ## Touchpoints in the code
@@ -68,7 +68,7 @@ not new visual design.
 tension A-5 hit, one key later. ADR-003 had deliberately closed its
 exception at exactly one key, so this could not be waved through inside this
 file; it is resolved in
-[ADR-004](../entscheidungen/ADR-004-farbschema-zweiter-localstorage-schluessel.md),
+[ADR-004](../adr/ADR-004-farbschema-zweiter-localstorage-schluessel.md),
 which turns the one-key exception into a bounded category (anonymous display
 preferences, closed value set, key *and* values documented) and admits
 `bauwatch.theme` under it.
@@ -81,7 +81,7 @@ its `prefers-color-scheme` media query instead of having JavaScript resolve
 the scheme and write `light`/`dark` for everybody (see Decision 2).
 
 **"No backend, no build step for the frontend"**
-([ADR-001](../entscheidungen/ADR-001-statisches-hosting.md)) — untouched. No
+([ADR-001](../adr/ADR-001-statisches-hosting.md)) — untouched. No
 new file is served, no dependency is added; the change is three existing
 static files plus one new test script.
 
@@ -259,7 +259,7 @@ tokens.
 
 `localStorage`, key `bauwatch.theme`, values `light` / `dark` — nothing
 written for the `system` default, and the key removed on returning to it (see
-[ADR-004](../entscheidungen/ADR-004-farbschema-zweiter-localstorage-schluessel.md)).
+[ADR-004](../adr/ADR-004-farbschema-zweiter-localstorage-schluessel.md)).
 Read and write are both wrapped: an unknown or absent value resolves to
 `system`, a failing write is swallowed (the switch still works for the
 session).
@@ -327,7 +327,7 @@ values above.
 
 New: this file, ADR-004,
 `scripts/test-theme.mjs`. Updated: `docs/anforderungen/README.md` (status),
-`docs/entscheidungen/README.md` (ADR row), `docs/PRD.md` (§7 Constraints —
+`docs/adr/README.md` (ADR row), `docs/PRD.md` (§7 Constraints —
 the appearance sentence), `datenschutz.html` (second key + values),
 `CLAUDE.md` (the `CACHE_SHELL` version, the duplicated-palette trap, and the
 `--amber` pitfall's new "test in the scheme you didn't choose" wrinkle).

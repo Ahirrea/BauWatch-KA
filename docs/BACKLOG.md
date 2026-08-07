@@ -18,7 +18,7 @@ reaches only ~2.5:1 in light mode, found while measuring A-10.)
 > idea) is evaluated (result → requirement A-2), what remains open as an
 > optional item is #17 (.ics export). From the requirements, **A-3 (PWA) is
 > implemented** (#24); from the desktop UI review, #22 and #23 are done.
-> From the showcase pre-review, #25 and #26 are done. #27 (a follow-up
+> From the transparency-portal pre-review, #25 and #26 are done. #27 (a follow-up
 > desktop UI fix) and #28 (a follow-up on the "What's new?" feed) are done.
 > **A-7 (construction-site areas) is implemented**; of its two follow-ups,
 > #29 is done and #30 is deliberately open (not planned). #31 (a PWA
@@ -446,11 +446,11 @@ be ready offline but not a single construction site would be. (Label:
 
 ---
 
-## Findings from the showcase pre-review (2026-07-26)
+## Findings from the transparency-portal pre-review (2026-07-26)
 
 Feedback from the open-data editorial team on the submission for the
-transparency portal (document:
-[`showcase-einreichung.md`](./showcase-einreichung.md)). The
+transparency portal (the submission document has since been removed from
+the repo — see git history). The
 legal-notice/privacy-notice item from the same feedback is **not** a task,
 it was taken up as requirement `A-4` — it has open product decisions (see
 [process](./PROZESS.md#requirement-or-task-the-test)).
@@ -472,19 +472,20 @@ checks existence, non-overwriting, and **word-for-word match with
 turn the test red. Shell file changed →
 `CACHE_SHELL` to `v2`. (Label: `frontend`, `docs`)
 
-### ✅ #26 Screenshots for the showcase entry
+### ✅ #26 Screenshots for the portal entry
 The portal entry needs a preview image ("without an image the entry looks
 broken").
 **DoD:** a screenshot exists and can be reproducibly generated. — **done:**
 `scripts/screenshot.mjs` (manual, like `render-icons.mjs` deliberately
-**not** in `npm test`/CI) generates `docs/showcase/screenshot.png`
-(1440 × 900) and `screenshot-mobil.png` (390 × 844), fixed to light mode.
-The script **counts the loaded map tiles and aborts** instead of silently
+**not** in `npm test`/CI) generated a desktop (1440 × 900) and a mobile
+(390 × 844) preview image, fixed to light mode.
+The script **counted the loaded map tiles and aborted** instead of silently
 writing a gray image — exactly the bug that would otherwise sneak into the
 portal unnoticed in an environment without OSM egress. If the app's tile
-host is blocked by egress policy but a subdomain mirror is reachable, it
-fetches tiles from there and says so in the log; `src/app.js` stays
-untouched. (Label: `docs`, `frontend`)
+host was blocked by egress policy but a subdomain mirror was reachable, it
+fetched tiles from there and said so in the log; `src/app.js` stayed
+untouched. Script and images were removed with the portal submission
+(2026-08-07, see git history). (Label: `docs`, `frontend`)
 
 ---
 

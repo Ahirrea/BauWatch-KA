@@ -10,15 +10,15 @@ that I can judge who I'm trusting with this offering.
 **Refined on:** 2026-07-26
 **Addresses PRD:** "Constraints" (geocoding via Nominatim as the only live
 call; licenses) — and is a prerequisite for listing in the transparency
-portal, see [`../showcase-einreichung.md`](../showcase-einreichung.md)
-**Constrained by:** [ADR-001](../entscheidungen/ADR-001-statisches-hosting.md)
+portal (the submission document has since been removed — see git history)
+**Constrained by:** [ADR-001](../adr/ADR-001-statisches-hosting.md)
 (static hosting, no backend, no build step for the frontend)
 **Target branch:** —
 
 **Trigger:** pre-review by the open-data editorial team (2026-07-26): "For a
 site linked by the city with a third-party integration (Nominatim), our
 legal department typically asks about that." The editorial team explicitly
-did **not** make this a condition for the showcase entry (that's only the
+did **not** make this a condition for the portal entry (that's only the
 attribution and the field values) — it's a well-founded heads-up.
 
 ## Touchpoints in the code
@@ -62,7 +62,7 @@ navigation in the service worker, a test for the legal texts.
    shell cache for the **requested** path first, `INDEX_URL` only as a
    fallback for the root. Because this permanently sets the app's
    navigation strategy, it additionally belongs as **ADR-002** under
-   `../entscheidungen/` (see implementation steps).
+   `../adr/` (see implementation steps).
 
 4. **PWA pitfalls** (`CLAUDE.md`): shell file changed → `CACHE_SHELL` from
    `v2` to `v3`, or installed clients won't see the new pages indefinitely.
@@ -122,7 +122,7 @@ are worse than gaps).
 
 **E4 — No contact form, `mailto:`.** Follows directly from ADR-001.
 
-**E5 — Same email address as in the showcase entry.** One contact channel,
+**E5 — Same email address as in the portal entry.** One contact channel,
 not two; otherwise the portal entry and the legal notice drift apart.
 
 **E6 — The new pages get by without JavaScript and without Leaflet.**
@@ -279,8 +279,8 @@ offline from the cache; under `localhost`, an installed SW serves
 - `README.md`: structure (new files, new test script), test section.
 - `CLAUDE.md`: the pitfall "`navigationAntwort()` covers every navigation"
   and the new drift test.
-- [`../showcase-einreichung.md`](../showcase-einreichung.md): check the
-  legal-notice/privacy-notice box, close the open item.
+- the portal submission document (since removed — see git history): check
+  the legal-notice/privacy-notice box, close the open item.
 - [`A-1`](./A-1-mein-arbeitsweg.md): extend the Definition of Done with
   "privacy notice extended for `localStorage` and the routing service"
   (tension 7).
@@ -302,7 +302,7 @@ offline from the cache; under `localhost`, an installed SW serves
 - Attribution, liability notice, and data timestamp unchanged
   (`test-attribution.mjs` green).
 - Accessibility as above; contrasts checked light **and** dark.
-- ADR-002 filed; README, CLAUDE.md, the showcase document, and A-1 updated.
+- ADR-002 filed; README, CLAUDE.md, the portal submission document, and A-1 updated.
 - Status in the [overview](./README.md#overview) set to `🏁 done`.
 
 ## Implementation steps
@@ -312,16 +312,16 @@ offline from the cache; under `localhost`, an installed SW serves
 2. `sw.js`: make `navigationAntwort()` path-aware, extend `SHELL`,
    `CACHE_SHELL` → `v3`.
 3. Write `impressum.html` and `datenschutz.html`; insert name and email
-   (the same address as in the showcase entry, E5).
+   (the same address as in the portal entry, E5).
 4. Footer links in `index.html`; text-page styles in `src/styles.css`.
 5. Write `scripts/test-rechtstexte.mjs`, extend `test-pwa.mjs`, both into
    `npm test`; cross-check the drift guard.
 6. Browser check including the offline and SW-navigation case.
-7. Update docs (README, CLAUDE.md, showcase document, A-1's DoD), status to
+7. Update docs (README, CLAUDE.md, portal submission document, A-1's DoD), status to
    `🏁 done`.
 
 > **Open and deliberately not decided here:** the project's own email
 > address must exist before step 3 can run (see "Open items" in the
-> [showcase document](../showcase-einreichung.md#open-items)). And the
+> portal submission document, since removed — see git history). And the
 > reservation from **E2** stands: a legal review is worth the money for
 > the personal-details items.

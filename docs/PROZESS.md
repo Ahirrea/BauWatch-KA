@@ -26,7 +26,7 @@ Before the process starts: does this even belong here?
 **Requirement** (`docs/anforderungen/A-…`), if *any one* of these applies:
 - The user experience changes visibly.
 - A product decision is still open.
-- It's in tension with a non-goal in [`PRD.md`](./PRD.md).
+- It's in tension with a documented decision ([ADRs](./adr/README.md)).
 - The data model or persistence is affected.
 
 **Task** ([`BACKLOG.md`](./BACKLOG.md)), if:
@@ -56,8 +56,7 @@ affected? Honestly name what's reusable and what's missing. (Example
 already existed, only route geometry and persistence were missing.)
 
 ### 3. Surface tensions & constraints
-Check against the project's DNA: [`PRD.md`](./PRD.md) (goals/**non-goals**),
-the [decisions](./entscheidungen/README.md), the pitfalls in `CLAUDE.md`.
+Check against the project's DNA: the [decisions](./adr/README.md).
 Does the idea contradict a non-goal? That's not a dealbreaker, but it must be
 **explicitly** named and resolved. (Example: "no routing" — resolved by
 adding routing only as an optional, user-triggered enrichment with a
@@ -77,7 +76,7 @@ not another.
 
 If the decision changes the **architecture** or binds the project long-term,
 it additionally belongs as an
-[ADR](./entscheidungen/README.md).
+[ADR](./adr/README.md).
 
 ### 6. Fully elaborate
 The specification covers at least:
@@ -113,13 +112,13 @@ answer is not obvious enough to re-derive each time:
   and name the decisions of it you are relying on.
 - **A decision that implementation *disproved* → revise in place**, whatever
   the status: keep the original `E<n>` visible and follow it with an
-  `E<n> revised (<date>)` block naming the evidence, per `CLAUDE.md`. That is
+  `E<n> revised (<date>)` block naming the evidence. That is
   a correction, not an extension, and it belongs in the file whose decision
   was wrong — see A-7's `E8 revised` for the pattern.
 
 Either way the [overview](./anforderungen/README.md) stays the only source of
 status, and requirement files are **not** append-only — that rule holds only
-for [`entscheidungen/`](./entscheidungen/README.md), whose ADRs are never
+for [`adr/`](./adr/README.md), whose ADRs are never
 rewritten.
 
 An amendment is a **fresh pass through steps 1–6**, not an edit bolted on
@@ -159,7 +158,7 @@ Numbers are stable and are **never reused** — not even for
 - Tests green (`npm test`), including new tests for new pure logic.
 - `src/lib/` stays DOM-/network-/dependency-free.
 - Accessibility considered (focus, ARIA, `prefers-reduced-motion`).
-- Docs updated (PRD/README/BACKLOG, where affected), status maintained in
+- Docs updated (README/BACKLOG, where affected), status maintained in
   the overview.
 
 ## Roles
