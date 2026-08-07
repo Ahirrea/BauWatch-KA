@@ -2,6 +2,13 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 07.08.2026, 02:54 — 1 neu, 1 geändert (gesamt 174)
+
+- ➕ **L6023/ Talstraße zw. Im Brunnenfeld und Henri-Arnaud-Straße**
+- ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — Sperrgrad: teil → gering
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 06.08.2026, 16:28 — 1 geändert (gesamt 173)
 
 - ✏️ Wolfartsweierer Straße zw. Durlacher Allee und Frühlingstraße — Ende: 2026-08-10 → 2026-08-31
