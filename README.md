@@ -10,8 +10,12 @@ It answers the question Karlsruhe residents actually have:
 time period?"**
 
 - 🗺️ Map + synchronized list (Leaflet + OpenStreetMap)
+- 🚧 Construction-site areas drawn on the map, not just point markers
 - 🚦 Traffic light for the closure severity, plain text instead of administrative codes, remaining duration
 - 🔎 Address/radius search (1.5 km), filters by time period, closure severity, mode of transport
+- 🆕 "What's new?" — the data changes of the last 30 days, right in the app
+- 🌐 Interface in German and English (legal pages stay German)
+- 🌗 Light and dark theme — follows the system, switchable in the app
 - 📲 Installable as an app and usable offline (see [Install as an App](#install-as-an-app))
 - ⚙️ Purely static on GitHub Pages — no server, no running costs
 
@@ -41,45 +45,12 @@ lives in `src/lib/` and is used **jointly by the build script and the client**.
 
 ## Project structure
 
-```
-index.html                 entry point, loads src/app.js + Leaflet (local)
-impressum.html             legal notice, plain text page without JS (A-4)
-datenschutz.html           privacy notice, plain text page without JS (A-4)
-manifest.webmanifest       PWA manifest (name, icons, colors, start_url)
-sw.js                      service worker: shell precache + offline data
-icons/                     icon.svg (source) + PNGs rendered from it
-src/
-  app.js                   UI, map, filters, rendering
-  styles.css
-  lib/
-    transform.js           UTM32 (EPSG:25832) -> WGS84   (shared)
-    classify.js            art codes, closure-severity traffic light, mode of transport (shared)
-    format.js              remaining duration, HTML cleanup, date format (shared)
-    changelog.js           what the "What's new?" feed may show — filters generic-only notes (shared, #28)
-scripts/
-  build-data.mjs           run by the Action: fetches & builds the data
-  diff-data.mjs            change comparison between two snapshots (for the changelog)
-  quality-report.mjs       generates the data-quality report (data/QUALITY.md)
-  render-icons.mjs         renders icons/*.png from icons/icon.svg (manual, not in CI)
-  test-transform.mjs       reference test of the coordinate transformation
-  test-diff.mjs            tests of change detection
-  test-classify.mjs        tests of the plain-text/traffic-light/mode-of-transport classification
-  test-quality.mjs         tests of the quality report
-  test-pwa.mjs             tests of manifest, icons, and service worker
-  test-attribution.mjs     tests of the CC-BY attribution in the served HTML
-  test-rechtstexte.mjs     tests of the legal notice/privacy notice (incl. drift against the code)
-  test-changelog-feed.mjs  tests of the data/changelog.json artifact behind the "What's new?" feed (A-6)
-data/
-  baustellen.geojson       generated, committed snapshot (starting value: sample data)
-  CHANGELOG.md             automatically maintained change log of the data (raw Markdown, on GitHub)
-  changelog.json           the same change log, structured — feeds the in-app "What's new?" dialog (A-6);
-                           without the generic "sonstige Angaben aktualisiert" notes (#28)
-  QUALITY.md               automatically generated data-quality report per build
-vendor/leaflet/            Leaflet bundled locally (no CDN)
-.github/workflows/
-  update-data.yml          cron + manual trigger
-docs/                      process, backlog, anforderungen/, adr/
-```
+Plain static files, served from the repo root — no frontend build step.
+Shared, dependency-free logic lives in `src/lib/` and is imported by **both**
+the browser client (`src/app.js`) and the Node scripts in `scripts/` (data
+build + tests). The committed data snapshot and its reports live in `data/`,
+Leaflet locally in `vendor/leaflet/` (no CDN), process/decisions/backlog in
+`docs/`.
 
 ## Running locally
 
@@ -115,63 +86,6 @@ existing file** — the `--allow-empty` flag forces the write even with 0 matche
 > A small **sample dataset** initially ships in the repo (`sample: true`,
 > marked as sample data in the footer). The first successful Action run
 > replaces it with real data.
-
-### Tests
-
-```bash
-npm test    # runs all test scripts in sequence
-```
-
-`npm test` runs `test-transform`, `test-diff`, `test-changelog-feed`,
-`test-classify`, `test-quality`, `test-pwa`, `test-attribution`, and
-`test-rechtstexte`; individually e.g. `node scripts/test-transform.mjs`.
-Among the things checked:
-
-- **`transform.js`** against known reference coordinates (including
-  Karlsruhe's market square and the central-meridian invariant),
-- **change detection** (`diff-data.mjs`),
-- **the "What's new?" feed artifact** (`data/changelog.json`): content matches
-  `data/CHANGELOG.md` for the same run — except for the generic
-  "other details updated" note, which the feed deliberately drops (#28) — plus
-  30-day pruning, and a `firstFill` run collapses to one synthetic entry
-  instead of per-item noise,
-- the **domain classification** (plain text, closure-severity traffic light, mode of transport),
-- the **quality report** (`quality-report.mjs`),
-- the **PWA artifacts** (`manifest.webmanifest`, icons, `sw.js`): valid
-  manifest, icon files at the stated size, **all paths relative**, every file
-  referenced by a precached HTML page or by `src/app.js` also precached, and
-  the service worker's navigation **path-aware**
-  ([ADR-002](docs/adr/ADR-002-mehrseitige-auslieferung.md)),
-- the **CC-BY attribution**: it's **static in the served `index.html`**
-  (not added later via JS), word-for-word identical to `ATTRIBUTION` from
-  `build-data.mjs`, and not overwritten by `app.js`. The attribution is a
-  license condition — it must not depend on the data fetch or on active
-  JavaScript,
-- the **legal texts** (`impressum.html`, `datenschutz.html`): required
-  sections present, linked from the footer, all paths relative, usable
-  without JavaScript — and **drift-safe in both directions** against the
-  code: every external host from `src/*.js` must be named in the privacy
-  notice, and as long as it states "no cookies / no own storage," neither
-  `localStorage`, `document.cookie`, `indexedDB`, nor similar may show up in
-  the frontend. Anyone who adds a third-party service or client-side storage
-  and forgets the text gets `npm test` red.
-
-The reference values for the transformation were generated once with `proj4` —
-`proj4` is **not a runtime dependency**, just a dev tool.
-
-## Enable GitHub Pages (#5)
-
-The site is a static site in the repo's root directory:
-
-1. Repo → **Settings → Pages**
-2. **Source:** "Deploy from a branch"
-3. **Branch:** `main`, folder `/ (root)` → Save
-
-After that, the site is reachable under `https://<user>.github.io/BauWatch-KA/`.
-This variant (deploy from the branch) is deliberately chosen: every commit on
-`main` — including the Action's data updates — is thus live immediately,
-without an extra deploy step. The `.nojekyll` file ensures that all
-directories are served unchanged.
 
 ## Install as an App
 
