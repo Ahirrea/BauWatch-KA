@@ -56,7 +56,8 @@ affected? Honestly name what's reusable and what's missing. (Example
 already existed, only route geometry and persistence were missing.)
 
 ### 3. Surface tensions & constraints
-Check against the project's DNA: the [decisions](./adr/README.md).
+Check against the project's DNA: the [decisions](./adr/README.md) and the
+pitfalls in `CLAUDE.md`.
 Does the idea contradict a non-goal? That's not a dealbreaker, but it must be
 **explicitly** named and resolved. (Example: "no routing" — resolved by
 adding routing only as an optional, user-triggered enrichment with a
@@ -112,7 +113,7 @@ answer is not obvious enough to re-derive each time:
   and name the decisions of it you are relying on.
 - **A decision that implementation *disproved* → revise in place**, whatever
   the status: keep the original `E<n>` visible and follow it with an
-  `E<n> revised (<date>)` block naming the evidence. That is
+  `E<n> revised (<date>)` block naming the evidence, per `CLAUDE.md`. That is
   a correction, not an extension, and it belongs in the file whose decision
   was wrong — see A-7's `E8 revised` for the pattern.
 

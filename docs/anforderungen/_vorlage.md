@@ -19,7 +19,7 @@ table row in README.md (that's where the status lives).
 &lt;modules, functions, fields — what's reusable, what's missing&gt;
 
 ## Tension with non-goals — and resolution
-&lt;name and resolve the conflict with an ADR from `../adr/`&gt;
+&lt;name and resolve the conflict with an ADR from `../adr/` / the pitfalls in `CLAUDE.md`&gt;
 
 ## Decisions (with rationale)
 &lt;forks taken, each with a short rationale and discarded alternatives&gt;
