@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "build:data": "node scripts/build-data.mjs",
-    "test": "node scripts/test-transform.mjs && node scripts/test-build-data.mjs && node scripts/test-diff.mjs && node scripts/test-changelog-feed.mjs && node scripts/test-classify.mjs && node scripts/test-quality.mjs && node scripts/test-pwa.mjs && node scripts/test-attribution.mjs && node scripts/test-rechtstexte.mjs && node scripts/test-i18n.mjs && node scripts/test-theme.mjs && node scripts/test-stats.mjs",
+    "test": "node scripts/test-transform.mjs && node scripts/test-format.mjs && node scripts/test-build-data.mjs && node scripts/test-diff.mjs && node scripts/test-changelog-feed.mjs && node scripts/test-classify.mjs && node scripts/test-quality.mjs && node scripts/test-pwa.mjs && node scripts/test-attribution.mjs && node scripts/test-rechtstexte.mjs && node scripts/test-i18n.mjs && node scripts/test-theme.mjs && node scripts/test-stats.mjs",
     "serve": "python3 -m http.server 8080"
   },
   "devDependencies": {

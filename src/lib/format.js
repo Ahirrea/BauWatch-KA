@@ -51,6 +51,15 @@ export function parseDate(value) {
     const dt = new Date(Number(y), Number(m) - 1, Number(d));
     return isNaN(dt) ? null : dt;
   }
+  // Date-only ISO (yyyy-mm-dd): parse as LOCAL midnight, like dd.mm.yyyy
+  // above. new Date('yyyy-mm-dd') would be UTC midnight (a spec special
+  // case for date-only strings) — west of UTC that shifts the calendar day
+  // to the previous day in formatDate()/daysBetween()/restdauer().
+  const isoDatum = s.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (isoDatum) {
+    const dt = new Date(Number(isoDatum[1]), Number(isoDatum[2]) - 1, Number(isoDatum[3]));
+    return isNaN(dt) ? null : dt;
+  }
   const dt = new Date(s);
   return isNaN(dt) ? null : dt;
 }

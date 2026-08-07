@@ -139,6 +139,21 @@ check(
   nurPolygonFeature.geometry.type === 'Point' && nurPolygonFeature.properties.area?.type === 'Polygon'
 );
 
+// --- Datumsnormalisierung (toIso über buildFeature) ---------------------------
+// toIso() muss den Kalendertag aus parseDate() unverändert übernehmen,
+// unabhängig von der Zeitzone des Läufers. toISOString() täte das nicht:
+// parseDate() liefert lokale Mitternacht, und östlich von UTC serialisiert
+// toISOString() daraus den VORTAG. Der Action-Läufer (UTC) sieht den
+// Unterschied nie — ein lokaler Build in Europa schon.
+
+const datum = buildFeature(
+  props({ vorgangszeitraum_von: '07.08.2026', vorgangszeitraum_bis: '2026-08-20' }),
+  PUNKT,
+  []
+);
+check('toIso: dd.mm.yyyy behält den Kalendertag (zeitzonenfest)', datum.properties.von === '2026-08-07');
+check('toIso: ISO-Datum behält den Kalendertag', datum.properties.bis === '2026-08-20');
+
 // --- buildArea() im Detail --------------------------------------------------
 
 check('buildArea: Punkt ergibt keine Fläche', buildArea([PUNKT]) === null);

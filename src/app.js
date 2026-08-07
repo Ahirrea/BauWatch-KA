@@ -1,7 +1,7 @@
 // app.js — UI, Karte, Filter, Rendering. Lädt den statischen Daten-Snapshot
 // data/baustellen.geojson (siehe ADR-001) und macht daraus Karte + Liste.
 
-import { restdauer, formatRange } from './lib/format.js';
+import { restdauer, formatRange, parseDate } from './lib/format.js';
 import { DEFAULT_LANG, STRINGS, AMPEL_LABEL, VM_LABEL, t } from './lib/i18n.js';
 import { filterChangelogEntries } from './lib/changelog.js';
 import { summarize, ENDET_BALD_TAGE } from './lib/stats.js';
@@ -145,8 +145,11 @@ function latLngOf(f) {
 // --- Filterlogik -----------------------------------------------------------
 function matchesZeitraum(props, mode, now) {
   if (mode === 'alle') return true;
-  const von = props.von ? new Date(props.von) : null;
-  const bis = props.bis ? new Date(props.bis) : null;
+  // parseDate statt new Date(): ISO-Datumsangaben aus dem Snapshot als
+  // LOKALE Mitternacht, konsistent mit restdauer()/formatDate() — sonst
+  // weicht der Zeitraumfilter am Anfangs-/Endtag vom angezeigten Text ab.
+  const von = parseDate(props.von);
+  const bis = parseDate(props.bis);
   const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
   const inWeek = new Date(today);
   inWeek.setDate(inWeek.getDate() + 7);

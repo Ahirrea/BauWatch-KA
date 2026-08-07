@@ -207,7 +207,13 @@ function buildArea(geometries) {
 
 function toIso(value) {
   const d = parseDate(value);
-  return d ? d.toISOString().slice(0, 10) : null;
+  if (!d) return null;
+  // Serialize from LOCAL components: parseDate() yields local midnight, and
+  // toISOString() would serialize the previous calendar day on any runner
+  // east of UTC. The Action runner (UTC) never shows the difference — a
+  // local build in Europe does.
+  const p = (n) => String(n).padStart(2, '0');
+  return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`;
 }
 
 // --- Hauptlogik ------------------------------------------------------------
