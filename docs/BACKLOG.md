@@ -10,8 +10,9 @@ Suggested labels: `setup`, `data`, `frontend`, `a11y`, `docs`, `enhancement`.
 > [refinement process](./PROZESS.md).
 
 **Status legend:** ✅ done · 🟡 partial / open · ⬜ open
-**As of:** 2026-08-07 (#32 added and open — the amber traffic-light dot
-reaches only ~2.5:1 in light mode, found while measuring A-10.)
+**As of:** 2026-08-08 (#33 added and done — the small-phone layout: 84 % of an
+iPhone SE viewport was chrome above the map, and a wrapped filter group left a
+ragged bare strip.)
 
 > Summary: Milestones 1–3 are implemented and the site is live via GitHub
 > Pages (#5). From Milestone 4, #15 and #18 are done; #16 (push/subscription
@@ -23,7 +24,8 @@ reaches only ~2.5:1 in light mode, found while measuring A-10.)
 > **A-7 (construction-site areas) is implemented**; of its two follow-ups,
 > #29 is done and #30 is deliberately open (not planned). #31 (a PWA
 > manifest fix) is done. **A-10 (result metrics) is implemented**; #32, an
-> a11y finding it surfaced in the shared traffic-light dot, is open.
+> a11y finding it surfaced in the shared traffic-light dot, is open. #33 (the
+> small-phone layout) is done.
 
 ---
 
@@ -412,6 +414,56 @@ and needs its own pass over all three components.
 a documented decision that the dot stays decorative and the ratio is accepted.
 Measured, not estimated, in all three theme states. (Label: `a11y`,
 `frontend`)
+
+---
+
+## Small-phone layout finding (2026-08-08)
+
+### ✅ #33 On an iPhone SE the map starts below the fold, and a wrapped filter group looks broken
+A screenshot at 375 × 667 showed two things. **The vertical budget:** header +
+search + three filter groups measured **558 px of the 667 px viewport**, so the
+map got 109 px — the whole first screen was chrome. Same complaint as #23, one
+device class down; #23 removed the stats bar for laptop height and never looked
+at the phone. **The ragged segmented control:** the "Zeitraum" group has four
+buttons, needs ~450 px, and wrapped — but `.segments` separated its buttons with
+`border-right`, which only draws between *columns*. The second row sat flush
+against the first with no line between them, and the space beside the lone
+"Alle" stayed bare container background, so the group read as a half-drawn box.
+**DoD:** the map visible on the first screen at 375 px without scrolling, a
+wrapped group looking deliberate, no horizontal overflow from 320 px up in both
+languages, desktop untouched. — **done**, all measured with Playwright (Edge
+channel, OSM tiles intercepted where relevant):
+
+- **Separators come from a 1 px flex `gap` over the container's own background**
+  instead of `border-right` per button — a gap draws in both axes, so a wrapped
+  row gets its horizontal line. Buttons additionally got `flex: 1 1 auto`, which
+  can only take effect once a group wraps (`.segments` is `inline-flex` and
+  shrink-to-fit, so a single row has no free space) and fills the second row
+  rather than leaving the bare strip.
+- **A `@media (max-width: 480px)` block** tightens the header padding, `h1`
+  (1.5→1.3 rem), the tagline, the search padding, and the filter row gap, and
+  drops the segment font to 0.85 rem — at 0.92 rem the "Zeitraum" group needs
+  ~450 px, at 0.85 rem **all three groups fit one row from 360 px up**, in DE and
+  EN. Below that it wraps, which is now the tidy state, not a defect.
+- `.search-status:empty` collapses to `min-height: 0` — deliberately *not*
+  `display: none`: it is an `aria-live` region, and one removed from the
+  accessibility tree may not announce text added the moment it returns.
+- **Deliberately not done: pulling the "Umkreis suchen" button up next to the
+  input.** That is the obvious remaining 49 px, and it was measured and
+  rejected — the placeholder "Adresse in Karlsruhe (z. B. Kaiserstraße 1)" needs
+  304 px of text width and has exactly 317 px at 375 px, so sharing the row cuts
+  the example off mid-word on the very device this is for. Below 360 px it is
+  clipped either way; that is no reason to clip it at 375 px too.
+
+**Measured result** (`#map`'s top edge, dark and light identical): 375 px:
+**558 → 447 px**, so the visible map grows 109 → 220 px. 320 px: 498 px ("Zeitraum"
+still wraps, now cleanly). 360/390 px: 468 px. No horizontal overflow at 320,
+360, 375, 390, or 430 px, in either language. **Desktop is untouched**: at
+1280 px the filter block stays 64 px tall and `#map` starts at 278 px exactly as
+before, and a pixel diff of the filter strip against a `git archive HEAD`
+checkout shows 48 of 307 200 pixels differing by ≤ 10/255 in light mode and 0 in
+dark — antialiasing along the separators, no layout change. `CACHE_SHELL` bumped
+to `v16` (`src/styles.css` is a shell file). (Label: `frontend`)
 
 ---
 

@@ -455,28 +455,36 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.03em;
 }
+/* Separators come from a 1px grid gap over the container's own background, not
+   from border-right on each button. Identical on one row — but the group wraps
+   on a narrow screen, and a border-right only separates columns: the second row
+   sat flush against the first with no line between them. The gap draws both
+   directions. Together with the buttons' flex-grow below, a wrapped row fills
+   the width instead of leaving a bare strip of container background beside the
+   last button (that ragged block was the visible defect on an iPhone SE). */
 .segments {
   display: inline-flex;
   flex-wrap: wrap;
+  gap: 1px;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
-  background: var(--surface);
+  background: var(--border);
 }
 .segments button {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  /* Only ever takes effect once the group wraps: .segments is inline-flex and
+     shrink-to-fit, so a single row has no free space to distribute. */
+  flex: 1 1 auto;
   gap: 0.35rem;
   padding: 0.45rem 0.7rem;
   font-size: 0.92rem;
   border: 0;
-  border-right: 1px solid var(--border);
-  background: transparent;
+  background: var(--surface);
   color: var(--text);
   cursor: pointer;
-}
-.segments button:last-child {
-  border-right: 0;
 }
 .segments button.is-active {
   background: var(--accent);
@@ -824,6 +832,59 @@ body {
 }
 .datenfluesse tbody th {
   font-weight: 600;
+}
+
+/* --- Small phones (iPhone SE class, 360–480 px) ---
+   Same complaint as BACKLOG #23, one device class down: header + search +
+   three filter groups stacked to 558 px of the 667 px viewport, so the map
+   started with 109 px left and the first screen was pure chrome. Nothing here
+   removes a control or changes the focus order — the blocks above the map just
+   stop paying desktop-sized spacing on a display that has none to spare.
+
+   The segment font is the one visual concession: at 0.92rem the Zeitraum group
+   needs ~450 px and wraps, at 0.85rem all three groups fit one row at 360 px.
+   That is measured with the current DE/EN strings and a system font, i.e. it
+   can still wrap on an unusual font stack — which is exactly why the wrapped
+   state was made to look intentional (see .segments above) instead of being
+   relied upon never to happen. */
+@media (max-width: 480px) {
+  .app-header {
+    padding: 0.75rem 1rem 0.4rem;
+  }
+  .app-header h1 {
+    font-size: 1.3rem;
+  }
+  .tagline {
+    font-size: 0.92rem;
+  }
+
+  .search {
+    padding: 0.5rem 1rem;
+    gap: 0.4rem;
+  }
+  /* The submit button deliberately keeps its own row. Pulling it up next to
+     the input (a smaller flex-basis) is the obvious 49 px, and it was measured
+     and rejected: the placeholder "Adresse in Karlsruhe (z. B. Kaiserstraße 1)"
+     needs 304 px of text width and has exactly 317 px at 375 px, so sharing the
+     row cuts the example off mid-word on the very device this block is for.
+     Below 360 px it is clipped either way — that is not a reason to clip it at
+     375 px too. */
+  /* Deliberately min-height and NOT display:none — this is an aria-live
+     region, and one removed from the accessibility tree may not announce the
+     text that is added at the same moment it comes back. Collapsed to zero it
+     stays present and simply costs nothing while there is no status. */
+  .search-status:empty {
+    min-height: 0;
+  }
+
+  .filters {
+    gap: 0.6rem 1rem;
+    padding-bottom: 0.4rem;
+  }
+  .segments button {
+    padding: 0.45rem 0.55rem;
+    font-size: 0.85rem;
+  }
 }
 
 /* --- Desktop-Layout: Karte + Liste nebeneinander --- */
