@@ -2,6 +2,26 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 08.08.2026, 04:04 — 3 neu, 10 entfernt, 2 geändert (gesamt 166)
+
+- ➕ **Pforzheimer Straße - Waldshuter Straße - Turmbergbad - Campingplatz Durlach - Bundestraßenkreuz B3 / B10**
+- ➕ **B 3 Grötzinger Straße zw. Bergbahnstraße u. Rittnertstraße**
+- ➕ **L605 zw. Bulacher Kreuz und Gut Scheibenhardt**
+- ➖ ~~Vorholzstraße zw. Karlstraße u. Beiertheimer Allee sowie Anliegerfahrbahn Beiertheimer Allee zw. Vorholzstraße u. Südendstraße~~
+- ➖ ~~Moosalbstraße zw. Frauenalber Straße und Spessarter Straße~~
+- ➖ ~~B 3 Grötzinger Straße zw. Bergbahnstraße u. Rittnertstraße~~
+- ➖ ~~Humboldstraße zw. Gerwigstraße und Essenweinstraße~~
+- ➖ ~~Humboldtstraße zw. Gerwigstraße und Essenweinstraße~~
+- ➖ ~~Moningerstraße zw. Kriegstraßem und Sophienstraße~~
+- ➖ ~~Zirkel zw. Herrenstraße u. Ritterstraße~~
+- ➖ ~~Pforzheimer Straße und  Waldshuter Straße~~
+- ➖ ~~K9653/ Karlsbader Straß ezw. Pfefferäckerstraße und abzweig L623/ Ochsenstraße~~
+- ➖ ~~Holländerstraße, Hinter der Kirche, Turnerstraße, Krämerstraße, Valentinstraße, Hammweg~~
+- ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
+- ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 07.08.2026, 15:18 — 1 neu, 3 entfernt, 3 geändert (gesamt 173)
 
 - ➕ **Humboldstraße zw. Gerwigstraße und Essenweinstraße**
