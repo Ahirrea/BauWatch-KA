@@ -111,6 +111,24 @@ exactly the spatial context this requirement adds for a long street-closure
 shape. The `maxZoom` cap stops a small shape (e.g. one crossing) from
 snapping to an unexpectedly tight zoom compared to a plain marker.
 
+**E5 revised (2026-08-08).** Reversed by the idea's originator after living
+with it: the automatic camera move costs the map overview on *every* click,
+while the spatial context it buys matters only for the minority of cases with a
+long shape — "es stört mittlerweile mehr, als es Nutzen bringt". Selection
+therefore **never changes the zoom and never travels**: `fitBounds()` is gone,
+and so is the pre-A-7 `setView(point, Math.max(zoom, 15))` on the point-only
+path (which E5 had deliberately left alone — dropped for consistency, so that
+no click zooms). The popup's readability, which E5 secured with
+`{ autoPan: false }` plus a measured reserved strip (Backlog #29), is now
+carried by Leaflet's own `autoPan` again: it shifts the map by at most a
+popup's height and never touches the zoom. What survives untouched: the area
+layer and its styling (E3, E4, E6), the additive data model (E1), the marker as
+the sole interactive object (E2), and A-9's emphasis tiers — which is what still
+answers "which one did I just click" now that the camera no longer does. See
+[A-11](./A-11-auswahl-ohne-zoom.md) for the full refinement, including why a
+"zoom out only" middle ground and a stored preference were both discarded.
+Backlog #30 (long corridors fitting to a hairline zoom) becomes moot with this.
+
 **E6 — No zoom-gating.** Areas render at every zoom level, same as markers,
 no minimum-zoom threshold. *Discarded:* hiding areas below a chosen zoom to
 reduce visual noise city-wide — premature at ~180 features; revisit only if
