@@ -103,6 +103,20 @@ This repo is often worked on from a **cloud session** (claude.ai/code, including
 - **Teleport to the right device.** On the laptop, `claude --teleport` pulls the phone session — including branch and history — into the terminal — prerequisite: same claude.ai account, clean git state, and **the branch is pushed** (the VM clones from GitHub). So: commit and push work before switching.
 - **`main` moves under you.** The data Action commits to `main` itself; before pushing to `main`, always `git fetch origin main` first and rebase/cherry-pick your own commit onto it (no force-push needed if only genuinely new work is added). **Pull requests are unusual here** — finished work lands directly on `main`. Clean path for "commit directly to main" on request: commit on the feature branch, `git fetch origin main`, then **fast-forward** (`git merge --ff-only <branch>`) and push — no merge commit (the one in the history is an accidental `git pull`).
 
+## Agent skills
+
+### Issue tracker
+
+Issues live in-repo as Markdown — technical tasks in `docs/BACKLOG.md` (`#<n>`), elaborated requirements in `docs/anforderungen/A-<n>-*.md` per `docs/PROZESS.md`. GitHub Issues is deliberately unused; never call `gh issue create`. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+The five canonical roles, unchanged (`needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`), written as a `Status:` line on the item since there is no label API. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context: this file plus `CONTEXT.md` at the root and the append-only `docs/adr/`. See `docs/agents/domain.md`.
+
 ## Further reading
 
 `README.md` (setup, Action, "tracking changes"), `docs/PROZESS.md` (fixed process: idea → implementation-ready requirement), `docs/anforderungen/` (elaborated requirements, one file per requirement; `README.md` in it = overview + **only** source of status), `docs/adr/` (ADRs, append-only; `README.md` in it = overview), `docs/BACKLOG.md` (status per technical task).

@@ -9,6 +9,7 @@ build-summary.txt
 
 # Scratch / lokale Experimente
 scratch_*
+.scratch/
 *.local
 
 # OS
