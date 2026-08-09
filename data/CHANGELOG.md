@@ -2,6 +2,16 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 09.08.2026, 04:14 — 4 entfernt, 1 geändert (gesamt 162)
+
+- ➖ ~~Gänsbergstraße zw. Werrenstraße und Wiesentalstraße~~
+- ➖ ~~Rheinhafenstraße Kreuzungsbereich Kirschstraße~~
+- ➖ ~~Vorholzstraße zw. Beiertheimer Allee und Karlstraße~~
+- ➖ ~~L605 zw. Bulacher Kreuz und Gut Scheibenhardt~~
+- ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 08.08.2026, 04:04 — 3 neu, 10 entfernt, 2 geändert (gesamt 166)
 
 - ➕ **Pforzheimer Straße - Waldshuter Straße - Turmbergbad - Campingplatz Durlach - Bundestraßenkreuz B3 / B10**
