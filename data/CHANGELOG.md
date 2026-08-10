@@ -2,6 +2,15 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 10.08.2026, 11:40 — 1 entfernt, 3 geändert (gesamt 177)
+
+- ➖ ~~Kriegsstraße zw. Karl-Friedrich-Straße und Lammstraße~~
+- ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
+- ✏️ Babbergerstraße, Waidweg, Hermann-Schneider-Allee — sonstige Angaben aktualisiert
+- ✏️ Bergbahnstraße zw. B 3 Grötzinger Straße und Am Steinbruch — Bezeichnung geändert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 10.08.2026, 04:21 — 16 neu, 2 geändert (gesamt 178)
 
 - ➕ **Pfalzstraße, Kirschstraße, Hördtstraße, Krämerstraße, Langenackerstraße, Turnerstraße,**
