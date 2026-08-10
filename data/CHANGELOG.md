@@ -2,6 +2,14 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 10.08.2026, 15:24 — 2 neu, 1 geändert (gesamt 179)
+
+- ➕ **Sonntagstraße zw. Jollystraße und Mathystraße**
+- ➕ **Rastatter Straße 1 bis 103**
+- ✏️ Reinhold-Frank-Straße zwischen Belfortstraße und Kaiserallee — Info geändert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 10.08.2026, 11:40 — 1 entfernt, 3 geändert (gesamt 177)
 
 - ➖ ~~Kriegsstraße zw. Karl-Friedrich-Straße und Lammstraße~~
