@@ -2,6 +2,29 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 10.08.2026, 04:21 — 16 neu, 2 geändert (gesamt 178)
+
+- ➕ **Pfalzstraße, Kirschstraße, Hördtstraße, Krämerstraße, Langenackerstraße, Turnerstraße,**
+- ➕ **Werthmannstraße zw. Klosterweg und Pastor-Felke-Straße**
+- ➕ **Nordbeckenstraße 17b, Im Schlehert 38**
+- ➕ **Werthmannstraße zw. Pastor-Felke-Straße und Klosterweg**
+- ➕ **Wiesentalstraße zw. Gänsbergstraße und Neubergstraße**
+- ➕ **Rintheimer Querallee und Büchiger Allee**
+- ➕ **Johann-Strauß-Straße zw. Parkplatz Lorzingstraße/ Milliöeckerstraße und Durlacher Allee**
+- ➕ **Passagehof**
+- ➕ **Luise-Rigger-Straße zw. Clara-Immerwahr-Haber-Platz und Hedwig-Kettler-Straße**
+- ➕ **Lange Straße zw. Allmendstraße u. Lützowstraße**
+- ➕ **Bergbahnstraße zw. Grötzinger Straße und Am Steinbruch**
+- ➕ **Amalienbadstraße zw. Rommelstraße/ Auer Straße und Pfinztalstraße und Kreuzung Kanzlerstraße**
+- ➕ **Pfarrstraße, Waidweg, Malvenstr., Goldgrundstr., Hammweg, Schattenstr**
+- ➕ **Laubenweg zw. Siemensallee u. Kepplerstraße**
+- ➕ **Rheinhafestraße zw. B36/Eckenerstraße und Hopfenstraße**
+- ➕ **Am Sonnenbad zw. Pfannkuchstraße und südliche Uferstraße**
+- ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
+- ✏️ Babbergerstraße, Waidweg, Hermann-Schneider-Allee — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 09.08.2026, 04:14 — 4 entfernt, 1 geändert (gesamt 162)
 
 - ➖ ~~Gänsbergstraße zw. Werrenstraße und Wiesentalstraße~~
