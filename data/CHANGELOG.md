@@ -2,6 +2,12 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 10.08.2026, 19:00 — 1 geändert (gesamt 179)
+
+- ✏️ Rintheimer Querallee und Büchiger Allee — Sperrgrad: teil → gering
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 10.08.2026, 15:24 — 2 neu, 1 geändert (gesamt 179)
 
 - ➕ **Sonntagstraße zw. Jollystraße und Mathystraße**

@@ -1,6 +1,6 @@
 # Datenqualitäts-Report
 
-_Automatisch beim Daten-Build erzeugt. Stand: 10.08.2026, 15:24._
+_Automatisch beim Daten-Build erzeugt. Stand: 10.08.2026, 19:00._
 
 ## Pipeline
 - Rohdaten: **732** Features
@@ -28,10 +28,10 @@ _Automatisch beim Daten-Build erzeugt. Stand: 10.08.2026, 15:24._
 - **unbekannte art-Kategorien:** keine (alle als Klartext erkannt)
 
 - **erkannte Sperrung-Werte → Ampel:**
-  - „mit Verkehrsbehinderung" (101×) → teil
+  - „mit Verkehrsbehinderung" (100×) → teil
   - „mit Vollsperrung" (48×) → voll
   - „mit Sperrung in eine Fahrtrichtung" (17×) → teil
-  - „keine Verkehrsbehinderung" (13×) → gering
+  - „keine Verkehrsbehinderung" (14×) → gering
 
 ## Geometrie & Identität
 - **Koordinaten außerhalb des Karlsruher Rahmens:** keine
