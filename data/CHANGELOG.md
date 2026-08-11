@@ -2,6 +2,14 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 11.08.2026, 15:20 — 3 geändert (gesamt 177)
+
+- ✏️ Breslauer Straße Wohnwege 64 A - I und 66 A -L — sonstige Angaben aktualisiert
+- ✏️ Rintheimer Querallee und Büchiger Allee — Sperrgrad: gering → teil; Beginn: 2026-08-09 → 2026-08-04; Ende: 2026-12-18 → 2026-10-25; Info geändert
+- ✏️ Rheinhafenstraße zw. Daxlanderstraße und Südliche Uferstraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 11.08.2026, 11:06 — 1 geändert (gesamt 177)
 
 - ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
