@@ -2,6 +2,12 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 11.08.2026, 11:06 — 1 geändert (gesamt 177)
+
+- ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 11.08.2026, 04:11 — 2 neu, 4 entfernt, 1 geändert (gesamt 177)
 
 - ➕ **Grötzinger Tunnel**
