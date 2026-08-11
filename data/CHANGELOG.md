@@ -2,6 +2,18 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 11.08.2026, 04:11 — 2 neu, 4 entfernt, 1 geändert (gesamt 177)
+
+- ➕ **Grötzinger Tunnel**
+- ➕ **Ettlinger Allee zw. Zufahrt PSK (Höhe Nürnberger Straße) u. Ausfahrt PSK Anliegerfahrbahn Richtung Schwarzwaldkreuz**
+- ➖ ~~Bonner Straße zw. Siemensallee und Bonner Platz~~
+- ➖ ~~Karlstraße, Kaiserstraße, Passagehof~~
+- ➖ ~~Johann-Strauß-Straße zw. Am dm-Platz und Parkplatz Lorzingstraße/ Milliöeckerstraße~~
+- ➖ ~~Am Sonnenbad zw. Pfannkuchstraße und südliche Uferstraße~~
+- ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 10.08.2026, 19:00 — 1 geändert (gesamt 179)
 
 - ✏️ Rintheimer Querallee und Büchiger Allee — Sperrgrad: teil → gering
