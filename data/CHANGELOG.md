@@ -2,6 +2,18 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 12.08.2026, 04:29 — 6 neu, 1 entfernt (gesamt 182)
+
+- ➕ **Gerwigstraße zw. Ostring und Käppelestraße**
+- ➕ **Gerwigstraße zw. Käppelestraße und Ostring**
+- ➕ **B10/ K9657 Höhe AS 4**
+- ➕ **B3/ Beunstraße Ausfahrt Grötzinger Baggeersee**
+- ➕ **K9652/ Südtangente Höhe Ottostraße**
+- ➕ **L605 Höhe Ausfahrt Pulverhausstraße**
+- ➖ ~~Glogauer Straße zw. Liegnitzer Straße und Im Eichbäumle~~
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 11.08.2026, 15:20 — 3 geändert (gesamt 177)
 
 - ✏️ Breslauer Straße Wohnwege 64 A - I und 66 A -L — sonstige Angaben aktualisiert
