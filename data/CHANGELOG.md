@@ -2,6 +2,17 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 12.08.2026, 15:25 — 6 geändert (gesamt 183)
+
+- ✏️ Herrenstraße zw. Amalienstraße und Blumenstraße — Ende: 2026-09-27 → 2026-09-18
+- ✏️ Sophienstraße Kreuzung Reinhold-Frank-Straße — sonstige Angaben aktualisiert
+- ✏️ Rheinhafenstraße zw. Daxlanderstraße und Südliche Uferstraße — sonstige Angaben aktualisiert
+- ✏️ B 3 Grötzinger Straße zw. Bergbahnstraße u. Rittnertstraße — Ende: 2026-08-14 → 2026-08-17
+- ✏️ Bergbahnstraße zw. B 3 Grötzinger Straße und Am Steinbruch — Beginn: 2026-08-09 → 2026-08-10
+- ✏️ Gymnasiumstraße zw. Rittnertstraße und Turmbergstraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 12.08.2026, 11:18 — 1 neu, 1 geändert (gesamt 183)
 
 - ➕ **Rastatter Straße 45+62, Tulpenstraße 1-4**
