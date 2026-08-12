@@ -2,6 +2,13 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 12.08.2026, 11:18 — 1 neu, 1 geändert (gesamt 183)
+
+- ➕ **Rastatter Straße 45+62, Tulpenstraße 1-4**
+- ✏️ Rastatter Straße 1 bis 103 — Info geändert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 12.08.2026, 04:29 — 6 neu, 1 entfernt (gesamt 182)
 
 - ➕ **Gerwigstraße zw. Ostring und Käppelestraße**
