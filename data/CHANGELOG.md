@@ -2,6 +2,14 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 13.08.2026, 07:44 — 3 geändert (gesamt 178)
+
+- ✏️ K9659 Höhe DM — sonstige Angaben aktualisiert
+- ✏️ Breslauer Straße Wohnwege 64 A - I und 66 A -L — sonstige Angaben aktualisiert
+- ✏️ Babbergerstraße, Waidweg, Hermann-Schneider-Allee — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 13.08.2026, 04:31 — 2 neu, 7 entfernt (gesamt 178)
 
 - ➕ **B10 zw. A5 und K9659**
