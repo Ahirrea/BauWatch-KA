@@ -2,6 +2,20 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 13.08.2026, 04:31 — 2 neu, 7 entfernt (gesamt 178)
+
+- ➕ **B10 zw. A5 und K9659**
+- ➕ **B10  zw. AS 11 und AS 10**
+- ➖ ~~Amalienbadstraße zw. Rommelstraße/ Auer Straße und Pfinztalstraße und Kreuzung Kanzlerstraße~~
+- ➖ ~~An der Bahn zw. Hagdornstraße und Gerhardtstraße~~
+- ➖ ~~Grötzinger Tunnel~~
+- ➖ ~~B10/ K9657 Höhe AS 4~~
+- ➖ ~~B3/ Beunstraße Ausfahrt Grötzinger Baggeersee~~
+- ➖ ~~K9652/ Südtangente Höhe Ottostraße~~
+- ➖ ~~L605 Höhe Ausfahrt Pulverhausstraße~~
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 12.08.2026, 15:25 — 6 geändert (gesamt 183)
 
 - ✏️ Herrenstraße zw. Amalienstraße und Blumenstraße — Ende: 2026-09-27 → 2026-09-18
