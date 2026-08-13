@@ -2,6 +2,17 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 13.08.2026, 11:19 — 2 entfernt, 4 geändert (gesamt 176)
+
+- ➖ ~~Weltzienstraße zw. Wilhelm-Baur-Straße und Kriegstraße~~
+- ➖ ~~Weltzienstraße zw. Kriegstraße und Wilhelm-Baur-Straße~~
+- ✏️ Sophienstraße Kreuzung Reinhold-Frank-Straße — sonstige Angaben aktualisiert
+- ✏️ K9659 Höhe DM — sonstige Angaben aktualisiert
+- ✏️ Babbergerstraße, Waidweg, Hermann-Schneider-Allee — sonstige Angaben aktualisiert
+- ✏️ Rheinhafenstraße zw. B36/Eckenerstraße und Hopfenstraße — Beginn: 2026-08-09 → 2026-08-12; Ende: 2026-09-05 → 2026-08-28; Bezeichnung geändert; Info geändert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 13.08.2026, 07:44 — 3 geändert (gesamt 178)
 
 - ✏️ K9659 Höhe DM — sonstige Angaben aktualisiert
