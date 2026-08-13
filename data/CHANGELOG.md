@@ -2,6 +2,12 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 13.08.2026, 22:52 — 1 geändert (gesamt 176)
+
+- ✏️ Breslauer Straße Wohnwege 64 A - I und 66 A -L — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 13.08.2026, 11:19 — 2 entfernt, 4 geändert (gesamt 176)
 
 - ➖ ~~Weltzienstraße zw. Wilhelm-Baur-Straße und Kriegstraße~~
