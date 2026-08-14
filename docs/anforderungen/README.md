@@ -35,6 +35,7 @@ linked — that way the folder doesn't fill up with empty templates.
 | A-10 | [Result metrics above the list](./A-10-kennzahlen-ergebnisliste.md) | 🏁 done | Summarizes the currently filtered result in one chip strip — how many sites, split by closure severity, and how many end within 7 days; derived client-side, no new data and explicitly no usage statistics. |
 | A-11 | [Selection without a map zoom](./A-11-auswahl-ohne-zoom.md) | ✅ ready | Selecting a construction site no longer moves the camera — A-7/E5's `fitBounds` and the pre-A-7 zoom-to-15 both go, the popup keeps its readability via Leaflet's own `autoPan`. |
 | A-12 | [Filter row: remaining duration instead of time period, counts in the closure-severity filter](./A-12-filterzeile-restdauer-kennzahlen.md) | 🏁 done | The "Zeitraum" filter has never narrowed anything in 86 snapshots — it is replaced by a remaining-duration filter, and A-10's metrics strip merges into the closure-severity buttons as facet counts. Supersedes A-10/E1, E4, E6 and `BACKLOG.md` #21. |
+| A-13 | [Map focus on small screens](./A-13-kartenfokus-kleine-screens.md) | 🏁 done | On an iPhone SE the map starts at 447 px of a 667 px viewport and only a third of it is on the first screen — the filter row moves between map and list, which puts the whole map above the fold without hiding or collapsing a single control. |
 
 ## Adding a new requirement
 

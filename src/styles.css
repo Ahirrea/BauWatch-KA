@@ -464,13 +464,15 @@ body {
 }
 
 /* --- Filter --- */
+/* Seit A-13 ein Kind von .content (im DOM zwischen Karte und Liste). Breite,
+   Zentrierung und der seitliche Abstand kommen deshalb vom Container — eigene
+   `max-width`/`margin: auto`/`padding-inline` hier würden sich damit addieren.
+   Den senkrechten Abstand zu Karte und Liste macht `gap` von .content. */
 .filters {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem 1.5rem;
-  padding: 0 1rem 0.5rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  padding: 0;
 }
 .filter-group {
   display: flex;
@@ -550,7 +552,13 @@ body {
   background: var(--green);
 }
 
-/* --- Karte + Liste --- */
+/* --- Karte + Filter + Liste ---
+   Die Reihenfolge auf dem Handy steht seit A-13 im DOM (Karte, Filter, Liste)
+   und wird hier NICHT mehr per `order` nachgestellt. Das ist kein Aufräumen,
+   sondern Voraussetzung: ein `order` auf zwei der drei Kinder würde das dritte
+   (die Filter, ohne Angabe `order: 0`) vor beide sortieren. Umgekehrt heißt
+   das: Seh- und Fokusreihenfolge stimmen mobil überein — den Versatz trägt
+   bewusst der Desktop weiter unten (A-13/E2, E4). */
 .content {
   display: flex;
   flex-direction: column;
@@ -559,9 +567,6 @@ body {
   max-width: 1200px;
   margin: 0 auto;
 }
-.map-wrap {
-  order: 1;
-}
 #map {
   height: 55vh;
   min-height: 320px;
@@ -569,9 +574,6 @@ body {
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
   background: var(--surface);
-}
-.list-wrap {
-  order: 2;
 }
 .list-status {
   color: var(--text-muted);
@@ -863,14 +865,24 @@ body {
    stop paying desktop-sized spacing on a display that has none to spare.
 
    The segment font is the one visual concession: at 0.92rem the Zeitraum group
-   needs ~450 px and wraps, at 0.85rem all three groups fit one row at 360 px.
-   That is measured with the current DE/EN strings and a system font, i.e. it
-   can still wrap on an unusual font stack — which is exactly why the wrapped
-   state was made to look intentional (see .segments above) instead of being
-   relied upon never to happen. */
+   needs ~450 px and wraps, at 0.85rem each group fits one row from 360 px up.
+   "One row" means per group — the three groups have never shared a line at
+   phone width and cannot (186/304/253 px against 343 px at 375 px), which is
+   why the filter block is 190 px tall in three rows. That is measured with the
+   current DE/EN strings and a system font, i.e. a group can still wrap on an
+   unusual font stack — which is exactly why the wrapped state was made to look
+   intentional (see .segments above) instead of being relied upon never to
+   happen.
+
+   The spacing below goes one step further than the 2026-08-08 pass, but only
+   for headroom: A-13 moved the filter block below the map, which is what
+   actually puts the whole map on the first screen. The remaining 15 px here
+   buy the margin that a 568 px-tall viewport needs (budget 255 px, chrome
+   242 px). The tagline stays — hiding it saves 24 px that nothing needs, and it
+   is the one line saying what the page is for (A-13/E2). */
 @media (max-width: 480px) {
   .app-header {
-    padding: 0.75rem 1rem 0.4rem;
+    padding: 0.5rem 1rem 0.35rem;
   }
   .app-header h1 {
     font-size: 1.3rem;
@@ -878,9 +890,12 @@ body {
   .tagline {
     font-size: 0.92rem;
   }
+  .header-top {
+    margin-bottom: 0.35rem;
+  }
 
   .search {
-    padding: 0.5rem 1rem;
+    padding: 0.4rem 1rem;
     gap: 0.4rem;
   }
   /* The submit button deliberately keeps its own row. Pulling it up next to
@@ -900,7 +915,13 @@ body {
 
   .filters {
     gap: 0.6rem 1rem;
-    padding-bottom: 0.4rem;
+  }
+  /* Der Abstand zwischen Karte, Filtern und Liste ist auf dem Handy das
+     Einzige, was noch zwischen der Kartenunterkante und dem ersten sichtbaren
+     Filterlabel steht. Bei 360×640 blieben mit 1rem genau 4 px davon übrig —
+     zu wenig, um als Hinweis „hier geht es weiter" zu taugen (A-13/E5). */
+  .content {
+    gap: 0.6rem;
   }
   .segments button {
     padding: 0.45rem 0.55rem;
@@ -908,7 +929,15 @@ body {
   }
 }
 
-/* --- Desktop-Layout: Karte + Liste nebeneinander ---
+/* --- Desktop-Layout: Filterzeile oben, darunter Karte + Liste nebeneinander ---
+
+   Ein Raster statt einer Flex-Zeile, seit die Filter im DOM zwischen Karte und
+   Liste stehen (A-13). Es holt sie über `grid-template-areas` wieder ganz nach
+   oben und über die volle Breite — hier ist das unkritisch, weil auf dem Desktop
+   ohnehin alles ohne Scrollen sichtbar ist (A-13/E2). Kein `flex-wrap` als
+   Ersatz: mit `flex: 1 1 60%` und `1 1 40%` plus `gap` überschreiten die beiden
+   Spalten zusammen 100 %, sie brächen also mit erlaubtem Umbruch untereinander.
+   `3fr 2fr` ergibt exakt die bisherigen Spaltenbreiten (bei 1280 px: 691/461).
 
    Both columns get their height from one place, --column-height, and the two
    scrolling/filling children take what is left inside them. That is what keeps
@@ -921,20 +950,29 @@ body {
    open; `max-height: none` drops the mobile cap, which would otherwise win. */
 @media (min-width: 900px) {
   .content {
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-template-areas:
+      "filters filters"
+      "map     list";
+    column-gap: 1rem;
+    /* Die Filterzeile brachte ihren Abstand zur Karte früher als eigenes
+       padding-bottom mit; hier macht ihn die Rasterzeile. */
+    row-gap: 0.5rem;
     align-items: stretch;
     /* max() keeps #map's 320 px floor from the base rule, which is now off
        (`height: 100%`) and therefore has to live on the column. */
     --column-height: max(70vh, 320px);
   }
+  .filters {
+    grid-area: filters;
+  }
   .map-wrap {
-    flex: 1 1 60%;
-    order: 1;
+    grid-area: map;
     height: var(--column-height);
   }
   .list-wrap {
-    flex: 1 1 40%;
-    order: 2;
+    grid-area: list;
     display: flex;
     flex-direction: column;
     height: var(--column-height);

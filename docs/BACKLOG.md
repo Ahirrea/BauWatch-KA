@@ -10,7 +10,12 @@ Suggested labels: `setup`, `data`, `frontend`, `a11y`, `docs`, `enhancement`.
 > [refinement process](./PROZESS.md).
 
 **Status legend:** ✅ done · 🟡 partial / open · ⬜ open
-**As of:** 2026-08-14 (#35 added and done — on desktop the list hung 39 px below
+**As of:** 2026-08-14 (**A-13 implemented** — on a phone the filter row now stands
+between map and list, so the whole map is on the first screen: `#map` starts at
+247 px instead of 447 px at 375 × 667. In the same pass #33's width sentence was
+clarified — "all three groups fit one row" was always meant per group, and the
+three groups have never shared a line on a phone; #33 itself stays ✅ and closed.
+Same day: #35 added and done — on desktop the list hung 39 px below
 the map because both columns sized themselves independently. Same day: A-12
 implemented — the dead "Zeitraum" filter is gone and A-10's metrics moved into
 the closure-severity buttons; #21's "display-only" decision is superseded by it.
@@ -32,6 +37,9 @@ and dragging the outer one scrolled the whole feed out of the frame.)
 > dialog) are done. **A-12 (filter row) is implemented** — it supersedes #21's
 > "display-only" decision and A-10's metrics strip; #32 is unaffected and stays
 > open. #35 (the desktop column heights, a follow-up to #23 and #27) is done.
+> #33 stays done and is only clarified; what it could not reach by tightening
+> spacing — the whole map on the first screen — is **A-13, implemented** the same
+> day (the filter row now stands between map and list on a phone).
 
 ---
 
@@ -459,6 +467,12 @@ channel, OSM tiles intercepted where relevant):
   drops the segment font to 0.85 rem — at 0.92 rem the "Zeitraum" group needs
   ~450 px, at 0.85 rem **all three groups fit one row from 360 px up**, in DE and
   EN. Below that it wraps, which is now the tidy state, not a defect.
+  **Clarified 2026-08-14** (the sentence reads as its own opposite and cost a
+  round during A-13's refinement): "one row" means **per group** — each group's
+  buttons on one line, the four-button "Zeitraum" group being the one that used
+  to wrap. The three groups have never shared a line at phone width and cannot:
+  they measure 186 / 304 / 253 px against 343 px at 375 px, so the filter block
+  is 190 px tall in three rows, before A-12 as well as after it.
 - `.search-status:empty` collapses to `min-height: 0` — deliberately *not*
   `display: none`: it is an `aria-live` region, and one removed from the
   accessibility tree may not announce text added the moment it returns.
