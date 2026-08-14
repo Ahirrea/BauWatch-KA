@@ -3,6 +3,18 @@
 [← Requirements](./README.md) · [Process](../PROZESS.md)
 · status: see [Overview](./README.md#overview)
 
+> **Partly superseded on 2026-08-14 by
+> [A-12](./A-12-filterzeile-restdauer-kennzahlen.md).** The metrics strip is no
+> longer a separate element: its three numbers moved into the closure-severity
+> filter buttons, where they now count the set *without* that filter (facet
+> counts). Superseded: **E1** (metrics describe the filtered set) for those
+> three numbers, **E4** (kept out of the live region — moot, the strip is gone),
+> **E6** (a zero hides its chip — a control may not vanish at 0). Untouched:
+> **E2**, **E5**, **E7**, and `src/lib/stats.js`, which still does the counting.
+> Per [process step 7a](../PROZESS.md#7a-amending-an-already-refined-requirement)
+> this file is *not* rewritten — it stays the record of why it was solved this
+> way in the first place.
+
 **User story:** As a Karlsruhe resident who has just narrowed the view with a
 filter or a radius search, I want to see at a glance how many construction
 sites the current result holds and how severe they are, so that I can judge

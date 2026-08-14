@@ -173,23 +173,32 @@
 
     <!-- Filter -->
     <section class="filters" aria-label="Filter" data-i18n-attr="aria-label:filtersAriaLabel">
-      <div class="filter-group" role="group" aria-label="Zeitraum" data-filter="zeitraum" data-i18n-attr="aria-label:filterZeitraumAriaLabel">
-        <span class="filter-label" data-i18n="filterZeitraumLabel">Zeitraum</span>
+      <!-- Restdauer statt Zeitraum (A-12/E1). Der frühere Zeitraumfilter trennte
+           gegen diese Quelle nichts: der WFS liefert nur laufende Vorgänge, also
+           waren „Heute aktiv"/„Diese Woche"/„Alle" in allen 86 Snapshots gleich
+           und „Bald geplant" immer leer. Die Stufen stehen zusätzlich als
+           RESTDAUER_STUFEN in src/lib/stats.js; test-stats.mjs gleicht ab. -->
+      <div class="filter-group" role="group" aria-label="Endet in" data-filter="restdauer" data-i18n-attr="aria-label:filterRestdauerAriaLabel">
+        <span class="filter-label" data-i18n="filterRestdauerLabel">Endet in</span>
         <div class="segments">
-          <button type="button" data-value="heute" aria-pressed="true" class="is-active" data-i18n="filterHeute">Heute aktiv</button>
-          <button type="button" data-value="woche" aria-pressed="false" data-i18n="filterWoche">Diese Woche</button>
-          <button type="button" data-value="geplant" aria-pressed="false" data-i18n="filterGeplant">Bald geplant</button>
-          <button type="button" data-value="alle" aria-pressed="false" data-i18n="filterAlle">Alle</button>
+          <button type="button" data-value="alle" aria-pressed="true" class="is-active" data-i18n="filterAlle">Alle</button>
+          <button type="button" data-value="7" aria-pressed="false" data-i18n="filterEndetIn7">7 Tagen</button>
+          <button type="button" data-value="30" aria-pressed="false" data-i18n="filterEndetIn30">30 Tagen</button>
         </div>
       </div>
 
+      <!-- Die Zahl steht IM Knopf (A-12/E2), nicht in einem eigenen Streifen:
+           vorher gab es zwei Elemente für denselben Dreierschnitt — eines, das
+           filtern konnte ohne zu sagen wie viel, und eines umgekehrt. Der leere
+           .seg-count füllt sich erst, wenn Daten da sind; eine 0 vor dem Laden
+           wäre von einer echten 0 nicht zu unterscheiden. -->
       <div class="filter-group" role="group" aria-label="Sperrgrad" data-filter="ampel" data-i18n-attr="aria-label:filterAmpelAriaLabel">
         <span class="filter-label" data-i18n="filterAmpelLabel">Sperrgrad</span>
         <div class="segments">
           <button type="button" data-value="alle" aria-pressed="true" class="is-active" data-i18n="filterAlle">Alle</button>
-          <button type="button" data-value="voll" aria-pressed="false"><span class="dot dot-red" aria-hidden="true"></span><span data-i18n="filterVoll">Voll</span></button>
-          <button type="button" data-value="teil" aria-pressed="false"><span class="dot dot-amber" aria-hidden="true"></span><span data-i18n="filterTeil">Teil</span></button>
-          <button type="button" data-value="gering" aria-pressed="false"><span class="dot dot-green" aria-hidden="true"></span><span data-i18n="filterGering">Gering</span></button>
+          <button type="button" data-value="voll" aria-pressed="false"><span class="dot dot-red" aria-hidden="true"></span><span class="seg-count" data-count="voll"></span><span data-i18n="filterVoll">Voll</span></button>
+          <button type="button" data-value="teil" aria-pressed="false"><span class="dot dot-amber" aria-hidden="true"></span><span class="seg-count" data-count="teil"></span><span data-i18n="filterTeil">Teil</span></button>
+          <button type="button" data-value="gering" aria-pressed="false"><span class="dot dot-green" aria-hidden="true"></span><span class="seg-count" data-count="gering"></span><span data-i18n="filterGering">Gering</span></button>
         </div>
       </div>
 
@@ -212,11 +221,11 @@
       </div>
       <section class="list-wrap" aria-label="Baustellen-Liste" data-i18n-attr="aria-label:listAriaLabel">
         <div class="list-status" id="list-status" role="status" aria-live="polite"></div>
-        <!-- Kennzahlen zum Ergebnis (A-10). Bewusst NEBEN der Live-Region, nicht
-             darin (E4): #list-status wird bei jedem Filterklick vorgelesen, die
-             Aufschlüsselung soll dabei nicht mitsprechen. Inhalt kommt aus
-             app.js, deshalb ohne data-i18n. -->
-        <p class="kennzahlen" id="kennzahlen" hidden></p>
+        <!-- Der Kennzahlen-Streifen von A-10 stand hier; seit A-12/E2 stehen die
+             Zahlen in den Sperrgrad-Knöpfen. A-10/E4 (raus aus der Live-Region)
+             ist damit erledigt statt aufgehoben: die Zahlen sitzen jetzt in
+             <section class="filters">, die keine Live-Semantik hat, und
+             #list-status sagt weiterhin genau das, was es vorher sagte. -->
         <ul id="liste" class="liste"></ul>
       </section>
     </main>

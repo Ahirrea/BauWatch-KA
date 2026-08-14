@@ -41,11 +41,15 @@ export const STRINGS = {
     themeDark: 'Dunkles Farbschema',
 
     filtersAriaLabel: 'Filter',
-    filterZeitraumAriaLabel: 'Zeitraum',
-    filterZeitraumLabel: 'Zeitraum',
-    filterHeute: 'Heute aktiv',
-    filterWoche: 'Diese Woche',
-    filterGeplant: 'Bald geplant',
+    // Restdauer statt Zeitraum (A-12/E1, E5). Das Verb steckt in der
+    // Gruppenüberschrift, damit die Knöpfe kurz bleiben — „7 Tagen" allein
+    // unter einer Überschrift „Restdauer" ließe sich auch als „läuft seit
+    // 7 Tagen" lesen, und die Breite dieser Zeile ist auf dem Handy die
+    // bindende Grenze (Backlog #33).
+    filterRestdauerAriaLabel: 'Endet in',
+    filterRestdauerLabel: 'Endet in',
+    filterEndetIn7: '7 Tagen',
+    filterEndetIn30: '30 Tagen',
     filterAlle: 'Alle',
 
     filterAmpelAriaLabel: 'Sperrgrad',
@@ -73,13 +77,10 @@ export const STRINGS = {
     listStatusNoData: 'Zurzeit sind keine Baustellendaten vorhanden.',
     listStatusLoadError: 'Die Baustellendaten konnten nicht geladen werden. Bitte Seite neu laden.',
 
-    // Kennzahlen zum Ergebnis (A-10). Die drei Sperrgrade nutzen bewusst die
-    // vorhandenen Filter-Labels (filterVoll/filterTeil/filterGering) statt
-    // eines dritten Wortschatzes für dieselben drei Stufen. {d} kommt aus
-    // ENDET_BALD_TAGE in stats.js — Text und Schwelle können so nicht
-    // auseinanderlaufen.
-    metricsEndetBaldOne: '1 endet in {d} Tagen',
-    metricsEndetBaldMany: '{n} enden in {d} Tagen',
+    // Die Kennzahlen-Schlüssel von A-10 sind mit dem Streifen entfallen
+    // (A-12/E2): die Zahlen stehen jetzt in den Sperrgrad-Knöpfen und brauchen
+    // keinen eigenen Text — die Beschriftung ist filterVoll/filterTeil/
+    // filterGering, wie vorher schon.
 
     standLoading: 'wird geladen …',
     standUnavailable: 'nicht verfügbar',
@@ -134,11 +135,10 @@ export const STRINGS = {
     themeDark: 'Dark colour scheme',
 
     filtersAriaLabel: 'Filters',
-    filterZeitraumAriaLabel: 'Time period',
-    filterZeitraumLabel: 'Time period',
-    filterHeute: 'Active today',
-    filterWoche: 'This week',
-    filterGeplant: 'Planned soon',
+    filterRestdauerAriaLabel: 'Ends within',
+    filterRestdauerLabel: 'Ends within',
+    filterEndetIn7: '7 days',
+    filterEndetIn30: '30 days',
     filterAlle: 'All',
 
     filterAmpelAriaLabel: 'Closure severity',
@@ -165,9 +165,6 @@ export const STRINGS = {
     listStatusSearchSuffix: ' · within radius of “{label}”',
     listStatusNoData: 'No construction-site data is currently available.',
     listStatusLoadError: 'The construction-site data couldn’t be loaded. Please reload the page.',
-
-    metricsEndetBaldOne: '1 ends within {d} days',
-    metricsEndetBaldMany: '{n} end within {d} days',
 
     standLoading: 'loading …',
     standUnavailable: 'not available',

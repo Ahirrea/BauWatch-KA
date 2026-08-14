@@ -1,10 +1,10 @@
 // app.js — UI, Karte, Filter, Rendering. Lädt den statischen Daten-Snapshot
 // data/baustellen.geojson (siehe ADR-001) und macht daraus Karte + Liste.
 
-import { restdauer, formatRange, parseDate } from './lib/format.js';
+import { restdauer, formatRange } from './lib/format.js';
 import { DEFAULT_LANG, STRINGS, AMPEL_LABEL, VM_LABEL, t } from './lib/i18n.js';
 import { filterChangelogEntries } from './lib/changelog.js';
-import { summarize, ENDET_BALD_TAGE } from './lib/stats.js';
+import { summarize, endetInnerhalb } from './lib/stats.js';
 
 // Leaflet wird global über das <script>-Tag geladen.
 /* global L */
@@ -44,7 +44,11 @@ const THEME_COLOR = { light: '#1b4b73', dark: '#16181c' };
 // --- Zustand ---------------------------------------------------------------
 const state = {
   features: [],
-  filters: { zeitraum: 'heute', ampel: 'alle', verkehrsmittel: 'alle' },
+  // Ein Ladeversuch ist durch (egal ob erfolgreich). Trennt „noch keine Zahlen"
+  // von „echte 0" in den Sperrgrad-Knöpfen (A-12): state.features.length === 0
+  // allein kann beides heißen.
+  geladen: false,
+  filters: { restdauer: 'alle', ampel: 'alle', verkehrsmittel: 'alle' },
   search: null, // { center: [lat, lon], label: string }
   selectedId: null,
   // A-9: Feature unter dem Zeiger bzw. mit Tastaturfokus — flüchtig, überlebt
@@ -143,31 +147,13 @@ function latLngOf(f) {
 }
 
 // --- Filterlogik -----------------------------------------------------------
-function matchesZeitraum(props, mode, now) {
-  if (mode === 'alle') return true;
-  // parseDate statt new Date(): ISO-Datumsangaben aus dem Snapshot als
-  // LOKALE Mitternacht, konsistent mit restdauer()/formatDate() — sonst
-  // weicht der Zeitraumfilter am Anfangs-/Endtag vom angezeigten Text ab.
-  const von = parseDate(props.von);
-  const bis = parseDate(props.bis);
-  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-  const inWeek = new Date(today);
-  inWeek.setDate(inWeek.getDate() + 7);
-
-  const startsInFuture = von && von > today;
-  const alreadyEnded = bis && bis < today;
-
-  if (mode === 'geplant') return !!startsInFuture;
-  if (mode === 'heute') {
-    // heute aktiv: begonnen (oder ohne Startdatum) und nicht beendet
-    return !startsInFuture && !alreadyEnded;
-  }
-  if (mode === 'woche') {
-    // aktiv oder in den nächsten 7 Tagen beginnend, noch nicht beendet
-    const startsWithinWeek = !von || von <= inWeek;
-    return startsWithinWeek && !alreadyEnded;
-  }
-  return true;
+// Restdauer statt Zeitraum (A-12/E1): wann ein Vorgang BEGINNT trennt gegen
+// diese Quelle nichts — der WFS liefert ausschließlich laufende Vorgänge, in
+// allen 86 bisherigen Snapshots. Wann er ENDET trennt dieselben Daten real.
+// Das Prädikat selbst liegt in src/lib/stats.js, damit npm test es sieht.
+function matchesRestdauer(props, val, now) {
+  if (val === 'alle') return true;
+  return endetInnerhalb(props, Number(val), now);
 }
 
 function matchesAmpel(props, val) {
@@ -178,14 +164,16 @@ function matchesVerkehrsmittel(props, val) {
   return val === 'alle' || props.verkehrsmittel?.[val] === true;
 }
 
-function currentFiltered() {
+// Alles AUSSER dem Sperrgrad — inklusive Umkreissuche, weil die Zahlen in den
+// Sperrgrad-Knöpfen die Alternativen innerhalb des gesuchten Gebiets meinen.
+// Diese Menge speist die Zahlen (A-12/E3): jeder Knopf sagt, wie viele Treffer
+// SEIN Klick brächte. Zählte man die fertig gefilterte Liste, stünde bei
+// aktivem „Voll" ein Knopf mit der Aufschrift „0 Teil", der 118 Treffer liefert.
+function filteredBase() {
   const now = new Date();
-  const { zeitraum, ampel, verkehrsmittel } = state.filters;
+  const { restdauer: rd, verkehrsmittel } = state.filters;
   let list = state.features.filter(
-    (f) =>
-      matchesZeitraum(f.properties, zeitraum, now) &&
-      matchesAmpel(f.properties, ampel) &&
-      matchesVerkehrsmittel(f.properties, verkehrsmittel)
+    (f) => matchesRestdauer(f.properties, rd, now) && matchesVerkehrsmittel(f.properties, verkehrsmittel)
   );
 
   if (state.search) {
@@ -202,6 +190,12 @@ function currentFiltered() {
     for (const f of list) delete f._dist;
   }
   return list;
+}
+
+// Die Menge, die Karte, Liste und Statuszeile bekommen. filter() erhält die
+// Reihenfolge, die Umkreissuche oben hergestellt hat.
+function applyAmpel(list) {
+  return list.filter((f) => matchesAmpel(f.properties, state.filters.ampel));
 }
 
 // --- Rendering -------------------------------------------------------------
@@ -474,46 +468,28 @@ function renderStatus(list) {
   }
 }
 
-// Kennzahlen zum Ergebnis (A-10). Beschreiben immer die GEFILTERTE Menge (E1)
-// — dieselbe Liste, die auch Karte und Liste bekommen, inklusive Umkreissuche.
+// Zahlen in den Sperrgrad-Knöpfen (A-12/E2, ersetzt A-10s Kennzahlen-Streifen).
 //
-// Die Ampelfarbe steckt im Punkt, nie im Text (E2): --amber erreicht als Text
-// auf --bg im hellen Schema nur ~2,3:1, „98 Teil" in Orange wäre also ein
-// WCAG-Verstoß, der beim Prüfen im dunklen Schema (dort ~9,7:1) unsichtbar
-// bleibt. Die Chips erben mit .badge eine in beiden Schemata erprobte Fläche.
-function renderMetrics(list) {
-  const box = el('kennzahlen');
-  if (list.length === 0) {
-    // Bei leerem Ergebnis sagt die Statuszeile bereits alles; eine Reihe
-    // Nullen darunter trägt nichts bei (E6).
-    box.hidden = true;
-    box.innerHTML = '';
-    return;
+// Gezählt wird `base`, also die Menge OHNE den Sperrgradfilter (E3) — die Zahlen
+// bleiben deshalb stehen, während man zwischen den drei Stufen umschaltet, und
+// bewegen sich nur bei Restdauer, Verkehrsmittel oder Umkreissuche. Genau das
+// macht sie als Bedienelement brauchbar.
+//
+// Die Ampelfarbe steckt weiterhin im Punkt, nie im Text (A-10/E2): --amber
+// erreicht als Text auf --surface im hellen Schema nur ~2,3:1, eine orange „118"
+// wäre ein WCAG-Verstoß, der beim Prüfen im dunklen Schema (dort ~9,7:1)
+// unsichtbar bleibt.
+//
+// Eine 0 blendet ihren Knopf NICHT aus (A-10/E6 abgelöst): ein Bedienelement,
+// das bei 0 verschwindet, fehlt genau dann, wenn man damit zurückwollte.
+function renderFilterCounts(base) {
+  // Vor dem ersten Ladeversuch bleiben die Knöpfe unbeziffert: eine 0 wäre von
+  // einer echten 0 nicht zu unterscheiden.
+  const k = state.geladen ? summarize(base) : null;
+  for (const stufe of ['voll', 'teil', 'gering']) {
+    const span = document.querySelector(`.seg-count[data-count="${stufe}"]`);
+    if (span) span.textContent = k ? String(k[stufe]) : '';
   }
-  const s = STRINGS[state.lang];
-  const k = summarize(list);
-  const chips = [
-    ['red', s.filterVoll, k.voll],
-    ['amber', s.filterTeil, k.teil],
-    ['green', s.filterGering, k.gering],
-  ]
-    // Ein Zähler auf 0 entfällt (E6): bei aktivem Sperrgrad-Filter sind zwei
-    // der drei Stufen zwangsläufig leer — „0 Teil" wäre Rauschen, das die
-    // Nutzerin selbst erzeugt hat.
-    .filter(([, , n]) => n > 0)
-    .map(
-      ([dot, label, n]) =>
-        `<span class="badge"><span class="dot dot-${dot}" aria-hidden="true"></span>${n} ${escapeHtml(label)}</span>`
-    );
-  if (k.endetBald > 0) {
-    const text =
-      k.endetBald === 1
-        ? t(s.metricsEndetBaldOne, { d: ENDET_BALD_TAGE })
-        : t(s.metricsEndetBaldMany, { n: k.endetBald, d: ENDET_BALD_TAGE });
-    chips.push(`<span class="badge">${escapeHtml(text)}</span>`);
-  }
-  box.innerHTML = chips.join('');
-  box.hidden = false;
 }
 
 function render() {
@@ -523,14 +499,19 @@ function render() {
   // Geist-Hervorhebung stehen. Der nächste Zeiger-/Fokuswechsel baut den
   // Zustand von selbst wieder auf.
   setHoverKey(null);
-  const list = currentFiltered();
+  // Einmal pro render() gefiltert: base speist die Zahlen (A-12/E3), list alles
+  // Sichtbare. Zwei Ableitungen einer Quelle statt zweier Filterläufe — dieselbe
+  // Eigenschaft, auf die sich A-7 verlässt: was die Karte zeigt und was die
+  // Liste zeigt, kann per Konstruktion nicht auseinanderlaufen.
+  const base = filteredBase();
+  const list = applyAmpel(base);
   // Flächen vor den Markern: dieselbe gefilterte Liste, beide Ebenen bleiben
   // dadurch von sich aus synchron (A-7) — die Fläche ist kein eigener Zustand.
   renderAreas(list);
   renderMarkers(list);
   renderList(list);
   renderStatus(list);
-  renderMetrics(list);
+  renderFilterCounts(base);
   // Auswahl beibehalten, falls noch sichtbar
   if (state.selectedId && listItemById.has(state.selectedId)) {
     listItemById.get(state.selectedId).classList.add('is-selected');
@@ -927,6 +908,10 @@ async function loadData() {
       return f;
     });
     setFooter(collection, { ausCache });
+    // Erst jetzt dürfen Zahlen in den Sperrgrad-Knöpfen stehen (A-12): eine 0
+    // vor diesem Punkt hieße „noch nichts geladen", sähe aber aus wie „keine
+    // Baustelle dieser Stufe". Im catch-Zweig bleibt es deshalb bei false.
+    state.geladen = true;
     render();
     if (state.features.length === 0) {
       status.textContent = STRINGS[state.lang].listStatusNoData;

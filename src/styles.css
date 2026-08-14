@@ -520,6 +520,18 @@ body {
   color: var(--accent-contrast);
   font-weight: 600;
 }
+/* Zahl im Sperrgrad-Knopf (A-12/E2). Erbt die Textfarbe des Knopfes — nie die
+   Ampelfarbe: --amber käme als Text auf --surface im hellen Schema nur auf
+   ~2,3:1. Die Farbe bleibt im .dot daneben.
+   :empty ist nicht kosmetisch: .segments button setzt gap, ein leeres <span>
+   vor dem ersten Laden risse sonst eine sichtbare Lücke zwischen Punkt und
+   Beschriftung. */
+.seg-count {
+  font-variant-numeric: tabular-nums;
+}
+.seg-count:empty {
+  display: none;
+}
 
 .dot {
   width: 0.7rem;
@@ -568,26 +580,6 @@ body {
 }
 .list-status.is-error {
   color: var(--red);
-}
-
-/* Kennzahlen zum Ergebnis (A-10). Umbruchfähig, damit auf 414 px nichts
-   abgeschnitten wird oder waagerecht scrollt. Kein eigenes Farb-Token: die
-   Chips sind .badge (--chip/--chip-border/--text-muted), die Farbe steckt im
-   .dot. Die [hidden]-Regel ist nötig, weil display:flex das Attribut sonst
-   überstimmt. */
-.kennzahlen {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-  margin: 0 0 0.5rem;
-}
-.kennzahlen[hidden] {
-  display: none;
-}
-.kennzahlen .badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
 }
 
 .liste {

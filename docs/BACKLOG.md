@@ -10,9 +10,11 @@ Suggested labels: `setup`, `data`, `frontend`, `a11y`, `docs`, `enhancement`.
 > [refinement process](./PROZESS.md).
 
 **Status legend:** ✅ done · 🟡 partial / open · ⬜ open
-**As of:** 2026-08-14 (#34 added and done — the "Was ist neu?" dialog had two
-scrollbars, and dragging the outer one scrolled the whole feed out of the
-frame.)
+**As of:** 2026-08-14 (A-12 implemented — the dead "Zeitraum" filter is gone and
+A-10's metrics moved into the closure-severity buttons; #21's "display-only"
+decision is superseded by it. Before that: #34 added and done — the "Was ist
+neu?" dialog had two scrollbars, and dragging the outer one scrolled the whole
+feed out of the frame.)
 
 > Summary: Milestones 1–3 are implemented and the site is live via GitHub
 > Pages (#5). From Milestone 4, #15 and #18 are done; #16 (push/subscription
@@ -26,7 +28,9 @@ frame.)
 > manifest fix) is done. **A-10 (result metrics) is implemented**; #32, an
 > a11y finding it surfaced in the shared traffic-light dot, is open. #33 (the
 > small-phone layout) and #34 (the double scrollbar in the "Was ist neu?"
-> dialog) are done.
+> dialog) are done. **A-12 (filter row) is implemented** — it supersedes #21's
+> "display-only" decision and A-10's metrics strip; #32 is unaffected and stays
+> open.
 
 ---
 
@@ -233,6 +237,14 @@ appears in the list header ("N construction sites"); the tile for it was
 removed. The stats bar now only shows the closure-severity breakdown "full
 closures"/"obstructions", which the list doesn't show. (Label: `frontend`,
 `enhancement`)
+**Superseded on 2026-08-14 by [A-12](./anforderungen/A-12-filterzeile-restdauer-kennzahlen.md)/E2.**
+The "display-only" decision above solved the click-equals-filter mismatch by
+removing the affordance; A-12 solves it by removing the *duplication* instead —
+the numbers moved **into** the closure-severity buttons, which were already the
+control, so there is one element per job rather than two. This entry stays `✅`
+(it was done, and superseding is a different thing from undoing), and its
+double-count resolution still holds: the total appears only in the list header,
+the "Alle" button carries no number.
 
 ### ✅ #22 Badge contrast in dark mode
 `styles.css:341`: `.badge { background: var(--bg) }`. In dark mode, `--bg`

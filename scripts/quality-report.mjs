@@ -7,7 +7,11 @@
 //   - Datumsauffälligkeiten (Ende vor Beginn, fehlend, bereits abgelaufen),
 //   - Koordinaten außerhalb des Karlsruher Rahmens,
 //   - Vorgänge ohne Vorgangsnummer (Dedup-Fallback),
-//   - Vorgänge ohne Fläche (kein gepaartes Polygon im WFS, A-7/E9).
+//   - Vorgänge ohne Fläche (kein gepaartes Polygon im WFS, A-7/E9),
+//   - Vorgänge, die erst später beginnen (A-12/E6).
+//
+// Die letzten beiden sind Beobachtungen, keine Mängel: sie zählen nicht in die
+// problems-Summe von summarizeQuality().
 //
 // Eingabe: normalisierte Records (von build-data.mjs erzeugt) + Zähler-Statistik.
 
@@ -34,7 +38,7 @@ export function analyzeQuality(records, stats, now = new Date()) {
     verursacher: [],
     sperrung: [],
   };
-  const dateIssues = { endeVorBeginn: [], abgelaufen: [] };
+  const dateIssues = { endeVorBeginn: [], abgelaufen: [], startetSpaeter: [] };
   const coordsOutside = [];
   const ohneVorgangsnummer = [];
   const ohneFlaeche = [];
@@ -52,6 +56,17 @@ export function analyzeQuality(records, stats, now = new Date()) {
     if (r.bis) {
       const end = new Date(r.bis);
       if (!isNaN(end) && end < today) dateIssues.abgelaufen.push(`${label(r)} (bis ${r.bis})`);
+    }
+    // A-12/E6: Vorgänge, die erst später beginnen. Kein Mangel — die Beobachtung
+    // selbst. Der WFS liefert bisher ausschließlich laufende Vorgänge, weshalb
+    // der frühere Zeitraumfilter „Bald geplant" in allen 86 Snapshots leer war
+    // und A-12 ihn durch einen Restdauerfilter ersetzt hat. Ändert die Stadt das
+    // je, steht es hier statt unbemerkt zu bleiben, und E1 lässt sich mit Beleg
+    // neu bewerten. Bewusst NICHT in summarizeQuality()s problems-Summe (gleiche
+    // Trennung wie bei hasArea, A-7/E9).
+    if (r.von) {
+      const start = new Date(r.von);
+      if (!isNaN(start) && start > today) dateIssues.startetSpaeter.push(`${label(r)} (ab ${r.von})`);
     }
 
     if (
@@ -140,6 +155,8 @@ export function renderQualityMarkdown(report, stand) {
   L.push('## Datumsauffälligkeiten');
   L.push(block('Ende vor Beginn', report.dateIssues.endeVorBeginn));
   L.push(block('bereits abgelaufen (bis in der Vergangenheit, zum Build-Zeitpunkt)', report.dateIssues.abgelaufen));
+  // Beobachtung, kein Mangel (A-12/E6) — siehe analyzeQuality().
+  L.push(block('beginnt erst später (von in der Zukunft, zum Build-Zeitpunkt)', report.dateIssues.startetSpaeter));
   L.push('## Kategorien & Sperrung');
   if (report.unknownArt.length === 0) {
     L.push('- **unbekannte art-Kategorien:** keine (alle als Klartext erkannt)');

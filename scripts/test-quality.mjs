@@ -50,6 +50,27 @@ check(
   'Flächen-Quote steht im Markdown-Report',
   renderQualityMarkdown(r, '15.07.2026').includes(`**Vorgänge mit Fläche (properties.area):** ${r.mitFlaeche} von ${r.total}`)
 );
+// A-12/E6 — Vorgänge, die erst später beginnen. Der WFS liefert bisher nur
+// laufende Vorgänge; deshalb war der frühere Zeitraumfilter „Bald geplant" in
+// allen 86 Snapshots leer. Ändert sich die Quelle, muss es in data/QUALITY.md
+// sichtbar werden statt unbemerkt zu bleiben. V6 beginnt am 01.08. (now =
+// 15.07.), ist also der Fall.
+check('später beginnend erkannt', r.dateIssues.startetSpaeter.length === 1);
+check(
+  'später beginnend steht im Markdown-Report',
+  renderQualityMarkdown(r, '15.07.2026').includes('beginnt erst später (von in der Zukunft, zum Build-Zeitpunkt)')
+);
+// Beobachtung, kein Mangel: die problems-Summe darf sich davon NICHT bewegen —
+// dieselbe Trennung wie bei hasArea (A-7/E9). Zwei Datensätze, die sich nur um
+// einen später beginnenden Vorgang unterscheiden, müssen dieselbe Zahl liefern.
+const problemsOf = (rep) => Number(/(\d+) Feld-\/Datenauffälligkeiten/.exec(summarizeQuality(rep))[1]);
+const ohneZukunft = analyzeQuality([rec({})], stats, now);
+const mitZukunft = analyzeQuality([rec({}), rec({ vorgang: 'VZ', von: '2027-01-01', bis: '2027-06-01' })], stats, now);
+check('später beginnend erhöht die problems-Summe nicht', problemsOf(ohneZukunft) === problemsOf(mitZukunft));
+check('… und wird trotzdem gezählt', mitZukunft.dateIssues.startetSpaeter.length === 1);
+// Der heutige Normalfall: keiner beginnt später, der Block sagt „keine".
+check('sauberer Datensatz -> niemand beginnt später', ohneZukunft.dateIssues.startetSpaeter.length === 0);
+
 check('Sperrung-Werte aggregiert', r.sperrungWerte.some((w) => w.wert === 'mit Verkehrsbehinderung'));
 check('summarizeQuality liefert Text', typeof summarizeQuality(r) === 'string' && summarizeQuality(r).length > 0);
 check('renderQualityMarkdown enthält Überschrift', renderQualityMarkdown(r, '15.07.2026').startsWith('# Datenqualitäts-Report'));
