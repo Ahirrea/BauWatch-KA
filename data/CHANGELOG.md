@@ -2,6 +2,19 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 14.08.2026, 04:29 — 3 neu, 2 entfernt, 3 geändert (gesamt 177)
+
+- ➕ **Lammstraße zw. Ritterstraße u. Lammstraße**
+- ➕ **B 36 zw. AS Eggenstein u. AS Neureut Nord sowie Zufahrt Linkenheimer Landstraße**
+- ➕ **AS7 von B36 Auffahrtsrampe zur B10/ Südtangente**
+- ➖ ~~B10 zw. A5 und K9659~~
+- ➖ ~~B10  zw. AS 11 und AS 10~~
+- ✏️ Gerwigstraße zw. Ostring und Käppelestraße — sonstige Angaben aktualisiert
+- ✏️ Gerwigstraße zw. Käppelestraße und Ostring — sonstige Angaben aktualisiert
+- ✏️ Babbergerstraße, Waidweg, Hermann-Schneider-Allee — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 13.08.2026, 22:52 — 1 geändert (gesamt 176)
 
 - ✏️ Breslauer Straße Wohnwege 64 A - I und 66 A -L — sonstige Angaben aktualisiert
