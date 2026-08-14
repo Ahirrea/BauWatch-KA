@@ -908,27 +908,54 @@ body {
   }
 }
 
-/* --- Desktop-Layout: Karte + Liste nebeneinander --- */
+/* --- Desktop-Layout: Karte + Liste nebeneinander ---
+
+   Both columns get their height from one place, --column-height, and the two
+   scrolling/filling children take what is left inside them. That is what keeps
+   the two boxes flush at the bottom: giving `#map` and `.liste` each their own
+   `70vh` does not, because the list column also carries `.list-status` above
+   the list (39 px), so its stack came to 70vh + 39 px while the map stayed at
+   70vh — the list hung 39 px below the map, and the same 39 px sat empty under
+   the map inside its stretched wrapper. `min-height: 0` is what allows `.liste`
+   to shrink below its content height and scroll instead of pushing the column
+   open; `max-height: none` drops the mobile cap, which would otherwise win. */
 @media (min-width: 900px) {
   .content {
     flex-direction: row;
     align-items: stretch;
+    /* max() keeps #map's 320 px floor from the base rule, which is now off
+       (`height: 100%`) and therefore has to live on the column. */
+    --column-height: max(70vh, 320px);
   }
   .map-wrap {
     flex: 1 1 60%;
     order: 1;
+    height: var(--column-height);
   }
   .list-wrap {
     flex: 1 1 40%;
     order: 2;
     display: flex;
     flex-direction: column;
+    height: var(--column-height);
+  }
+  /* Not shrinkable: the column is now shorter than its content, so flexbox
+     hands every item a share of the shortfall, and `.list-status` carries an
+     explicit `min-height: 1.2em` — which replaces the automatic content-based
+     minimum and, with `box-sizing: border-box`, let the line be squeezed to
+     19 px, padding included, clipping the "118 Baustellen" text. The list is
+     the only item here that may give way. */
+  .list-status {
+    flex: none;
   }
   #map {
-    height: 70vh;
+    height: 100%;
+    min-height: 0;
   }
   .liste {
-    max-height: 70vh;
+    flex: 1 1 auto;
+    min-height: 0;
+    max-height: none;
   }
 }
 

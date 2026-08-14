@@ -10,11 +10,12 @@ Suggested labels: `setup`, `data`, `frontend`, `a11y`, `docs`, `enhancement`.
 > [refinement process](./PROZESS.md).
 
 **Status legend:** ✅ done · 🟡 partial / open · ⬜ open
-**As of:** 2026-08-14 (A-12 implemented — the dead "Zeitraum" filter is gone and
-A-10's metrics moved into the closure-severity buttons; #21's "display-only"
-decision is superseded by it. Before that: #34 added and done — the "Was ist
-neu?" dialog had two scrollbars, and dragging the outer one scrolled the whole
-feed out of the frame.)
+**As of:** 2026-08-14 (#35 added and done — on desktop the list hung 39 px below
+the map because both columns sized themselves independently. Same day: A-12
+implemented — the dead "Zeitraum" filter is gone and A-10's metrics moved into
+the closure-severity buttons; #21's "display-only" decision is superseded by it.
+Before that: #34 added and done — the "Was ist neu?" dialog had two scrollbars,
+and dragging the outer one scrolled the whole feed out of the frame.)
 
 > Summary: Milestones 1–3 are implemented and the site is live via GitHub
 > Pages (#5). From Milestone 4, #15 and #18 are done; #16 (push/subscription
@@ -30,7 +31,7 @@ feed out of the frame.)
 > small-phone layout) and #34 (the double scrollbar in the "Was ist neu?"
 > dialog) are done. **A-12 (filter row) is implemented** — it supersedes #21's
 > "display-only" decision and A-10's metrics strip; #32 is unaffected and stays
-> open.
+> open. #35 (the desktop column heights, a follow-up to #23 and #27) is done.
 
 ---
 
@@ -532,6 +533,54 @@ check — `display: none`, a 0 × 0 client rect, `#search-form`/`#map`/document
 height unchanged (126/278/1126 px desktop, 114/410/1774 px mobile), and the
 initial page screenshot **byte-identical** to the pre-#34 checkout at 1280 × 900
 and 414 × 896. `CACHE_SHELL` → `v18`. (Label: `frontend`)
+
+---
+
+## Desktop layout finding (2026-08-14)
+
+### ✅ #35 On desktop the list hangs below the map instead of ending with it
+Reported from a 1280 px screenshot: the map is not flush with the list, and the
+list therefore sticks out at the bottom. The cause is that both columns sized
+themselves independently — `#map { height: 70vh }` and `.liste { max-height:
+70vh }` — while only the list column also carries `.list-status` ("177
+Baustellen") above its list. So the list column's stack came to 70vh + 39 px,
+`align-items: stretch` grew *both* wrappers to that height, and the 39 px showed
+up twice: as list overhang below the map's bottom edge, and as empty background
+under the map inside its own stretched wrapper. Measured identically at
+1280 × 800, 1440 × 900 and 900 × 800, and in both schemes — it is not a
+viewport-specific rounding effect but the layout as written.
+**DoD:** map and list end on the same line at every desktop width, the list
+still scrolls rather than pushing the column open, the status line stays
+readable, mobile untouched. — **done**:
+
+- **One height for both columns:** `--column-height: max(70vh, 320px)` on
+  `.content` in the `min-width: 900px` block, set as `height` on `.map-wrap`
+  **and** `.list-wrap`. `#map` becomes `height: 100%` of it (its base
+  `min-height: 320px` is switched off there, because the floor now lives on the
+  column), and `.liste` takes what is left below the status line via
+  `flex: 1 1 auto; min-height: 0; max-height: none` — the `min-height: 0` is
+  what lets a flex item scroll instead of growing its column, the `max-height:
+  none` drops the mobile 60vh cap that would otherwise still win.
+- **`.list-status { flex: none }`**, which is the part that is easy to miss: the
+  column is now shorter than its content, so flexbox distributes the shortfall
+  over *every* item, and `.list-status` carries an explicit `min-height: 1.2em`
+  that replaces the automatic content-based minimum. With `box-sizing:
+  border-box` that let the line be squeezed to 19 px including its 2 × 8 px
+  padding, clipping "177 Baustellen". Caught by measuring `scrollHeight -
+  clientHeight` on the status element, not by looking at the screenshot.
+- **Measured before → after** (Playwright, Chrome channel, OSM tiles
+  intercepted): distance from the list's bottom edge to the map's bottom edge
+  **39 → 0 px** at 1280 × 800, 1440 × 900 and 900 × 800, in light and dark.
+  `#map` keeps its exact top and height (278–838 px at 1280 × 800), the document
+  shrinks 1025 → 986 px, the list keeps a scroll range of ~20 400 px, and the
+  status line's overflow is 0 px with its full text. **Mobile is untouched**:
+  the 414 × 896 screenshots are byte-identical to a `git archive HEAD` checkout
+  in both schemes.
+- The map's top edge stays level with the *status line*, so the first card still
+  begins 39 px lower — that offset is the list's own label and is deliberate;
+  reserving the same 39 px above the map would just give back the space #23
+  removed. `CACHE_SHELL` bumped to `v20` (`src/styles.css` is a shell file).
+  (Label: `frontend`)
 
 ---
 
