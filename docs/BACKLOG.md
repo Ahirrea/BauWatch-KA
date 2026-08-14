@@ -505,7 +505,21 @@ short-content states unchanged. — **done**:
   shrinks the frame instead of stretching it: 168 px for the empty state,
   300 px for a single run.
 - `CACHE_SHELL` bumped to `v17` (`src/styles.css` is a shell file).
-  (Label: `frontend`)
+
+**Follow-up, same day — the first version of this fix shipped a regression.**
+`display: flex` sat on the plain `.whats-new-dialog` rule, and **author styles
+beat the UA origin whatever the specificity**, so it overrode
+`dialog:not([open]) { display: none }`: on GitHub Pages the *closed* dialog was
+part of the page, an unopened box between header and search field, no backdrop,
+left two thirds covered by the map that follows it in the DOM. `display` now
+sits on `.whats-new-dialog[open]` next to the fade, with the reason written
+above the rule. What let it through is worth more than the fix: every probe and
+every screenshot of the original round clicked the button first, and an *opened*
+dialog looks correct in both versions. The closed state is now part of the
+check — `display: none`, a 0 × 0 client rect, `#search-form`/`#map`/document
+height unchanged (126/278/1126 px desktop, 114/410/1774 px mobile), and the
+initial page screenshot **byte-identical** to the pre-#34 checkout at 1280 × 900
+and 414 × 896. `CACHE_SHELL` → `v18`. (Label: `frontend`)
 
 ---
 

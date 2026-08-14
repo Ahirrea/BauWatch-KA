@@ -246,20 +246,18 @@ body {
 /* --- "Was ist neu?"-Dialog (A-6) --- */
 /* The dialog is a layout frame, not a scrolling area: heading and window note
    stay put, .whats-new-body scrolls. Two declarations carry that, both
-   load-bearing (#34). `display: flex` lets the body take exactly the leftover
-   height, so its cap no longer has to be guessed from the heading's size. And
-   `overflow: clip` cancels the UA stylesheet's `overflow: auto` on <dialog>,
-   which had made the dialog a *second* scroll container next to the body —
-   dragging that outer bar scrolled the whole content out of the frame and left
-   an empty box. */
+   load-bearing (#34). The flex column lets the body take exactly the leftover
+   height, so its cap no longer has to be guessed from the heading's size — it
+   sits on [open] below, never here, see the warning there. And `overflow: clip`
+   cancels the UA stylesheet's `overflow: auto` on <dialog>, which had made the
+   dialog a *second* scroll container next to the body — dragging that outer bar
+   scrolled the whole content out of the frame and left an empty box. */
 .whats-new-dialog {
   width: calc(100% - 2rem);
   max-width: 32rem;
   max-height: 80vh;
   margin: auto;
   padding: 0;
-  display: flex;
-  flex-direction: column;
   overflow: clip;
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -271,8 +269,18 @@ body {
   background: rgba(0, 0, 0, 0.5);
 }
 /* Near-instant fade — the global prefers-reduced-motion rule below zeroes the
-   duration, same restraint as the update-banner's own fade-in. */
+   duration, same restraint as the update-banner's own fade-in.
+   ►► `display` MUST stay gated on [open] ◄◄ The closed dialog is hidden by the
+   UA rule `dialog:not([open]) { display: none }`, and author styles beat the UA
+   origin whatever the specificity — so an ungated `display: flex` on the class
+   above does not just style the open dialog, it makes the closed one appear in
+   the normal flow: an unopened box between header and search field, with no
+   backdrop, half-covered by the map that follows it in the DOM. That shipped
+   once (#34) because every check opened the dialog first; a change here is only
+   verified once the *closed* state has been looked at too. */
 .whats-new-dialog[open] {
+  display: flex;
+  flex-direction: column;
   animation: whats-new-ein 160ms ease-out;
 }
 @keyframes whats-new-ein {
