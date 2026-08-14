@@ -2,6 +2,21 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 14.08.2026, 15:21 — 2 neu, 8 geändert (gesamt 179)
+
+- ➕ **Engesserstr. 2-6/8-12 und Lehmannstr. 1-3**
+- ➕ **Hauckstraße zw. Gymnasiumstraße und Karl-Weysser-Straße**
+- ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
+- ✏️ Breslauer Straße Wohnwege 64 A - I und 66 A -L — sonstige Angaben aktualisiert
+- ✏️ Werderstraße 68 — Ende: 2026-08-31 → 2026-09-11
+- ✏️ Sophienstraße Kreuzung Reinhold-Frank-Straße — sonstige Angaben aktualisiert
+- ✏️ Babbergerstraße, Waidweg, Hermann-Schneider-Allee — sonstige Angaben aktualisiert
+- ✏️ B 36 zw. AS Eggenstein u. AS Neureut Nord sowie Zufahrt Linkenheimer Landstraße — sonstige Angaben aktualisiert
+- ✏️ Gerwigstraße zw. Ostring und Käppelestraße — sonstige Angaben aktualisiert
+- ✏️ Gerwigstraße zw. Käppelestraße und Ostring — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 14.08.2026, 04:29 — 3 neu, 2 entfernt, 3 geändert (gesamt 177)
 
 - ➕ **Lammstraße zw. Ritterstraße u. Lammstraße**
