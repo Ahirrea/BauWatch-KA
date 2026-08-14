@@ -10,9 +10,9 @@ Suggested labels: `setup`, `data`, `frontend`, `a11y`, `docs`, `enhancement`.
 > [refinement process](./PROZESS.md).
 
 **Status legend:** ✅ done · 🟡 partial / open · ⬜ open
-**As of:** 2026-08-08 (#33 added and done — the small-phone layout: 84 % of an
-iPhone SE viewport was chrome above the map, and a wrapped filter group left a
-ragged bare strip.)
+**As of:** 2026-08-14 (#34 added and done — the "Was ist neu?" dialog had two
+scrollbars, and dragging the outer one scrolled the whole feed out of the
+frame.)
 
 > Summary: Milestones 1–3 are implemented and the site is live via GitHub
 > Pages (#5). From Milestone 4, #15 and #18 are done; #16 (push/subscription
@@ -25,7 +25,8 @@ ragged bare strip.)
 > #29 is done and #30 is deliberately open (not planned). #31 (a PWA
 > manifest fix) is done. **A-10 (result metrics) is implemented**; #32, an
 > a11y finding it surfaced in the shared traffic-light dot, is open. #33 (the
-> small-phone layout) is done.
+> small-phone layout) and #34 (the double scrollbar in the "Was ist neu?"
+> dialog) are done.
 
 ---
 
@@ -464,6 +465,47 @@ before, and a pixel diff of the filter strip against a `git archive HEAD`
 checkout shows 48 of 307 200 pixels differing by ≤ 10/255 in light mode and 0 in
 dark — antialiasing along the separators, no layout change. `CACHE_SHELL` bumped
 to `v16` (`src/styles.css` is a shell file). (Label: `frontend`)
+
+### ✅ #34 The "Was ist neu?" dialog has two scrollbars, and the outer one leads into an empty box
+A `<dialog>` gets `overflow: auto` from the UA stylesheet, so `max-height: 80vh`
+turned the dialog itself into a scroll container **next to** `.whats-new-body`,
+which had its own `max-height: calc(80vh - 6rem)` plus `overflow-y: auto`. Two
+bars side by side, and the outer one had a range of **9001 px** at 1280 × 900:
+dragging it (or a wheel over the heading, or scroll chaining past the bottom of
+the body) pushed heading, note and all 42 entries out of the 713 px frame and
+left an empty white box. What produces the outer bar in the first place is a
+Chromium detail worth knowing: it adds the body's overflowing children to the
+dialog's scrollable overflow region even though the body already clips them —
+`contain: paint` on the body takes that region from 9001 px back to 0, and an
+isolated `div`-in-`div` repro does *not* show the effect, so the ancestor being
+a top-layer `<dialog>` is part of it.
+**DoD:** exactly one scrollbar, no user-reachable outer scroll (bar, wheel,
+chaining, focus), heading and note pinned, the last entry still reachable, the
+short-content states unchanged. — **done**:
+
+- `.whats-new-dialog` is now a `display: flex; flex-direction: column` frame
+  with `overflow: clip` (cancels the UA `overflow: auto`; it also covers
+  browsers without `contain`), `.whats-new-body` is `flex: 1 1 auto;
+  min-height: 0; overflow-y: auto; contain: paint`.
+- **The body's `max-height: calc(80vh - 6rem)` is gone**, and not only because
+  of the second bar: the reserved constant is in `rem` while the cap it is
+  subtracted from is in `vh`, so it fit at exactly one root font size. Measured,
+  heading + note come to 87 px against the reserved 96 px at a 16 px root and to
+  108.6 px against 120 px at 20 px — the body was always a few px short and the
+  dialog never reached its own 80vh cap. The flex layout derives the height
+  instead, so the frame now measures exactly the cap: 720 px at 900 px viewport
+  height, 717 at 896, 534 at 667.
+- **Measured before → after** (Playwright, four configurations): outer
+  scrollable range 9001 → **0** px at 1280 × 900, 11670 → 0 at 414 × 896,
+  13027 → 0 at 375 × 667, 11442 → 0 at 1280 × 900 with a 20 px root. A wheel
+  over the heading moved the frame 1500 → 0 px, scroll chaining out of the body
+  9001–13027 → 0, a focus jump to an element at the end of the list 0 → 0. The
+  body itself still scrolls its full 9044 px, the heading does not shift while
+  it does (0 px), and the last entry stays reachable. Short content still
+  shrinks the frame instead of stretching it: 168 px for the empty state,
+  300 px for a single run.
+- `CACHE_SHELL` bumped to `v17` (`src/styles.css` is a shell file).
+  (Label: `frontend`)
 
 ---
 

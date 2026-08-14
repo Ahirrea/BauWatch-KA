@@ -244,12 +244,23 @@ body {
 }
 
 /* --- "Was ist neu?"-Dialog (A-6) --- */
+/* The dialog is a layout frame, not a scrolling area: heading and window note
+   stay put, .whats-new-body scrolls. Two declarations carry that, both
+   load-bearing (#34). `display: flex` lets the body take exactly the leftover
+   height, so its cap no longer has to be guessed from the heading's size. And
+   `overflow: clip` cancels the UA stylesheet's `overflow: auto` on <dialog>,
+   which had made the dialog a *second* scroll container next to the body —
+   dragging that outer bar scrolled the whole content out of the frame and left
+   an empty box. */
 .whats-new-dialog {
   width: calc(100% - 2rem);
   max-width: 32rem;
   max-height: 80vh;
   margin: auto;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: clip;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background: var(--surface);
@@ -304,10 +315,20 @@ body {
   color: var(--text-muted);
   font-size: 0.85rem;
 }
+/* The one scrolling area of the dialog. Its height comes from the flex layout
+   above (`min-height: 0` is what lets a flex item shrink below its content),
+   not from a `calc(80vh - 6rem)` estimate of the heading's height — that
+   constant is in rem while the viewport cap is in vh, so it only ever fit at
+   one root font size. `contain: paint` keeps the overflowing entries out of the
+   dialog's own scrollable overflow region: Chromium counts them there even
+   though this box already clips them, which is where #34's second scrollbar
+   came from. `overflow: clip` above covers browsers without `contain`. */
 .whats-new-body {
   padding: 0.5rem 1rem 1rem;
-  max-height: calc(80vh - 6rem);
+  flex: 1 1 auto;
+  min-height: 0;
   overflow-y: auto;
+  contain: paint;
 }
 .whats-new-run {
   margin: 0.75rem 0;
