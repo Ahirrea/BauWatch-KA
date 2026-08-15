@@ -2,6 +2,29 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 15.08.2026, 03:39 — 2 neu, 10 entfernt, 6 geändert (gesamt 171)
+
+- ➕ **Ostmarkstraße zwischen Westmarkstraße und Kärntner Straße**
+- ➕ **Bruchsaler Straße zw. Karlsruher Straße und Waldeckstraße**
+- ➖ ~~Silcher Straße, B36/ Eckener Straße, Schlagfeldweg~~
+- ➖ ~~Seminarstraße zwischen Stephanienstraße und Bismarckstraße~~
+- ➖ ~~Ostmarkstraße zwischen Westmarkstraße und Kärntner Straße~~
+- ➖ ~~Nancystraße zw. Zufahrt Reitinstitut und Kußmaulstraße~~
+- ➖ ~~AS Karlsruhe Nord Zufahrt von der Elfmorgenbruchstraße zur A 5 Fahrtrichtung Süd~~
+- ➖ ~~Millöckerstraße~~
+- ➖ ~~Ispringer Straße zw. Wilferdinger Straße und Ellmendinger Straße~~
+- ➖ ~~Veilchenstraße zw. Gerwigstraße und Essenweinstraße~~
+- ➖ ~~Am Rüppurrer Schloss 1 - 7~~
+- ➖ ~~AS7 von B36 Auffahrtsrampe zur B10/ Südtangente~~
+- ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
+- ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
+- ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
+- ✏️ Sophienstraße Kreuzung Reinhold-Frank-Straße — sonstige Angaben aktualisiert
+- ✏️ Babbergerstraße, Waidweg, Hermann-Schneider-Allee — sonstige Angaben aktualisiert
+- ✏️ B 36 zw. AS Eggenstein u. AS Neureut Nord sowie Zufahrt Linkenheimer Landstraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 14.08.2026, 15:21 — 2 neu, 8 geändert (gesamt 179)
 
 - ➕ **Engesserstr. 2-6/8-12 und Lehmannstr. 1-3**
