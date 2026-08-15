@@ -14,7 +14,13 @@ const CHANGELOG_URL = 'data/changelog.json'; // "Was ist neu?"-Feed (A-6)
 const KA_CENTER = [49.0094, 8.4044]; // Marktplatz
 const RADIUS_KM = 1.5;
 
-// Ampelfarben — müssen zu styles.css passen.
+// Ampelfarben der Karte (Marker + Flächen). voll/gering decken sich mit
+// --red/--green im hellen Schema; teil bleibt seit #32 bewusst NICHT an
+// var(--amber) gekoppelt: Marker und Flächen liegen auf den immer hellen
+// OSM-Kacheln, nicht auf --surface, und Teil muss dort deutlich heller sein
+// als Voll, sonst sind beide kaum auseinanderzuhalten. Die Punkte/Streifen in
+// Liste, Popup und Knöpfen tragen dagegen die Schema-Tokens aus styles.css
+// (hell seit #32 dunkler, dunkel schon immer #ffb02e).
 const AMPEL_COLOR = { voll: '#c02626', teil: '#f08a00', gering: '#197a3d' };
 
 // Language preference (A-5). localStorage key: 'bauwatch.sprache'.
@@ -464,9 +470,9 @@ function renderStatus(list) {
 // macht sie als Bedienelement brauchbar.
 //
 // Die Ampelfarbe steckt weiterhin im Punkt, nie im Text (A-10/E2): --amber
-// erreicht als Text auf --surface im hellen Schema nur ~2,3:1, eine orange „118"
-// wäre ein WCAG-Verstoß, der beim Prüfen im dunklen Schema (dort ~9,7:1)
-// unsichtbar bleibt.
+// erreicht als Text auf --surface im hellen Schema nur ~3,4:1 (AA-Text braucht
+// 4,5:1), eine orange „118" wäre ein WCAG-Verstoß, der beim Prüfen im dunklen
+// Schema (dort ~8,6:1) unsichtbar bleibt.
 //
 // Eine 0 blendet ihren Knopf NICHT aus (A-10/E6 abgelöst): ein Bedienelement,
 // das bei 0 verschwindet, fehlt genau dann, wenn man damit zurückwollte.

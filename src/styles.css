@@ -28,14 +28,20 @@
   --chip-border: #d9dce1;
 
   /* Ampel — kontraststark auf Weiß: --red und --green erfüllen dort auch als
-     Text WCAG AA, --amber ist mit ~2,3:1 im Hellmodus dagegen NUR für Flächen
-     und Punkte brauchbar (im Dunkelmodus ~9,7:1 — der Verstoß fällt beim
-     Testen im Dark-Mode nicht auf). Warnender Text: --accent oder --text.
-     Teil (Amber) bewusst deutlich heller als Voll (Rot), damit sich beide
-     nicht nur im Farbton, sondern auch in der Helligkeit unterscheiden —
-     sonst sind die Marker auf der Karte kaum auseinanderzuhalten. */
+     Text WCAG AA. --amber stand bis #32 auf #f08a00 und erreichte als Punkt
+     nur 2,52:1 auf --surface / 2,35:1 auf --chip — ein Verstoß, der beim
+     Testen im dunklen Schema (dort 7–9:1) nie auffällt. Seit #32 hält es als
+     Punkt- und Flächenfarbe 3:1 (3,38:1 / 3,15:1; test-theme.mjs Abschnitt 8
+     rechnet nach), als TEXT bleibt es verboten — dafür bräuchte es 4,5:1.
+     Warnender Text: --accent oder --text.
+     Die Marker und Flächen AUF DER KARTE hängen nicht an diesen Tokens:
+     AMPEL_COLOR in app.js behält #f08a00, weil sie auf den immer hellen
+     OSM-Kacheln liegen und Teil (Amber) dort bewusst deutlich heller bleibt
+     als Voll (Rot) — sonst sind die Marker kaum auseinanderzuhalten. Punkt-
+     und Markerfarbe gehen im dunklen Schema (#ffb02e) schon immer auseinander;
+     seit #32 gilt dasselbe im hellen. */
   --red: #c02626;
-  --amber: #f08a00;
+  --amber: #cc7700;
   --green: #197a3d;
 
   --radius: 10px;
@@ -524,7 +530,7 @@ body {
 }
 /* Zahl im Sperrgrad-Knopf (A-12/E2). Erbt die Textfarbe des Knopfes — nie die
    Ampelfarbe: --amber käme als Text auf --surface im hellen Schema nur auf
-   ~2,3:1. Die Farbe bleibt im .dot daneben.
+   ~3,4:1, AA-Text braucht 4,5:1. Die Farbe bleibt im .dot daneben.
    :empty ist nicht kosmetisch: .segments button setzt gap, ein leeres <span>
    vor dem ersten Laden risse sonst eine sichtbare Lücke zwischen Punkt und
    Beschriftung. */

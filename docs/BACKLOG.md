@@ -10,7 +10,11 @@ Suggested labels: `setup`, `data`, `frontend`, `a11y`, `docs`, `enhancement`.
 > [refinement process](./PROZESS.md).
 
 **Status legend:** ✅ done · 🟡 partial / open · ⬜ open
-**As of:** 2026-08-15 (**A-11 implemented** — selecting a construction site no
+**As of:** 2026-08-15 (**#32 done** — the light-mode `--amber` darkened
+`#f08a00` → `#cc7700`: the dot now reaches 3.38:1 on `--surface` and 3.15:1 on
+`--chip`; the map's `AMPEL_COLOR` deliberately keeps `#f08a00`, and
+`scripts/test-theme.mjs` now computes all six dot/surface ratios statically.
+Same day, **A-11 implemented** — selecting a construction site no
 longer moves the camera: A-7/E5's `fitBounds`, the point-only zoom-to-15,
 `popupPlatz()` and the `{ autoPan: false }` exception are gone; the popup's
 readability at the map edge is carried by Leaflet's default `autoPan` again.
@@ -40,11 +44,12 @@ and dragging the outer one scrolled the whole feed out of the frame.)
 > mechanism (autoPan off + measured reserved strip) was removed with it while
 > its entry stays as the record. #31 (a PWA
 > manifest fix) is done. **A-10 (result metrics) is implemented**; #32, an
-> a11y finding it surfaced in the shared traffic-light dot, is open. #33 (the
+> a11y finding it surfaced in the shared traffic-light dot, is done. #33 (the
 > small-phone layout) and #34 (the double scrollbar in the "Was ist neu?"
 > dialog) are done. **A-12 (filter row) is implemented** — it supersedes #21's
-> "display-only" decision and A-10's metrics strip; #32 is unaffected and stays
-> open. #35 (the desktop column heights, a follow-up to #23 and #27) is done.
+> "display-only" decision and A-10's metrics strip; #32 was unaffected by it
+> and is now done. #35 (the desktop column heights, a follow-up to #23 and
+> #27) is done.
 > #33 stays done and is only clarified; what it could not reach by tightening
 > spacing — the whole map on the first screen — is **A-13, implemented** the same
 > day (the filter row now stands between map and list on a phone).
@@ -431,7 +436,7 @@ Already-installed users pick this up only when Chrome's periodic WebAPK
 update check runs (typically within a few days of an app start), not on the
 next launch. (Label: `frontend`)
 
-### ⬜ #32 The amber traffic-light dot reaches only ~2.5:1 in light mode
+### ✅ #32 The amber traffic-light dot reaches only ~2.5:1 in light mode
 Found while measuring A-10, and it predates it: `--amber` (`#f08a00`) as a
 **dot** against the surface it sits on gives **2.52:1** in a list item and in
 a Sperrgrad filter button, **2.35:1** in an A-10 metrics chip — light mode
@@ -453,8 +458,39 @@ and needs its own pass over all three components.
 **DoD:** either `--amber` darkened far enough for ≥ 3:1 in light mode against
 `--surface`/`--chip` **with** markers and areas re-checked in both schemes, or
 a documented decision that the dot stays decorative and the ratio is accepted.
-Measured, not estimated, in all three theme states. (Label: `a11y`,
-`frontend`)
+Measured, not estimated, in all three theme states. — **done (2026-08-15),
+the darkening path, but only for the page — not for the map:**
+
+- **Light `--amber` is now `#cc7700`** (same 35° hue, darker). Measured
+  rendered, not from the tokens, in all theme states (system-light,
+  system-dark, explicit light under a dark OS, explicit dark under a light
+  OS): the dot reaches **3.38:1** on `--surface` (list item, popup, Sperrgrad
+  button) and **3.15:1** against `--chip`; the `.amp-teil` border stripe gets
+  the same 3.38:1. Dark mode is untouched (`#ffb02e`, 8.64:1 / 7.29:1 —
+  identical before and after). Red and green were already clear (5.52/5.03
+  light) and stay unchanged.
+- **`AMPEL_COLOR.teil` in `app.js` deliberately keeps `#f08a00`.** Markers
+  and areas sit on the always-light OSM tiles, not on `--surface`, and there
+  Teil must stay clearly lighter than Voll or the two are hard to tell apart
+  on the map (the documented reason the value was chosen). The dot and the
+  marker have diverged in dark mode since the dark palette existed
+  (`#ffb02e` vs `#f08a00`); light mode now does the same. Verified in the
+  same run: every teil stroke/fill in `.leaflet-overlay-pane` still renders
+  `#f08a00` in all four states. This is *not* the "second amber" A-10/E2
+  rejected — that was about two ambers among the page dots; all page dots
+  stay one colour per scheme.
+- **Regression proof:** `scripts/test-theme.mjs` section 8 now computes the
+  WCAG ratio for all six dot/surface pairs (`--red`/`--amber`/`--green` ×
+  `--surface`/`--chip`) in both palettes, statically — red at 2.52/2.35
+  before the fix, green after. Writing it surfaced a latent parser gap: the
+  test's `tokens()` didn't strip CSS comments, so a comment naming `--bg:`
+  swallowed the light block's `--chip`; comments are stripped now. The
+  A-10/E2-revised measurement table above stays as the historical record.
+- `CACHE_SHELL` bumped to `v23` (`src/styles.css`, `src/app.js` are shell
+  files). Comment sites quoting the old ~2.3:1/~9.7:1 numbers updated
+  (`styles.css`, `app.js`, `CLAUDE.md`); "amber is not a text colour" still
+  holds — ~3.4:1 is a dot's 3:1, not text's 4.5:1. (Label: `a11y`,
+  `frontend`)
 
 ---
 

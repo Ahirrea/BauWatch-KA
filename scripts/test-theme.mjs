@@ -25,9 +25,12 @@
 //      buttons are icon-only, a missing aria-label leaves a screen-reader
 //      user with "◐".
 //
-// The WCAG contrast of the tokens themselves is NOT checked here (this is
-// plain Node, no layout engine) — that stays a Playwright job with one
-// context per scheme, see the --amber pitfall in CLAUDE.md.
+// Token-vs-token WCAG contrast IS checked here (section 8) — two hex values
+// need no layout engine, and the amber dot shipped at 2.35:1 in light mode for
+// weeks because that math was left to eyeballs (BACKLOG #32). What stays a
+// Playwright job is the question this file cannot answer: which palette
+// actually WON on a rendered page (system setting vs. explicit toggle) — see
+// the --amber pitfall in CLAUDE.md.
 
 import { readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
@@ -63,9 +66,13 @@ function block(source, selector) {
 
 // Custom properties only — ordinary declarations (color-scheme) live in their
 // own rules on purpose, so this comparison sees nothing but colour values.
+// Comments are stripped first: a comment naming a token ("statt --bg: …")
+// would otherwise swallow the declaration that follows it — the light block's
+// --chip went missing exactly that way when section 8 first read it.
 function tokens(declarations) {
   const map = new Map();
-  for (const m of declarations.matchAll(/(--[\w-]+)\s*:\s*([^;]+);/g)) {
+  const ohneKommentare = declarations.replace(/\/\*[\s\S]*?\*\//g, '');
+  for (const m of ohneKommentare.matchAll(/(--[\w-]+)\s*:\s*([^;]+);/g)) {
     map.set(m[1], m[2].trim().replace(/\s+/g, ' '));
   }
   return map;
@@ -296,6 +303,55 @@ check(
   /if \(theme === DEFAULT_THEME\) localStorage\.removeItem\(THEME_KEY\)/.test(app),
   'der Hinweis behauptet, ohne ausdrückliche Wahl werde nichts abgelegt'
 );
+
+// --- 8. Ampel-Punkte: 3:1 gegen die Flächen, auf denen sie liegen ----------
+// Reine Token-Mathematik (BACKLOG #32): der Punkt (.dot) liegt in Listenkarte,
+// Popup und Sperrgrad-Knopf auf --surface, in Badges auf --chip. 3:1 ist die
+// Grenze aus WCAG 1.4.11 für grafische Objekte — der Punkt ist zwar aria-hidden
+// und dupliziert nur das Wort daneben, aber unter 3:1 ist er im hellen Schema
+// schlicht kaum zu sehen (amber lag bei 2,35:1, und im dunklen Schema fällt
+// genau das nie auf). Absichtlich NUR die Punktfarben: --amber & Co. sind keine
+// Textfarben (dafür bräuchte es 4,5:1), und das bleibt so.
+function relativeLuminanz(hex) {
+  const n = parseInt(hex.slice(1), 16);
+  const lin = (c) => {
+    const s = c / 255;
+    return s <= 0.03928 ? s / 12.92 : ((s + 0.055) / 1.055) ** 2.4;
+  };
+  return 0.2126 * lin(n >> 16) + 0.7152 * lin((n >> 8) & 255) + 0.0722 * lin(n & 255);
+}
+function kontrast(a, b) {
+  const [hellW, dunkelW] = [relativeLuminanz(a), relativeLuminanz(b)].sort((x, y) => y - x);
+  return (hellW + 0.05) / (dunkelW + 0.05);
+}
+
+if (hellBlock && dunkelSystem) {
+  const paletten = [
+    ['hell', tokens(hellBlock)],
+    ['dunkel', tokens(dunkelSystem)],
+  ];
+  for (const [schema, palette] of paletten) {
+    for (const punkt of ['--red', '--amber', '--green']) {
+      for (const flaeche of ['--surface', '--chip']) {
+        const farbe = palette.get(punkt);
+        const grund = palette.get(flaeche);
+        const messbar = /^#[0-9a-f]{6}$/i.test(farbe || '') && /^#[0-9a-f]{6}$/i.test(grund || '');
+        check(
+          `${schema}: ${punkt} auf ${flaeche} ist als Hex-Paar messbar`,
+          messbar,
+          `${punkt}=${farbe} ${flaeche}=${grund} — kein 6-stelliges Hex, Kontrastprüfung liefe ins Leere`
+        );
+        if (!messbar) continue;
+        const wert = kontrast(farbe, grund);
+        check(
+          `${schema}: ${punkt} (${farbe}) erreicht 3:1 auf ${flaeche} (${grund})`,
+          wert >= 3,
+          `${wert.toFixed(2)}:1 — als Punktfarbe zu schwach (WCAG 1.4.11-Grenze)`
+        );
+      }
+    }
+  }
+}
 
 if (failed > 0) {
   console.error(`\n${failed} test(s) failed.`);
