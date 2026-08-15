@@ -10,7 +10,12 @@ Suggested labels: `setup`, `data`, `frontend`, `a11y`, `docs`, `enhancement`.
 > [refinement process](./PROZESS.md).
 
 **Status legend:** ✅ done · 🟡 partial / open · ⬜ open
-**As of:** 2026-08-14 (**A-13 implemented** — on a phone the filter row now stands
+**As of:** 2026-08-15 (**A-11 implemented** — selecting a construction site no
+longer moves the camera: A-7/E5's `fitBounds`, the point-only zoom-to-15,
+`popupPlatz()` and the `{ autoPan: false }` exception are gone; the popup's
+readability at the map edge is carried by Leaflet's default `autoPan` again.
+#30 is closed as moot by the same change. Before that, 2026-08-14: **A-13
+implemented** — on a phone the filter row now stands
 between map and list, so the whole map is on the first screen: `#map` starts at
 247 px instead of 447 px at 375 × 667. In the same pass #33's width sentence was
 clarified — "all three groups fit one row" was always meant per group, and the
@@ -30,7 +35,10 @@ and dragging the outer one scrolled the whole feed out of the frame.)
 > From the transparency-portal pre-review, #25 and #26 are done. #27 (a follow-up
 > desktop UI fix) and #28 (a follow-up on the "What's new?" feed) are done.
 > **A-7 (construction-site areas) is implemented**; of its two follow-ups,
-> #29 is done and #30 is deliberately open (not planned). #31 (a PWA
+> #29 is done and #30 is closed as moot — **A-11 (selection without a map
+> zoom) is implemented**, selection no longer auto-fits anything, and #29's
+> mechanism (autoPan off + measured reserved strip) was removed with it while
+> its entry stays as the record. #31 (a PWA
 > manifest fix) is done. **A-10 (result metrics) is implemented**; #32, an
 > a11y finding it surfaced in the shared traffic-light dot, is open. #33 (the
 > small-phone layout) and #34 (the double scrollbar in the "Was ist neu?"
@@ -371,9 +379,14 @@ nothing when the popup exceeds the cap", which was the first idea: with
 than shifted. Verified by 32 Playwright checks against real city geometry
 (each multi-part case's fit spans all parts, popup stays inside the map,
 point-only selection byte-identical to the pre-A-7 checkout).
-(Label: `frontend`, `a11y`)
+**Note (2026-08-15):** the mechanism this built — `autoPan` off plus the
+measured reserved strip — was removed by
+[A-11](./anforderungen/A-11-auswahl-ohne-zoom.md): selection no longer fits
+the map at all, and the popup's readability is back on Leaflet's default
+`autoPan`. This entry stays as the record of why the strip was measured
+rather than guessed while the fit existed. (Label: `frontend`, `a11y`)
 
-### ⬜ #30 Very large areas fit at a zoom where they read as a hairline
+### ✅ #30 Very large areas fit at a zoom where they read as a hairline
 Also from [A-7](./anforderungen/A-7-baustellenflaechen.md). A case like
 `2025V6065` (Waldstadt) is a ~1.9 km corridor whose polygon ring has 180
 vertices; `fitBounds` correctly zooms out to ~13 to show all of it, where the
@@ -387,7 +400,13 @@ and the line-geometry corridors already get the heavier 6 px stroke, so this
 only touches polygons whose ring happens to be long and thin. Note also that
 this was judged from screenshots with the OSM tiles intercepted — against real
 street context a hairline corridor reads considerably better than against grey.
-Revisit only if it comes up in practice. (Label: `frontend`, `enhancement`)
+Revisit only if it comes up in practice.
+**Closed as moot (2026-08-15) by
+[A-11](./anforderungen/A-11-auswahl-ohne-zoom.md):** selection no longer
+auto-fits anything, so no `fitBounds` remains that could zoom a 1.9 km corridor
+out to hairline width. Nothing was implemented and nothing is left to revisit —
+whoever zooms out far enough to see the whole corridor chose that view
+themselves. (Label: `frontend`, `enhancement`)
 
 ---
 
