@@ -2,6 +2,22 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 16.08.2026, 03:47 — 7 entfernt, 4 geändert (gesamt 164)
+
+- ➖ ~~Schinnrainstraße, Raiherwiesenstraße, Hauptbahnstraße, Bleichstraße~~
+- ➖ ~~Seminarstraße zw. Stephanienstraße u. Bismarckstraße~~
+- ➖ ~~Pfaffstraße / Schinnrainstraße / Raiherwiesenstraße~~
+- ➖ ~~Vorholzstraße zw. Beiertheimer Allee und Karlstraße~~
+- ➖ ~~Zweibrückener Straße zw. Rehbuckel und Ebersteinstraße~~
+- ➖ ~~Pfinztalstraße zw. Ernst-Friedrich-Straße und Palmaienstraße~~
+- ➖ ~~Bruchsaler Straße zw. Karlsruher Straße und Waldeckstraße~~
+- ✏️ Engesserstr. 2-6/8-12 und Lehmannstr. 1-3 — sonstige Angaben aktualisiert
+- ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
+- ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
+- ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 15.08.2026, 03:39 — 2 neu, 10 entfernt, 6 geändert (gesamt 171)
 
 - ➕ **Ostmarkstraße zwischen Westmarkstraße und Kärntner Straße**
