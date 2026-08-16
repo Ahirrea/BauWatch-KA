@@ -2,6 +2,14 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 16.08.2026, 06:41 — 3 geändert (gesamt 164)
+
+- ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
+- ✏️ Sophienstraße Kreuzung Reinhold-Frank-Straße — sonstige Angaben aktualisiert
+- ✏️ Babbergerstraße, Waidweg, Hermann-Schneider-Allee — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 16.08.2026, 03:47 — 7 entfernt, 4 geändert (gesamt 164)
 
 - ➖ ~~Schinnrainstraße, Raiherwiesenstraße, Hauptbahnstraße, Bleichstraße~~
