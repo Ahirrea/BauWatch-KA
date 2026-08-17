@@ -2,6 +2,37 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 17.08.2026, 03:45 — 18 neu, 4 entfernt, 4 geändert (gesamt 178)
+
+- ➕ **B 3 Grötzinger Straße zw. Badener Straße u. Bergbahnstraße**
+- ➕ **Karlstraße zw. Erbprinzenstraße u. Kaiserstraße**
+- ➕ **Kreuzstraße zw. Hebelstraße und Zähringer Straße**
+- ➕ **Pfinztalstraße zw. Rappenstraße u. Rollerstraße sowie Zunftstraße ab Spitalstraße bis Amthausstraße Höhe Am Zwinger**
+- ➕ **K9659 Kreisstraße P&R Platz Höhe Bahnhof Durlach**
+- ➕ **Gymnasiumstraße zw. Rittnertstraße und Turmbergstraße**
+- ➕ **Akademiestraße zw. Hans-Thoma-Straße und Karlstraße**
+- ➕ **Zweibrückener Straße zw. Rehbuckel und Ebersteinstraße**
+- ➕ **Hirschberger Straße**
+- ➕ **Petergraben 15 bis 23**
+- ➕ **Mannheimer Straße zw. Forststraße u. Huttenstraße**
+- ➕ **Hermann-Billing-Straße zw. Ettlinger Straße u. Beiertheimer Allee (Zufahrt Landratsamt)**
+- ➕ **Kaiserallee zw. Yorckstraße u. Uhlandstraße**
+- ➕ **Tiefentalstraße - Straße des Roten Kreuzes - Rehbuckel**
+- ➕ **Wasgaustraße, Schlesier Str., Tiroler Str,  Memelerstr**
+- ➕ **Karl-Friedrich-Straße zw. Kriegsstraße und Rondellplatz**
+- ➕ **Ludwig-Erhard-Allee 3**
+- ➕ **Hirschstraße zw. Amalienstraße und Sophienstraße**
+- ➖ ~~Pfinztalstraße, Kanzlerstraße, Amalienbadstraße, Gritznerstraße~~
+- ➖ ~~Waldenburger Straße bis Ende Hirschberger Straße~~
+- ➖ ~~B 36 zw. AS Eggenstein u. AS Neureut Nord sowie Zufahrt Linkenheimer Landstraße~~
+- ➖ ~~Gymnasiumstraße zw. Rittnertstraße und Turmbergstraße~~
+- ✏️ Engesserstr. 2-6/8-12 und Lehmannstr. 1-3 — sonstige Angaben aktualisiert
+- ✏️ Sophienstraße Kreuzung Reinhold-Frank-Straße — sonstige Angaben aktualisiert
+- ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
+- ✏️ Babbergerstraße, Waidweg, Hermann-Schneider-Allee — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 16.08.2026, 06:41 — 3 geändert (gesamt 164)
 
 - ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
