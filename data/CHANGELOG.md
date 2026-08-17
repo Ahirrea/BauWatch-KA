@@ -2,6 +2,27 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 17.08.2026, 14:56 — 6 neu, 3 entfernt, 7 geändert (gesamt 182)
+
+- ➕ **Gottesauer Straße, Buntestraße, Lohfeldstraße, Sommerstraße, Wolfartsweierer Straße, Hennebergstraße, Am Schloss Gottersaue**
+- ➕ **Bonner Straße zw. Siemensallee und Bonner Platz**
+- ➕ **Gebietsausbau Hildebrandstr./Ellmendinger Str./Grenzstr.**
+- ➕ **Nancystraße zw. Zufahrt Reitinstitut und Kußmaulstraße**
+- ➕ **Pfinztalstraße zw. Ernst-Friedrich-Straße und Palmaienstraße**
+- ➕ **Seminarstraße zw. Stephanienstraße und Bismarckstraße**
+- ➖ ~~Werthmannstraße zw. Klosterweg und Pastor-Felke-Straße~~
+- ➖ ~~Werthmannstraße zw. Pastor-Felke-Straße und Klosterweg~~
+- ➖ ~~Petergraben 15 bis 23~~
+- ✏️ Vorholzstraße zw. Karlstraße und Hirschstraße — sonstige Angaben aktualisiert
+- ✏️ Engesserstr. 2-6/8-12 und Lehmannstr. 1-3 — sonstige Angaben aktualisiert
+- ✏️ B 3 Grötzinger Straße zw. Badener Straße u. Bergbahnstraße — Ende: 2026-09-13 → 2026-09-07
+- ✏️ Nordbeckenstraße 17b, Im Schlehert 38 — Ende: 2026-08-28 → 2026-09-18
+- ✏️ Gymnasiumstraße zw. Rittnertstraße und Turmbergstraße — Ende: 2026-08-21 → 2026-08-28
+- ✏️ Hermann-Billing-Straße zw. Ettlinger Straße u. Beiertheimer Allee (Zufahrt Landratsamt) — sonstige Angaben aktualisiert
+- ✏️ Hirschstraße zw. Amalienstraße und Sophienstraße — Ende: 2026-08-17 → 2026-08-18; Info geändert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 17.08.2026, 10:52 — 1 neu, 1 geändert (gesamt 179)
 
 - ➕ **Hirschstraße zw. Kaiserstraße und Sophienstraße**
