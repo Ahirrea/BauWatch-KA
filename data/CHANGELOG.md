@@ -2,6 +2,20 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 17.08.2026, 18:35 — 3 neu, 3 entfernt, 3 geändert (gesamt 182)
+
+- ➕ **Pfinztalstraße, Kanzlerstraße, Amalienbadstraße, Gritznerstraße**
+- ➕ **Weiherstraße zw. Basler-Tor-Straße und Brunnenhausstraße**
+- ➕ **Wasgaustraße, Schlesier Str., Tiroler Str,  Memelerstr**
+- ➖ ~~Karl-Martin-Graff-Straße zw. Winkler-Dentz-Straße und Gustav-Hofmann-Straße~~
+- ➖ ~~Wasgaustraße, Schlesier Str., Tiroler Str,  Memelerstr~~
+- ➖ ~~Hirschstraße zw. Amalienstraße und Sophienstraße~~
+- ✏️ Vorholzstraße zw. Karlstraße und Hirschstraße — sonstige Angaben aktualisiert
+- ✏️ Babbergerstraße, Waidweg, Hermann-Schneider-Allee — sonstige Angaben aktualisiert
+- ✏️ Pfinztalstraße zw. Ernst-Friedrich-Straße und Palmaienstraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 17.08.2026, 14:56 — 6 neu, 3 entfernt, 7 geändert (gesamt 182)
 
 - ➕ **Gottesauer Straße, Buntestraße, Lohfeldstraße, Sommerstraße, Wolfartsweierer Straße, Hennebergstraße, Am Schloss Gottersaue**
