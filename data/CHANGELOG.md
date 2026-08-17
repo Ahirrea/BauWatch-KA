@@ -2,6 +2,13 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 17.08.2026, 10:52 — 1 neu, 1 geändert (gesamt 179)
+
+- ➕ **Hirschstraße zw. Kaiserstraße und Sophienstraße**
+- ✏️ Engesserstr. 2-6/8-12 und Lehmannstr. 1-3 — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 17.08.2026, 03:45 — 18 neu, 4 entfernt, 4 geändert (gesamt 178)
 
 - ➕ **B 3 Grötzinger Straße zw. Badener Straße u. Bergbahnstraße**
