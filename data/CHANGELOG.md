@@ -2,6 +2,27 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 18.08.2026, 03:40 — 7 neu, 6 entfernt, 3 geändert (gesamt 183)
+
+- ➕ **Lachnerstraße, Durlacher Allee, Georg.Friedrich-Straße, Rintheimer Straße, Veilchen Straße, Humnmboldt Straße**
+- ➕ **Werthmannstraße zw. Klosterweg und Pastor-Felke-Straße**
+- ➕ **Werthmannstraße zw. Pastor-Felke-Straße und Kloserweg**
+- ➕ **Hohleichweg 35**
+- ➕ **Gerwigstraße zw. Ostring und Käppelestraße**
+- ➕ **Durlacher Allee Kreuzungsbereich Ostring**
+- ➕ **Hirschstraße zw. Amalienstraße und Sophienstraße**
+- ➖ ~~Neubrunnenstraße Gleisüberfahrt Karlsruher Straße~~
+- ➖ ~~Brunnenhausstraße zw. Weiherstraße und Marstallstraße~~
+- ➖ ~~Brunnenhausstraße und Imberstraße~~
+- ➖ ~~Karlsruher Straße zw. Haid-und-Neu-Straße und Gondelsheimer Straße/ Hofäcker Straße~~
+- ➖ ~~Mannheimer Straße zw. Forststraße u. Huttenstraße~~
+- ➖ ~~B 3 Grötzinger Straße zw. Bergbahnstraße u. Rittnertstraße~~
+- ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
+- ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
+- ✏️ Babbergerstraße, Waidweg, Hermann-Schneider-Allee — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 17.08.2026, 18:35 — 3 neu, 3 entfernt, 3 geändert (gesamt 182)
 
 - ➕ **Pfinztalstraße, Kanzlerstraße, Amalienbadstraße, Gritznerstraße**
