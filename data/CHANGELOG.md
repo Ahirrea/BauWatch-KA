@@ -2,6 +2,13 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 18.08.2026, 10:45 — 1 neu, 1 geändert (gesamt 184)
+
+- ➕ **B36 zw. Sudetenstraße und L623**
+- ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 18.08.2026, 03:40 — 7 neu, 6 entfernt, 3 geändert (gesamt 183)
 
 - ➕ **Lachnerstraße, Durlacher Allee, Georg.Friedrich-Straße, Rintheimer Straße, Veilchen Straße, Humnmboldt Straße**
