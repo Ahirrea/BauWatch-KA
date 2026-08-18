@@ -2,6 +2,14 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 18.08.2026, 18:38 — 1 neu, 2 geändert (gesamt 185)
+
+- ➕ **L623 zw. Wolfartsweier und Stupferich**
+- ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
+- ✏️ Engesserstr. 2-6/8-12 und Lehmannstr. 1-3 — Sperrgrad: teil → voll
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 18.08.2026, 14:58 — 1 geändert (gesamt 184)
 
 - ✏️ Lachnerstraße, Durlacher Allee, Georg.Friedrich-Straße, Rintheimer Straße, Veilchen Straße, Humnmboldt Straße — Sperrgrad: teil → gering
