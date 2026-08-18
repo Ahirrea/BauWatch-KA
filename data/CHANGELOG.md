@@ -2,6 +2,12 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 18.08.2026, 14:58 — 1 geändert (gesamt 184)
+
+- ✏️ Lachnerstraße, Durlacher Allee, Georg.Friedrich-Straße, Rintheimer Straße, Veilchen Straße, Humnmboldt Straße — Sperrgrad: teil → gering
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 18.08.2026, 10:45 — 1 neu, 1 geändert (gesamt 184)
 
 - ➕ **B36 zw. Sudetenstraße und L623**
