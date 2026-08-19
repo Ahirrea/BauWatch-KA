@@ -2,6 +2,14 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 19.08.2026, 18:38 — 3 geändert (gesamt 181)
+
+- ✏️ Engesserstr. 2-6/8-12 und Lehmannstr. 1-3 — sonstige Angaben aktualisiert
+- ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
+- ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 19.08.2026, 14:59 — 1 neu, 2 entfernt, 3 geändert (gesamt 181)
 
 - ➕ **Rappenwörtstraße zw. Hammweg u. Pfalzstraße**
