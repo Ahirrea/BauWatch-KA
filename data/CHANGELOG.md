@@ -2,6 +2,12 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 19.08.2026, 10:46 — 1 entfernt (gesamt 182)
+
+- ➖ ~~Rittnerstraße zw. Erbprinzenstraße und Ständehausstraße~~
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 19.08.2026, 03:41 — 1 neu, 3 entfernt, 1 geändert (gesamt 183)
 
 - ➕ **Ettlinger Allee, Brücke über die DB-Gleisanlagen am Schwarzwaldkreuz Fahrtrichtung Zentrum**
