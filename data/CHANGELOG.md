@@ -2,6 +2,16 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 19.08.2026, 03:41 — 1 neu, 3 entfernt, 1 geändert (gesamt 183)
+
+- ➕ **Ettlinger Allee, Brücke über die DB-Gleisanlagen am Schwarzwaldkreuz Fahrtrichtung Zentrum**
+- ➖ ~~Durlacher Allee Kreuzungsbereich Ostring~~
+- ➖ ~~Hirschstraße zw. Amalienstraße und Sophienstraße~~
+- ➖ ~~B36 zw. Sudetenstraße und L623~~
+- ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 18.08.2026, 18:38 — 1 neu, 2 geändert (gesamt 185)
 
 - ➕ **L623 zw. Wolfartsweier und Stupferich**
