@@ -2,6 +2,17 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 19.08.2026, 14:59 — 1 neu, 2 entfernt, 3 geändert (gesamt 181)
+
+- ➕ **Rappenwörtstraße zw. Hammweg u. Pfalzstraße**
+- ➖ ~~Rappenwörtstraße zw. Hammweg u. Pfalzstraße~~
+- ➖ ~~Babbergerstraße, Waidweg, Hermann-Schneider-Allee~~
+- ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
+- ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
+- ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 19.08.2026, 10:46 — 1 entfernt (gesamt 182)
 
 - ➖ ~~Rittnerstraße zw. Erbprinzenstraße und Ständehausstraße~~
