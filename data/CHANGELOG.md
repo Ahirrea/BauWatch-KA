@@ -2,6 +2,20 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 20.08.2026, 15:01 — 1 neu, 2 entfernt, 6 geändert (gesamt 185)
+
+- ➕ **Ostmarkstraße zwischen Westmarkstraße und Kärntner Straße**
+- ➖ ~~Ostmarkstraße zwischen Westmarkstraße und Kärntner Straße~~
+- ➖ ~~Basler-Tor-Straße, Imberstraße, Breite Straße~~
+- ✏️ Engesserstr. 2-6/8-12 und Lehmannstr. 1-3 — sonstige Angaben aktualisiert
+- ✏️ B 3 Grötzinger Straße zw. Badener Straße u. Bergbahnstraße — sonstige Angaben aktualisiert
+- ✏️ Rheinhafenstraße zw. Daxlanderstraße und Südliche Uferstraße — sonstige Angaben aktualisiert
+- ✏️ Südendstraße zw. Brauerstraße und Boeckhstraße — Ende: 2026-09-30 → 2026-10-31
+- ✏️ Im Eichbäumle — Info geändert
+- ✏️ Gerwigstraße zw. Ostring und Käppelestraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 20.08.2026, 10:48 — 1 neu, 7 geändert (gesamt 186)
 
 - ➕ **Johann-Strauß-Straße zw. Am dm-Platz und Parkplatz Lorzingstraße/ Milliöeckerstraße**
