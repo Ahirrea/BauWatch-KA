@@ -2,6 +2,19 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 20.08.2026, 10:48 — 1 neu, 7 geändert (gesamt 186)
+
+- ➕ **Johann-Strauß-Straße zw. Am dm-Platz und Parkplatz Lorzingstraße/ Milliöeckerstraße**
+- ✏️ Gerwigstraße zw. Ostring und Käppelestraße — sonstige Angaben aktualisiert
+- ✏️ Kreuzstraße zw. Hebelstraße und Zähringer Straße — Ende: 2026-09-25 → 2026-09-30
+- ✏️ Parkstraße zw. Pastor-Felke-Straße und Kornblumenstraße — Ende: 2026-08-21 → 2026-08-20
+- ✏️ Rheinhafenstraße zw. Daxlanderstraße und Südliche Uferstraße — sonstige Angaben aktualisiert
+- ✏️ Waldstadt — Ende: 2026-11-22 → 2026-12-18
+- ✏️ Im Eichbäumle — sonstige Angaben aktualisiert
+- ✏️ Glogauer Straße zw. Kösliner Straße und Lauenburger Straße — Ende: 2026-09-21 → 2026-08-23
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 20.08.2026, 06:43 — 4 geändert (gesamt 185)
 
 - ✏️ B 3 Grötzinger Straße zw. Badener Straße u. Bergbahnstraße — sonstige Angaben aktualisiert
