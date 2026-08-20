@@ -2,6 +2,15 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 20.08.2026, 06:43 — 4 geändert (gesamt 185)
+
+- ✏️ B 3 Grötzinger Straße zw. Badener Straße u. Bergbahnstraße — sonstige Angaben aktualisiert
+- ✏️ Engesserstr. 2-6/8-12 und Lehmannstr. 1-3 — sonstige Angaben aktualisiert
+- ✏️ Rheinhafenstraße zw. Daxlanderstraße und Südliche Uferstraße — sonstige Angaben aktualisiert
+- ✏️ Gerwigstraße zw. Ostring und Käppelestraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 20.08.2026, 03:40 — 4 neu, 1 geändert (gesamt 185)
 
 - ➕ **Roggenbachstraße zw. Moltkestraße und Grenadierstraße**
