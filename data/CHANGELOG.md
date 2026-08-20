@@ -2,6 +2,16 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 20.08.2026, 03:40 — 4 neu, 1 geändert (gesamt 185)
+
+- ➕ **Roggenbachstraße zw. Moltkestraße und Grenadierstraße**
+- ➕ **Raffineriestraße, Brücke über die B 10 Südtangente**
+- ➕ **B 36 zw. AS Eggenstein und AS Neureut-Nord, Überführungsbauwerk im Zuge der Linkenheimer Landstraße**
+- ➕ **Rittnertstraße zw. Fechtstraße und Nonnebühl**
+- ✏️ Gerwigstraße zw. Ostring und Käppelestraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 19.08.2026, 18:38 — 3 geändert (gesamt 181)
 
 - ✏️ Engesserstr. 2-6/8-12 und Lehmannstr. 1-3 — sonstige Angaben aktualisiert
