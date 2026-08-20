@@ -2,6 +2,14 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 20.08.2026, 22:36 — 3 geändert (gesamt 185)
+
+- ✏️ B 3 Grötzinger Straße zw. Badener Straße u. Bergbahnstraße — sonstige Angaben aktualisiert
+- ✏️ Engesserstr. 2-6/8-12 und Lehmannstr. 1-3 — sonstige Angaben aktualisiert
+- ✏️ Rheinhafenstraße zw. Daxlanderstraße und Südliche Uferstraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 20.08.2026, 15:01 — 1 neu, 2 entfernt, 6 geändert (gesamt 185)
 
 - ➕ **Ostmarkstraße zwischen Westmarkstraße und Kärntner Straße**

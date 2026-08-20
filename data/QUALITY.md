@@ -1,6 +1,6 @@
 # Datenqualitäts-Report
 
-_Automatisch beim Daten-Build erzeugt. Stand: 20.08.2026, 15:01._
+_Automatisch beim Daten-Build erzeugt. Stand: 20.08.2026, 22:36._
 
 ## Pipeline
 - Rohdaten: **742** Features
