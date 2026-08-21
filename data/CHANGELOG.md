@@ -2,6 +2,24 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 21.08.2026, 03:45 — 3 neu, 5 entfernt, 5 geändert (gesamt 183)
+
+- ➕ **Kriegsstraße zw. Leopoldstraße u. Lessingstraße, Reinhold-Frank-Straße zwischen Kriegstraße u. Viktoriastraße**
+- ➕ **Hirschstraße zw. Amalienstraße und Kaiserstraße**
+- ➕ **Sonntagstraße zw. Mathystraße und Jollystraße und Mathystraße zw. Sonntagstraße und Karlstraße**
+- ➖ ~~Georg-Friedrich-Straße, Ludwig-Wilhelm-Straße, Gerwigstraße~~
+- ➖ ~~Bernhardusplatz, Adenauerring, Karl-Wilhelm-Straße, Bernhardtstraße~~
+- ➖ ~~Parkstraße zw. Pastor-Felke-Straße und Kornblumenstraße~~
+- ➖ ~~Roggenbachstraße zw. Moltkestraße und Grenadierstraße~~
+- ➖ ~~Raffineriestraße, Brücke über die B 10 Südtangente~~
+- ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
+- ✏️ Engesserstr. 2-6/8-12 und Lehmannstr. 1-3 — sonstige Angaben aktualisiert
+- ✏️ B 3 Grötzinger Straße zw. Badener Straße u. Bergbahnstraße — sonstige Angaben aktualisiert
+- ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
+- ✏️ Rheinhafenstraße zw. Daxlanderstraße und Südliche Uferstraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 20.08.2026, 22:36 — 3 geändert (gesamt 185)
 
 - ✏️ B 3 Grötzinger Straße zw. Badener Straße u. Bergbahnstraße — sonstige Angaben aktualisiert
