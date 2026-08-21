@@ -2,6 +2,14 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 21.08.2026, 10:49 — 1 neu, 2 geändert (gesamt 184)
+
+- ➕ **Ruschgraben, Karlsruher Str., Hagdornstr.**
+- ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
+- ✏️ An der Sandgrube, Am Zinken — Sperrgrad: voll → teil; Ende: 2026-08-31 → 2026-08-28
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 21.08.2026, 06:46 — 3 geändert (gesamt 183)
 
 - ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
