@@ -2,6 +2,14 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 21.08.2026, 06:46 — 3 geändert (gesamt 183)
+
+- ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
+- ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
+- ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 21.08.2026, 03:45 — 3 neu, 5 entfernt, 5 geändert (gesamt 183)
 
 - ➕ **Kriegsstraße zw. Leopoldstraße u. Lessingstraße, Reinhold-Frank-Straße zwischen Kriegstraße u. Viktoriastraße**
