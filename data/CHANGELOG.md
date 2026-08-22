@@ -2,6 +2,20 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 22.08.2026, 03:39 — 2 neu, 5 entfernt, 2 geändert (gesamt 181)
+
+- ➕ **B10/ Südtangente zw. AS7 und AS6**
+- ➕ **B36/ Michelinstraße AS7/ Auffahrt zur B10/ Südtangente**
+- ➖ ~~Hohleichweg 35~~
+- ➖ ~~Kriegsstraße zw. Leopoldstraße u. Lessingstraße, Reinhold-Frank-Straße zwischen Kriegstraße u. Viktoriastraße~~
+- ➖ ~~Lange Straße zw. Allmendstraße u. Lützowstraße~~
+- ➖ ~~Pfinztalstraße zw. Ernst-Friedrich-Straße und Palmaienstraße~~
+- ➖ ~~Tiefentalstraße - Straße des Roten Kreuzes - Rehbuckel~~
+- ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
+- ✏️ Ettlinger Allee zw. Zufahrt PSK (Höhe Nürnberger Straße) u. Ausfahrt PSK Anliegerfahrbahn Richtung Schwarzwaldkreuz — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 21.08.2026, 15:00 — 1 geändert (gesamt 184)
 
 - ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
