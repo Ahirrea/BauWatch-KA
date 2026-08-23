@@ -2,6 +2,25 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 23.08.2026, 03:48 — 7 entfernt, 7 geändert (gesamt 174)
+
+- ➖ ~~Raiherwiesenstraße, Blotterstraße, Auer Straße, Karlsruher Allee, Schinnrainstraße, Christofstraße~~
+- ➖ ~~Hirschstraße zw. Amalienstraße und Kaiserstraße~~
+- ➖ ~~B10/ Südtangente zw. AS7 und AS6~~
+- ➖ ~~B36/ Michelinstraße AS7/ Auffahrt zur B10/ Südtangente~~
+- ➖ ~~Johann-Strauß-Straße zw. Parkplatz Lorzingstraße/ Milliöeckerstraße und Durlacher Allee~~
+- ➖ ~~Sonntagstraße zw. Mathystraße und Jollystraße und Mathystraße zw. Sonntagstraße und Karlstraße~~
+- ➖ ~~Rittnertstraße zw. Fechtstraße und Nonnebühl~~
+- ✏️ B 3 Grötzinger Straße zw. Badener Straße u. Bergbahnstraße — sonstige Angaben aktualisiert
+- ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
+- ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
+- ✏️ Reinhold-Frank-Straße zw. Viktoriastraße und Kriegstraße — sonstige Angaben aktualisiert
+- ✏️ Gerwigstraße zw. Käppelestraße und Ostring — sonstige Angaben aktualisiert
+- ✏️ Gerwigstraße zw. Ostring und Käppelestraße — sonstige Angaben aktualisiert
+- ✏️ Ettlinger Allee zw. Zufahrt PSK (Höhe Nürnberger Straße) u. Ausfahrt PSK Anliegerfahrbahn Richtung Schwarzwaldkreuz — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 22.08.2026, 03:39 — 2 neu, 5 entfernt, 2 geändert (gesamt 181)
 
 - ➕ **B10/ Südtangente zw. AS7 und AS6**
