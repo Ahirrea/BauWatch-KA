@@ -2,6 +2,15 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 24.08.2026, 18:46 — 1 entfernt, 3 geändert (gesamt 184)
+
+- ➖ ~~Johann-Strauß-Straße zw. Josef-Kraus-Straße und Dornwaldstraße~~
+- ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
+- ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — Ende: 2026-08-28 → 2026-10-02
+- ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 24.08.2026, 15:03 — 1 neu, 2 entfernt, 6 geändert (gesamt 185)
 
 - ➕ **Neisser Straße zw. Glogauer Straße und Schneidemühler Straße**
