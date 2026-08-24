@@ -2,6 +2,30 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 24.08.2026, 03:46 — 12 neu, 1 entfernt, 6 geändert (gesamt 185)
+
+- ➕ **Brauerstraße zw. Putlitzstraße u. Kriegstraße**
+- ➕ **Wolfweg zw. Turmbergstraße und Blankenhornweg**
+- ➕ **Karl-Martin-Graff-Straße zw. Gustav-Hofmann-Straße und Winkler-Dentz-Straße**
+- ➕ **L605 zw. Linkenheimer Landstraße und B36**
+- ➕ **Ritterstraße zw. Am Schlossplatz und Bankhof**
+- ➕ **Karlsruher Allee zw. Auer Straße und Blotter Straße**
+- ➕ **Glogauer Straße zw. Beuthener Straße und Kösliner Straße**
+- ➕ **Kornweg zw. Silcher Straße und Alb**
+- ➕ **Stuttgarter Straße zw. Luisenstraße und Sybelstraße**
+- ➕ **Auer Straße zw. Grenzstraße und Blattwiesenstraße**
+- ➕ **Gottesauer Straße/ Wolfartsweierer Straße**
+- ➕ **Adenauerring, Moltkestraße, Reinhold-Frank-Straße**
+- ➖ ~~Glogauer Straße zw. Kösliner Straße und Lauenburger Straße~~
+- ✏️ Engesserstr. 2-6/8-12 und Lehmannstr. 1-3 — sonstige Angaben aktualisiert
+- ✏️ B 3 Grötzinger Straße zw. Badener Straße u. Bergbahnstraße — sonstige Angaben aktualisiert
+- ✏️ Reinhold-Frank-Straße zw. Viktoriastraße und Kriegstraße — sonstige Angaben aktualisiert
+- ✏️ Hermann-Billing-Straße zw. Ettlinger Straße u. Beiertheimer Allee (Zufahrt Landratsamt) — sonstige Angaben aktualisiert
+- ✏️ Gerwigstraße zw. Ostring und Käppelestraße — sonstige Angaben aktualisiert
+- ✏️ Gerwigstraße zw. Käppelestraße und Ostring — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 23.08.2026, 03:48 — 7 entfernt, 7 geändert (gesamt 174)
 
 - ➖ ~~Raiherwiesenstraße, Blotterstraße, Auer Straße, Karlsruher Allee, Schinnrainstraße, Christofstraße~~
