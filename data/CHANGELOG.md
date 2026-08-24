@@ -2,6 +2,15 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 24.08.2026, 10:56 — 1 neu, 3 geändert (gesamt 186)
+
+- ➕ **Glogauer Straße zw. Liegnitzer Straße und Im Eichbäumle**
+- ✏️ Lärchenweg zw. Zehntwaldstraße und Donauschwabenstraße — Ende: 2026-08-31 → 2026-08-30
+- ✏️ Im Eichbäumle — Ende: 2026-11-15 → 2026-10-31
+- ✏️ Hermann-Billing-Straße zw. Ettlinger Straße u. Beiertheimer Allee (Zufahrt Landratsamt) — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 24.08.2026, 03:46 — 12 neu, 1 entfernt, 6 geändert (gesamt 185)
 
 - ➕ **Brauerstraße zw. Putlitzstraße u. Kriegstraße**
