@@ -2,6 +2,20 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 24.08.2026, 15:03 — 1 neu, 2 entfernt, 6 geändert (gesamt 185)
+
+- ➕ **Neisser Straße zw. Glogauer Straße und Schneidemühler Straße**
+- ➖ ~~Wickinger Straße zww. VBK Betriebshof und Honsellstraße~~
+- ➖ ~~Glogauer Straße zw. Beuthener Straße und Kösliner Straße~~
+- ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
+- ✏️ Ruschgraben, Karlsruher Str., Hagdornstr. — Beginn: 2026-06-03 → 2026-08-23; Ende: 2026-09-07 → 2026-09-30; Info geändert
+- ✏️ Reinhold-Frank-Straße zw. Viktoriastraße und Kriegstraße — sonstige Angaben aktualisiert
+- ✏️ Vorholzstraße zw. Karlstraße und Hirschstraße — sonstige Angaben aktualisiert
+- ✏️ Fritz-Haber-Weg — Ende: 2026-08-28 → 2026-09-30
+- ✏️ Adenauerring, Moltkestraße, Reinhold-Frank-Straße — Info geändert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 24.08.2026, 10:56 — 1 neu, 3 geändert (gesamt 186)
 
 - ➕ **Glogauer Straße zw. Liegnitzer Straße und Im Eichbäumle**
