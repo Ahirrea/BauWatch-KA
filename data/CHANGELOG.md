@@ -2,6 +2,17 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 25.08.2026, 10:51 — 2 neu, 1 entfernt, 3 geändert (gesamt 187)
+
+- ➕ **Eisenlohrstraße zw. Hübschstraße und Weltzienstraße**
+- ➕ **Weltzienstraße zw. Kriegstraße und Gustav-Heller-Platz**
+- ➖ ~~Uhlandstraße zw. Gorthestraße und Sophienstraße~~
+- ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
+- ✏️ Gerwigstraße zw. Käppelestraße und Ostring — sonstige Angaben aktualisiert
+- ✏️ Kaiserallee zw. Yorckstraße u. Uhlandstraße — Beginn: 2026-08-16 → 2026-08-24
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 25.08.2026, 03:41 — 5 neu, 3 entfernt, 5 geändert (gesamt 186)
 
 - ➕ **Friedensstraße zw. Mathystraße und Gartenstraße**
