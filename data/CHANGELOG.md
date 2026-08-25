@@ -2,6 +2,24 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 25.08.2026, 03:41 — 5 neu, 3 entfernt, 5 geändert (gesamt 186)
+
+- ➕ **Friedensstraße zw. Mathystraße und Gartenstraße**
+- ➕ **Verbindungsbrücke zw. B 36 von Eggenstein kommend Richtung Linkenheimer Landstraße**
+- ➕ **Friedenstraße zw. Mathystraße und Gartenstraße**
+- ➕ **B10 zwischen Honsellstraße und Rheinbrücke**
+- ➕ **K9657/ Südtangente Höhe Kühler Krug zw. AS 5 und AS 7**
+- ➖ ~~Kornweg zw. Silcher Straße und Alb~~
+- ➖ ~~B 36 zw. AS Eggenstein und AS Neureut-Nord, Überführungsbauwerk im Zuge der Linkenheimer Landstraße~~
+- ➖ ~~Gerwigstraße zw. Ostring und Käppelestraße~~
+- ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
+- ✏️ Vorholzstraße zw. Karlstraße und Hirschstraße — sonstige Angaben aktualisiert
+- ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — sonstige Angaben aktualisiert
+- ✏️ Rheinhafenstraße zw. Daxlanderstraße und Südliche Uferstraße — sonstige Angaben aktualisiert
+- ✏️ Gerwigstraße zw. Ostring und Käppelestraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 24.08.2026, 18:46 — 1 entfernt, 3 geändert (gesamt 184)
 
 - ➖ ~~Johann-Strauß-Straße zw. Josef-Kraus-Straße und Dornwaldstraße~~
