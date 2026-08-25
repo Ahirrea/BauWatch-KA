@@ -2,6 +2,12 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 25.08.2026, 18:45 — 1 geändert (gesamt 186)
+
+- ✏️ Ludwig-Erhard-Allee 3 — Beginn: 2026-08-16 → 2026-08-24
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 25.08.2026, 14:59 — 1 entfernt, 4 geändert (gesamt 186)
 
 - ➖ ~~Blumentorstraße, Pfinzstraße, Engelbert-Strobl. Str., Neuensteinstr~~
