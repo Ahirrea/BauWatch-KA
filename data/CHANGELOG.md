@@ -2,6 +2,16 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 25.08.2026, 14:59 — 1 entfernt, 4 geändert (gesamt 186)
+
+- ➖ ~~Blumentorstraße, Pfinzstraße, Engelbert-Strobl. Str., Neuensteinstr~~
+- ✏️ Adlerstraße zw. Zähringerstraße u. Kaiserstraße — Ende: 2026-08-28 → 2026-10-01
+- ✏️ Rheinhafenstraße zw. Daxlanderstraße und Südliche Uferstraße — sonstige Angaben aktualisiert
+- ✏️ Gerwigstraße zw. Ostring und Käppelestraße — sonstige Angaben aktualisiert
+- ✏️ Gerwigstraße zw. Käppelestraße und Ostring — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 25.08.2026, 10:51 — 2 neu, 1 entfernt, 3 geändert (gesamt 187)
 
 - ➕ **Eisenlohrstraße zw. Hübschstraße und Weltzienstraße**
