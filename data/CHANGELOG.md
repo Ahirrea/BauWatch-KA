@@ -2,6 +2,15 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 27.08.2026, 01:15 — 3 neu, 1 entfernt (gesamt 187)
+
+- ➕ **Freydorfstraße zw. Moltkestraße und Damaschkestraße**
+- ➕ **Wielandtstraße zw. Rüppurrer Straße und Elisabeth-Großwendt-Straße**
+- ➕ **B10 zwischen Honsellstraße und Rheinbrücke**
+- ➖ ~~Eisenlohrstraße zw. Hübschstraße und Weltzienstraße~~
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 26.08.2026, 18:52 — 1 neu, 3 geändert (gesamt 185)
 
 - ➕ **Lessingstraße zw. Sophienstraße u. Kaiserallee**
