@@ -2,6 +2,15 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 26.08.2026, 15:05 — 3 neu, 1 geändert (gesamt 184)
+
+- ➕ **Kaiserstraße, Hirschstraße, Amalinestraße**
+- ➕ **Kaiserstraße zw. Kreuzstraße und Kronenstraße**
+- ➕ **Hirschstraße zw. Amalienstraße und Kaiserstraße**
+- ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 26.08.2026, 10:52 — 1 neu, 1 entfernt, 5 geändert (gesamt 181)
 
 - ➕ **An der Tagweide zw. Printzsraße und Am Ruschgraben**
