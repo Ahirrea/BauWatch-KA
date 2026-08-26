@@ -2,6 +2,19 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 26.08.2026, 03:46 — 5 entfernt, 3 geändert (gesamt 181)
+
+- ➖ ~~Lessingstraße Einmündungsbereich Sophienstraße~~
+- ➖ ~~Friedensstraße zw. Mathystraße und Gartenstraße~~
+- ➖ ~~Friedenstraße zw. Mathystraße und Gartenstraße~~
+- ➖ ~~B10 zwischen Honsellstraße und Rheinbrücke~~
+- ➖ ~~K9657/ Südtangente Höhe Kühler Krug zw. AS 5 und AS 7~~
+- ✏️ Engesserstr. 2-6/8-12 und Lehmannstr. 1-3 — sonstige Angaben aktualisiert
+- ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — sonstige Angaben aktualisiert
+- ✏️ Ettlinger Allee zw. Zufahrt PSK (Höhe Nürnberger Straße) u. Ausfahrt PSK Anliegerfahrbahn Richtung Schwarzwaldkreuz — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 25.08.2026, 18:45 — 1 geändert (gesamt 186)
 
 - ✏️ Ludwig-Erhard-Allee 3 — Beginn: 2026-08-16 → 2026-08-24
