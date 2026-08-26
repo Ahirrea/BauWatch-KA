@@ -2,6 +2,15 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 26.08.2026, 18:52 — 1 neu, 3 geändert (gesamt 185)
+
+- ➕ **Lessingstraße zw. Sophienstraße u. Kaiserallee**
+- ✏️ Ernst-Frey-Str. 2 (BV Walter-Eucken-Schule) — Ende: 2026-08-31 → 2026-10-02
+- ✏️ B 3 Grötzinger Straße zw. Badener Straße u. Bergbahnstraße — Ende: 2026-09-07 → 2026-09-13
+- ✏️ Ostmarkstraße zwischen Westmarkstraße und Kärntner Straße — Ende: 2026-08-28 → 2026-10-30
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 26.08.2026, 15:05 — 3 neu, 1 geändert (gesamt 184)
 
 - ➕ **Kaiserstraße, Hirschstraße, Amalinestraße**
