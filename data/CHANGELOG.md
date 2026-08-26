@@ -2,6 +2,18 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 26.08.2026, 10:52 — 1 neu, 1 entfernt, 5 geändert (gesamt 181)
+
+- ➕ **An der Tagweide zw. Printzsraße und Am Ruschgraben**
+- ➖ ~~Ludwig-Erhard-Allee 3~~
+- ✏️ Engesserstr. 2-6/8-12 und Lehmannstr. 1-3 — sonstige Angaben aktualisiert
+- ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
+- ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — sonstige Angaben aktualisiert
+- ✏️ Gymnasiumstraße zw. Rittnertstraße und Turmbergstraße — Ende: 2026-08-28 → 2026-08-27
+- ✏️ Ettlinger Allee zw. Zufahrt PSK (Höhe Nürnberger Straße) u. Ausfahrt PSK Anliegerfahrbahn Richtung Schwarzwaldkreuz — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 26.08.2026, 03:46 — 5 entfernt, 3 geändert (gesamt 181)
 
 - ➖ ~~Lessingstraße Einmündungsbereich Sophienstraße~~
