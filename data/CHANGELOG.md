@@ -2,6 +2,17 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 27.08.2026, 10:50 — 6 geändert (gesamt 187)
+
+- ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — sonstige Angaben aktualisiert
+- ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
+- ✏️ Sophienstraße Kreuzung Reinhold-Frank-Straße — sonstige Angaben aktualisiert
+- ✏️ Kaiserstraße zw. Kreuzstraße und Kronenstraße — sonstige Angaben aktualisiert
+- ✏️ Ettlinger Allee zw. Zufahrt PSK (Höhe Nürnberger Straße) u. Ausfahrt PSK Anliegerfahrbahn Richtung Schwarzwaldkreuz — sonstige Angaben aktualisiert
+- ✏️ L623 zw. Wolfartsweier und Stupferich — Sperrgrad: teil → gering
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 27.08.2026, 01:15 — 3 neu, 1 entfernt (gesamt 187)
 
 - ➕ **Freydorfstraße zw. Moltkestraße und Damaschkestraße**
