@@ -2,6 +2,12 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 29.08.2026, 00:08 — 1 geändert (gesamt 187)
+
+- ✏️ Pfalzstraße, Kirschstraße, Hördtstraße, Krämerstraße, Langenackerstraße, Turnerstraße, — Sperrgrad: gering → teil
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 28.08.2026, 13:03 — 4 neu, 5 entfernt, 8 geändert (gesamt 187)
 
 - ➕ **Lessingstraße Einmündungsbereich Sophienstraße**
