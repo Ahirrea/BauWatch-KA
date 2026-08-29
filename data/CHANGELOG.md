@@ -2,6 +2,25 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 29.08.2026, 08:48 — 9 entfernt, 5 geändert (gesamt 178)
+
+- ➖ ~~Erzberger Straße zwischen Rhode-Island-Allee und Kanalweg~~
+- ➖ ~~Nancystraße zw. Zufahrt Reitinstitut und Kußmaulstraße~~
+- ➖ ~~An der Sandgrube, Am Zinken~~
+- ➖ ~~Akademiestraße zw. Hans-Thoma-Straße und Karlstraße~~
+- ➖ ~~Passagehof~~
+- ➖ ~~Rheinhafenstraße zw. B36/Eckenerstraße und Hopfenstraße~~
+- ➖ ~~Adenauerring, Moltkestraße, Reinhold-Frank-Straße~~
+- ➖ ~~Karl-Friedrich-Straße zw. Kriegsstraße und Rondellplatz~~
+- ➖ ~~B10 zwischen Honsellstraße und Rheinbrücke~~
+- ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
+- ✏️ K9659 Höhe DM — sonstige Angaben aktualisiert
+- ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
+- ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — sonstige Angaben aktualisiert
+- ✏️ Kaiserstraße zw. Kreuzstraße und Kronenstraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 29.08.2026, 00:08 — 1 geändert (gesamt 187)
 
 - ✏️ Pfalzstraße, Kirschstraße, Hördtstraße, Krämerstraße, Langenackerstraße, Turnerstraße, — Sperrgrad: gering → teil
