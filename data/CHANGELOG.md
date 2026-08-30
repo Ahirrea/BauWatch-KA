@@ -2,6 +2,30 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 31.08.2026, 00:37 — 10 neu, 3 entfernt, 6 geändert (gesamt 182)
+
+- ➕ **Hirschstraße zw. Vorholzstraße u. Südendstraße**
+- ➕ **Ellmendinger Straße im Einmündungsbereich zur Lissenstraße**
+- ➕ **Lärchenweg zw. Zehntwaldstraße und Donauschwabenstraße**
+- ➕ **Zweibrückener Straße zw. Rehbuckel und Ebersteinstraße**
+- ➕ **Moosalbstraße zw. Frauenalber Straße und Spessarter Straße**
+- ➕ **Eisenlohrstraße zw. Gustav-Heller-Platz und Hübschstraße**
+- ➕ **Elfmorgenbruch zw. Am Großmarkt und B10**
+- ➕ **Adlerstraße zw. Kaiserstraße und Zirkel**
+- ➕ **Rintheimer Hauptstraße von Jadstraße bis Mosbacherstraße**
+- ➕ **Bahnübergang Verlängerung Elbinger Straße**
+- ➖ ~~Wiesentalstraße zw. Gänsbergstraße und Neubergstraße~~
+- ➖ ~~Martin-Schongauer-Weg zw. Albrecht-Altdorf-Weg und Frans-Hals-Weg~~
+- ➖ ~~Lärchenweg zw. Zehntwaldstraße und Donauschwabenstraße~~
+- ✏️ Engesserstr. 2-6/8-12 und Lehmannstr. 1-3 — sonstige Angaben aktualisiert
+- ✏️ Reinhold-Frank-Straße zw. Viktoriastraße und Kriegstraße — sonstige Angaben aktualisiert
+- ✏️ Vorholzstraße zw. Karlstraße und Hirschstraße — sonstige Angaben aktualisiert
+- ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
+- ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — sonstige Angaben aktualisiert
+- ✏️ Lußstraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 30.08.2026, 07:01 — 1 neu, 4 entfernt, 7 geändert (gesamt 175)
 
 - ➕ **Essenweinstraße, Sternbergstraße,  Gerwigstraße, Veilchenstraße, Haizingerstraße**
