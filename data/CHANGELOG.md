@@ -2,6 +2,23 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 30.08.2026, 07:01 — 1 neu, 4 entfernt, 7 geändert (gesamt 175)
+
+- ➕ **Essenweinstraße, Sternbergstraße,  Gerwigstraße, Veilchenstraße, Haizingerstraße**
+- ➖ ~~Pfinztalstraße, Kanzlerstraße, Amalienbadstraße, Gritznerstraße~~
+- ➖ ~~K9659 zw. Durlacher Allee und Bahnhof Durlach~~
+- ➖ ~~Raiherwiesenstraße zw. Pfaffstraße und Bleichstraße~~
+- ➖ ~~K9659 Höhe DM~~
+- ✏️ Engesserstr. 2-6/8-12 und Lehmannstr. 1-3 — sonstige Angaben aktualisiert
+- ✏️ Lußstraße — sonstige Angaben aktualisiert
+- ✏️ B 3 Grötzinger Straße zw. Badener Straße u. Bergbahnstraße — sonstige Angaben aktualisiert
+- ✏️ Reinhold-Frank-Straße zw. Viktoriastraße und Kriegstraße — sonstige Angaben aktualisiert
+- ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
+- ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — sonstige Angaben aktualisiert
+- ✏️ Kaiserstraße zw. Kreuzstraße und Kronenstraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 29.08.2026, 15:46 — 6 geändert (gesamt 178)
 
 - ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
