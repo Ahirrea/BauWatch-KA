@@ -2,6 +2,30 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 01.09.2026, 01:42 — 7 neu, 10 entfernt, 2 geändert (gesamt 179)
+
+- ➕ **Stefan-Zweig-Straße zw. Alte Freidrichstraße und am Alten Bahnhof**
+- ➕ **Gut-Magnus-Straße, Wachhausstraße, Kieselweg,**
+- ➕ **Uhlandstraße Kreuzungsbereich Sophienstraße**
+- ➕ **Essostraße**
+- ➕ **Edgar von Gierke Straße, Siegfried-Kühn-Straße**
+- ➕ **Elfmorgenbruch zw. Am Großmarkt und B10**
+- ➕ **B36/ Michelinstraße Abfahrt zur Carl-Metz-Straße**
+- ➖ ~~Schopfheimer Straße zwischen Waldshuter Straße und Funkerstraße~~
+- ➖ ~~Wolfartsweierer Straße zw. Durlacher Allee und Frühlingstraße~~
+- ➖ ~~Breslauer Straße Wohnwege 64 A - I und 66 A -L~~
+- ➖ ~~Wilhelm-Tell-Str., Koelreuterstr, Robert-Blum-Str. Andreas-Hofer-Str., Zeppelinstr.~~
+- ➖ ~~Gebietsausbau Hauptbahnstraße, Raiherwiesenstraße, Bleichstraße, Schinnrainstraße~~
+- ➖ ~~Tulpenstraße zw. Göhrenstraße und Kleiststraße~~
+- ➖ ~~Silcherstr., Rabenweg, Buschwiesenweg~~
+- ➖ ~~Rastatter Straße 45+62, Tulpenstraße 1-4~~
+- ➖ ~~Gerwigstraße zw. Ostring und Käppelestraße~~
+- ➖ ~~Gerwigstraße zw. Käppelestraße und Ostring~~
+- ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
+- ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 31.08.2026, 18:04 — 1 neu, 1 entfernt, 9 geändert (gesamt 182)
 
 - ➕ **Durlacher Allee 26 - 30; Lachnerstr.  1 - 11; Degenfeldstraße; Buntestraße 2 - 18; Gottesauer Str. 27 - 39**
