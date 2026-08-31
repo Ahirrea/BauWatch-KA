@@ -2,6 +2,12 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 31.08.2026, 07:08 — 1 geändert (gesamt 182)
+
+- ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 31.08.2026, 00:37 — 10 neu, 3 entfernt, 6 geändert (gesamt 182)
 
 - ➕ **Hirschstraße zw. Vorholzstraße u. Südendstraße**
