@@ -2,6 +2,22 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 31.08.2026, 18:04 — 1 neu, 1 entfernt, 9 geändert (gesamt 182)
+
+- ➕ **Durlacher Allee 26 - 30; Lachnerstr.  1 - 11; Degenfeldstraße; Buntestraße 2 - 18; Gottesauer Str. 27 - 39**
+- ➖ ~~Elfmorgenbruch zw. Am Großmarkt und B10~~
+- ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — sonstige Angaben aktualisiert
+- ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
+- ✏️ Ellmendinger Straße im Einmündungsbereich zur Lissenstraße — Ende: 2027-04-18 → 2026-10-09
+- ✏️ Ostmarkstraße zwischen Westmarkstraße und Kärntner Straße — Beginn: 2026-08-27 → 2026-08-30
+- ✏️ Vorholzstraße zw. Karlstraße und Hirschstraße — sonstige Angaben aktualisiert
+- ✏️ Ritterstraße zw. Am Schlossplatz und Bankhof — Info geändert
+- ✏️ Haid-und-Neu-Straße zw. Hirtenweg und Karlsruher Straße — Ende: 2026-10-18 → 2026-10-25
+- ✏️ Pfarrstraße, Waidweg, Malvenstr., Goldgrundstr., Hammweg, Schattenstr — Sperrgrad: gering → teil
+- ✏️ Ettlinger Allee zw. Zufahrt PSK (Höhe Nürnberger Straße) u. Ausfahrt PSK Anliegerfahrbahn Richtung Schwarzwaldkreuz — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 31.08.2026, 07:08 — 1 geändert (gesamt 182)
 
 - ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — sonstige Angaben aktualisiert
