@@ -2,6 +2,12 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 02.09.2026, 00:30 — 1 geändert (gesamt 179)
+
+- ✏️ Vorholzstraße zw. Karlstraße und Hirschstraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 01.09.2026, 21:19 — 1 neu, 2 entfernt, 6 geändert (gesamt 179)
 
 - ➕ **Adlerstraße zw. Zähringerstraße und Kasierstraße**
