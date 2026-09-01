@@ -2,6 +2,20 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 01.09.2026, 21:19 — 1 neu, 2 entfernt, 6 geändert (gesamt 179)
+
+- ➕ **Adlerstraße zw. Zähringerstraße und Kasierstraße**
+- ➖ ~~Kaiserstraße zw. Ritterstraße und Herrenstraße~~
+- ➖ ~~Kaiserstraße zw. Kronenstraße und Adlerstraße~~
+- ✏️ Vorholzstraße zw. Karlstraße und Hirschstraße — sonstige Angaben aktualisiert
+- ✏️ Kaiserstraße zw. Kronenstraße und adlerstraße — Ende: 2026-11-27 → 2026-11-13; Info geändert
+- ✏️ Böhmerwaldstraße zw. Ludwigsburger Straße und Mecklenburger Straße/Thüringer Straße zw. Esslinger Srraße und Egerlandstraße — Ende: 2026-09-01 → 2026-09-08
+- ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — sonstige Angaben aktualisiert
+- ✏️ Kaiserstraße zw. Kreuzstraße und Kronenstraße — Info geändert
+- ✏️ Kaiserstraße zw. Herrenstraße und Ritterstraße — Ende: 2026-10-19 → 2026-10-21; Bezeichnung geändert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 01.09.2026, 15:24 — 1 neu, 4 geändert (gesamt 180)
 
 - ➕ **Gänsbergstraße zw. Werrenstraße und Wiesentalstraße**
