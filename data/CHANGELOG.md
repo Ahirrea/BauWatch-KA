@@ -2,6 +2,13 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 01.09.2026, 06:44 — 2 geändert (gesamt 179)
+
+- ✏️ Vorholzstraße zw. Karlstraße und Hirschstraße — sonstige Angaben aktualisiert
+- ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 01.09.2026, 01:42 — 7 neu, 10 entfernt, 2 geändert (gesamt 179)
 
 - ➕ **Stefan-Zweig-Straße zw. Alte Freidrichstraße und am Alten Bahnhof**
