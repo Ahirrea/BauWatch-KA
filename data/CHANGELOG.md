@@ -2,6 +2,16 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 01.09.2026, 15:24 — 1 neu, 4 geändert (gesamt 180)
+
+- ➕ **Gänsbergstraße zw. Werrenstraße und Wiesentalstraße**
+- ✏️ Pfinztalstraße zw. Rappenstraße u. Rollerstraße sowie Zunftstraße ab Spitalstraße bis Amthausstraße Höhe Am Zwinger — Ende: 2026-09-04 → 2026-09-11
+- ✏️ B 3 Grötzinger Straße zw. Badener Straße u. Bergbahnstraße — Ende: 2026-09-13 → 2026-09-19
+- ✏️ Vorholzstraße zw. Karlstraße und Hirschstraße — sonstige Angaben aktualisiert
+- ✏️ Kaiserstraße zw. Kreuzstraße und Kronenstraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 01.09.2026, 06:44 — 2 geändert (gesamt 179)
 
 - ✏️ Vorholzstraße zw. Karlstraße und Hirschstraße — sonstige Angaben aktualisiert
