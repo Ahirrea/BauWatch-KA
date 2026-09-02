@@ -2,6 +2,15 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 02.09.2026, 14:42 — 1 neu, 3 geändert (gesamt 182)
+
+- ➕ **Wolfartsweierer Straße zw. Durlacher Allee und Frühlingstraße und Sommerstraße zw. Frühlingstraße und Gottesauer Straße**
+- ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — Ende: 2028-05-31 → 2027-01-31
+- ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
+- ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 02.09.2026, 06:06 — 3 neu, 1 entfernt, 4 geändert (gesamt 181)
 
 - ➕ **Böhmerwaldstraße zw. Mecklenburger Straße und Ludwigsburger Straße / Thüringer Straße zw. Egerlandstraße und Esslinger Srraße**
