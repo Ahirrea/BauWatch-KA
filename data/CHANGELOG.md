@@ -2,6 +2,14 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 02.09.2026, 21:19 — 1 neu, 2 geändert (gesamt 183)
+
+- ➕ **Yorckstraße zw. Wichernstraße u. Yorckplatz**
+- ✏️ B 3 Grötzinger Straße zw. Badener Straße u. Bergbahnstraße — sonstige Angaben aktualisiert
+- ✏️ Bahnübergang Verlängerung Elbinger Straße — Beginn: 2026-08-30 → 2026-09-01
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 02.09.2026, 14:42 — 1 neu, 3 geändert (gesamt 182)
 
 - ➕ **Wolfartsweierer Straße zw. Durlacher Allee und Frühlingstraße und Sommerstraße zw. Frühlingstraße und Gottesauer Straße**
