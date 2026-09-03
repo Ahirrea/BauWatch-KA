@@ -2,6 +2,14 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 03.09.2026, 06:04 — 1 neu, 2 entfernt (gesamt 182)
+
+- ➕ **Markgrafenstraße zw. Karl-Friedrich-Straße und Kreuzstraße**
+- ➖ ~~B36 zw. Siemensallee und Sudetenstraße~~
+- ➖ ~~Beunstraße Nr. 59 - 60~~
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 02.09.2026, 21:19 — 1 neu, 2 geändert (gesamt 183)
 
 - ➕ **Yorckstraße zw. Wichernstraße u. Yorckplatz**
