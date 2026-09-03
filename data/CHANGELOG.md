@@ -2,6 +2,19 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 03.09.2026, 14:45 — 1 neu, 4 entfernt, 3 geändert (gesamt 179)
+
+- ➕ **Waldenburger Straße bis Ende Hirschberger Straße**
+- ➖ ~~L605 zw. Linkenheimer Landstraße und B36~~
+- ➖ ~~Hirschberger Straße~~
+- ➖ ~~Edgar von Gierke Straße, Siegfried-Kühn-Straße~~
+- ➖ ~~Stefan-Zweig-Straße zw. Alte Freidrichstraße und am Alten Bahnhof~~
+- ✏️ B 3 Grötzinger Straße zw. Badener Straße u. Bergbahnstraße — sonstige Angaben aktualisiert
+- ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — sonstige Angaben aktualisiert
+- ✏️ Bahnübergang Verlängerung Elbinger Straße — Ende: 2026-09-19 → 2026-09-18
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 03.09.2026, 06:04 — 1 neu, 2 entfernt (gesamt 182)
 
 - ➕ **Markgrafenstraße zw. Karl-Friedrich-Straße und Kreuzstraße**
