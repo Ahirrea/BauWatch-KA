@@ -2,6 +2,12 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 04.09.2026, 20:56 — 1 geändert (gesamt 180)
+
+- ✏️ Auf den Lohn, Elmmendinger Straße, Ispringer Straße, Lissenstraße — Sperrgrad: teil → gering; Ende: 2026-09-04 → 2026-09-09
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 04.09.2026, 14:39 — 2 neu, 1 entfernt, 7 geändert (gesamt 180)
 
 - ➕ **Sonntagstraße zw. Jollystraße und Mathystraße**
