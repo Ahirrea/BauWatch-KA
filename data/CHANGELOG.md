@@ -2,6 +2,21 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 04.09.2026, 14:39 — 2 neu, 1 entfernt, 7 geändert (gesamt 180)
+
+- ➕ **Sonntagstraße zw. Jollystraße und Mathystraße**
+- ➕ **Am Stephanienbad Gleisüberfahrt zw. Albtalbahnhof und Breite Straße**
+- ➖ ~~Sonntagstraße zw. Jollystraße und Mathystraße~~
+- ✏️ Hildebrandstr./Oberwaldstr./Reichenbachstr. — Sperrgrad: gering → teil
+- ✏️ Pfinztalstraße zw. Rappenstraße u. Rollerstraße sowie Zunftstraße ab Spitalstraße bis Amthausstraße Höhe Am Zwinger — Ende: 2026-09-11 → 2026-09-12
+- ✏️ Hirschstraße zw. Amalienstraße und Kriegsstraße — Ende: 2026-09-05 → 2026-10-16
+- ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — sonstige Angaben aktualisiert
+- ✏️ Werderstraße zw. Marienstraße und Rüppurrer Straße — Ende: 2026-09-11 → 2026-09-30; Bezeichnung geändert; Info geändert
+- ✏️ Haid-und-Neu-Straße zw. Hirtenweg und Karlsruher Straße — sonstige Angaben aktualisiert
+- ✏️ Hirschstraße zw. Amalienstraße und Kaiserstraße — Ende: 2026-09-05 → 2026-10-09
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 04.09.2026, 06:08 — 2 neu, 2 entfernt, 1 geändert (gesamt 179)
 
 - ➕ **Mathystraße zw. Gleisübergang Sonntagstraße Höhe Friedenstraße und Karlstraße**
