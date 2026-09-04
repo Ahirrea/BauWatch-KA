@@ -2,6 +2,16 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 04.09.2026, 06:08 — 2 neu, 2 entfernt, 1 geändert (gesamt 179)
+
+- ➕ **Mathystraße zw. Gleisübergang Sonntagstraße Höhe Friedenstraße und Karlstraße**
+- ➕ **Wielandtstraße zw. Rüppurrer Straße und Elisabeth-Großwendt-Straße**
+- ➖ ~~Elfmorgenbruch zw. Am Großmarkt und B10~~
+- ➖ ~~Markgrafenstraße zw. Karl-Friedrich-Straße und Kreuzstraße~~
+- ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 03.09.2026, 14:45 — 1 neu, 4 entfernt, 3 geändert (gesamt 179)
 
 - ➕ **Waldenburger Straße bis Ende Hirschberger Straße**
