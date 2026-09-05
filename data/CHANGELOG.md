@@ -2,6 +2,28 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 05.09.2026, 06:04 — 3 neu, 11 entfernt, 3 geändert (gesamt 172)
+
+- ➕ **B36/ Michelinstraße AS7/ Auffahrt zur B10/ Südtangente**
+- ➕ **B10/ Südtangente zw. AS7 und AS6**
+- ➕ **Schlössleweg, Badener Straße, Lußstraße**
+- ➖ ~~Weiherfeld Gebietsausbau~~
+- ➖ ~~Bonner Straße zw. Siemensallee und Bonner Platz~~
+- ➖ ~~Killisfeldstr./Bleichstr./Schinnrainstr.~~
+- ➖ ~~Rüppurrer Straße 104 zw. Tivoli u. Marienstraße~~
+- ➖ ~~Ritterstraße zw. Am Schlossplatz und Bankhof~~
+- ➖ ~~Zentralhof~~
+- ➖ ~~Luise-Rigger-Straße zw. Clara-Immerwahr-Haber-Platz und Hedwig-Kettler-Straße~~
+- ➖ ~~Weltzienstraße zw. Kriegstraße und Gustav-Heller-Platz~~
+- ➖ ~~Stuttgarter Straße zw. Luisenstraße und Sybelstraße~~
+- ➖ ~~Lußstraße~~
+- ➖ ~~Wielandtstraße zw. Rüppurrer Straße und Elisabeth-Großwendt-Straße~~
+- ✏️ Engesserstr. 2-6/8-12 und Lehmannstr. 1-3 — sonstige Angaben aktualisiert
+- ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
+- ✏️ Haid-und-Neu-Straße zw. Hirtenweg und Karlsruher Straße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 04.09.2026, 20:56 — 1 geändert (gesamt 180)
 
 - ✏️ Auf den Lohn, Elmmendinger Straße, Ispringer Straße, Lissenstraße — Sperrgrad: teil → gering; Ende: 2026-09-04 → 2026-09-09
