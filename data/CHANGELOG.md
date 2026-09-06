@@ -2,6 +2,18 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 06.09.2026, 06:12 — 6 entfernt, 1 geändert (gesamt 166)
+
+- ➖ ~~Westmarkstr./Grenzstr./Brühlstr~~
+- ➖ ~~B36/ Michelinstraße AS7/ Auffahrt zur B10/ Südtangente~~
+- ➖ ~~B10/ Südtangente zw. AS7 und AS6~~
+- ➖ ~~Hirschstraße zw. Amalienstraße und Kaiserstraße~~
+- ➖ ~~L623 zw. Wolfartsweier und Stupferich~~
+- ➖ ~~Mathystraße zw. Gleisübergang Sonntagstraße Höhe Friedenstraße und Karlstraße~~
+- ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 05.09.2026, 06:04 — 3 neu, 11 entfernt, 3 geändert (gesamt 172)
 
 - ➕ **B36/ Michelinstraße AS7/ Auffahrt zur B10/ Südtangente**
