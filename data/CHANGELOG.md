@@ -2,6 +2,29 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 07.09.2026, 06:11 — 14 neu, 2 entfernt, 2 geändert (gesamt 178)
+
+- ➕ **B 3 Badener Straße zw. Schlössleweg u. Rittnertstraße**
+- ➕ **Pfinztalstraße zw. Badener Straße u. Eichelgasse**
+- ➕ **Wilferdinger Str, Ispringer Str., Ellmendinger Str, Auf den Lohn**
+- ➕ **Vogelsang**
+- ➕ **Rittnerstraße zw. Erbprinzenstraße und Ständehausstraße**
+- ➕ **Nürnberger Straße zw. Rechts der Alb und Sperberweg**
+- ➕ **Sperberweg zw. Nürnberger Straße und Maria-Matheis-Straße**
+- ➕ **Belfortstraße zw. Reinhold-Frank-Straße und Leopoldstraße**
+- ➕ **B 36 Neureuter Straße zw. Rheinstraße und Siemensallee**
+- ➕ **Rintheiemr Hauptstraße von Mosbacherstraße bis Drosselsangweg**
+- ➕ **Kirchfeldstraße zw. Bärenweg und Mitteltorstraße**
+- ➕ **Grenzstraße zw. Westmarkstraße und Kärtner Straße, Leußlerstraße, Westmarkstraße zw. Grenzstraße und Stegwiesenstraße**
+- ➕ **Grötzinger Straße zw. Gymnasiumstraße und Neuensteinstraße**
+- ➕ **Wattkopfstraße zw. Bernsteinstraße und Hellbergstraße und Bernsteinstraße zw. Wattkopfstraße und Kreuzelbergstraße**
+- ➖ ~~Gottesauer Straße, Buntestraße, Lohfeldstraße, Sommerstraße, Wolfartsweierer Straße, Hennebergstraße, Am Schloss Gottersaue~~
+- ➖ ~~Gottesauer Straße/ Wolfartsweierer Straße~~
+- ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
+- ✏️ Reinhold-Frank-Straße zw. Viktoriastraße und Kriegstraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 07.09.2026, 00:03 — 3 geändert (gesamt 166)
 
 - ✏️ Engesserstr. 2-6/8-12 und Lehmannstr. 1-3 — sonstige Angaben aktualisiert
