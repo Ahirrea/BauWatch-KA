@@ -2,6 +2,18 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 08.09.2026, 00:43 — 5 neu, 2 geändert (gesamt 182)
+
+- ➕ **Badener Straße zw. Grötzinger Straße u. Hengstplatz**
+- ➕ **Killisfeldstraße Höhe Einmündung Im Blumenwinkel und Dietrichstraße**
+- ➕ **Yorckstraße zw. Kühler Krug und Yorckplatz**
+- ➕ **Stefan-Zweig-Straße zw. Alte Freidrichstraße und am Alten Bahnhof**
+- ➕ **Fuß- und Radwegverbingung Mastweidenweg**
+- ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — sonstige Angaben aktualisiert
+- ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 07.09.2026, 16:10 — 1 entfernt, 6 geändert (gesamt 177)
 
 - ➖ ~~Nürnberger Straße zw. Rechts der Alb und Sperberweg~~
