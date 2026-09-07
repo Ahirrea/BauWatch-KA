@@ -2,6 +2,18 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 07.09.2026, 16:10 — 1 entfernt, 6 geändert (gesamt 177)
+
+- ➖ ~~Nürnberger Straße zw. Rechts der Alb und Sperberweg~~
+- ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
+- ✏️ Auf den Lohn, Elmmendinger Straße, Ispringer Straße, Lissenstraße — Sperrgrad: gering → teil
+- ✏️ Gut-Magnus-Straße, Wachhausstraße, Kieselweg, — Sperrgrad: gering → teil
+- ✏️ Reinhold-Frank-Straße zw. Viktoriastraße und Kriegstraße — sonstige Angaben aktualisiert
+- ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — sonstige Angaben aktualisiert
+- ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 07.09.2026, 06:11 — 14 neu, 2 entfernt, 2 geändert (gesamt 178)
 
 - ➕ **B 3 Badener Straße zw. Schlössleweg u. Rittnertstraße**
