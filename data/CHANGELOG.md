@@ -2,6 +2,16 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 08.09.2026, 06:12 — 5 geändert (gesamt 182)
+
+- ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
+- ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
+- ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — sonstige Angaben aktualisiert
+- ✏️ Essostraße — sonstige Angaben aktualisiert
+- ✏️ Wattkopfstraße zw. Bernsteinstraße und Hellbergstraße und Bernsteinstraße zw. Wattkopfstraße und Kreuzelbergstraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 08.09.2026, 00:43 — 5 neu, 2 geändert (gesamt 182)
 
 - ➕ **Badener Straße zw. Grötzinger Straße u. Hengstplatz**
