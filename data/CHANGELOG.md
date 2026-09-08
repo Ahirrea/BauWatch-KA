@@ -2,6 +2,19 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 08.09.2026, 21:22 — 1 entfernt, 7 geändert (gesamt 183)
+
+- ➖ ~~Sperberweg zw. Nürnberger Straße und Maria-Matheis-Straße~~
+- ✏️ Engesserstr. 2-6/8-12 und Lehmannstr. 1-3 — sonstige Angaben aktualisiert
+- ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — sonstige Angaben aktualisiert
+- ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
+- ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
+- ✏️ Stefan-Zweig-Straße zw. Alte Freidrichstraße und am Alten Bahnhof — sonstige Angaben aktualisiert
+- ✏️ Vorholzstraße zw. Karlstraße und Hirschstraße — sonstige Angaben aktualisiert
+- ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 08.09.2026, 14:48 — 4 neu, 2 entfernt, 12 geändert (gesamt 184)
 
 - ➕ **Johann-Strauß-Str./Hans-Pfitzner-Str./Dornwaldstr.**
