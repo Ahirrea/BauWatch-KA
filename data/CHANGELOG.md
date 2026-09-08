@@ -2,6 +2,29 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 08.09.2026, 14:48 — 4 neu, 2 entfernt, 12 geändert (gesamt 184)
+
+- ➕ **Johann-Strauß-Str./Hans-Pfitzner-Str./Dornwaldstr.**
+- ➕ **Raiherwiesenstraße zw. Schinnrainstraße und Bleichstraße**
+- ➕ **Raiherwiesenstraße zw. Pfaffstraße und Bleichstraße**
+- ➕ **Weingärtensiedlung**
+- ➖ ~~Karlstraße zw. Erbprinzenstraße u. Kaiserstraße~~
+- ➖ ~~Am Stephanienbad Gleisüberfahrt zw. Albtalbahnhof und Breite Straße~~
+- ✏️ Vorholzstraße zw. Karlstraße und Hirschstraße — sonstige Angaben aktualisiert
+- ✏️ Engesserstr. 2-6/8-12 und Lehmannstr. 1-3 — sonstige Angaben aktualisiert
+- ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — sonstige Angaben aktualisiert
+- ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
+- ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
+- ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
+- ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — sonstige Angaben aktualisiert
+- ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
+- ✏️ Pforzheimer Straße - Waldshuter Straße - Turmbergbad - Campingplatz Durlach - Bundestraßenkreuz B3 / B10 — Beginn: 2026-08-07 → 2026-09-07; Ende: 2026-09-18 → 2026-09-17; Info geändert
+- ✏️ Essostraße — sonstige Angaben aktualisiert
+- ✏️ Wattkopfstraße zw. Bernsteinstraße und Hellbergstraße und Bernsteinstraße zw. Wattkopfstraße und Kreuzelbergstraße — sonstige Angaben aktualisiert
+- ✏️ Gartenstraße zw. Brauerstraße und Einmündung Jollystraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 08.09.2026, 06:12 — 5 geändert (gesamt 182)
 
 - ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
