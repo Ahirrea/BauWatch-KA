@@ -2,6 +2,22 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 09.09.2026, 14:52 — 4 neu, 3 entfernt, 4 geändert (gesamt 185)
+
+- ➕ **Ettlinger Allee, Brücke über die DB-Gleisanlagen am Schwarzwaldkreuz Fahrtrichtung Zentrum**
+- ➕ **Mathystraße zw. Gleisübergang Sonntagstraße Höhe Friedenstraße und Karlstraße**
+- ➕ **L623/ Talstraße zw. Im Brunnenfeld und Henri-Arnaud-Straße**
+- ➕ **Karoline-Luise-Tunnel zw. Ostportal und Hirschstraße**
+- ➖ ~~Hirschstraße zw. Vorholzstraße u. Südendstraße~~
+- ➖ ~~L6023/ Talstraße zw. Im Brunnenfeld und Henri-Arnaud-Straße~~
+- ➖ ~~Vorholzstraße zw. Karlstraße und Hirschstraße~~
+- ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — sonstige Angaben aktualisiert
+- ✏️ Kreuzungsbereich Hirsch- / Vorholzstraße — Ende: 2026-09-12 → 2026-09-20; Info geändert
+- ✏️ B36/ Neureuter Straße zw. Boschstraße und Siemensallee — sonstige Angaben aktualisiert
+- ✏️ Südtangente zw. AS11 und AS2 — Info geändert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 09.09.2026, 06:19 — 7 neu, 6 entfernt, 2 geändert (gesamt 184)
 
 - ➕ **Glogauer Straße zw. Beuthener Straße und Lauenburger Straße**
