@@ -2,6 +2,16 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 10.09.2026, 00:25 — 5 geändert (gesamt 185)
+
+- ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
+- ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
+- ✏️ Rußweg zw. Langenbruchweg und Mastweidenweg — Ende: 2026-10-19 → 2026-10-30
+- ✏️ Ettlinger Allee, Brücke über die DB-Gleisanlagen am Schwarzwaldkreuz Fahrtrichtung Zentrum — Ende: 2026-09-11 → 2026-09-13
+- ✏️ B36/ Neureuter Straße zw. Boschstraße und Siemensallee — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 09.09.2026, 14:52 — 4 neu, 3 entfernt, 4 geändert (gesamt 185)
 
 - ➕ **Ettlinger Allee, Brücke über die DB-Gleisanlagen am Schwarzwaldkreuz Fahrtrichtung Zentrum**
