@@ -2,6 +2,26 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 09.09.2026, 06:19 — 7 neu, 6 entfernt, 2 geändert (gesamt 184)
+
+- ➕ **Glogauer Straße zw. Beuthener Straße und Lauenburger Straße**
+- ➕ **Glogauer Straße zw. Beuthener Straße und Kösliner Straße**
+- ➕ **Neureuter Straße zw. Boschstraße und Siemensallee**
+- ➕ **B36/ Neureuter Straße zw. Boschstraße und Siemensallee**
+- ➕ **Ellmendinger Str., Ostmarkstr., Im Säuterich**
+- ➕ **Südtangente zw. AS11 und AS2**
+- ➕ **Schwarzwaldstraße, Ettlinger Straße**
+- ➖ ~~Böhmerwaldstraße zw. Ludwigsburger Straße und Mecklenburger Straße/Thüringer Straße zw. Esslinger Srraße und Egerlandstraße~~
+- ➖ ~~Stefan-Zweig-Straße zw. Alte Freidrichstraße und am Alten Bahnhof~~
+- ➖ ~~Rittnerstraße zw. Erbprinzenstraße und Ständehausstraße~~
+- ➖ ~~Ettlinger Allee, Brücke über die DB-Gleisanlagen am Schwarzwaldkreuz Fahrtrichtung Zentrum~~
+- ➖ ~~Yorckstraße zw. Kühler Krug und Yorckplatz~~
+- ➖ ~~Neisser Straße zw. Glogauer Straße und Schneidemühler Straße~~
+- ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — sonstige Angaben aktualisiert
+- ✏️ Vorholzstraße zw. Karlstraße und Hirschstraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 08.09.2026, 21:22 — 1 entfernt, 7 geändert (gesamt 183)
 
 - ➖ ~~Sperberweg zw. Nürnberger Straße und Maria-Matheis-Straße~~
