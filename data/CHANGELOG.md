@@ -2,6 +2,21 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 10.09.2026, 06:16 — 9 entfernt, 1 geändert (gesamt 176)
+
+- ➖ ~~Auf den Lohn, Elmmendinger Straße, Ispringer Straße, Lissenstraße~~
+- ➖ ~~Weinweg zw. Rintheimer Haupstraße und Koyweg~~
+- ➖ ~~Johann-Strauß-Straße zw. Am dm-Platz und Parkplatz Lorzingstraße/ Milliöeckerstraße~~
+- ➖ ~~Fuß- und Radwegverbingung Mastweidenweg~~
+- ➖ ~~Neureuter Straße zw. Boschstraße und Siemensallee~~
+- ➖ ~~B36/ Neureuter Straße zw. Boschstraße und Siemensallee~~
+- ➖ ~~Südtangente zw. AS11 und AS2~~
+- ➖ ~~Schwarzwaldstraße, Ettlinger Straße~~
+- ➖ ~~Karoline-Luise-Tunnel zw. Ostportal und Hirschstraße~~
+- ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 10.09.2026, 00:25 — 5 geändert (gesamt 185)
 
 - ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
