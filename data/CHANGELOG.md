@@ -2,6 +2,16 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 10.09.2026, 14:50 — 2 neu, 1 entfernt, 2 geändert (gesamt 177)
+
+- ➕ **Frühlingstraße, Lohfeldstraße**
+- ➕ **Haid- u. neu-Straße zw. Hirtenweg und Am Sportpark**
+- ➖ ~~Hermann-Billing-Straße zw. Ettlinger Straße u. Beiertheimer Allee (Zufahrt Landratsamt)~~
+- ✏️ Kriegsstraße zw. Leopoldstraße u. Lessingstraße, Reinhold-Frank-Straße zwischen Kriegstraße u. Viktoriastraße — Beginn: 2026-08-20 → 2026-08-23
+- ✏️ Böhmerwaldstraße zw. Mecklenburger Straße und Ludwigsburger Straße / Thüringer Straße zw. Egerlandstraße und Esslinger Srraße — Beginn: 2026-09-01 → 2026-09-09; Ende: 2026-09-19 → 2026-10-30
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 10.09.2026, 06:16 — 9 entfernt, 1 geändert (gesamt 176)
 
 - ➖ ~~Auf den Lohn, Elmmendinger Straße, Ispringer Straße, Lissenstraße~~
