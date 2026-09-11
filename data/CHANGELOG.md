@@ -2,6 +2,16 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 11.09.2026, 06:15 — 1 neu, 1 entfernt, 3 geändert (gesamt 177)
+
+- ➕ **Unterer Dammweg zw. B36 und in den Kuhwiesen**
+- ➖ ~~Mathystraße zw. Gleisübergang Sonntagstraße Höhe Friedenstraße und Karlstraße~~
+- ✏️ Engesserstr. 2-6/8-12 und Lehmannstr. 1-3 — sonstige Angaben aktualisiert
+- ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
+- ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 10.09.2026, 14:50 — 2 neu, 1 entfernt, 2 geändert (gesamt 177)
 
 - ➕ **Frühlingstraße, Lohfeldstraße**
