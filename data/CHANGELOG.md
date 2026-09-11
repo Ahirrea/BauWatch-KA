@@ -2,6 +2,14 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 11.09.2026, 14:45 — 3 geändert (gesamt 177)
+
+- ✏️ Kreuzungsbereich Hirsch- / Vorholzstraße — Ende: 2026-09-20 → 2026-09-19
+- ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
+- ✏️ Gebhardstraße zw. Barbarossaplatz und Welfenstraße — Ende: 2026-09-11 → 2026-10-02
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 11.09.2026, 06:15 — 1 neu, 1 entfernt, 3 geändert (gesamt 177)
 
 - ➕ **Unterer Dammweg zw. B36 und in den Kuhwiesen**
