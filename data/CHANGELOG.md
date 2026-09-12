@@ -2,6 +2,23 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 12.09.2026, 06:14 — 10 entfernt, 2 geändert (gesamt 167)
+
+- ➖ ~~Gebietsausbau Hildebrandstr./Ellmendinger Str./Grenzstr.~~
+- ➖ ~~Karlstraße, Kaiserstraße, Passagehof~~
+- ➖ ~~Essenweinstraße zw. Sternbergstraße und Humboldtstraße~~
+- ➖ ~~Killisfeldstraße Höhe Einmündung Im Blumenwinkel und Dietrichstraße~~
+- ➖ ~~Welschneureuter Straße. zw. Neureuter Hauptstraße. und Oberfeldstraße~~
+- ➖ ~~Unterer Dammweg zw. B36 und in den Kuhwiesen~~
+- ➖ ~~Auer Straße zw. Grenzstraße und Blattwiesenstraße~~
+- ➖ ~~Grötzinger Straße zw. Gymnasiumstraße und Neuensteinstraße~~
+- ➖ ~~Wattkopfstraße zw. Bernsteinstraße und Hellbergstraße und Bernsteinstraße zw. Wattkopfstraße und Kreuzelbergstraße~~
+- ➖ ~~Haid- u. neu-Straße zw. Hirtenweg und Am Sportpark~~
+- ✏️ Engesserstr. 2-6/8-12 und Lehmannstr. 1-3 — sonstige Angaben aktualisiert
+- ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 11.09.2026, 14:45 — 3 geändert (gesamt 177)
 
 - ✏️ Kreuzungsbereich Hirsch- / Vorholzstraße — Ende: 2026-09-20 → 2026-09-19
