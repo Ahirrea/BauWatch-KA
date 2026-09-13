@@ -2,6 +2,19 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 13.09.2026, 06:27 — 1 neu, 3 entfernt, 4 geändert (gesamt 165)
+
+- ➕ **Pfinztalstraße zw. Badener Straße u. Eichelgasse; Badener Straße zwischen Gymnasiumstraße und Pfintalstraße**
+- ➖ ~~Industriestraße, Hohleichweg, August-Ketterer-Straße, Waidweg, Babbergerstraße, Daxlander Straße, Hermann-Schneider-Allee~~
+- ➖ ~~Pfinztalstraße zw. Rappenstraße u. Rollerstraße sowie Zunftstraße ab Spitalstraße bis Amthausstraße Höhe Am Zwinger~~
+- ➖ ~~Moosalbstraße zw. Frauenalber Straße und Spessarter Straße~~
+- ✏️ Engesserstr. 2-6/8-12 und Lehmannstr. 1-3 — sonstige Angaben aktualisiert
+- ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — sonstige Angaben aktualisiert
+- ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
+- ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 13.09.2026, 00:08 — 3 geändert (gesamt 167)
 
 - ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — sonstige Angaben aktualisiert
