@@ -2,6 +2,29 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 14.09.2026, 06:33 — 11 neu, 4 entfernt, 3 geändert (gesamt 172)
+
+- ➕ **Am Fasanengarten 2; Hansjakobstraße 1-14; Hölderlinstraße 1-5**
+- ➕ **Albert-Braun-Straße - Gebietsausbau**
+- ➕ **Herrmann-Billing-Straße zw. Ettlinger Straße und Ritterstraße**
+- ➕ **Hirschberger Straße**
+- ➕ **Gartenstraße zw. Brauerstraße u. Kriegstraße**
+- ➕ **Hauptbahnstraße unterhalb der Brücke/Überführung im Zuge der Durlacher Allee**
+- ➕ **Theodor-Heuss-Allee, Brücke über die L 560 Gustav-Heinemann-Allee**
+- ➕ **L 560 Gustav-Heinemann-Allee**
+- ➕ **Ludwig-Erhard-Allee zw. Hennebergstraße und Sommerstraße**
+- ➕ **Hölderlinstraße, Emil-Gött-Straße**
+- ➕ **Freydorfstraße zw. Moltke- u. Grenadierstraße**
+- ➖ ~~Gartenstraße zwischen Steinhäuserstraße und Weinbrennerplatz/Kriegstraße~~
+- ➖ ~~Gartenstraße zw. Steinhäuserstraße u. Weinbrennerplatz~~
+- ➖ ~~Waldenburger Straße bis Ende Hirschberger Straße~~
+- ➖ ~~Ettlinger Allee, Brücke über die DB-Gleisanlagen am Schwarzwaldkreuz Fahrtrichtung Zentrum~~
+- ✏️ Engesserstr. 2-6/8-12 und Lehmannstr. 1-3 — sonstige Angaben aktualisiert
+- ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
+- ✏️ Essostraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 13.09.2026, 06:27 — 1 neu, 3 entfernt, 4 geändert (gesamt 165)
 
 - ➕ **Pfinztalstraße zw. Badener Straße u. Eichelgasse; Badener Straße zwischen Gymnasiumstraße und Pfintalstraße**
