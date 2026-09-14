@@ -2,6 +2,25 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 14.09.2026, 22:15 — 2 neu, 2 entfernt, 10 geändert (gesamt 172)
+
+- ➕ **Neureuter Hauptstraße, Großschneiderweg, Welschneureuter Staße, Stefan-Zweig-Straße**
+- ➕ **Raiherwiesenstraße zw. Schinnrainstraße u. Bleichstraße**
+- ➖ ~~Gleiwitzerstraße zw. Liegnitzer Straße und Glogauer Straße~~
+- ➖ ~~Glogauer Straße zw. Beuthener Straße und Lauenburger Straße~~
+- ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
+- ✏️ Engesserstr. 2-6/8-12 und Lehmannstr. 1-3 — sonstige Angaben aktualisiert
+- ✏️ Albert-Braun-Straße - Gebietsausbau — Ende: 2027-07-30 → 2027-08-06
+- ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
+- ✏️ Reinhold-Frank-Straße zw. Viktoriastraße und Kriegstraße — sonstige Angaben aktualisiert
+- ✏️ Wilferdinger Str, Ispringer Str., Ellmendinger Str, Auf den Lohn — Ende: 2026-09-18 → 2026-10-02
+- ✏️ Weiherstraße zw. Basler-Tor-Straße und Brunnenhausstraße — Ende: 2026-09-16 → 2026-10-07
+- ✏️ L 560 Gustav-Heinemann-Allee — sonstige Angaben aktualisiert
+- ✏️ Essostraße — sonstige Angaben aktualisiert
+- ✏️ Rintheimer Hauptstraße von Mosbacherstraße bis Drosselsangweg — Bezeichnung geändert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 14.09.2026, 06:33 — 11 neu, 4 entfernt, 3 geändert (gesamt 172)
 
 - ➕ **Am Fasanengarten 2; Hansjakobstraße 1-14; Hölderlinstraße 1-5**
