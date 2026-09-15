@@ -2,6 +2,14 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 16.09.2026, 00:49 — 2 neu, 1 entfernt (gesamt 175)
+
+- ➕ **Zweibrückener Straße zw. Rehbuckel und Ebersteinstraße**
+- ➕ **B36/ Neureuter Straße zw. Siemensallee und Landauer Straße**
+- ➖ ~~Zweibrückener Straße zw. Rehbuckel und Ebersteinstraße~~
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 15.09.2026, 21:38 — 1 neu, 1 geändert (gesamt 174)
 
 - ➕ **Ettlinger Allee, Brücke über die DB-Gleisanlagen am Schwarzwaldkreuz Fahrtrichtung Zentrum**
