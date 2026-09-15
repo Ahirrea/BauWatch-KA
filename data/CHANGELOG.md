@@ -2,6 +2,22 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 15.09.2026, 06:33 — 4 neu, 2 entfernt, 5 geändert (gesamt 174)
+
+- ➕ **Sophienstraße Wender Höhe Uhlandstraße**
+- ➕ **Nürnberger Straße zw. Rechts der Alb und Sperberweg**
+- ➕ **Sonntagstraße Gleisüberfahrt Mathystraße**
+- ➕ **Ziegeleistraße zw. Weingartener Straße und Am Liepoldsacker**
+- ➖ ~~Uhlandstraße Kreuzungsbereich Sophienstraße~~
+- ➖ ~~Pfarrstraße, Waidweg, Malvenstr., Goldgrundstr., Hammweg, Schattenstr~~
+- ✏️ Engesserstr. 2-6/8-12 und Lehmannstr. 1-3 — sonstige Angaben aktualisiert
+- ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
+- ✏️ Reinhold-Frank-Straße zw. Viktoriastraße und Kriegstraße — sonstige Angaben aktualisiert
+- ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
+- ✏️ L 560 Gustav-Heinemann-Allee — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 14.09.2026, 22:15 — 2 neu, 2 entfernt, 10 geändert (gesamt 172)
 
 - ➕ **Neureuter Hauptstraße, Großschneiderweg, Welschneureuter Staße, Stefan-Zweig-Straße**
