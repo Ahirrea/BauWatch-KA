@@ -2,6 +2,14 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 15.09.2026, 15:23 — 1 entfernt, 2 geändert (gesamt 173)
+
+- ➖ ~~Ettlinger Allee zw. Zufahrt PSK (Höhe Nürnberger Straße) u. Ausfahrt PSK Anliegerfahrbahn Richtung Schwarzwaldkreuz~~
+- ✏️ Brauerstraße zw. Putlitzstraße u. Kriegstraße — Ende: 2026-10-11 → 2026-10-13
+- ✏️ Baumeisterstraße zw. Ettlinger Straße und Nowackanlage — Ende: 2026-09-25 → 2026-09-18
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 15.09.2026, 06:33 — 4 neu, 2 entfernt, 5 geändert (gesamt 174)
 
 - ➕ **Sophienstraße Wender Höhe Uhlandstraße**
