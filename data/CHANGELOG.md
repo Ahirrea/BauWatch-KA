@@ -2,6 +2,13 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 15.09.2026, 21:38 — 1 neu, 1 geändert (gesamt 174)
+
+- ➕ **Ettlinger Allee, Brücke über die DB-Gleisanlagen am Schwarzwaldkreuz Fahrtrichtung Zentrum**
+- ✏️ Lärchenweg zw. Zehntwaldstraße und Donauschwabenstraße — Ende: 2026-09-30 → 2026-10-16
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 15.09.2026, 15:23 — 1 entfernt, 2 geändert (gesamt 173)
 
 - ➖ ~~Ettlinger Allee zw. Zufahrt PSK (Höhe Nürnberger Straße) u. Ausfahrt PSK Anliegerfahrbahn Richtung Schwarzwaldkreuz~~
