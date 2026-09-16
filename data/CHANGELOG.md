@@ -2,6 +2,16 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 17.09.2026, 00:49 — 1 neu, 1 entfernt, 3 geändert (gesamt 175)
+
+- ➕ **Bahnhofstraße zw. Beiertheimer Allee und Gutschstraße**
+- ➖ ~~B36/ Neureuter Straße zw. Siemensallee und Landauer Straße~~
+- ✏️ Gut-Magnus-Straße, Wachhausstraße, Kieselweg, — sonstige Angaben aktualisiert
+- ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
+- ✏️ Ludwig-Erhard-Allee zw. Hennebergstraße und Sommerstraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 16.09.2026, 21:29 — 3 geändert (gesamt 175)
 
 - ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — sonstige Angaben aktualisiert
