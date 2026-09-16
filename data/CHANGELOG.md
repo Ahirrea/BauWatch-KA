@@ -2,6 +2,21 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 16.09.2026, 15:22 — 3 neu, 3 entfernt, 4 geändert (gesamt 175)
+
+- ➕ **Breslauer Straße Wohnwege 64 A - I und 66 A -L**
+- ➕ **Ettlinger Allee zw. Zufahrt PSK (Höhe Nürnberger Straße) u. Ausfahrt PSK Anliegerfahrbahn Richtung Schwarzwaldkreuz**
+- ➕ **Haid- u. neu-Straße zw. Hirtenweg und Am Sportpark**
+- ➖ ~~Am Fasanengarten 2; Hansjakobstraße 1-14; Hölderlinstraße 1-5~~
+- ➖ ~~Sophienstraße Wender Höhe Uhlandstraße~~
+- ➖ ~~Ettlinger Allee, Brücke über die DB-Gleisanlagen am Schwarzwaldkreuz Fahrtrichtung Zentrum~~
+- ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — sonstige Angaben aktualisiert
+- ✏️ Gut-Magnus-Straße, Wachhausstraße, Kieselweg, — sonstige Angaben aktualisiert
+- ✏️ Lessingstraße Einmündungsbereich Sophienstraße — Ende: 2026-09-19 → 2026-09-18
+- ✏️ B36/ Neureuter Straße zw. Siemensallee und Landauer Straße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 16.09.2026, 06:29 — 2 geändert (gesamt 175)
 
 - ✏️ Gut-Magnus-Straße, Wachhausstraße, Kieselweg, — sonstige Angaben aktualisiert
