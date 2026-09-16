@@ -2,6 +2,13 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 16.09.2026, 06:29 — 2 geändert (gesamt 175)
+
+- ✏️ Gut-Magnus-Straße, Wachhausstraße, Kieselweg, — sonstige Angaben aktualisiert
+- ✏️ B36/ Neureuter Straße zw. Siemensallee und Landauer Straße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 16.09.2026, 00:49 — 2 neu, 1 entfernt (gesamt 175)
 
 - ➕ **Zweibrückener Straße zw. Rehbuckel und Ebersteinstraße**
