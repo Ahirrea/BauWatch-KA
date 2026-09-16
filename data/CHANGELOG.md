@@ -2,6 +2,14 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 16.09.2026, 21:29 — 3 geändert (gesamt 175)
+
+- ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — sonstige Angaben aktualisiert
+- ✏️ Lessingstraße Einmündungsbereich Sophienstraße — Ende: 2026-09-18 → 2026-10-16
+- ✏️ B36/ Neureuter Straße zw. Siemensallee und Landauer Straße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 16.09.2026, 15:22 — 3 neu, 3 entfernt, 4 geändert (gesamt 175)
 
 - ➕ **Breslauer Straße Wohnwege 64 A - I und 66 A -L**
