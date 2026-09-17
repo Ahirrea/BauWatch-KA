@@ -2,6 +2,16 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 17.09.2026, 06:34 — 5 geändert (gesamt 175)
+
+- ✏️ Gut-Magnus-Straße, Wachhausstraße, Kieselweg, — sonstige Angaben aktualisiert
+- ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
+- ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
+- ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
+- ✏️ Ludwig-Erhard-Allee zw. Hennebergstraße und Sommerstraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 17.09.2026, 00:49 — 1 neu, 1 entfernt, 3 geändert (gesamt 175)
 
 - ➕ **Bahnhofstraße zw. Beiertheimer Allee und Gutschstraße**
