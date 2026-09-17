@@ -2,6 +2,15 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 17.09.2026, 21:40 — 1 neu, 3 geändert (gesamt 178)
+
+- ➕ **Martin-Schongauer-Weg zw. Albrecht-Altdorf-Weg und Frans-Hals-Weg**
+- ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
+- ✏️ B 3 Grötzinger Straße zw. Badener Straße u. Bergbahnstraße — sonstige Angaben aktualisiert
+- ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 17.09.2026, 15:18 — 2 neu, 5 geändert (gesamt 177)
 
 - ➕ **Pfinztalstraße zw. Rappenstraße u. Rollerstraße sowie Zunftstraße ab Spitalstraße bis Amthausstraße Höhe Am Zwinger**
