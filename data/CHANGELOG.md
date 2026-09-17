@@ -2,6 +2,18 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 17.09.2026, 15:18 — 2 neu, 5 geändert (gesamt 177)
+
+- ➕ **Pfinztalstraße zw. Rappenstraße u. Rollerstraße sowie Zunftstraße ab Spitalstraße bis Amthausstraße Höhe Am Zwinger**
+- ➕ **Zweibrückener Straße zw. Rehbuckel und Ebersteinstraße**
+- ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
+- ✏️ B 3 Grötzinger Straße zw. Badener Straße u. Bergbahnstraße — sonstige Angaben aktualisiert
+- ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
+- ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
+- ✏️ Ludwig-Erhard-Allee zw. Hennebergstraße und Sommerstraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 17.09.2026, 06:34 — 5 geändert (gesamt 175)
 
 - ✏️ Gut-Magnus-Straße, Wachhausstraße, Kieselweg, — sonstige Angaben aktualisiert
