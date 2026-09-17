@@ -2,6 +2,16 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 18.09.2026, 00:46 — 1 neu, 4 entfernt (gesamt 175)
+
+- ➕ **Gänsbergstraße zw. Werrenstraße und Wiesentalstraße**
+- ➖ ~~Pfinztalstraße zw. Rappenstraße u. Rollerstraße sowie Zunftstraße ab Spitalstraße bis Amthausstraße Höhe Am Zwinger~~
+- ➖ ~~Pforzheimer Straße - Waldshuter Straße - Turmbergbad - Campingplatz Durlach - Bundestraßenkreuz B3 / B10~~
+- ➖ ~~Haid- u. neu-Straße zw. Hirtenweg und Am Sportpark~~
+- ➖ ~~Bahnhofstraße zw. Beiertheimer Allee und Gutschstraße~~
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 17.09.2026, 21:40 — 1 neu, 3 geändert (gesamt 178)
 
 - ➕ **Martin-Schongauer-Weg zw. Albrecht-Altdorf-Weg und Frans-Hals-Weg**
