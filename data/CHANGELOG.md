@@ -2,6 +2,24 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 18.09.2026, 14:52 — 2 neu, 4 entfernt, 7 geändert (gesamt 173)
+
+- ➕ **Uhlandstraße zw. Gorthestraße und Sophienstraße**
+- ➕ **Battstraße, Göhrenstraße, Breisgaustraße, Ortehnaustraße**
+- ➖ ~~Badener Straße zw. Grötzinger Straße u. Hengstplatz~~
+- ➖ ~~Zweibrückener Straße zw. Rehbuckel und Ebersteinstraße~~
+- ➖ ~~Theodor-Heuss-Allee, Brücke über die L 560 Gustav-Heinemann-Allee~~
+- ➖ ~~L 560 Gustav-Heinemann-Allee~~
+- ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — sonstige Angaben aktualisiert
+- ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
+- ✏️ Kreuzungsbereich Hirsch- / Vorholzstraße — Ende: 2026-09-19 → 2026-09-20
+- ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
+- ✏️ Werthmannstraße zw. Pastor-Felke-Straße und Kloserweg — Ende: 2026-09-18 → 2026-10-09
+- ✏️ Belfortstraße zw. Reinhold-Frank-Straße und Leopoldstraße — Ende: 2026-10-16 → 2026-11-13
+- ✏️ Reinhold-Frank-Straße zwischen Belfortstraße und Kaiserallee — Ende: 2026-10-02 → 2026-11-13
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 18.09.2026, 00:46 — 1 neu, 4 entfernt (gesamt 175)
 
 - ➕ **Gänsbergstraße zw. Werrenstraße und Wiesentalstraße**
