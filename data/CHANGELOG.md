@@ -2,6 +2,27 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 19.09.2026, 06:16 — 3 neu, 10 entfernt, 3 geändert (gesamt 166)
+
+- ➕ **Amalienstraße Kreuzung Herrenstraße**
+- ➕ **Bahnübergang Verlängerung Kolberger Straße**
+- ➕ **Nowackanlage zw. Baumeisterstraße und Ettlinger Straße**
+- ➖ ~~Herrenstraße zw. Amalienstraße und Blumenstraße~~
+- ➖ ~~Nordbeckenstraße 17b, Im Schlehert 38~~
+- ➖ ~~Baumeisterstraße zw. Ettlinger Straße und Nowackanlage~~
+- ➖ ~~Gänsbergstraße zw. Werrenstraße und Wiesentalstraße~~
+- ➖ ~~Sonntagstraße zw. Jollystraße und Mathystraße~~
+- ➖ ~~Ludwig-Erhard-Allee zw. Hennebergstraße und Sommerstraße~~
+- ➖ ~~Bahnübergang Verlängerung Elbinger Straße~~
+- ➖ ~~Kirchfeldstraße zw. Bärenweg und Mitteltorstraße~~
+- ➖ ~~Ettlinger Allee zw. Zufahrt PSK (Höhe Nürnberger Straße) u. Ausfahrt PSK Anliegerfahrbahn Richtung Schwarzwaldkreuz~~
+- ➖ ~~Raiherwiesenstraße zw. Schinnrainstraße u. Bleichstraße~~
+- ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — sonstige Angaben aktualisiert
+- ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
+- ✏️ Essostraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 18.09.2026, 14:52 — 2 neu, 4 entfernt, 7 geändert (gesamt 173)
 
 - ➕ **Uhlandstraße zw. Gorthestraße und Sophienstraße**
