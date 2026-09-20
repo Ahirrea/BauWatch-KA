@@ -2,6 +2,17 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 20.09.2026, 06:35 — 3 entfernt, 3 geändert (gesamt 163)
+
+- ➖ ~~B 3 Grötzinger Straße zw. Badener Straße u. Bergbahnstraße~~
+- ➖ ~~Wendtstraße zw. Dragonerstraße und Ludwig-Marum-Straße~~
+- ➖ ~~Hauptbahnstraße unterhalb der Brücke/Überführung im Zuge der Durlacher Allee~~
+- ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
+- ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
+- ✏️ Essostraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 19.09.2026, 06:16 — 3 neu, 10 entfernt, 3 geändert (gesamt 166)
 
 - ➕ **Amalienstraße Kreuzung Herrenstraße**
