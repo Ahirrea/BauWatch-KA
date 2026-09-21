@@ -2,6 +2,14 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 21.09.2026, 22:21 — 3 geändert (gesamt 183)
+
+- ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
+- ✏️ Danziger Straße 18, Etttlinger Allee vor Am Rüppurrer Schloß 1 — sonstige Angaben aktualisiert
+- ✏️ Sophienstraße Kreuzung Reinhold-Frank-Straße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 21.09.2026, 17:01 — 7 neu, 1 entfernt, 7 geändert (gesamt 183)
 
 - ➕ **Herrenstraße zw. Amalienstraße und Blumenstraße**
