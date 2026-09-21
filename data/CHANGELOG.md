@@ -2,6 +2,26 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 21.09.2026, 17:01 — 7 neu, 1 entfernt, 7 geändert (gesamt 183)
+
+- ➕ **Herrenstraße zw. Amalienstraße und Blumenstraße**
+- ➕ **Wendtstraße zw. Dragonerstraße und Ludwig-Marum-Straße**
+- ➕ **Herweghstraße zw. Struvestraße und Reinmuthstraße und Lorscher Straße**
+- ➕ **Akademiestraße zw. Hans-Thoma-Straße und Karlstraße**
+- ➕ **Pforzheimer Straße - Waldshuter Straße - Turmbergbad - Campingplatz Durlach - Bundestraßenkreuz B3 / B10**
+- ➕ **Haid-und-Neu-Straße zw. Am Sportpark und Sinsheimer Straße**
+- ➕ **Battstraße, Göhrenstraße, Ortehnaustraße**
+- ➖ ~~Battstraße, Göhrenstraße, Breisgaustraße, Ortehnaustraße~~
+- ✏️ Gebietsausbau Hauptbahnstraße, Raiherwiesenstraße, Bleichstraße, Schinnrainstraße — Sperrgrad: gering → teil; Info geändert
+- ✏️ Sophienstraße Kreuzung Reinhold-Frank-Straße — sonstige Angaben aktualisiert
+- ✏️ Karlstraße zw. Kaiserstraße und Akademiestraße — Ende: 2026-10-16 → 2026-10-30
+- ✏️ Rheinhafenstraße zw. Daxlanderstraße und Südliche Uferstraße — sonstige Angaben aktualisiert
+- ✏️ Laubenweg zw. Siemensallee u. Kepplerstraße — Ende: 2026-10-02 → 2026-10-21
+- ✏️ Löätzener Straße zw. Glogauer Straße und Insterburger Straße — Ende: 2026-10-04 → 2026-10-01
+- ✏️ Geh- und Radweg entlang der VBK Gleistrasse zw. Schweidnitzerstraße bis Glogauer Straße — Sperrgrad: teil → voll; Ende: 2027-04-23 → 2026-11-06; Bezeichnung geändert; Info geändert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 21.09.2026, 06:33 — 18 neu, 4 entfernt, 3 geändert (gesamt 177)
 
 - ➕ **Hirschstraße zw. Vorholzstraße u. Südendstraße**
