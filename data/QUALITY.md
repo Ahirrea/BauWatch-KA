@@ -1,6 +1,6 @@
 # Datenqualitäts-Report
 
-_Automatisch beim Daten-Build erzeugt. Stand: 22.09.2026, 06:29._
+_Automatisch beim Daten-Build erzeugt. Stand: 22.09.2026, 15:18._
 
 ## Pipeline
 - Rohdaten: **839** Features
@@ -30,8 +30,8 @@ _Automatisch beim Daten-Build erzeugt. Stand: 22.09.2026, 06:29._
 - **unbekannte art-Kategorien:** keine (alle als Klartext erkannt)
 
 - **erkannte Sperrung-Werte → Ampel:**
-  - „mit Verkehrsbehinderung" (107×) → teil
-  - „mit Vollsperrung" (48×) → voll
+  - „mit Verkehrsbehinderung" (108×) → teil
+  - „mit Vollsperrung" (47×) → voll
   - „mit Sperrung in eine Fahrtrichtung" (16×) → teil
   - „keine Verkehrsbehinderung" (11×) → gering
 

@@ -2,6 +2,13 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 22.09.2026, 15:18 — 1 neu, 1 entfernt (gesamt 182)
+
+- ➕ **Koellestraße 10-26 und 13-27a**
+- ➖ ~~Pfinztalstraße zw. Badener Straße u. Eichelgasse; Badener Straße zwischen Karl-Weysser-Straße und Pfintalstraße~~
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 22.09.2026, 06:29 — 1 neu, 2 entfernt, 4 geändert (gesamt 182)
 
 - ➕ **Hardtstraße zw. Lameystraße und Am Entenfang**
