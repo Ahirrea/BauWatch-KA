@@ -2,6 +2,18 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 22.09.2026, 06:29 — 1 neu, 2 entfernt, 4 geändert (gesamt 182)
+
+- ➕ **Hardtstraße zw. Lameystraße und Am Entenfang**
+- ➖ ~~Pfinztalstraße zw. Badener Straße u. Eichelgasse~~
+- ➖ ~~Pfinztalstraße zw. Badener Straße u. Eichelgasse; Badener Straße zwischen Gymnasiumstraße und Pfintalstraße~~
+- ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — sonstige Angaben aktualisiert
+- ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
+- ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
+- ✏️ Danziger Straße 18, Etttlinger Allee vor Am Rüppurrer Schloß 1 — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 21.09.2026, 22:21 — 3 geändert (gesamt 183)
 
 - ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
