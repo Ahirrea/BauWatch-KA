@@ -2,6 +2,19 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 23.09.2026, 00:51 — 7 neu, 1 geändert (gesamt 189)
+
+- ➕ **Pfarrer-Blink-Straße zw. Untermühlstraße und Alte Karlsruher Straße**
+- ➕ **L623/ Am Wetterbach zw. Zur Ziegelhütte und Bachstraße**
+- ➕ **Schückstraße zw. Tullastraße und Gustav-Specht-Straße**
+- ➕ **Am Berg zw. Hohenwetterbacher Straße und Heidenheimer Straße**
+- ➕ **In den Weihergärten zw. Fröbelstraße und Eugen-Kleiber-Straße**
+- ➕ **L 605 zwischen Hermann-Veit-Straße und Höhe Großoberfeld/ Wilhelm-Leuschner-Straße**
+- ➕ **Südtangente zw. Fiduciastraße und Schwarzwaldkreuz inkl. der Auf- und Abfahrten**
+- ✏️ Essostraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 22.09.2026, 21:40 — 3 geändert (gesamt 182)
 
 - ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — sonstige Angaben aktualisiert
