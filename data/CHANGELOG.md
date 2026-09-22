@@ -2,6 +2,14 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 22.09.2026, 21:40 — 3 geändert (gesamt 182)
+
+- ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — sonstige Angaben aktualisiert
+- ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
+- ✏️ Danziger Straße 18, Etttlinger Allee vor Am Rüppurrer Schloß 1 — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 22.09.2026, 15:18 — 1 neu, 1 entfernt (gesamt 182)
 
 - ➕ **Koellestraße 10-26 und 13-27a**
