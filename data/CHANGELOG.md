@@ -2,6 +2,21 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 24.09.2026, 00:52 — 3 neu, 2 entfernt, 5 geändert (gesamt 190)
+
+- ➕ **Pfinztalstraße zw. Badener Straße u. Eichelgasse; Badener Straße zwischen Karl-Weysser-Straße und Pfintalstraße**
+- ➕ **Ritterstraße zw. Am Schlossplatz und Bankhof**
+- ➕ **Haid- u. Neu-Straße zw. Hirtenweg und Am Sportpark**
+- ➖ ~~Am Berg zw. Hohenwetterbacher Straße und Heidenheimer Straße~~
+- ➖ ~~In den Weihergärten zw. Fröbelstraße und Eugen-Kleiber-Straße~~
+- ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
+- ✏️ Breslauer Straße Wohnwege 64 A - I und 66 A -L — sonstige Angaben aktualisiert
+- ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
+- ✏️ Rheinhafenstraße zw. Daxlanderstraße und Südliche Uferstraße — sonstige Angaben aktualisiert
+- ✏️ Sophienstraße Kreuzung Reinhold-Frank-Straße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 23.09.2026, 21:36 — 4 geändert (gesamt 189)
 
 - ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
