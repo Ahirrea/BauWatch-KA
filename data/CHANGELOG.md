@@ -2,6 +2,21 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 24.09.2026, 15:28 — 4 neu, 2 entfernt, 4 geändert (gesamt 192)
+
+- ➕ **Pfinztalstraße zw. Marstallstaße und Karlsburgstraße**
+- ➕ **Ettlinger Allee zw. Zufahrt PSK (Höhe Nürnberger Straße) u. Ausfahrt PSK Anliegerfahrbahn Richtung Schwarzwaldkreuz**
+- ➕ **Schückstraße zw. Tullastraße und Gustav-Specht-Straße**
+- ➕ **Tullastraße Gleisüberfahrt Höhe Schückstraße**
+- ➖ ~~Schückstraße zw. Tullastraße und Gustav-Specht-Straße~~
+- ➖ ~~Danziger Straße 18, Etttlinger Allee vor Am Rüppurrer Schloß 1~~
+- ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
+- ✏️ Engesserstr. 2-6/8-12 und Lehmannstr. 1-3 — sonstige Angaben aktualisiert
+- ✏️ Pfinztalstraße zw. Badener Straße u. Jägerstraße — sonstige Angaben aktualisiert
+- ✏️ Essostraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 24.09.2026, 06:23 — 5 geändert (gesamt 190)
 
 - ✏️ Engesserstr. 2-6/8-12 und Lehmannstr. 1-3 — sonstige Angaben aktualisiert
