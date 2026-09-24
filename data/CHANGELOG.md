@@ -2,6 +2,16 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 24.09.2026, 06:23 — 5 geändert (gesamt 190)
+
+- ✏️ Engesserstr. 2-6/8-12 und Lehmannstr. 1-3 — sonstige Angaben aktualisiert
+- ✏️ Breslauer Straße Wohnwege 64 A - I und 66 A -L — sonstige Angaben aktualisiert
+- ✏️ Essostraße — sonstige Angaben aktualisiert
+- ✏️ Sophienstraße Kreuzung Reinhold-Frank-Straße — sonstige Angaben aktualisiert
+- ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 24.09.2026, 00:52 — 3 neu, 2 entfernt, 5 geändert (gesamt 190)
 
 - ➕ **Pfinztalstraße zw. Badener Straße u. Eichelgasse; Badener Straße zwischen Karl-Weysser-Straße und Pfintalstraße**
