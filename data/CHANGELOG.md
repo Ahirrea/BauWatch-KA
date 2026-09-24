@@ -2,6 +2,18 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 25.09.2026, 01:08 — 3 neu, 2 entfernt, 2 geändert (gesamt 193)
+
+- ➕ **Südtangente zw. AS3 und AS4**
+- ➕ **Pfinzstraße zw. Pforzheiemr Straße und Durlacher Allee**
+- ➕ **B36/ Neureuter Straße Höhe Gablonzer Straße**
+- ➖ ~~Ettlinger Allee zw. Zufahrt PSK (Höhe Nürnberger Straße) u. Ausfahrt PSK Anliegerfahrbahn Richtung Schwarzwaldkreuz~~
+- ➖ ~~Haid- u. Neu-Straße zw. Hirtenweg und Am Sportpark~~
+- ✏️ Sophienstraße Kreuzung Reinhold-Frank-Straße — sonstige Angaben aktualisiert
+- ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 24.09.2026, 15:28 — 4 neu, 2 entfernt, 4 geändert (gesamt 192)
 
 - ➕ **Pfinztalstraße zw. Marstallstaße und Karlsburgstraße**
