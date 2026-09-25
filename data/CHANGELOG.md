@@ -2,6 +2,25 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 26.09.2026, 01:14 — 1 neu, 11 entfernt, 2 geändert (gesamt 183)
+
+- ➕ **Dea-Scholven-Brücke**
+- ➖ ~~Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße~~
+- ➖ ~~Litzenhardtstraße zw. Martinstraße u. Neue-Anlage-Straße~~
+- ➖ ~~Südtangente zw. AS3 und AS4~~
+- ➖ ~~Donauschwabenstrße zw. Föhrenweg und Kiefernweg~~
+- ➖ ~~B 36 Neureuter Straße zw. Rheinstraße und Siemensallee~~
+- ➖ ~~Ziegeleistraße zw. Weingartener Straße und Am Liepoldsacker~~
+- ➖ ~~Pfinzstraße zw. Pforzheiemr Straße und Durlacher Allee~~
+- ➖ ~~Rintheimer Hauptstraße von Jadstraße bis Mosbacherstraße~~
+- ➖ ~~Frühlingstraße, Lohfeldstraße~~
+- ➖ ~~L 605 zwischen Hermann-Veit-Straße und Höhe Großoberfeld/ Wilhelm-Leuschner-Straße~~
+- ➖ ~~Südtangente zw. Fiduciastraße und Schwarzwaldkreuz inkl. der Auf- und Abfahrten~~
+- ✏️ Breslauer Straße Wohnwege 64 A - I und 66 A -L — sonstige Angaben aktualisiert
+- ✏️ Sophienstraße Kreuzung Reinhold-Frank-Straße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 25.09.2026, 06:34 — 1 geändert (gesamt 193)
 
 - ✏️ Breslauer Straße Wohnwege 64 A - I und 66 A -L — sonstige Angaben aktualisiert
