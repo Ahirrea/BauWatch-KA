@@ -2,6 +2,12 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 25.09.2026, 06:34 — 1 geändert (gesamt 193)
+
+- ✏️ Breslauer Straße Wohnwege 64 A - I und 66 A -L — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 25.09.2026, 01:08 — 3 neu, 2 entfernt, 2 geändert (gesamt 193)
 
 - ➕ **Südtangente zw. AS3 und AS4**
