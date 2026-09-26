@@ -2,6 +2,13 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 27.09.2026, 00:37 — 2 entfernt (gesamt 181)
+
+- ➖ ~~Bahnübergang Verlängerung Kolberger Straße~~
+- ➖ ~~Dea-Scholven-Brücke~~
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 26.09.2026, 01:14 — 1 neu, 11 entfernt, 2 geändert (gesamt 183)
 
 - ➕ **Dea-Scholven-Brücke**
