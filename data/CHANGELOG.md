@@ -2,6 +2,21 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 28.09.2026, 00:56 — 7 neu, 2 entfernt, 1 geändert (gesamt 186)
+
+- ➕ **Laurentiusstraße zw. Neue Anlage Straße u. Martinstraße**
+- ➕ **Landgrabenstraße zw. Neue Anlage Straße u. Kreisel**
+- ➕ **Brauerstraße zw. Roonstraße und Gartenstraße**
+- ➕ **Glogauer Straße zw. Königsberger Straße und Im Eichbäumle**
+- ➕ **Ebertstraße zw. Albtalbahnhof und Ebertstraße**
+- ➕ **Rittnertstraße und Jean-Ritzert-Straße**
+- ➕ **Haid- u. Neu-Straße zw. Hirtenweg und Am Sportpark**
+- ➖ ~~Zweibrückener Straße zw. Rehbuckel und Ebersteinstraße~~
+- ➖ ~~Glogauer Straße zw. Liegnitzer Straße und Im Eichbäumle~~
+- ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 27.09.2026, 00:37 — 2 entfernt (gesamt 181)
 
 - ➖ ~~Bahnübergang Verlängerung Kolberger Straße~~
