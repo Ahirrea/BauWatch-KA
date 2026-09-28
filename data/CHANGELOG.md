@@ -2,6 +2,23 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 28.09.2026, 18:41 — 3 neu, 1 entfernt, 8 geändert (gesamt 188)
+
+- ➕ **Zweibrückener Straße zw. Rehbuckel und Ebersteinstraße**
+- ➕ **Bahnübergang Verlängerung Kolberger Straße**
+- ➕ **Markgrafenstraße und Waldhornstraße**
+- ➖ ~~Ebertstraße zw. Albtalbahnhof und Ebertstraße~~
+- ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — sonstige Angaben aktualisiert
+- ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
+- ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — Ende: 2026-10-02 → 2026-11-20
+- ✏️ Sophienstraße Kreuzung Reinhold-Frank-Straße — sonstige Angaben aktualisiert
+- ✏️ Zähringer Straße zw. Waldhornstraße und Kronenstraße — Ende: 2026-10-23 → 2026-11-27
+- ✏️ Fritz-Erler-Straße zw. Markgrafenstraße u. Kaiserstraße — Ende: 2026-10-23 → 2026-11-27
+- ✏️ Fritz-Haber-Weg — Ende: 2026-09-30 → 2026-11-30
+- ✏️ Südendstraße zw. Brauerstraße und Boeckhstraße — Ende: 2026-10-31 → 2026-11-15
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 28.09.2026, 00:56 — 7 neu, 2 entfernt, 1 geändert (gesamt 186)
 
 - ➕ **Laurentiusstraße zw. Neue Anlage Straße u. Martinstraße**
