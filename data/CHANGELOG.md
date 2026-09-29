@@ -2,6 +2,17 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 30.09.2026, 01:35 — 3 neu, 2 entfernt, 1 geändert (gesamt 193)
+
+- ➕ **Franz-Lust-Straße zw. Kußmaulstraße u. Knielinger Allee**
+- ➕ **Ada-Lovelace-Straße (BV Emmy-Noether-Straße 17)**
+- ➕ **Kieselweg**
+- ➖ ~~Luisenstraße zw. Marienstraße und Wilhelmstraße~~
+- ➖ ~~Haid- u. Neu-Straße zw. Hirtenweg und Am Sportpark~~
+- ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 29.09.2026, 19:59 — 2 neu, 1 entfernt, 2 geändert (gesamt 192)
 
 - ➕ **Gartenstraße zwischen Steinhäuserstraße und Weinbrennerplatz/Kriegstraße**
