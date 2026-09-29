@@ -2,6 +2,18 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 29.09.2026, 02:17 — 3 neu, 4 geändert (gesamt 191)
+
+- ➕ **Luisenstraße zw. Marienstraße und Wilhelmstraße**
+- ➕ **Ebertstraße zw. Albtalbahnhof und Ebertstraße**
+- ➕ **Reichenbachstraße zw. Ellmendinger Straße und Hildebrandstraße**
+- ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — sonstige Angaben aktualisiert
+- ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
+- ✏️ Sophienstraße Kreuzung Reinhold-Frank-Straße — sonstige Angaben aktualisiert
+- ✏️ Essostraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 28.09.2026, 18:41 — 3 neu, 1 entfernt, 8 geändert (gesamt 188)
 
 - ➕ **Zweibrückener Straße zw. Rehbuckel und Ebersteinstraße**
