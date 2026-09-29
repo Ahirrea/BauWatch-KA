@@ -2,6 +2,14 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 29.09.2026, 12:34 — 3 geändert (gesamt 191)
+
+- ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — sonstige Angaben aktualisiert
+- ✏️ Essostraße — sonstige Angaben aktualisiert
+- ✏️ Isoldestraße zw. Stösserstraße und Niebelungenstraße — Ende: 2026-10-16 → 2026-12-11
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 29.09.2026, 02:17 — 3 neu, 4 geändert (gesamt 191)
 
 - ➕ **Luisenstraße zw. Marienstraße und Wilhelmstraße**
