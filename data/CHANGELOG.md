@@ -2,6 +2,16 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 29.09.2026, 19:59 — 2 neu, 1 entfernt, 2 geändert (gesamt 192)
+
+- ➕ **Gartenstraße zwischen Steinhäuserstraße und Weinbrennerplatz/Kriegstraße**
+- ➕ **Gartenstraße zw. Steinhäuserstraße u. Weinbrennerplatz**
+- ➖ ~~Gartenstraße zw. Brauerstraße u. Kriegstraße~~
+- ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — sonstige Angaben aktualisiert
+- ✏️ Martin-Schongauer-Weg zw. Albrecht-Altdorf-Weg und Frans-Hals-Weg — Ende: 2026-10-01 → 2026-10-31
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 29.09.2026, 12:34 — 3 geändert (gesamt 191)
 
 - ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — sonstige Angaben aktualisiert
