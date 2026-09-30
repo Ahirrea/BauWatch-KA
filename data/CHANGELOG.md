@@ -2,6 +2,14 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 30.09.2026, 16:49 — 1 entfernt, 2 geändert (gesamt 192)
+
+- ➖ ~~Vogelsang~~
+- ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
+- ✏️ Sophienstraße Kreuzung Reinhold-Frank-Straße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 30.09.2026, 01:35 — 3 neu, 2 entfernt, 1 geändert (gesamt 193)
 
 - ➕ **Franz-Lust-Straße zw. Kußmaulstraße u. Knielinger Allee**
