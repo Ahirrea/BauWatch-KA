@@ -2,6 +2,35 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 01.10.2026, 07:27 — 4 neu, 18 entfernt, 2 geändert (gesamt 178)
+
+- ➕ **Kaiserstraße zw. Kronenstraße und Adlerstraße**
+- ➕ **Parkstraße zw. Karl-Wilhem-Platz und Am Fasanengarten**
+- ➕ **Albert-Schweitzer-Straße zw. Gustav-Heinemann-Allee und Bertha-von-Stuttner-Straße**
+- ➕ **Karlsruher Allee 13 - 15**
+- ➖ ~~Steinkreuzstraße zw. Ringstraße und Hohenbergstraße~~
+- ➖ ~~Vorbergstraße zw. Hohenbergstraße/Quellenstraße und Ringstraße~~
+- ➖ ~~Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee~~
+- ➖ ~~Engesserstr. 2-6/8-12 und Lehmannstr. 1-3~~
+- ➖ ~~Ruschgraben, Karlsruher Str., Hagdornstr.~~
+- ➖ ~~Kreuzstraße zw. Hebelstraße und Zähringer Straße~~
+- ➖ ~~Herrenstraße zw. Amalienstraße und Blumenstraße~~
+- ➖ ~~Frühlingstraße zw. Lachnerstraße und Ostendstraße~~
+- ➖ ~~Werderstraße zw. Marienstraße und Rüppurrer Straße~~
+- ➖ ~~Kaiserstraße zw. Kreuzstraße und Kronenstraße~~
+- ➖ ~~Rheinhafenstraße zw. Daxlanderstraße und Südliche Uferstraße~~
+- ➖ ~~Schlesier Straße zw. Westmarkstraße und Memeler Straße~~
+- ➖ ~~Kaiserallee zw. Yorckstraße u. Uhlandstraße~~
+- ➖ ~~Albert-Schweitzer-Straße zw. Theodor Heuss Allee und Berha-von-Suttner-Straße~~
+- ➖ ~~Wasgaustraße, Schlesier Str., Tiroler Str,  Memelerstr~~
+- ➖ ~~Franz-Lust-Straße zw. Kußmaulstraße u. Knielinger Allee~~
+- ➖ ~~Kropsburgweg zw. Hambacher Straße u. Maxburgweg~~
+- ➖ ~~Ada-Lovelace-Straße (BV Emmy-Noether-Straße 17)~~
+- ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
+- ✏️ Sophienstraße Kreuzung Reinhold-Frank-Straße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 30.09.2026, 16:49 — 1 entfernt, 2 geändert (gesamt 192)
 
 - ➖ ~~Vogelsang~~
