@@ -2,6 +2,16 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 01.10.2026, 17:20 — 3 neu, 1 entfernt, 1 geändert (gesamt 180)
+
+- ➕ **Rintheimer Hauptstraße zw. Hirtenweg und Drosselsangweg**
+- ➕ **Killisfeldstraße, Gudrunstraße, Oberwaldstraße, Dietrichstraße**
+- ➕ **Edeltrudtunnel "klein" in Fahrtrichtung Durlach**
+- ➖ ~~Rittnertstraße und Jean-Ritzert-Straße~~
+- ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 01.10.2026, 07:27 — 4 neu, 18 entfernt, 2 geändert (gesamt 178)
 
 - ➕ **Kaiserstraße zw. Kronenstraße und Adlerstraße**
