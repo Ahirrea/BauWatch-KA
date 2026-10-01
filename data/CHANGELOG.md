@@ -2,6 +2,14 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 01.10.2026, 22:56 — 3 geändert (gesamt 180)
+
+- ✏️ Schlossplatz zw. Herrenstraße u. Zirkel — Ende: 2026-12-31 → 2026-10-04
+- ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
+- ✏️ Battstraße, Göhrenstraße, Ortehnaustraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 01.10.2026, 17:20 — 3 neu, 1 entfernt, 1 geändert (gesamt 180)
 
 - ➕ **Rintheimer Hauptstraße zw. Hirtenweg und Drosselsangweg**
