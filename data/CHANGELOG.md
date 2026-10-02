@@ -2,6 +2,21 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 02.10.2026, 07:15 — 3 neu, 5 entfernt, 2 geändert (gesamt 178)
+
+- ➕ **Karl-Martin-Graff-Straße zw. Gustav-Hofmann-Straße und Winkler-Dentz-Straße**
+- ➕ **Glogauer Straße zw. Lauenburger Straße und Kösliner Straße**
+- ➕ **Grillparzerstraße zw. Kaiserallee u. Gellertstraße**
+- ➖ ~~Adlerstraße zw. Zähringerstraße u. Kaiserstraße~~
+- ➖ ~~Karl-Martin-Graff-Straße zw. Gustav-Hofmann-Straße und Winkler-Dentz-Straße~~
+- ➖ ~~Löätzener Straße zw. Glogauer Straße und Insterburger Straße~~
+- ➖ ~~Karlsruher Allee 13 - 15~~
+- ➖ ~~Edeltrudtunnel "klein" in Fahrtrichtung Durlach~~
+- ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
+- ✏️ Battstraße, Göhrenstraße, Ortehnaustraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 01.10.2026, 22:56 — 3 geändert (gesamt 180)
 
 - ✏️ Schlossplatz zw. Herrenstraße u. Zirkel — Ende: 2026-12-31 → 2026-10-04
