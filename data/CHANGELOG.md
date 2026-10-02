@@ -2,6 +2,21 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 02.10.2026, 16:38 — 4 neu, 2 entfernt, 4 geändert (gesamt 180)
+
+- ➕ **Kreuzstraße zw. Hebelstraße und Zähringer Straße**
+- ➕ **Kaiserstraße zw. Kreuzstraße und Kronenstraße**
+- ➕ **Kaiserstraße zw. Kronenstraße und Fritz-Erler-Straße**
+- ➕ **Kaiserstraße zw. Adlerstraße und Kronen straße**
+- ➖ ~~Seminarstraße zwischen Bismarckstraße und Moltkestraße~~
+- ➖ ~~Reichenbachstraße zw. Ellmendinger Straße und Hildebrandstraße~~
+- ✏️ Kaiserstraße zw. Kronenstraße und adlerstraße — Ende: 2026-11-13 → 2026-10-30
+- ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
+- ✏️ Seminarstraße zw. Stephanienstraße und Bismarckstraße — Ende: 2026-10-02 → 2026-10-04
+- ✏️ Killisfeldstraße, Gudrunstraße, Oberwaldstraße, Dietrichstraße — Beginn: 2026-09-30 → 2026-10-01
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 02.10.2026, 07:15 — 3 neu, 5 entfernt, 2 geändert (gesamt 178)
 
 - ➕ **Karl-Martin-Graff-Straße zw. Gustav-Hofmann-Straße und Winkler-Dentz-Straße**
