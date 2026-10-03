@@ -2,6 +2,24 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 03.10.2026, 06:58 — 13 entfernt (gesamt 167)
+
+- ➖ ~~Ernst-Frey-Str. 2 (BV Walter-Eucken-Schule)~~
+- ➖ ~~Lachnerstraße, Durlacher Allee, Georg.Friedrich-Straße, Rintheimer Straße, Veilchen Straße, Humnmboldt Straße~~
+- ➖ ~~Hildebrandstr./Oberwaldstr./Reichenbachstr.~~
+- ➖ ~~Gablonzerstraße zw. B36 und Schoemperlenstraße~~
+- ➖ ~~Badener Straße zw. Grötzinger Straße u. Hengstplatz~~
+- ➖ ~~Gebhardstraße zw. Barbarossaplatz und Welfenstraße~~
+- ➖ ~~Wolfweg zw. Turmbergstraße und Blankenhornweg~~
+- ➖ ~~Wendtstraße zw. Dragonerstraße und Ludwig-Marum-Straße~~
+- ➖ ~~Wilferdinger Str, Ispringer Str., Ellmendinger Str, Auf den Lohn~~
+- ➖ ~~Weingärtensiedlung~~
+- ➖ ~~Ellmendinger Str., Ostmarkstr., Im Säuterich~~
+- ➖ ~~B36/ Neureuter Straße Höhe Gablonzer Straße~~
+- ➖ ~~Grillparzerstraße zw. Kaiserallee u. Gellertstraße~~
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 02.10.2026, 16:38 — 4 neu, 2 entfernt, 4 geändert (gesamt 180)
 
 - ➕ **Kreuzstraße zw. Hebelstraße und Zähringer Straße**
