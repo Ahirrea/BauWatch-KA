@@ -2,6 +2,14 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 04.10.2026, 00:48 — 1 entfernt, 2 geändert (gesamt 166)
+
+- ➖ ~~B 3 Badener Straße zw. Schlössleweg u. Rittnertstraße~~
+- ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
+- ✏️ Killisfeldstraße, Gudrunstraße, Oberwaldstraße, Dietrichstraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 03.10.2026, 06:58 — 13 entfernt (gesamt 167)
 
 - ➖ ~~Ernst-Frey-Str. 2 (BV Walter-Eucken-Schule)~~
