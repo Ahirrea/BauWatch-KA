@@ -2,6 +2,30 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 05.10.2026, 00:58 — 14 neu, 2 entfernt, 3 geändert (gesamt 178)
+
+- ➕ **Maximilianstraße zw. Weberstr. u. Stabelstr.**
+- ➕ **Reinhold-Frank-Straße zw. Amalinestraße und Sophienstraße**
+- ➕ **Bismarckstraße zw. Fichte- u. Seminarstraße**
+- ➕ **Blumentorstraße, Pfinzstraße, Friedrich-Eberle-Straße, Oberlinstraße**
+- ➕ **Südtangente zw. AS 5 und AS 7**
+- ➕ **Maximilianstraße zw. Stabelstraße und Weberstraße**
+- ➕ **Leibnitzstraße zw. Südendstraße und Kolpingplatz**
+- ➕ **Nikolausstraße zw. Lützowstraße und Allmendstraße**
+- ➕ **K9654/Rittnertstraße zw. Jean-Ritzert-Straße und Lamprechtshof**
+- ➕ **Baumeisterstraße zw. Finterstraße und Ettlinger Straße**
+- ➕ **Am Storrenacker Kreuzungsbereich Printzstraße**
+- ➕ **Rittnertstraße und Jean-Ritzert-Straße**
+- ➕ **Röntgenstraße zw. Südliche Hildapromenade und Röntgenstraße**
+- ➕ **Schlossplatz zw. Herrenstraße u. Zirkel**
+- ➖ ~~Schlossplatz zw. Herrenstraße u. Zirkel~~
+- ➖ ~~Seminarstraße zw. Stephanienstraße und Bismarckstraße~~
+- ✏️ Essostraße — sonstige Angaben aktualisiert
+- ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
+- ✏️ Killisfeldstraße, Gudrunstraße, Oberwaldstraße, Dietrichstraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 04.10.2026, 00:48 — 1 entfernt, 2 geändert (gesamt 166)
 
 - ➖ ~~B 3 Badener Straße zw. Schlössleweg u. Rittnertstraße~~
