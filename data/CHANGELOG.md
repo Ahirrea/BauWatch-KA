@@ -2,6 +2,13 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 05.10.2026, 07:13 — 2 geändert (gesamt 178)
+
+- ✏️ Essostraße — sonstige Angaben aktualisiert
+- ✏️ Schlossplatz zw. Herrenstraße u. Zirkel — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 05.10.2026, 00:58 — 14 neu, 2 entfernt, 3 geändert (gesamt 178)
 
 - ➕ **Maximilianstraße zw. Weberstr. u. Stabelstr.**
