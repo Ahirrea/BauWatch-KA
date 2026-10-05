@@ -2,6 +2,17 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 05.10.2026, 19:02 — 4 neu, 2 geändert (gesamt 182)
+
+- ➕ **Hirschstraße zw. Amalienstraße und Kaiserstraße**
+- ➕ **Seydlitzstr. 4-24**
+- ➕ **Keplerstraße von Bodelschwinghstraße bis Zietenstraße**
+- ➕ **Feierabendweg**
+- ✏️ Hirschstraße zw. Amalienstraße und Kaiserstraße — Ende: 2026-10-09 → 2026-10-23
+- ✏️ Schlossplatz zw. Herrenstraße u. Zirkel — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 05.10.2026, 07:13 — 2 geändert (gesamt 178)
 
 - ✏️ Essostraße — sonstige Angaben aktualisiert
