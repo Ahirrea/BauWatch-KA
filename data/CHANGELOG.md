@@ -2,6 +2,21 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 06.10.2026, 03:15 — 6 neu, 3 entfernt, 1 geändert (gesamt 185)
+
+- ➕ **Heckerstraße zw. Eggensteiner Straße und Lönnsstraße**
+- ➕ **K9652/Tiefentalstraße von Albert-Einstein-Straße bis Straße des Roten Kreuzes**
+- ➕ **Ritterstraße zw. Zirkel und Kaiserstraße**
+- ➕ **Bert-Brecht-Straße Höhe Huas Nr. 3**
+- ➕ **Durlacher Allee zw.Wilmar-Schwabe-Straße und K9659**
+- ➕ **Petergraben 2**
+- ➖ ~~Kurt-Schumacher-Straße zw. Wilhelm-Hausenstein-Allee und Josef-Schofer-Straße~~
+- ➖ ~~K9654/Rittnertstraße zw. Jean-Ritzert-Straße und Lamprechtshof~~
+- ➖ ~~Ritterstraße zw. Am Schlossplatz und Bankhof~~
+- ✏️ Schlössleweg, Badener Straße, Lußstraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 05.10.2026, 19:02 — 4 neu, 2 geändert (gesamt 182)
 
 - ➕ **Hirschstraße zw. Amalienstraße und Kaiserstraße**
