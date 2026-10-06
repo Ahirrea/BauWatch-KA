@@ -2,6 +2,23 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 07.10.2026, 01:42 — 2 neu, 7 entfernt, 3 geändert (gesamt 180)
+
+- ➕ **L623/ Am Wetterbach zw. Wolfartsweier und Hohenwettersbach**
+- ➕ **Gewann Grabenort**
+- ➖ ~~Heckerstraße zw. Eggensteiner Straße und Lönnsstraße~~
+- ➖ ~~K9652/Tiefentalstraße von Albert-Einstein-Straße bis Straße des Roten Kreuzes~~
+- ➖ ~~Am Storrenacker Kreuzungsbereich Printzstraße~~
+- ➖ ~~Ritterstraße zw. Zirkel und Kaiserstraße~~
+- ➖ ~~Röntgenstraße zw. Südliche Hildapromenade und Röntgenstraße~~
+- ➖ ~~Bert-Brecht-Straße Höhe Huas Nr. 3~~
+- ➖ ~~Durlacher Allee zw.Wilmar-Schwabe-Straße und K9659~~
+- ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
+- ✏️ Petergraben 2 — sonstige Angaben aktualisiert
+- ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 06.10.2026, 20:14 — 3 geändert (gesamt 185)
 
 - ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
