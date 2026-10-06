@@ -2,6 +2,12 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 06.10.2026, 13:09 — 1 geändert (gesamt 185)
+
+- ✏️ Schlössleweg, Badener Straße, Lußstraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 06.10.2026, 03:15 — 6 neu, 3 entfernt, 1 geändert (gesamt 185)
 
 - ➕ **Heckerstraße zw. Eggensteiner Straße und Lönnsstraße**
