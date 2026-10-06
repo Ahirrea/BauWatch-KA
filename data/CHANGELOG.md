@@ -2,6 +2,14 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 06.10.2026, 20:14 — 3 geändert (gesamt 185)
+
+- ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
+- ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
+- ✏️ Essostraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 06.10.2026, 13:09 — 1 geändert (gesamt 185)
 
 - ✏️ Schlössleweg, Badener Straße, Lußstraße — sonstige Angaben aktualisiert
