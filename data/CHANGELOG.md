@@ -2,6 +2,16 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 07.10.2026, 17:26 — 2 neu, 3 geändert (gesamt 182)
+
+- ➕ **Engesserstr. 2-6/8-12 und Lehmannstr. 1-3**
+- ➕ **Yburgweg zw. zw. Schliffkpfweg und Kreuzung Plättigweg**
+- ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
+- ✏️ Bismarckstraße zw. Fichte- u. Seminarstraße — Ende: 2026-10-26 → 2026-10-31
+- ✏️ Petergraben 2 — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 07.10.2026, 01:42 — 2 neu, 7 entfernt, 3 geändert (gesamt 180)
 
 - ➕ **L623/ Am Wetterbach zw. Wolfartsweier und Hohenwettersbach**
