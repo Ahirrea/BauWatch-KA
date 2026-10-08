@@ -2,6 +2,13 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 08.10.2026, 23:13 — 1 entfernt, 1 geändert (gesamt 177)
+
+- ➖ ~~Freydorfstraße zw. Moltke- u. Grenadierstraße~~
+- ✏️ Lärchenweg zw. Zehntwaldstraße und Donauschwabenstraße — Ende: 2026-10-16 → 2026-10-14
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 08.10.2026, 17:28 — 3 neu, 2 entfernt, 3 geändert (gesamt 178)
 
 - ➕ **Werderstraße zw. Marienstraße und Rüppurrer Straße**
