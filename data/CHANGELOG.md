@@ -2,6 +2,17 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 08.10.2026, 07:41 — 5 entfernt, 1 geändert (gesamt 177)
+
+- ➖ ~~Weiherstraße zw. Basler-Tor-Straße und Brunnenhausstraße~~
+- ➖ ~~Leibnitzstraße zw. Südendstraße und Kolpingplatz~~
+- ➖ ~~L623/ Am Wetterbach zw. Wolfartsweier und Hohenwettersbach~~
+- ➖ ~~Yburgweg zw. zw. Schliffkpfweg und Kreuzung Plättigweg~~
+- ➖ ~~Petergraben 2~~
+- ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 07.10.2026, 17:26 — 2 neu, 3 geändert (gesamt 182)
 
 - ➕ **Engesserstr. 2-6/8-12 und Lehmannstr. 1-3**
