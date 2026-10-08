@@ -2,6 +2,19 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 08.10.2026, 17:28 — 3 neu, 2 entfernt, 3 geändert (gesamt 178)
+
+- ➕ **Werderstraße zw. Marienstraße und Rüppurrer Straße**
+- ➕ **Am Fasanengarten zw. Emil-Gött-Straße und Parkstraße**
+- ➕ **Silcherstraße, Rabenweg, Buschwiesenweg**
+- ➖ ~~Brauerstraße zw. Putlitzstraße u. Kriegstraße~~
+- ➖ ~~Brauerstraße zw. Roonstraße und Gartenstraße~~
+- ✏️ Kriegsstraße zw. Leopoldstraße u. Lessingstraße, Reinhold-Frank-Straße zwischen Kriegstraße u. Viktoriastraße — sonstige Angaben aktualisiert
+- ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
+- ✏️ Bergbahnstraße zw. B 3 Grötzinger Straße und Am Steinbruch — Ende: 2026-10-09 → 2026-11-02
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 08.10.2026, 07:41 — 5 entfernt, 1 geändert (gesamt 177)
 
 - ➖ ~~Weiherstraße zw. Basler-Tor-Straße und Brunnenhausstraße~~
