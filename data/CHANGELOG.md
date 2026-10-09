@@ -2,6 +2,16 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 09.10.2026, 07:46 — 2 neu, 1 entfernt, 2 geändert (gesamt 178)
+
+- ➕ **Bahnübergang Belchenstraße/Im Weiherwald**
+- ➕ **Strählerweg Höhe Nr. 20**
+- ➖ ~~Engesserstr. 2-6/8-12 und Lehmannstr. 1-3~~
+- ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
+- ✏️ Essostraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 08.10.2026, 23:13 — 1 entfernt, 1 geändert (gesamt 177)
 
 - ➖ ~~Freydorfstraße zw. Moltke- u. Grenadierstraße~~
