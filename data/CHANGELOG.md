@@ -2,6 +2,20 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 09.10.2026, 17:11 — 3 neu, 1 entfernt, 5 geändert (gesamt 180)
+
+- ➕ **Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee**
+- ➕ **Karl-Martin-Graff-Straße zw. Gustav-Hofmann-Straße und Winkler-Dentz-Straße**
+- ➕ **Albert-Schweitzer-Straße zw. Bertha-von-Suttner-Straße und Theodor-Heuss-Allee**
+- ➖ ~~Karl-Martin-Graff-Straße zw. Gustav-Hofmann-Straße und Winkler-Dentz-Straße~~
+- ✏️ Ellmendinger Straße im Einmündungsbereich zur Lissenstraße — Ende: 2026-10-09 → 2026-11-08
+- ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — Ende: 2026-10-16 → 2026-10-23
+- ✏️ Eisenlohrstraße zw. Gustav-Heller-Platz und Hübschstraße — Ende: 2026-10-10 → 2026-10-14
+- ✏️ Haid-und-Neu-Straße zw. Am Sportpark und Sinsheimer Straße — Ende: 2026-10-12 → 2026-10-26
+- ✏️ Glogauer Straße zw. Königsberger Straße und Im Eichbäumle — Ende: 2026-11-21 → 2026-10-13
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 09.10.2026, 07:46 — 2 neu, 1 entfernt, 2 geändert (gesamt 178)
 
 - ➕ **Bahnübergang Belchenstraße/Im Weiherwald**
