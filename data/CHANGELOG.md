@@ -2,6 +2,28 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 10.10.2026, 07:29 — 3 neu, 12 entfernt, 2 geändert (gesamt 171)
+
+- ➕ **Pastor-Felke-Straße Kreuzungsbereich Werthmannstraße**
+- ➕ **Waldenburger Straße**
+- ➕ **Am Fasanengarten, Prakstr., Karl-Wilhelm-Str.**
+- ➖ ~~Gut-Magnus-Straße, Wachhausstraße, Kieselweg,~~
+- ➖ ~~Yorckstraße zw. Wichernstraße u. Yorckplatz~~
+- ➖ ~~Gänsbergstraße zw. Werrenstraße und Wiesentalstraße~~
+- ➖ ~~Südtangente zw. AS 5 und AS 7~~
+- ➖ ~~Werthmannstraße zw. Pastor-Felke-Straße und Kloserweg~~
+- ➖ ~~Hirschberger Straße~~
+- ➖ ~~Hölderlinstraße, Emil-Gött-Straße~~
+- ➖ ~~Rittnertstraße und Jean-Ritzert-Straße~~
+- ➖ ~~Nowackanlage zw. Baumeisterstraße und Ettlinger Straße~~
+- ➖ ~~Killisfeldstraße, Gudrunstraße, Oberwaldstraße, Dietrichstraße~~
+- ➖ ~~Strählerweg Höhe Nr. 20~~
+- ➖ ~~Seydlitzstr. 4-24~~
+- ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — sonstige Angaben aktualisiert
+- ✏️ Essostraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 09.10.2026, 17:11 — 3 neu, 1 entfernt, 5 geändert (gesamt 180)
 
 - ➕ **Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee**
