@@ -1,9 +1,9 @@
 # Datenqualitäts-Report
 
-_Automatisch beim Daten-Build erzeugt. Stand: 11.10.2026, 07:23._
+_Automatisch beim Daten-Build erzeugt. Stand: 11.10.2026, 16:50._
 
 ## Pipeline
-- Rohdaten: **778** Features
+- Rohdaten: **773** Features
 - nach Gemeinde-Filter (Karlsruhe): **404**
 - nach Deduplizierung (Vorgangsnummer): **171** Vorgänge
 - ohne verwertbare Geometrie übersprungen: **0**
