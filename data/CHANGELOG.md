@@ -2,6 +2,27 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 12.10.2026, 07:35 — 12 neu, 4 entfernt (gesamt 179)
+
+- ➕ **Kriegsstraße zw. Hirschstraße und Henriette-Obermüller-Straße (Karoline-Luise-Tunnel)**
+- ➕ **Knoten Brauerstraße / Reinhold-Frank-Straße / Kriegsstraße / Gartenstraße**
+- ➕ **Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße**
+- ➕ **Bärenweg zw. Kirchfeldstraße und Alte Friedrichstraße**
+- ➕ **Freydorfstraße zw. Moltke- u. Grenadierstraße**
+- ➕ **Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße**
+- ➕ **Baumeisterstraße zw. Finterstraße und Ettinger Straße**
+- ➕ **Geh- und Radwegverbingung zw. Weiherfeldstraße und Schwarzwaldstraße**
+- ➕ **Nikolausstraße zw. Lützowstraße und Allmendstraße**
+- ➕ **Pfarrstraße Haus Nr.12-18 und Haus Nr. 43-51**
+- ➕ **Ritterstraße zw. Kriegsstraße und Hermann-Billing-Straße**
+- ➕ **Hirschstraße zw. Südendstraße und Vorholzstraße**
+- ➖ ~~Adlerstraße zw. Kaiserstraße und Zirkel~~
+- ➖ ~~Glogauer Straße zw. Lauenburger Straße und Kolberger Straße~~
+- ➖ ~~Gartenstraße zw. Brauerstraße und Einmündung Jollystraße~~
+- ➖ ~~Baumeisterstraße zw. Finterstraße und Ettlinger Straße~~
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 11.10.2026, 16:50 — 2 geändert (gesamt 171)
 
 - ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — sonstige Angaben aktualisiert
