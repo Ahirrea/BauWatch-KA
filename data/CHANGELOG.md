@@ -2,6 +2,19 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 14.10.2026, 01:41 — 4 neu, 1 entfernt, 3 geändert (gesamt 181)
+
+- ➕ **Blumentorstraße, Pfinzstraße, Friedrich-Eberle-Straße, Oberlinstraße**
+- ➕ **Jollystraße zw. Roon- und Boeckhstraße**
+- ➕ **K9659/ B10/ B3**
+- ➕ **Pfinztalstraße zw. Seeboldstraße und Pforzheimer Straße**
+- ➖ ~~Glogauer Straße zw. Königsberger Straße und Im Eichbäumle~~
+- ✏️ Breslauer Straße Wohnwege 64 A - I und 66 A -L — sonstige Angaben aktualisiert
+- ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — sonstige Angaben aktualisiert
+- ✏️ Ebertstraße zw. Albtalbahnhof und Ebertstraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 13.10.2026, 21:09 — 2 entfernt, 2 geändert (gesamt 178)
 
 - ➖ ~~Schlössleweg, Badener Straße, Lußstraße~~
