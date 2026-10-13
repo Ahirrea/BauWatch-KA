@@ -2,6 +2,25 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 13.10.2026, 03:56 — 7 neu, 5 entfernt, 2 geändert (gesamt 181)
+
+- ➕ **Bonner Straße zw. Siemensallee und Bonner Platz**
+- ➕ **Brauerstraße zw. Gartenstraße u. Kriegstraße**
+- ➕ **Zweibrückener Straße zw. Rehbuckel und Ebersteinstraße**
+- ➕ **Hirschberger Straße**
+- ➕ **Am Sportpark zw. Gustav-Heinemann-Allee und Schweidnitzer Straße**
+- ➕ **Böhmerwaldstraße zw. Thüringer Straßem und Mecklenburger Straße**
+- ➕ **Sonnenstraße zw. Hardtstraße und Steubenstraße**
+- ➖ ~~Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße~~
+- ➖ ~~Zweibrückener Straße zw. Rehbuckel und Ebersteinstraße~~
+- ➖ ~~Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße~~
+- ➖ ~~Bahnübergang Belchenstraße/Im Weiherwald~~
+- ➖ ~~Hirschstraße zw. Südendstraße und Vorholzstraße~~
+- ✏️ Herrenstraße zw. Karlstraße und Amalienstraße — Ende: 2026-10-31 → 2027-01-31
+- ✏️ Zirkel zw. Ritterstraße und Lammstraße — Ende: 2026-10-14 → 2026-11-14
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 12.10.2026, 07:35 — 12 neu, 4 entfernt (gesamt 179)
 
 - ➕ **Kriegsstraße zw. Hirschstraße und Henriette-Obermüller-Straße (Karoline-Luise-Tunnel)**
