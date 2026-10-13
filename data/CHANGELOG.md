@@ -2,6 +2,21 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 13.10.2026, 13:37 — 3 neu, 4 entfernt, 3 geändert (gesamt 180)
+
+- ➕ **Yorckstraße zw. Wichernstraße u. Yorckplatz**
+- ➕ **Werthmannstraße zw. Pastor-Felke-Straße und Klosterweg**
+- ➕ **Pfinztalstraße zw. Badener Straße u. Eichelgasse; Badener Straße zwischen Gymnasiumstraße und Pfintalstraße**
+- ➖ ~~Pfinztalstraße zw. Badener Straße u. Jägerstraße~~
+- ➖ ~~Blumentorstraße, Pfinzstraße, Friedrich-Eberle-Straße, Oberlinstraße~~
+- ➖ ~~Pfinztalstraße zw. Badener Straße u. Eichelgasse; Badener Straße zwischen Karl-Weysser-Straße und Pfintalstraße~~
+- ➖ ~~Am Fasanengarten, Prakstr., Karl-Wilhelm-Str.~~
+- ✏️ Thüringer Straße zw. Böhmerwaldstraße und Esslinger Straße — Info geändert
+- ✏️ Am Sportpark zw. Gustav-Heinemann-Allee und Schweidnitzer Straße — Ende: 2026-10-26 → 2026-10-27
+- ✏️ Pfinztalstraße zw. Marstallstaße und Karlsburgstraße — Ende: 2026-11-06 → 2026-11-04; Info geändert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 13.10.2026, 03:56 — 7 neu, 5 entfernt, 2 geändert (gesamt 181)
 
 - ➕ **Bonner Straße zw. Siemensallee und Bonner Platz**
