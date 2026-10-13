@@ -2,6 +2,15 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 13.10.2026, 21:09 — 2 entfernt, 2 geändert (gesamt 178)
+
+- ➖ ~~Schlössleweg, Badener Straße, Lußstraße~~
+- ➖ ~~Lußstraße zw. Schlössleweg und Lußsteige~~
+- ✏️ Breslauer Straße Wohnwege 64 A - I und 66 A -L — sonstige Angaben aktualisiert
+- ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 13.10.2026, 13:37 — 3 neu, 4 entfernt, 3 geändert (gesamt 180)
 
 - ➕ **Yorckstraße zw. Wichernstraße u. Yorckplatz**
