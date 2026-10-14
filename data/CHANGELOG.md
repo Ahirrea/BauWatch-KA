@@ -2,6 +2,19 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 14.10.2026, 15:33 — 1 neu, 2 entfernt, 5 geändert (gesamt 180)
+
+- ➕ **Werrenstraße Kreuzungsbereich Gänsbergstraße**
+- ➖ ~~Am Fasanengarten zw. Emil-Gött-Straße und Parkstraße~~
+- ➖ ~~Ritterstraße zw. Kriegsstraße und Hermann-Billing-Straße~~
+- ✏️ Breslauer Straße Wohnwege 64 A - I und 66 A -L — sonstige Angaben aktualisiert
+- ✏️ Amalienstraße Kreuzung Herrenstraße — Ende: 2026-10-16 → 2026-10-21
+- ✏️ Essostraße — sonstige Angaben aktualisiert
+- ✏️ Sophienstraße Kreuzung Reinhold-Frank-Straße — sonstige Angaben aktualisiert
+- ✏️ Ebertstraße zw. Albtalbahnhof und Ebertstraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 14.10.2026, 01:41 — 4 neu, 1 entfernt, 3 geändert (gesamt 181)
 
 - ➕ **Blumentorstraße, Pfinzstraße, Friedrich-Eberle-Straße, Oberlinstraße**
