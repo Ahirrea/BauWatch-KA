@@ -2,6 +2,18 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 14.10.2026, 22:06 — 7 geändert (gesamt 180)
+
+- ✏️ Essenweinstraße, Sternbergstraße,  Gerwigstraße, Veilchenstraße, Haizingerstraße — Sperrgrad: gering → teil; Info geändert
+- ✏️ Breslauer Straße Wohnwege 64 A - I und 66 A -L — sonstige Angaben aktualisiert
+- ✏️ Uhlandstraße zw. Goethestraße und Sophienstraße — Beginn: 2026-09-13 → 2026-10-11; Ende: 2026-11-06 → 2026-10-29; Bezeichnung geändert
+- ✏️ Sophienstraße Kreuzung Reinhold-Frank-Straße — sonstige Angaben aktualisiert
+- ✏️ Rußweg zw. Langenbruchweg und Mastweidenweg — Ende: 2026-10-30 → 2026-12-22
+- ✏️ Essostraße — sonstige Angaben aktualisiert
+- ✏️ K9659/ B10/ B3 — Ende: 2026-10-14 → 2026-10-15
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 14.10.2026, 15:33 — 1 neu, 2 entfernt, 5 geändert (gesamt 180)
 
 - ➕ **Werrenstraße Kreuzungsbereich Gänsbergstraße**
