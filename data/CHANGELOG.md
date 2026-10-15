@@ -2,6 +2,16 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 15.10.2026, 15:17 — 1 neu, 1 entfernt, 3 geändert (gesamt 177)
+
+- ➕ **Herrenstraße zw. Amalienstraße und Blumenstraße**
+- ➖ ~~L623/ Am Wetterbach zw. Zur Ziegelhütte und Bachstraße~~
+- ✏️ Lessingstraße Einmündungsbereich Sophienstraße — Ende: 2026-10-16 → 2026-10-18
+- ✏️ Sophienstraße Kreuzung Reinhold-Frank-Straße — sonstige Angaben aktualisiert
+- ✏️ Essostraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 15.10.2026, 06:15 — 1 neu, 4 entfernt, 2 geändert (gesamt 177)
 
 - ➕ **Reichenbachstraße zw. Ellmendinger Straße und Hildebrandstraße**
