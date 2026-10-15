@@ -2,6 +2,18 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 15.10.2026, 06:15 — 1 neu, 4 entfernt, 2 geändert (gesamt 177)
+
+- ➕ **Reichenbachstraße zw. Ellmendinger Straße und Hildebrandstraße**
+- ➖ ~~Lärchenweg zw. Zehntwaldstraße und Donauschwabenstraße~~
+- ➖ ~~Eisenlohrstraße zw. Gustav-Heller-Platz und Hübschstraße~~
+- ➖ ~~Bahnübergang Verlängerung Kolberger Straße~~
+- ➖ ~~Jollystraße zw. Roon- und Boeckhstraße~~
+- ✏️ Essostraße — sonstige Angaben aktualisiert
+- ✏️ Sophienstraße Kreuzung Reinhold-Frank-Straße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 14.10.2026, 22:06 — 7 geändert (gesamt 180)
 
 - ✏️ Essenweinstraße, Sternbergstraße,  Gerwigstraße, Veilchenstraße, Haizingerstraße — Sperrgrad: gering → teil; Info geändert
