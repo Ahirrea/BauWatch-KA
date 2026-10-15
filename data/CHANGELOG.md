@@ -2,6 +2,14 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 15.10.2026, 21:48 — 3 geändert (gesamt 177)
+
+- ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
+- ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
+- ✏️ K9659/ B10/ B3 — Ende: 2026-10-15 → 2026-10-16
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 15.10.2026, 15:17 — 1 neu, 1 entfernt, 3 geändert (gesamt 177)
 
 - ➕ **Herrenstraße zw. Amalienstraße und Blumenstraße**
