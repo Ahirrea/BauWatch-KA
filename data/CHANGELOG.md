@@ -2,6 +2,17 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 16.10.2026, 00:58 — 1 neu, 2 entfernt, 3 geändert (gesamt 176)
+
+- ➕ **Battstraße zw. Herrenalber Straße und Hegaustraße, Breisgaustraße**
+- ➖ ~~Kriegsstraße zw. Hirschstraße und Henriette-Obermüller-Straße (Karoline-Luise-Tunnel)~~
+- ➖ ~~Pfinztalstraße zw. Seeboldstraße und Pforzheimer Straße~~
+- ✏️ Essostraße — sonstige Angaben aktualisiert
+- ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
+- ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 15.10.2026, 21:48 — 3 geändert (gesamt 177)
 
 - ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
