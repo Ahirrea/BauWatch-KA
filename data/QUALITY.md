@@ -1,9 +1,9 @@
 # Datenqualitäts-Report
 
-_Automatisch beim Daten-Build erzeugt. Stand: 16.10.2026, 06:11._
+_Automatisch beim Daten-Build erzeugt. Stand: 16.10.2026, 15:09._
 
 ## Pipeline
-- Rohdaten: **816** Features
+- Rohdaten: **818** Features
 - nach Gemeinde-Filter (Karlsruhe): **416**
 - nach Deduplizierung (Vorgangsnummer): **176** Vorgänge
 - ohne verwertbare Geometrie übersprungen: **0**
@@ -30,10 +30,10 @@ _Automatisch beim Daten-Build erzeugt. Stand: 16.10.2026, 06:11._
 - **unbekannte art-Kategorien:** keine (alle als Klartext erkannt)
 
 - **erkannte Sperrung-Werte → Ampel:**
-  - „mit Verkehrsbehinderung" (104×) → teil
+  - „mit Verkehrsbehinderung" (103×) → teil
   - „mit Vollsperrung" (48×) → voll
   - „mit Sperrung in eine Fahrtrichtung" (15×) → teil
-  - „keine Verkehrsbehinderung" (9×) → gering
+  - „keine Verkehrsbehinderung" (10×) → gering
 
 ## Geometrie & Identität
 - **Koordinaten außerhalb des Karlsruher Rahmens:** keine

@@ -2,6 +2,17 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 16.10.2026, 15:09 — 1 neu, 1 entfernt, 4 geändert (gesamt 176)
+
+- ➕ **Ernst-Frey-Str. 2 (BV Walter-Eucken-Schule)**
+- ➖ ~~Parkstraße zw. Karl-Wilhem-Platz und Am Fasanengarten~~
+- ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — sonstige Angaben aktualisiert
+- ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
+- ✏️ Haid-und-Neu-Straße zw. Am Sportpark und Sinsheimer Straße — Ende: 2026-10-26 → 2026-11-22; Info geändert
+- ✏️ Gewann Grabenort — Ende: 2026-10-16 → 2026-10-23
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 16.10.2026, 06:11 — 2 geändert (gesamt 176)
 
 - ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — sonstige Angaben aktualisiert
