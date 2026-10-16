@@ -2,6 +2,25 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 17.10.2026, 00:43 — 1 neu, 10 entfernt, 3 geändert (gesamt 167)
+
+- ➕ **K9654/ Rittnertstraße zw. B3 und Ortseingang Stupferich**
+- ➖ ~~Pfalzstraße, Kirschstraße, Hördtstraße, Krämerstraße, Langenackerstraße, Turnerstraße,~~
+- ➖ ~~Bonner Straße zw. Siemensallee und Bonner Platz~~
+- ➖ ~~Laurentiusstraße zw. Neue Anlage Straße u. Martinstraße~~
+- ➖ ~~Hirschstraße zw. Amalienstraße und Kriegsstraße~~
+- ➖ ~~Akademiestraße zw. Douglasstraße und Karlstraße~~
+- ➖ ~~Rintheimer Hauptstraße von Mosbacherstraße bis Drosselsangweg~~
+- ➖ ~~Battstraße, Göhrenstraße, Ortehnaustraße~~
+- ➖ ~~Geh- und Radwegverbingung zw. Weiherfeldstraße und Schwarzwaldstraße~~
+- ➖ ~~Kaiserstraße zw. Kronenstraße und Fritz-Erler-Straße~~
+- ➖ ~~K9659/ B10/ B3~~
+- ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
+- ✏️ Sophienstraße Kreuzung Reinhold-Frank-Straße — sonstige Angaben aktualisiert
+- ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 16.10.2026, 15:09 — 1 neu, 1 entfernt, 4 geändert (gesamt 176)
 
 - ➕ **Ernst-Frey-Str. 2 (BV Walter-Eucken-Schule)**
