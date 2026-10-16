@@ -2,6 +2,13 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 16.10.2026, 06:11 — 2 geändert (gesamt 176)
+
+- ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — sonstige Angaben aktualisiert
+- ✏️ Essostraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 16.10.2026, 00:58 — 1 neu, 2 entfernt, 3 geändert (gesamt 176)
 
 - ➕ **Battstraße zw. Herrenalber Straße und Hegaustraße, Breisgaustraße**
