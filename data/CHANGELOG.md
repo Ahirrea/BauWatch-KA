@@ -2,6 +2,16 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 17.10.2026, 06:00 — 5 geändert (gesamt 167)
+
+- ✏️ Essostraße — sonstige Angaben aktualisiert
+- ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — sonstige Angaben aktualisiert
+- ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
+- ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
+- ✏️ Sophienstraße Kreuzung Reinhold-Frank-Straße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 17.10.2026, 00:43 — 1 neu, 10 entfernt, 3 geändert (gesamt 167)
 
 - ➕ **K9654/ Rittnertstraße zw. B3 und Ortseingang Stupferich**
