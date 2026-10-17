@@ -86,22 +86,23 @@ export function renderStatus(list) {
   }
 }
 
-// Bringt <li> im eigenen Scroll-Container (#liste, overflow-y:auto) in Sicht,
-// ohne window/document zu scrollen — anders als das native scrollIntoView, das
-// alle scrollbaren Vorfahren mitverschiebt.
+// Bringt <li> im eigenen Scroll-Container in Sicht, ohne die Seite zu scrollen
+// — anders als das native scrollIntoView, das alle scrollbaren Vorfahren
+// mitverschiebt. Since A-14 that container is the panel body (the list scrolls
+// with the filters above it), not #liste itself.
 export function scrollListItemIntoView(key) {
-  const ul = el('liste');
+  const box = el('panel-body');
   const li = listItemById.get(key);
-  if (!ul || !li) return;
+  if (!box || !li) return;
   const liRect = li.getBoundingClientRect();
-  const ulRect = ul.getBoundingClientRect();
+  const boxRect = box.getBoundingClientRect();
   let delta = 0;
-  if (liRect.top < ulRect.top) {
-    delta = liRect.top - ulRect.top;
-  } else if (liRect.bottom > ulRect.bottom) {
-    delta = liRect.bottom - ulRect.bottom;
+  if (liRect.top < boxRect.top) {
+    delta = liRect.top - boxRect.top - 8;
+  } else if (liRect.bottom > boxRect.bottom) {
+    delta = liRect.bottom - boxRect.bottom + 8;
   } else {
     return; // bereits sichtbar
   }
-  ul.scrollBy({ top: delta, behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
+  box.scrollBy({ top: delta, behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
 }

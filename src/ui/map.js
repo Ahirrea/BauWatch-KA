@@ -3,20 +3,21 @@
 
 import { state } from './state.js';
 import { hoverFaehig } from './dom.js';
-import { KA_CENTER, RADIUS_KM, latLngOf } from './geo.js';
+import { RADIUS_KM, latLngOf } from './geo.js';
 import { popupHtml } from './feature-html.js';
 
 // Leaflet wird global über das <script>-Tag geladen.
 /* global L */
 
-// Ampelfarben der Karte (Marker + Flächen). voll/gering decken sich mit
-// --red/--green im hellen Schema; teil bleibt seit #32 bewusst NICHT an
-// var(--amber) gekoppelt: Marker und Flächen liegen auf den immer hellen
-// OSM-Kacheln, nicht auf --surface, und Teil muss dort deutlich heller sein
-// als Voll, sonst sind beide kaum auseinanderzuhalten. Die Punkte/Streifen in
-// Liste, Popup und Knöpfen tragen dagegen die Schema-Tokens aus styles.css
-// (hell seit #32 dunkler, dunkel schon immer #ffb02e).
-const AMPEL_COLOR = { voll: '#c02626', teil: '#f08a00', gering: '#197a3d' };
+// The map's colours come from CSS since A-14/E8: every marker and area path
+// carries an identity class (m-voll/m-teil/m-gering) and a geometry class
+// (m-marker/m-poly/m-line), and src/shell.css colours them from the
+// --map-* tokens. That is what lets the dark scheme give the darkened tiles
+// their own colour set, and a theme switch recolour the map without a
+// render() — the way the rest of the page already switches (A-8). The light
+// values are exactly the old AMPEL_COLOR (teil #f08a00 on the light tiles,
+// #32). Weights and opacities stay JS (A-9's tiers, below).
+const identity = (ampel) => `m-${ampel === 'voll' || ampel === 'teil' ? ampel : 'gering'}`;
 
 let map;
 let areaLayer;
@@ -25,6 +26,9 @@ let searchLayer;
 const markerById = new Map(); // key -> Leaflet-Marker
 const areaById = new Map(); // key -> Leaflet-Layer der Fläche (A-7)
 let handlers = { onSelect: () => {}, onHover: () => {} };
+// What the floating chrome covers (A-14/E9), from src/ui/panel.js — the
+// popups' autoPan keeps clear of it, and views are centred in what is left.
+let insets = { top: 10, left: 10, right: 10, bottom: 10 };
 
 export function getMap() {
   return map;
@@ -33,17 +37,50 @@ export function getMap() {
 /** Creates the map; `onSelect(key)` and `onHover(key|null)` come from the entry module. */
 export function initMap({ onSelect, onHover }) {
   handlers = { onSelect, onHover };
-  map = L.map('map', { zoomControl: true }).setView(KA_CENTER, 13);
-  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '© OpenStreetMap-Mitwirkende',
-  }).addTo(map);
+  // No attribution control: the OSM credit stands in the static credits
+  // footer in index.html (A-14/E7), independent of JavaScript. The zoom
+  // control moves top right — the side panel covers the left edge.
+  map = L.map('map', { zoomControl: false, attributionControl: false });
+  L.control.zoom({ position: 'topright' }).addTo(map);
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19 }).addTo(map);
   // Reihenfolge = Zeichenreihenfolge: Flächen zuerst, damit Marker und
   // Suchkreis darüber liegen (A-7/E2).
   areaLayer = L.layerGroup().addTo(map);
   markerLayer = L.layerGroup().addTo(map);
   searchLayer = L.layerGroup().addTo(map);
   return map;
+}
+
+/** Stores what the chrome covers and re-pads every open-able popup with it. */
+export function setChromeInsets(next) {
+  insets = next;
+  for (const marker of markerById.values()) Object.assign(marker.getPopup().options, popupPadding());
+}
+
+// autoPan padding (A-11/E2, amended by A-14/E9): Leaflet's default autoPan
+// stays the only thing that ever moves the map on a selection — it just has to
+// know that part of the map is covered now.
+function popupPadding() {
+  return {
+    autoPanPaddingTopLeft: L.point(insets.left, insets.top),
+    autoPanPaddingBottomRight: L.point(insets.right, insets.bottom),
+  };
+}
+
+/**
+ * setView, but with `latlng` landing in the middle of the part of the map the
+ * chrome leaves uncovered (A-14/E13) instead of the middle of the viewport —
+ * on desktop that is next to the panel, on a phone above the sheet.
+ */
+export function setViewInVisibleArea(latlng, zoom, options) {
+  const size = map.getSize();
+  const visibleCentre = L.point(
+    (insets.left + size.x - insets.right) / 2,
+    (insets.top + size.y - insets.bottom) / 2
+  );
+  const shift = size.divideBy(2).subtract(visibleCentre);
+  const centre = map.unproject(map.project(latlng, zoom).add(shift), zoom);
+  map.setView(centre, zoom, options);
 }
 
 // Linien-Geometrien haben kein Inneres: Leaflet zeichnet sie als Polyline und
@@ -72,9 +109,13 @@ const AREA_TIER_STYLE = {
   },
 };
 
-function areaStyle(color, geometryType, tier = 'idle') {
-  if (AREA_LINE_TYPES.has(geometryType)) return { color, ...AREA_TIER_STYLE.line[tier] };
-  return { color, fillColor: color, ...AREA_TIER_STYLE.polygon[tier] };
+// `colour` is the identity class; the geometry class tells the CSS whether
+// the shape has an inside to fill (a line has none — A-9's trap, now in CSS).
+// Leaflet applies className once, when the path is created; the restyles of
+// the tier ramp only touch weight and opacities.
+function areaStyle(colour, geometryType, tier = 'idle') {
+  if (AREA_LINE_TYPES.has(geometryType)) return { className: `${colour} m-line`, ...AREA_TIER_STYLE.line[tier] };
+  return { className: `${colour} m-poly`, ...AREA_TIER_STYLE.polygon[tier] };
 }
 
 // Baustellenflächen (A-7). Eigene Ebene UNTER den Markern: der Marker bleibt
@@ -85,8 +126,8 @@ function areaStyle(color, geometryType, tier = 'idle') {
 // und der Marker wäre kaum noch treffbar. Zugleich taucht die Fläche so nirgends
 // in der Tab-Reihenfolge auf: sie ist dekorativ, die Erklärung steht im Popup.
 //
-// Die Farbe kommt aus AMPEL_COLOR, wie beim Marker — keine zweite Farbbedeutung
-// auf derselben Karte (E4). Die [lon,lat]→[lat,lng]-Umkehrung übernimmt L.geoJSON
+// Die Farbe kommt aus derselben Klasse wie beim Marker — keine zweite
+// Farbbedeutung auf derselben Karte (E4). Die [lon,lat]→[lat,lng]-Umkehrung übernimmt L.geoJSON
 // selbst; anders als bei latLngOf() ist hier also nichts zu drehen.
 export function renderAreas(list) {
   areaLayer.clearLayers();
@@ -94,7 +135,7 @@ export function renderAreas(list) {
   for (const f of list) {
     const area = f.properties.area;
     if (!area) continue;
-    const color = AMPEL_COLOR[f.properties.ampel] || '#666';
+    const colour = identity(f.properties.ampel);
     // Eine GeometryCollection (ein Vorgang, dessen Teile Polygone UND Linien
     // mischen) wird hier aufgeteilt: die style-Option von L.geoJSON bekommt bei
     // einer Collection für jeden Teil dasselbe Feature zu sehen und könnte die
@@ -105,7 +146,7 @@ export function renderAreas(list) {
     const gruppe = L.featureGroup();
     for (const g of teile) {
       if (!g || !g.coordinates) continue;
-      const teil = L.geoJSON(g, { interactive: false, style: areaStyle(color, g.type) });
+      const teil = L.geoJSON(g, { interactive: false, style: areaStyle(colour, g.type) });
       // Für den Stufenwechsel (A-9) gemerkt: der Restyle muss je Teil
       // typbewusst laufen — ein pauschales setStyle auf die Gruppe gäbe der
       // Polyline eine Füllung und dem Polygon einen 6-px-Strich.
@@ -113,7 +154,7 @@ export function renderAreas(list) {
       teil.addTo(gruppe);
     }
     if (gruppe.getLayers().length === 0) continue;
-    gruppe._bauwatchFarbe = color;
+    gruppe._bauwatchFarbe = colour;
     gruppe.addTo(areaLayer);
     areaById.set(f._key, gruppe);
   }
@@ -153,16 +194,15 @@ export function renderMarkers(list) {
     if (!keySet.has(f._key)) return;
     const marker = L.circleMarker(latLngOf(f), {
       radius: 8,
-      color: '#ffffff',
       weight: 2,
-      fillColor: AMPEL_COLOR[f.properties.ampel] || '#666',
       fillOpacity: 0.9,
+      className: `${identity(f.properties.ampel)} m-marker`,
     });
     // Leaflet's default autoPan stays on for every marker (A-11/E2): selection
     // never moves the camera, so the popup's readability at the map edge is
     // carried by autoPan alone — a shift of at most the popup's height, never
-    // a zoom change.
-    marker.bindPopup(popupHtml(f));
+    // a zoom change. Padded by the chrome since A-14/E9.
+    marker.bindPopup(popupHtml(f), { maxWidth: 300, ...popupPadding() });
     marker.on('click', () => handlers.onSelect(f._key, { fromMarker: true }));
     // Marker-Hover hebt die Fläche hervor und tönt die Listenzeile (A-9/E2) —
     // der Marker selbst bleibt unverändert (E6). Leaflet feuert mouseover/
@@ -188,17 +228,15 @@ export function drawSearchCircle(center) {
   searchLayer.clearLayers();
   L.circle(center, {
     radius: RADIUS_KM * 1000,
-    color: '#1b4b73',
     weight: 2,
-    fillColor: '#1b4b73',
     fillOpacity: 0.06,
+    className: 'm-search',
   }).addTo(searchLayer);
   L.circleMarker(center, {
     radius: 6,
-    color: '#ffffff',
     weight: 2,
-    fillColor: '#1b4b73',
     fillOpacity: 1,
+    className: 'm-search-dot',
   }).addTo(searchLayer);
 }
 

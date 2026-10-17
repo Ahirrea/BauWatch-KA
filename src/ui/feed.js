@@ -1,4 +1,6 @@
-// feed.js — "Was ist neu?" (A-6), split out of app.js in A-14/E11.
+// feed.js — "Was ist neu?" (A-6), split out of app.js in A-14/E11. Since
+// A-14/E4 it is the panel's "Neu" tab instead of a modal dialog; A-6/E2–E7
+// hold unchanged.
 //
 // Deliberately no interaction with the map/list/filters (A-6/E5) — an
 // independent, self-contained view. No personalization, same fixed 30-day
@@ -66,7 +68,8 @@ export function renderChangelogBody() {
   }
 }
 
-async function loadChangelog() {
+/** Fetches the feed afresh — on every opening of the tab, as the dialog did. */
+export async function loadChangelog() {
   changelogEntries = null;
   renderChangelogBody();
   try {
@@ -84,29 +87,4 @@ async function loadChangelog() {
     changelogEntries = 'error';
   }
   renderChangelogBody();
-}
-
-export function wireWhatsNew() {
-  const btn = el('whats-new-btn');
-  const dialog = el('whats-new-dialog');
-  if (!btn || !dialog) return;
-
-  btn.addEventListener('click', () => {
-    dialog.showModal();
-    loadChangelog();
-  });
-
-  // Backdrop click closes, same as Escape. ::backdrop itself can't carry a
-  // click handler, so this compares the click point against the dialog's own
-  // box — a click landing outside it is a backdrop click.
-  dialog.addEventListener('click', (e) => {
-    const rect = dialog.getBoundingClientRect();
-    const inside =
-      e.clientX >= rect.left && e.clientX <= rect.right && e.clientY >= rect.top && e.clientY <= rect.bottom;
-    if (!inside) dialog.close();
-  });
-
-  // Fires for every close path (Escape, the close button's form-submit,
-  // backdrop click above) — one place to return focus to the trigger.
-  dialog.addEventListener('close', () => btn.focus());
 }

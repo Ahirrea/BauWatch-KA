@@ -22,23 +22,40 @@ export const STRINGS = {
 
     searchAriaLabel: 'Adresssuche',
     searchInputLabel: 'Adresse in Karlsruhe',
-    searchPlaceholder: 'Adresse in Karlsruhe (z. B. Kaiserstraße 1)',
-    searchButton: 'Umkreis suchen',
-    searchReset: 'Zurücksetzen',
+    searchPlaceholder: 'Adresse in Karlsruhe suchen',
+    searchButton: 'Umkreis suchen',
+    searchReset: 'Suche zurücksetzen',
     searchStatusSearching: 'Adresse wird gesucht …',
     searchStatusNotFound: 'Adresse in Karlsruhe nicht gefunden. Bitte genauer angeben.',
     searchStatusResult: 'Umkreis {km} km um „{label}".',
     searchStatusError: 'Adresssuche gerade nicht möglich. Bitte später erneut versuchen.',
     searchOfflineHint: 'Adresssuche braucht Internet.',
 
-    // Colour-scheme switch (A-8). The buttons are icon-only, so these strings
-    // are their accessible names (aria-label) and tooltips (title) — not
-    // visible labels. Wording says what the button *does*, since a lone glyph
-    // gives a screen-reader user nothing to go on.
+    // Colour-scheme switch (A-8). Since A-14/E6 the buttons sit in the menu and
+    // carry these as visible labels, inside a group named themeToggleAriaLabel
+    // — until then they were icon-only and these were their aria-labels.
     themeToggleAriaLabel: 'Farbschema',
-    themeSystem: 'Systemvorgabe folgen',
-    themeLight: 'Helles Farbschema',
-    themeDark: 'Dunkles Farbschema',
+    themeSystem: 'System',
+    themeLight: 'Hell',
+    themeDark: 'Dunkel',
+
+    // App shell (A-14): menu, panel, tabs and the sheet handle. The handle's
+    // name says what the NEXT press does (E2), so it has three of them.
+    menuButton: 'Menü',
+    menuClose: 'Menü schließen',
+    menuSettings: 'Einstellungen',
+    menuLanguage: 'Sprache',
+    menuAbout: 'Über die Daten',
+    menuMore: 'Mehr',
+    tabsAriaLabel: 'Ansicht',
+    tabListe: 'Liste',
+    tabNeu: 'Neu',
+    sheetExpand: 'Liste aufklappen',
+    sheetExpandFull: 'Liste ganz aufklappen',
+    sheetCollapse: 'Liste einklappen',
+    panelCollapse: 'Seitenleiste ausblenden',
+    panelOpen: 'Liste anzeigen',
+    standShort: 'Stand',
 
     filtersAriaLabel: 'Filter',
     // Restdauer statt Zeitraum (A-12/E1, E5). Das Verb steckt in der
@@ -85,18 +102,14 @@ export const STRINGS = {
     standLoading: 'wird geladen …',
     standUnavailable: 'nicht verfügbar',
     standUnknown: 'unbekannt',
-    standLabel: 'Daten zuletzt geändert:',
     standOffline: '· offline, aus dem Gerätespeicher',
-    standHint: '(automatisch alle 4 h geprüft, aktualisiert nur bei Änderungen)',
+    standHint: 'Automatisch alle 4 h geprüft, aktualisiert nur bei Änderungen.',
     sampleDataHint: '⚠ Beispieldaten — noch kein echter Abruf des städtischen WFS-Dienstes.',
     disclaimer: 'Ohne Gewähr. Verbindlich ist ausschließlich die Beschilderung vor Ort.',
 
     popupVerkehr: 'Verkehr:',
     popupVerursacher: 'Verursacher:',
 
-    whatsNewButton: 'Was ist neu?',
-    whatsNewTitle: 'Was ist neu?',
-    whatsNewClose: 'Schließen',
     whatsNewWindowNote: 'Änderungen der letzten 30 Tage.',
     whatsNewLoading: 'Wird geladen …',
     whatsNewEmpty: 'Keine Änderungen in den letzten 30 Tagen.',
@@ -120,9 +133,9 @@ export const STRINGS = {
 
     searchAriaLabel: 'Address search',
     searchInputLabel: 'Address in Karlsruhe',
-    searchPlaceholder: 'Address in Karlsruhe (e.g. Kaiserstraße 1)',
+    searchPlaceholder: 'Search an address in Karlsruhe',
     searchButton: 'Search radius',
-    searchReset: 'Reset',
+    searchReset: 'Clear search',
     searchStatusSearching: 'Searching address …',
     searchStatusNotFound: 'Address in Karlsruhe not found. Please be more specific.',
     searchStatusResult: '{km} km radius around “{label}.”',
@@ -130,9 +143,25 @@ export const STRINGS = {
     searchOfflineHint: 'Address search needs an internet connection.',
 
     themeToggleAriaLabel: 'Colour scheme',
-    themeSystem: 'Follow the system setting',
-    themeLight: 'Light colour scheme',
-    themeDark: 'Dark colour scheme',
+    themeSystem: 'System',
+    themeLight: 'Light',
+    themeDark: 'Dark',
+
+    menuButton: 'Menu',
+    menuClose: 'Close menu',
+    menuSettings: 'Settings',
+    menuLanguage: 'Language',
+    menuAbout: 'About the data',
+    menuMore: 'More',
+    tabsAriaLabel: 'View',
+    tabListe: 'List',
+    tabNeu: 'New',
+    sheetExpand: 'Expand list',
+    sheetExpandFull: 'Expand list fully',
+    sheetCollapse: 'Collapse list',
+    panelCollapse: 'Hide side panel',
+    panelOpen: 'Show list',
+    standShort: 'As of',
 
     filtersAriaLabel: 'Filters',
     filterRestdauerAriaLabel: 'Ends within',
@@ -169,18 +198,14 @@ export const STRINGS = {
     standLoading: 'loading …',
     standUnavailable: 'not available',
     standUnknown: 'unknown',
-    standLabel: 'Data last changed:',
     standOffline: '· offline, from device storage',
-    standHint: '(checked automatically every 4 h, updated only on changes)',
+    standHint: 'Checked automatically every 4 h, updated only when something changes.',
     sampleDataHint: '⚠ Sample data — no real fetch from the city’s WFS service yet.',
     disclaimer: 'No guarantee of accuracy. Only the on-site signage is legally binding.',
 
     popupVerkehr: 'Traffic:',
     popupVerursacher: 'Caused by:',
 
-    whatsNewButton: 'What’s new?',
-    whatsNewTitle: 'What’s new?',
-    whatsNewClose: 'Close',
     whatsNewWindowNote: 'Changes from the last 30 days.',
     whatsNewLoading: 'Loading …',
     whatsNewEmpty: 'No changes in the last 30 days.',

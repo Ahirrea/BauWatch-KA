@@ -1,174 +1,500 @@
-/* BauWatch-KA — the map page's own styles (A-14/E12).
+/* BauWatch-KA — the map page's own styles: the app shell (A-14).
+
    src/styles.css holds what every page shares — the palette tokens, the base,
    and the text-page rules impressum.html and datenschutz.html depend on. This
-   file is linked by index.html only, so a change to the map page can no
-   longer drop a rule the legal pages need without anyone noticing. */
+   file is linked by index.html only (A-14/E12), so a change here cannot drop a
+   rule the legal pages need.
 
-/* --- Kopfzeile: "Was ist neu?"-Knopf + Sprachumschalter (A-6/A-5) ---
-   Ein Flex-Row statt zwei eigenständiger Blöcke, damit der zusätzliche Knopf
-   (A-6) keine neue feste Zeile im ohnehin knappen Header erzeugt
-   (BACKLOG #23) — beide Controls teilen sich die eine Zeile und brechen bei
-   Bedarf gemeinsam um. */
-.header-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.5rem 0.75rem;
-  margin-bottom: 0.5rem;
+   The model (A-14/E1–E3): the map fills the viewport and the page itself never
+   scrolls. Everything else floats on the map. On a phone (< 900 px) the panel
+   is a bottom sheet with three heights and the search bar inside it is lifted
+   to the top of the screen; on desktop the same element is a side panel.
+   ►► The sheet animates `height`, never `transform` ◄◄ — a transformed
+   ancestor becomes the containing block of the position:fixed search bar and
+   would drag it along with the sheet. */
+
+body.app {
+  height: 100%;
+  overflow: hidden;
+  overscroll-behavior: none;
 }
-.whats-new-btn {
-  font-size: 0.85rem;
-  padding: 0.35rem 0.7rem;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
+html:has(body.app) {
+  height: 100%;
+}
+/* `hidden` must win over the display values below (icon buttons, segments). */
+.app [hidden] {
+  display: none !important;
+}
+
+/* --- Map ---------------------------------------------------------------------
+   A fixed layer under everything. It never resizes when the sheet moves — the
+   sheet covers it — so Leaflet needs no invalidateSize() for that. */
+.map-area {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+#map {
+  position: absolute;
+  inset: 0;
+  background: var(--bg);
+}
+
+/* Dark map (A-14/E8): the tiles are darkened locally; same tile host, no new
+   third party. `none` in light mode. */
+.leaflet-tile-pane {
+  filter: var(--tile-filter);
+}
+
+/* Map colours from tokens (A-14/E8). An identity class per Sperrgrad
+   (m-voll/m-teil/m-gering) and a geometry class (m-poly, m-line, m-marker).
+   CSS fill/stroke override the presentation attributes Leaflet writes; A-9's
+   weights and opacities stay attributes and keep working through setStyle().
+   A line has no inside, so it gets NO fill rule — a CSS fill would paint the
+   polyline's hull, the same trap A-9 names for setStyle(). */
+.leaflet-overlay-pane path.m-voll {
+  stroke: var(--map-voll);
+}
+.leaflet-overlay-pane path.m-teil {
+  stroke: var(--map-teil);
+}
+.leaflet-overlay-pane path.m-gering {
+  stroke: var(--map-gering);
+}
+.leaflet-overlay-pane path.m-poly.m-voll,
+.leaflet-overlay-pane path.m-marker.m-voll {
+  fill: var(--map-voll);
+}
+.leaflet-overlay-pane path.m-poly.m-teil,
+.leaflet-overlay-pane path.m-marker.m-teil {
+  fill: var(--map-teil);
+}
+.leaflet-overlay-pane path.m-poly.m-gering,
+.leaflet-overlay-pane path.m-marker.m-gering {
+  fill: var(--map-gering);
+}
+/* Markers keep their white ring in both schemes (A-9/E6: markers unchanged);
+   it reads on light and on darkened tiles alike. After the identity rules —
+   same specificity, so order decides. */
+.leaflet-overlay-pane path.m-marker,
+.leaflet-overlay-pane path.m-search-dot {
+  stroke: #ffffff;
+}
+.leaflet-overlay-pane path.m-search {
+  stroke: var(--map-search);
+  fill: var(--map-search);
+}
+.leaflet-overlay-pane path.m-search-dot {
+  fill: var(--map-search);
+}
+
+/* Leaflet chrome on the tokens (#27). */
+.leaflet-container {
+  font: inherit;
+}
+.leaflet-bar {
+  box-shadow: var(--float-shadow);
+  border: 0;
+}
+.leaflet-bar a {
+  background-color: var(--surface);
+  color: var(--text);
+  border-bottom-color: var(--border);
+}
+.leaflet-bar a:hover,
+.leaflet-bar a:focus {
+  background-color: var(--chip);
+}
+.leaflet-bar a.leaflet-disabled {
+  background-color: var(--chip);
+  color: var(--text-muted);
+}
+.popup-title {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+.leaflet-popup-content {
+  margin: 0.7rem 0.85rem;
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
   background: var(--surface);
   color: var(--text);
-  cursor: pointer;
+  box-shadow: var(--float-shadow);
 }
-.whats-new-btn:hover {
-  border-color: var(--accent);
+.leaflet-container a.leaflet-popup-close-button {
+  color: var(--text-muted);
 }
-
-/* --- Sprachumschalter (A-5) ---
-   Reuses .segments/.segments button verbatim (defined below, not scoped to
-   .filter-group) — same look, same a11y wiring, no new pattern. */
-.lang-toggle {
-  display: flex;
-}
-.lang-toggle .segments button {
-  font-size: 0.85rem;
-  padding: 0.35rem 0.6rem;
-}
-
-/* --- Farbschema-Umschalter (A-8) ---
-   Dieselbe .segments-Mechanik wie Sprachumschalter und Filter, aber
-   ausschließlich mit Zeichen statt Text: der Header ist waagerecht knapp
-   (BACKLOG #23), und drei sichtbare Wörter mehr hätten ihn auf dem Handy in
-   eine zweite Zeile gedrückt. Die Bedeutung hängt deshalb an aria-label und
-   title (aus i18n.js), nicht an einem sichtbaren Wort — die Zeichen selbst
-   sind aria-hidden. Welcher Knopf gilt, zeigt wie überall .is-active. */
-.theme-toggle {
-  display: flex;
-}
-.theme-toggle .segments button {
-  /* Feste Breite, damit die drei Zeichen trotz unterschiedlicher Laufweite
-     gleich große Ziele bleiben. */
-  justify-content: center;
-  min-width: 2.25rem;
-  padding: 0.35rem 0.4rem;
-  font-size: 1rem;
-  line-height: 1.2;
-}
-/* Die Zeichen (◐ ☀ ☾) fallen in manchen Systemschriften kleiner aus als der
-   umgebende Text — hier auf eine gemeinsame Größe gebracht. */
-.theme-toggle .segments button > span {
-  font-size: 1.05em;
-}
-
-/* Zwei Controls im rechten Header-Bereich: sie gehören zusammen (beides
-   Darstellung, kein Inhalt) und sollen gemeinsam umbrechen, nicht einzeln. */
-.header-controls {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.4rem 0.5rem;
-}
-
-/* --- "Was ist neu?"-Dialog (A-6) --- */
-/* The dialog is a layout frame, not a scrolling area: heading and window note
-   stay put, .whats-new-body scrolls. Two declarations carry that, both
-   load-bearing (#34). The flex column lets the body take exactly the leftover
-   height, so its cap no longer has to be guessed from the heading's size — it
-   sits on [open] below, never here, see the warning there. And `overflow: clip`
-   cancels the UA stylesheet's `overflow: auto` on <dialog>, which had made the
-   dialog a *second* scroll container next to the body — dragging that outer bar
-   scrolled the whole content out of the frame and left an empty box. */
-.whats-new-dialog {
-  width: calc(100% - 2rem);
-  max-width: 32rem;
-  max-height: 80vh;
-  margin: auto;
-  padding: 0;
-  overflow: clip;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--surface);
+.leaflet-container a.leaflet-popup-close-button:hover,
+.leaflet-container a.leaflet-popup-close-button:focus {
   color: var(--text);
-  box-shadow: var(--shadow);
 }
-.whats-new-dialog::backdrop {
-  background: rgba(0, 0, 0, 0.5);
-}
-/* Near-instant fade — the global prefers-reduced-motion rule below zeroes the
-   duration, same restraint as the update-banner's own fade-in.
-   ►► `display` MUST stay gated on [open] ◄◄ The closed dialog is hidden by the
-   UA rule `dialog:not([open]) { display: none }`, and author styles beat the UA
-   origin whatever the specificity — so an ungated `display: flex` on the class
-   above does not just style the open dialog, it makes the closed one appear in
-   the normal flow: an unopened box between header and search field, with no
-   backdrop, half-covered by the map that follows it in the DOM. That shipped
-   once (#34) because every check opened the dialog first; a change here is only
-   verified once the *closed* state has been looked at too. */
-.whats-new-dialog[open] {
+
+/* --- Panel: shared by sheet and side panel ---------------------------------- */
+.panel {
+  position: fixed;
+  z-index: 1000;
   display: flex;
   flex-direction: column;
-  animation: whats-new-ein 160ms ease-out;
+  background: var(--surface);
+  color: var(--text);
+  overflow: hidden;
 }
-@keyframes whats-new-ein {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.panel-head {
+  flex: none;
+  position: relative;
 }
-.whats-new-header {
+.brand h1 {
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+.panel .tagline {
+  display: none;
+}
+
+/* Count and data stand share a line while they fit (the collapsed sheet is
+   measured, so a wrap just makes it one line taller). */
+.status-row {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.5rem;
-  margin: 0;
-  padding: 0.9rem 1rem;
-  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 0.6rem;
+  margin-top: 0.15rem;
 }
-.whats-new-header h2 {
+.list-status {
   margin: 0;
-  font-size: 1.1rem;
+  font-weight: 600;
+  font-size: 0.95rem;
 }
-.whats-new-close {
-  padding: 0.2rem 0.55rem;
-  font-size: 1.2rem;
-  line-height: 1;
-  border: 0;
-  border-radius: var(--radius);
-  background: transparent;
+.list-status.is-error {
+  color: var(--red);
+}
+.stand {
+  margin: 0.05rem 0 0;
+  font-size: 0.8rem;
   color: var(--text-muted);
-  cursor: pointer;
 }
-.whats-new-close:hover {
-  background: var(--chip);
+/* Offline-Kennzeichnung des Datenstands: der Stand ist echt, aber die Seite
+   konnte nicht nachsehen, ob es inzwischen einen neueren Snapshot gibt.
+   Dezent, nicht als Fehler — die Daten sind ja da. */
+.stand.is-stale {
   color: var(--text);
 }
-.whats-new-window {
-  margin: 0.75rem 1rem 0;
-  color: var(--text-muted);
-  font-size: 0.85rem;
+.stand.is-stale #stand {
+  font-weight: 600;
 }
-/* The one scrolling area of the dialog. Its height comes from the flex layout
-   above (`min-height: 0` is what lets a flex item shrink below its content),
-   not from a `calc(80vh - 6rem)` estimate of the heading's height — that
-   constant is in rem while the viewport cap is in vh, so it only ever fit at
-   one root font size. `contain: paint` keeps the overflowing entries out of the
-   dialog's own scrollable overflow region: Chromium counts them there even
-   though this box already clips them, which is where #34's second scrollbar
-   came from. `overflow: clip` above covers browsers without `contain`. */
-.whats-new-body {
-  padding: 0.5rem 1rem 1rem;
+/* Bewusst --accent und nicht --amber/--red: --amber verfehlt als Textfarbe den
+   AA-Kontrast, --red würde einen Fehler suggerieren — es ist keiner. */
+.stand-offline {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Tabs (A-14/E4): the WAI-ARIA pattern, wired in src/ui/panel.js. */
+.tabs {
+  display: flex;
+  gap: 0.25rem;
+  margin: 0.55rem -1rem 0;
+  padding: 0 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+.tabs [role="tab"] {
+  flex: 1 1 0;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.4rem;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -1px;
+  background: transparent;
+  color: var(--text-muted);
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.tabs [role="tab"][aria-selected="true"] {
+  color: var(--text);
+  border-bottom-color: var(--accent);
+}
+.tabs [role="tab"]:focus-visible {
+  outline-offset: -3px;
+}
+
+.panel-body {
   flex: 1 1 auto;
   min-height: 0;
   overflow-y: auto;
-  contain: paint;
+  overscroll-behavior: contain;
+  padding: 0.75rem 1rem 1.25rem;
+}
+[role="tabpanel"]:focus-visible {
+  outline-offset: -3px;
+}
+
+/* --- Search bar ---------------------------------------------------------------- */
+.searchbar {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  background: var(--surface);
+  border-radius: 14px;
+  padding: 0.25rem;
+}
+.searchbar:focus-within {
+  box-shadow: var(--float-shadow), 0 0 0 3px var(--focus);
+}
+.search {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+.search input[type="search"] {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 2.75rem;
+  padding: 0 0.35rem;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: 1rem; /* 16 px: iOS zooms into anything smaller on focus */
+  -webkit-appearance: none;
+  appearance: none;
+}
+.search input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+/* The ring sits on the whole bar (:focus-within above) — the field's own
+   outline would draw a second, cramped box inside it. */
+.search input[type="search"]:focus {
+  outline: none;
+}
+/* Offline abgeschaltet (Nominatim braucht Netz) — sichtbar, nicht nur inaktiv. */
+.search input:disabled,
+.search button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+/* An aria-live region: collapsed when empty, never display:none — one removed
+   from the accessibility tree may not announce the text that brings it back. */
+.search-status {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 0 0.6rem 0.4rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+.search-status:empty {
+  padding: 0;
+  height: 0;
+  overflow: hidden;
+}
+.search-status.is-error {
+  color: var(--red);
+}
+
+.icon-btn {
+  flex: none;
+  display: inline-grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+.icon-btn:hover {
+  background: var(--chip);
+}
+.icon-btn svg {
+  width: 1.375rem;
+  height: 1.375rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* --- Filters (A-12 semantics; A-14/E5 arrangement) ---------------------------- */
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 0.9rem;
+}
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.filter-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+/* Separators come from a 1px grid gap over the container's own background, not
+   from border-right on each button — that draws both directions should a group
+   ever wrap (#33). */
+.segments {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 1px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--border);
+}
+.segments button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 auto;
+  gap: 0.35rem;
+  min-height: 2.25rem;
+  padding: 0.4rem 0.65rem;
+  font: inherit;
+  font-size: 0.9rem;
+  border: 0;
+  background: var(--surface);
+  color: var(--text);
+  white-space: nowrap;
+  cursor: pointer;
+}
+.segments button.is-active {
+  background: var(--accent);
+  color: var(--accent-contrast);
+  font-weight: 600;
+}
+/* Zahl im Sperrgrad-Knopf (A-12/E2). Erbt die Textfarbe des Knopfes — nie die
+   Ampelfarbe: --amber käme als Text auf --surface im hellen Schema nur auf
+   ~3,4:1. Die Farbe bleibt im .dot daneben. :empty ist nicht kosmetisch — ein
+   leeres <span> vor dem ersten Laden risse sonst eine Lücke (gap). */
+.seg-count {
+  font-variant-numeric: tabular-nums;
+}
+.seg-count:empty {
+  display: none;
+}
+.dot {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  display: inline-block;
+  flex: none;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}
+.dot-red {
+  background: var(--red);
+}
+.dot-amber {
+  background: var(--amber);
+}
+.dot-green {
+  background: var(--green);
+}
+
+/* --- List ------------------------------------------------------------------------ */
+.liste {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.liste:focus-visible {
+  outline-offset: 2px;
+}
+.liste li {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left-width: 5px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.liste li.amp-voll {
+  border-left-color: var(--red);
+}
+.liste li.amp-teil {
+  border-left-color: var(--amber);
+}
+.liste li.amp-gering {
+  border-left-color: var(--green);
+}
+.list-item-btn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  padding: 0.65rem 0.8rem;
+  cursor: pointer;
+  font: inherit;
+  border-radius: var(--radius);
+}
+.liste li.is-selected {
+  outline: 2px solid var(--accent);
+}
+/* Zeilen-Tönung bei Hover/Fokus (A-9/E7) — als Klasse, weil auch Marker-Hover
+   und Tastaturfokus sie setzen; anderes Property als .is-selected, gewählt UND
+   überfahren ergibt Tönung plus Umriss. */
+.liste li.is-hovered {
+  background: var(--chip);
+}
+.item-title {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.item-meta {
+  display: block;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  margin-top: 0.15rem;
+}
+.item-badges {
+  margin-top: 0.35rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+.badge {
+  font-size: 0.78rem;
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  border: 1px solid var(--chip-border);
+  color: var(--text-muted);
+  background: var(--chip);
+}
+.badge-dist {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.item-restdauer {
+  font-weight: 600;
+}
+.item-restdauer.expired {
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+/* --- "Neu" tab (A-6 content) ------------------------------------------------- */
+.neu-window {
+  margin: 0 0 0.6rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
 }
 .whats-new-run {
   margin: 0.75rem 0;
@@ -199,29 +525,66 @@
   color: var(--red);
 }
 
-/* --- Update-Hinweis der PWA ---
-   Erscheint nur, wenn eine neue Version bereitsteht. Kein Fokus-Raub, kein
-   Auto-Reload — die Nutzerin entscheidet (Entscheidung 4 in A-3). Solange die
-   Live-Region leer ist, belegt sie dank :empty keinen vertikalen Platz. */
+/* --- Credits on the map (A-14/E7) ---------------------------------------------
+   Static in the HTML, visible without interaction; a map attribution in look
+   and place. On a phone it rides just above the collapsed sheet, which covers
+   it once opened — the licence asks for a visible notice, not a permanent one,
+   and it is back in view the moment the sheet goes down. */
+.map-credits {
+  position: fixed;
+  z-index: 400;
+  right: 0;
+  bottom: calc(var(--sheet-collapsed, 8rem) + env(safe-area-inset-bottom));
+  max-width: min(100%, 34rem);
+  margin: 0;
+  padding: 0.15rem 0.5rem 0.2rem;
+  font-size: 0.6875rem;
+  line-height: 1.35;
+  color: var(--text-muted);
+  background: var(--surface);
+  background: color-mix(in srgb, var(--surface) 86%, transparent);
+  border-top-left-radius: 6px;
+}
+.map-credits p {
+  display: inline;
+  margin: 0;
+}
+.map-credits .credits-line::before {
+  content: " · ";
+}
+.map-credits a {
+  color: inherit;
+}
+/* Beispieldaten-Warnung: --amber verfehlt als Text den AA-Kontrast. */
+.map-credits .attribution-hinweis {
+  display: block;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* --- Update banner (A-3) ------------------------------------------------------ */
 .update-banner:empty {
   display: none;
 }
 .update-banner {
+  position: fixed;
+  z-index: 1200;
+  top: calc(var(--searchbar-bottom, 4rem) + 0.5rem);
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: calc(100% - 1rem);
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem 0.75rem;
   align-items: center;
-  /* Rahmen um 1rem einrücken wie der Inhalt der übrigen Abschnitte, dabei
-     zentriert und auf die gleiche Maximalbreite begrenzt. */
-  width: calc(100% - 2rem);
-  max-width: calc(1200px - 2rem);
-  margin: 0 auto 0.25rem;
-  padding: 0.6rem 0.85rem;
+  padding: 0.55rem 0.8rem;
   background: var(--surface);
+  color: var(--text);
   border: 1px solid var(--accent);
   border-left-width: 5px;
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  box-shadow: var(--float-shadow);
   font-size: 0.95rem;
 }
 .update-banner button {
@@ -233,491 +596,322 @@
   color: var(--accent-contrast);
   cursor: pointer;
 }
-.update-banner.is-visible {
-  animation: banner-ein 180ms ease-out;
-}
-@keyframes banner-ein {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 
-/* --- Suche --- */
-.search {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  align-items: center;
-  padding: 0.75rem 1rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.search input[type="text"] {
-  flex: 1 1 240px;
-  min-width: 0;
-  padding: 0.6rem 0.75rem;
-  font-size: 1rem;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--surface);
-  color: var(--text);
-}
-.search button {
-  padding: 0.6rem 1rem;
-  font-size: 1rem;
-  border: 1px solid var(--accent);
-  border-radius: var(--radius);
-  background: var(--accent);
-  color: var(--accent-contrast);
-  cursor: pointer;
-}
-.search button#search-reset {
-  background: var(--surface);
-  color: var(--text);
-  border-color: var(--border);
-}
-/* Offline abgeschaltet (Nominatim braucht Netz) — sichtbar, nicht nur inaktiv. */
-.search input[type="text"]:disabled,
-.search button:disabled {
-  opacity: 0.55;
-  cursor: not-allowed;
-}
-.search-status {
-  flex-basis: 100%;
-  color: var(--text-muted);
-  font-size: 0.9rem;
-  min-height: 1.2em;
-}
-.search-status.is-error {
-  color: var(--red);
-}
-
-/* --- Filter --- */
-/* Seit A-13 ein Kind von .content (im DOM zwischen Karte und Liste). Breite,
-   Zentrierung und der seitliche Abstand kommen deshalb vom Container — eigene
-   `max-width`/`margin: auto`/`padding-inline` hier würden sich damit addieren.
-   Den senkrechten Abstand zu Karte und Liste macht `gap` von .content. */
-.filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem 1.5rem;
+/* --- Menu (A-14/E6) -----------------------------------------------------------
+   ►► `display` only under [open] ◄◄ The closed dialog is hidden by the UA rule
+   `dialog:not([open]) { display: none }`, and author styles beat the UA origin
+   whatever the specificity — an ungated display value shows the closed dialog
+   in the page (#34, CLAUDE.md). */
+dialog.menu {
   padding: 0;
-}
-.filter-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-}
-.filter-label {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-}
-/* Separators come from a 1px grid gap over the container's own background, not
-   from border-right on each button. Identical on one row — but the group wraps
-   on a narrow screen, and a border-right only separates columns: the second row
-   sat flush against the first with no line between them. The gap draws both
-   directions. Together with the buttons' flex-grow below, a wrapped row fills
-   the width instead of leaving a bare strip of container background beside the
-   last button (that ragged block was the visible defect on an iPhone SE). */
-.segments {
-  display: inline-flex;
-  flex-wrap: wrap;
-  gap: 1px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-  background: var(--border);
-}
-.segments button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  /* Only ever takes effect once the group wraps: .segments is inline-flex and
-     shrink-to-fit, so a single row has no free space to distribute. */
-  flex: 1 1 auto;
-  gap: 0.35rem;
-  padding: 0.45rem 0.7rem;
-  font-size: 0.92rem;
   border: 0;
   background: var(--surface);
   color: var(--text);
-  cursor: pointer;
 }
-.segments button.is-active {
-  background: var(--accent);
-  color: var(--accent-contrast);
-  font-weight: 600;
-}
-/* Zahl im Sperrgrad-Knopf (A-12/E2). Erbt die Textfarbe des Knopfes — nie die
-   Ampelfarbe: --amber käme als Text auf --surface im hellen Schema nur auf
-   ~3,4:1, AA-Text braucht 4,5:1. Die Farbe bleibt im .dot daneben.
-   :empty ist nicht kosmetisch: .segments button setzt gap, ein leeres <span>
-   vor dem ersten Laden risse sonst eine sichtbare Lücke zwischen Punkt und
-   Beschriftung. */
-.seg-count {
-  font-variant-numeric: tabular-nums;
-}
-.seg-count:empty {
-  display: none;
-}
-
-.dot {
-  width: 0.7rem;
-  height: 0.7rem;
-  border-radius: 50%;
-  display: inline-block;
-  border: 1px solid rgba(0, 0, 0, 0.25);
-}
-.dot-red {
-  background: var(--red);
-}
-.dot-amber {
-  background: var(--amber);
-}
-.dot-green {
-  background: var(--green);
-}
-
-/* --- Karte + Filter + Liste ---
-   Die Reihenfolge auf dem Handy steht seit A-13 im DOM (Karte, Filter, Liste)
-   und wird hier NICHT mehr per `order` nachgestellt. Das ist kein Aufräumen,
-   sondern Voraussetzung: ein `order` auf zwei der drei Kinder würde das dritte
-   (die Filter, ohne Angabe `order: 0`) vor beide sortieren. Umgekehrt heißt
-   das: Seh- und Fokusreihenfolge stimmen mobil überein — den Versatz trägt
-   bewusst der Desktop weiter unten (A-13/E2, E4). */
-.content {
+dialog.menu[open] {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  padding: 0 1rem 1rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  position: fixed;
+  inset: 0 auto 0 0;
+  margin: 0;
+  width: min(22.5rem, 88vw);
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  padding: calc(0.75rem + env(safe-area-inset-top)) 1.1rem calc(1.5rem + env(safe-area-inset-bottom));
+  box-shadow: var(--float-shadow);
+  overflow-y: auto;
+  animation: menu-ein 160ms ease-out;
 }
-#map {
-  height: 55vh;
-  min-height: 320px;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
-  background: var(--surface);
+dialog.menu::backdrop {
+  background: rgba(0, 0, 0, 0.45);
 }
-.list-status {
+@keyframes menu-ein {
+  from {
+    opacity: 0;
+    translate: -1rem 0;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+.menu-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.menu-head h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+.menu-head form {
+  margin: 0;
+}
+.menu-lead {
+  margin: 0.15rem 0 0.4rem;
   color: var(--text-muted);
-  padding: 0.5rem 0;
-  min-height: 1.2em;
+  font-size: 0.95rem;
 }
-.list-status.is-error {
-  color: var(--red);
+dialog.menu h3 {
+  margin: 1.1rem 0 0.45rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
 }
-
-.liste {
+.setting {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.75rem;
+  margin: 0.35rem 0;
+}
+.menu-text {
+  margin: 0.3rem 0;
+  font-size: 0.92rem;
+}
+.disclaimer {
+  font-weight: 600;
+}
+.menu-links {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  max-height: 60vh;
-  overflow-y: auto;
+  gap: 0.55rem;
+  font-size: 0.95rem;
 }
-.liste li {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-left-width: 5px;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-}
-.liste li.amp-voll {
-  border-left-color: var(--red);
-}
-.liste li.amp-teil {
-  border-left-color: var(--amber);
-}
-.liste li.amp-gering {
-  border-left-color: var(--green);
-}
-.list-item-btn {
-  display: block;
-  width: 100%;
-  text-align: left;
-  background: transparent;
-  border: 0;
-  color: inherit;
-  padding: 0.7rem 0.85rem;
-  cursor: pointer;
-  font: inherit;
-  border-radius: var(--radius);
-}
-.liste li.is-selected {
-  outline: 2px solid var(--accent);
-}
-/* Zeilen-Tönung bei Hover/Fokus (A-9/E7). --chip statt --bg: der Token für
-   „Fläche, die AUF der Listenkarte liegt", in allen drei Schemazuständen
-   abgestimmt — Badges und .whats-new-close:hover nutzen ihn genauso. Als
-   Klasse statt :hover, weil app.js sie auch bei Marker-Hover und Tastatur-
-   fokus setzt (E2/E8); das (hover: hover)-Gatter sitzt in der Verdrahtung,
-   nicht hier — sonst verlöre der ungegatterte Fokus-Pfad die Tönung.
-   Anderes CSS-Property als .is-selected: gewählt UND überfahren ergibt
-   Tönung PLUS Umriss, kein Konflikt. Keine Transition → nichts, was
-   prefers-reduced-motion dämpfen müsste. */
-.liste li.is-hovered {
-  background: var(--chip);
-}
-.item-title {
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-.item-meta {
-  color: var(--text-muted);
-  font-size: 0.9rem;
-  margin-top: 0.2rem;
-}
-.item-badges {
-  margin-top: 0.35rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem;
-}
-.badge {
-  font-size: 0.78rem;
-  padding: 0.1rem 0.45rem;
-  border-radius: 999px;
-  border: 1px solid var(--chip-border);
-  color: var(--text-muted);
-  background: var(--chip);
-}
-.badge-dist {
-  border-color: var(--accent);
-  color: var(--accent);
-}
-.item-restdauer {
-  font-weight: 600;
-}
-.item-restdauer.expired {
-  color: var(--text-muted);
-  font-weight: 400;
-}
-
-/* --- Leaflet-Bedienelemente ---
-   leaflet.css bringt weiß/schwarz fest verdrahtet mit (kein Theme-Support).
-   Im Hellmodus fällt das nicht auf (--surface ist ohnehin weiß), im
-   Dunkelmodus stachen Zoom-Buttons, Attributions-Box und Popup als helle
-   Kästen aus der dunklen Karte heraus. Fix über dieselben Tokens wie der
-   Rest der App — dadurch automatisch korrekt in beiden Farbschemata, ganz
-   ohne eigene Media Query (die Tokens selbst schalten um). */
-.leaflet-bar {
-  box-shadow: var(--shadow);
-}
-.leaflet-bar a {
-  background-color: var(--surface);
-  color: var(--text);
-  border-bottom-color: var(--border);
-}
-.leaflet-bar a:hover,
-.leaflet-bar a:focus {
-  background-color: var(--chip);
-}
-.leaflet-bar a.leaflet-disabled {
-  background-color: var(--chip);
-  color: var(--text-muted);
-}
-.leaflet-control-attribution {
-  background: var(--surface);
-  color: var(--text-muted);
-}
-.leaflet-control-attribution a {
+.menu-links a {
   color: var(--accent);
 }
 
-/* Popup */
-.popup-title {
-  font-weight: 600;
-  margin-bottom: 0.25rem;
-}
-.leaflet-popup-content {
-  margin: 0.6rem 0.8rem;
-  line-height: 1.4;
-}
-.leaflet-popup-content-wrapper,
-.leaflet-popup-tip {
-  background: var(--surface);
-  color: var(--text);
-  box-shadow: var(--shadow);
-}
-.leaflet-container a.leaflet-popup-close-button {
-  color: var(--text-muted);
-}
-.leaflet-container a.leaflet-popup-close-button:hover,
-.leaflet-container a.leaflet-popup-close-button:focus {
-  color: var(--text);
+/* --- Desktop-only controls hidden on a phone --------------------------------- */
+.panel-collapse,
+.panel-open {
+  display: none;
 }
 
-.disclaimer {
-  font-weight: 600;
-  color: var(--text);
-}
-.stand-hint {
-  color: var(--text-muted);
-  font-size: 0.8rem;
-}
-/* Offline-Kennzeichnung des Datenstands: der Stand ist echt, aber die Seite
-   konnte nicht nachsehen, ob es inzwischen einen neueren Snapshot gibt.
-   Dezent, nicht als Fehler — die Daten sind ja da. */
-.stand.is-stale {
-  color: var(--text);
-}
-.stand.is-stale #stand {
-  font-weight: 600;
-}
-/* Bewusst --accent und nicht --amber/--red: --amber verfehlt als Textfarbe den
-   AA-Kontrast, --red würde einen Fehler suggerieren — es ist keiner. */
-.stand-offline {
-  color: var(--accent);
-  font-weight: 600;
-}
-/* Beispieldaten-Warnung unter der Namensnennung. Gleiche Begründung wie oben für
-   die Farbwahl: --amber verfehlt als Text auf --bg im Hellmodus den AA-Kontrast. */
-.attribution-hinweis {
-  color: var(--accent);
-  font-weight: 600;
-}
-
-/* --- Small phones (iPhone SE class, 360–480 px) ---
-   Same complaint as BACKLOG #23, one device class down: header + search +
-   three filter groups stacked to 558 px of the 667 px viewport, so the map
-   started with 109 px left and the first screen was pure chrome. Nothing here
-   removes a control or changes the focus order — the blocks above the map just
-   stop paying desktop-sized spacing on a display that has none to spare.
-
-   The segment font is the one visual concession: at 0.92rem the Zeitraum group
-   needs ~450 px and wraps, at 0.85rem each group fits one row from 360 px up.
-   "One row" means per group — the three groups have never shared a line at
-   phone width and cannot (186/304/253 px against 343 px at 375 px), which is
-   why the filter block is 190 px tall in three rows. That is measured with the
-   current DE/EN strings and a system font, i.e. a group can still wrap on an
-   unusual font stack — which is exactly why the wrapped state was made to look
-   intentional (see .segments above) instead of being relied upon never to
-   happen.
-
-   The spacing below goes one step further than the 2026-08-08 pass, but only
-   for headroom: A-13 moved the filter block below the map, which is what
-   actually puts the whole map on the first screen. The remaining 15 px here
-   buy the margin that a 568 px-tall viewport needs (budget 255 px, chrome
-   242 px). The tagline stays — hiding it saves 24 px that nothing needs, and it
-   is the one line saying what the page is for (A-13/E2). */
-@media (max-width: 480px) {
-  .header-top {
-    margin-bottom: 0.35rem;
+/* ============================== Phone: bottom sheet ============================ */
+@media (max-width: 899px) {
+  .panel {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 16px 16px 0 0;
+    box-shadow: 0 -1px 0 var(--border), var(--float-shadow);
+    padding-bottom: env(safe-area-inset-bottom);
+    /* Collapsed: exactly the measured head (src/ui/panel.js), never a constant —
+       a longer status line or the English strings grow it by a line instead of
+       being clipped. */
+    height: calc(var(--sheet-collapsed, 8rem) + env(safe-area-inset-bottom));
+    transition: height 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  /* Each height is declared twice: if `dvh` is unknown the second declaration
+     is dropped at parse time and the `vh` one stays. (A fallback inside a
+     custom property would not work: an unsupported value there turns `height`
+     invalid at computed-value time, which falls back to auto, not to vh.) */
+  .panel[data-sheet="half"] {
+    height: 56vh;
+    height: 56dvh;
+  }
+  .panel[data-sheet="full"] {
+    height: calc(100vh - var(--searchbar-bottom, 4rem) - 0.5rem);
+    height: calc(100dvh - var(--searchbar-bottom, 4rem) - 0.5rem);
+  }
+  .panel.is-dragging {
+    transition: none;
   }
 
-  .search {
-    padding: 0.4rem 1rem;
-    gap: 0.4rem;
+  /* The head is the drag surface; buttons in it keep their taps. No text
+     selection on it: a first drag selected the title, and the next press on
+     the selection started a native drag-and-drop, which cancels the pointer
+     stream mid-drag (found in the A-14 browser check). */
+  .panel-head {
+    padding: 1.35rem 1rem 0;
+    touch-action: none;
+    -webkit-user-select: none;
+    user-select: none;
   }
-  /* The submit button deliberately keeps its own row. Pulling it up next to
-     the input (a smaller flex-basis) is the obvious 49 px, and it was measured
-     and rejected: the placeholder "Adresse in Karlsruhe (z. B. Kaiserstraße 1)"
-     needs 304 px of text width and has exactly 317 px at 375 px, so sharing the
-     row cuts the example off mid-word on the very device this block is for.
-     Below 360 px it is clipped either way — that is not a reason to clip it at
-     375 px too. */
-  /* Deliberately min-height and NOT display:none — this is an aria-live
-     region, and one removed from the accessibility tree may not announce the
-     text that is added at the same moment it comes back. Collapsed to zero it
-     stays present and simply costs nothing while there is no status. */
-  .search-status:empty {
-    min-height: 0;
+  .panel-head .searchbar {
+    -webkit-user-select: text;
+    user-select: text;
+  }
+  .sheet-handle {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6rem;
+    height: 1.6rem;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: grab;
+  }
+  /* --text-muted at 70 % keeps the grip ≥ 3:1 against --surface in both
+     schemes (3.4:1 light, 4.2:1 dark) — it is the control's visual cue. */
+  .sheet-handle::before {
+    content: "";
+    position: absolute;
+    top: 0.55rem;
+    left: 50%;
+    width: 2.5rem;
+    height: 0.3rem;
+    margin-left: -1.25rem;
+    border-radius: 99px;
+    background: var(--text-muted);
+    opacity: 0.7;
+  }
+  .sheet-handle:focus-visible {
+    outline-offset: -3px;
   }
 
+  .searchbar {
+    position: fixed;
+    z-index: 1100;
+    top: calc(0.5rem + env(safe-area-inset-top));
+    left: calc(0.5rem + env(safe-area-inset-left));
+    right: calc(0.5rem + env(safe-area-inset-right));
+    box-shadow: var(--float-shadow);
+    touch-action: manipulation;
+  }
+
+  /* One horizontally scrolling row for the three filter groups (A-14/E5):
+     38 px instead of a stacked 209–245 px, the difference between seeing a
+     list entry in the half sheet or none. A fade marks the hidden rest while
+     there is any (has-more, set in src/ui/filters.js). */
   .filters {
-    gap: 0.6rem 1rem;
+    flex-direction: row;
+    gap: 1rem;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    margin: 0 -1rem 0.8rem;
+    padding: 0 1rem 0.3rem;
+    scroll-padding-inline: 1rem;
   }
-  /* Der Abstand zwischen Karte, Filtern und Liste ist auf dem Handy das
-     Einzige, was noch zwischen der Kartenunterkante und dem ersten sichtbaren
-     Filterlabel steht. Bei 360×640 blieben mit 1rem genau 4 px davon übrig —
-     zu wenig, um als Hinweis „hier geht es weiter" zu taugen (A-13/E5). */
-  .content {
-    gap: 0.6rem;
+  .filters.has-more {
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 2.5rem), transparent);
+    mask-image: linear-gradient(to right, #000 calc(100% - 2.5rem), transparent);
   }
-  .segments button {
-    padding: 0.45rem 0.55rem;
-    font-size: 0.85rem;
-  }
-}
-
-/* --- Desktop-Layout: Filterzeile oben, darunter Karte + Liste nebeneinander ---
-
-   Ein Raster statt einer Flex-Zeile, seit die Filter im DOM zwischen Karte und
-   Liste stehen (A-13). Es holt sie über `grid-template-areas` wieder ganz nach
-   oben und über die volle Breite — hier ist das unkritisch, weil auf dem Desktop
-   ohnehin alles ohne Scrollen sichtbar ist (A-13/E2). Kein `flex-wrap` als
-   Ersatz: mit `flex: 1 1 60%` und `1 1 40%` plus `gap` überschreiten die beiden
-   Spalten zusammen 100 %, sie brächen also mit erlaubtem Umbruch untereinander.
-   `3fr 2fr` ergibt exakt die bisherigen Spaltenbreiten (bei 1280 px: 691/461).
-
-   Both columns get their height from one place, --column-height, and the two
-   scrolling/filling children take what is left inside them. That is what keeps
-   the two boxes flush at the bottom: giving `#map` and `.liste` each their own
-   `70vh` does not, because the list column also carries `.list-status` above
-   the list (39 px), so its stack came to 70vh + 39 px while the map stayed at
-   70vh — the list hung 39 px below the map, and the same 39 px sat empty under
-   the map inside its stretched wrapper. `min-height: 0` is what allows `.liste`
-   to shrink below its content height and scroll instead of pushing the column
-   open; `max-height: none` drops the mobile cap, which would otherwise win. */
-@media (min-width: 900px) {
-  .content {
-    display: grid;
-    grid-template-columns: 3fr 2fr;
-    grid-template-areas:
-      "filters filters"
-      "map     list";
-    column-gap: 1rem;
-    /* Die Filterzeile brachte ihren Abstand zur Karte früher als eigenes
-       padding-bottom mit; hier macht ihn die Rasterzeile. */
-    row-gap: 0.5rem;
-    align-items: stretch;
-    /* max() keeps #map's 320 px floor from the base rule, which is now off
-       (`height: 100%`) and therefore has to live on the column. */
-    --column-height: max(70vh, 320px);
-  }
-  .filters {
-    grid-area: filters;
-  }
-  .map-wrap {
-    grid-area: map;
-    height: var(--column-height);
-  }
-  .list-wrap {
-    grid-area: list;
-    display: flex;
-    flex-direction: column;
-    height: var(--column-height);
-  }
-  /* Not shrinkable: the column is now shorter than its content, so flexbox
-     hands every item a share of the shortfall, and `.list-status` carries an
-     explicit `min-height: 1.2em` — which replaces the automatic content-based
-     minimum and, with `box-sizing: border-box`, let the line be squeezed to
-     19 px, padding included, clipping the "118 Baustellen" text. The list is
-     the only item here that may give way. */
-  .list-status {
+  .filter-group {
     flex: none;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.45rem;
   }
-  #map {
-    height: 100%;
-    min-height: 0;
+  .segments {
+    flex-wrap: nowrap;
   }
-  .liste {
-    flex: 1 1 auto;
-    min-height: 0;
-    max-height: none;
+
+  /* Leaflet's top controls clear the floating search bar. */
+  .leaflet-top {
+    top: var(--searchbar-bottom, 4rem);
+  }
+  /* The update banner keeps clear of the zoom control on the right. */
+  .update-banner {
+    left: calc(0.5rem + env(safe-area-inset-left));
+    right: 3.75rem;
+    width: auto;
+    transform: none;
+  }
+}
+
+/* ============================== Desktop: side panel ============================ */
+@media (min-width: 900px) {
+  .panel {
+    top: 0.75rem;
+    bottom: 0.75rem;
+    left: 0.75rem;
+    width: 25rem;
+    border-radius: 14px;
+    box-shadow: var(--float-shadow);
+    transition:
+      transform 200ms ease,
+      visibility 0s linear 0s;
+  }
+  .panel-head {
+    padding: 1rem 1rem 0;
+  }
+  .sheet-handle {
+    display: none;
+  }
+  .brand h1 {
+    font-size: 1.45rem;
+    padding-right: 2.75rem; /* room for the collapse button */
+  }
+  .panel .tagline {
+    display: block;
+    margin: 0.15rem 0 0;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+  .searchbar {
+    margin: 0.8rem 0 0.5rem;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    padding: 0.125rem;
+  }
+  .searchbar:focus-within {
+    box-shadow: 0 0 0 3px var(--focus);
+  }
+
+  /* Collapsible (A-14/E14). visibility waits for the slide, so the panel leaves
+     the tab order only once it is gone; `inert` (set in panel.js) does the
+     same for assistive technology at once. */
+  .panel-collapse {
+    display: inline-grid;
+    position: absolute;
+    top: 0.55rem;
+    right: 0.5rem;
+  }
+  body.panel-collapsed .panel {
+    transform: translateX(calc(-100% - 1rem));
+    visibility: hidden;
+    transition:
+      transform 200ms ease,
+      visibility 0s linear 200ms;
+  }
+  .panel-open {
+    display: inline-flex;
+    position: fixed;
+    z-index: 1000;
+    top: 0.75rem;
+    left: 0.75rem;
+    align-items: center;
+    min-height: 2.75rem;
+    padding: 0.5rem 1rem;
+    border: 0;
+    border-radius: 12px;
+    background: var(--surface);
+    color: var(--text);
+    box-shadow: var(--float-shadow);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .map-credits {
+    bottom: 0;
+  }
+  .update-banner {
+    top: 0.75rem;
+    left: calc(26.5rem + (100% - 26.5rem) / 2);
+  }
+}
+
+/* Short screens (landscape phones): the sheet has two heights only (A-14/E2);
+   src/ui/panel.js skips "half". Less padding buys the map a few rows. */
+@media (max-width: 899px) and (max-height: 499px) {
+  .panel-head {
+    padding-top: 1.15rem;
+  }
+  .panel .brand h1 {
+    font-size: 1rem;
   }
 }
 
@@ -726,5 +920,15 @@
   .leaflet-fade-anim .leaflet-tile,
   .leaflet-zoom-anim .leaflet-zoom-animated {
     transition: none !important;
+  }
+}
+
+/* High-contrast / forced colours: the floating chrome needs real edges. */
+@media (forced-colors: active) {
+  .panel,
+  .searchbar,
+  .map-credits,
+  .panel-open {
+    border: 1px solid CanvasText;
   }
 }

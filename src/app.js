@@ -3,7 +3,9 @@
 //
 // Since A-14/E11 the work lives in feature modules under src/ui/; this file
 // owns what ties them together: the render pipeline, selection and hover
-// (they touch map and list at once), the data load and the boot order.
+// (they touch map, list and panel at once), the data load and the boot order.
+// The page is a map app shell since A-14: the map fills the viewport, the
+// panel (bottom sheet / side panel) floats above it.
 
 import { state } from './ui/state.js';
 import { el, prefersReducedMotion } from './ui/dom.js';
@@ -16,11 +18,12 @@ import {
   bringAreaToFront,
   clearSearchCircle,
   drawSearchCircle,
-  getMap,
   initMap,
   openPopup,
   renderAreas,
   renderMarkers,
+  setChromeInsets,
+  setViewInVisibleArea,
 } from './ui/map.js';
 import {
   hasListItem,
@@ -32,7 +35,9 @@ import {
   setRowHovered,
 } from './ui/list.js';
 import { wireSearch } from './ui/search.js';
-import { renderChangelogBody, wireWhatsNew } from './ui/feed.js';
+import { loadChangelog, renderChangelogBody } from './ui/feed.js';
+import { initPanel, isDesktop, setSheet, sheetState, syncHandleLabel } from './ui/panel.js';
+import { wireMenu } from './ui/menu.js';
 import { initServiceWorker } from './ui/pwa.js';
 
 const DATA_URL = 'data/baustellen.geojson';
@@ -57,7 +62,7 @@ function setHoverKey(key) {
   if (!key && state.selectedId) bringAreaToFront(state.selectedId);
 }
 
-function selectFeature(key, { fromMarker } = {}) {
+function selectFeature(key, { fromList, fromMarker } = {}) {
   const vorher = state.selectedId;
   state.selectedId = key;
   markSelected(key);
@@ -66,11 +71,15 @@ function selectFeature(key, { fromMarker } = {}) {
   // kommt nach vorn (E4, E10).
   if (vorher && vorher !== key) applyAreaTier(vorher);
   applyAreaTier(key);
+  // A full sheet hides the map: a selection from the list steps it down to
+  // half so the popup has room (A-14/E9). The sheet moves — the camera does
+  // not (A-11): setSheet() reports the target geometry before the popup
+  // opens, so autoPan already pads for the lowered sheet.
+  if (fromList && !isDesktop() && sheetState() === 'full') setSheet('half');
   openPopup(key);
   if (fromMarker) {
-    // Nur den Listen-Container scrollen, nicht das ganze Fenster: sonst springt
-    // im mobilen Layout (Liste unter der Karte) der Viewport nach unten weg und
-    // verdeckt das gerade geöffnete Info-Popup auf der Karte.
+    // Nur den Scroll-Container der Liste bewegen, nie die Seite (A-14: die
+    // Seite scrollt ohnehin nicht mehr; der Container ist der Panel-Body).
     scrollListItemIntoView(key);
   }
 }
@@ -174,30 +183,45 @@ state.theme = liesGespeichertesFarbschema();
 // Zustand der Knöpfe dazu — vor allem anderen, damit nichts kurz falsch
 // eingefärbt dasteht.
 wireThemeToggle();
+// The panel first: it measures the chrome and reports what it covers, which
+// the map needs before its first view (A-14/E9, E13).
+initPanel({
+  onChromeChange: setChromeInsets,
+  onTabChange(tab) {
+    if (tab === 'neu') loadChangelog();
+  },
+});
 initMap({ onSelect: selectFeature, onHover: setHoverKey });
+// Same centre and zoom as ever (Marktplatz, 13) — centred in the part of the
+// map the panel leaves uncovered (A-14/E13).
+setViewInVisibleArea(KA_CENTER, 13);
 wireFilters(render);
 wireLanguageToggle(() => {
   // Footer text (Stand/sample-data hint) depends on the last-loaded
   // collection, not just on filters — re-apply it in the new language.
   if (letzteCollection) setFooter(letzteCollection, { ausCache: letzterAusCache });
+  syncHandleLabel();
   render();
   // "Was ist neu?" chrome (loading/empty/error/labels) re-renders too;
   // quoted raw content inside entries is unaffected either way (A-6/E6).
   renderChangelogBody();
 });
+// The radius search and its reset keep their views (A-11/E5) — centred in the
+// uncovered map since A-14, or on a phone the searched place would sit under
+// the half-open sheet.
 wireSearch({
   onResult(hit) {
     drawSearchCircle(hit.center);
-    getMap().setView(hit.center, 14, { animate: !prefersReducedMotion() });
+    setViewInVisibleArea(hit.center, 14, { animate: !prefersReducedMotion() });
     render();
   },
   onReset() {
     clearSearchCircle();
-    getMap().setView(KA_CENTER, 13, { animate: !prefersReducedMotion() });
+    setViewInVisibleArea(KA_CENTER, 13, { animate: !prefersReducedMotion() });
     render();
   },
 });
-wireWhatsNew();
+wireMenu();
 initList({ onSelect: selectFeature, onHover: setHoverKey });
 loadData();
 initServiceWorker();

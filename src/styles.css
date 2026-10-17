@@ -46,6 +46,21 @@
 
   --radius: 10px;
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+
+  /* Map page (A-14). Chrome that floats on the map needs a stronger shadow
+     than a card lying on the page. */
+  --float-shadow: 0 2px 6px rgba(0, 0, 0, 0.12), 0 8px 24px rgba(0, 0, 0, 0.12);
+  /* The map's own colours (A-14/E8). In light mode exactly the values the map
+     always had — teil stays #f08a00, not --amber: on the light tiles Teil must
+     read clearly lighter than Voll (#32). Since A-14 the dark scheme darkens
+     the tiles, so there the map gets its own, lighter set (see the dark
+     blocks). Meaning unchanged: one Sperrgrad, one colour (A-7/E4). */
+  --map-voll: #c02626;
+  --map-teil: #f08a00;
+  --map-gering: #197a3d;
+  --map-search: #1b4b73;
+  /* Tile filter (A-14/E8): none in light mode, a darkening recipe in dark. */
+  --tile-filter: none;
 }
 
 /* --- Dunkle Palette (A-8) ---
@@ -81,6 +96,12 @@
     --amber: #ffb02e;
     --green: #5fce88;
     --shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    --float-shadow: 0 2px 6px rgba(0, 0, 0, 0.45), 0 8px 24px rgba(0, 0, 0, 0.45);
+    --map-voll: #ff6a5e;
+    --map-teil: #ffb02e;
+    --map-gering: #5fce88;
+    --map-search: #8cc0ec;
+    --tile-filter: invert(1) hue-rotate(180deg) brightness(0.92) contrast(0.88) saturate(0.55);
   }
 }
 :root[data-theme="dark"] {
@@ -101,6 +122,12 @@
   --amber: #ffb02e;
   --green: #5fce88;
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --float-shadow: 0 2px 6px rgba(0, 0, 0, 0.45), 0 8px 24px rgba(0, 0, 0, 0.45);
+  --map-voll: #ff6a5e;
+  --map-teil: #ffb02e;
+  --map-gering: #5fce88;
+  --map-search: #8cc0ec;
+  --tile-filter: invert(1) hue-rotate(180deg) brightness(0.92) contrast(0.88) saturate(0.55);
 }
 
 /* Ausdrückliche Wahl: Schema festnageln, nicht mehr der Systemvorgabe folgen.

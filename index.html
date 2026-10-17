@@ -2,7 +2,9 @@
 <html lang="de">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- viewport-fit=cover: the map runs edge to edge (A-14/E1); the floating
+         chrome keeps clear of notches through env(safe-area-inset-*). -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title data-i18n="docTitle">Wo wird gebaut? — Baustellen in Karlsruhe</title>
     <meta
       name="description"
@@ -30,7 +32,7 @@
          fehl (Privatmodus, blockiert), bleibt das Attribut weg und die Seite
          folgt wie bisher der Systemvorgabe — kein Fehlerfall, nur der
          Ausgangszustand. Der Schlüssel ist derselbe wie THEME_KEY in
-         src/app.js; scripts/test-theme.mjs vergleicht beide. -->
+         src/ui/theme.js; scripts/test-theme.mjs vergleicht beide. -->
     <script>
       try {
         var bauwatchTheme = localStorage.getItem('bauwatch.theme');
@@ -47,231 +49,225 @@
     <link rel="stylesheet" href="src/styles.css" />
     <link rel="stylesheet" href="src/shell.css" />
   </head>
-  <body>
+  <body class="app">
     <a class="skip-link" href="#liste" data-i18n="skipLink">Zur Baustellen-Liste springen</a>
 
-    <header class="app-header">
-      <div class="header-top">
-        <!-- "Was ist neu?"-Feed (A-6). Modal statt eigener Seite/Panel (E1),
-             damit der ohnehin vertikal knappe Header (BACKLOG #23) keine
-             weitere feste Zeile bekommt — nur dieser eine kleine Knopf. -->
-        <button
-          type="button"
-          class="whats-new-btn"
-          id="whats-new-btn"
-          aria-haspopup="dialog"
-          aria-controls="whats-new-dialog"
-          data-i18n="whatsNewButton"
-        >
-          Was ist neu?
-        </button>
-        <div class="header-controls">
-          <!-- Farbschema-Umschalter (A-8). Dritte Instanz desselben
-               segmented-button-Musters, aber nur mit Zeichen: ◐ = Systemvorgabe
-               folgen, ☀ = hell, ☾ = dunkel. Die Zeichen sind aria-hidden, den
-               Namen liefert aria-label (title zusätzlich als Tooltip fürs
-               Sehen) — sonst läse ein Screenreader „Kreis links gefüllt" vor.
-               „Systemvorgabe folgen" steht bewusst voran und ist die
-               Voreinstellung: ohne Wahl verhält sich die Seite exakt wie
-               vorher. -->
-          <div
-            class="theme-toggle"
-            role="group"
-            aria-label="Farbschema"
-            data-i18n-attr="aria-label:themeToggleAriaLabel"
-            data-theme-toggle
-          >
-            <div class="segments">
-              <button
-                type="button"
-                data-theme-value="system"
-                aria-pressed="true"
-                class="is-active"
-                aria-label="Systemvorgabe folgen"
-                title="Systemvorgabe folgen"
-                data-i18n-attr="aria-label:themeSystem,title:themeSystem"
-              >
-                <span aria-hidden="true">◐</span>
-              </button>
-              <button
-                type="button"
-                data-theme-value="light"
-                aria-pressed="false"
-                aria-label="Helles Farbschema"
-                title="Helles Farbschema"
-                data-i18n-attr="aria-label:themeLight,title:themeLight"
-              >
-                <span aria-hidden="true">☀︎</span>
-              </button>
-              <button
-                type="button"
-                data-theme-value="dark"
-                aria-pressed="false"
-                aria-label="Dunkles Farbschema"
-                title="Dunkles Farbschema"
-                data-i18n-attr="aria-label:themeDark,title:themeDark"
-              >
-                <span aria-hidden="true">☾</span>
-              </button>
-            </div>
+    <!-- The app shell (A-14). The map fills the viewport (E1); the panel floats
+         above it — a bottom sheet on phones, a side panel on desktop (E2) — and
+         is ONE element for both, so there is one DOM order and one focus order
+         (E3). <main> wraps panel and map: the list is the primary accessible
+         content and must not end up in a complementary landmark. -->
+    <main class="shell">
+      <section class="panel" id="panel" data-sheet="collapsed" aria-labelledby="app-title">
+        <div class="panel-head" id="panel-head">
+          <div class="brand">
+            <h1 id="app-title" data-i18n="h1">Wo wird gebaut?</h1>
+            <p class="tagline" data-i18n="tagline">Offene Baustellen in Karlsruhe — betrifft mich das?</p>
           </div>
 
-          <!-- Sprachumschalter (A-5). Reuses the filter segmented-button pattern
-               (role="group", aria-pressed, .is-active) but is wired separately
-               from wireFilters(), since it drives document language, not
-               state.filters. "Deutsch"/"English" are language autonyms — they
-               stay as-is regardless of the active language. -->
-          <div class="lang-toggle" role="group" aria-label="Sprache / Language" data-lang-toggle>
-            <div class="segments">
-              <button type="button" data-lang="de" aria-pressed="true" class="is-active">Deutsch</button>
-              <button type="button" data-lang="en" aria-pressed="false">English</button>
-            </div>
+          <!-- On a phone this bar is lifted to the top of the screen with
+               position: fixed — which is why the sheet animates its height and
+               never a transform: a transformed ancestor would become the bar's
+               containing block and drag it along (E3). -->
+          <div class="searchbar" id="searchbar">
+            <button
+              type="button"
+              class="icon-btn"
+              id="menu-btn"
+              aria-haspopup="dialog"
+              aria-controls="menu"
+              aria-label="Menü"
+              data-i18n-attr="aria-label:menuButton"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+            </button>
+            <form class="search" id="search-form" role="search" aria-label="Adresssuche" data-i18n-attr="aria-label:searchAriaLabel">
+              <label class="visually-hidden" for="search-input" data-i18n="searchInputLabel">Adresse in Karlsruhe</label>
+              <input
+                type="search"
+                id="search-input"
+                name="q"
+                placeholder="Adresse in Karlsruhe suchen"
+                data-i18n-attr="placeholder:searchPlaceholder"
+                autocomplete="off"
+                enterkeyhint="search"
+              />
+              <button type="button" class="icon-btn" id="search-reset" hidden aria-label="Suche zurücksetzen" data-i18n-attr="aria-label:searchReset">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18" /></svg>
+              </button>
+              <button type="submit" class="icon-btn" id="search-btn" aria-label="Umkreis suchen" data-i18n-attr="aria-label:searchButton">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5" /><path d="M15.5 15.5 20 20" /></svg>
+              </button>
+            </form>
+            <p class="search-status" id="search-status" role="status" aria-live="polite"></p>
+          </div>
+
+          <div class="status-row">
+            <p class="list-status" id="list-status" role="status" aria-live="polite"></p>
+            <p class="stand" id="stand-zeile">
+              <span data-i18n="standShort">Stand</span> <span id="stand" data-i18n="standLoading">wird geladen …</span>
+              <span class="stand-offline" id="stand-offline" hidden data-i18n="standOffline">· offline, aus dem Gerätespeicher</span>
+            </p>
+          </div>
+
+          <!-- Phones only. Its name says what the next press does (E2); app.js
+               sets it, a drag is never the only way to move the sheet. -->
+          <button type="button" class="sheet-handle" id="sheet-handle" aria-controls="panel-body" aria-expanded="false" aria-label="Liste aufklappen"></button>
+          <!-- Desktop only (E14). -->
+          <button
+            type="button"
+            class="icon-btn panel-collapse"
+            id="panel-collapse"
+            aria-controls="panel"
+            aria-label="Seitenleiste ausblenden"
+            data-i18n-attr="aria-label:panelCollapse"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14.5 6 8.5 12l6 6" /></svg>
+          </button>
+
+          <div class="tabs" role="tablist" aria-label="Ansicht" data-i18n-attr="aria-label:tabsAriaLabel">
+            <button type="button" role="tab" id="tab-liste" aria-controls="tp-liste" aria-selected="true" data-i18n="tabListe">Liste</button>
+            <button type="button" role="tab" id="tab-neu" aria-controls="tp-neu" aria-selected="false" tabindex="-1" data-i18n="tabNeu">Neu</button>
           </div>
         </div>
-      </div>
-      <h1 data-i18n="h1">Wo wird gebaut?</h1>
-      <p class="tagline" data-i18n="tagline">Offene Baustellen in Karlsruhe — betrifft mich das?</p>
-    </header>
 
-    <!-- "Was ist neu?"-Dialog (A-6). Natives <dialog> + showModal(): kostenloser
-         Fokus-Trap, Top-Layer-Rendering, Escape schließt. aria-labelledby
-         zeigt auf die eigene Überschrift. Fokus-Rückgabe an den Auslöser-Knopf
-         läuft in app.js über das 'close'-Event, das alle Schließwege (Button,
-         Escape, Backdrop-Klick) einheitlich auslösen. -->
-    <dialog class="whats-new-dialog" id="whats-new-dialog" aria-labelledby="whats-new-title">
-      <form method="dialog" class="whats-new-header">
-        <h2 id="whats-new-title" data-i18n="whatsNewTitle">Was ist neu?</h2>
-        <button type="submit" class="whats-new-close" data-i18n-attr="aria-label:whatsNewClose" aria-label="Schließen">
-          <span aria-hidden="true">✕</span>
-        </button>
-      </form>
-      <p class="whats-new-window" data-i18n="whatsNewWindowNote">Änderungen der letzten 30 Tage.</p>
-      <div class="whats-new-body" id="whats-new-body">
-        <p data-i18n="whatsNewLoading">Wird geladen …</p>
+        <div class="panel-body" id="panel-body">
+          <section role="tabpanel" id="tp-liste" aria-labelledby="tab-liste">
+            <!-- A-12's three groups, semantics unchanged; Sperrgrad first since
+                 A-14/E5 (it carries the numbers). On a phone the groups share one
+                 horizontally scrolling row. -->
+            <div class="filters" role="group" aria-label="Filter" data-i18n-attr="aria-label:filtersAriaLabel">
+              <!-- Die Zahl steht IM Knopf (A-12/E2), nicht in einem eigenen Streifen.
+                   Der leere .seg-count füllt sich erst, wenn Daten da sind; eine 0
+                   vor dem Laden wäre von einer echten 0 nicht zu unterscheiden. -->
+              <div class="filter-group" role="group" aria-label="Sperrgrad" data-filter="ampel" data-i18n-attr="aria-label:filterAmpelAriaLabel">
+                <span class="filter-label" data-i18n="filterAmpelLabel">Sperrgrad</span>
+                <div class="segments">
+                  <button type="button" data-value="alle" aria-pressed="true" class="is-active" data-i18n="filterAlle">Alle</button>
+                  <button type="button" data-value="voll" aria-pressed="false"><span class="dot dot-red" aria-hidden="true"></span><span class="seg-count" data-count="voll"></span><span data-i18n="filterVoll">Voll</span></button>
+                  <button type="button" data-value="teil" aria-pressed="false"><span class="dot dot-amber" aria-hidden="true"></span><span class="seg-count" data-count="teil"></span><span data-i18n="filterTeil">Teil</span></button>
+                  <button type="button" data-value="gering" aria-pressed="false"><span class="dot dot-green" aria-hidden="true"></span><span class="seg-count" data-count="gering"></span><span data-i18n="filterGering">Gering</span></button>
+                </div>
+              </div>
+
+              <!-- Restdauer statt Zeitraum (A-12/E1). Die Stufen stehen zusätzlich als
+                   RESTDAUER_STUFEN in src/lib/stats.js; test-stats.mjs gleicht ab. -->
+              <div class="filter-group" role="group" aria-label="Endet in" data-filter="restdauer" data-i18n-attr="aria-label:filterRestdauerAriaLabel">
+                <span class="filter-label" data-i18n="filterRestdauerLabel">Endet in</span>
+                <div class="segments">
+                  <button type="button" data-value="alle" aria-pressed="true" class="is-active" data-i18n="filterAlle">Alle</button>
+                  <button type="button" data-value="7" aria-pressed="false" data-i18n="filterEndetIn7">7 Tagen</button>
+                  <button type="button" data-value="30" aria-pressed="false" data-i18n="filterEndetIn30">30 Tagen</button>
+                </div>
+              </div>
+
+              <div class="filter-group" role="group" aria-label="Verkehrsmittel" data-filter="verkehrsmittel" data-i18n-attr="aria-label:filterVerkehrsmittelAriaLabel">
+                <span class="filter-label" data-i18n="filterVerkehrsmittelLabel">Verkehrsmittel</span>
+                <div class="segments">
+                  <button type="button" data-value="alle" aria-pressed="true" class="is-active" data-i18n="filterAlle">Alle</button>
+                  <button type="button" data-value="fuss" aria-pressed="false" data-i18n="filterFuss">zu Fuß</button>
+                  <button type="button" data-value="rad" aria-pressed="false" data-i18n="filterRad">Rad</button>
+                  <button type="button" data-value="auto" aria-pressed="false" data-i18n="filterAuto">Auto</button>
+                  <button type="button" data-value="oepnv" aria-pressed="false" data-i18n="filterOepnv">ÖPNV</button>
+                </div>
+              </div>
+            </div>
+
+            <ul id="liste" class="liste" tabindex="-1" aria-label="Baustellen-Liste" data-i18n-attr="aria-label:listAriaLabel"></ul>
+          </section>
+
+          <!-- "Was ist neu?" (A-6), a tab since A-14/E4 instead of a modal. -->
+          <section role="tabpanel" id="tp-neu" aria-labelledby="tab-neu" tabindex="0" hidden>
+            <p class="neu-window" data-i18n="whatsNewWindowNote">Änderungen der letzten 30 Tage.</p>
+            <div class="whats-new-body" id="whats-new-body">
+              <p data-i18n="whatsNewLoading">Wird geladen …</p>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <div class="map-area">
+        <div id="map" role="region" aria-label="Karte der Baustellen in Karlsruhe" data-i18n-attr="aria-label:mapAriaLabel"></div>
       </div>
-    </dialog>
+
+      <!-- Desktop only: brings the collapsed side panel back (E14). -->
+      <button type="button" class="panel-open" id="panel-open" hidden data-i18n="panelOpen">Liste anzeigen</button>
+    </main>
 
     <!-- Update-Hinweis der PWA. Bleibt leer, bis app.js eine neue Version
          gefunden hat — nur so kündigt die Live-Region den Hinweis auch an.
          Kein Fokus-Raub, kein automatischer Reload (Entscheidung 4 in A-3). -->
     <div class="update-banner" id="update-banner" role="status" aria-live="polite"></div>
 
-    <!-- Adress-/Umkreissuche -->
-    <form class="search" id="search-form" role="search" aria-label="Adresssuche" data-i18n-attr="aria-label:searchAriaLabel">
-      <label class="visually-hidden" for="search-input" data-i18n="searchInputLabel">Adresse in Karlsruhe</label>
-      <input
-        type="text"
-        id="search-input"
-        name="q"
-        placeholder="Adresse in Karlsruhe (z. B. Kaiserstraße 1)"
-        data-i18n-attr="placeholder:searchPlaceholder"
-        autocomplete="off"
-      />
-      <button type="submit" id="search-btn" data-i18n="searchButton">Umkreis&nbsp;suchen</button>
-      <button type="button" id="search-reset" hidden data-i18n="searchReset">Zurücksetzen</button>
-      <span class="search-status" id="search-status" role="status" aria-live="polite"></span>
-    </form>
-
-    <!-- Karte + Liste -->
-    <main class="content">
-      <div class="map-wrap">
-        <div id="map" role="region" aria-label="Karte der Baustellen in Karlsruhe" data-i18n-attr="aria-label:mapAriaLabel"></div>
-      </div>
-
-      <!-- Filter — steht seit A-13 ZWISCHEN Karte und Liste, nicht mehr darüber.
-           Auf dem Handy standen Kopfzeile + Suche + drei Filterzeilen zusammen
-           447 px der 667 px eines iPhone SE im Weg; die Karte begann unter der
-           Hälfte des ersten Bildschirms. Der Umzug ist bewusst im DOM und nicht
-           per `order`/`display: contents` gelöst: nur so stimmen Seh- und
-           Fokusreihenfolge auf genau dem Gerät überein, um das es geht
-           (A-13/E2). Den Versatz trägt stattdessen der Desktop, wo die ganze
-           Filterzeile ohne Scrollen sichtbar ist und das Raster in styles.css
-           sie wieder nach oben holt. -->
-      <section class="filters" aria-label="Filter" data-i18n-attr="aria-label:filtersAriaLabel">
-        <!-- Restdauer statt Zeitraum (A-12/E1). Der frühere Zeitraumfilter trennte
-             gegen diese Quelle nichts: der WFS liefert nur laufende Vorgänge, also
-             waren „Heute aktiv"/„Diese Woche"/„Alle" in allen 86 Snapshots gleich
-             und „Bald geplant" immer leer. Die Stufen stehen zusätzlich als
-             RESTDAUER_STUFEN in src/lib/stats.js; test-stats.mjs gleicht ab. -->
-        <div class="filter-group" role="group" aria-label="Endet in" data-filter="restdauer" data-i18n-attr="aria-label:filterRestdauerAriaLabel">
-          <span class="filter-label" data-i18n="filterRestdauerLabel">Endet in</span>
-          <div class="segments">
-            <button type="button" data-value="alle" aria-pressed="true" class="is-active" data-i18n="filterAlle">Alle</button>
-            <button type="button" data-value="7" aria-pressed="false" data-i18n="filterEndetIn7">7 Tagen</button>
-            <button type="button" data-value="30" aria-pressed="false" data-i18n="filterEndetIn30">30 Tagen</button>
-          </div>
-        </div>
-
-        <!-- Die Zahl steht IM Knopf (A-12/E2), nicht in einem eigenen Streifen:
-             vorher gab es zwei Elemente für denselben Dreierschnitt — eines, das
-             filtern konnte ohne zu sagen wie viel, und eines umgekehrt. Der leere
-             .seg-count füllt sich erst, wenn Daten da sind; eine 0 vor dem Laden
-             wäre von einer echten 0 nicht zu unterscheiden. -->
-        <div class="filter-group" role="group" aria-label="Sperrgrad" data-filter="ampel" data-i18n-attr="aria-label:filterAmpelAriaLabel">
-          <span class="filter-label" data-i18n="filterAmpelLabel">Sperrgrad</span>
-          <div class="segments">
-            <button type="button" data-value="alle" aria-pressed="true" class="is-active" data-i18n="filterAlle">Alle</button>
-            <button type="button" data-value="voll" aria-pressed="false"><span class="dot dot-red" aria-hidden="true"></span><span class="seg-count" data-count="voll"></span><span data-i18n="filterVoll">Voll</span></button>
-            <button type="button" data-value="teil" aria-pressed="false"><span class="dot dot-amber" aria-hidden="true"></span><span class="seg-count" data-count="teil"></span><span data-i18n="filterTeil">Teil</span></button>
-            <button type="button" data-value="gering" aria-pressed="false"><span class="dot dot-green" aria-hidden="true"></span><span class="seg-count" data-count="gering"></span><span data-i18n="filterGering">Gering</span></button>
-          </div>
-        </div>
-
-        <div class="filter-group" role="group" aria-label="Verkehrsmittel" data-filter="verkehrsmittel" data-i18n-attr="aria-label:filterVerkehrsmittelAriaLabel">
-          <span class="filter-label" data-i18n="filterVerkehrsmittelLabel">Verkehrsmittel</span>
-          <div class="segments">
-            <button type="button" data-value="alle" aria-pressed="true" class="is-active" data-i18n="filterAlle">Alle</button>
-            <button type="button" data-value="fuss" aria-pressed="false" data-i18n="filterFuss">zu Fuß</button>
-            <button type="button" data-value="rad" aria-pressed="false" data-i18n="filterRad">Rad</button>
-            <button type="button" data-value="auto" aria-pressed="false" data-i18n="filterAuto">Auto</button>
-            <button type="button" data-value="oepnv" aria-pressed="false" data-i18n="filterOepnv">ÖPNV</button>
-          </div>
-        </div>
-      </section>
-
-      <section class="list-wrap" aria-label="Baustellen-Liste" data-i18n-attr="aria-label:listAriaLabel">
-        <div class="list-status" id="list-status" role="status" aria-live="polite"></div>
-        <!-- Der Kennzahlen-Streifen von A-10 stand hier; seit A-12/E2 stehen die
-             Zahlen in den Sperrgrad-Knöpfen. A-10/E4 (raus aus der Live-Region)
-             ist damit erledigt statt aufgehoben: die Zahlen sitzen jetzt in
-             <section class="filters">, die keine Live-Semantik hat, und
-             #list-status sagt weiterhin genau das, was es vorher sagte. -->
-        <ul id="liste" class="liste"></ul>
-      </section>
-    </main>
-
-    <footer class="app-footer">
-      <p class="stand" id="stand-zeile">
-        <span data-i18n="standLabel">Daten zuletzt geändert:</span> <span id="stand" data-i18n="standLoading">wird geladen …</span>
-        <span class="stand-offline" id="stand-offline" hidden data-i18n="standOffline">· offline, aus dem Gerätespeicher</span>
-        <span class="stand-hint" data-i18n="standHint">(automatisch alle 4&nbsp;h geprüft, aktualisiert nur bei Änderungen)</span>
-      </p>
-      <!-- Namensnennung nach CC-BY 4.0: bewusst STATISCH im ausgelieferten HTML
-           und nicht per JS nachgetragen — sie ist Lizenzbedingung und muss auch
-           dann dastehen, wenn der Datenabruf scheitert oder JS nicht läuft.
-           Der Text ist wortgleich mit ATTRIBUTION in scripts/build-data.mjs;
-           scripts/test-attribution.mjs bewacht beides (Existenz + Gleichlaut). -->
-      <p class="attribution" id="attribution">
-        Datenquelle: Datensatz
-        <a href="https://transparenz.karlsruhe.de/dataset/baustellen" rel="noopener">„Baustellen"</a>,
-        Stadt Karlsruhe, Lizenz
-        <a href="https://creativecommons.org/licenses/by/4.0/deed.de" rel="license noopener">CC-BY 4.0</a>
+    <!-- Credits on the map (A-14/E7): CC-BY attribution, OSM credit and the
+         legal links, statically in the served HTML and visible without any
+         interaction. Namensnennung nach CC-BY 4.0: bewusst STATISCH und nicht
+         per JS nachgetragen — sie ist Lizenzbedingung und muss auch dann
+         dastehen, wenn der Datenabruf scheitert oder JS nicht läuft. Der Text
+         ist wortgleich mit ATTRIBUTION in scripts/build-data.mjs, und der
+         Absatz trägt nichts anderes; scripts/test-attribution.mjs bewacht beides. -->
+    <footer class="map-credits" id="map-credits">
+      <p class="attribution" id="attribution">Datenquelle: Datensatz <a href="https://transparenz.karlsruhe.de/dataset/baustellen" rel="noopener">„Baustellen"</a>, Stadt Karlsruhe, Lizenz <a href="https://creativecommons.org/licenses/by/4.0/deed.de" rel="license noopener">CC-BY 4.0</a></p>
+      <p class="credits-line">
+        Karte © <a href="https://www.openstreetmap.org/copyright" rel="noopener">OpenStreetMap</a>-Mitwirkende ·
+        <a href="impressum.html">Impressum</a> ·
+        <a href="datenschutz.html">Datenschutz</a>
       </p>
       <!-- Nur für den Beispieldaten-Startwert (data/baustellen.geojson mit
            sample: true). Bleibt leer und unsichtbar, sobald echte Daten da sind. -->
       <p class="attribution-hinweis" id="attribution-hinweis" hidden></p>
-      <p class="disclaimer" data-i18n="disclaimer">
-        Ohne Gewähr. Verbindlich ist ausschließlich die Beschilderung vor Ort.
-      </p>
-      <p class="credits">
-        <a href="impressum.html">Impressum</a> ·
-        <a href="datenschutz.html">Datenschutz</a> ·
-        Kartendaten © <a href="https://www.openstreetmap.org/copyright" rel="noopener">OpenStreetMap</a>-Mitwirkende ·
-        Adresssuche über <a href="https://nominatim.openstreetmap.org/" rel="noopener">Nominatim</a> ·
-        <a href="https://github.com/Ahirrea/BauWatch-KA/blob/main/data/CHANGELOG.md" rel="noopener">Änderungsverlauf</a> ·
-        <a href="https://github.com/Ahirrea/BauWatch-KA" rel="noopener">Quellcode &amp; Info</a>
-      </p>
     </footer>
+
+    <!-- Settings and background (A-14/E6). Native <dialog> + showModal(): focus
+         trap, top layer, Escape closes. `display` is set under [open] only —
+         the closed dialog is hidden by the UA rule alone (CLAUDE.md). -->
+    <dialog class="menu" id="menu" aria-labelledby="menu-title">
+      <div class="menu-head">
+        <h2 id="menu-title" data-i18n="h1">Wo wird gebaut?</h2>
+        <form method="dialog">
+          <button type="submit" class="icon-btn" aria-label="Menü schließen" data-i18n-attr="aria-label:menuClose">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18" /></svg>
+          </button>
+        </form>
+      </div>
+      <p class="menu-lead" data-i18n="tagline">Offene Baustellen in Karlsruhe — betrifft mich das?</p>
+
+      <h3 data-i18n="menuSettings">Einstellungen</h3>
+      <div class="setting">
+        <span class="setting-label" data-i18n="menuLanguage">Sprache</span>
+        <!-- "Deutsch"/"English" are language autonyms — they stay as-is
+             regardless of the active language (A-5/E2). -->
+        <div class="segments" role="group" aria-label="Sprache / Language" data-lang-toggle>
+          <button type="button" data-lang="de" aria-pressed="true" class="is-active">Deutsch</button>
+          <button type="button" data-lang="en" aria-pressed="false">English</button>
+        </div>
+      </div>
+      <div class="setting">
+        <span class="setting-label" data-i18n="themeToggleAriaLabel">Farbschema</span>
+        <!-- Farbschema-Umschalter (A-8): „System" steht bewusst voran und ist die
+             Voreinstellung — ohne Wahl verhält sich die Seite exakt wie vorher
+             und es wird nichts gespeichert. Seit A-14/E6 mit sichtbaren
+             Beschriftungen statt Zeichen. -->
+        <div class="segments" role="group" aria-label="Farbschema" data-i18n-attr="aria-label:themeToggleAriaLabel" data-theme-toggle>
+          <button type="button" data-theme-value="system" aria-pressed="true" class="is-active" data-i18n="themeSystem">System</button>
+          <button type="button" data-theme-value="light" aria-pressed="false" data-i18n="themeLight">Hell</button>
+          <button type="button" data-theme-value="dark" aria-pressed="false" data-i18n="themeDark">Dunkel</button>
+        </div>
+      </div>
+
+      <h3 data-i18n="menuAbout">Über die Daten</h3>
+      <p class="menu-text" data-i18n="standHint">Automatisch alle 4&nbsp;h geprüft, aktualisiert nur bei Änderungen.</p>
+      <p class="menu-text disclaimer" data-i18n="disclaimer">Ohne Gewähr. Verbindlich ist ausschließlich die Beschilderung vor Ort.</p>
+
+      <h3 data-i18n="menuMore">Mehr</h3>
+      <ul class="menu-links">
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+        <li><a href="https://github.com/Ahirrea/BauWatch-KA/blob/main/data/CHANGELOG.md" rel="noopener">Änderungsverlauf</a></li>
+        <li><a href="https://github.com/Ahirrea/BauWatch-KA" rel="noopener">Quellcode &amp; Info</a></li>
+        <li>Adresssuche über <a href="https://nominatim.openstreetmap.org/" rel="noopener">Nominatim</a></li>
+      </ul>
+    </dialog>
 
     <script src="vendor/leaflet/leaflet.js"></script>
     <script type="module" src="src/app.js"></script>

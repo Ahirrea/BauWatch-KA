@@ -49,6 +49,8 @@ const SHELL = [
   'src/ui/geo.js',
   'src/ui/list.js',
   'src/ui/map.js',
+  'src/ui/menu.js',
+  'src/ui/panel.js',
   'src/ui/pwa.js',
   'src/ui/search.js',
   'src/ui/state.js',

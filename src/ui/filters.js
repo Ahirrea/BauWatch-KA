@@ -80,8 +80,19 @@ export function renderFilterCounts(base) {
   }
 }
 
+// On a phone the three groups share one horizontally scrolling row (A-14/E5);
+// a fade at the right edge says there is more — only while there is.
+function syncFade(row) {
+  row.classList.toggle('has-more', row.scrollLeft + row.clientWidth < row.scrollWidth - 1);
+}
+
 /** Wires the segmented buttons; `onChange` re-renders after every click. */
 export function wireFilters(onChange) {
+  const row = document.querySelector('.filters');
+  if (row) {
+    row.addEventListener('scroll', () => syncFade(row), { passive: true });
+    new ResizeObserver(() => syncFade(row)).observe(row);
+  }
   document.querySelectorAll('.filter-group').forEach((group) => {
     const dim = group.dataset.filter;
     group.querySelectorAll('.segments button').forEach((btn) => {
