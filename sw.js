@@ -22,7 +22,7 @@
 // echtes Push", siehe A-2): kein `push`-, kein
 // `notificationclick`-, kein `sync`-/`periodicsync`-Handler.
 
-const CACHE_SHELL = 'bauwatch-shell-v23';
+const CACHE_SHELL = 'bauwatch-shell-v24';
 const CACHE_DATA = 'bauwatch-data-v1';
 
 // App-Shell. `'./'` ist der Navigations-Einstieg (liefert index.html aus) und
@@ -38,6 +38,7 @@ const SHELL = [
   'impressum.html',
   'datenschutz.html',
   'src/styles.css',
+  'src/shell.css',
   'src/app.js',
   'src/lib/changelog.js',
   'src/lib/format.js',
