@@ -1,4 +1,5 @@
-// stats.js — Kennzahlen und Restdauer-Prädikat für die Filterzeile (A-10, A-12).
+// stats.js — Kennzahlen und Restdauer-Prädikat für die Filterzeile (A-10, A-12),
+// and since A-15 the figures of the statistics tab.
 //
 // Reine, DOM-freie, abhängigkeitsfreie Funktionen. Wie i18n.js nur vom Browser
 // importiert (das Build-Skript zählt in quality-report.mjs, mit anderem Zweck)
@@ -7,7 +8,7 @@
 // Bewusst KEINE Nutzungs-/Besucherstatistik (A-10, Spannung 1): gezählt werden
 // Baustellen, nie Besucherinnen. Nichts wird gespeichert oder gesendet.
 
-import { restdauer } from './format.js';
+import { restdauer, parseDate, daysBetween } from './format.js';
 
 /** Kürzere der beiden Restdauer-Stufen in Tagen (A-12/E5). Stammt aus A-10/E3,
  *  wo dieselben 7 Tage die Kennzahl „endet bald" abgrenzten — bewusst dieselbe
@@ -74,4 +75,109 @@ export function summarize(features) {
     }
   }
   return out;
+}
+
+// --- Statistics tab (A-15/E5) -------------------------------------------------
+// Pure helpers behind the "Statistik" tab: what it shows is only as right as
+// these, and inside a UI module npm test could not see them (A-10/E5).
+
+/**
+ * Counts features per key and sorts by count (desc), ties by key — a stable
+ * order, so the same snapshot always draws the same chart.
+ * @param {Array<object>} features
+ * @param {(f: object) => string|null|undefined} keyFn  empty keys are skipped
+ * @returns {Array<[string, number]>}
+ */
+export function countBy(features, keyFn) {
+  const counts = new Map();
+  for (const f of features ?? []) {
+    const key = keyFn(f);
+    if (key == null || key === '') continue;
+    counts.set(key, (counts.get(key) ?? 0) + 1);
+  }
+  return [...counts].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'de'));
+}
+
+/**
+ * The first `n` entries plus one entry that sums the rest. A rest of exactly
+ * one entry is shown as itself — folding a single entry into "Sonstige" would
+ * hide its name to save no space.
+ * @param {Array<[string, number]>} entries  sorted, e.g. from countBy()
+ * @param {number} n
+ * @param {string} restLabel  "Sonstige" / "Other"
+ */
+export function topWithRest(entries, n, restLabel) {
+  if (entries.length <= n + 1) return entries;
+  const rest = entries.slice(n).reduce((sum, [, count]) => sum + count, 0);
+  return [...entries.slice(0, n), [restLabel, rest]];
+}
+
+/**
+ * Display form of a raw label: collapsed whitespace, a spaced hyphen between
+ * words closed up. The data itself is untouched (A-15/E7) — the city writes
+ * "Land  Baden - Württemberg", the tab shows "Land Baden-Württemberg".
+ */
+export function normalizeLabel(label) {
+  return String(label ?? '')
+    .replace(/\s+/g, ' ')
+    .replace(/(\p{L}) - (\p{L})/gu, '$1-$2')
+    .trim();
+}
+
+/**
+ * Total duration of a case in days (von → bis), or null without both dates
+ * or with an end before the start.
+ * @param {{von?: string|null, bis?: string|null}} props
+ */
+export function durationDays(props) {
+  const von = parseDate(props?.von);
+  const bis = parseDate(props?.bis);
+  if (!von || !bis) return null;
+  const days = daysBetween(von, bis);
+  return days >= 0 ? days : null;
+}
+
+/** Median of a list of numbers (mean of the middle two for an even count). */
+export function median(numbers) {
+  const xs = [...numbers].filter((x) => Number.isFinite(x)).sort((a, b) => a - b);
+  if (xs.length === 0) return null;
+  const mid = xs.length >> 1;
+  return xs.length % 2 ? xs[mid] : (xs[mid - 1] + xs[mid]) / 2;
+}
+
+/** Upper bounds (days) of the tab's remaining-duration bands; null = more
+ *  than a year. Starts with the filter's steps (RESTDAUER_STUFEN), so the page
+ *  teaches one vocabulary (A-15/E6). */
+export const RESTDAUER_BANDS = [...RESTDAUER_STUFEN, 91, 365, null];
+
+/**
+ * Remaining-duration bands of the tab (A-15/E6). "Ende offen" and "abgelaufen"
+ * are no band and counted apart. Every feature lands in exactly one place: the
+ * bands plus `open` and `expired` add up to the input length.
+ * @returns {{bands: Array<{upTo: number|null, count: number}>, open: number, expired: number}}
+ */
+export function restdauerBands(features, now = new Date()) {
+  const bands = RESTDAUER_BANDS.map((upTo) => ({ upTo, count: 0 }));
+  let open = 0;
+  let expired = 0;
+  for (const f of features ?? []) {
+    const rest = restdauer(f?.properties?.bis, now);
+    if (rest.open) open++;
+    else if (rest.expired) expired++;
+    else bands.find((b) => b.upTo === null || rest.days <= b.upTo).count++;
+  }
+  return { bands, open, expired };
+}
+
+/**
+ * The `n` longest-running cases by total duration, longest first; ties by
+ * title, so the list does not shuffle between two renders of one snapshot.
+ * @returns {Array<{feature: object, days: number}>}
+ */
+export function longest(features, n) {
+  return (features ?? [])
+    .map((feature) => ({ feature, days: durationDays(feature?.properties) }))
+    .filter((x) => x.days !== null)
+    .sort((a, b) => b.days - a.days || String(a.feature.properties.titel).localeCompare(String(b.feature.properties.titel), 'de'))
+    .slice(0, n);
 }

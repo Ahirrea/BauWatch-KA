@@ -6,7 +6,20 @@
 // irgendwann rot ohne Codeänderung.
 
 import { readFileSync } from 'node:fs';
-import { summarize, endetInnerhalb, ENDET_BALD_TAGE, RESTDAUER_STUFEN } from '../src/lib/stats.js';
+import {
+  summarize,
+  endetInnerhalb,
+  ENDET_BALD_TAGE,
+  RESTDAUER_STUFEN,
+  RESTDAUER_BANDS,
+  countBy,
+  topWithRest,
+  normalizeLabel,
+  durationDays,
+  median,
+  restdauerBands,
+  longest,
+} from '../src/lib/stats.js';
 
 let failed = 0;
 function check(name, cond, detail) {
@@ -142,6 +155,61 @@ check(
   'stats.js importiert nur relativ aus src/lib/',
   [...quelle.matchAll(/from\s+'([^']+)'/g)].every((m) => m[1].startsWith('./'))
 );
+
+// --- Statistics tab helpers (A-15/E5) -----------------------------------------
+
+{
+  const fs = [
+    { properties: { art: 'Kanalbau' } },
+    { properties: { art: 'Gleisbau' } },
+    { properties: { art: 'Kanalbau' } },
+    { properties: { art: 'Brückenbau' } },
+    { properties: { art: '' } },
+    { properties: {} },
+  ];
+  const c = countBy(fs, (f) => f.properties.art);
+  check('countBy: counts per key, largest first', c[0][0] === 'Kanalbau' && c[0][1] === 2, JSON.stringify(c));
+  check('countBy: ties ordered by key (stable chart)', c[1][0] === 'Brückenbau' && c[2][0] === 'Gleisbau', JSON.stringify(c));
+  check('countBy: empty keys are skipped', c.reduce((s, [, n]) => s + n, 0) === 4, JSON.stringify(c));
+}
+{
+  const e = [['a', 5], ['b', 4], ['c', 3], ['d', 2]];
+  const t = topWithRest(e, 2, 'Sonstige');
+  check('topWithRest: top n plus one summed rest', t.length === 3 && t[2][0] === 'Sonstige' && t[2][1] === 5, JSON.stringify(t));
+  check('topWithRest: top plus rest add up to the total', t.reduce((s, [, n]) => s + n, 0) === 14);
+  const u = topWithRest(e.slice(0, 3), 2, 'Sonstige');
+  check('topWithRest: a single remaining entry keeps its name', u.length === 3 && u[2][0] === 'c', JSON.stringify(u));
+}
+check('normalizeLabel: whitespace and spaced hyphen', normalizeLabel('Land  Baden - Württemberg') === 'Land Baden-Württemberg');
+check('normalizeLabel: an ordinary hyphen stays', normalizeLabel('Geh- und Radweg') === 'Geh- und Radweg');
+check('durationDays: von → bis in days', durationDays({ von: '2026-08-01', bis: '2026-08-31' }) === 30);
+check('durationDays: missing date → null', durationDays({ von: '2026-08-01', bis: null }) === null);
+check('durationDays: end before start → null', durationDays({ von: '2026-08-31', bis: '2026-08-01' }) === null);
+check('median: odd count', median([3, 1, 2]) === 2);
+check('median: even count = mean of the middle two', median([4, 1, 3, 2]) === 2.5);
+check('median: ignores missing values, null for none', median([null, 5, undefined]) === 5 && median([]) === null);
+check(
+  'RESTDAUER_BANDS starts with the filter steps (one vocabulary)',
+  RESTDAUER_STUFEN.every((t, i) => RESTDAUER_BANDS[i] === t) && RESTDAUER_BANDS.at(-1) === null
+);
+{
+  const offsets = [0, 7, 8, 30, 31, 91, 92, 365, 366];
+  const fs = offsets.map((n) => feature('teil', tagePlus(n)));
+  fs.push(feature('teil', null), feature('teil', tagePlus(-1)));
+  const b = restdauerBands(fs, NOW);
+  const counts = b.bands.map((x) => x.count).join(',');
+  check('restdauerBands: boundaries fall into the lower band', counts === '2,2,2,2,1', counts);
+  check('restdauerBands: open and expired counted apart', b.open === 1 && b.expired === 1, JSON.stringify(b));
+  check(
+    'restdauerBands: bands + open + expired = total',
+    b.bands.reduce((s, x) => s + x.count, 0) + b.open + b.expired === fs.length
+  );
+}
+{
+  const f = (titel, von, bis) => ({ properties: { titel, von, bis } });
+  const l = longest([f('B', '2026-01-01', '2026-12-31'), f('A', '2026-01-01', '2026-12-31'), f('C', '2026-06-01', '2026-06-30'), f('D', null, '2026-06-30')], 3);
+  check('longest: longest first, ties by title, undated excluded', l.map((x) => x.feature.properties.titel).join('') === 'ABC', l.map((x) => x.feature.properties.titel).join(''));
+}
 
 if (failed > 0) {
   console.error(`\n${failed} Test(s) fehlgeschlagen.`);

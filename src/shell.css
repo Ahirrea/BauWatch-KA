@@ -525,6 +525,141 @@ html:has(body.app) {
   color: var(--red);
 }
 
+/* --- Statistics tab (A-15) ---------------------------------------------------
+   Text first (E4): bars are spans in a label/track grid, every value printed.
+   One neutral series colour (--bar, E3); the traffic light only in the
+   Sperrgrad split. Marks per the dataviz spec the tab was designed with: bars
+   at most 12 px, 4 px rounded data end, square base, 2 px surface gaps
+   between stacked segments, no gridlines. */
+.stats-scope {
+  margin: 0 0 0.8rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+.stats-error {
+  color: var(--red);
+}
+.stats-kpis {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin-bottom: 1.1rem;
+}
+.stats-kpi {
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--chip-border);
+  border-radius: var(--radius);
+  background: var(--chip);
+}
+.stats-kpi-value {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 650;
+  line-height: 1.15;
+}
+.stats-kpi-label {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+.stats-section {
+  margin: 0 0 1.25rem;
+}
+.stats-section h3 {
+  margin: 0 0 0.4rem;
+  font-size: 0.95rem;
+}
+.stats-note {
+  margin: 0.3rem 0 0.45rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+.stats-stack {
+  display: flex;
+  gap: 2px;
+  height: 0.85rem;
+  margin: 0.2rem 0 0.45rem;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.stats-stack-seg {
+  display: block;
+  height: 100%;
+}
+.stats-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.88rem;
+}
+.stats-legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.stats-bars {
+  display: grid;
+  grid-template-columns: minmax(0, 11rem) minmax(0, 1fr);
+  gap: 0.35rem 0.65rem;
+  align-items: center;
+  font-size: 0.86rem;
+}
+/* Long labels wrap — never an ellipsis: a title attribute is not there on touch. */
+.stats-bar-label {
+  overflow-wrap: anywhere;
+  line-height: 1.25;
+}
+.stats-bar-track {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-width: 0;
+}
+.stats-bar {
+  display: block;
+  height: 0.75rem;
+  max-width: calc(100% - 2.5rem);
+  border-radius: 0 4px 4px 0;
+  background: var(--bar);
+}
+.stats-bar-value {
+  flex: none;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+.stats-longest {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+}
+.stats-longest li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 0.6rem;
+}
+.stats-longest-dur {
+  font-weight: 650;
+  white-space: nowrap;
+}
+.stats-longest-meta {
+  grid-column: 2;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+@media (max-width: 380px) {
+  .stats-bars {
+    grid-template-columns: minmax(0, 8.5rem) minmax(0, 1fr);
+  }
+}
+
 /* --- Credits on the map (A-14/E7) ---------------------------------------------
    Static in the HTML, visible without interaction; a map attribution in look
    and place. On a phone it rides just above the collapsed sheet, which covers

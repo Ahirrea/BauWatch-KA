@@ -12,6 +12,9 @@ export const state = {
   // von „echte 0" in den Sperrgrad-Knöpfen (A-12): state.features.length === 0
   // allein kann beides heißen.
   geladen: false,
+  // The load attempt failed (A-15: the statistics tab says so instead of
+  // waiting forever for data that is not coming).
+  loadError: false,
   filters: { restdauer: 'alle', ampel: 'alle', verkehrsmittel: 'alle' },
   search: null, // { center: [lat, lon], label: string }
   selectedId: null,

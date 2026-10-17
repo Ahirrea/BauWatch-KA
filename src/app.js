@@ -38,6 +38,7 @@ import { wireSearch } from './ui/search.js';
 import { loadChangelog, renderChangelogBody } from './ui/feed.js';
 import { initPanel, isDesktop, setSheet, sheetState, syncHandleLabel } from './ui/panel.js';
 import { wireMenu } from './ui/menu.js';
+import { refreshStats, showStats } from './ui/stats.js';
 import { initServiceWorker } from './ui/pwa.js';
 
 const DATA_URL = 'data/baustellen.geojson';
@@ -162,14 +163,17 @@ async function loadData() {
     // Baustelle dieser Stufe". Im catch-Zweig bleibt es deshalb bei false.
     state.geladen = true;
     render();
+    refreshStats();
     if (state.features.length === 0) {
       status.textContent = str('listStatusNoData');
     }
   } catch (err) {
     console.error(err);
+    state.loadError = true;
     status.classList.add('is-error');
     status.textContent = str('listStatusLoadError');
     el('stand').textContent = str('standUnavailable');
+    refreshStats();
   }
 }
 
@@ -189,6 +193,7 @@ initPanel({
   onChromeChange: setChromeInsets,
   onTabChange(tab) {
     if (tab === 'neu') loadChangelog();
+    if (tab === 'statistik') showStats();
   },
 });
 initMap({ onSelect: selectFeature, onHover: setHoverKey });
@@ -202,6 +207,7 @@ wireLanguageToggle(() => {
   if (letzteCollection) setFooter(letzteCollection, { ausCache: letzterAusCache });
   syncHandleLabel();
   render();
+  refreshStats();
   // "Was ist neu?" chrome (loading/empty/error/labels) re-renders too;
   // quoted raw content inside entries is unaffected either way (A-6/E6).
   renderChangelogBody();

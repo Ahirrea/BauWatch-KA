@@ -54,6 +54,7 @@ const SHELL = [
   'src/ui/pwa.js',
   'src/ui/search.js',
   'src/ui/state.js',
+  'src/ui/stats.js',
   'src/ui/text.js',
   'src/ui/theme.js',
   'src/lib/changelog.js',

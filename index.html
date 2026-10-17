@@ -127,6 +127,7 @@
 
           <div class="tabs" role="tablist" aria-label="Ansicht" data-i18n-attr="aria-label:tabsAriaLabel">
             <button type="button" role="tab" id="tab-liste" aria-controls="tp-liste" aria-selected="true" data-i18n="tabListe">Liste</button>
+            <button type="button" role="tab" id="tab-statistik" aria-controls="tp-statistik" aria-selected="false" tabindex="-1" data-i18n="tabStatistik">Statistik</button>
             <button type="button" role="tab" id="tab-neu" aria-controls="tp-neu" aria-selected="false" tabindex="-1" data-i18n="tabNeu">Neu</button>
           </div>
         </div>
@@ -174,6 +175,12 @@
             </div>
 
             <ul id="liste" class="liste" tabindex="-1" aria-label="Baustellen-Liste" data-i18n-attr="aria-label:listAriaLabel"></ul>
+          </section>
+
+          <!-- Statistics (A-15): all of Karlsruhe, not the filtered list (E1);
+               rendered by src/ui/stats.js on the first opening. -->
+          <section role="tabpanel" id="tp-statistik" aria-labelledby="tab-statistik" tabindex="0" hidden>
+            <div class="stats" id="stats"></div>
           </section>
 
           <!-- "Was ist neu?" (A-6), a tab since A-14/E4 instead of a modal. -->
