@@ -10,12 +10,17 @@
 //   3. Every data-i18n="…" key referenced in index.html exists in the
 //      dictionary (static scan, same spirit as the SHELL-import check in
 //      scripts/test-pwa.mjs).
+//   4. Every key the client looks up in JavaScript — `str('key')`, the one
+//      lookup shape since A-14/E11 — exists in both languages, and nothing
+//      reaches past str() into the dictionary. Before, a typo in a JS-side
+//      key surfaced only as "undefined" on the page.
 
 import { readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { STRINGS, AMPEL_LABEL, VM_LABEL, LANGS } from '../src/lib/i18n.js';
 import { restdauer, formatRange } from '../src/lib/format.js';
+import { clientModules, withoutComments } from './client-modules.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -111,6 +116,31 @@ check('index.html has data-i18n-attr keys (guard is active)', dataI18nAttrKeys.l
 for (const key of dataI18nAttrKeys) {
   check(`data-i18n-attr key "${key}" exists in STRINGS.de/en`, key in STRINGS.de && key in STRINGS.en);
 }
+
+// --- 4. Every str('…') key in the client exists in the dictionary --------
+
+const { modules: clientModule } = clientModules();
+const strKeys = new Set();
+const dynamisch = [];
+for (const { path, source } of clientModule) {
+  if (path.startsWith('src/lib/')) continue; // the dictionary itself, and pure helpers
+  const code = withoutComments(source);
+  for (const m of code.matchAll(/\bstr\(\s*(['"`])(\w+)\1/g)) strKeys.add(m[2]);
+  // A str() call whose key is not a literal can't be checked here.
+  for (const m of code.matchAll(/(?<!function\s+)\bstr\(\s*(?!['"`]\w+['"`])([^)\s,]+)/g)) dynamisch.push(`${path}: str(${m[1]}`);
+}
+check('the client looks up strings via str() (guard is active)', strKeys.size > 0);
+check('every str() call names its key as a literal', dynamisch.length === 0, dynamisch.join('; '));
+for (const key of [...strKeys].sort()) {
+  check(`str('${key}') exists in STRINGS.de/en`, key in STRINGS.de && key in STRINGS.en);
+}
+// Only the helper in src/ui/text.js may index the dictionary directly
+// (applyI18n() walks the data-i18n attributes, which section 3 covers).
+const direkt = clientModule
+  .filter((m) => m.path !== 'src/ui/text.js' && !m.path.startsWith('src/lib/'))
+  .filter((m) => /STRINGS\s*\[/.test(withoutComments(m.source)))
+  .map((m) => m.path);
+check('no UI module indexes STRINGS past str()', direkt.length === 0, direkt.join(', '));
 
 if (failed > 0) {
   console.error(`\n${failed} test(s) failed.`);

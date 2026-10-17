@@ -29,7 +29,7 @@ const CACHE_DATA = 'bauwatch-data-v1';
 // steht deshalb statt eines zweiten Eintrags „index.html" in der Liste.
 // src/lib/classify.js und src/lib/transform.js fehlen hier mit Absicht: sie
 // werden nur von den Node-Build-Skripten importiert, der Browser holt sie nie.
-// scripts/test-pwa.mjs prüft das gegen die echten Importe in src/app.js.
+// scripts/test-pwa.mjs prüft das gegen den echten Importgraphen ab src/app.js.
 const SHELL = [
   './',
   // Rechtstexte (A-4). Reine Textseiten ohne JS — sie sind mit drin, weil ein
@@ -40,6 +40,20 @@ const SHELL = [
   'src/styles.css',
   'src/shell.css',
   'src/app.js',
+  // Feature modules of the client (A-14/E11). scripts/test-pwa.mjs follows the
+  // whole import graph from src/app.js and fails on any module missing here.
+  'src/ui/dom.js',
+  'src/ui/feature-html.js',
+  'src/ui/feed.js',
+  'src/ui/filters.js',
+  'src/ui/geo.js',
+  'src/ui/list.js',
+  'src/ui/map.js',
+  'src/ui/pwa.js',
+  'src/ui/search.js',
+  'src/ui/state.js',
+  'src/ui/text.js',
+  'src/ui/theme.js',
   'src/lib/changelog.js',
   'src/lib/format.js',
   'src/lib/i18n.js',
