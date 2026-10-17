@@ -10,7 +10,12 @@ Suggested labels: `setup`, `data`, `frontend`, `a11y`, `docs`, `enhancement`.
 > [refinement process](./PROZESS.md).
 
 **Status legend:** ✅ done · 🟡 partial / open · ⬜ open
-**As of:** 2026-08-15 (**#32 done** — the light-mode `--amber` darkened
+**As of:** 2026-10-17 (**#36 added, open.** No workflow runs `npm test`;
+recommended before the interface rebuild
+[A-14](./anforderungen/A-14-vollbild-karte.md) starts. When A-14 is
+implemented, #23, #33 and #35 become moot, because the page they fixed is
+replaced. They stay ✅ and get a dated note then, not now.)
+**Previously, as of:** 2026-08-15 (**#32 done** — the light-mode `--amber` darkened
 `#f08a00` → `#cc7700`: the dot now reaches 3.38:1 on `--surface` and 3.15:1 on
 `--chip`; the map's `AMPEL_COLOR` deliberately keeps `#f08a00`, and
 `scripts/test-theme.mjs` now computes all six dot/surface ratios statically.
@@ -53,6 +58,9 @@ and dragging the outer one scrolled the whole feed out of the frame.)
 > #33 stays done and is only clarified; what it could not reach by tightening
 > spacing — the whole map on the first screen — is **A-13, implemented** the same
 > day (the filter row now stands between map and list on a phone).
+> **Open:** #17 (.ics export, optional), #19 (public-transit routing, optional)
+> and **#36** (CI test run). #36 is new on 2026-10-17 and recommended as step 0
+> of the interface rebuild A-14.
 
 ---
 
@@ -650,6 +658,32 @@ readable, mobile untouched. — **done**:
   reserving the same 39 px above the map would just give back the space #23
   removed. `CACHE_SHELL` bumped to `v20` (`src/styles.css` is a shell file).
   (Label: `frontend`)
+
+---
+
+## Finding from the A-14 refinement (2026-10-17)
+
+### ⬜ #36 Run `npm test` in CI, not only locally
+While refining the interface rebuild
+([A-14](./anforderungen/A-14-vollbild-karte.md),
+[ADR-005](./adr/ADR-005-neuaufbau-oberflaeche.md)), an inventory of the UI
+guards found that **no workflow runs the test suite**. The only workflow,
+`.github/workflows/update-data.yml`, runs `scripts/build-data.mjs`, so
+`npm test` runs only when a session remembers to. That has been enough for
+small, single-session changes. A rebuild spread over several commits and
+possibly several sessions is exactly where a forgotten run lets a red guard
+reach `main`, and Pages deploys `main` immediately.
+**DoD:**
+- A workflow runs `npm test` on push and on pull requests, on Node 18 or
+  newer, without `npm install`. The suite is plain Node scripts and needs no
+  `node_modules`.
+- Pure data commits are skipped (`paths-ignore: ['data/**']`), so the 4-hourly
+  Action does not trigger a test run each time.
+- The README's Action section mentions it.
+- A failing run is proven once: a deliberately broken guard on a throwaway
+  branch must turn the check red.
+
+Recommended as step 0 of A-14. (Label: `setup`)
 
 ---
 
