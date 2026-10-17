@@ -10,12 +10,16 @@ Suggested labels: `setup`, `data`, `frontend`, `a11y`, `docs`, `enhancement`.
 > [refinement process](./PROZESS.md).
 
 **Status legend:** ✅ done · 🟡 partial / open · ⬜ open
-**As of:** 2026-10-17 (**#36 added and done.** `npm test` now runs in CI on
+**As of:** 2026-10-17 (**[A-14](./anforderungen/A-14-vollbild-karte.md) and
+[A-15](./anforderungen/A-15-statistik.md) implemented:** the full-screen map
+with a bottom sheet or side panel, and the statistics tab. **#23, #33 and #35
+are moot** since then, because the page they fixed is gone. They stay ✅, and
+each carries a dated note. **#37 and #38 added, both open.** #37: light-mode
+Teil markers reach only 1.8:1 against the light tiles, as they have since A-7.
+#38: the portal preview images show the old page, to be redone after release.
+Earlier the same day, **#36 was added and done.** `npm test` now runs in CI on
 every push and pull request, and a deliberately broken commit proved the red
-path. This is step 0 of the interface rebuild
-[A-14](./anforderungen/A-14-vollbild-karte.md). When A-14 is implemented,
-#23, #33 and #35 become moot, because the page they fixed is replaced. They
-stay ✅ and get a dated note then, not now.)
+path. It was step 0 of A-14.)
 **Previously, as of:** 2026-08-15 (**#32 done** — the light-mode `--amber` darkened
 `#f08a00` → `#cc7700`: the dot now reaches 3.38:1 on `--surface` and 3.15:1 on
 `--chip`; the map's `AMPEL_COLOR` deliberately keeps `#f08a00`, and
@@ -59,9 +63,12 @@ and dragging the outer one scrolled the whole feed out of the frame.)
 > #33 stays done and is only clarified; what it could not reach by tightening
 > spacing — the whole map on the first screen — is **A-13, implemented** the same
 > day (the filter row now stands between map and list on a phone).
-> **Open:** #17 (.ics export, optional) and #19 (public-transit routing,
-> optional). **#36** (CI test run) was added and done on 2026-10-17, as step 0
-> of the interface rebuild A-14.
+> **Open:** #17 (.ics export, optional), #19 (public-transit routing,
+> optional), #37 (light-mode Teil marker contrast on the map) and #38 (new
+> portal preview images, after the A-14 release). **#36** (CI test run) was
+> added and done on 2026-10-17, as step 0 of the interface rebuild A-14.
+> **A-14 and A-15 are implemented**. #23, #33 and #35 are moot since then and
+> stay ✅ with a dated note.
 
 ---
 
@@ -311,6 +318,12 @@ stats bar. Implementation: `#stats` section removed from `index.html`,
 from `src/styles.css`, the now-unused `statsAriaLabel`/`statVoll`/
 `statBehinderung` keys removed from `src/lib/i18n.js`. `CACHE_SHELL` bumped
 to `v7` (shell files changed).
+**Moot since A-14 (2026-10-17).** The page whose vertical budget this fixed is
+gone. The map is now the full-screen base layer, and the panel floats over it
+([A-14](./anforderungen/A-14-vollbild-karte.md)/E1). The entry stays ✅ as the
+record. The closure-severity breakdown it removed is back in two places, and
+neither costs map height: the facet counts in the Sperrgrad buttons (A-12) and
+the statistics tab ([A-15](./anforderungen/A-15-statistik.md)).
 
 ---
 
@@ -556,6 +569,14 @@ before, and a pixel diff of the filter strip against a `git archive HEAD`
 checkout shows 48 of 307 200 pixels differing by ≤ 10/255 in light mode and 0 in
 dark — antialiasing along the separators, no layout change. `CACHE_SHELL` bumped
 to `v16` (`src/styles.css` is a shell file). (Label: `frontend`)
+**Moot since A-14 (2026-10-17).** The map can no longer start below the fold,
+because it fills the viewport ([A-14](./anforderungen/A-14-vollbild-karte.md)/E1).
+On a phone the three filter groups no longer wrap at all: they share one
+horizontally scrolling row in the sheet (A-14/E5). Two of the fixes live on.
+The gap-based separators are in `src/shell.css`, where a group that wraps still
+draws its lines. The `≤ 480 px` header rules in `src/styles.css` now serve only
+the legal pages. The measurements above describe a page that no longer exists.
+The entry stays ✅ as the record.
 
 ### ✅ #34 The "Was ist neu?" dialog has two scrollbars, and the outer one leads into an empty box
 A `<dialog>` gets `overflow: auto` from the UA stylesheet, so `max-height: 80vh`
@@ -660,6 +681,15 @@ readable, mobile untouched. — **done**:
   removed. `CACHE_SHELL` bumped to `v20` (`src/styles.css` is a shell file).
   (Label: `frontend`)
 
+**Moot since A-14 (2026-10-17).** Map and list no longer sit in two columns
+that could end at different lines. The map is the full-screen base layer, and
+the list scrolls inside the side panel
+([A-14](./anforderungen/A-14-vollbild-karte.md)/E1, E2). `--column-height` went
+with the old layout. The entry stays ✅ as the record. Its lesson still holds
+in the panel. A flex item that must scroll needs `min-height: 0`. An item with
+an explicit `min-height` loses its content-based minimum and can be squeezed
+until it clips.
+
 ---
 
 ## Finding from the A-14 refinement (2026-10-17)
@@ -697,6 +727,61 @@ Recommended as step 0 of A-14. (Label: `setup`)
   Node 20 deprecation warning, hence v5. `update-data.yml` still uses v4 and
   draws the same warning. It is left alone here because it is the production
   data workflow and outside this task.
+
+---
+
+## Findings from the A-14 implementation (2026-10-17)
+
+### ⬜ #37 Light-mode Teil markers reach only 1.8:1 against the light map tiles
+Status: needs-triage
+
+Found while computing A-14's map contrast. In light mode the map colours are
+exactly A-7's former `AMPEL_COLOR` values: A-14/E8 kept them by its
+Definition of Done. Measured against the median luminance of the untinted OSM
+tiles (0.700, a 200 × 200 px area without features, decoded from a screenshot
+with real tiles):
+
+| Light-mode colour | against the tiles | against the marker's white ring |
+|---|---|---|
+| `--map-voll` `#c02626` | 4.24:1 | 5.92:1 |
+| `--map-gering` `#197a3d` | 3.86:1 | 5.39:1 |
+| `--map-teil` `#f08a00` | **1.80:1** | **2.52:1** |
+| `--map-search` `#1b4b73` | 6.53:1 | — |
+
+The white ring itself reaches only 1.40:1 against the light tiles, for every
+marker. A Teil marker therefore has no edge that reaches the 3:1 a graphical
+object needs (WCAG 1.4.11). Only its hue sets it apart from the tiles. This is
+the 2.52:1 #32 found for the dot. #32 fixed the dot; the map deliberately kept
+`#f08a00`, so that Teil stays clearly lighter than Voll on the always-light
+tiles (CLAUDE.md). Not new, then: this has been the marker colour since A-7.
+Dark mode is fine, with Teil at 7.44:1 against the darkened tiles. The list
+states every closure severity as text, so the map is not the only means. That
+makes this a finding, not a blocker.
+
+Options, none decided:
+- **A dark ring for markers in light mode.** The fill stays, and the ring gives
+  every marker a ≥ 3:1 edge. It amends A-9/E6 ("markers unchanged").
+- **A darker `--map-teil` in light mode.** This runs into the reason Teil is
+  lighter than Voll. The two must stay apart on the tiles by more than hue.
+- **Accept it** and record why.
+
+**DoD:** a decision is recorded. If something changes, a light-mode Teil marker
+reaches ≥ 3:1 at one of its edges (tile/ring or ring/fill), computed against
+real tiles as in A-14, and Voll and Teil still read apart. (Label: `a11y`,
+`frontend`)
+
+### ⬜ #38 The portal preview images show the page before A-14
+Status: ready-for-human (after the A-14 release; the upload is the
+maintainer's)
+
+#26's two preview images (desktop 1440 × 900 and mobile 390 × 844, light)
+show the document page that A-14 replaced. A-14 names their renewal as a
+follow-up after release.
+**DoD:** after the release, two new images of the full-screen map with real
+tiles exist and are handed to the open-data editorial team. The script that
+makes them is restored from git history (`scripts/screenshot.mjs`, removed on
+2026-08-07) or rewritten, again outside `npm test` and CI. Its tile-count
+abort stays: a gray map must not reach the portal. (Label: `docs`)
 
 ---
 

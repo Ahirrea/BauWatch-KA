@@ -309,3 +309,57 @@ None.
 3. Add the strings (DE/EN) and the `--bar` token in all three palette blocks.
 4. Run the browser checks, take the screenshots, and update the docs and the
    status.
+
+## Implementation record (2026-10-17)
+
+Commit `585ad75` on `main` (landed on 2026-10-18 together with A-14), built on
+[A-14](./A-14-vollbild-karte.md)'s shell.
+
+**Verified:**
+- **`npm test`:** 20 new cases in `scripts/test-stats.mjs` cover E5's
+  functions, including the band boundaries at 7/8, 30/31, 91/92 and 365/366
+  days. All pass.
+- **Content (DoD):** 30 of 30 values in the tab equal a Node-side
+  recomputation over the same snapshot. Checked at 414 px light, 1280 px dark
+  and 320 px light. The median is 110 days, shown as "3,6 Monate" (E8).
+- **Voll figure = Voll button:** 45 = 45 with no other filter active, at 320,
+  414 and 1280 px.
+- **320 px:** no horizontal overflow in German or English. 6 of the 22 bar
+  labels wrap (2 at 414 and 1280 px), and every bar stays in its label's row.
+- **Contrast, in both schemes.** The explicit toggle gives exactly the values
+  of the context's dark scheme.
+
+  | Pair | Light | Dark |
+  |---|---|---|
+  | Body text: labels, headings, titles | 17.40:1 | 13.96:1 |
+  | Muted text: scope line, notes, bar values, meta | 7.05:1 | 7.00:1 |
+  | Lowest text: the four figures' labels | 6.57:1 | 5.90:1 |
+  | `--bar` against its surface | 9.13:1 | 6.10:1 |
+  | Sperrgrad segment and legend dot: red / amber / green | 5.92 / 3.38 / 5.39 | 5.62 / 8.64 / 8.02 |
+
+  Text clears 4.5:1 and every graphical mark clears 3:1. Light-mode amber
+  (3.38:1) is the tightest; it always carries a word and a number (E4,
+  tension 4).
+- **No new host, storage key or artifact.** The tab reads `state.features` and
+  nothing else.
+
+**As built, beyond the decisions:**
+- **`topWithRest(entries, n, restLabel)`** takes the "Sonstige"/"Other" label
+  as an argument. `src/lib/` holds no UI language of its own, and the UI
+  module passes `str('statsOther')`.
+- **`normalizeLabel()`** is a pure function in `src/lib/stats.js` too, so E7's
+  whitespace rule is tested like the rest. It also closes the spaces around a
+  hyphen between letters ("Baden - Württemberg" → "Baden-Württemberg").
+  `RESTDAUER_BANDS` is exported next to `RESTDAUER_STUFEN`.
+- **A load error** sets `state.loadError` (new in `src/ui/state.js`). The tab
+  shows the list's error text instead of waiting for data that will not come.
+- **The bar minimum** is a floor of 1.5 % of the track: 2.1 px at 320 px and
+  2.7 px in the desktop panel, close to the spec's 2 px. With today's
+  snapshot it never applies. The shortest bar is 16.7 px (9 cases).
+
+**Definition of Done: met.** E2's content is verified against a
+recomputation. The pure functions are in `src/lib/stats.js` with tests, and
+`src/lib/` stays DOM-free. Nothing depends on a tooltip or on colour alone,
+and contrast is computed in both schemes. There is no new host, storage key or
+artifact. The screenshots were sent at 414 px light, 1280 px dark and 320 px
+light, and the docs are updated per the impact list.

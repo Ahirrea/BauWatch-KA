@@ -9,13 +9,14 @@ It answers the question Karlsruhe residents actually have:
 **"Does this affect me — on my route, with my mode of transport, in this
 time period?"**
 
-- 🗺️ Map + synchronized list (Leaflet + OpenStreetMap)
+- 🗺️ Full-screen map (Leaflet + OpenStreetMap) with a synchronized list in a panel on top — a bottom sheet on phones, a side panel on desktop
 - 🚧 Construction-site areas drawn on the map, not just point markers
 - 🚦 Traffic light for the closure severity, plain text instead of administrative codes, remaining duration
-- 🔎 Address/radius search (1.5 km), filters by time period, closure severity, mode of transport
+- 🔎 Address/radius search (1.5 km), filters by closure severity (with counts), remaining duration, mode of transport
+- 📊 Statistics — what is being built, by whom, for how long, which modes of transport are affected (all of Karlsruhe, computed in the browser)
 - 🆕 "What's new?" — the data changes of the last 30 days, right in the app
 - 🌐 Interface in German and English (legal pages stay German)
-- 🌗 Light and dark theme — follows the system, switchable in the app
+- 🌗 Light and dark theme, including a darkened map — follows the system, switchable in the app
 - 📲 Installable as an app and usable offline (see [Install as an App](#install-as-an-app))
 - ⚙️ Purely static on GitHub Pages — no server, no running costs
 
@@ -47,10 +48,14 @@ lives in `src/lib/` and is used **jointly by the build script and the client**.
 
 Plain static files, served from the repo root — no frontend build step.
 Shared, dependency-free logic lives in `src/lib/` and is imported by **both**
-the browser client (`src/app.js`) and the Node scripts in `scripts/` (data
-build + tests). The committed data snapshot and its reports live in `data/`,
-Leaflet locally in `vendor/leaflet/` (no CDN), process/decisions/backlog in
-`docs/`.
+the browser client and the Node scripts in `scripts/` (data build + tests).
+The client is `src/app.js` (entry module) plus its feature modules in
+`src/ui/` (map, panel, list, filters, search, statistics, feed, menu, …);
+`src/styles.css` holds the shared palette and the legal pages' styles,
+`src/shell.css` the map page's app shell ([A-14](docs/anforderungen/A-14-vollbild-karte.md),
+[ADR-005](docs/adr/ADR-005-neuaufbau-oberflaeche.md)). The committed data
+snapshot and its reports live in `data/`, Leaflet locally in `vendor/leaflet/`
+(no CDN), process/decisions/backlog in `docs/`.
 
 ## Running locally
 
@@ -84,7 +89,7 @@ existing file** — the `--allow-empty` flag forces the write even with 0 matche
 > runners do reach it); locally, the build then fails.
 
 > A small **sample dataset** initially ships in the repo (`sample: true`,
-> marked as sample data in the footer). The first successful Action run
+> marked as sample data in the credits on the map). The first successful Action run
 > replaces it with real data.
 
 ## Install as an App
@@ -101,8 +106,8 @@ rationale in
 
 **What works offline:** the map (without map tiles — the area stays gray),
 markers, list, all filters, and the detail info, computed on the **last
-loaded data snapshot**. The footer then explicitly states this:
-"Data last changed: … · **offline, from device storage**".
+loaded data snapshot**. The status line in the panel then explicitly states
+this: "As of … · **offline, from device storage**".
 
 **What doesn't work offline:** the address/radius search — it needs
 Nominatim. The input field and button are disabled offline, and the search
@@ -151,11 +156,11 @@ follow the places where you can see *whether* and *what* changed:
 
 - **`data/CHANGELOG.md`** — a permanent log, newest change first: which
   construction sites were ➕ added, ➖ removed, or ✏️ changed (with field
-  details like "End: … → …"). Linked at the bottom of the website as
-  "change history".
-- **The "What's new?" button on the map page (A-6)** — the content of
+  details like "End: … → …"). Linked from the ☰ menu as
+  "Änderungsverlauf" (change history).
+- **The "Neu" tab on the map page (A-6, a tab since A-14)** — the content of
   `data/CHANGELOG.md`, just structured (`data/changelog.json`) and rendered
-  in a modal dialog instead of raw Markdown on GitHub, limited to the last 30
+  in the app instead of raw Markdown on GitHub, limited to the last 30
   days. No personalization, no login, same fixed window for every visitor.
   Cases that changed only outside the observed fields are left out here (#28) —
   "other details updated" can't answer "does this affect me?"; `CHANGELOG.md`
@@ -180,8 +185,8 @@ Because no commit happens without a change, the answer is directly readable:
   interval. `git log --follow --format='%ci %s' data/baustellen.geojson`
   lists them compactly.
 
-The website's footer shows "Data last changed" (= `stand`), i.e. the time of
-the last real change — not the last check run.
+The panel's status line shows the data's "Stand" (= `stand`), i.e. the time
+of the last real change — not the last check run.
 
 ## Contributing
 
@@ -220,11 +225,11 @@ the popup, though.
 
 Code: **MIT** (see [`LICENSE`](LICENSE)).
 Data: "Baustellen" ("construction sites"), City of Karlsruhe, **CC-BY 4.0** —
-attribution static in the footer of `index.html`, guarded by
+attribution static in the credits on the map in `index.html`, guarded by
 `scripts/test-attribution.mjs`.
 No warranty; only the on-site signage is binding.
 
 Operator details and data flows: [`impressum.html`](impressum.html) and
 [`datenschutz.html`](datenschutz.html) (requirement
 [A-4](docs/anforderungen/A-4-impressum-datenschutz.md)) — linked from the
-footer on the live site.
+credits on the map and from the ☰ menu on the live site.

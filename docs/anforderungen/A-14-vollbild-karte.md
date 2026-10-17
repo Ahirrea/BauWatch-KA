@@ -199,6 +199,13 @@ map/list switch.
 never visible together, and the synchronized list has been a core feature
 since #7.
 
+**Measured after implementation:** collapsed, the sheet is 122 px at 320, 360,
+375 and 414 px wide in German, the prototype's value. The first build measured
+142 px, because the data stand took a line of its own. The status row is now a
+wrapping flex row, so the count and the stand share a line while they fit. In
+English at 320 px they do not fit, and the head grows to 142 px, as the sheet
+spec below intends ("grow by a line instead of clipping").
+
 **E3 — One panel element for both layouts; the search bar moves by CSS, not by
 DOM.** The sheet and the side panel are the same element. On a phone, the
 search bar inside it is lifted to the top of the screen with
@@ -284,7 +291,8 @@ static credit, which no longer depends on JavaScript; that is also strictly
 better for OSM's attribution requirement. This footer is the first `<footer>`
 in `index.html`, so the footer check in `test-rechtstexte.mjs` keeps its
 meaning. The prototype measured 2 lines at 414 px; 3 at 360 px are expected,
-to be measured. *Discarded:*
+to be measured. **Measured after implementation:** 2 lines (35 px) at 414 and
+1280 px, and 3 lines (50 px) at 320, 360 and 375 px. *Discarded:*
 - attribution only in the menu: static, but hidden until opened. A licence
   condition should be visible without interaction.
 - attribution in the sheet head: +30 px on every collapsed sheet.
@@ -338,6 +346,24 @@ How the sheet reacts:
 
 The zoom never changes (A-11/E1).
 
+**As built (2026-10-17).** The decision leaves three details open. The build
+settles them as follows:
+- **When the padding is recomputed.** Not at each selection: the panel
+  reports the insets on every change of the chrome (sheet state, resize,
+  breakpoint, a re-measured head), and `setChromeInsets()` in
+  `src/ui/map.js` updates the popup options of every bound marker.
+  `setSheet()` reports the insets of the *target* state at once. So a step
+  from full to half pans against the half sheet, not against the full sheet
+  that is still animating away.
+- **What the bottom padding holds.** On a phone, collapsed: the sheet, the
+  credits strip and 24 px. The 24 px keep the marker below the popup's tip
+  visible. Open, the sheet covers the credits, so its own height counts
+  instead. On desktop: the credits strip plus 12 px.
+- **The zoom control is not in the padding.** It covers a corner, not a
+  strip. Reserving its 56 px shifted every centred view (E13) by about 23 px
+  for a control that rarely meets a popup. Left and right are therefore
+  10 px on a phone and 12 px on desktop.
+
 **E10 — Nothing new is stored.** The sheet state, the active tab and the
 desktop collapse reset on every load: sheet collapsed, Liste tab, panel open.
 No `localStorage` key, no privacy-notice change.
@@ -379,6 +405,22 @@ next to the panel. This amends A-11/E5 ("the other three `setView()` calls
 stay exactly as they are") for the initial call only. The radius-search and
 reset views stay.
 
+**E13 revised (2026-10-17).** The radius-search and reset views are centred in
+the uncovered map too, and so is the initial view on a phone. The evidence is
+the offset E13 was written for, measured on the built page. A plain `setView()`
+puts its target:
+- **on a phone** (320–414 px): 56–63 px below the centre of the uncovered map,
+  because the search bar on top and the sheet plus credits below are not
+  symmetric;
+- **on desktop** (1280 × 800): 206 px left of it and 18 px below, next to the
+  panel. E13 quoted 218 px from the prototype.
+
+For a place someone has just searched for, that is the same defect as for the
+initial view. `setViewInVisibleArea()` in `src/ui/map.js` keeps the target and
+the zoom (13 for the initial and reset views, 14 for a search) and shifts only
+the projection. A-11/E5's rule stands: the same calls exist, at the same zoom.
+A-11/E1 stands too: selection still moves nothing.
+
 **E14 — The desktop panel is collapsible.** A button in the panel head hides
 the panel, and the map then shows in full. A floating "Liste" button brings
 the panel back. Focus moves to whichever button is now visible. The state is
@@ -400,7 +442,7 @@ persistence, a host or a data artifact.
 | A-6/E1 | feed in a modal dialog | the "Neu" tab | the space argument (#23) no longer applies (E4) |
 | A-7/E4 (mechanism only) | colours from `AMPEL_COLOR` in `app.js` | colours from tokens via CSS classes; meaning unchanged | dark tiles need a dark colour set (E8) |
 | A-11/E2 (in part) | autoPan with Leaflet's default padding | autoPan padded by the chrome | the map is partly covered (E9) |
-| A-11/E5 (in part) | initial `setView` unchanged | initial view shifted on desktop | the panel covers the left 412 px (E13) |
+| A-11/E5 (in part) | initial `setView` unchanged | initial view shifted on desktop; since *E13 revised*, the initial, search and reset views are centred in the uncovered map on every layout, at unchanged zoom | the panel covers the left 412 px (E13); on a phone, search bar and sheet cover the map unevenly (E13 revised) |
 | A-8, toggle form | icon-only ◐ ☀ ☾ | labelled buttons in the menu; same values, same storage | the menu has room (E6) |
 | `BACKLOG.md` #23, #33, #35 | layout fixes for the document page | moot | the page they fixed is gone; the entries stay ✅ with a dated note |
 
@@ -474,7 +516,7 @@ control sits top right and the credits bottom right.
 | Loaded | Counts, list, markers and areas; sheet collapsed |
 | Load error | Error text in `#list-status` (as today); the "Neu" tab still works |
 | Offline (answered from cache) | The stand line gets "· offline, aus dem Gerätespeicher"; the search is disabled with its hint (A-3) |
-| Radius search active | Circle, list sorted by distance, the place named in `#list-status`, a reset (×) in the search bar; `setView(center, 14)` as today (A-11/E5); the sheet does not move |
+| Radius search active | Circle, list sorted by distance, the place named in `#list-status`, a reset (×) in the search bar; zoom 14 as today (A-11/E5), centred in the uncovered map (*E13 revised*; this row first said `setView(center, 14)`); the sheet does not move |
 | Filter changed | Map, list and counts update; the sheet does not move and nothing jumps |
 | Selection from the list | Popup with padded autoPan; full → half; entry highlighted |
 | Selection from a marker | Popup; entry highlighted and scrolled into view inside the panel body |
@@ -541,7 +583,10 @@ used in the app.
 - **320 × 568 (smallest supported):** search bar 60 px plus collapsed sheet
   ~122 px leaves ~68 % of the map uncovered. The three tabs must fit 320 px in
   both languages ("Liste · Statistik · Neu" / "List · Statistics · New"), and
-  the credits may take three lines. To be measured.
+  the credits may take three lines. To be measured. **Measured:** 68 %
+  uncovered; the tabs fit in both languages, with no tab clipped and no
+  horizontal overflow; the credits take 3 lines (50 px). The collapsed sheet
+  is 122 px in German and 142 px in English, where the status row wraps.
 - **Landscape phones (height < 500 px):** two sheet states (E2). The search
   bar stays.
 - **Large text and 200 % zoom:** the head grows, so the collapsed sheet grows
@@ -706,3 +751,128 @@ used in the app.
    the update banner.
 10. **Finish:** run the full browser test plan, take the screenshots, update
     the docs and set the status.
+
+## Implementation record (2026-10-17)
+
+Built on `ccr-0fb3ea8f-ywo45b` in the order of the steps above, and landed
+on `main` by fast-forward on 2026-10-18. The hashes are the ones on `main`.
+
+| Step | Commit | Content |
+|---|---|---|
+| 0 | `34c69c2`, `865b594` | [#36](../BACKLOG.md): `npm test` in CI, red path proven |
+| 1 | `06502db` | the UI guards follow the module graph |
+| 2 | `a3607fd` | `src/shell.css` split off |
+| 3 | `9c05930` | `src/app.js` split into `src/ui/` |
+| 4–9 | `2378c7f` | the shell: markup, sheet and panel, tabs, menu, map tokens, insets, strings, `SHELL`, `CACHE_SHELL` `v24` |
+| — | `585ad75` | [A-15](./A-15-statistik.md)'s statistics tab |
+
+**Verified:**
+- **The widened guards (step 1), by mutation.** Eleven defects were planted,
+  most of them in a submodule. Among them: a write into `#attribution`, a
+  module missing from `SHELL`, an import of a missing file,
+  `navigator.onLine` in a moved `loadData()`, a copy of `GENERIC_CHANGE_NOTE`
+  and a drifting `THEME_KEY`. The old guards caught 2 of them; the widened ones
+  caught all 11. Three more mutations for the `str()` rule (below) were all
+  caught as well: 14 of 14.
+  - On the final tree, the first re-run caught 13. The miss was "a theme
+    button loses its name". That mutation was written against the old
+    icon-only toggle, and its `sed` no longer matched anything.
+  - It was planted again in the new markup, once as a button without text and
+    once as a visible name without `data-i18n`. Both were caught.
+  - A mutation that silently does not apply reads like a weak guard. Check
+    that the planted file differs before counting a miss.
+- **The refactors (steps 2 and 3), against a `git archive` checkout of the
+  step before.** Each step was checked by 20 comparisons:
+  - the map page at 375, 414 and 1280 px in both schemes: 21 boxes to two
+    decimals with 13 computed properties each, plus list, counts, markers and
+    areas;
+  - a scripted session on that page: filters, selection, hover, language,
+    theme and the feed;
+  - the two legal pages, byte-identical at 414 and 1280 px in both schemes.
+
+  0 differences in either step.
+- **The shell (steps 4–9).** 68 functional checks in the browser, all
+  passing. They cover test-plan points 1–9, among them:
+  - the sheet states by tap, drag and keyboard, short screens and reduced
+    motion;
+  - the facet counts;
+  - selection from list and marker: zoom unchanged, popup and marker inside
+    the uncovered area;
+  - the hover tiers without ghosts;
+  - the desktop collapse and the menu, closed and open;
+  - language and theme, and the light map colours;
+  - the attribution text;
+  - offline use and the radius search.
+- **A live search** against the real Nominatim ("Kaiserstraße 12") found 49
+  sites within 1.5 km. The view landed at zoom 14 with the place inside the
+  uncovered area.
+- **The service worker (point 10)** precached 37 shell entries. An offline
+  reload (same-origin requests aborted) shows 167 entries and the offline
+  marker. The update banner worked end to end from `v24` to `v25` and
+  reloaded only on click.
+- **The uncovered map (DoD),** sheet collapsed: 68, 72, 73 and 79 % at 320,
+  360, 375 and 414 px, and 67 % at 1280 px. These are the prototype's values.
+- **Contrast (point 11; the DoD for the dark map).** Each colour was measured
+  against the median luminance of a feature-free 200 × 200 px tile area,
+  decoded from screenshots with real tiles:
+
+  | Colour | Light (tiles 0.700) | Dark (darkened tiles 0.028) |
+  |---|---|---|
+  | Voll | 4.24:1 | 4.83:1 |
+  | Teil | **1.80:1** | 7.44:1 |
+  | Gering | 3.86:1 | 6.90:1 |
+  | Search | 6.53:1 | 7.03:1 |
+  | White marker ring | 1.40:1 | 13.58:1 |
+
+  Every dark value clears 3:1. The light values are the former `AMPEL_COLOR`
+  by this requirement's DoD. Teil's 1.80:1 predates A-14 and is recorded as
+  [#37](../BACKLOG.md).
+
+**As built, beyond the decisions:**
+- **The module split (E11) is finer than the indicative table.** `menu.js`
+  holds only the dialog. Language and the `str()` lookup live in
+  `src/ui/text.js`, and the colour scheme lives in `src/ui/theme.js`. Shared
+  pieces sit in `state.js`, `dom.js`, `geo.js` and `feature-html.js`, and A-15
+  adds `stats.js`. That makes 15 modules under `src/ui/`, all in `SHELL`.
+- **Strings have one lookup shape.** UI modules read strings only through
+  `str('key')` with a literal key. `test-i18n.mjs` gained a section for this.
+  It checks every such key in DE and EN, and it fails on a computed key or on
+  `STRINGS[` outside `text.js`. The first thing it caught was the handle
+  label in `panel.js`.
+- **Dragging the sheet** listens for moves and the release on `window`, not
+  on the head. Otherwise a pointer that left the head before the 6 px
+  threshold lost the drag. Pointer capture was rejected, because it retargets
+  the click that ends a tap on the handle.
+  - The head is `user-select: none` (the search bar keeps `text`), and
+    `dragstart` is cancelled.
+  - Without both, a first drag selected the title. The next press then
+    started the browser's own drag-and-drop, which cancels the pointer stream.
+- **The update banner on a phone** runs from the left edge to 3.75 rem short
+  of the right one. That keeps it clear of the zoom control below the search
+  bar.
+- **The collapsed sheet, the credits and the views** are measured in the notes
+  under E2, E7 and E9 and in *E13 revised*.
+
+**Definition of Done: met.**
+- The map fills the viewport, and the uncovered share is recorded above.
+- The sheet has three states (two below 500 px of height) and works by tap,
+  drag and keyboard, with focus and reduced motion verified.
+- Every carried-over behaviour is verified: A-12 counts, A-11 zoom, A-9 tiers,
+  A-6 tab, A-5 strings, A-8 theme, A-3 offline and update.
+- The dark map is done:
+  - the tile filter applies in both dark paths;
+  - the map colours come from tokens;
+  - the light values are identical to the former `AMPEL_COLOR`;
+  - the dark values reach ≥ 3:1, recorded above.
+- The credits footer is static, visible without interaction, and holds the
+  legal links. `test-attribution` passes with the exact text.
+- `npm test` is green. The widened guards are proven by mutation, and none is
+  weaker than before.
+- In `src/lib/`, A-14 touched only `i18n.js` strings. A-15's pure functions in
+  `stats.js` belong to A-15.
+- There is no new host and no new storage key. `datenschutz.html`,
+  `impressum.html` and the manifest are unchanged.
+- `SHELL` covers the module graph, and `CACHE_SHELL` is at `v24`.
+- The screenshots were sent with the result: 414 and 1280 px in light and
+  dark, plus close-ups and before shots.
+- The docs are updated per the impact list, and the overview shows 🏁.
