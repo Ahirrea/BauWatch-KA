@@ -2,6 +2,13 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 17.10.2026, 14:05 — 2 geändert (gesamt 167)
+
+- ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
+- ✏️ Essostraße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 17.10.2026, 06:00 — 5 geändert (gesamt 167)
 
 - ✏️ Essostraße — sonstige Angaben aktualisiert
