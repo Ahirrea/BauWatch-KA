@@ -10,11 +10,12 @@ Suggested labels: `setup`, `data`, `frontend`, `a11y`, `docs`, `enhancement`.
 > [refinement process](./PROZESS.md).
 
 **Status legend:** ✅ done · 🟡 partial / open · ⬜ open
-**As of:** 2026-10-17 (**#36 added, open.** No workflow runs `npm test`;
-recommended before the interface rebuild
-[A-14](./anforderungen/A-14-vollbild-karte.md) starts. When A-14 is
-implemented, #23, #33 and #35 become moot, because the page they fixed is
-replaced. They stay ✅ and get a dated note then, not now.)
+**As of:** 2026-10-17 (**#36 added and done.** `npm test` now runs in CI on
+every push and pull request, and a deliberately broken commit proved the red
+path. This is step 0 of the interface rebuild
+[A-14](./anforderungen/A-14-vollbild-karte.md). When A-14 is implemented,
+#23, #33 and #35 become moot, because the page they fixed is replaced. They
+stay ✅ and get a dated note then, not now.)
 **Previously, as of:** 2026-08-15 (**#32 done** — the light-mode `--amber` darkened
 `#f08a00` → `#cc7700`: the dot now reaches 3.38:1 on `--surface` and 3.15:1 on
 `--chip`; the map's `AMPEL_COLOR` deliberately keeps `#f08a00`, and
@@ -58,8 +59,8 @@ and dragging the outer one scrolled the whole feed out of the frame.)
 > #33 stays done and is only clarified; what it could not reach by tightening
 > spacing — the whole map on the first screen — is **A-13, implemented** the same
 > day (the filter row now stands between map and list on a phone).
-> **Open:** #17 (.ics export, optional), #19 (public-transit routing, optional)
-> and **#36** (CI test run). #36 is new on 2026-10-17 and recommended as step 0
+> **Open:** #17 (.ics export, optional) and #19 (public-transit routing,
+> optional). **#36** (CI test run) was added and done on 2026-10-17, as step 0
 > of the interface rebuild A-14.
 
 ---
@@ -663,7 +664,7 @@ readable, mobile untouched. — **done**:
 
 ## Finding from the A-14 refinement (2026-10-17)
 
-### ⬜ #36 Run `npm test` in CI, not only locally
+### ✅ #36 Run `npm test` in CI, not only locally
 While refining the interface rebuild
 ([A-14](./anforderungen/A-14-vollbild-karte.md),
 [ADR-005](./adr/ADR-005-neuaufbau-oberflaeche.md)), an inventory of the UI
@@ -684,6 +685,18 @@ reach `main`, and Pages deploys `main` immediately.
   branch must turn the check red.
 
 Recommended as step 0 of A-14. (Label: `setup`)
+**Done (2026-10-17):**
+- `.github/workflows/test.yml` runs `npm test` on push and pull requests,
+  with `paths-ignore: data/**`, `actions/checkout@v5`, `actions/setup-node@v5`
+  and Node 22.
+- The red run is proven. A temporary commit on the A-14 branch changed one
+  character of the attribution, and the run failed exactly at
+  `test-attribution.mjs` ("Footer-Nennung ist wortgleich …"). The commit was
+  then dropped, and the next run was green.
+- The first attempt used the v4 actions. Their runtime triggered GitHub's
+  Node 20 deprecation warning, hence v5. `update-data.yml` still uses v4 and
+  draws the same warning. It is left alone here because it is the production
+  data workflow and outside this task.
 
 ---
 
