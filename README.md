@@ -137,6 +137,12 @@ middle of use.
 
 The cron interval can be adjusted at the top of the workflow file.
 
+### Tests in CI (#36)
+
+`.github/workflows/test.yml` runs `npm test` on every push and pull request
+that touches more than `data/`. It needs no `npm install`: the test scripts
+are plain Node. Data commits from the Action don't trigger it.
+
 ## Tracking changes
 
 The build script compares the new state against the last committed one and

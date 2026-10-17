@@ -1,0 +1,33 @@
+name: Tests
+
+# Runs the whole suite (BACKLOG #36). Data commits are skipped: the data
+# Action pushes with GITHUB_TOKEN, which triggers no workflow anyway, and a
+# push that touches only data/ has nothing for these scripts to catch.
+on:
+  push:
+    paths-ignore:
+      - "data/**"
+  pull_request:
+    paths-ignore:
+      - "data/**"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v5
+
+      - name: Set up Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+
+      # The test scripts are plain Node over src/lib/ and the served files —
+      # no npm install. The devDependencies are only for local browser checks.
+      - name: Run npm test
+        run: npm test
