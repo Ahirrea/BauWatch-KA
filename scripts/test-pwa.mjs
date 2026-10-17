@@ -10,8 +10,9 @@
 //     Precache-Lücke: online alles gut, offline fehlt genau diese eine Datei
 
 import { readFileSync, existsSync } from 'node:fs';
-import { join, dirname, posix } from 'node:path';
+import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { clientModules, functionBody } from './client-modules.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -205,16 +206,19 @@ for (const seite of htmlSeiten) {
   check(`${seite} verlinkt ein apple-touch-icon`, /rel="apple-touch-icon"/.test(html));
 }
 
-// --- src/app.js gegen die SHELL-Liste --------------------------------------
-// Die HTML-Prüfung oben findet keine ES-Modul-Importe. Ohne diese Prüfung könnte
-// ein neuer Import in app.js offline stumm fehlen.
+// --- The client's module graph against the SHELL list ---------------------
+// The HTML scan above finds no ES-module imports. This used to follow only
+// src/app.js's own imports; since A-14 the client is a graph of modules
+// (E11), and a module imported by another module would be missed — online
+// everything works, offline that one file is gone. So: every module reachable
+// from src/app.js must be precached, and every import must resolve to a file.
 
-const app = lies('src/app.js');
-const importe = [...app.matchAll(/from\s+'(\.\.?\/[^']+)'/g)].map((m) => m[1]);
-check('src/app.js hat relative Importe (Absicherung greift)', importe.length > 0);
-for (const spez of importe) {
-  const pfad = posix.normalize(posix.join('src', spez));
-  check(`Import aus app.js ist precacht: ${spez}`, shellSet.has(pfad), pfad);
+const { modules: clientModule, missing: fehlendeModule } = clientModules();
+const app = clientModule.map((m) => m.source).join('\n');
+check('src/app.js has relative imports (the guard engages)', clientModule.length > 1, `${clientModule.length} module(s)`);
+check('every client import resolves to a file', fehlendeModule.length === 0, fehlendeModule.join(', '));
+for (const { path } of clientModule) {
+  check(`client module is precached: ${path}`, shellSet.has(path), path);
 }
 
 // --- Registrierung ---------------------------------------------------------
@@ -247,19 +251,25 @@ check(
   );
 }
 
-check("app.js registriert 'sw.js' relativ", /register\('sw\.js'\)/.test(app));
-check('app.js registriert erst nach dem load-Event', /addEventListener\('load'/.test(app));
-check("app.js prüft 'serviceWorker' in navigator", /'serviceWorker' in navigator/.test(app));
-check('app.js liest den Offline-Header X-Bauwatch-Cache', /X-Bauwatch-Cache/.test(app));
+// The registration and the offline marker may live in any client module
+// (A-14/E11) — checked across the whole graph, not just the entry file.
+check("the client registers 'sw.js' relatively", /register\('sw\.js'\)/.test(app));
+check('the client registers only after the load event', /addEventListener\('load'/.test(app));
+check("the client checks 'serviceWorker' in navigator", /'serviceWorker' in navigator/.test(app));
+check('the client reads the offline header X-Bauwatch-Cache', /X-Bauwatch-Cache/.test(app));
 check('sw.js setzt den Offline-Header X-Bauwatch-Cache', /X-Bauwatch-Cache/.test(sw));
 // navigator.onLine ist für das Bedien-Angebot der Adresssuche richtig, für die
 // Frische der Daten falsch (Captive Portals melden fälschlich „online"). Die
 // Prüfung schaut nur auf echten Code, nicht auf die Kommentare, die das erklären.
+// The body is found by brace matching wherever loadData() lives; until A-14 it
+// was a slice up to a section comment, which became an empty — and silently
+// passing — string the moment the comment moved.
+const loadData = functionBody(clientModule, 'loadData');
+check('the client defines loadData() (the guard engages)', Boolean(loadData));
 check(
   'loadData() nutzt navigator.onLine nicht (Captive-Portal-Falle)',
-  !/navigator\.onLine/.test(
-    ohneKommentare(app.slice(app.indexOf('async function loadData'), app.indexOf('// --- Service Worker')))
-  )
+  Boolean(loadData) && !/navigator\.onLine/.test(ohneKommentare(loadData.body)),
+  loadData ? loadData.path : 'loadData() not found'
 );
 
 if (failed > 0) {

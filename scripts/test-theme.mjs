@@ -36,6 +36,7 @@ import { readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { STRINGS, LANGS } from '../src/lib/i18n.js';
+import { clientModules } from './client-modules.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -48,7 +49,9 @@ function check(name, cond, detail) {
 const lies = (p) => readFileSync(join(ROOT, p), 'utf8');
 const css = lies('src/styles.css');
 const index = lies('index.html');
-const app = lies('src/app.js');
+// The constants (THEME_KEY, THEMES, THEME_COLOR) may live in any client module
+// since A-14/E11 — read the whole graph, not just the entry file.
+const app = clientModules().modules.map((m) => m.source).join('\n');
 const datenschutz = lies('datenschutz.html');
 
 // --- 1. The two dark palettes must stay identical ---------------------------
@@ -152,7 +155,7 @@ for (const wahl of ['light', 'dark']) {
 // --- 3. Inline-Skript und app.js müssen denselben Schlüssel benutzen --------
 
 const themeKeyApp = app.match(/const THEME_KEY = '([^']+)'/);
-check('app.js definiert THEME_KEY', Boolean(themeKeyApp), 'const THEME_KEY = \'…\' nicht gefunden');
+check('the client defines THEME_KEY', Boolean(themeKeyApp), 'const THEME_KEY = \'…\' nicht gefunden');
 
 const inlineSkript = index.match(/<script>([\s\S]*?)<\/script>/);
 check(
@@ -164,7 +167,7 @@ check(
 if (themeKeyApp && inlineSkript) {
   const keysInline = [...inlineSkript[1].matchAll(/localStorage\.getItem\('([^']+)'\)/g)].map((m) => m[1]);
   check(
-    'das Inline-Skript liest denselben Schlüssel, den app.js schreibt',
+    'das Inline-Skript liest denselben Schlüssel, den der Client schreibt',
     keysInline.length === 1 && keysInline[0] === themeKeyApp[1],
     `index.html: ${keysInline.join(', ') || '—'} ≠ app.js: ${themeKeyApp[1]}`
   );
@@ -206,7 +209,7 @@ for (const meta of metas) {
 }
 
 const themeColorBlock = app.match(/const THEME_COLOR = \{([^}]+)\}/);
-check('app.js definiert THEME_COLOR', Boolean(themeColorBlock));
+check('the client defines THEME_COLOR', Boolean(themeColorBlock));
 if (themeColorBlock) {
   const appFarben = new Map(
     [...themeColorBlock[1].matchAll(/(\w+):\s*'([^']+)'/g)].map((m) => [m[1], m[2]])
@@ -223,25 +226,42 @@ if (themeColorBlock) {
 // --- 5. Die Knöpfe: Werte, Zustand, Namen ----------------------------------
 
 const themesApp = app.match(/const THEMES = \[([^\]]+)\]/);
-check('app.js definiert THEMES', Boolean(themesApp));
+check('the client defines THEMES', Boolean(themesApp));
 const erlaubt = themesApp ? [...themesApp[1].matchAll(/'([^']+)'/g)].map((m) => m[1]) : [];
 
-const gruppe = index.match(/<div\s[^>]*data-theme-toggle[\s\S]*?<\/div>\s*<\/div>/);
-check('index.html hat die Umschalter-Gruppe (data-theme-toggle)', Boolean(gruppe));
+// Structure-agnostic since A-14: the toggle moved into the menu and its
+// buttons got visible labels (E6), so the old match on a fixed nesting
+// (`div[data-theme-toggle] > div > three icon buttons`) would have failed on
+// layout rather than on meaning. What is checked is what the switch promises:
+// one named group, the same values as THEMES, `system` first and preselected,
+// and a translated accessible name on every button.
+const gruppen = [...index.matchAll(/<(\w+)\s[^>]*data-theme-toggle[^>]*>/g)];
+check('index.html hat genau eine Umschalter-Gruppe (data-theme-toggle)', gruppen.length === 1, `${gruppen.length}`);
+const gruppe = gruppen[0];
 
 if (gruppe && erlaubt.length) {
-  const knopfWerte = [...gruppe[0].matchAll(/data-theme-value="([^"]+)"/g)].map((m) => m[1]);
   check(
-    'die Knöpfe deckeln sich mit THEMES in app.js',
+    'die Umschalter-Gruppe ist eine role="group" mit Namen',
+    /role="group"/.test(gruppe[0]) && /aria-label(?:ledby)?="[^"]+"/.test(gruppe[0])
+  );
+
+  const knoepfe = [...index.matchAll(/<button\b[^>]*data-theme-value="[^"]+"[^>]*>[\s\S]*?<\/button>/g)];
+  check('drei Knöpfe gefunden (Absicherung greift)', knoepfe.length === 3, `${knoepfe.length}`);
+  check(
+    'alle Knöpfe stehen nach dem Gruppen-Anfang',
+    knoepfe.every((k) => k.index > gruppe.index)
+  );
+
+  const knopfWerte = knoepfe.map((k) => k[0].match(/data-theme-value="([^"]+)"/)[1]);
+  check(
+    'die Knöpfe deckeln sich mit THEMES im Client',
     knopfWerte.length === erlaubt.length && knopfWerte.every((w) => erlaubt.includes(w)),
-    `index.html: ${knopfWerte.join(', ')} ≠ app.js: ${erlaubt.join(', ')}`
+    `index.html: ${knopfWerte.join(', ')} ≠ client: ${erlaubt.join(', ')}`
   );
   check('„Systemvorgabe folgen" steht als Erstes', knopfWerte[0] === 'system', knopfWerte[0]);
 
-  const knoepfe = [...gruppe[0].matchAll(/<button[\s\S]*?<\/button>/g)].map((m) => m[0]);
-  check('drei Knöpfe gefunden (Absicherung greift)', knoepfe.length === 3, `${knoepfe.length}`);
-
-  const aktiv = knoepfe.filter((b) => /class="[^"]*is-active/.test(b));
+  const offeneTags = knoepfe.map((k) => k[0].slice(0, k[0].indexOf('>') + 1));
+  const aktiv = offeneTags.filter((b) => /class="[^"]*is-active/.test(b));
   check('genau ein Knopf ist vorausgewählt', aktiv.length === 1, `${aktiv.length}`);
   check(
     'der vorausgewählte Knopf ist „system" (Voreinstellung ohne Wahl)',
@@ -249,30 +269,28 @@ if (gruppe && erlaubt.length) {
   );
   check(
     'aria-pressed passt zur Vorauswahl',
-    knoepfe.every((b) => /aria-pressed="(true|false)"/.test(b)) &&
-      knoepfe.filter((b) => /aria-pressed="true"/.test(b)).length === 1
+    offeneTags.every((b) => /aria-pressed="(true|false)"/.test(b)) &&
+      offeneTags.filter((b) => /aria-pressed="true"/.test(b)).length === 1
   );
 
-  // Nur-Zeichen-Knöpfe: der Name MUSS am aria-label hängen, das Zeichen selbst
-  // muss vor dem Screenreader versteckt sein.
-  for (const knopf of knoepfe) {
-    const wert = (knopf.match(/data-theme-value="([^"]+)"/) || [])[1] || '?';
-    check(`Knopf „${wert}" hat ein aria-label`, /aria-label="[^"]+"/.test(knopf));
-    check(`Knopf „${wert}" hat ein title-Attribut`, /title="[^"]+"/.test(knopf));
-    check(`Knopf „${wert}": das Zeichen ist aria-hidden`, /aria-hidden="true"/.test(knopf));
+  // Every button needs a name a screen reader can read out, in both
+  // languages: either an aria-label translated via data-i18n-attr (the
+  // icon-only form, glyph hidden), or visible text translated via data-i18n.
+  for (const [i, k] of knoepfe.entries()) {
+    const wert = knopfWerte[i];
+    const tag = offeneTags[i];
+    const sichtbar = k[0]
+      .replace(/<[^>]*aria-hidden="true"[^>]*>[\s\S]*?<\/\w+>/g, '')
+      .replace(/<[^>]+>/g, '')
+      .trim();
+    const perLabel = /aria-label="[^"]+"/.test(tag) && /data-i18n-attr="[^"]*aria-label:\w+/.test(tag);
+    const perText = sichtbar.length > 0 && /data-i18n="\w+"/.test(k[0]);
     check(
-      `Knopf „${wert}": aria-label und title werden mit übersetzt`,
-      /data-i18n-attr="aria-label:\w+,title:\w+"/.test(knopf),
-      'sonst bleibt der Name deutsch, während die Seite englisch ist'
+      `Knopf „${wert}" hat einen übersetzten zugänglichen Namen`,
+      perLabel || perText,
+      'aria-label + data-i18n-attr, oder sichtbarer Text + data-i18n'
     );
   }
-
-  // Die Gruppe braucht selbst einen Namen — drei Zeichen ohne Kontext sagen
-  // im Screenreader nichts.
-  check(
-    'die Umschalter-Gruppe ist eine role="group" mit Namen',
-    /role="group"/.test(gruppe[0]) && /aria-label="[^"]+"/.test(gruppe[0])
-  );
 }
 
 // --- 6. Die i18n-Schlüssel liegen in beiden Sprachen vor -------------------
@@ -299,7 +317,7 @@ for (const wert of ['light', 'dark', 'system']) {
   );
 }
 check(
-  'app.js speichert bei „system" wirklich nichts (deckt sich mit dem Hinweis)',
+  'der Client speichert bei „system" wirklich nichts (deckt sich mit dem Hinweis)',
   /if \(theme === DEFAULT_THEME\) localStorage\.removeItem\(THEME_KEY\)/.test(app),
   'der Hinweis behauptet, ohne ausdrückliche Wahl werde nichts abgelegt'
 );

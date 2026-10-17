@@ -17,6 +17,7 @@
 import { readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { clientModules, withoutComments } from './client-modules.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -29,7 +30,9 @@ function check(name, cond, detail) {
 const lies = (p) => readFileSync(join(ROOT, p), 'utf8');
 
 const html = lies('index.html');
-const app = lies('src/app.js');
+// Every module of the client, not just the entry file (A-14/E11): a write into
+// #attribution from a module next door is the same defect.
+const { modules: clientModule } = clientModules();
 const build = lies('scripts/build-data.mjs');
 
 // --- Die Nennung steht statisch im HTML ------------------------------------
@@ -70,23 +73,36 @@ check(
   /transparenz\.karlsruhe\.de\/dataset\/baustellen/.test(absatzHtml)
 );
 
-// --- app.js darf die statische Nennung nicht überschreiben -----------------
+// --- No client module touches the static attribution -----------------------
 
 // Der Rückfall in den alten Fehler wäre ein Schreibzugriff auf #attribution.
-// Der Zusatz für Beispieldaten läuft bewusst über die eigene id
+// Until A-14 this looked for one form only (`el('attribution').textContent`) in
+// one file. It now forbids *getting hold of* the element at all, in any
+// module: the JS has no business with it, and every write form (textContent,
+// innerHTML, append, replaceChildren, insertAdjacentHTML …) starts with a
+// lookup. Der Zusatz für Beispieldaten läuft bewusst über die eigene id
 // „attribution-hinweis" — deshalb hier auf das genaue Argument prüfen.
+const zugriff =
+  /\bel\(\s*['"`]attribution['"`]\s*\)|getElementById\(\s*['"`]attribution['"`]\s*\)|querySelector(?:All)?\(\s*['"`][^'"`]*#attribution(?![\w-])[^'"`]*['"`]\s*\)/;
+const zugreifer = clientModule.filter((m) => zugriff.test(withoutComments(m.source))).map((m) => m.path);
 check(
-  "app.js schreibt nicht in el('attribution')",
-  !/el\('attribution'\)\s*\.\s*(textContent|innerHTML|innerText)/.test(app),
-  'die statische Nennung würde nach dem Laden überschrieben'
+  'no client module looks up #attribution',
+  zugreifer.length === 0,
+  `${zugreifer.join(', ')} — die statische Nennung könnte nach dem Laden überschrieben werden`
 );
 check(
-  'app.js pflegt den Beispieldaten-Hinweis separat',
-  /el\('attribution-hinweis'\)/.test(app)
+  'a client module maintains the sample-data notice separately',
+  clientModule.some((m) => /\b(?:el|getElementById)\(\s*['"`]attribution-hinweis['"`]\s*\)/.test(m.source))
 );
 check(
   'index.html hat den Absatz id="attribution-hinweis"',
   /id="attribution-hinweis"/.test(html)
+);
+// The language switch (A-5) rewrites every [data-i18n] element's text — on the
+// attribution that would be a JS write by another name.
+check(
+  'the attribution paragraph carries no data-i18n attribute',
+  Boolean(absatz) && !/data-i18n/.test(absatz[0].slice(0, absatz[0].indexOf('>') + 1))
 );
 
 // --- Gleichlaut mit dem Build-Skript ---------------------------------------

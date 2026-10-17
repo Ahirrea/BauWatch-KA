@@ -25,6 +25,7 @@
 import { readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { clientModules } from './client-modules.mjs';
 import {
   diffFeatures,
   summaryMarkdown,
@@ -257,18 +258,30 @@ check(
   /hasFeedContent\(changelogJsonEntry\)\s*\?/.test(build)
 );
 
-const app = lies('src/app.js');
-check(
-  'src/app.js imports filterChangelogEntries from src/lib/changelog.js',
-  /import \{[^}]*filterChangelogEntries[^}]*\} from '\.\/lib\/changelog\.js'/.test(app)
+// The client is a graph of modules since A-14/E11; the feed is rendered by
+// whichever module imports the filter. All three checks follow the graph, so
+// they keep their meaning wherever that module lives — and the negative one
+// covers every module except the one that defines the literal.
+const { modules: clientModule } = clientModules();
+const feedModule = clientModule.find((m) =>
+  /import \{[^}]*filterChangelogEntries[^}]*\} from '(?:\.\.?\/)+lib\/changelog\.js'/.test(m.source)
 );
 check(
-  'src/app.js runs the loaded feed through filterChangelogEntries()',
-  /changelogEntries = filterChangelogEntries\(/.test(app)
+  'a client module imports filterChangelogEntries from src/lib/changelog.js',
+  Boolean(feedModule)
 );
 check(
-  'src/app.js does not carry its own copy of the generic-note literal',
-  !app.includes(GENERIC_CHANGE_NOTE)
+  'that module runs the loaded feed through filterChangelogEntries()',
+  Boolean(feedModule) && /changelogEntries = filterChangelogEntries\(/.test(feedModule.source),
+  feedModule ? feedModule.path : 'no feed module'
+);
+const kopien = clientModule
+  .filter((m) => m.path !== 'src/lib/changelog.js' && m.source.includes(GENERIC_CHANGE_NOTE))
+  .map((m) => m.path);
+check(
+  'no client module carries its own copy of the generic-note literal',
+  kopien.length === 0,
+  kopien.join(', ')
 );
 
 // src/lib/ hard constraint: pure, DOM-free, dependency-free (imported by both
