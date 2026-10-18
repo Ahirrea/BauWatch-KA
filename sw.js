@@ -22,7 +22,7 @@
 // echtes Push", siehe A-2): kein `push`-, kein
 // `notificationclick`-, kein `sync`-/`periodicsync`-Handler.
 
-const CACHE_SHELL = 'bauwatch-shell-v28';
+const CACHE_SHELL = 'bauwatch-shell-v29';
 const CACHE_DATA = 'bauwatch-data-v1';
 
 // App-Shell. `'./'` ist der Navigations-Einstieg (liefert index.html aus) und
@@ -109,7 +109,12 @@ self.addEventListener('install', (event) => {
   event.waitUntil(
     (async () => {
       const cache = await caches.open(CACHE_SHELL);
-      await cache.addAll(SHELL);
+      // `cache: 'reload'` goes past the browser's HTTP cache, where Pages
+      // lets a file stay fresh for 10 minutes. Without it, a version found
+      // within those minutes was filled with the previous version's files
+      // and kept them until the next CACHE_SHELL bump (#41). The data
+      // prefetch below does the same.
+      await cache.addAll(SHELL.map((url) => new Request(url, { cache: 'reload' })));
 
       // Den Datenstand einmal mitnehmen. Der allererste Seitenaufruf läuft noch
       // unkontrolliert am Service Worker vorbei — ohne diesen Schritt stünde
@@ -132,7 +137,10 @@ self.addEventListener('activate', (event) => {
       const namen = await caches.keys();
       await Promise.all(
         namen
-          .filter((n) => n !== CACHE_SHELL && n !== CACHE_DATA)
+          // Only our own: every site on ahirrea.github.io shares this
+          // origin's cache storage, and the Lieferkarte keeps its offline
+          // shell, data and tiles there (#42).
+          .filter((n) => n.startsWith('bauwatch-') && n !== CACHE_SHELL && n !== CACHE_DATA)
           .map((n) => caches.delete(n))
       );
       await self.clients.claim();

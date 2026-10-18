@@ -107,11 +107,13 @@ for (const [seite, html] of [
   check(`${seite}: keine übersprungene Überschriftenebene`, sprung.length === 0, `h${sprung.join(', h')}`);
 
   // Rücksprung als erste Tab-Station: der erste Link im <body> führt zur Karte.
+  // To './', the precached start page; 'index.html' is not a shell path and
+  // mixed a new page with the old cached scripts after a release (#46).
   const body = html.slice(html.indexOf('<body'));
   const ersterLink = body.match(/<a[^>]+href="([^"]+)"/);
   check(
     `${seite}: erster Link im Body ist der Rücksprung zur Karte`,
-    Boolean(ersterLink) && ersterLink[1] === 'index.html',
+    Boolean(ersterLink) && ersterLink[1] === './',
     ersterLink ? ersterLink[1] : 'kein Link gefunden'
   );
 }

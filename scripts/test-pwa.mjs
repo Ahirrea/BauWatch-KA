@@ -122,6 +122,24 @@ for (const verboten of ['push', 'notificationclick', 'notificationclose', 'sync'
 }
 check('sw.js ruft skipWaiting() nur nutzerausgelöst auf', !/^\s*self\.skipWaiting\(\)/m.test(sw));
 
+// #41: the install fetches the shell past the browser's HTTP cache, or a new
+// version found within Pages' 10 minutes is filled with the old files.
+const installFn = sw.match(/addEventListener\('install',([\s\S]*?)\n\}\);/);
+check(
+  'install lädt die Shell am HTTP-Cache vorbei (#41)',
+  Boolean(installFn) && /addAll\(\s*SHELL\.map\([^;]*cache:\s*'reload'/.test(ohneKommentare(installFn[1]))
+);
+// #42: every site on ahirrea.github.io shares the origin's cache storage, so
+// activate deletes only caches named like ours.
+const activateFn = sw.match(/addEventListener\('activate',([\s\S]*?)\n\}\);/);
+check(
+  'activate löscht nur eigene Caches (#42)',
+  Boolean(activateFn) &&
+    /startsWith\('bauwatch-'\)/.test(ohneKommentare(activateFn[1])) &&
+    /const CACHE_SHELL = 'bauwatch-/.test(sw) &&
+    /const CACHE_DATA = 'bauwatch-/.test(sw)
+);
+
 // SHELL-Liste aus dem Quelltext lesen (der SW selbst ist nicht importierbar —
 // klassisches Skript, das self/caches erwartet).
 const shellBlock = sw.match(/const SHELL = \[([\s\S]*?)\];/);
@@ -180,6 +198,11 @@ check('SHELL enthält die Rechtstexte (A-4)',
 // precached cache-first it would be served stale. A named list, so that a
 // missing shell file can never hide behind a blanket exception.
 const NICHT_SHELL = new Set(['feeds/alle.xml']);
+
+// "Precached" means in SHELL as written. The service worker matches paths,
+// and to it './' is not 'index.html': a link to index.html went to the
+// network and mixed a new page with the old cached scripts (#46).
+const shellWieGeschrieben = new Set(SHELL);
 check(
   'deliberately non-shell references are really not in SHELL',
   [...NICHT_SHELL].every((p) => !shellSet.has(p)),
@@ -206,7 +229,7 @@ for (const seite of htmlSeiten) {
     // manifest.webmanifest, styles.css, app.js, leaflet, apple-touch-icon,
     // die Querverweise der Rechtstexte untereinander …
     if (NICHT_SHELL.has(ref)) continue;
-    check(`aus ${seite} referenzierte Datei ist precacht: ${ref}`, shellSet.has(ref));
+    check(`aus ${seite} referenzierte Datei ist precacht: ${ref}`, shellWieGeschrieben.has(ref));
   }
 
   check(`${seite} verlinkt das Manifest`, /<link[^>]+rel="manifest"[^>]+href="manifest\.webmanifest"/.test(html));
