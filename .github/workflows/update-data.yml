@@ -25,25 +25,21 @@ jobs:
         with:
           node-version: "20"
 
-      # Das Build-Skript nutzt nur die geteilten, abhängigkeitsfreien Module
-      # aus src/lib/ (siehe ADR-001) — kein npm install nötig.
-      - name: Daten bauen
-        run: node scripts/build-data.mjs
+      # TEMPORARY, on the A-17 branch only (A-17 step 1, ADR-007): fetch the
+      # district boundaries once and commit them to this branch. The regular
+      # data build is left out on purpose, so that no data commit lands here.
+      # This file is reset to main's version right after the run.
+      - name: Stadtteilgrenzen holen (A-17, einmalig)
+        run: node scripts/fetch-districts.mjs
 
-      - name: Bei Änderung committen und pushen
+      - name: Stadtteilgrenzen committen
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if git diff --quiet -- data/; then
-            echo "Keine Änderung an den Daten — kein Commit."
+          git add data/districts.geojson
+          if git diff --cached --quiet; then
+            echo "Keine Änderung an den Stadtteilgrenzen."
           else
-            git add data/baustellen.geojson data/CHANGELOG.md data/QUALITY.md data/changelog.json
-            # Commit-Message aus der vom Build-Skript erzeugten Übersicht.
-            if [ -f build-summary.txt ]; then
-              git commit -F build-summary.txt
-            else
-              git commit -m "chore(data): Baustellen-Snapshot aktualisiert"
-            fi
+            git commit -m "data: district boundaries, fetched once (A-17 step 1, ADR-007)"
             git push
-            echo "Aktualisierte Daten committet und gepusht."
           fi
