@@ -2,6 +2,17 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 18.10.2026, 06:08 — 1 neu, 2 entfernt, 3 geändert (gesamt 166)
+
+- ➕ **B36 Fahrtrichtung Karlsruhe, Ausfahrt Neureut-Süd**
+- ➖ ~~Essenweinstraße, Sternbergstraße,  Gerwigstraße, Veilchenstraße, Haizingerstraße~~
+- ➖ ~~K9654/ Rittnertstraße zw. B3 und Ortseingang Stupferich~~
+- ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — sonstige Angaben aktualisiert
+- ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
+- ✏️ Sophienstraße Kreuzung Reinhold-Frank-Straße — sonstige Angaben aktualisiert
+
+Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
+
 ## 17.10.2026, 14:05 — 2 geändert (gesamt 167)
 
 - ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
