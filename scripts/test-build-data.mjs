@@ -14,7 +14,8 @@
 // 24 mit zwei bis sechs, und ein Fünftel aller Flächen sind Linien
 // (LineString/MultiLineString) statt Polygone.
 
-import { buildFeature, buildArea, dedupeFeatures } from './build-data.mjs';
+import { readFileSync } from 'node:fs';
+import { buildFeature, buildArea, dedupeFeatures, prependChangelogText } from './build-data.mjs';
 
 let failed = 0;
 function check(name, cond) {
@@ -92,6 +93,21 @@ const mehrere = dedupeFeatures([
   feat(POLYGON2, { id: 'b' }),
 ]);
 check('E8: alle Nicht-Punkt-Geometrien werden behalten', [...mehrere.values()][0].areas.length === 2);
+
+// #40: the WFS order changes between runs. A case with several points and
+// shapes must give the same marker and the same area in any order, or every
+// run reports it as changed and its marker jumps between its points.
+{
+  const PUNKT2 = { type: 'Point', coordinates: [461450.0, 5427550.0] };
+  const teile = [feat(PUNKT), feat(PUNKT2, { id: 'p2' }), feat(POLYGON, { id: 'a' }), feat(POLYGON2, { id: 'b' })];
+  const bau = (liste) => {
+    const { feature, areas } = [...dedupeFeatures(liste).values()][0];
+    return JSON.stringify(buildFeature(feature.properties, feature.geometry, areas));
+  };
+  const vorwaerts = bau(teile);
+  check('#40: umgekehrte WFS-Reihenfolge ergibt dasselbe Feature', bau([...teile].reverse()) === vorwaerts);
+  check('#40: gemischte WFS-Reihenfolge ergibt dasselbe Feature', bau([teile[2], teile[1], teile[3], teile[0]]) === vorwaerts);
+}
 
 // Nur Punkt -> keine Fläche. Nur Polygon -> Fläche UND abgeleiteter Marker.
 const nurPunkt = [...dedupeFeatures([feat(PUNKT)]).values()][0];
@@ -223,6 +239,22 @@ check(
   'buildArea: bereits WGS84 bleibt unverändert',
   schonWgs84.coordinates[0][0][0] === 8.4038 && schonWgs84.coordinates[0][0][1] === 49.0088
 );
+
+// --- CHANGELOG.md (#48) ------------------------------------------------------
+// Three runs must leave one header with its intro sentence and three entries,
+// newest first. The old cut kept the intro and added it again on every run.
+{
+  const INTRO = 'Automatisch von der Daten-Action gepflegt.';
+  const count = (text, s) => text.split(s).length - 1;
+  let md = '';
+  for (const n of [1, 2, 3]) md = prependChangelogText(md, `## Lauf ${n}\n\n- Eintrag ${n}`);
+  check('#48: nach drei Läufen genau ein Vorspann', count(md, INTRO) === 1 && count(md, '# Änderungsprotokoll') === 1);
+  check('#48: alle drei Einträge, neueste zuerst', /## Lauf 3[\s\S]*## Lauf 2[\s\S]*## Lauf 1/.test(md));
+  const ohneKopf = prependChangelogText('## Alt\n\n- alt\n', '## Neu\n\n- neu');
+  check('#48: eine Datei ohne Kopf verliert keinen Eintrag', ohneKopf.includes('## Alt') && ohneKopf.includes('## Neu'));
+  const committed = readFileSync(new URL('../data/CHANGELOG.md', import.meta.url), 'utf8');
+  check('#48: data/CHANGELOG.md trägt den Vorspann genau einmal', count(committed, INTRO) === 1);
+}
 
 if (failed > 0) {
   console.error(`\n${failed} Test(s) fehlgeschlagen.`);

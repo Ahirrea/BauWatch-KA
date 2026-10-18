@@ -175,6 +175,22 @@ default") survives only its determinism: combining is equally deterministic
 and loses nothing. Retained from E8: no error, no warning — a multi-part case
 is normal data, not a defect.
 
+**E8 revised again (2026-10-18, ponytail review).** The determinism claim
+above did not hold. Combining is deterministic for one given order, but the
+WFS order is not stable between runs. The marker took the case's first Point,
+and the area joined its shapes in whatever order the service sent them.
+Replaying the snapshot history showed the result:
+- From 2026-07-28 to 2026-10-18, 38 of the 201 data commits with a changed
+  site were nothing but reorderings.
+- 491 of 989 "geändert" lines were that noise.
+- The marker of Elisabeth-Großwendt-Straße flipped 61 m back and forth.
+
+`dedupeFeatures()` now sorts the features by their geometry before merging,
+so the same parts give the same marker and the same area in any order
+(BACKLOG #40, tested in `test-build-data.mjs`). The first run after the fix
+re-picks once. In an offline replay that was 39 cases, logged with the
+generic note and so absent from the feed (#28).
+
 **E9 — Extend the quality report with a `hasArea` signal**, same pattern as
 the existing `hasVorgangsnummer`/`artKnown` per-case booleans in
 `scripts/quality-report.mjs`, surfaced in `data/QUALITY.md`. Gives ongoing

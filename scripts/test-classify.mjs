@@ -38,6 +38,15 @@ check('sperrung "ohne Verkehrsbehinderung" -> gering', classifySperrgrad('ohne V
 // --- classifyVerkehrsmittel ---
 check('Gehweg -> fuss', classifyVerkehrsmittel('Gehweg gesperrt').fuss === true);
 check('Bus -> oepnv', classifyVerkehrsmittel('Buslinie umgeleitet').oepnv === true);
+for (const t of ['Ersatzbusse fahren', 'Linienbus hält nicht', 'Bushaltestelle verlegt', 'Busumleitung', 'Bus-Umleitung']) {
+  check(`"${t}" -> oepnv`, classifyVerkehrsmittel(t).oepnv === true);
+}
+// #45: real titles from the snapshot. A street that merely starts with "Bus"
+// is no bus; with no other hint the Auto fallback applies.
+for (const t of ['Busenbacher Str. 13', 'Silcherstraße, Rabenweg, Buschwiesenweg']) {
+  const r = classifyVerkehrsmittel(t);
+  check(`"${t}" -> kein oepnv, Auto-Fallback`, r.oepnv === false && r.auto === true);
+}
 check('Fahrbahn -> auto', classifyVerkehrsmittel('Fahrbahn verengt').auto === true);
 check('kein Hinweis -> Auto-Fallback', classifyVerkehrsmittel('Bauliche Sondernutzung').auto === true);
 

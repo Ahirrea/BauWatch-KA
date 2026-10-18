@@ -102,7 +102,15 @@ const MODES = [
   // wäre kein echtes Signal. Straßenbaustellen ohne Detailhinweis fängt der
   // Auto-Fallback unten ab.
   { key: 'auto', label: 'Auto', re: /fahrbahn|fahrspur|fahrstreifen|\bkfz\b|\bpkw\b|durchfahrt|einbahn|parkplatz|parken/i },
-  { key: 'oepnv', label: 'ÖPNV', re: /bus|straßenbahn|strassenbahn|tram|haltestelle|linie \d|öpnv|oepnv|gleis|bahnverkehr/i },
+  // "bus" only as a word end (Linienbus, Bus-Umleitung) or before a bus word
+  // (Busse, Buslinie, Bushaltestelle …). The text includes the title, i.e.
+  // street names, and a bare "bus" matched "Busenbacher Str." and
+  // "Buschwiesenweg": both sites were ÖPNV-only and hidden from "Auto" (#45).
+  {
+    key: 'oepnv',
+    label: 'ÖPNV',
+    re: /bus(?=\b|se|linie|halt|spur|verkehr|bahnhof|umleitung|ersatz|fahr|bucht|steig)|straßenbahn|strassenbahn|tram|haltestelle|linie \d|öpnv|oepnv|gleis|bahnverkehr/i,
+  },
 ];
 
 /**

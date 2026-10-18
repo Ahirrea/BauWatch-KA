@@ -296,18 +296,27 @@ function dedupKey(props) {
  * rule is the one place where a mistake silently doubles or halves the dataset
  * (see the `id` vs. `vorgangsnummer` pitfall in CLAUDE.md).
  *
- * The marker keeps being the FIRST Point of the case, unchanged. For the 24
- * multi-part cases that means the marker sits on one of several points while
- * the area spans them all — acceptable, since the marker is the handle for the
- * popup, not a claim about where the work is; moving it to a computed centroid
- * would shift marker positions in the committed snapshot for no gain.
+ * The marker is the case's first Point, and the area joins its shapes in
+ * order. For the 24 multi-part cases that means the marker sits on one of
+ * several points while the area spans them all — acceptable, since the marker
+ * is the handle for the popup, not a claim about where the work is.
+ *
+ * "First" is in a fixed order: the features are sorted by their geometry
+ * before anything is merged. The WFS order changes between runs, and unsorted
+ * the same data gave a different marker and a reordered area — 38 of 201 data
+ * commits from 2026-07-28 to 2026-10-18 were nothing but that, and markers
+ * jumped between a case's points (#40, A-7/E8 revised again).
  *
  * @param {object[]} features WFS features, already filtered to Karlsruhe
  * @returns {Map<string, {feature: object, areas: object[]}>}
  */
 function dedupeFeatures(features) {
+  const sorted = features
+    .map((f) => [JSON.stringify(f.geometry ?? null), f])
+    .sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0))
+    .map(([, f]) => f);
   const byKey = new Map();
-  for (const f of features) {
+  for (const f of sorted) {
     const key = dedupKey(f.properties);
     const isPoint = f.geometry?.type === 'Point';
     let entry = byKey.get(key);
@@ -424,15 +433,25 @@ function loadPrevious() {
   }
 }
 
+const CHANGELOG_HEADER =
+  '# Änderungsprotokoll der Baustellendaten\n\nAutomatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.\n';
+
+/**
+ * The new CHANGELOG.md text: the header, the new entry, then every older
+ * entry (newest first). Everything before the first entry heading is the old
+ * header and goes. The earlier cut ended at the first blank line, which left
+ * the intro sentence behind, one more copy per run (246 by 2026-10-18, #48).
+ */
+function prependChangelogText(existing, entryMarkdown) {
+  const first = existing.match(/^## /m);
+  const body = first ? existing.slice(first.index) : '';
+  return `${CHANGELOG_HEADER}\n${entryMarkdown}\n\n${body}`.trimEnd() + '\n';
+}
+
 // Neuen Eintrag oben an den CHANGELOG anfügen (neueste Änderung zuerst).
 function prependChangelog(entryMarkdown) {
-  const header = '# Änderungsprotokoll der Baustellendaten\n\nAutomatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.\n';
-  let body = '';
-  if (existsSync(CHANGELOG_FILE)) {
-    const existing = readFileSync(CHANGELOG_FILE, 'utf8');
-    body = existing.replace(/^# [^\n]*\n(?:[^\n]*\n)*?\n/, ''); // alten Kopf entfernen
-  }
-  writeFileSync(CHANGELOG_FILE, `${header}\n${entryMarkdown}\n\n${body}`.trimEnd() + '\n', 'utf8');
+  const existing = existsSync(CHANGELOG_FILE) ? readFileSync(CHANGELOG_FILE, 'utf8') : '';
+  writeFileSync(CHANGELOG_FILE, prependChangelogText(existing, entryMarkdown), 'utf8');
 }
 
 // Menschlich lesbarer Zeitstempel (Europe/Berlin) für die Übersichten.
@@ -627,4 +646,4 @@ if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
   });
 }
 
-export { pick, isKarlsruhe, buildFeature, buildArea, dedupeFeatures, representativePoint, main };
+export { pick, isKarlsruhe, buildFeature, buildArea, dedupeFeatures, representativePoint, prependChangelogText, main };

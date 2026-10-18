@@ -11,14 +11,10 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
 - ✏️ Sophienstraße Kreuzung Reinhold-Frank-Straße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 17.10.2026, 14:05 — 2 geändert (gesamt 167)
 
 - ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
 - ✏️ Essostraße — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 17.10.2026, 06:00 — 5 geändert (gesamt 167)
 
@@ -27,8 +23,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
 - ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
 - ✏️ Sophienstraße Kreuzung Reinhold-Frank-Straße — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 17.10.2026, 00:43 — 1 neu, 10 entfernt, 3 geändert (gesamt 167)
 
@@ -47,8 +41,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Sophienstraße Kreuzung Reinhold-Frank-Straße — sonstige Angaben aktualisiert
 - ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 16.10.2026, 15:09 — 1 neu, 1 entfernt, 4 geändert (gesamt 176)
 
 - ➕ **Ernst-Frey-Str. 2 (BV Walter-Eucken-Schule)**
@@ -58,14 +50,10 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Haid-und-Neu-Straße zw. Am Sportpark und Sinsheimer Straße — Ende: 2026-10-26 → 2026-11-22; Info geändert
 - ✏️ Gewann Grabenort — Ende: 2026-10-16 → 2026-10-23
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 16.10.2026, 06:11 — 2 geändert (gesamt 176)
 
 - ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — sonstige Angaben aktualisiert
 - ✏️ Essostraße — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 16.10.2026, 00:58 — 1 neu, 2 entfernt, 3 geändert (gesamt 176)
 
@@ -76,15 +64,11 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
 - ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 15.10.2026, 21:48 — 3 geändert (gesamt 177)
 
 - ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
 - ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
 - ✏️ K9659/ B10/ B3 — Ende: 2026-10-15 → 2026-10-16
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 15.10.2026, 15:17 — 1 neu, 1 entfernt, 3 geändert (gesamt 177)
 
@@ -93,8 +77,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Lessingstraße Einmündungsbereich Sophienstraße — Ende: 2026-10-16 → 2026-10-18
 - ✏️ Sophienstraße Kreuzung Reinhold-Frank-Straße — sonstige Angaben aktualisiert
 - ✏️ Essostraße — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 15.10.2026, 06:15 — 1 neu, 4 entfernt, 2 geändert (gesamt 177)
 
@@ -106,8 +88,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Essostraße — sonstige Angaben aktualisiert
 - ✏️ Sophienstraße Kreuzung Reinhold-Frank-Straße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 14.10.2026, 22:06 — 7 geändert (gesamt 180)
 
 - ✏️ Essenweinstraße, Sternbergstraße,  Gerwigstraße, Veilchenstraße, Haizingerstraße — Sperrgrad: gering → teil; Info geändert
@@ -117,8 +97,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Rußweg zw. Langenbruchweg und Mastweidenweg — Ende: 2026-10-30 → 2026-12-22
 - ✏️ Essostraße — sonstige Angaben aktualisiert
 - ✏️ K9659/ B10/ B3 — Ende: 2026-10-14 → 2026-10-15
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 14.10.2026, 15:33 — 1 neu, 2 entfernt, 5 geändert (gesamt 180)
 
@@ -131,8 +109,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Sophienstraße Kreuzung Reinhold-Frank-Straße — sonstige Angaben aktualisiert
 - ✏️ Ebertstraße zw. Albtalbahnhof und Ebertstraße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 14.10.2026, 01:41 — 4 neu, 1 entfernt, 3 geändert (gesamt 181)
 
 - ➕ **Blumentorstraße, Pfinzstraße, Friedrich-Eberle-Straße, Oberlinstraße**
@@ -144,16 +120,12 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — sonstige Angaben aktualisiert
 - ✏️ Ebertstraße zw. Albtalbahnhof und Ebertstraße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 13.10.2026, 21:09 — 2 entfernt, 2 geändert (gesamt 178)
 
 - ➖ ~~Schlössleweg, Badener Straße, Lußstraße~~
 - ➖ ~~Lußstraße zw. Schlössleweg und Lußsteige~~
 - ✏️ Breslauer Straße Wohnwege 64 A - I und 66 A -L — sonstige Angaben aktualisiert
 - ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 13.10.2026, 13:37 — 3 neu, 4 entfernt, 3 geändert (gesamt 180)
 
@@ -167,8 +139,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Thüringer Straße zw. Böhmerwaldstraße und Esslinger Straße — Info geändert
 - ✏️ Am Sportpark zw. Gustav-Heinemann-Allee und Schweidnitzer Straße — Ende: 2026-10-26 → 2026-10-27
 - ✏️ Pfinztalstraße zw. Marstallstaße und Karlsburgstraße — Ende: 2026-11-06 → 2026-11-04; Info geändert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 13.10.2026, 03:56 — 7 neu, 5 entfernt, 2 geändert (gesamt 181)
 
@@ -186,8 +156,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ➖ ~~Hirschstraße zw. Südendstraße und Vorholzstraße~~
 - ✏️ Herrenstraße zw. Karlstraße und Amalienstraße — Ende: 2026-10-31 → 2027-01-31
 - ✏️ Zirkel zw. Ritterstraße und Lammstraße — Ende: 2026-10-14 → 2026-11-14
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 12.10.2026, 07:35 — 12 neu, 4 entfernt (gesamt 179)
 
@@ -208,22 +176,16 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ➖ ~~Gartenstraße zw. Brauerstraße und Einmündung Jollystraße~~
 - ➖ ~~Baumeisterstraße zw. Finterstraße und Ettlinger Straße~~
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 11.10.2026, 16:50 — 2 geändert (gesamt 171)
 
 - ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — sonstige Angaben aktualisiert
 - ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 11.10.2026, 07:23 — 3 geändert (gesamt 171)
 
 - ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
 - ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — sonstige Angaben aktualisiert
 - ✏️ Essostraße — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 10.10.2026, 07:29 — 3 neu, 12 entfernt, 2 geändert (gesamt 171)
 
@@ -245,8 +207,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — sonstige Angaben aktualisiert
 - ✏️ Essostraße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 09.10.2026, 17:11 — 3 neu, 1 entfernt, 5 geändert (gesamt 180)
 
 - ➕ **Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee**
@@ -259,8 +219,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Haid-und-Neu-Straße zw. Am Sportpark und Sinsheimer Straße — Ende: 2026-10-12 → 2026-10-26
 - ✏️ Glogauer Straße zw. Königsberger Straße und Im Eichbäumle — Ende: 2026-11-21 → 2026-10-13
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 09.10.2026, 07:46 — 2 neu, 1 entfernt, 2 geändert (gesamt 178)
 
 - ➕ **Bahnübergang Belchenstraße/Im Weiherwald**
@@ -269,14 +227,10 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
 - ✏️ Essostraße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 08.10.2026, 23:13 — 1 entfernt, 1 geändert (gesamt 177)
 
 - ➖ ~~Freydorfstraße zw. Moltke- u. Grenadierstraße~~
 - ✏️ Lärchenweg zw. Zehntwaldstraße und Donauschwabenstraße — Ende: 2026-10-16 → 2026-10-14
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 08.10.2026, 17:28 — 3 neu, 2 entfernt, 3 geändert (gesamt 178)
 
@@ -289,8 +243,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
 - ✏️ Bergbahnstraße zw. B 3 Grötzinger Straße und Am Steinbruch — Ende: 2026-10-09 → 2026-11-02
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 08.10.2026, 07:41 — 5 entfernt, 1 geändert (gesamt 177)
 
 - ➖ ~~Weiherstraße zw. Basler-Tor-Straße und Brunnenhausstraße~~
@@ -300,8 +252,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ➖ ~~Petergraben 2~~
 - ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 07.10.2026, 17:26 — 2 neu, 3 geändert (gesamt 182)
 
 - ➕ **Engesserstr. 2-6/8-12 und Lehmannstr. 1-3**
@@ -309,8 +259,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
 - ✏️ Bismarckstraße zw. Fichte- u. Seminarstraße — Ende: 2026-10-26 → 2026-10-31
 - ✏️ Petergraben 2 — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 07.10.2026, 01:42 — 2 neu, 7 entfernt, 3 geändert (gesamt 180)
 
@@ -327,21 +275,15 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Petergraben 2 — sonstige Angaben aktualisiert
 - ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 06.10.2026, 20:14 — 3 geändert (gesamt 185)
 
 - ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
 - ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
 - ✏️ Essostraße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 06.10.2026, 13:09 — 1 geändert (gesamt 185)
 
 - ✏️ Schlössleweg, Badener Straße, Lußstraße — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 06.10.2026, 03:15 — 6 neu, 3 entfernt, 1 geändert (gesamt 185)
 
@@ -356,8 +298,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ➖ ~~Ritterstraße zw. Am Schlossplatz und Bankhof~~
 - ✏️ Schlössleweg, Badener Straße, Lußstraße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 05.10.2026, 19:02 — 4 neu, 2 geändert (gesamt 182)
 
 - ➕ **Hirschstraße zw. Amalienstraße und Kaiserstraße**
@@ -367,14 +307,10 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Hirschstraße zw. Amalienstraße und Kaiserstraße — Ende: 2026-10-09 → 2026-10-23
 - ✏️ Schlossplatz zw. Herrenstraße u. Zirkel — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 05.10.2026, 07:13 — 2 geändert (gesamt 178)
 
 - ✏️ Essostraße — sonstige Angaben aktualisiert
 - ✏️ Schlossplatz zw. Herrenstraße u. Zirkel — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 05.10.2026, 00:58 — 14 neu, 2 entfernt, 3 geändert (gesamt 178)
 
@@ -398,15 +334,11 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
 - ✏️ Killisfeldstraße, Gudrunstraße, Oberwaldstraße, Dietrichstraße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 04.10.2026, 00:48 — 1 entfernt, 2 geändert (gesamt 166)
 
 - ➖ ~~B 3 Badener Straße zw. Schlössleweg u. Rittnertstraße~~
 - ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
 - ✏️ Killisfeldstraße, Gudrunstraße, Oberwaldstraße, Dietrichstraße — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 03.10.2026, 06:58 — 13 entfernt (gesamt 167)
 
@@ -424,8 +356,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ➖ ~~B36/ Neureuter Straße Höhe Gablonzer Straße~~
 - ➖ ~~Grillparzerstraße zw. Kaiserallee u. Gellertstraße~~
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 02.10.2026, 16:38 — 4 neu, 2 entfernt, 4 geändert (gesamt 180)
 
 - ➕ **Kreuzstraße zw. Hebelstraße und Zähringer Straße**
@@ -438,8 +368,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
 - ✏️ Seminarstraße zw. Stephanienstraße und Bismarckstraße — Ende: 2026-10-02 → 2026-10-04
 - ✏️ Killisfeldstraße, Gudrunstraße, Oberwaldstraße, Dietrichstraße — Beginn: 2026-09-30 → 2026-10-01
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 02.10.2026, 07:15 — 3 neu, 5 entfernt, 2 geändert (gesamt 178)
 
@@ -454,15 +382,11 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
 - ✏️ Battstraße, Göhrenstraße, Ortehnaustraße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 01.10.2026, 22:56 — 3 geändert (gesamt 180)
 
 - ✏️ Schlossplatz zw. Herrenstraße u. Zirkel — Ende: 2026-12-31 → 2026-10-04
 - ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
 - ✏️ Battstraße, Göhrenstraße, Ortehnaustraße — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 01.10.2026, 17:20 — 3 neu, 1 entfernt, 1 geändert (gesamt 180)
 
@@ -471,8 +395,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ➕ **Edeltrudtunnel "klein" in Fahrtrichtung Durlach**
 - ➖ ~~Rittnertstraße und Jean-Ritzert-Straße~~
 - ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 01.10.2026, 07:27 — 4 neu, 18 entfernt, 2 geändert (gesamt 178)
 
@@ -501,15 +423,11 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
 - ✏️ Sophienstraße Kreuzung Reinhold-Frank-Straße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 30.09.2026, 16:49 — 1 entfernt, 2 geändert (gesamt 192)
 
 - ➖ ~~Vogelsang~~
 - ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
 - ✏️ Sophienstraße Kreuzung Reinhold-Frank-Straße — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 30.09.2026, 01:35 — 3 neu, 2 entfernt, 1 geändert (gesamt 193)
 
@@ -520,8 +438,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ➖ ~~Haid- u. Neu-Straße zw. Hirtenweg und Am Sportpark~~
 - ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 29.09.2026, 19:59 — 2 neu, 1 entfernt, 2 geändert (gesamt 192)
 
 - ➕ **Gartenstraße zwischen Steinhäuserstraße und Weinbrennerplatz/Kriegstraße**
@@ -530,15 +446,11 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — sonstige Angaben aktualisiert
 - ✏️ Martin-Schongauer-Weg zw. Albrecht-Altdorf-Weg und Frans-Hals-Weg — Ende: 2026-10-01 → 2026-10-31
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 29.09.2026, 12:34 — 3 geändert (gesamt 191)
 
 - ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — sonstige Angaben aktualisiert
 - ✏️ Essostraße — sonstige Angaben aktualisiert
 - ✏️ Isoldestraße zw. Stösserstraße und Niebelungenstraße — Ende: 2026-10-16 → 2026-12-11
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 29.09.2026, 02:17 — 3 neu, 4 geändert (gesamt 191)
 
@@ -549,8 +461,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
 - ✏️ Sophienstraße Kreuzung Reinhold-Frank-Straße — sonstige Angaben aktualisiert
 - ✏️ Essostraße — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 28.09.2026, 18:41 — 3 neu, 1 entfernt, 8 geändert (gesamt 188)
 
@@ -567,8 +477,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Fritz-Haber-Weg — Ende: 2026-09-30 → 2026-11-30
 - ✏️ Südendstraße zw. Brauerstraße und Boeckhstraße — Ende: 2026-10-31 → 2026-11-15
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 28.09.2026, 00:56 — 7 neu, 2 entfernt, 1 geändert (gesamt 186)
 
 - ➕ **Laurentiusstraße zw. Neue Anlage Straße u. Martinstraße**
@@ -582,14 +490,10 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ➖ ~~Glogauer Straße zw. Liegnitzer Straße und Im Eichbäumle~~
 - ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 27.09.2026, 00:37 — 2 entfernt (gesamt 181)
 
 - ➖ ~~Bahnübergang Verlängerung Kolberger Straße~~
 - ➖ ~~Dea-Scholven-Brücke~~
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 26.09.2026, 01:14 — 1 neu, 11 entfernt, 2 geändert (gesamt 183)
 
@@ -608,13 +512,9 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Breslauer Straße Wohnwege 64 A - I und 66 A -L — sonstige Angaben aktualisiert
 - ✏️ Sophienstraße Kreuzung Reinhold-Frank-Straße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 25.09.2026, 06:34 — 1 geändert (gesamt 193)
 
 - ✏️ Breslauer Straße Wohnwege 64 A - I und 66 A -L — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 25.09.2026, 01:08 — 3 neu, 2 entfernt, 2 geändert (gesamt 193)
 
@@ -625,8 +525,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ➖ ~~Haid- u. Neu-Straße zw. Hirtenweg und Am Sportpark~~
 - ✏️ Sophienstraße Kreuzung Reinhold-Frank-Straße — sonstige Angaben aktualisiert
 - ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 24.09.2026, 15:28 — 4 neu, 2 entfernt, 4 geändert (gesamt 192)
 
@@ -641,8 +539,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Pfinztalstraße zw. Badener Straße u. Jägerstraße — sonstige Angaben aktualisiert
 - ✏️ Essostraße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 24.09.2026, 06:23 — 5 geändert (gesamt 190)
 
 - ✏️ Engesserstr. 2-6/8-12 und Lehmannstr. 1-3 — sonstige Angaben aktualisiert
@@ -650,8 +546,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Essostraße — sonstige Angaben aktualisiert
 - ✏️ Sophienstraße Kreuzung Reinhold-Frank-Straße — sonstige Angaben aktualisiert
 - ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 24.09.2026, 00:52 — 3 neu, 2 entfernt, 5 geändert (gesamt 190)
 
@@ -666,16 +560,12 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Rheinhafenstraße zw. Daxlanderstraße und Südliche Uferstraße — sonstige Angaben aktualisiert
 - ✏️ Sophienstraße Kreuzung Reinhold-Frank-Straße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 23.09.2026, 21:36 — 4 geändert (gesamt 189)
 
 - ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
 - ✏️ Rheinhafenstraße zw. Daxlanderstraße und Südliche Uferstraße — sonstige Angaben aktualisiert
 - ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
 - ✏️ Essostraße — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 23.09.2026, 00:51 — 7 neu, 1 geändert (gesamt 189)
 
@@ -688,22 +578,16 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ➕ **Südtangente zw. Fiduciastraße und Schwarzwaldkreuz inkl. der Auf- und Abfahrten**
 - ✏️ Essostraße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 22.09.2026, 21:40 — 3 geändert (gesamt 182)
 
 - ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — sonstige Angaben aktualisiert
 - ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
 - ✏️ Danziger Straße 18, Etttlinger Allee vor Am Rüppurrer Schloß 1 — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 22.09.2026, 15:18 — 1 neu, 1 entfernt (gesamt 182)
 
 - ➕ **Koellestraße 10-26 und 13-27a**
 - ➖ ~~Pfinztalstraße zw. Badener Straße u. Eichelgasse; Badener Straße zwischen Karl-Weysser-Straße und Pfintalstraße~~
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 22.09.2026, 06:29 — 1 neu, 2 entfernt, 4 geändert (gesamt 182)
 
@@ -715,15 +599,11 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
 - ✏️ Danziger Straße 18, Etttlinger Allee vor Am Rüppurrer Schloß 1 — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 21.09.2026, 22:21 — 3 geändert (gesamt 183)
 
 - ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
 - ✏️ Danziger Straße 18, Etttlinger Allee vor Am Rüppurrer Schloß 1 — sonstige Angaben aktualisiert
 - ✏️ Sophienstraße Kreuzung Reinhold-Frank-Straße — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 21.09.2026, 17:01 — 7 neu, 1 entfernt, 7 geändert (gesamt 183)
 
@@ -742,8 +622,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Laubenweg zw. Siemensallee u. Kepplerstraße — Ende: 2026-10-02 → 2026-10-21
 - ✏️ Löätzener Straße zw. Glogauer Straße und Insterburger Straße — Ende: 2026-10-04 → 2026-10-01
 - ✏️ Geh- und Radweg entlang der VBK Gleistrasse zw. Schweidnitzerstraße bis Glogauer Straße — Sperrgrad: teil → voll; Ende: 2027-04-23 → 2026-11-06; Bezeichnung geändert; Info geändert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 21.09.2026, 06:33 — 18 neu, 4 entfernt, 3 geändert (gesamt 177)
 
@@ -773,8 +651,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
 - ✏️ Rheinhafenstraße zw. Daxlanderstraße und Südliche Uferstraße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 20.09.2026, 06:35 — 3 entfernt, 3 geändert (gesamt 163)
 
 - ➖ ~~B 3 Grötzinger Straße zw. Badener Straße u. Bergbahnstraße~~
@@ -783,8 +659,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
 - ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
 - ✏️ Essostraße — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 19.09.2026, 06:16 — 3 neu, 10 entfernt, 3 geändert (gesamt 166)
 
@@ -805,8 +679,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
 - ✏️ Essostraße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 18.09.2026, 14:52 — 2 neu, 4 entfernt, 7 geändert (gesamt 173)
 
 - ➕ **Uhlandstraße zw. Gorthestraße und Sophienstraße**
@@ -823,8 +695,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Belfortstraße zw. Reinhold-Frank-Straße und Leopoldstraße — Ende: 2026-10-16 → 2026-11-13
 - ✏️ Reinhold-Frank-Straße zwischen Belfortstraße und Kaiserallee — Ende: 2026-10-02 → 2026-11-13
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 18.09.2026, 00:46 — 1 neu, 4 entfernt (gesamt 175)
 
 - ➕ **Gänsbergstraße zw. Werrenstraße und Wiesentalstraße**
@@ -833,16 +703,12 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ➖ ~~Haid- u. neu-Straße zw. Hirtenweg und Am Sportpark~~
 - ➖ ~~Bahnhofstraße zw. Beiertheimer Allee und Gutschstraße~~
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 17.09.2026, 21:40 — 1 neu, 3 geändert (gesamt 178)
 
 - ➕ **Martin-Schongauer-Weg zw. Albrecht-Altdorf-Weg und Frans-Hals-Weg**
 - ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
 - ✏️ B 3 Grötzinger Straße zw. Badener Straße u. Bergbahnstraße — sonstige Angaben aktualisiert
 - ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 17.09.2026, 15:18 — 2 neu, 5 geändert (gesamt 177)
 
@@ -854,8 +720,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
 - ✏️ Ludwig-Erhard-Allee zw. Hennebergstraße und Sommerstraße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 17.09.2026, 06:34 — 5 geändert (gesamt 175)
 
 - ✏️ Gut-Magnus-Straße, Wachhausstraße, Kieselweg, — sonstige Angaben aktualisiert
@@ -863,8 +727,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
 - ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
 - ✏️ Ludwig-Erhard-Allee zw. Hennebergstraße und Sommerstraße — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 17.09.2026, 00:49 — 1 neu, 1 entfernt, 3 geändert (gesamt 175)
 
@@ -874,15 +736,11 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
 - ✏️ Ludwig-Erhard-Allee zw. Hennebergstraße und Sommerstraße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 16.09.2026, 21:29 — 3 geändert (gesamt 175)
 
 - ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — sonstige Angaben aktualisiert
 - ✏️ Lessingstraße Einmündungsbereich Sophienstraße — Ende: 2026-09-18 → 2026-10-16
 - ✏️ B36/ Neureuter Straße zw. Siemensallee und Landauer Straße — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 16.09.2026, 15:22 — 3 neu, 3 entfernt, 4 geändert (gesamt 175)
 
@@ -897,14 +755,10 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Lessingstraße Einmündungsbereich Sophienstraße — Ende: 2026-09-19 → 2026-09-18
 - ✏️ B36/ Neureuter Straße zw. Siemensallee und Landauer Straße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 16.09.2026, 06:29 — 2 geändert (gesamt 175)
 
 - ✏️ Gut-Magnus-Straße, Wachhausstraße, Kieselweg, — sonstige Angaben aktualisiert
 - ✏️ B36/ Neureuter Straße zw. Siemensallee und Landauer Straße — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 16.09.2026, 00:49 — 2 neu, 1 entfernt (gesamt 175)
 
@@ -912,22 +766,16 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ➕ **B36/ Neureuter Straße zw. Siemensallee und Landauer Straße**
 - ➖ ~~Zweibrückener Straße zw. Rehbuckel und Ebersteinstraße~~
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 15.09.2026, 21:38 — 1 neu, 1 geändert (gesamt 174)
 
 - ➕ **Ettlinger Allee, Brücke über die DB-Gleisanlagen am Schwarzwaldkreuz Fahrtrichtung Zentrum**
 - ✏️ Lärchenweg zw. Zehntwaldstraße und Donauschwabenstraße — Ende: 2026-09-30 → 2026-10-16
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 15.09.2026, 15:23 — 1 entfernt, 2 geändert (gesamt 173)
 
 - ➖ ~~Ettlinger Allee zw. Zufahrt PSK (Höhe Nürnberger Straße) u. Ausfahrt PSK Anliegerfahrbahn Richtung Schwarzwaldkreuz~~
 - ✏️ Brauerstraße zw. Putlitzstraße u. Kriegstraße — Ende: 2026-10-11 → 2026-10-13
 - ✏️ Baumeisterstraße zw. Ettlinger Straße und Nowackanlage — Ende: 2026-09-25 → 2026-09-18
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 15.09.2026, 06:33 — 4 neu, 2 entfernt, 5 geändert (gesamt 174)
 
@@ -942,8 +790,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Reinhold-Frank-Straße zw. Viktoriastraße und Kriegstraße — sonstige Angaben aktualisiert
 - ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
 - ✏️ L 560 Gustav-Heinemann-Allee — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 14.09.2026, 22:15 — 2 neu, 2 entfernt, 10 geändert (gesamt 172)
 
@@ -961,8 +807,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ L 560 Gustav-Heinemann-Allee — sonstige Angaben aktualisiert
 - ✏️ Essostraße — sonstige Angaben aktualisiert
 - ✏️ Rintheimer Hauptstraße von Mosbacherstraße bis Drosselsangweg — Bezeichnung geändert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 14.09.2026, 06:33 — 11 neu, 4 entfernt, 3 geändert (gesamt 172)
 
@@ -985,8 +829,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
 - ✏️ Essostraße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 13.09.2026, 06:27 — 1 neu, 3 entfernt, 4 geändert (gesamt 165)
 
 - ➕ **Pfinztalstraße zw. Badener Straße u. Eichelgasse; Badener Straße zwischen Gymnasiumstraße und Pfintalstraße**
@@ -998,15 +840,11 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
 - ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 13.09.2026, 00:08 — 3 geändert (gesamt 167)
 
 - ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — sonstige Angaben aktualisiert
 - ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
 - ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 12.09.2026, 06:14 — 10 entfernt, 2 geändert (gesamt 167)
 
@@ -1023,15 +861,11 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Engesserstr. 2-6/8-12 und Lehmannstr. 1-3 — sonstige Angaben aktualisiert
 - ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 11.09.2026, 14:45 — 3 geändert (gesamt 177)
 
 - ✏️ Kreuzungsbereich Hirsch- / Vorholzstraße — Ende: 2026-09-20 → 2026-09-19
 - ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
 - ✏️ Gebhardstraße zw. Barbarossaplatz und Welfenstraße — Ende: 2026-09-11 → 2026-10-02
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 11.09.2026, 06:15 — 1 neu, 1 entfernt, 3 geändert (gesamt 177)
 
@@ -1041,8 +875,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
 - ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 10.09.2026, 14:50 — 2 neu, 1 entfernt, 2 geändert (gesamt 177)
 
 - ➕ **Frühlingstraße, Lohfeldstraße**
@@ -1050,8 +882,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ➖ ~~Hermann-Billing-Straße zw. Ettlinger Straße u. Beiertheimer Allee (Zufahrt Landratsamt)~~
 - ✏️ Kriegsstraße zw. Leopoldstraße u. Lessingstraße, Reinhold-Frank-Straße zwischen Kriegstraße u. Viktoriastraße — Beginn: 2026-08-20 → 2026-08-23
 - ✏️ Böhmerwaldstraße zw. Mecklenburger Straße und Ludwigsburger Straße / Thüringer Straße zw. Egerlandstraße und Esslinger Srraße — Beginn: 2026-09-01 → 2026-09-09; Ende: 2026-09-19 → 2026-10-30
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 10.09.2026, 06:16 — 9 entfernt, 1 geändert (gesamt 176)
 
@@ -1066,8 +896,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ➖ ~~Karoline-Luise-Tunnel zw. Ostportal und Hirschstraße~~
 - ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 10.09.2026, 00:25 — 5 geändert (gesamt 185)
 
 - ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
@@ -1075,8 +903,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Rußweg zw. Langenbruchweg und Mastweidenweg — Ende: 2026-10-19 → 2026-10-30
 - ✏️ Ettlinger Allee, Brücke über die DB-Gleisanlagen am Schwarzwaldkreuz Fahrtrichtung Zentrum — Ende: 2026-09-11 → 2026-09-13
 - ✏️ B36/ Neureuter Straße zw. Boschstraße und Siemensallee — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 09.09.2026, 14:52 — 4 neu, 3 entfernt, 4 geändert (gesamt 185)
 
@@ -1091,8 +917,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Kreuzungsbereich Hirsch- / Vorholzstraße — Ende: 2026-09-12 → 2026-09-20; Info geändert
 - ✏️ B36/ Neureuter Straße zw. Boschstraße und Siemensallee — sonstige Angaben aktualisiert
 - ✏️ Südtangente zw. AS11 und AS2 — Info geändert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 09.09.2026, 06:19 — 7 neu, 6 entfernt, 2 geändert (gesamt 184)
 
@@ -1112,8 +936,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — sonstige Angaben aktualisiert
 - ✏️ Vorholzstraße zw. Karlstraße und Hirschstraße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 08.09.2026, 21:22 — 1 entfernt, 7 geändert (gesamt 183)
 
 - ➖ ~~Sperberweg zw. Nürnberger Straße und Maria-Matheis-Straße~~
@@ -1124,8 +946,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Stefan-Zweig-Straße zw. Alte Freidrichstraße und am Alten Bahnhof — sonstige Angaben aktualisiert
 - ✏️ Vorholzstraße zw. Karlstraße und Hirschstraße — sonstige Angaben aktualisiert
 - ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 08.09.2026, 14:48 — 4 neu, 2 entfernt, 12 geändert (gesamt 184)
 
@@ -1148,8 +968,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Wattkopfstraße zw. Bernsteinstraße und Hellbergstraße und Bernsteinstraße zw. Wattkopfstraße und Kreuzelbergstraße — sonstige Angaben aktualisiert
 - ✏️ Gartenstraße zw. Brauerstraße und Einmündung Jollystraße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 08.09.2026, 06:12 — 5 geändert (gesamt 182)
 
 - ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
@@ -1157,8 +975,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — sonstige Angaben aktualisiert
 - ✏️ Essostraße — sonstige Angaben aktualisiert
 - ✏️ Wattkopfstraße zw. Bernsteinstraße und Hellbergstraße und Bernsteinstraße zw. Wattkopfstraße und Kreuzelbergstraße — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 08.09.2026, 00:43 — 5 neu, 2 geändert (gesamt 182)
 
@@ -1170,8 +986,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — sonstige Angaben aktualisiert
 - ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 07.09.2026, 16:10 — 1 entfernt, 6 geändert (gesamt 177)
 
 - ➖ ~~Nürnberger Straße zw. Rechts der Alb und Sperberweg~~
@@ -1181,8 +995,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Reinhold-Frank-Straße zw. Viktoriastraße und Kriegstraße — sonstige Angaben aktualisiert
 - ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — sonstige Angaben aktualisiert
 - ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 07.09.2026, 06:11 — 14 neu, 2 entfernt, 2 geändert (gesamt 178)
 
@@ -1205,15 +1017,11 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
 - ✏️ Reinhold-Frank-Straße zw. Viktoriastraße und Kriegstraße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 07.09.2026, 00:03 — 3 geändert (gesamt 166)
 
 - ✏️ Engesserstr. 2-6/8-12 und Lehmannstr. 1-3 — sonstige Angaben aktualisiert
 - ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
 - ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 06.09.2026, 06:12 — 6 entfernt, 1 geändert (gesamt 166)
 
@@ -1224,8 +1032,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ➖ ~~L623 zw. Wolfartsweier und Stupferich~~
 - ➖ ~~Mathystraße zw. Gleisübergang Sonntagstraße Höhe Friedenstraße und Karlstraße~~
 - ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 05.09.2026, 06:04 — 3 neu, 11 entfernt, 3 geändert (gesamt 172)
 
@@ -1247,13 +1053,9 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
 - ✏️ Haid-und-Neu-Straße zw. Hirtenweg und Karlsruher Straße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 04.09.2026, 20:56 — 1 geändert (gesamt 180)
 
 - ✏️ Auf den Lohn, Elmmendinger Straße, Ispringer Straße, Lissenstraße — Sperrgrad: teil → gering; Ende: 2026-09-04 → 2026-09-09
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 04.09.2026, 14:39 — 2 neu, 1 entfernt, 7 geändert (gesamt 180)
 
@@ -1268,8 +1070,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Haid-und-Neu-Straße zw. Hirtenweg und Karlsruher Straße — sonstige Angaben aktualisiert
 - ✏️ Hirschstraße zw. Amalienstraße und Kaiserstraße — Ende: 2026-09-05 → 2026-10-09
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 04.09.2026, 06:08 — 2 neu, 2 entfernt, 1 geändert (gesamt 179)
 
 - ➕ **Mathystraße zw. Gleisübergang Sonntagstraße Höhe Friedenstraße und Karlstraße**
@@ -1277,8 +1077,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ➖ ~~Elfmorgenbruch zw. Am Großmarkt und B10~~
 - ➖ ~~Markgrafenstraße zw. Karl-Friedrich-Straße und Kreuzstraße~~
 - ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 03.09.2026, 14:45 — 1 neu, 4 entfernt, 3 geändert (gesamt 179)
 
@@ -1291,15 +1089,11 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — sonstige Angaben aktualisiert
 - ✏️ Bahnübergang Verlängerung Elbinger Straße — Ende: 2026-09-19 → 2026-09-18
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 03.09.2026, 06:04 — 1 neu, 2 entfernt (gesamt 182)
 
 - ➕ **Markgrafenstraße zw. Karl-Friedrich-Straße und Kreuzstraße**
 - ➖ ~~B36 zw. Siemensallee und Sudetenstraße~~
 - ➖ ~~Beunstraße Nr. 59 - 60~~
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 02.09.2026, 21:19 — 1 neu, 2 geändert (gesamt 183)
 
@@ -1307,16 +1101,12 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ B 3 Grötzinger Straße zw. Badener Straße u. Bergbahnstraße — sonstige Angaben aktualisiert
 - ✏️ Bahnübergang Verlängerung Elbinger Straße — Beginn: 2026-08-30 → 2026-09-01
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 02.09.2026, 14:42 — 1 neu, 3 geändert (gesamt 182)
 
 - ➕ **Wolfartsweierer Straße zw. Durlacher Allee und Frühlingstraße und Sommerstraße zw. Frühlingstraße und Gottesauer Straße**
 - ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — Ende: 2028-05-31 → 2027-01-31
 - ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
 - ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 02.09.2026, 06:06 — 3 neu, 1 entfernt, 4 geändert (gesamt 181)
 
@@ -1329,13 +1119,9 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Vorholzstraße zw. Karlstraße und Hirschstraße — sonstige Angaben aktualisiert
 - ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 02.09.2026, 00:30 — 1 geändert (gesamt 179)
 
 - ✏️ Vorholzstraße zw. Karlstraße und Hirschstraße — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 01.09.2026, 21:19 — 1 neu, 2 entfernt, 6 geändert (gesamt 179)
 
@@ -1349,8 +1135,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Kaiserstraße zw. Kreuzstraße und Kronenstraße — Info geändert
 - ✏️ Kaiserstraße zw. Herrenstraße und Ritterstraße — Ende: 2026-10-19 → 2026-10-21; Bezeichnung geändert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 01.09.2026, 15:24 — 1 neu, 4 geändert (gesamt 180)
 
 - ➕ **Gänsbergstraße zw. Werrenstraße und Wiesentalstraße**
@@ -1359,14 +1143,10 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Vorholzstraße zw. Karlstraße und Hirschstraße — sonstige Angaben aktualisiert
 - ✏️ Kaiserstraße zw. Kreuzstraße und Kronenstraße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 01.09.2026, 06:44 — 2 geändert (gesamt 179)
 
 - ✏️ Vorholzstraße zw. Karlstraße und Hirschstraße — sonstige Angaben aktualisiert
 - ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 01.09.2026, 01:42 — 7 neu, 10 entfernt, 2 geändert (gesamt 179)
 
@@ -1390,8 +1170,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
 - ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 31.08.2026, 18:04 — 1 neu, 1 entfernt, 9 geändert (gesamt 182)
 
 - ➕ **Durlacher Allee 26 - 30; Lachnerstr.  1 - 11; Degenfeldstraße; Buntestraße 2 - 18; Gottesauer Str. 27 - 39**
@@ -1406,13 +1184,9 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Pfarrstraße, Waidweg, Malvenstr., Goldgrundstr., Hammweg, Schattenstr — Sperrgrad: gering → teil
 - ✏️ Ettlinger Allee zw. Zufahrt PSK (Höhe Nürnberger Straße) u. Ausfahrt PSK Anliegerfahrbahn Richtung Schwarzwaldkreuz — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 31.08.2026, 07:08 — 1 geändert (gesamt 182)
 
 - ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 31.08.2026, 00:37 — 10 neu, 3 entfernt, 6 geändert (gesamt 182)
 
@@ -1436,8 +1210,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — sonstige Angaben aktualisiert
 - ✏️ Lußstraße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 30.08.2026, 07:01 — 1 neu, 4 entfernt, 7 geändert (gesamt 175)
 
 - ➕ **Essenweinstraße, Sternbergstraße,  Gerwigstraße, Veilchenstraße, Haizingerstraße**
@@ -1453,8 +1225,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — sonstige Angaben aktualisiert
 - ✏️ Kaiserstraße zw. Kreuzstraße und Kronenstraße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 29.08.2026, 15:46 — 6 geändert (gesamt 178)
 
 - ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
@@ -1463,8 +1233,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — sonstige Angaben aktualisiert
 - ✏️ Kaiserstraße zw. Kreuzstraße und Kronenstraße — sonstige Angaben aktualisiert
 - ✏️ Ettlinger Allee zw. Zufahrt PSK (Höhe Nürnberger Straße) u. Ausfahrt PSK Anliegerfahrbahn Richtung Schwarzwaldkreuz — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 29.08.2026, 08:48 — 9 entfernt, 5 geändert (gesamt 178)
 
@@ -1483,13 +1251,9 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — sonstige Angaben aktualisiert
 - ✏️ Kaiserstraße zw. Kreuzstraße und Kronenstraße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 29.08.2026, 00:08 — 1 geändert (gesamt 187)
 
 - ✏️ Pfalzstraße, Kirschstraße, Hördtstraße, Krämerstraße, Langenackerstraße, Turnerstraße, — Sperrgrad: gering → teil
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 28.08.2026, 13:03 — 4 neu, 5 entfernt, 8 geändert (gesamt 187)
 
@@ -1511,8 +1275,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Stuttgarter Straße zw. Luisenstraße und Sybelstraße — Beginn: 2026-08-26 → 2026-08-23; Ende: 2026-09-05 → 2026-09-04
 - ✏️ Ettlinger Allee zw. Zufahrt PSK (Höhe Nürnberger Straße) u. Ausfahrt PSK Anliegerfahrbahn Richtung Schwarzwaldkreuz — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 28.08.2026, 00:09 — 2 neu, 1 entfernt, 7 geändert (gesamt 188)
 
 - ➕ **Kurt-Schumacher-Straße zw. Wilhelm-Hausenstein-Allee und Josef-Schofer-Straße**
@@ -1526,8 +1288,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Stuttgarter Straße zw. Luisenstraße und Sybelstraße — Beginn: 2026-08-23 → 2026-08-26; Ende: 2026-09-09 → 2026-09-05
 - ✏️ Ettlinger Allee zw. Zufahrt PSK (Höhe Nürnberger Straße) u. Ausfahrt PSK Anliegerfahrbahn Richtung Schwarzwaldkreuz — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 27.08.2026, 10:50 — 6 geändert (gesamt 187)
 
 - ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — sonstige Angaben aktualisiert
@@ -1537,16 +1297,12 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Ettlinger Allee zw. Zufahrt PSK (Höhe Nürnberger Straße) u. Ausfahrt PSK Anliegerfahrbahn Richtung Schwarzwaldkreuz — sonstige Angaben aktualisiert
 - ✏️ L623 zw. Wolfartsweier und Stupferich — Sperrgrad: teil → gering
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 27.08.2026, 01:15 — 3 neu, 1 entfernt (gesamt 187)
 
 - ➕ **Freydorfstraße zw. Moltkestraße und Damaschkestraße**
 - ➕ **Wielandtstraße zw. Rüppurrer Straße und Elisabeth-Großwendt-Straße**
 - ➕ **B10 zwischen Honsellstraße und Rheinbrücke**
 - ➖ ~~Eisenlohrstraße zw. Hübschstraße und Weltzienstraße~~
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 26.08.2026, 18:52 — 1 neu, 3 geändert (gesamt 185)
 
@@ -1555,16 +1311,12 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ B 3 Grötzinger Straße zw. Badener Straße u. Bergbahnstraße — Ende: 2026-09-07 → 2026-09-13
 - ✏️ Ostmarkstraße zwischen Westmarkstraße und Kärntner Straße — Ende: 2026-08-28 → 2026-10-30
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 26.08.2026, 15:05 — 3 neu, 1 geändert (gesamt 184)
 
 - ➕ **Kaiserstraße, Hirschstraße, Amalinestraße**
 - ➕ **Kaiserstraße zw. Kreuzstraße und Kronenstraße**
 - ➕ **Hirschstraße zw. Amalienstraße und Kaiserstraße**
 - ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 26.08.2026, 10:52 — 1 neu, 1 entfernt, 5 geändert (gesamt 181)
 
@@ -1575,8 +1327,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — sonstige Angaben aktualisiert
 - ✏️ Gymnasiumstraße zw. Rittnertstraße und Turmbergstraße — Ende: 2026-08-28 → 2026-08-27
 - ✏️ Ettlinger Allee zw. Zufahrt PSK (Höhe Nürnberger Straße) u. Ausfahrt PSK Anliegerfahrbahn Richtung Schwarzwaldkreuz — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 26.08.2026, 03:46 — 5 entfernt, 3 geändert (gesamt 181)
 
@@ -1589,13 +1339,9 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — sonstige Angaben aktualisiert
 - ✏️ Ettlinger Allee zw. Zufahrt PSK (Höhe Nürnberger Straße) u. Ausfahrt PSK Anliegerfahrbahn Richtung Schwarzwaldkreuz — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 25.08.2026, 18:45 — 1 geändert (gesamt 186)
 
 - ✏️ Ludwig-Erhard-Allee 3 — Beginn: 2026-08-16 → 2026-08-24
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 25.08.2026, 14:59 — 1 entfernt, 4 geändert (gesamt 186)
 
@@ -1605,8 +1351,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Gerwigstraße zw. Ostring und Käppelestraße — sonstige Angaben aktualisiert
 - ✏️ Gerwigstraße zw. Käppelestraße und Ostring — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 25.08.2026, 10:51 — 2 neu, 1 entfernt, 3 geändert (gesamt 187)
 
 - ➕ **Eisenlohrstraße zw. Hübschstraße und Weltzienstraße**
@@ -1615,8 +1359,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
 - ✏️ Gerwigstraße zw. Käppelestraße und Ostring — sonstige Angaben aktualisiert
 - ✏️ Kaiserallee zw. Yorckstraße u. Uhlandstraße — Beginn: 2026-08-16 → 2026-08-24
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 25.08.2026, 03:41 — 5 neu, 3 entfernt, 5 geändert (gesamt 186)
 
@@ -1634,16 +1376,12 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Rheinhafenstraße zw. Daxlanderstraße und Südliche Uferstraße — sonstige Angaben aktualisiert
 - ✏️ Gerwigstraße zw. Ostring und Käppelestraße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 24.08.2026, 18:46 — 1 entfernt, 3 geändert (gesamt 184)
 
 - ➖ ~~Johann-Strauß-Straße zw. Josef-Kraus-Straße und Dornwaldstraße~~
 - ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
 - ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — Ende: 2026-08-28 → 2026-10-02
 - ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 24.08.2026, 15:03 — 1 neu, 2 entfernt, 6 geändert (gesamt 185)
 
@@ -1657,16 +1395,12 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Fritz-Haber-Weg — Ende: 2026-08-28 → 2026-09-30
 - ✏️ Adenauerring, Moltkestraße, Reinhold-Frank-Straße — Info geändert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 24.08.2026, 10:56 — 1 neu, 3 geändert (gesamt 186)
 
 - ➕ **Glogauer Straße zw. Liegnitzer Straße und Im Eichbäumle**
 - ✏️ Lärchenweg zw. Zehntwaldstraße und Donauschwabenstraße — Ende: 2026-08-31 → 2026-08-30
 - ✏️ Im Eichbäumle — Ende: 2026-11-15 → 2026-10-31
 - ✏️ Hermann-Billing-Straße zw. Ettlinger Straße u. Beiertheimer Allee (Zufahrt Landratsamt) — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 24.08.2026, 03:46 — 12 neu, 1 entfernt, 6 geändert (gesamt 185)
 
@@ -1690,8 +1424,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Gerwigstraße zw. Ostring und Käppelestraße — sonstige Angaben aktualisiert
 - ✏️ Gerwigstraße zw. Käppelestraße und Ostring — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 23.08.2026, 03:48 — 7 entfernt, 7 geändert (gesamt 174)
 
 - ➖ ~~Raiherwiesenstraße, Blotterstraße, Auer Straße, Karlsruher Allee, Schinnrainstraße, Christofstraße~~
@@ -1709,8 +1441,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Gerwigstraße zw. Ostring und Käppelestraße — sonstige Angaben aktualisiert
 - ✏️ Ettlinger Allee zw. Zufahrt PSK (Höhe Nürnberger Straße) u. Ausfahrt PSK Anliegerfahrbahn Richtung Schwarzwaldkreuz — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 22.08.2026, 03:39 — 2 neu, 5 entfernt, 2 geändert (gesamt 181)
 
 - ➕ **B10/ Südtangente zw. AS7 und AS6**
@@ -1723,13 +1453,9 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
 - ✏️ Ettlinger Allee zw. Zufahrt PSK (Höhe Nürnberger Straße) u. Ausfahrt PSK Anliegerfahrbahn Richtung Schwarzwaldkreuz — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 21.08.2026, 15:00 — 1 geändert (gesamt 184)
 
 - ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 21.08.2026, 10:49 — 1 neu, 2 geändert (gesamt 184)
 
@@ -1737,15 +1463,11 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
 - ✏️ An der Sandgrube, Am Zinken — Sperrgrad: voll → teil; Ende: 2026-08-31 → 2026-08-28
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 21.08.2026, 06:46 — 3 geändert (gesamt 183)
 
 - ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
 - ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
 - ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 21.08.2026, 03:45 — 3 neu, 5 entfernt, 5 geändert (gesamt 183)
 
@@ -1763,15 +1485,11 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
 - ✏️ Rheinhafenstraße zw. Daxlanderstraße und Südliche Uferstraße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 20.08.2026, 22:36 — 3 geändert (gesamt 185)
 
 - ✏️ B 3 Grötzinger Straße zw. Badener Straße u. Bergbahnstraße — sonstige Angaben aktualisiert
 - ✏️ Engesserstr. 2-6/8-12 und Lehmannstr. 1-3 — sonstige Angaben aktualisiert
 - ✏️ Rheinhafenstraße zw. Daxlanderstraße und Südliche Uferstraße — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 20.08.2026, 15:01 — 1 neu, 2 entfernt, 6 geändert (gesamt 185)
 
@@ -1785,8 +1503,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Im Eichbäumle — Info geändert
 - ✏️ Gerwigstraße zw. Ostring und Käppelestraße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 20.08.2026, 10:48 — 1 neu, 7 geändert (gesamt 186)
 
 - ➕ **Johann-Strauß-Straße zw. Am dm-Platz und Parkplatz Lorzingstraße/ Milliöeckerstraße**
@@ -1798,16 +1514,12 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Im Eichbäumle — sonstige Angaben aktualisiert
 - ✏️ Glogauer Straße zw. Kösliner Straße und Lauenburger Straße — Ende: 2026-09-21 → 2026-08-23
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 20.08.2026, 06:43 — 4 geändert (gesamt 185)
 
 - ✏️ B 3 Grötzinger Straße zw. Badener Straße u. Bergbahnstraße — sonstige Angaben aktualisiert
 - ✏️ Engesserstr. 2-6/8-12 und Lehmannstr. 1-3 — sonstige Angaben aktualisiert
 - ✏️ Rheinhafenstraße zw. Daxlanderstraße und Südliche Uferstraße — sonstige Angaben aktualisiert
 - ✏️ Gerwigstraße zw. Ostring und Käppelestraße — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 20.08.2026, 03:40 — 4 neu, 1 geändert (gesamt 185)
 
@@ -1817,15 +1529,11 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ➕ **Rittnertstraße zw. Fechtstraße und Nonnebühl**
 - ✏️ Gerwigstraße zw. Ostring und Käppelestraße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 19.08.2026, 18:38 — 3 geändert (gesamt 181)
 
 - ✏️ Engesserstr. 2-6/8-12 und Lehmannstr. 1-3 — sonstige Angaben aktualisiert
 - ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
 - ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 19.08.2026, 14:59 — 1 neu, 2 entfernt, 3 geändert (gesamt 181)
 
@@ -1836,13 +1544,9 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
 - ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 19.08.2026, 10:46 — 1 entfernt (gesamt 182)
 
 - ➖ ~~Rittnerstraße zw. Erbprinzenstraße und Ständehausstraße~~
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 19.08.2026, 03:41 — 1 neu, 3 entfernt, 1 geändert (gesamt 183)
 
@@ -1852,28 +1556,20 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ➖ ~~B36 zw. Sudetenstraße und L623~~
 - ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 18.08.2026, 18:38 — 1 neu, 2 geändert (gesamt 185)
 
 - ➕ **L623 zw. Wolfartsweier und Stupferich**
 - ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
 - ✏️ Engesserstr. 2-6/8-12 und Lehmannstr. 1-3 — Sperrgrad: teil → voll
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 18.08.2026, 14:58 — 1 geändert (gesamt 184)
 
 - ✏️ Lachnerstraße, Durlacher Allee, Georg.Friedrich-Straße, Rintheimer Straße, Veilchen Straße, Humnmboldt Straße — Sperrgrad: teil → gering
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 18.08.2026, 10:45 — 1 neu, 1 geändert (gesamt 184)
 
 - ➕ **B36 zw. Sudetenstraße und L623**
 - ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 18.08.2026, 03:40 — 7 neu, 6 entfernt, 3 geändert (gesamt 183)
 
@@ -1894,8 +1590,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
 - ✏️ Babbergerstraße, Waidweg, Hermann-Schneider-Allee — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 17.08.2026, 18:35 — 3 neu, 3 entfernt, 3 geändert (gesamt 182)
 
 - ➕ **Pfinztalstraße, Kanzlerstraße, Amalienbadstraße, Gritznerstraße**
@@ -1907,8 +1601,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Vorholzstraße zw. Karlstraße und Hirschstraße — sonstige Angaben aktualisiert
 - ✏️ Babbergerstraße, Waidweg, Hermann-Schneider-Allee — sonstige Angaben aktualisiert
 - ✏️ Pfinztalstraße zw. Ernst-Friedrich-Straße und Palmaienstraße — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 17.08.2026, 14:56 — 6 neu, 3 entfernt, 7 geändert (gesamt 182)
 
@@ -1929,14 +1621,10 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Hermann-Billing-Straße zw. Ettlinger Straße u. Beiertheimer Allee (Zufahrt Landratsamt) — sonstige Angaben aktualisiert
 - ✏️ Hirschstraße zw. Amalienstraße und Sophienstraße — Ende: 2026-08-17 → 2026-08-18; Info geändert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 17.08.2026, 10:52 — 1 neu, 1 geändert (gesamt 179)
 
 - ➕ **Hirschstraße zw. Kaiserstraße und Sophienstraße**
 - ✏️ Engesserstr. 2-6/8-12 und Lehmannstr. 1-3 — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 17.08.2026, 03:45 — 18 neu, 4 entfernt, 4 geändert (gesamt 178)
 
@@ -1967,15 +1655,11 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
 - ✏️ Babbergerstraße, Waidweg, Hermann-Schneider-Allee — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 16.08.2026, 06:41 — 3 geändert (gesamt 164)
 
 - ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
 - ✏️ Sophienstraße Kreuzung Reinhold-Frank-Straße — sonstige Angaben aktualisiert
 - ✏️ Babbergerstraße, Waidweg, Hermann-Schneider-Allee — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 16.08.2026, 03:47 — 7 entfernt, 4 geändert (gesamt 164)
 
@@ -1990,8 +1674,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
 - ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
 - ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 15.08.2026, 03:39 — 2 neu, 10 entfernt, 6 geändert (gesamt 171)
 
@@ -2014,8 +1696,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Babbergerstraße, Waidweg, Hermann-Schneider-Allee — sonstige Angaben aktualisiert
 - ✏️ B 36 zw. AS Eggenstein u. AS Neureut Nord sowie Zufahrt Linkenheimer Landstraße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 14.08.2026, 15:21 — 2 neu, 8 geändert (gesamt 179)
 
 - ➕ **Engesserstr. 2-6/8-12 und Lehmannstr. 1-3**
@@ -2029,8 +1709,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Gerwigstraße zw. Ostring und Käppelestraße — sonstige Angaben aktualisiert
 - ✏️ Gerwigstraße zw. Käppelestraße und Ostring — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 14.08.2026, 04:29 — 3 neu, 2 entfernt, 3 geändert (gesamt 177)
 
 - ➕ **Lammstraße zw. Ritterstraße u. Lammstraße**
@@ -2042,13 +1720,9 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Gerwigstraße zw. Käppelestraße und Ostring — sonstige Angaben aktualisiert
 - ✏️ Babbergerstraße, Waidweg, Hermann-Schneider-Allee — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 13.08.2026, 22:52 — 1 geändert (gesamt 176)
 
 - ✏️ Breslauer Straße Wohnwege 64 A - I und 66 A -L — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 13.08.2026, 11:19 — 2 entfernt, 4 geändert (gesamt 176)
 
@@ -2059,15 +1733,11 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Babbergerstraße, Waidweg, Hermann-Schneider-Allee — sonstige Angaben aktualisiert
 - ✏️ Rheinhafenstraße zw. B36/Eckenerstraße und Hopfenstraße — Beginn: 2026-08-09 → 2026-08-12; Ende: 2026-09-05 → 2026-08-28; Bezeichnung geändert; Info geändert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 13.08.2026, 07:44 — 3 geändert (gesamt 178)
 
 - ✏️ K9659 Höhe DM — sonstige Angaben aktualisiert
 - ✏️ Breslauer Straße Wohnwege 64 A - I und 66 A -L — sonstige Angaben aktualisiert
 - ✏️ Babbergerstraße, Waidweg, Hermann-Schneider-Allee — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 13.08.2026, 04:31 — 2 neu, 7 entfernt (gesamt 178)
 
@@ -2081,8 +1751,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ➖ ~~K9652/ Südtangente Höhe Ottostraße~~
 - ➖ ~~L605 Höhe Ausfahrt Pulverhausstraße~~
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 12.08.2026, 15:25 — 6 geändert (gesamt 183)
 
 - ✏️ Herrenstraße zw. Amalienstraße und Blumenstraße — Ende: 2026-09-27 → 2026-09-18
@@ -2092,14 +1760,10 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Bergbahnstraße zw. B 3 Grötzinger Straße und Am Steinbruch — Beginn: 2026-08-09 → 2026-08-10
 - ✏️ Gymnasiumstraße zw. Rittnertstraße und Turmbergstraße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 12.08.2026, 11:18 — 1 neu, 1 geändert (gesamt 183)
 
 - ➕ **Rastatter Straße 45+62, Tulpenstraße 1-4**
 - ✏️ Rastatter Straße 1 bis 103 — Info geändert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 12.08.2026, 04:29 — 6 neu, 1 entfernt (gesamt 182)
 
@@ -2111,21 +1775,15 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ➕ **L605 Höhe Ausfahrt Pulverhausstraße**
 - ➖ ~~Glogauer Straße zw. Liegnitzer Straße und Im Eichbäumle~~
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 11.08.2026, 15:20 — 3 geändert (gesamt 177)
 
 - ✏️ Breslauer Straße Wohnwege 64 A - I und 66 A -L — sonstige Angaben aktualisiert
 - ✏️ Rintheimer Querallee und Büchiger Allee — Sperrgrad: gering → teil; Beginn: 2026-08-09 → 2026-08-04; Ende: 2026-12-18 → 2026-10-25; Info geändert
 - ✏️ Rheinhafenstraße zw. Daxlanderstraße und Südliche Uferstraße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 11.08.2026, 11:06 — 1 geändert (gesamt 177)
 
 - ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 11.08.2026, 04:11 — 2 neu, 4 entfernt, 1 geändert (gesamt 177)
 
@@ -2137,13 +1795,9 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ➖ ~~Am Sonnenbad zw. Pfannkuchstraße und südliche Uferstraße~~
 - ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 10.08.2026, 19:00 — 1 geändert (gesamt 179)
 
 - ✏️ Rintheimer Querallee und Büchiger Allee — Sperrgrad: teil → gering
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 10.08.2026, 15:24 — 2 neu, 1 geändert (gesamt 179)
 
@@ -2151,16 +1805,12 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ➕ **Rastatter Straße 1 bis 103**
 - ✏️ Reinhold-Frank-Straße zwischen Belfortstraße und Kaiserallee — Info geändert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 10.08.2026, 11:40 — 1 entfernt, 3 geändert (gesamt 177)
 
 - ➖ ~~Kriegsstraße zw. Karl-Friedrich-Straße und Lammstraße~~
 - ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
 - ✏️ Babbergerstraße, Waidweg, Hermann-Schneider-Allee — sonstige Angaben aktualisiert
 - ✏️ Bergbahnstraße zw. B 3 Grötzinger Straße und Am Steinbruch — Bezeichnung geändert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 10.08.2026, 04:21 — 16 neu, 2 geändert (gesamt 178)
 
@@ -2183,8 +1833,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
 - ✏️ Babbergerstraße, Waidweg, Hermann-Schneider-Allee — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 09.08.2026, 04:14 — 4 entfernt, 1 geändert (gesamt 162)
 
 - ➖ ~~Gänsbergstraße zw. Werrenstraße und Wiesentalstraße~~
@@ -2192,8 +1840,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ➖ ~~Vorholzstraße zw. Beiertheimer Allee und Karlstraße~~
 - ➖ ~~L605 zw. Bulacher Kreuz und Gut Scheibenhardt~~
 - ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 08.08.2026, 04:04 — 3 neu, 10 entfernt, 2 geändert (gesamt 166)
 
@@ -2213,8 +1859,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
 - ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 07.08.2026, 15:18 — 1 neu, 3 entfernt, 3 geändert (gesamt 173)
 
 - ➕ **Humboldstraße zw. Gerwigstraße und Essenweinstraße**
@@ -2225,8 +1869,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Pfinztalstraße zw. Ernst-Friedrich-Straße und Palmaienstraße — Ende: 2026-08-08 → 2026-08-15
 - ✏️ Am Rüppurrer Schloss 1 - 7 — Ende: 2026-08-08 → 2026-08-14
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 07.08.2026, 11:07 — 1 neu, 4 geändert (gesamt 175)
 
 - ➕ **Killisfeldstr./Bleichstr./Schinnrainstr.**
@@ -2235,28 +1877,20 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Sophienstraße Kreuzung Reinhold-Frank-Straße — sonstige Angaben aktualisiert
 - ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 07.08.2026, 07:45 — 3 geändert (gesamt 174)
 
 - ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
 - ✏️ Reinhold-Frank-Straße zwischen Belfortstraße und Kaiserallee — sonstige Angaben aktualisiert
 - ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 07.08.2026, 02:54 — 1 neu, 1 geändert (gesamt 174)
 
 - ➕ **L6023/ Talstraße zw. Im Brunnenfeld und Henri-Arnaud-Straße**
 - ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — Sperrgrad: teil → gering
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 06.08.2026, 16:28 — 1 geändert (gesamt 173)
 
 - ✏️ Wolfartsweierer Straße zw. Durlacher Allee und Frühlingstraße — Ende: 2026-08-10 → 2026-08-31
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 06.08.2026, 05:20 — 1 neu, 4 entfernt, 1 geändert (gesamt 173)
 
@@ -2267,21 +1901,15 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ➖ ~~Links der Alb zw. Enzstraße und Belchenstraße~~
 - ✏️ Reinhold-Frank-Straße zwischen Belfortstraße und Kaiserallee — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 05.08.2026, 23:19 — 2 geändert (gesamt 176)
 
 - ✏️ Reinhold-Frank-Straße zwischen Belfortstraße und Kaiserallee — sonstige Angaben aktualisiert
 - ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 05.08.2026, 16:25 — 2 neu (gesamt 176)
 
 - ➕ **Brunnenhausstraße zw. Weiherstraße und Marstallstraße**
 - ➕ **Westmarkstr./Grenzstr./Brühlstr**
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 05.08.2026, 12:43 — 3 neu, 2 entfernt, 3 geändert (gesamt 174)
 
@@ -2294,8 +1922,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Reinhold-Frank-Straße zwischen Belfortstraße und Kaiserallee — sonstige Angaben aktualisiert
 - ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 05.08.2026, 05:17 — 1 neu, 2 entfernt, 1 geändert (gesamt 173)
 
 - ➕ **Kronenstraße zw. Zähringerstraße und Fritz-Erler-Straße**
@@ -2303,14 +1929,10 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ➖ ~~B3/ Südtangente Höhe Bahnübergang Schindweg (Haltestelle Durlach Zündhütle)~~
 - ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 04.08.2026, 19:56 — 2 geändert (gesamt 174)
 
 - ✏️ Raiherwiesenstraße zw. Pfaffstraße und Bleichstraße — sonstige Angaben aktualisiert
 - ✏️ Reinhold-Frank-Straße zwischen Belfortstraße und Kaiserallee — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 04.08.2026, 16:31 — 1 neu, 2 geändert (gesamt 174)
 
@@ -2318,16 +1940,12 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
 - ✏️ Brücke über Pfinzentlastungskanal Stusenseer Allee — Ende: 2026-11-30 → 2026-11-17
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 04.08.2026, 12:46 — 2 neu, 1 entfernt, 1 geändert (gesamt 173)
 
 - ➕ **Brücke über Pfinzentlastungskanal Stusenseer Allee**
 - ➕ **Brücke über Pfinzentlastungskanal Friedrichstaler Allee**
 - ➖ ~~L623/ Am Wetterbach zw. Zur Ziegelhütte und Bachstraße~~
 - ✏️ Raiherwiesenstraße zw. Pfaffstraße und Bleichstraße — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 04.08.2026, 05:22 — 3 neu, 2 entfernt, 2 geändert (gesamt 172)
 
@@ -2339,15 +1957,11 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
 - ✏️ Reinhold-Frank-Straße zwischen Belfortstraße und Kaiserallee — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 03.08.2026, 19:58 — 3 geändert (gesamt 171)
 
 - ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
 - ✏️ Vorholzstraße zw. Karlstraße und Hirschstraße — sonstige Angaben aktualisiert
 - ✏️ Reinhold-Frank-Straße zwischen Belfortstraße und Kaiserallee — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 03.08.2026, 16:56 — 2 neu, 4 geändert (gesamt 171)
 
@@ -2358,8 +1972,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Gymnasiumstraße zw. Rittnertstraße und Turmbergstraße — Ende: 2026-08-04 → 2026-08-14
 - ✏️ K9659 Höhe DM — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 03.08.2026, 13:35 — 1 neu, 1 entfernt, 3 geändert (gesamt 169)
 
 - ➕ **Babbergerstraße, Waidweg, Hermann-Schneider-Allee**
@@ -2368,8 +1980,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
 - ✏️ K9659 Höhe DM — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 03.08.2026, 09:36 — 2 neu, 3 geändert (gesamt 169)
 
 - ➕ **Blechenstraße und Links der Alb**
@@ -2377,8 +1987,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
 - ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
 - ✏️ Vorholzstraße zw. Karlstraße und Hirschstraße — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 03.08.2026, 05:38 — 16 neu, 4 entfernt, 2 geändert (gesamt 167)
 
@@ -2405,8 +2013,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
 - ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 02.08.2026, 05:36 — 1 neu, 6 entfernt, 2 geändert (gesamt 155)
 
 - ➕ **Herrenstraße zw. Karlstraße und Amalienstraße**
@@ -2418,8 +2024,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ➖ ~~Karlstraße zw.Kaiserstraße und Akademiestraße~~
 - ✏️ Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße — sonstige Angaben aktualisiert
 - ✏️ Rheinhafenstraße zw. Daxlanderstraße und Südliche Uferstraße — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 01.08.2026, 05:36 — 3 neu, 42 entfernt, 4 geändert (gesamt 160)
 
@@ -2473,8 +2077,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
 - ✏️ Rheinhafenstraße zw. Daxlanderstraße und Südliche Uferstraße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 31.07.2026, 16:25 — 4 neu, 1 entfernt, 9 geändert (gesamt 199)
 
 - ➕ **Industriestraße, Hohleichweg, August-Ketterer-Straße, Waidweg, Babbergerstraße, Daxlander Straße, Hermann-Schneider-Allee**
@@ -2491,8 +2093,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ B 3 Grötzinger Straße zw. Bergbahnstraße u. Rittnertstraße — Ende: 2026-08-10 → 2026-08-07
 - ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
 - ✏️ Essenweinstraße zw. Sternbergstraße und Humboldtstraße — Beginn: 2026-07-13 → 2026-07-30; Ende: 2026-10-16 → 2026-09-11
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 31.07.2026, 05:37 — 8 neu, 11 entfernt, 2 geändert (gesamt 196)
 
@@ -2518,21 +2118,15 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
 - ✏️ K9659 Höhe DM — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 30.07.2026, 19:42 — 1 neu, 2 geändert (gesamt 199)
 
 - ➕ **Weinweg zw. Rintheimer Haupstraße und Koyweg**
 - ✏️ K9659 Höhe DM — sonstige Angaben aktualisiert
 - ✏️ Redtenbacher Straße zw. Mathystraße und Gartenstraße — Ende: 2026-07-31 → 2026-07-30
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 30.07.2026, 16:21 — 1 neu (gesamt 198)
 
 - ➕ **Glogauer Straße zw. Kösliner Straße und Lauenburger Straße**
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 30.07.2026, 12:31 — 1 entfernt, 3 geändert (gesamt 197)
 
@@ -2541,8 +2135,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ K9659 Höhe DM — sonstige Angaben aktualisiert
 - ✏️ Albert-Schweitzer-Straße zw. Theodor Heuss Allee und Berha-von-Suttner-Straße — Info geändert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 30.07.2026, 08:34 — 1 neu, 4 geändert (gesamt 198)
 
 - ➕ **Karlstraße, Kaiserstraße, Passagehof**
@@ -2550,8 +2142,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Raiherwiesenstraße zw. Pfaffstraße und Bleichstraße — sonstige Angaben aktualisiert
 - ✏️ Rheinhafenstraße zw. Daxlanderstraße und Südliche Uferstraße — sonstige Angaben aktualisiert
 - ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 30.07.2026, 04:54 — 15 neu, 3 entfernt, 4 geändert (gesamt 197)
 
@@ -2578,21 +2168,15 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Rheinhafenstraße zw. Daxlanderstraße und Südliche Uferstraße — sonstige Angaben aktualisiert
 - ✏️ K9659 Höhe DM — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 29.07.2026, 23:04 — 1 geändert (gesamt 185)
 
 - ✏️ K9659 Höhe DM — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 29.07.2026, 19:22 — 1 neu, 2 geändert (gesamt 185)
 
 - ➕ **Humboldtstraße zw. Gerwigstraße und Essenweinstraße**
 - ✏️ Sophienstraße Kreuzung Reinhold-Frank-Straße — sonstige Angaben aktualisiert
 - ✏️ Glogauer Straße zw. Kösliner Straße und Beuthener Straße — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 29.07.2026, 12:45 — 2 entfernt, 4 geändert (gesamt 184)
 
@@ -2603,15 +2187,11 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
 - ✏️ Sophienstraße Kreuzung Reinhold-Frank-Straße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 29.07.2026, 05:20 — 3 neu (gesamt 186)
 
 - ➕ **Sophienstraße Kreuzung Reinhold-Frank-Straße**
 - ➕ **Hirschstraße zw. Amalienstraße und Kaiserstraße**
 - ➕ **An der Bahn zw. Hagdornstraße und Gerhardtstraße**
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 28.07.2026, 21:45 — 183 geändert (gesamt 183)
 
@@ -2799,20 +2379,14 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Pforzheimer Straße und  Waldshuter Straße — sonstige Angaben aktualisiert
 - ✏️ Busenbacher Str. 13 — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 28.07.2026, 19:41 — 2 geändert (gesamt 183)
 
 - ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
 - ✏️ Raiherwiesenstraße zw. Pfaffstraße und Bleichstraße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 28.07.2026, 16:26 — 1 geändert (gesamt 183)
 
 - ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 28.07.2026, 12:42 — 2 neu, 3 geändert (gesamt 183)
 
@@ -2821,8 +2395,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
 - ✏️ Raiherwiesenstraße zw. Pfaffstraße und Bleichstraße — sonstige Angaben aktualisiert
 - ✏️ Zentralhof — Sperrgrad: teil → gering
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 28.07.2026, 05:19 — 2 neu, 4 entfernt, 3 geändert (gesamt 181)
 
@@ -2836,21 +2408,15 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Kriegsstraße zw. Karl-Friedrich-Straße und Lammstraße — sonstige Angaben aktualisiert
 - ✏️ Raiherwiesenstraße zw. Pfaffstraße und Bleichstraße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 27.07.2026, 19:48 — 1 geändert (gesamt 183)
 
 - ✏️ Raiherwiesenstraße zw. Pfaffstraße und Bleichstraße — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 27.07.2026, 16:52 — 3 geändert (gesamt 183)
 
 - ✏️ Kriegsstraße zw. Karl-Friedrich-Straße und Lammstraße — sonstige Angaben aktualisiert
 - ✏️ Rüppurrer Straße 104 zw. Tivoli u. Marienstraße — Ende: 2026-07-31 → 2026-09-04
 - ✏️ Zentralhof — Ende: 2026-08-07 → 2026-09-04
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 27.07.2026, 13:32 — 4 neu, 1 geändert (gesamt 183)
 
@@ -2860,15 +2426,11 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ➕ **K9652/ Südtangente Höhe Ottostraße**
 - ✏️ Breslauer Straße Wohnwege 64 A - I und 66 A -L — Ende: 2026-07-31 → 2026-08-31; Info geändert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 27.07.2026, 09:39 — 1 neu, 2 geändert (gesamt 179)
 
 - ➕ **Hirschstraße zw. Amalinestraße und Sophienstraße**
 - ✏️ Am Entenfang: Rheinstraße zur B 36 Michelinstraße gesperrt, B 10 Südtangente AS 6 Abfahrt von Osten zur B 36 Lameystraße gesperrt, B 36 Lameystraße zur Rheinstraße gesperrt, B 36 Michelinstraße zur B 36 Lameystraße u. Rheinstraße gesperrt — Ende: 2026-07-29 → 2026-07-30; Info geändert
 - ✏️ B36/ Michelinstraße zw. Franz-Abt-Straße und Entenfang — Ende: 2026-07-29 → 2026-07-30
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 27.07.2026, 05:48 — 9 neu, 1 entfernt (gesamt 178)
 
@@ -2883,14 +2445,10 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ➕ **Busenbacher Str. 13**
 - ➖ ~~Brücke Dea-Scholven-Straße zw. Raffineriestraße und Maxau Papierfabrik Tor 2~~
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 26.07.2026, 05:38 — 2 entfernt (gesamt 170)
 
 - ➖ ~~Kaiserstraße, Hirschstraße, Amalinestraße~~
 - ➖ ~~Fautenbruchstraße zw. Ettlinger Straße und Kurze Straße~~
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 25.07.2026, 05:25 — 3 neu, 7 entfernt (gesamt 172)
 
@@ -2905,21 +2463,15 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ➖ ~~Lußstraße zw. Lußsteige und Geigersbergstraße~~
 - ➖ ~~Kurt-Schumacher-Straße zw. Landauer Straße und Josef-Schofer-Straße~~
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 24.07.2026, 23:12 — 2 geändert (gesamt 176)
 
 - ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
 - ✏️ Rheinhafenstraße zw. Daxlanderstraße und Südliche Uferstraße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 24.07.2026, 19:44 — 2 geändert (gesamt 176)
 
 - ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
 - ✏️ Rheinhafenstraße zw. Daxlanderstraße und Südliche Uferstraße — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 24.07.2026, 16:00 — 3 entfernt, 1 geändert (gesamt 176)
 
@@ -2928,20 +2480,14 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ➖ ~~Amalienbadstraße~~
 - ✏️ Beuthener Straße zw. Glogauer Straße und Gustav-Heinemann-Allee — Ende: 2026-07-24 → 2026-07-27
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 24.07.2026, 12:26 — 1 geändert (gesamt 179)
 
 - ✏️ B 3 Grötzinger Straße zw. Bergbahnstraße u. Rittnertstraße — Ende: 2026-08-04 → 2026-08-10
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 24.07.2026, 08:33 — 2 geändert (gesamt 179)
 
 - ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
 - ✏️ Rheinhafenstraße zw. Daxlanderstraße und Südliche Uferstraße — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 24.07.2026, 05:27 — 1 neu, 2 entfernt, 5 geändert (gesamt 179)
 
@@ -2954,14 +2500,10 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Rheinhafenstraße zw. Daxlanderstraße und Südliche Uferstraße — sonstige Angaben aktualisiert
 - ✏️ Haid-und-Neu-Straße zw. Hirtenweg und Karlsruher Straße — sonstige Angaben aktualisiert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 23.07.2026, 19:38 — 1 entfernt, 1 geändert (gesamt 180)
 
 - ➖ ~~Pfarrer-Blink-Straße zw. Untermühlstraße und Alte Karlsruher Straße~~
 - ✏️ Haid-und-Neu-Straße zw. Hirtenweg und Karlsruher Straße — sonstige Angaben aktualisiert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 23.07.2026, 16:22 — 2 entfernt, 2 geändert (gesamt 181)
 
@@ -2970,20 +2512,14 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Engesserstr. 2-6/8-12 und Lehmannstr. 1-3
 - ✏️ Fritz-Haber-Weg
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 23.07.2026, 12:30 — 1 geändert (gesamt 183)
 
 - ✏️ Baumeisterstraße zw. Ettlinger Straße und Nowackanlage — Info geändert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 23.07.2026, 08:36 — 2 geändert (gesamt 183)
 
 - ✏️ Raiherwiesenstraße zw. Pfaffstraße und Bleichstraße
 - ✏️ Beuthener Straße zw. Glogauer Straße und Gustav-Heinemann-Allee
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 23.07.2026, 05:32 — 1 neu, 1 entfernt, 2 geändert (gesamt 183)
 
@@ -2991,8 +2527,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ➖ ~~Anliegerfahrbahn Ludwig-Erhard-Allee zwischen Henriette-Obermüller-Straße und Wolfartsweierer Straße~~
 - ✏️ Beuthener Straße zw. Glogauer Straße und Gustav-Heinemann-Allee
 - ✏️ Raiherwiesenstraße zw. Pfaffstraße und Bleichstraße
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 22.07.2026, 19:26 — 2 neu, 4 geändert (gesamt 183)
 
@@ -3003,8 +2537,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Fritz-Haber-Weg
 - ✏️ K9659 Höhe DM
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 22.07.2026, 16:12 — 2 neu, 1 entfernt, 1 geändert (gesamt 181)
 
 - ➕ **Johann-Strauß-Straße zw. Am dm-Platz und Parkplatz Lorzingstraße/ Milliöeckerstraße**
@@ -3012,13 +2544,9 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ➖ ~~Johann-Strauß-Straße zw. Parkplatz Lorzingstraße/ Milliöeckerstraße und Durlacher Allee~~
 - ✏️ Pforzheimer Straße - Waldshuter Straße - Turmbergbad - Campingplatz Durlach - Bundestraßenkreuz B3 / B10 — Info geändert
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 22.07.2026, 12:31 — 1 neu (gesamt 180)
 
 - ➕ **Veilchenstraße zw. Gerwigstraße und Essenweinstraße**
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 22.07.2026, 05:26 — 5 entfernt, 2 geändert (gesamt 179)
 
@@ -3030,28 +2558,20 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Kapellenstraße zw. Ludwig-Erhard-Allee und Durlacher Allee/Am Künstlerhaus zw. Waldhornstraße und Zähringer Straße
 - ✏️ K9659 Höhe DM
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 21.07.2026, 19:36 — 1 neu, 1 geändert (gesamt 184)
 
 - ➕ **Adlerstraße zw. Zähringerstraße u. Kaiserstraße**
 - ✏️ Kapellenstraße zw. Ludwig-Erhard-Allee und Durlacher Allee/Am Künstlerhaus zw. Waldhornstraße und Zähringer Straße
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 21.07.2026, 16:09 — 1 neu, 1 geändert (gesamt 183)
 
 - ➕ **Vorholzstraße zw. Karlstraße u. Beiertheimer Allee sowie Anliegerfahrbahn Beiertheimer Allee zw. Vorholzstraße u. Südendstraße**
 - ✏️ Bonner Straße zw. Siemensallee und Bonner Platz — Ende: 2026-07-30 → 2026-08-10
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 21.07.2026, 12:30 — 1 neu, 1 geändert (gesamt 182)
 
 - ➕ **Pforzheimer Straße - Waldshuter Straße - Turmbergbad - Campingplatz Durlach - Bundestraßenkreuz B3 / B10**
 - ✏️ Gymnasiumstraße zw. Rittnertstraße und Turmbergstraße — Ende: 2026-08-11 → 2026-08-04; Info geändert
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 21.07.2026, 05:28 — 2 neu, 7 entfernt, 2 geändert (gesamt 181)
 
@@ -3066,8 +2586,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ➖ ~~Im Kennental 13~~
 - ✏️ Kapellenstraße zw. Ludwig-Erhard-Allee und Durlacher Allee/Am Künstlerhaus zw. Waldhornstraße und Zähringer Straße
 - ✏️ Beuthener Straße zw. Glogauer Straße und Gustav-Heinemann-Allee
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 20.07.2026, 22:48 — 31 geändert (gesamt 186)
 
@@ -3103,13 +2621,9 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ K9659 Höhe DM — Sperrgrad: teil → gering
 - ✏️ Moningerstraße zw. Kriegstraßem und Sophienstraße — Sperrgrad: teil → gering
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 20.07.2026, 22:44 — 1 geändert (gesamt 186)
 
 - ✏️ Kapellenstraße zw. Ludwig-Erhard-Allee und Durlacher Allee/Am Künstlerhaus zw. Waldhornstraße und Zähringer Straße
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 20.07.2026, 22:30 — 186 neu, 440 entfernt (gesamt 186)
 
@@ -3740,8 +3254,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ➖ ~~Amalienbadstraße~~
 - ➖ ~~Amalienbadstraße~~
 
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
-
 ## 20.07.2026, 22:22 — 440 geändert (gesamt 440)
 
 - ✏️ Herrenstraße zw. Karlstraße und Amalienstraße
@@ -4184,8 +3696,6 @@ Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 - ✏️ Kanzlerstraße
 - ✏️ Amalienbadstraße
 - ✏️ Amalienbadstraße
-
-Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
 ## 20.07.2026, 21:57 — 440 neu (gesamt 440)
 
