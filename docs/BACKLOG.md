@@ -10,7 +10,13 @@ Suggested labels: `setup`, `data`, `frontend`, `a11y`, `docs`, `enhancement`.
 > [refinement process](./PROZESS.md).
 
 **Status legend:** ✅ done · 🟡 partial / open · ⬜ open
-**As of:** 2026-10-17 (**[A-14](./anforderungen/A-14-vollbild-karte.md) and
+**As of:** 2026-10-18 (**#39 added and done:** focus rings in the filter row
+were cut off. On a phone the district select's ring lost its top edge, and at
+every width the segment buttons' ring lost its top and bottom. It was reported
+from a phone on the day [A-16](./anforderungen/A-16-verlauf.md),
+[A-2](./anforderungen/A-2-baustellen-abo-feed.md) and
+[A-17](./anforderungen/A-17-stadtteile.md) went live.)
+**Previously, as of:** 2026-10-17 (**[A-14](./anforderungen/A-14-vollbild-karte.md) and
 [A-15](./anforderungen/A-15-statistik.md) implemented:** the full-screen map
 with a bottom sheet or side panel, and the statistics tab. **#23, #33 and #35
 are moot** since then, because the page they fixed is gone. They stay ✅, and
@@ -20,7 +26,7 @@ Teil markers reach only 1.8:1 against the light tiles, as they have since A-7.
 Earlier the same day, **#36 was added and done.** `npm test` now runs in CI on
 every push and pull request, and a deliberately broken commit proved the red
 path. It was step 0 of A-14.)
-**Previously, as of:** 2026-08-15 (**#32 done** — the light-mode `--amber` darkened
+**Before that, as of:** 2026-08-15 (**#32 done** — the light-mode `--amber` darkened
 `#f08a00` → `#cc7700`: the dot now reaches 3.38:1 on `--surface` and 3.15:1 on
 `--chip`; the map's `AMPEL_COLOR` deliberately keeps `#f08a00`, and
 `scripts/test-theme.mjs` now computes all six dot/surface ratios statically.
@@ -68,7 +74,9 @@ and dragging the outer one scrolled the whole feed out of the frame.)
 > portal preview images, after the A-14 release). **#36** (CI test run) was
 > added and done on 2026-10-17, as step 0 of the interface rebuild A-14.
 > **A-14 and A-15 are implemented**. #23, #33 and #35 are moot since then and
-> stay ✅ with a dated note.
+> stay ✅ with a dated note. **A-16, A-2 and A-17 followed on 2026-10-18**, and
+> **#39** (focus rings cut off in the filter row), found on a phone the same
+> day, is done.
 
 ---
 
@@ -782,6 +790,52 @@ tiles exist and are handed to the open-data editorial team. The script that
 makes them is restored from git history (`scripts/screenshot.mjs`, removed on
 2026-08-07) or rewritten, again outside `npm test` and CI. Its tile-count
 abort stays: a gray map must not reach the portal. (Label: `docs`)
+
+## Finding after the A-16, A-2 and A-17 release (2026-10-18)
+
+### ✅ #39 Focus rings in the filter row are cut off
+Status: done (2026-10-18)
+
+Reported from a phone with a screenshot: the district select's blue frame had
+no top edge. Chrome on Android leaves the focus ring on a select after a
+choice, so everyone who picks a district sees it, not only keyboard users.
+
+Measured against every clipping ancestor of each control:
+- **The select, phone only.** Its ring sits 4 px outside the box (2 px offset,
+  2 px wide). On a phone the filter row scrolls sideways, and a scroller clips
+  on both axes, because `overflow-x: auto` turns `overflow-y` to `auto` too.
+  With no top padding, the row cut 3 of those 4 px off the top. On desktop
+  nothing was cut.
+- **The segment buttons, at every width.** The page-wide ring (3 px, offset
+  2 px) lies outside the button, and `.segments` clips with
+  `overflow: hidden` to round its corners (#33). That took the ring's top and
+  bottom off entirely, 10–15 px per button, on desktop too. Only a keyboard
+  shows this ring, which is why nobody had noticed.
+
+Fix, in `src/shell.css` only:
+- The phone's `.filters` row gets 0.3rem of top padding and a negative top
+  margin of the same size. The row and everything below it stay where they
+  were: geometry measured unrounded before and after is identical to
+  0.01 px at 320, 414 and 1280 px.
+- `.segments button:focus-visible` draws its ring inside the button
+  (`outline-offset: -3px`), as the tabs do. On the filled active button the
+  ring takes `--accent-contrast`, because in light mode `--focus` has
+  `--accent`'s own value. Inside that button the plain ring would reach 1.00:1
+  in light mode and 1.34:1 in dark mode.
+
+Verified with the same probe before and after. No ring is cut any more at
+320, 414 or 1280 px in either scheme; before, the select lost 3 px and the
+buttons 10–19 px. The inset ring reaches 9.13:1 in light mode (inactive and
+active) and 8.17:1 / 7.19:1 in dark mode (inactive / active).
+
+Not covered: at 320 px a button that lies partly beyond the row's right edge
+stays partly hidden when it gets focus. Chrome does not scroll a partly
+visible element on focus; `Teil` keeps 10.72 px hidden, before and after
+alike. It is never entirely hidden, and that is what WCAG 2.4.11 asks.
+
+**DoD:** every focus ring in the filter row is complete at 320, 414 and
+1280 px in both schemes, and the row does not move. (Label: `a11y`,
+`frontend`)
 
 ---
 
