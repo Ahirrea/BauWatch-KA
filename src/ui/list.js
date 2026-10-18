@@ -108,7 +108,10 @@ export function scrollListItemIntoView(key) {
   if (liRect.top < boxRect.top) {
     delta = liRect.top - boxRect.top - 8;
   } else if (liRect.bottom > boxRect.bottom) {
-    delta = liRect.bottom - boxRect.bottom + 8;
+    // A row taller than the visible box aligns its top, not its bottom. On a
+    // collapsed sheet the box is a 32-px sliver, and bottom-aligned, opening
+    // the sheet showed 24 of the row's 141 px (#44).
+    delta = Math.min(liRect.bottom - boxRect.bottom + 8, liRect.top - boxRect.top - 8);
   } else {
     return; // bereits sichtbar
   }

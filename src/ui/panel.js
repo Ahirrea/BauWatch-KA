@@ -65,7 +65,11 @@ export function chromeInsets(target = sheet) {
   const H = window.innerHeight;
   const top = el('searchbar').getBoundingClientRect().bottom + 8;
   const collapsedH = cssPx('--sheet-collapsed');
-  const heights = { collapsed: collapsedH, half: H * HALF, full: H - top };
+  // A full sheet leaves no map to centre in. Measured, top + bottom came to
+  // the viewport plus 24 px: a district fit hit zoom 15 at the wrong place,
+  // and a search landed under the search bar. Views therefore aim at the
+  // half sheet, where the map shows once the sheet is lowered (#43).
+  const heights = { collapsed: collapsedH, half: H * HALF, full: H * HALF };
   // Collapsed, the credits ride on top of the sheet; open, the sheet covers
   // them. +24: below the popup's tip sits the marker itself, which must stay
   // visible too — without it the tip pointed at a marker hidden under the
@@ -216,10 +220,16 @@ export function initPanel({ onChromeChange, onTabChange }) {
   const panel = el('panel');
 
   measure();
-  new ResizeObserver(() => {
+  const observer = new ResizeObserver(() => {
     measure();
     handlers.onChromeChange(chromeInsets());
-  }).observe(el('panel-head'));
+  });
+  observer.observe(el('panel-head'));
+  // On a phone the search bar is position: fixed, outside the head's box, so
+  // its growth (a two-line "nicht gefunden") never resized the head and
+  // --searchbar-bottom stayed stale: the zoom "+" and a full sheet's handle
+  // sat under the bar (#47).
+  observer.observe(el('searchbar'));
   window.addEventListener('resize', () => {
     measure();
     handlers.onChromeChange(chromeInsets());
