@@ -19,6 +19,10 @@ not via feed-side partitioning.
 no full-inventory feed). Both are the simple variant that falls out of the
 existing build diff at almost no extra cost; both can be retrofitted later
 if needed. With that, all forks are decided → **implementation-ready**.
+**Amended on:** 2026-10-18 ([step 7a](../PROZESS.md#7a-amending-an-already-refined-requirement)),
+before implementation, for A-6/#28, A-14 and A-17. See
+[Amendment decisions](#amendment-decisions-2026-10-18). Where the amendment
+and the sketch below differ, the amendment wins.
 
 ## "Push" vs. "subscription" — separating the terms first
 
@@ -114,6 +118,10 @@ in `currentFiltered`). It will be refined as its **own small feature entry**
 
 ## Specification (sketch, now that the forks are set)
 
+> Amended on 2026-10-18: see
+> [Amendment decisions](#amendment-decisions-2026-10-18) and the amended
+> sections after them. The text below is kept as the July record.
+
 **Format:** **Atom 1.0** (clean `<id>`/`<updated>`, GeoRSS point optional).
 Exactly one file `feeds/alle.xml` (change stream, no faceted feeds).
 
@@ -150,6 +158,10 @@ push), README ("Subscribing" section), [`BACKLOG.md`](../BACKLOG.md) #16
 (done → points here).
 
 ## Definition of Done (on later implementation)
+
+> Amended on 2026-10-18: see
+> [Amendment decisions](#amendment-decisions-2026-10-18) and the amended
+> sections after them. The text below is kept as the July record.
 - Global Atom feed valid, written by the Action only on a real change;
   stable IDs, `<updated>` = last real change (no noise commits).
 - `src/lib/feed.js` DOM-/network-/dependency-free; `scripts/test-feed.mjs`
@@ -157,3 +169,188 @@ push), README ("Subscribing" section), [`BACKLOG.md`](../BACKLOG.md) #16
 - Feed autodiscovery in `index.html`; PRD/README/BACKLOG updated.
 - No new user-related data store, no login, no real push, **no additional
   data source** (no district boundaries).
+
+## Amendment (2026-10-18)
+
+### Why amend, and what the re-survey found
+
+A-2 was refined on 2026-07-24 and never implemented. Since then the ground
+under its sketch has moved:
+- **A-6** added the in-app feed: `data/changelog.json`, written in the
+  real-change branch and pruned to 30 days.
+- **#28** took changes that carry only "sonstige Angaben aktualisiert" out
+  of that feed.
+- **A-5** made the interface bilingual.
+- **ADR-002** made the delivery multi-page.
+- **A-14** replaced the header and the dialog with a ☰ menu and a "Neu" tab.
+- **#36** brought CI.
+- **[A-17](./A-17-stadtteile.md)** now brings a district per site.
+
+Re-survey on 2026-10-18:
+- `changelog.json` already holds what a feed entry needs, filtered (#28),
+  windowed (30 days) and in the real-change branch. The "Neu" tab renders
+  it.
+- No site-URL constant exists, and Atom needs absolute URLs.
+- `update-data.yml` commits an explicit list of files. A new artifact is not
+  committed unless it is listed ([ADR-006](../adr/ADR-006-verlauf-zeitreihe.md)
+  names the trap).
+- `src/lib/` is for modules that build and browser both import. No browser
+  code renders Atom.
+
+### Amendment decisions (2026-10-18)
+
+The numbering continues after forks 1–3.
+
+**4 — One entry per update run, mirroring the "Neu" tab.** *Decided by the
+idea's originator* on 2026-10-18.
+- Each `changelog.json` entry becomes one Atom entry.
+- The title reads like the tab's heading plus counts, e.g. "18.10.2026,
+  06:08 — 1 neu, 2 entfernt".
+- The content is the list of titles, with the change notes.
+- This replaces the sketch's per-case entries (an `<id>` per
+  `vorgangsnummer` and change type): one notification per data change
+  instead of a dozen on busy days.
+
+*Discarded:* one entry per site.
+
+**5 — The feed is generated from `changelog.json`, right after it is
+written.**
+- Same 30-day window, same #28 filter, same `firstFill` collapse.
+- Parity becomes a chain: feed ⊆ `changelog.json` ⊆ `CHANGELOG.md`. The
+  feed, the "Neu" tab and the changelog never disagree.
+- This replaces "from the existing `diff` object + feature list".
+
+**6 — The generator is a build-side module, `scripts/feed.mjs`.** It is pure,
+dependency-free and tested. It is not `src/lib/feed.js` as sketched, because
+nothing in the browser renders Atom.
+
+**7 — Placement since A-14.**
+- An autodiscovery `<link rel="alternate" type="application/atom+xml">` in
+  `index.html`'s `<head>`.
+- A link "Änderungen abonnieren (Atom-Feed)" in the ☰ menu's "Mehr"
+  section.
+- One line at the top of the "Neu" tab: "Diese Änderungen als Feed
+  abonnieren".
+
+The chrome strings come in DE and EN. The feed's own content stays German,
+because it is dataset text (A-5/E3).
+
+**8 — The licence travels with the data.**
+- `<rights>` carries `ATTRIBUTION` from `scripts/build-data.mjs` word for
+  word.
+- `test-attribution.mjs` checks the feed as it checks the credits footer.
+- A feed is a second place where the city's data is republished, so the
+  CC-BY condition applies there too.
+
+**9 — Absolute URLs from one constant; identities from tag URIs.**
+- `SITE_URL = 'https://ahirrea.github.io/BauWatch-KA/'` in the build.
+  `<link rel="self">` and `<link rel="alternate">` derive from it.
+- Feed and entry `<id>`s are tag URIs. An entry's id is
+  `tag:ahirrea.github.io,2026:BauWatch-KA/changes/<stand>`: stable across
+  rewrites, because `stand` is the time of the real change, and unaffected by
+  a later move to another domain.
+
+**10 — Districts are named, not partitioned** (fork 3 revisited).
+- With A-17, a district per site exists at no extra source for A-2. Each
+  item names it after the title ("… (Durlach)").
+- Feeds per district stay out. *Decided by the idea's originator* on
+  2026-10-18 ("first only the global feed"); they remain cheap to add later.
+- The item shape this needs belongs to A-17/E10. This file only reads it.
+
+**11 — Bootstrapping and the commit list.**
+- The implementation commit generates `feeds/alle.xml` once from the
+  committed `changelog.json`. That is deterministic, #28's pattern, and makes
+  the discovery link resolve from the release on.
+- `update-data.yml`'s `git add` gains `feeds/alle.xml`.
+
+**12 — The service worker leaves the feed alone.** It is neither shell nor
+app data: not in `SHELL`, not in `DATA_PATHS`. Feed readers fetch it
+directly. Opening it in a browser with the app installed takes ADR-002's
+navigation path: network first, offline fallback.
+
+### What survives untouched
+
+- Fork 1 (one global feed) and fork 2 (a pure change stream).
+- The push-versus-subscription analysis and its non-goals: no real push, no
+  stored subscribers, no login.
+- Atom 1.0.
+- "Written only on a real change" and "no per-run-volatile value".
+- Feed `<updated>` = the newest entry's `stand`.
+- Autodiscovery.
+- The file path `feeds/alle.xml`.
+- The "near me" pseudo-subscription remains a separate, unrefined idea; this
+  amendment does not take it up.
+
+### Amended specification
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+  <title>Wo wird gebaut? – Baustellen-Änderungen in Karlsruhe</title>
+  <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes</id>
+  <link rel="self" href="https://ahirrea.github.io/BauWatch-KA/feeds/alle.xml"/>
+  <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
+  <updated>2026-10-18T04:08:27.807Z</updated>
+  <author><name>BauWatch-KA</name></author>
+  <rights>Datensatz „Baustellen", Stadt Karlsruhe, Lizenz CC-BY 4.0</rights>
+  <entry>
+    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-10-18T04:08:27.807Z</id>
+    <title>18.10.2026, 06:08 — 1 neu, 2 entfernt</title>
+    <updated>2026-10-18T04:08:27.807Z</updated>
+    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
+    <content type="html">&lt;ul&gt;&lt;li&gt;➕ B36 Fahrtrichtung Karlsruhe, …&lt;/li&gt;…&lt;/ul&gt;</content>
+  </entry>
+</feed>
+```
+
+- **Entry title:** date and time in Europe/Berlin, then the counts of the
+  entry's lists after the #28 filter. A `firstFill` entry reads
+  "Erstbefüllung: 166 Baustellen".
+- **Escaping:** every title and note is XML-escaped, and the HTML content is
+  escaped once more. Titles from the city contain `&`, quotes and stray
+  spaces.
+- **Entry order:** newest first, as in `changelog.json`.
+- **Empty window:** a valid feed without entries; `<updated>` is the
+  snapshot's `stand`.
+
+### Amended test plan
+
+`scripts/test-feed.mjs`, in `npm test`:
+- the XML is well-formed (a small checker in the test, no dependency) and
+  every entry has `id`, `title`, `updated` and `content`;
+- ids and `updated` derive from `stand` only: two generations from the same
+  input are byte-identical;
+- every entry corresponds to a `changelog.json` entry (parity);
+- `&`, `<` and quotes in titles come out escaped;
+- `<rights>` equals `ATTRIBUTION`;
+- `update-data.yml` lists `feeds/alle.xml`;
+- the committed `feeds/alle.xml` equals a fresh generation from the
+  committed `changelog.json`. This guards drift between the two artifacts.
+
+Browser: the menu link and the "Neu" tab line open the feed, the head
+carries the discovery link, and the strings switch with the language.
+
+### Amended Definition of Done
+
+- `feeds/alle.xml` is valid Atom 1.0, generated from `changelog.json` in the
+  real-change branch, and committed by the workflow. Its ids and timestamps
+  derive from `stand` only.
+- `scripts/test-feed.mjs` is green in `npm test`, including the attribution
+  check.
+- Autodiscovery, the menu link and the "Neu" tab line are in place, in DE
+  and EN.
+- Once A-17 is in, each item names its district.
+- There is no new host, no stored data, no login and no push.
+  `datenschutz.html` is unchanged: the feed is served by the same host.
+- `README.md` gains a "Subscribing" section, and `CLAUDE.md` names the feed
+  in the artifact list and the `git add` trap.
+
+### Implementation steps
+
+1. `scripts/feed.mjs` and `scripts/test-feed.mjs`.
+2. Wire it into `build-data.mjs` after the `changelog.json` write; add
+   `SITE_URL`; extend `update-data.yml`'s `git add`.
+3. Generate `feeds/alle.xml` once from the committed `changelog.json`.
+4. The discovery link, the menu link, the "Neu" tab line, strings and
+   styles; bump `CACHE_SHELL`.
+5. Browser checks, docs and status.
