@@ -245,11 +245,22 @@ check(
     'beide Datenpfade (DATA_PATH, CHANGELOG_PATH) laufen über dieselbe network-first-Behandlung',
     /DATA_PATHS/.test(fetchHandler) && /datenAntwort\(request\)/.test(fetchHandler)
   );
+  const dataPaths = (sw.match(/const DATA_PATHS = new Set\(\[([^\]]*)\]\)/)?.[1] ?? '').split(',').map((x) => x.trim());
   check(
-    'DATA_PATHS enthält sowohl DATA_PATH als auch CHANGELOG_PATH',
-    /new Set\(\[DATA_PATH, CHANGELOG_PATH\]\)/.test(sw)
+    'DATA_PATHS enthält DATA_PATH, CHANGELOG_PATH und HISTORY_PATH',
+    ['DATA_PATH', 'CHANGELOG_PATH', 'HISTORY_PATH'].every((p) => dataPaths.includes(p)),
+    dataPaths.join(', ')
   );
 }
+
+// --- Third data path: data/history.json (A-16, ADR-006) --------------------
+// The daily series is data like the snapshot: network-first, never shell. In
+// SHELL it would be precached cache-first and served stale indefinitely.
+check(
+  'sw.js knows data/history.json as a data path (A-16)',
+  /HISTORY_PATH = new URL\('data\/history\.json', self\.location\)/.test(sw)
+);
+check('data/history.json is NOT in SHELL (data, not shell)', !SHELL.includes('data/history.json'));
 
 // The registration and the offline marker may live in any client module
 // (A-14/E11) — checked across the whole graph, not just the entry file.

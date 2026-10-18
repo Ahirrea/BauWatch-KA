@@ -27,6 +27,7 @@ import {
 import { state } from './state.js';
 import { el, escapeHtml } from './dom.js';
 import { str } from './text.js';
+import { renderHistory } from './history.js';
 
 const LOCALE = { de: 'de-DE', en: 'en-GB' };
 let gezeichnet = false; // rendered once → re-render on new data / language
@@ -144,6 +145,7 @@ function render() {
     <p class="stats-scope">${escapeHtml(str('statsScope', { n: zahl(k.total) }))}</p>
     ${kpis}
     ${section(str('filterAmpelLabel'), stack)}
+    <section class="stats-section stats-history" id="stats-history"></section>
     ${section(str('statsArt'), barsHtml(art))}
     ${section(str('statsVerursacher'), barsHtml(wer))}
     ${section(str('statsBetroffen'), barsHtml(vm), str('statsBetroffenNote'))}
@@ -165,6 +167,9 @@ function render() {
         .join('')}</ol>` + (ohneDaten ? `<p class="stats-note">${escapeHtml(str('statsNoDates', { n: ohneDaten }))}</p>` : '')
     )}
   `;
+  // A-16: the history takes the slot A-15/E2 reserved after the Sperrgrad
+  // split. It keeps its own data and state across these re-renders.
+  renderHistory(el('stats-history'));
   gezeichnet = true;
 }
 

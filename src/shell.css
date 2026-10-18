@@ -654,6 +654,112 @@ html:has(body.app) {
   font-size: 0.8rem;
   color: var(--text-muted);
 }
+/* --- Verlauf (A-16) ----------------------------------------------------------
+   Two small line charts, one series each in --bar (A-16/E2, A-15/E3). Marks per
+   the dataviz spec: a 2 px line with round joins, an end dot with a 2 px ring in
+   the surface colour, solid hairline gridlines, ticks in muted text. No area
+   fill: the baseline is not 0 (E6). touch-action: pan-y keeps vertical swipes
+   scrolling the panel while a horizontal drag reads the chart. */
+.hist-charts {
+  border-radius: var(--radius);
+}
+.hist-charts:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+.hist-chart {
+  margin: 0 0 0.7rem;
+}
+.hist-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.1rem 0.5rem;
+  margin-bottom: 0.15rem;
+  font-size: 0.86rem;
+}
+.hist-now {
+  font-size: 1.05rem;
+  font-weight: 650;
+}
+.hist-delta {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+.hist-svg {
+  display: block;
+  max-width: 100%;
+  overflow: visible;
+  touch-action: pan-y;
+  cursor: crosshair;
+}
+.hist-grid {
+  stroke: var(--border);
+  stroke-width: 1;
+}
+.hist-tick {
+  fill: var(--text-muted);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+}
+.hist-line {
+  fill: none;
+  stroke: var(--bar);
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.hist-dot,
+.hist-cursor circle {
+  fill: var(--bar);
+  stroke: var(--surface);
+  stroke-width: 2;
+}
+.hist-end {
+  fill: var(--text);
+  font-size: 12px;
+  font-weight: 650;
+}
+.hist-cursor line {
+  stroke: var(--text-muted);
+  stroke-width: 1;
+}
+.hist-extremes {
+  margin: 0.1rem 0 0;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+.hist-readout {
+  min-height: 1.3em;
+  margin: 0.1rem 0 0;
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+}
+.hist-table summary {
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+.hist-table table {
+  width: 100%;
+  margin-top: 0.4rem;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  font-variant-numeric: tabular-nums;
+}
+.hist-table th,
+.hist-table td {
+  padding: 0.2rem 0.4rem;
+  border-bottom: 1px solid var(--border);
+  text-align: right;
+}
+.hist-table th[scope='row'],
+.hist-table thead th:first-child {
+  text-align: left;
+}
+.hist-table th[scope='row'] {
+  font-weight: 400;
+}
+
 @media (max-width: 380px) {
   .stats-bars {
     grid-template-columns: minmax(0, 8.5rem) minmax(0, 1fr);

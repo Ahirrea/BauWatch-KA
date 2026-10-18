@@ -22,7 +22,7 @@
 // echtes Push", siehe A-2): kein `push`-, kein
 // `notificationclick`-, kein `sync`-/`periodicsync`-Handler.
 
-const CACHE_SHELL = 'bauwatch-shell-v24';
+const CACHE_SHELL = 'bauwatch-shell-v25';
 const CACHE_DATA = 'bauwatch-data-v1';
 
 // App-Shell. `'./'` ist der Navigations-Einstieg (liefert index.html aus) und
@@ -47,6 +47,7 @@ const SHELL = [
   'src/ui/feed.js',
   'src/ui/filters.js',
   'src/ui/geo.js',
+  'src/ui/history.js',
   'src/ui/list.js',
   'src/ui/map.js',
   'src/ui/menu.js',
@@ -89,7 +90,10 @@ const DATA_PATH = new URL(DATA_URL).pathname;
 // Seitenaufruf zu verzögern oder scheitern zu lassen.
 const CHANGELOG_URL = new URL('data/changelog.json', self.location).href;
 const CHANGELOG_PATH = new URL(CHANGELOG_URL).pathname;
-const DATA_PATHS = new Set([DATA_PATH, CHANGELOG_PATH]);
+// data/history.json (A-16, ADR-006) — the third data path, same rule: the
+// daily series is data, not shell, so network-first and not prefetched.
+const HISTORY_PATH = new URL('data/history.json', self.location).pathname;
+const DATA_PATHS = new Set([DATA_PATH, CHANGELOG_PATH, HISTORY_PATH]);
 const SHELL_PATHS = new Set(SHELL.map((p) => new URL(p, self.location).pathname));
 
 // --- Lebenszyklus ----------------------------------------------------------

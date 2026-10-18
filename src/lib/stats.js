@@ -181,3 +181,90 @@ export function longest(features, n) {
     .sort((a, b) => b.days - a.days || String(a.feature.properties.titel).localeCompare(String(b.feature.properties.titel), 'de'))
     .slice(0, n);
 }
+
+// --- History (A-16) -----------------------------------------------------------
+// The daily series in data/history.json (ADR-006): one entry per calendar day
+// in Karlsruhe, holding that day's last snapshot counts. Shared by the build
+// (which writes the entries) and the browser (which draws them), so both agree
+// on what "a day" is.
+
+/** Time zone of every calendar day in the history (ADR-006). */
+export const HISTORY_TZ = 'Europe/Berlin';
+
+const DAY_MS = 86400000;
+const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
+const dayNumber = (date) => Date.UTC(+date.slice(0, 4), +date.slice(5, 7) - 1, +date.slice(8, 10)) / DAY_MS;
+const fromDayNumber = (n) => new Date(n * DAY_MS).toISOString().slice(0, 10);
+
+/**
+ * The calendar day ("YYYY-MM-DD") of a timestamp in Karlsruhe, or null. Built
+ * from formatToParts, so it depends on no locale's date order — a change at
+ * 00:30 local time lands on its own day, in summer and in winter.
+ * @param {string|Date} value
+ */
+export function berlinDate(value) {
+  const t = value instanceof Date ? value.getTime() : Date.parse(value);
+  if (Number.isNaN(t)) return null;
+  const parts = new Intl.DateTimeFormat('en-US', {
+    timeZone: HISTORY_TZ,
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  }).formatToParts(new Date(t));
+  const get = (type) => parts.find((p) => p.type === type)?.value;
+  return `${get('year')}-${get('month')}-${get('day')}`;
+}
+
+/**
+ * One row per calendar day from the first entry up to `today` (inclusive),
+ * carrying each value forward over days without an entry — no entry means no
+ * data change that day (A-16/E1). Malformed entries are skipped.
+ * @param {Array<{date: string}>} entries
+ * @param {string} [today] "YYYY-MM-DD"
+ */
+export function fillHistory(entries, today) {
+  const valid = (entries ?? [])
+    .filter((e) => e && typeof e.date === 'string' && DATE_RE.test(e.date))
+    .sort((a, b) => a.date.localeCompare(b.date));
+  if (!valid.length) return [];
+  const byDate = new Map(valid.map((e) => [e.date, e]));
+  const start = dayNumber(valid[0].date);
+  const end = Math.max(dayNumber(valid.at(-1).date), today && DATE_RE.test(today) ? dayNumber(today) : -Infinity);
+  const rows = [];
+  let current = valid[0];
+  for (let d = start; d <= end; d++) {
+    const date = fromDayNumber(d);
+    current = byDate.get(date) ?? current;
+    rows.push({ ...current, date });
+  }
+  return rows;
+}
+
+/** Highest and lowest value of `key`; a tie goes to the most recent day. */
+export function historyExtremes(rows, key) {
+  let max = null;
+  let min = null;
+  for (const r of rows ?? []) {
+    if (!max || r[key] >= max.value) max = { date: r.date, value: r[key] };
+    if (!min || r[key] <= min.value) min = { date: r.date, value: r[key] };
+  }
+  return { max, min };
+}
+
+/**
+ * The last row's value of `key` against the row `days` before it — or the
+ * first row, when the series is shorter; `days` in the result is the span
+ * actually compared.
+ */
+export function changeOver(rows, key, days) {
+  if (!rows?.length) return null;
+  const i = Math.max(0, rows.length - 1 - days);
+  const from = rows[i];
+  const to = rows.at(-1);
+  return {
+    from: { date: from.date, value: from[key] },
+    to: { date: to.date, value: to[key] },
+    delta: to[key] - from[key],
+    days: rows.length - 1 - i,
+  };
+}

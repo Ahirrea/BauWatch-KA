@@ -37,6 +37,7 @@ import {
   pruneChangelogEntries,
 } from './diff-data.mjs';
 import { analyzeQuality, summarizeQuality, renderQualityMarkdown } from './quality-report.mjs';
+import { historyEntry, serializeHistory, upsertHistory } from './history.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
@@ -44,6 +45,7 @@ const OUT_FILE = join(ROOT, 'data', 'baustellen.geojson');
 const CHANGELOG_FILE = join(ROOT, 'data', 'CHANGELOG.md');
 const CHANGELOG_JSON_FILE = join(ROOT, 'data', 'changelog.json');
 const QUALITY_FILE = join(ROOT, 'data', 'QUALITY.md');
+const HISTORY_FILE = join(ROOT, 'data', 'history.json');
 // Gitignorierte Datei; die Action liest daraus die Commit-Message.
 const BUILD_SUMMARY_FILE = join(ROOT, 'build-summary.txt');
 
@@ -373,6 +375,19 @@ function writeAtomic(path, content) {
   renameSync(tmp, path);
 }
 
+// The existing data/history.json (A-16). Missing → the history starts here.
+// Unreadable → null: this run leaves the file alone rather than replace a
+// long history with a single day (the backfill or Git can restore it).
+function loadHistory() {
+  if (!existsSync(HISTORY_FILE)) return [];
+  try {
+    const parsed = JSON.parse(readFileSync(HISTORY_FILE, 'utf8'));
+    return Array.isArray(parsed) ? parsed : null;
+  } catch {
+    return null;
+  }
+}
+
 // Vorhandenes data/changelog.json laden (für's Voranstellen + Pruning).
 // Fehlt/kaputt -> leeres Array, dieselbe Grosszügigkeit wie loadPrevious().
 function loadChangelogJson() {
@@ -556,6 +571,19 @@ async function main() {
   writeAtomic(CHANGELOG_JSON_FILE, JSON.stringify(changelogJson) + '\n');
   if (!hasFeedContent(changelogJsonEntry)) {
     console.log('„Was ist neu?"-Feed: kein Eintrag (nur sonstige Angaben geändert).');
+  }
+
+  // data/history.json (A-16, ADR-006) — one entry per calendar day, the
+  // day's last snapshot wins. Same "real change" branch, dated by `stand`,
+  // never pruned, and only counts the snapshot alone determines (A-16/E3).
+  // The workflow commits it only because its `git add` lists it.
+  const history = loadHistory();
+  if (history) {
+    writeAtomic(HISTORY_FILE, serializeHistory(upsertHistory(history, historyEntry(collection))));
+  } else {
+    const warning = 'WARNUNG: data/history.json ist nicht lesbar — Verlauf in diesem Lauf nicht fortgeschrieben.';
+    console.warn(warning);
+    if (process.env.GITHUB_STEP_SUMMARY) appendFileSync(process.env.GITHUB_STEP_SUMMARY, `\n> ${warning}\n`);
   }
   writeFileSync(BUILD_SUMMARY_FILE, `chore(data): ${line}\n\n${md}\n`, 'utf8');
   if (process.env.GITHUB_STEP_SUMMARY) {

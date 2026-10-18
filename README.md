@@ -13,7 +13,7 @@ time period?"**
 - 🚧 Construction-site areas drawn on the map, not just point markers
 - 🚦 Traffic light for the closure severity, plain text instead of administrative codes, remaining duration
 - 🔎 Address/radius search (1.5 km), filters by closure severity (with counts), remaining duration, mode of transport
-- 📊 Statistics — what is being built, by whom, for how long, which modes of transport are affected (all of Karlsruhe, computed in the browser)
+- 📊 Statistics — what is being built, by whom, for how long, which modes of transport are affected, and how the number of open sites has developed day by day since July 2026 (all of Karlsruhe)
 - 🆕 "What's new?" — the data changes of the last 30 days, right in the app
 - 🌐 Interface in German and English (legal pages stay German)
 - 🌗 Light and dark theme, including a darkened map — follows the system, switchable in the app
@@ -170,6 +170,10 @@ follow the places where you can see *whether* and *what* changed:
   commit message contains the short summary ("3 new, 1 removed …").
 - **Action job summary** — per run, in the Actions tab (runs *without* a
   change are also listed there, with a timestamp).
+- **`data/history.json`** — one entry per day: how many sites were open at the
+  end of that day, by closure severity (A-16). Drawn in the statistics tab;
+  written in the same run as a real change, never pruned, backfilled once from
+  the snapshot's Git history (`scripts/backfill-history.mjs`).
 - **`data/QUALITY.md`** — a quality report generated during the build
   (feature counts per pipeline stage, empty required fields, etc.), to
   quickly spot anomalies in the raw data.

@@ -290,3 +290,52 @@ None new. The file is served from the same origin.
    and styles.
 5. Browser checks, screenshots, docs and status.
 6. Right before landing: rerun the backfill (E8).
+
+## Implementation record (2026-10-18)
+
+Built on `ccr-0fb3ea8f-ywo45b`.
+
+**Verified:**
+- **`npm test`:** `scripts/test-history.mjs` (34 checks) is part of the suite.
+  It covers the day boundary in summer, in winter and in the night the clocks
+  go back; entry, upsert and serialisation; carrying forward, extremes and the
+  30-day change; the committed file; and the workflow's `git add`.
+  `test-pwa.mjs` checks the third data path.
+- **Backfill:** 247 snapshot commits, 1 skipped (the sample snapshot of the
+  first commit). The result is 91 days, 2026-07-20 to 2026-10-18, without a
+  gap, and identical to the refinement prototype's series (0 differences).
+- **The build's write path, simulated:** `build-data.mjs` ran against a
+  mocked WFS in a scratch copy of the repository.
+  - A real change replaced today's entry and left the 90 earlier ones
+    untouched.
+  - A second run without a change wrote nothing.
+- **Browser, 29 of 29 checks:**
+  - every printed value matches a Node recomputation: today 166 and 46, the
+    change over 30 days −7 and −1, highest 199 (31.07.), lowest 155 (02.08.),
+    full closures between 41 and 56;
+  - the table has 91 rows, and the section sits after "Sperrgrad";
+  - the readout works by touch (the choice stays after lifting), by mouse
+    (leaving resets it) and by keyboard (arrows, Home, End);
+  - a failed fetch shows one line, and the rest of the tab still renders;
+  - at 320 px in English nothing overflows.
+- **Contrast:** every text reaches at least 7.05:1 in light mode and 7.00:1
+  in dark mode; the lowest are the muted ticks and notes. The line reaches
+  9.13:1 and 6.10:1.
+
+**As built, beyond the decisions:**
+- `berlinDate()` sits in `src/lib/stats.js`, shared by build and browser. It
+  is built from `formatToParts`, so it does not depend on a locale's date
+  order.
+- A tie in the extremes goes to the most recent day. The total peaked at 199
+  on both 30.07. and 31.07., so the label says 31.07.
+- On touch the chosen day stays after the finger lifts, because a reading
+  that vanishes on lifting cannot be read. A mouse resets on leaving the
+  chart.
+- The build leaves a damaged history file alone, with a warning in the job
+  summary, instead of replacing a long history with a single day.
+- The y-ticks come out as 140–200 in steps of 20 for all sites, and 40–60 in
+  steps of 5 for full closures.
+
+**Definition of Done:** met on the branch. The Action's own first write comes
+with the first data change after landing. The backfill runs once more right
+before landing; `test-history.mjs` fails until it has.
