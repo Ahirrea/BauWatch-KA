@@ -2,6 +2,26 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 18.10.2026, 20:33 — 17 geändert (gesamt 166)
+
+- ✏️ Essostraße — sonstige Angaben aktualisiert
+- ✏️ Gebietsausbau/ Ehlersstr., Kurt-Schumacher-Str., Wilhelm-Kolb-Str.. Stresemannstr — sonstige Angaben aktualisiert
+- ✏️ Ebertstraße zw. Albtalbahnhof und Ebertstraße — sonstige Angaben aktualisiert
+- ✏️ Silcherstraße, Rabenweg, Buschwiesenweg — sonstige Angaben aktualisiert
+- ✏️ Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee — sonstige Angaben aktualisiert
+- ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — sonstige Angaben aktualisiert
+- ✏️ Sonnenstraße zw. Hardtstraße und Steubenstraße — sonstige Angaben aktualisiert
+- ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — sonstige Angaben aktualisiert
+- ✏️ Sophienstraße Kreuzung Reinhold-Frank-Straße — sonstige Angaben aktualisiert
+- ✏️ Reinhold-Frank-Straße zw. Viktoriastraße und Kriegstraße — sonstige Angaben aktualisiert
+- ✏️ Battstraße zw. Herrenalber Straße und Hegaustraße, Breisgaustraße — sonstige Angaben aktualisiert
+- ✏️ Kronenstraße, Kaiserstraße, Kronenplatz — sonstige Angaben aktualisiert
+- ✏️ Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße — sonstige Angaben aktualisiert
+- ✏️ Fritz-Haber-Weg — sonstige Angaben aktualisiert
+- ✏️ Haid-und-Neu-Straße zw. Hirtenweg und Karlsruher Straße — sonstige Angaben aktualisiert
+- ✏️ Breslauer Straße Wohnwege 64 A - I und 66 A -L — sonstige Angaben aktualisiert
+- ✏️ Busenbacher Str. 13 — sonstige Angaben aktualisiert
+
 ## 18.10.2026, 06:08 — 1 neu, 2 entfernt, 3 geändert (gesamt 166)
 
 - ➕ **B36 Fahrtrichtung Karlsruhe, Ausfahrt Neureut-Süd**
