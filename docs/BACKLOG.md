@@ -10,11 +10,16 @@ Suggested labels: `setup`, `data`, `frontend`, `a11y`, `docs`, `enhancement`.
 > [refinement process](./PROZESS.md).
 
 **Status legend:** ✅ done · 🟡 partial / open · ⬜ open
-**As of:** 2026-10-18 (**#40–#48 added and done:** nine findings of a
-`ponytail-review` of the whole repository. They cover multi-part cases
-reordered by the WFS, the precache, other sites' caches, the full-sheet camera,
-the marker-tap scroll, "bus" in street names, the legal pages' back links, the
-growing search bar and the CHANGELOG intro. Earlier the same day, **#39 added
+**As of:** 2026-10-18 (**#40–#76 added:** the 37 findings of a
+`ponytail-review` of the whole repository; each backlog number is the review
+number plus 39.
+- **#40–#48 are done.** They cover multi-part cases reordered by the WFS, the
+  precache, other sites' caches, the full-sheet camera, the marker-tap scroll,
+  "bus" in street names, the legal pages' back links, the growing search bar
+  and the CHANGELOG intro.
+- **#49–#76 are open.**
+
+Earlier the same day, **#39 added
 and done:** focus rings in the filter row were cut off. On a phone the district select's ring lost its top edge, and at
 every width the segment buttons' ring lost its top and bottom. It was reported
 from a phone on the day [A-16](./anforderungen/A-16-verlauf.md),
@@ -74,8 +79,10 @@ and dragging the outer one scrolled the whole feed out of the frame.)
 > spacing — the whole map on the first screen — is **A-13, implemented** the same
 > day (the filter row now stands between map and list on a phone).
 > **Open:** #17 (.ics export, optional), #19 (public-transit routing,
-> optional), #37 (light-mode Teil marker contrast on the map) and #38 (new
-> portal preview images, after the A-14 release). **#36** (CI test run) was
+> optional), #37 (light-mode Teil marker contrast on the map), #38 (new
+> portal preview images, after the A-14 release) and #49–#76, the review's
+> remaining findings (#49–#67 "should fix", #68–#76 "nice to have"; #50 and
+> #55 still need a decision). **#36** (CI test run) was
 > added and done on 2026-10-17, as step 0 of the interface rebuild A-14.
 > **A-14 and A-15 are implemented**. #23, #33 and #35 are moot since then and
 > stay ✅ with a dated note. **A-16, A-2 and A-17 followed on 2026-10-18**, and
@@ -945,6 +952,291 @@ everything from the first entry heading. The committed file lost exactly 245
 intro lines and their blank lines; all 246 entries stay.
 **DoD:** three prepends and the committed file in `test-build-data.mjs`.
 (Label: `data`)
+
+## Open findings from the ponytail review (2026-10-18)
+
+These are the review's other 28 findings. Their numbers follow the review: the
+backlog number is the review number plus 39, as for #40–#48. Each case below
+was checked at the lines it names, and each fix is the smallest the review
+found. The review counts #49–#67 as "should fix" (rarer bugs, risks and
+missing tests) and #68–#76 as "nice to have". None is fixed yet.
+
+### ⬜ #49 After a load error the status line gives the wrong advice
+Status: ready-for-agent (review finding 10)
+
+`renderStatus()` (`src/ui/list.js:73-95`) knows only "list empty". After a
+failed load, the next filter click replaces "konnten nicht geladen werden"
+with "Filter lockern oder „Alle" wählen". Switching the language turns "nicht
+verfügbar" into "wird geladen …" for good. **Fix:** `renderStatus()` checks
+`state.loadError` and `state.geladen` first; `loadData()` stops writing the
+status itself.
+**DoD:** after a failed load the error survives filter clicks and the language
+switch, in DE and EN. (Label: `frontend`)
+
+### ⬜ #50 A page left open never loads newer data
+Status: needs-triage (review finding 11; visible behaviour, and the threshold
+is open, so the [process](./PROZESS.md#requirement-or-task-the-test) may make
+it a requirement)
+
+`loadData()` runs only at boot (`src/app.js`). An installed app resumed after
+hours shows the old snapshot. After midnight a site still says "noch 1 Tag"
+instead of "endet heute". **Proposal:** on `visibilitychange`, reload when the
+last fetch is older than an hour.
+**DoD:** a decided threshold, and a resumed page shows the current snapshot and
+today's day counts. (Label: `frontend`)
+
+### ⬜ #51 A slow search answer overrides a district chosen after it
+Status: ready-for-agent (review finding 12)
+
+`wireSearch()` does not check, after `await geocode(q)`
+(`src/ui/search.js:51`), whether something else was chosen in the meantime.
+Search "Kaiserstraße", pick Durlach before the answer arrives, and Durlach is
+replaced by the search. **Fix:** a sequence number per search drops a stale
+answer, and choosing a district always clears the search (`src/app.js:244`).
+**DoD:** checked in the browser with a delayed Nominatim stand-in. (Label:
+`frontend`)
+
+### ⬜ #52 Landscape phone: the popup opens behind the sheet
+Status: ready-for-agent (review finding 13)
+
+Below 500 px of height there is no half sheet, so `setSheet('half')` from a
+list selection is turned into "full" (`src/ui/panel.js:92`), and the popup lies
+entirely behind the sheet. **Fix:** on short screens fall back to collapsed,
+not full.
+**DoD:** at 844 × 390 a row tap shows its popup. (Label: `frontend`)
+
+### ⬜ #53 "Neu laden" does nothing in a second window
+Status: ready-for-agent (review finding 14)
+
+With the app open twice, the first click activates the new worker. In the
+second window the captured worker is already active, so `SKIP_WAITING`
+changes nothing and no `controllerchange` follows (`src/ui/pwa.js:26`). The
+button greys out and the banner stays. **Fix:** if `worker.state ===
+'activated'`, reload directly.
+**DoD:** checked with two contexts sharing one service worker. (Label:
+`frontend`)
+
+### ⬜ #54 Offline, the feed link opens a dead page
+Status: ready-for-agent (review finding 15)
+
+The offline fallback returns the start page's body under the requested path
+(`sw.js`, `navigationAntwort()`). Under `feeds/alle.xml` every relative path
+points into `feeds/`, so the page is unstyled and stays at "wird geladen …".
+**Fix:** `return Response.redirect(INDEX_URL, 302)` instead of the body.
+**DoD:** offline, `feeds/alle.xml` lands on the working start page. (Label:
+`frontend`)
+
+### ⬜ #55 An HTTP error or a stalled response shows no data despite a cached copy
+Status: needs-triage (review finding 16; the stall timeout needs a number)
+
+`datenAntwort()` (`sw.js`) falls back to the cache only on a network error.
+A 503 from Pages or a 403 from a proxy reaches the page as "konnten nicht
+geladen werden", although a copy is cached. A stalled response leaves the list
+loading for good. **Fix:** treat a response without `ok` as a failure. For a
+stall, answer from the cache after a few seconds and let the network response
+update the cache later.
+**DoD:** 503 and a stalled response both show the cached snapshot, marked
+offline. (Label: `frontend`)
+
+### ⬜ #56 One malformed character in the city's text stops every data run
+Status: ready-for-agent (review finding 17)
+
+`stripHtml()` (`src/lib/format.js:28`) passes `&#12345678;` to
+`String.fromCodePoint`, which throws a RangeError, so `main()` exits 1 on every
+run until the city fixes the text. **Fix:** decode only code points up to
+`0x10FFFF` and keep the entity otherwise, plus a test case.
+**DoD:** `stripHtml('a &#12345678; b')` does not throw (`test-format.mjs`).
+(Label: `data`)
+
+### ⬜ #57 Control characters make the Atom feed invalid
+Status: ready-for-agent (review finding 18)
+
+`xml()` (`scripts/feed.mjs:32-37`) escapes `& < > "` but passes characters XML
+forbids, such as U+000B from Word. One such title makes `feeds/alle.xml`
+invalid for 30 days. None of the 248 snapshots has one so far. **Fix:** strip
+`[\u0000-\u0008\u000B\u000C\u000E-\u001F￾￿]` in `xml()`.
+**DoD:** a title with U+000B still gives well-formed XML (`test-feed.mjs`).
+(Label: `data`)
+
+### ⬜ #58 The data run often starts hours late or not at all
+Status: ready-for-agent (review finding 19)
+
+`cron: "0 */4 * * *"` fires at the top of the hour, when GitHub delays and
+drops scheduled runs. Of the last 100 scheduled runs (2026-09-19 to
+2026-10-18), 72 started over an hour late, with a median of 101 minutes, and
+about 40 % of the slots had no run at all. **Fix:** an odd minute, such as
+`cron: "17 */4 * * *"`, as GitHub recommends.
+**DoD:** a week later, start delays and dropped slots are compared with these
+figures. (Label: `data`)
+
+### ⬜ #59 A push to main during a data run discards its commit
+Status: ready-for-agent (review finding 20)
+
+The workflow pushes without fetching first (`update-data.yml`). A push to
+`main` between checkout and push, such as a release, makes the data push fail.
+Its changes then appear 4 h later, and a site that came and went in between
+never reaches the history. **Fix:** `git pull --rebase` before `git push`.
+**DoD:** a replay with two clones lands both commits. (Label: `data`)
+
+### ⬜ #60 Hand-made data commits skip the tests
+Status: ready-for-agent (review finding 21)
+
+`paths-ignore: data/**` (`.github/workflows/test.yml`) skips CI for pushes
+that touch only `data/`. The Action's own pushes start no workflow anyway, so
+what is skipped are exactly the documented hand steps: backfill, annotate and
+a #28 cleanup. Those are what `test-feed`, `test-history` and `test-districts`
+check. **Fix:** delete both `paths-ignore` blocks and the comment sentence
+that justifies them.
+**DoD:** a data-only push runs the Tests workflow. (Label: `setup`)
+
+### ⬜ #61 CI tests on Node 22, the data build runs on Node 20
+Status: ready-for-agent (review finding 22)
+
+Code using a newer API (`Map.groupBy`, say) passes CI and crashes every data
+run. Node 20 has been out of support since 2026-04-30. **Fix:**
+`node-version: "22"` in `update-data.yml`.
+**DoD:** both workflows name the same version. (Label: `setup`)
+
+### ⬜ #62 The time-zone regression tests cannot fail in CI
+Status: ready-for-agent (review finding 23)
+
+`test-format` and `test-build-data` guard two old date bugs that show only
+outside UTC, and the CI job runs in UTC; `test-format.mjs`'s header says so
+itself. **Fix:** `env: TZ: Europe/Berlin` on the test job.
+**DoD:** reverting either date fix turns CI red. (Label: `setup`)
+
+### ⬜ #63 The Sperrgrad note for the feed is untested
+Status: ready-for-agent (review finding 24)
+
+Only changes to the six `WATCH_FIELDS` (`scripts/diff-data.mjs`) reach "Neu"
+and the feed (#28). The test checks only that an ampel change counts as a
+change. If `['ampel', 'Sperrgrad']` is deleted, the suite stays green and Teil
+→ Voll vanishes from the feed. **Fix:** change each of the six fields in turn
+and assert the entry reaches the feed.
+**DoD:** deleting any watched field fails `test-diff.mjs`. (Label: `data`)
+
+### ⬜ #64 The licence check skips a missing attribution
+Status: ready-for-agent (review finding 25)
+
+`if (attrConst && daten.attribution)` (`scripts/test-attribution.mjs:157`)
+checks only when the field exists. If the build drops `attribution` from the
+snapshot, the suite stays green. **Fix:** `if (attrConst)`.
+**DoD:** a snapshot without `attribution` fails the test. (Label: `data`)
+
+### ⬜ #65 No test checks that a site's id is its vorgangsnummer
+Status: ready-for-agent (review finding 26)
+
+Swap the two `pick()` calls in `buildFeature()` (`scripts/build-data.mjs:351`)
+and the suite stays green. The next run would then report all 166 sites as
+removed and added. **Fix:** one assertion in `test-build-data.mjs`: `id ===
+'V-1'` (the fixture's per-geometry `id` differs).
+**DoD:** swapping the two picks fails the test. (Label: `data`)
+
+### ⬜ #66 The history file's protection is untested
+Status: ready-for-agent (review finding 27)
+
+`loadHistory()` returns `null` for an unreadable file, so the run leaves the
+file alone (ADR-006). If it returned `[]` like its neighbour
+`loadChangelogJson()`, the suite would stay green and one run would replace 91
+days with one. **Fix:** export it with a path parameter and test three cases:
+broken → `null`, `{}` → `null`, missing → `[]`.
+**DoD:** changing either `null` to `[]` fails `test-history.mjs`. (Label:
+`data`)
+
+### ⬜ #67 The privacy-notice check reads only JavaScript
+Status: ready-for-agent (review finding 28)
+
+`test-rechtstexte.mjs` collects external hosts only from `src/**/*.js`. A
+Google Font in `index.html`, or one pulled in by `@import` in the CSS, would
+send every visitor's IP to Google, and the check would stay green. **Fix:**
+also scan resource tags in `index.html` (`link`, `script`, `img`, `iframe`;
+not `a`) and `src/**/*.css`.
+**DoD:** a font link from an undocumented host fails the test. (Label:
+`docs`)
+
+### ⬜ #68 The language switch leaves the search line German; German shows "1.5 km"
+Status: ready-for-agent (review finding 29)
+
+The search message and the update banner are written once
+(`src/ui/search.js`, `src/ui/pwa.js`), so they stay German after a switch to
+English. The German text prints the radius as "1.5 km" (`km: RADIUS_KM` in
+`search.js:58` and `list.js:80`). **Fix:** re-apply the last search message in
+the language callback, and format the radius with `toLocaleString`.
+**DoD:** checked in DE and EN. (Label: `frontend`)
+
+### ⬜ #69 Keyboard: after a selection from a full sheet the focused row is hidden
+Status: ready-for-agent (review finding 30)
+
+A list selection lowers a full sheet to half (`src/app.js:90`), and the row
+with keyboard focus ends up below the screen edge (WCAG 2.4.11). **Fix:**
+scroll the row into view once the sheet has settled.
+**DoD:** checked with Enter on the lowest visible row of a full sheet.
+(Label: `a11y`)
+
+### ⬜ #70 The skip link does nothing while the desktop panel is collapsed
+Status: ready-for-agent (review finding 31)
+
+The collapsed panel is `inert` (`src/ui/panel.js:204`), so "Zur
+Baustellen-Liste springen" leaves focus on `<body>`. **Fix:** a click on the
+skip link opens the panel first.
+**DoD:** with the panel collapsed, the skip link lands focus in the list.
+(Label: `a11y`)
+
+### ⬜ #71 The quality report misdates sites in a local run
+Status: ready-for-agent (review finding 32)
+
+`new Date(r.bis)` and `new Date(r.von)` (`scripts/quality-report.mjs:57`, `:68`)
+read date-only strings as UTC midnight but compare them with local midnight. A
+local run in Karlsruhe lists sites starting today as "beginnt erst später".
+The Action's UTC runner is unaffected. **Fix:** use `parseDate` from
+`src/lib/format.js`.
+**DoD:** `test-quality.mjs` passes under `TZ=Europe/Berlin` with a site
+starting today. (Label: `data`)
+
+### ⬜ #72 A comment containing "/*" can hide modules from the UI guards
+Status: ready-for-agent (review finding 33)
+
+`withoutComments()` (`scripts/client-modules.mjs:23`) strips block comments
+first, so `/*` inside a `//` comment (for example "src/ui/*") swallows
+everything up to the next `*/`, imports included. No such comment exists
+today. **Fix:** strip whole `//` lines first, then block comments.
+**DoD:** a fixture with such a comment keeps its imports. (Label: `setup`)
+
+### ⬜ #73 The storage-key check skips keys it cannot resolve
+Status: ready-for-agent (review finding 34)
+
+The localStorage key check (`scripts/test-rechtstexte.mjs:266`) resolves only
+string literals and `const` names. It skips a template string or `KEYS.filter`
+without failing, so such a key could go live undocumented. **Fix:** fail on an
+argument it cannot resolve, as `test-i18n` does for `str()`.
+**DoD:** `localStorage.setItem(KEYS.x, …)` fails the test. (Label: `docs`)
+
+### ⬜ #74 Dead bootstrap block in the build
+Status: ready-for-agent (review finding 35)
+
+When QUALITY.md or changelog.json is missing, a no-change run creates it
+(`scripts/build-data.mjs`, the `existsSync(QUALITY_FILE)` block). The
+workflow's gate never sees untracked files, though, so nothing it creates is
+committed. **Fix:** delete the block (about −15 lines).
+**DoD:** the block is gone and `npm test` passes. (Label: `data`)
+
+### ⬜ #75 Empty override table and unused colours in classify.js
+Status: ready-for-agent (review finding 36)
+
+`ART_MAP` is empty, and nothing reads `AMPEL.*.color` (`src/lib/classify.js`).
+**Fix:** delete both (about −16 lines); the snapshot does not change.
+**DoD:** a rebuild from the same input gives byte-identical features. (Label:
+`data`)
+
+### ⬜ #76 Dead export and a locale table written three times
+Status: ready-for-agent (review finding 37)
+
+`getMap()` (`src/ui/map.js:34-36`) has no caller. `{ de: 'de-DE', en: 'en-GB' }`
+is written three times (`text.js`, `stats.js`, `history.js`), and all three
+copies must change when a language is added. **Fix:** delete `getMap()` and
+import `STAND_LOCALE` from `text.js` (about −5 lines).
+**DoD:** one locale table, and `npm test` and a browser smoke check pass.
+(Label: `frontend`)
 
 ---
 
