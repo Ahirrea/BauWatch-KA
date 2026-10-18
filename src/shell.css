@@ -496,6 +496,29 @@ html:has(body.app) {
   color: var(--text-muted);
   font-size: 0.85rem;
 }
+
+/* The feed link (A-2): one quiet line under the window note. The dataset text
+   in the feed stays German; only this line switches language. */
+.neu-subscribe {
+  margin: -0.25rem 0 0.75rem;
+  font-size: 0.85rem;
+}
+.neu-subscribe a {
+  color: var(--accent);
+}
+.neu-subscribe a::before {
+  content: '';
+  display: inline-block;
+  width: 0.7em;
+  height: 0.7em;
+  margin-right: 0.4em;
+  border-radius: 0.12em;
+  background: radial-gradient(circle at 18% 82%, var(--accent) 0 16%, transparent 17%),
+    radial-gradient(circle at 18% 82%, transparent 0 38%, var(--accent) 39% 52%, transparent 53%),
+    radial-gradient(circle at 18% 82%, transparent 0 66%, var(--accent) 67% 80%, transparent 81%);
+  vertical-align: -0.02em;
+}
+
 .whats-new-run {
   margin: 0.75rem 0;
 }

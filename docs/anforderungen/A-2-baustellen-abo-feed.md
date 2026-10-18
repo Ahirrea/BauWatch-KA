@@ -354,3 +354,54 @@ carries the discovery link, and the strings switch with the language.
 4. The discovery link, the menu link, the "Neu" tab line, strings and
    styles; bump `CACHE_SHELL`.
 5. Browser checks, docs and status.
+
+### Implementation record (2026-10-18)
+
+Built on `ccr-0fb3ea8f-ywo45b`, after [A-16](./A-16-verlauf.md).
+
+**Verified:**
+- **`npm test`:** `scripts/test-feed.mjs` (26 checks) is part of the suite.
+  It covers well-formed XML (a small checker in the test), one entry per
+  changelog entry, ids and `updated` from `stand`, byte-identical
+  regeneration, escaping of `&`, `<` and quotes, the entry titles, the
+  `firstFill` line, the empty window, district names after titles, the
+  committed feed against a fresh generation, and the wiring (workflow
+  `git add`, discovery link, menu and tab links, the service worker leaving
+  the feed alone). `test-attribution.mjs` checks `<rights>` against
+  `ATTRIBUTION`.
+- **Mutation:** six planted defects were all caught: a raw `&` in the
+  committed feed, an unbalanced tag, the feed missing from `git add`, the
+  discovery link removed, the build no longer writing the feed, and
+  `<rights>` drifting from `ATTRIBUTION`.
+- **The build's write path, simulated** against a mocked WFS:
+  - a real change added an entry "18.10.2026, 11:42 — 1 neu, 2 entfernt";
+  - the 164 generic-only changes of that run stayed out, as in the "Neu"
+    tab;
+  - feed and `changelog.json` held the same 53 entries in the same order,
+    and the drift check passed on the result.
+- **The bootstrap:** `node scripts/feed.mjs` generated `feeds/alle.xml` from
+  the committed `changelog.json`: 52 entries, 58 KB.
+- **Browser, 24 of 24 checks** in light, dark and English: the discovery
+  link; the "Neu" tab's line above the runs; the menu link; the strings in
+  both languages; the linked file served as Atom (`application/xml`); no page
+  errors. Both links reach 9.13:1 in light mode and 6.10:1 in dark mode.
+
+**As built, beyond the decisions:**
+- **`ATTRIBUTION` is exported from `build-data.mjs`.** `feed.mjs` imports
+  it back only dynamically, when run directly. A top-level await there
+  deadlocked the import cycle (exit 13, "unsettled top-level await"), so the
+  direct run uses a promise chain.
+- **The feed carries an `<icon>`** (`icons/icon-192.png`) for readers that
+  show one.
+- **The "Neu" tab's line** carries a small feed glyph drawn in CSS, in
+  `--accent`. It needs no new asset.
+- **`test-pwa.mjs` flagged the feed links at first.** Its precache-gap
+  guard requires every file `index.html` references to be in `SHELL`, and
+  decision 12 keeps the feed out on purpose. The guard now has a named list
+  of deliberate non-shell references, holding only `feeds/alle.xml`, and it
+  asserts that this list really stays out of `SHELL`. A blanket exception
+  (say, everything under `feeds/`) could hide a real precache gap.
+
+**Definition of Done:** met. The district per item renders as soon as A-17
+writes `{ titel, district }` items. The generator already reads both shapes
+(tested).

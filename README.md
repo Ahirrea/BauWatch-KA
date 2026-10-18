@@ -15,6 +15,7 @@ time period?"**
 - 🔎 Address/radius search (1.5 km), filters by closure severity (with counts), remaining duration, mode of transport
 - 📊 Statistics — what is being built, by whom, for how long, which modes of transport are affected, and how the number of open sites has developed day by day since July 2026 (all of Karlsruhe)
 - 🆕 "What's new?" — the data changes of the last 30 days, right in the app
+- 📡 Subscribe to the changes as an Atom feed — in any feed reader, no account, no push
 - 🌐 Interface in German and English (legal pages stay German)
 - 🌗 Light and dark theme, including a darkened map — follows the system, switchable in the app
 - 📲 Installable as an app and usable offline (see [Install as an App](#install-as-an-app))
@@ -147,6 +148,22 @@ The cron interval can be adjusted at the top of the workflow file.
 `.github/workflows/test.yml` runs `npm test` on every push and pull request
 that touches more than `data/`. It needs no `npm install`: the test scripts
 are plain Node. Data commits from the Action don't trigger it.
+
+## Subscribing
+
+The changes of the last 30 days are also an **Atom feed** (A-2):
+
+    https://ahirrea.github.io/BauWatch-KA/feeds/alle.xml
+
+Add it to any feed reader; most also find it on their own from the map
+page's address (the page links it in its `<head>`). The app links it in the
+☰ menu and in the "Neu" tab. There is one entry per data update, with the
+same lines as the "Neu" tab: new, changed and removed construction sites.
+Changes that only touched "other details" are left out (#28).
+
+Nothing is sent to anyone: your feed reader fetches the file, as a browser
+fetches the page. There is no push, no account and no list of subscribers.
+The feed carries the city's CC-BY attribution, like the map.
 
 ## Tracking changes
 

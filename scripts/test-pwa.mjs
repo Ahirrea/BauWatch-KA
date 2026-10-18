@@ -175,6 +175,17 @@ check('SHELL enthält die Rechtstexte (A-4)',
   ['impressum.html', 'datenschutz.html'].every((p) => shellSet.has(p)),
   [...shellSet].join(', '));
 
+// Referenced from the page but deliberately NOT shell: the Atom feed (A-2,
+// amendment decision 12) is data for feed readers, written by the Action —
+// precached cache-first it would be served stale. A named list, so that a
+// missing shell file can never hide behind a blanket exception.
+const NICHT_SHELL = new Set(['feeds/alle.xml']);
+check(
+  'deliberately non-shell references are really not in SHELL',
+  [...NICHT_SHELL].every((p) => !shellSet.has(p)),
+  [...NICHT_SHELL].filter((p) => shellSet.has(p)).join(', ')
+);
+
 for (const seite of htmlSeiten) {
   if (!existsSync(join(ROOT, seite))) continue; // Existenz meldet schon die SHELL-Prüfung
   const html = lies(seite);
@@ -194,6 +205,7 @@ for (const seite of htmlSeiten) {
     check(`aus ${seite} referenzierte Datei existiert: ${ref}`, existsSync(join(ROOT, ref)));
     // manifest.webmanifest, styles.css, app.js, leaflet, apple-touch-icon,
     // die Querverweise der Rechtstexte untereinander …
+    if (NICHT_SHELL.has(ref)) continue;
     check(`aus ${seite} referenzierte Datei ist precacht: ${ref}`, shellSet.has(ref));
   }
 

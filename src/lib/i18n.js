@@ -159,6 +159,9 @@ export const STRINGS = {
     popupVerursacher: 'Verursacher:',
 
     whatsNewWindowNote: 'Änderungen der letzten 30 Tage.',
+    // A-2: Atom-Feed
+    whatsNewSubscribe: 'Diese Änderungen als Feed abonnieren',
+    menuFeed: 'Änderungen abonnieren (Atom-Feed)',
     whatsNewLoading: 'Wird geladen …',
     whatsNewEmpty: 'Keine Änderungen in den letzten 30 Tagen.',
     whatsNewError: 'Nicht verfügbar (z. B. offline).',
@@ -301,6 +304,9 @@ export const STRINGS = {
     popupVerursacher: 'Caused by:',
 
     whatsNewWindowNote: 'Changes from the last 30 days.',
+    // A-2: Atom feed
+    whatsNewSubscribe: 'Subscribe to these changes as a feed',
+    menuFeed: 'Subscribe to changes (Atom feed)',
     whatsNewLoading: 'Loading …',
     whatsNewEmpty: 'No changes in the last 30 days.',
     whatsNewError: 'Not available (e.g. offline).',

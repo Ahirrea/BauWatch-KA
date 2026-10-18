@@ -14,7 +14,7 @@
 //   - ihr Text bleibt wortgleich mit ATTRIBUTION in scripts/build-data.mjs
 //     (sonst driften Datei-Metadaten und Footer auseinander)
 
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { clientModules, withoutComments } from './client-modules.mjs';
@@ -120,6 +120,15 @@ if (attrConst) {
     text === erwartet,
     `HTML: "${text}" ≠ Build: "${erwartet}"`
   );
+}
+
+// The Atom feed (A-2, amendment decision 8) republishes the city's data in a
+// second place, so the CC-BY condition travels with it: its <rights> carries
+// ATTRIBUTION word for word.
+if (attrConst && existsSync(join(ROOT, 'feeds', 'alle.xml'))) {
+  const rights = readFileSync(join(ROOT, 'feeds', 'alle.xml'), 'utf8').match(/<rights>([^<]*)<\/rights>/)?.[1] ?? '';
+  const decoded = rights.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&amp;/g, '&');
+  check('feeds/alle.xml: <rights> ist wortgleich mit ATTRIBUTION', decoded === attrConst[1], `Feed: "${decoded}"`);
 }
 
 // Der Datenschnappschuss selbst führt dasselbe Feld — mitprüfen, solange er da ist.

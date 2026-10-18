@@ -38,6 +38,7 @@ import {
 } from './diff-data.mjs';
 import { analyzeQuality, summarizeQuality, renderQualityMarkdown } from './quality-report.mjs';
 import { historyEntry, serializeHistory, upsertHistory } from './history.mjs';
+import { FEED_PATH, renderAtomFeed } from './feed.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
@@ -46,6 +47,7 @@ const CHANGELOG_FILE = join(ROOT, 'data', 'CHANGELOG.md');
 const CHANGELOG_JSON_FILE = join(ROOT, 'data', 'changelog.json');
 const QUALITY_FILE = join(ROOT, 'data', 'QUALITY.md');
 const HISTORY_FILE = join(ROOT, 'data', 'history.json');
+const FEED_FILE = join(ROOT, FEED_PATH);
 // Gitignorierte Datei; die Action liest daraus die Commit-Message.
 const BUILD_SUMMARY_FILE = join(ROOT, 'build-summary.txt');
 
@@ -71,7 +73,8 @@ function wfsCandidates() {
   ];
 }
 
-const ATTRIBUTION =
+// Exported for scripts/feed.mjs, whose <rights> carries it word for word (A-2).
+export const ATTRIBUTION =
   'Datensatz „Baustellen", Stadt Karlsruhe, Lizenz CC-BY 4.0';
 
 const ALLOW_EMPTY = process.argv.includes('--allow-empty');
@@ -572,6 +575,12 @@ async function main() {
   if (!hasFeedContent(changelogJsonEntry)) {
     console.log('„Was ist neu?"-Feed: kein Eintrag (nur sonstige Angaben geändert).');
   }
+
+  // feeds/alle.xml (A-2, amended 2026-10-18) — the Atom feed, generated from
+  // the very entries just written to changelog.json, so feed and "Neu" tab
+  // cannot disagree. Ids and timestamps come from `stand` only. Listed in
+  // update-data.yml's git add, or it would never be committed (ADR-006).
+  writeAtomic(FEED_FILE, renderAtomFeed(changelogJson, { attribution: ATTRIBUTION, fallbackUpdated: collection.stand }));
 
   // data/history.json (A-16, ADR-006) — one entry per calendar day, the
   // day's last snapshot wins. Same "real change" branch, dated by `stand`,
