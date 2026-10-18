@@ -24,7 +24,7 @@ export function popupHtml(f) {
       <span class="dot dot-${dotClass(p.ampel)}"></span>
       ${escapeHtml(p.titel)}
     </div>
-    <div>${escapeHtml(ampelLabel[p.ampel] || p.art)}</div>
+    <div>${escapeHtml(ampelLabel[p.ampel] || p.art)}${p.district ? ` · ${escapeHtml(p.district)}` : ''}</div>
     ${p.info ? `<div>${escapeHtml(p.info)}</div>` : ''}
     <div><strong>${escapeHtml(rest.text)}</strong> · ${escapeHtml(formatRange(p.von, p.bis, lang))}</div>
     <div>${escapeHtml(str('popupVerkehr'))} ${escapeHtml(vms || '–')}</div>
@@ -55,6 +55,7 @@ export function listItemHtml(f) {
       <span class="item-meta">
         <span class="item-restdauer ${rest.expired ? 'expired' : ''}">${escapeHtml(rest.text)}</span>
         · ${escapeHtml(ampelLabel[p.ampel] || p.art)}
+        ${p.district ? '· ' + escapeHtml(p.district) : ''}
         ${p.verursacher ? '· ' + escapeHtml(p.verursacher) : ''}
       </span>
       <span class="item-badges">${dist}${vms}</span>

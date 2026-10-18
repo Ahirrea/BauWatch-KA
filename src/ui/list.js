@@ -73,15 +73,23 @@ export function markSelected(key) {
 export function renderStatus(list) {
   const status = el('list-status');
   status.classList.remove('is-error');
+  // Search and district replace each other (A-17/E5): at most one "where".
+  const district = state.filters.district !== 'alle' ? state.filters.district : null;
   if (list.length === 0) {
     if (state.search) {
       status.textContent = str('listStatusEmptySearch', { km: RADIUS_KM, label: state.search.label });
+    } else if (district) {
+      status.textContent = str('listStatusEmptyDistrict', { district });
     } else {
       status.textContent = str('listStatusEmptyFilters');
     }
   } else {
     const count = list.length === 1 ? str('listStatusCountOne') : str('listStatusCountMany', { n: list.length });
-    const suffix = state.search ? str('listStatusSearchSuffix', { label: state.search.label }) : '';
+    const suffix = state.search
+      ? str('listStatusSearchSuffix', { label: state.search.label })
+      : district
+        ? str('listStatusDistrictSuffix', { district })
+        : '';
     status.textContent = `${count}${suffix}`;
   }
 }

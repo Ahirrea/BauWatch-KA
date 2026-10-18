@@ -92,10 +92,19 @@ export function wireSearch({ onResult, onReset }) {
   netzZustand();
 
   resetBtn.addEventListener('click', () => {
-    state.search = null;
-    resetBtn.hidden = true;
-    status.textContent = '';
-    input.value = '';
+    clearSearch();
     onReset();
   });
+}
+
+/**
+ * Clears the search — state, field, status and reset button — without moving
+ * the map. A district choice replaces the search this way (A-17/E5); the
+ * reset button adds the camera move on top.
+ */
+export function clearSearch() {
+  state.search = null;
+  el('search-reset').hidden = true;
+  el('search-status').textContent = '';
+  el('search-input').value = '';
 }

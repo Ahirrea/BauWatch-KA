@@ -174,6 +174,17 @@
                   <button type="button" data-value="oepnv" aria-pressed="false" data-i18n="filterOepnv">ÖPNV</button>
                 </div>
               </div>
+
+              <!-- Stadtteil (A-17/E4): 28 options do not fit as segments, a select
+                   does. Its numbers follow every filter but this one and the radius
+                   search, which a district replaces (E5). Options are built by
+                   src/ui/districts.js from data/districts.geojson. -->
+              <div class="filter-group filter-group-select" data-filter="district">
+                <label class="filter-label" for="filter-district" data-i18n="filterDistrictLabel">Stadtteil</label>
+                <select id="filter-district" class="filter-select">
+                  <option value="alle" data-i18n="filterDistrictAll">Alle Stadtteile</option>
+                </select>
+              </div>
             </div>
 
             <ul id="liste" class="liste" tabindex="-1" aria-label="Baustellen-Liste" data-i18n-attr="aria-label:listAriaLabel"></ul>
@@ -220,6 +231,9 @@
       <p class="attribution" id="attribution">Datenquelle: Datensatz <a href="https://transparenz.karlsruhe.de/dataset/baustellen" rel="noopener">„Baustellen"</a>, Stadt Karlsruhe, Lizenz <a href="https://creativecommons.org/licenses/by/4.0/deed.de" rel="license noopener">CC-BY 4.0</a></p>
       <p class="credits-line">
         Karte © <a href="https://www.openstreetmap.org/copyright" rel="noopener">OpenStreetMap</a>-Mitwirkende ·
+        <!-- A-17/E7: the district boundaries' source, static like the line above.
+             Word for word DISTRICTS_ATTRIBUTION in scripts/districts.mjs. -->
+        <span id="attribution-stadtteile">Stadtteile: <a href="https://transparenz.karlsruhe.de/dataset/stadtteile" rel="noopener">Stadt Karlsruhe</a></span> ·
         <a href="impressum.html">Impressum</a> ·
         <a href="datenschutz.html">Datenschutz</a>
       </p>

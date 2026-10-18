@@ -1,7 +1,7 @@
 // filters.js — the three filter groups and the two filtered sets (A-12),
 // split out in A-14/E11.
 
-import { endetInnerhalb, summarize } from '../lib/stats.js';
+import { countBy, endetInnerhalb, summarize } from '../lib/stats.js';
 import { state } from './state.js';
 import { RADIUS_KM, haversineKm, latLngOf } from './geo.js';
 
@@ -22,6 +22,12 @@ function matchesVerkehrsmittel(props, val) {
   return val === 'alle' || props.verkehrsmittel?.[val] === true;
 }
 
+// A-17/E4: a site without `district` (null, or an older cached snapshot) is
+// in no district — "Alle Stadtteile" includes it, no single district does.
+function matchesDistrict(props, val) {
+  return val === 'alle' || props.district === val;
+}
+
 // Alles AUSSER dem Sperrgrad — inklusive Umkreissuche, weil die Zahlen in den
 // Sperrgrad-Knöpfen die Alternativen innerhalb des gesuchten Gebiets meinen.
 // Diese Menge speist die Zahlen (A-12/E3): jeder Knopf sagt, wie viele Treffer
@@ -29,9 +35,14 @@ function matchesVerkehrsmittel(props, val) {
 // aktivem „Voll" ein Knopf mit der Aufschrift „0 Teil", der 118 Treffer liefert.
 export function filteredBase() {
   const now = new Date();
-  const { restdauer: rd, verkehrsmittel } = state.filters;
+  const { restdauer: rd, verkehrsmittel, district } = state.filters;
+  // The district belongs to the base since A-17: the Sperrgrad numbers count
+  // what their click brings within the chosen district.
   let list = state.features.filter(
-    (f) => matchesRestdauer(f.properties, rd, now) && matchesVerkehrsmittel(f.properties, verkehrsmittel)
+    (f) =>
+      matchesRestdauer(f.properties, rd, now) &&
+      matchesVerkehrsmittel(f.properties, verkehrsmittel) &&
+      matchesDistrict(f.properties, district)
   );
 
   if (state.search) {
@@ -48,6 +59,24 @@ export function filteredBase() {
     for (const f of list) delete f._dist;
   }
   return list;
+}
+
+// The district select's numbers (A-17/E4) — A-12/E3's rule per control: each
+// option says how many hits ITS choice would bring. So everything but the
+// district counts (Restdauer, Verkehrsmittel, Sperrgrad), and NOT the radius
+// search: choosing a district clears the search (E5), so a count within the
+// radius would promise a number the click does not deliver.
+export function districtCounts() {
+  if (!state.geladen) return null; // no numbers before data (A-12)
+  const now = new Date();
+  const { restdauer: rd, verkehrsmittel, ampel } = state.filters;
+  const set = state.features.filter(
+    (f) =>
+      matchesRestdauer(f.properties, rd, now) &&
+      matchesVerkehrsmittel(f.properties, verkehrsmittel) &&
+      matchesAmpel(f.properties, ampel)
+  );
+  return new Map(countBy(set, (f) => f.properties.district));
 }
 
 // Die Menge, die Karte, Liste und Statuszeile bekommen. filter() erhält die

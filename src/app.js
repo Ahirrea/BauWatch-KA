@@ -16,14 +16,17 @@ import { applyAmpel, filteredBase, renderFilterCounts, wireFilters } from './ui/
 import {
   applyAreaTier,
   bringAreaToFront,
+  clearDistrictOutline,
   clearSearchCircle,
   drawSearchCircle,
+  fitInVisibleArea,
   initMap,
   openPopup,
   renderAreas,
   renderMarkers,
   setChromeInsets,
   setViewInVisibleArea,
+  showDistrictOutline,
 } from './ui/map.js';
 import {
   hasListItem,
@@ -34,7 +37,8 @@ import {
   scrollListItemIntoView,
   setRowHovered,
 } from './ui/list.js';
-import { wireSearch } from './ui/search.js';
+import { clearSearch, wireSearch } from './ui/search.js';
+import { districtFeature, loadDistricts, renderDistrictOptions, wireDistrictFilter } from './ui/districts.js';
 import { loadChangelog, renderChangelogBody } from './ui/feed.js';
 import { initPanel, isDesktop, setSheet, sheetState, syncHandleLabel } from './ui/panel.js';
 import { wireMenu } from './ui/menu.js';
@@ -107,6 +111,7 @@ function render() {
   renderList(list);
   renderStatus(list);
   renderFilterCounts(base);
+  renderDistrictOptions();
   // Auswahl beibehalten, falls noch sichtbar
   if (state.selectedId && hasListItem(state.selectedId)) {
     markSelected(state.selectedId);
@@ -212,11 +217,38 @@ wireLanguageToggle(() => {
   // quoted raw content inside entries is unaffected either way (A-6/E6).
   renderChangelogBody();
 });
+// District and radius search replace each other (A-17/E5): both answer
+// "where", and combined they mostly produce empty sets.
+function resetDistrict() {
+  state.filters.district = 'alle';
+  clearDistrictOutline();
+}
+
+// Choosing a district: outline it and fit it into the uncovered map (A-17/E6)
+// — the fourth view that moves the camera; "Alle Stadtteile" returns to the
+// initial view, as the search reset does.
+wireDistrictFilter((name) => {
+  const animate = !prefersReducedMotion();
+  if (name === 'alle') {
+    clearDistrictOutline();
+    setViewInVisibleArea(KA_CENTER, 13, { animate });
+  } else {
+    if (state.search) {
+      clearSearch();
+      clearSearchCircle();
+    }
+    const bounds = showDistrictOutline(districtFeature(name));
+    if (bounds) fitInVisibleArea(bounds, { animate });
+  }
+  render();
+});
+
 // The radius search and its reset keep their views (A-11/E5) — centred in the
 // uncovered map since A-14, or on a phone the searched place would sit under
 // the half-open sheet.
 wireSearch({
   onResult(hit) {
+    resetDistrict();
     drawSearchCircle(hit.center);
     setViewInVisibleArea(hit.center, 14, { animate: !prefersReducedMotion() });
     render();
@@ -229,5 +261,8 @@ wireSearch({
 });
 wireMenu();
 initList({ onSelect: selectFeature, onHover: setHoverKey });
+// The boundaries (precached shell file) fill the district select; the select
+// is rebuilt on every render, so whichever of the two loads lands last wins.
+loadDistricts().then(() => renderDistrictOptions());
 loadData();
 initServiceWorker();

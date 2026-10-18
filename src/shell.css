@@ -80,6 +80,12 @@ html:has(body.app) {
 .leaflet-overlay-pane path.m-search-dot {
   stroke: #ffffff;
 }
+/* A chosen district's outline (A-17/E6) — its own pane under the overlay pane,
+   coloured from the token like every other map mark. */
+.leaflet-districts-pane path.m-district {
+  stroke: var(--map-district);
+  fill: var(--map-district);
+}
 .leaflet-overlay-pane path.m-search {
   stroke: var(--map-search);
   fill: var(--map-search);
@@ -370,6 +376,23 @@ html:has(body.app) {
   white-space: nowrap;
   cursor: pointer;
 }
+/* The district select (A-17/E4) looks like a segment: same height, border and
+   surface, so the filter row reads as one set of controls. */
+.filter-select {
+  min-height: 2.25rem;
+  max-width: 100%;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.9rem;
+}
+.filter-select:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
 .segments button.is-active {
   background: var(--accent);
   color: var(--accent-contrast);
@@ -517,6 +540,12 @@ html:has(body.app) {
     radial-gradient(circle at 18% 82%, transparent 0 38%, var(--accent) 39% 52%, transparent 53%),
     radial-gradient(circle at 18% 82%, transparent 0 66%, var(--accent) 67% 80%, transparent 81%);
   vertical-align: -0.02em;
+}
+
+/* The district after a title (A-17/E10), quieter than the title itself. */
+.whats-new-district {
+  color: var(--text-muted);
+  font-size: 0.9em;
 }
 
 .whats-new-run {

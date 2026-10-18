@@ -139,6 +139,14 @@ export const STRINGS = {
     listStatusCountOne: '1 Baustelle',
     listStatusCountMany: '{n} Baustellen',
     listStatusSearchSuffix: ' · Umkreis um „{label}"',
+    // A-17: Stadtteile
+    listStatusDistrictSuffix: ' in {district}',
+    listStatusEmptyDistrict: 'Keine Baustellen in {district} mit diesen Filtern.',
+    filterDistrictLabel: 'Stadtteil',
+    filterDistrictAll: 'Alle Stadtteile',
+    statsDistricts: 'Nach Stadtteil',
+    statsDistrictsNone: 'Ohne Baustelle: {names}',
+    statsDistrictUnknown: 'ohne Stadtteil',
     listStatusNoData: 'Zurzeit sind keine Baustellendaten vorhanden.',
     listStatusLoadError: 'Die Baustellendaten konnten nicht geladen werden. Bitte Seite neu laden.',
 
@@ -289,6 +297,14 @@ export const STRINGS = {
     listStatusCountOne: '1 construction site',
     listStatusCountMany: '{n} construction sites',
     listStatusSearchSuffix: ' · within radius of “{label}”',
+    // A-17: districts
+    listStatusDistrictSuffix: ' in {district}',
+    listStatusEmptyDistrict: 'No construction sites in {district} with these filters.',
+    filterDistrictLabel: 'District',
+    filterDistrictAll: 'All districts',
+    statsDistricts: 'By district',
+    statsDistrictsNone: 'No site: {names}',
+    statsDistrictUnknown: 'no district',
     listStatusNoData: 'No construction-site data is currently available.',
     listStatusLoadError: 'The construction-site data couldn’t be loaded. Please reload the page.',
 

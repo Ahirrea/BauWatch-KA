@@ -74,16 +74,19 @@ const entry = changelogEntry(diff, stand, next.length);
 
 check('changelogEntry keeps the real stand timestamp', entry.stand === stand);
 check('changelogEntry is not marked firstFill', entry.firstFill === false);
-check('changelogEntry lists the added title', entry.hinzugefuegt.includes('Haid-Neu'));
-check('changelogEntry lists the removed title', entry.entfernt.includes('Sophienstr'));
+// Items are { titel, district } since A-17/E10; older committed entries hold
+// plain title strings. Every reader takes both.
+const titel = (item) => (typeof item === 'string' ? item : item?.titel);
+check('changelogEntry lists the added title', entry.hinzugefuegt.map(titel).includes('Haid-Neu'));
+check('changelogEntry lists the removed title', entry.entfernt.map(titel).includes('Sophienstr'));
 check(
   'changelogEntry lists the changed title with its note',
   entry.geaendert.some((c) => c.titel === 'Durlacher' && c.changes.some((s) => s.includes('Ende')))
 );
 
 const md = summaryMarkdown(diff, next.length, 'Test');
-check('added titles match summaryMarkdown 1:1', entry.hinzugefuegt.every((titel) => md.includes(titel)));
-check('removed titles match summaryMarkdown 1:1', entry.entfernt.every((titel) => md.includes(titel)));
+check('added titles match summaryMarkdown 1:1', entry.hinzugefuegt.every((item) => md.includes(titel(item))));
+check('removed titles match summaryMarkdown 1:1', entry.entfernt.every((item) => md.includes(titel(item))));
 check('changed titles match summaryMarkdown 1:1', entry.geaendert.every((c) => md.includes(c.titel)));
 
 // --- 1b. #28: the generic note is the one deliberate divergence -------------

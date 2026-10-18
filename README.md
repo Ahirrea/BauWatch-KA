@@ -13,6 +13,7 @@ time period?"**
 - 🚧 Construction-site areas drawn on the map, not just point markers
 - 🚦 Traffic light for the closure severity, plain text instead of administrative codes, remaining duration
 - 🔎 Address/radius search (1.5 km), filters by closure severity (with counts), remaining duration, mode of transport
+- 🏘️ Districts: filter the sites by Stadtteil, see the chosen district outlined on the map, and the counts per district in the statistics
 - 📊 Statistics — what is being built, by whom, for how long, which modes of transport are affected, and how the number of open sites has developed day by day since July 2026 (all of Karlsruhe)
 - 🆕 "What's new?" — the data changes of the last 30 days, right in the app
 - 📡 Subscribe to the changes as an Atom feed — in any feed reader, no account, no push
@@ -247,7 +248,10 @@ the popup, though.
 Code: **MIT** (see [`LICENSE`](LICENSE)).
 Data: "Baustellen" ("construction sites"), City of Karlsruhe, **CC-BY 4.0** —
 attribution static in the credits on the map in `index.html`, guarded by
-`scripts/test-attribution.mjs`.
+`scripts/test-attribution.mjs`. District boundaries: "Stadtteile Stadt
+Karlsruhe", City of Karlsruhe — CC0 per the portal's metadata (GovData lists
+CC BY 4.0), credited on the map as well; committed once as
+`data/districts.geojson` ([ADR-007](docs/adr/ADR-007-stadtteilgrenzen.md)).
 No warranty; only the on-site signage is binding.
 
 Operator details and data flows: [`impressum.html`](impressum.html) and

@@ -32,18 +32,25 @@ function changelogRunHtml(entry) {
   // Quoted content (titles, change notes) stays German — it's a verbatim quote
   // of the same raw city data the main list already leaves untranslated (E6),
   // only the chrome labels around it (visually-hidden "Added:"/…) are bilingual.
+  // Items are { titel, district } since A-17/E10; entries written before carry
+  // plain title strings and stay readable for their 30 days.
+  const titel = (item) => (typeof item === 'string' ? item : (item?.titel ?? ''));
+  const district = (item) =>
+    item && typeof item === 'object' && item.district
+      ? ` <span class="whats-new-district">· ${escapeHtml(item.district)}</span>`
+      : '';
   const items = [
     ...(entry.hinzugefuegt || []).map(
-      (titel) =>
-        `<li><span class="visually-hidden">${escapeHtml(str('whatsNewAdded'))}</span> ➕ <strong>${escapeHtml(titel)}</strong></li>`
+      (item) =>
+        `<li><span class="visually-hidden">${escapeHtml(str('whatsNewAdded'))}</span> ➕ <strong>${escapeHtml(titel(item))}</strong>${district(item)}</li>`
     ),
     ...(entry.entfernt || []).map(
-      (titel) =>
-        `<li><span class="visually-hidden">${escapeHtml(str('whatsNewRemoved'))}</span> ➖ <s>${escapeHtml(titel)}</s></li>`
+      (item) =>
+        `<li><span class="visually-hidden">${escapeHtml(str('whatsNewRemoved'))}</span> ➖ <s>${escapeHtml(titel(item))}</s>${district(item)}</li>`
     ),
     ...(entry.geaendert || []).map(
       (c) =>
-        `<li><span class="visually-hidden">${escapeHtml(str('whatsNewChanged'))}</span> ✏️ ${escapeHtml(c.titel)} — ${escapeHtml((c.changes || []).join('; '))}</li>`
+        `<li><span class="visually-hidden">${escapeHtml(str('whatsNewChanged'))}</span> ✏️ ${escapeHtml(titel(c))}${district(c)} — ${escapeHtml((c.changes || []).join('; '))}</li>`
     ),
   ].join('');
   return `

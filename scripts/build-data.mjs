@@ -39,6 +39,7 @@ import {
 import { analyzeQuality, summarizeQuality, renderQualityMarkdown } from './quality-report.mjs';
 import { historyEntry, serializeHistory, upsertHistory } from './history.mjs';
 import { FEED_PATH, renderAtomFeed } from './feed.mjs';
+import { assignDistrict, loadDistrictsFile } from './districts.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
@@ -48,6 +49,9 @@ const CHANGELOG_JSON_FILE = join(ROOT, 'data', 'changelog.json');
 const QUALITY_FILE = join(ROOT, 'data', 'QUALITY.md');
 const HISTORY_FILE = join(ROOT, 'data', 'history.json');
 const FEED_FILE = join(ROOT, FEED_PATH);
+// District boundaries (A-17, ADR-007): a committed static input, read here and
+// never fetched by the regular run.
+const DISTRICTS_FILE = join(ROOT, 'data', 'districts.geojson');
 // Gitignorierte Datei; die Action liest daraus die Commit-Message.
 const BUILD_SUMMARY_FILE = join(ROOT, 'build-summary.txt');
 
@@ -319,7 +323,7 @@ function dedupeFeatures(features) {
   return byKey;
 }
 
-function buildFeature(props, geometry, areaGeometries) {
+function buildFeature(props, geometry, areaGeometries, districts = null) {
   const art = classifyArt(pick(props, FIELDS.art));
   const info = stripHtml(pick(props, FIELDS.info) ?? '');
   const titel = String(pick(props, FIELDS.titel) ?? '').trim() || art.label;
@@ -336,10 +340,11 @@ function buildFeature(props, geometry, areaGeometries) {
 
   const point = representativePoint(geometry);
   if (!point) return null;
+  const coordinates = [round(point[0]), round(point[1])];
 
   return {
     type: 'Feature',
-    geometry: { type: 'Point', coordinates: [round(point[0]), round(point[1])] },
+    geometry: { type: 'Point', coordinates },
     properties: {
       // Stabile Vorgangsnummer als Identität (überdauert Läufe; Basis der
       // Änderungsverfolgung), Fallback auf die per-Geometrie-id.
@@ -360,6 +365,11 @@ function buildFeature(props, geometry, areaGeometries) {
       // are named in English since 2026-07-27 (E7 in A-7). Additive: `geometry`
       // stays the marker Point, so search, filters, and the list are untouched.
       area: buildArea(areaGeometries),
+      // The district its POINT lies in (A-17/E2, ADR-007): name, or null when the
+      // point is in no district and none is within 100 m. English name like
+      // `area` (E7 in A-7). Part of the diff signature on purpose — a boundary
+      // refresh that moves a site is a real change of what the app shows (E9).
+      district: districts ? assignDistrict(coordinates, districts) : null,
     },
   };
 }
@@ -456,13 +466,18 @@ async function main() {
   const byKey = dedupeFeatures(kaFeatures);
   console.log(`Nach Deduplizierung: ${byKey.size} Vorgänge.`);
 
+  // District boundaries (A-17): loaded once; without them every site gets
+  // `district: null` and the run goes on.
+  const districts = loadDistrictsFile(DISTRICTS_FILE);
+  if (!districts) console.warn('data/districts.geojson fehlt oder ist unlesbar — district bleibt null.');
+
   // 3.–5. Transformieren, bereinigen, klassifizieren. Nebenbei Qualitäts-Records
   //        (mit Rohwerten) für den Datenqualitäts-Report sammeln (Backlog #18).
   const features = [];
   const qualityRecords = [];
   let skipped = 0;
   for (const { feature: f, areas } of byKey.values()) {
-    const built = buildFeature(f.properties, f.geometry, areas);
+    const built = buildFeature(f.properties, f.geometry, areas, districts);
     if (!built) {
       skipped++;
       continue;

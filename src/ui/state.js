@@ -15,13 +15,18 @@ export const state = {
   // The load attempt failed (A-15: the statistics tab says so instead of
   // waiting forever for data that is not coming).
   loadError: false,
-  filters: { restdauer: 'alle', ampel: 'alle', verkehrsmittel: 'alle' },
+  // `district` (A-17/E4): a district name or 'alle'; replaces the radius
+  // search and is replaced by it (E5).
+  filters: { restdauer: 'alle', ampel: 'alle', verkehrsmittel: 'alle', district: 'alle' },
   search: null, // { center: [lat, lon], label: string }
   selectedId: null,
   // A-9: Feature unter dem Zeiger bzw. mit Tastaturfokus — flüchtig, überlebt
   // absichtlich kein render() (die Zeile und die Ebene darunter werden dort
   // zerstört, ihr mouseleave käme nie an → Geist-Hervorhebung).
   hoverKey: null,
+  // A-17: the committed district boundaries (data/districts.geojson), loaded
+  // once at boot; null until then, or when the file could not be read.
+  districts: null,
   lang: DEFAULT_LANG,
   theme: 'system',
 };

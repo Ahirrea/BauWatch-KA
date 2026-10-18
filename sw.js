@@ -22,7 +22,7 @@
 // echtes Push", siehe A-2): kein `push`-, kein
 // `notificationclick`-, kein `sync`-/`periodicsync`-Handler.
 
-const CACHE_SHELL = 'bauwatch-shell-v26';
+const CACHE_SHELL = 'bauwatch-shell-v27';
 const CACHE_DATA = 'bauwatch-data-v1';
 
 // App-Shell. `'./'` ist der Navigations-Einstieg (liefert index.html aus) und
@@ -42,6 +42,7 @@ const SHELL = [
   'src/app.js',
   // Feature modules of the client (A-14/E11). scripts/test-pwa.mjs follows the
   // whole import graph from src/app.js and fails on any module missing here.
+  'src/ui/districts.js',
   'src/ui/dom.js',
   'src/ui/feature-html.js',
   'src/ui/feed.js',
@@ -75,6 +76,9 @@ const SHELL = [
   'icons/icon-512.png',
   'icons/icon-512-maskable.png',
   'icons/apple-touch-icon.png',
+  // District boundaries (A-17, ADR-007): a committed static input that
+  // changes only with a commit bumping CACHE_SHELL — shell, not data.
+  'data/districts.geojson',
 ];
 
 // Absolute Pfade einmalig aus den relativen Angaben ableiten — self.location ist

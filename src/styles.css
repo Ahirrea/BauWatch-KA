@@ -59,6 +59,8 @@
   --map-teil: #f08a00;
   --map-gering: #197a3d;
   --map-search: #1b4b73;
+  /* A chosen district's outline (A-17/E6): a violet no other map mark uses. */
+  --map-district: #6b2fa0;
   /* Tile filter (A-14/E8): none in light mode, a darkening recipe in dark. */
   --tile-filter: none;
   /* Bars of the statistics tab (A-15/E3): one neutral series colour —
@@ -104,6 +106,7 @@
     --map-teil: #ffb02e;
     --map-gering: #5fce88;
     --map-search: #8cc0ec;
+    --map-district: #b48ee8;
     --tile-filter: invert(1) hue-rotate(180deg) brightness(0.92) contrast(0.88) saturate(0.55);
     --bar: #6ba7d6;
   }
@@ -131,6 +134,7 @@
   --map-teil: #ffb02e;
   --map-gering: #5fce88;
   --map-search: #8cc0ec;
+  --map-district: #b48ee8;
   --tile-filter: invert(1) hue-rotate(180deg) brightness(0.92) contrast(0.88) saturate(0.55);
   --bar: #6ba7d6;
 }

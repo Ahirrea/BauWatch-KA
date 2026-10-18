@@ -122,6 +122,26 @@ if (attrConst) {
   );
 }
 
+// --- The district boundaries' credit (A-17/E7) ------------------------------
+// Same rules as the attribution: static in the served HTML, inside the first
+// <footer> (visible without interaction), word for word the build-side
+// constant, untouched by JavaScript and by the language switch.
+{
+  const distConst = lies('scripts/districts.mjs').match(/DISTRICTS_ATTRIBUTION\s*=\s*'([^']+)'/);
+  check('scripts/districts.mjs defines DISTRICTS_ATTRIBUTION', Boolean(distConst));
+  const footer = html.match(/<footer[\s\S]*?<\/footer>/)?.[0] ?? '';
+  const span = footer.match(/<span id="attribution-stadtteile"[^>]*>([\s\S]*?)<\/span>/);
+  check('the first <footer> carries the district credit statically', Boolean(span));
+  if (distConst && span) {
+    check('district credit is word for word DISTRICTS_ATTRIBUTION', nurText(span[1]) === distConst[1], `HTML: "${nurText(span[1])}"`);
+    check('district credit links the dataset page', /transparenz\.karlsruhe\.de\/dataset\/stadtteile/.test(span[1]));
+    check('district credit carries no data-i18n', !/data-i18n/.test(span[0]));
+  }
+  const lookup = /attribution-stadtteile/;
+  const touching = clientModule.filter((m) => lookup.test(withoutComments(m.source))).map((m) => m.path);
+  check('no client module looks up the district credit', touching.length === 0, touching.join(', '));
+}
+
 // The Atom feed (A-2, amendment decision 8) republishes the city's data in a
 // second place, so the CC-BY condition travels with it: its <rights> carries
 // ATTRIBUTION word for word.

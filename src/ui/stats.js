@@ -28,6 +28,7 @@ import { state } from './state.js';
 import { el, escapeHtml } from './dom.js';
 import { str } from './text.js';
 import { renderHistory } from './history.js';
+import { districtNames } from './districts.js';
 
 const LOCALE = { de: 'de-DE', en: 'en-GB' };
 let gezeichnet = false; // rendered once → re-render on new data / language
@@ -129,6 +130,12 @@ function render() {
     5,
     str('statsOther')
   );
+  // A-17/E8: every district with at least one site, by count — all printed,
+  // like every chart here. "ohne Stadtteil" appears only when a site has none;
+  // the districts without a site are named in one note line.
+  const perDistrict = countBy(features, (f) => f.properties.district || str('statsDistrictUnknown'));
+  const withSite = new Set(perDistrict.map(([name]) => name));
+  const noSite = districtNames().filter((name) => !withSite.has(name));
   const vm = Object.entries(VM_LABEL[state.lang])
     .map(([key, label]) => [label, features.filter((f) => f.properties.verkehrsmittel?.[key] === true).length])
     .sort((a, b) => b[1] - a[1]);
@@ -148,6 +155,11 @@ function render() {
     <section class="stats-section stats-history" id="stats-history"></section>
     ${section(str('statsArt'), barsHtml(art))}
     ${section(str('statsVerursacher'), barsHtml(wer))}
+    ${section(
+      str('statsDistricts'),
+      barsHtml(perDistrict) +
+        (noSite.length ? `<p class="stats-note">${escapeHtml(str('statsDistrictsNone', { names: noSite.join(', ') }))}</p>` : '')
+    )}
     ${section(str('statsBetroffen'), barsHtml(vm), str('statsBetroffenNote'))}
     ${section(
       str('statsRestdauer'),

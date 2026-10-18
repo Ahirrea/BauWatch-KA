@@ -23,6 +23,7 @@ let map;
 let areaLayer;
 let markerLayer;
 let searchLayer;
+let districtLayer;
 const markerById = new Map(); // key -> Leaflet-Marker
 const areaById = new Map(); // key -> Leaflet-Layer der Fläche (A-7)
 let handlers = { onSelect: () => {}, onHover: () => {} };
@@ -48,7 +49,46 @@ export function initMap({ onSelect, onHover }) {
   areaLayer = L.layerGroup().addTo(map);
   markerLayer = L.layerGroup().addTo(map);
   searchLayer = L.layerGroup().addTo(map);
+  // A chosen district's outline (A-17/E6) gets its own pane below the overlay
+  // pane (400), so areas and markers always lie on top of it.
+  map.createPane('districts').style.zIndex = '390';
+  districtLayer = L.layerGroup().addTo(map);
   return map;
+}
+
+/**
+ * Draws the outline of one district (A-17/E6): non-interactive, a faint wash,
+ * coloured through the --map-district token (src/shell.css). Returns its
+ * bounds for the camera; null clears.
+ */
+export function showDistrictOutline(feature) {
+  districtLayer.clearLayers();
+  if (!feature) return null;
+  const layer = L.geoJSON(feature, {
+    pane: 'districts',
+    interactive: false,
+    style: { className: 'm-district', weight: 2.5, opacity: 1, fill: true, fillOpacity: 0.07 },
+  }).addTo(districtLayer);
+  return layer.getBounds();
+}
+
+export function clearDistrictOutline() {
+  districtLayer?.clearLayers();
+}
+
+/**
+ * fitBounds into the part of the map the chrome leaves uncovered (A-17/E6),
+ * at zoom 15 at most. The fourth view that moves the camera, after the initial
+ * view and the search result and reset (A-14/E13 revised); a selection still
+ * moves nothing (A-11).
+ */
+export function fitInVisibleArea(bounds, options) {
+  map.fitBounds(bounds, {
+    paddingTopLeft: L.point(insets.left, insets.top),
+    paddingBottomRight: L.point(insets.right, insets.bottom),
+    maxZoom: 15,
+    ...options,
+  });
 }
 
 /** Stores what the chrome covers and re-pads every open-able popup with it. */

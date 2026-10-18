@@ -8,6 +8,8 @@
 // point, and everything that asks "where" reads the point). A site whose area
 // straddles a boundary therefore counts once, where its marker is.
 
+import { existsSync, readFileSync } from 'node:fs';
+
 const M_PER_DEG = 111320; // metres per degree of latitude (and of longitude at the equator)
 
 /** Distance in metres beyond which the nearest-district fallback gives up. */
@@ -91,3 +93,32 @@ export function assignDistrict(point, districts) {
   }
   return bestM <= NEAREST_MAX_M ? best : null;
 }
+
+/**
+ * The committed boundaries (data/districts.geojson, ADR-007), or null when the
+ * file is missing or unreadable — a fresh fork, say. The build then writes
+ * `district: null` everywhere instead of failing: the district is an
+ * addition, the snapshot is the product.
+ */
+export function loadDistrictsFile(path) {
+  if (!existsSync(path)) return null;
+  try {
+    const fc = JSON.parse(readFileSync(path, 'utf8'));
+    return Array.isArray(fc?.features) && fc.features.length ? fc : null;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * The credit for the boundaries, word for word as it stands statically in
+ * index.html's credits footer, where "Stadt Karlsruhe" links the dataset page
+ * (A-17/E7, guarded by test-attribution.mjs). It names no licence on purpose:
+ * the portal's metadata says CC0 (fetched 2026-10-18), GovData's listing says
+ * CC BY 4.0. Under CC0 the credit is a courtesy. Under CC BY, naming the
+ * creator and linking a page that states the licence is the "reasonable
+ * manner" its section 3(a)(2) allows. Asserting either licence here could be
+ * wrong. "Stadtteile", not "Stadtteilgrenzen": the longer word cost the credits
+ * strip a fourth line at 320 px (measured, A-17's implementation record).
+ */
+export const DISTRICTS_ATTRIBUTION = 'Stadtteile: Stadt Karlsruhe';

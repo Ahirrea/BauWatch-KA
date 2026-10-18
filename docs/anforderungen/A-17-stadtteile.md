@@ -100,6 +100,18 @@ case's point.
 - The browser precaches it (`SHELL`), because it changes only together with
   a commit that bumps `CACHE_SHELL`.
 
+**E3 revised (2026-10-18).** The finest tolerance of at least 1 m that
+changes no current assignment and stays under 150 KB — not the coarsest one.
+- **Evidence:** E3's wording allowed either reading. The first fetch took the
+  coarsest tolerance that changed no assignment: 10 m, 36.7 KB.
+- **Why that is too coarse:** district boundaries often run along streets,
+  which is exactly where sites are. At 10 m a future site near such a
+  boundary could land in the wrong district, and the outline drifts visibly
+  at high zoom (at zoom 17 one pixel is about 0.8 m).
+- **Result:** the refetch chose 1 m: 4,122 of 19,548 vertices, 87 KB, no
+  assignment changed. The file records the tolerance it was simplified with
+  (`simplifiedM`).
+
 **E4 — The filter is a `<select>` labelled "Stadtteil".**
 - **Place:** on a phone it sits in the scrolling filter row after
   "Verkehrsmittel"; on desktop it gets its own row.
@@ -145,6 +157,22 @@ Karlsruhe", with the licence step 1 confirms, goes into the credits footer.
 - It goes where it costs the least height. Joining the OSM line is the first
   candidate. The collapsed sheet and the uncovered map share are measured
   before and after, against A-14's recorded values.
+
+**E7 revised (2026-10-18).** The credit reads "Stadtteile: Stadt Karlsruhe"
+and names no licence. "Stadt Karlsruhe" links the dataset page, which states
+the licence.
+- **The licence:** step 1 read CC0 from the portal's metadata, the primary
+  source, while GovData's listing still says CC BY 4.0. Naming either could be
+  wrong.
+- **Why this covers both:** under CC0 the credit is a courtesy. Under CC BY,
+  naming the creator and linking a page that carries the licence is the
+  "reasonable manner" section 3(a)(2) allows.
+- **The wording:** "Stadtteilgrenzen" cost the credits strip a fourth line at
+  320 px (65 px instead of 50). "Stadtteile" does not.
+- **Measured cost:** 320–375 px unchanged (50 px), 390–414 px from 35 to
+  50 px, desktop unchanged (35 px). The uncovered map share as A-14 measures
+  it, from the search bar to the sheet, is unchanged, because the strip lies
+  on the map.
 
 **E8 — Statistics: a section "Nach Stadtteil"** in A-15/E2's slot, after
 "Wer baut?".
@@ -366,3 +394,84 @@ This table is the cross-reference.
 5. The feed (A-2): the district after each title.
 6. Browser checks, contrast, screenshots, docs and status.
 7. Right before landing: annotate the latest snapshot again (E9).
+
+## Implementation record (2026-10-18)
+
+Built on `ccr-0fb3ea8f-ywo45b`, after [A-16](./A-16-verlauf.md) and
+[A-2](./A-2-baustellen-abo-feed.md).
+
+**Step 1, the fetch:** two dispatched runs of the temporary workflow step,
+then the workflow file was reset to `main`'s version.
+- **Licence:** `http://dcat-ap.de/def/licenses/cc-zero` per the portal's
+  metadata (modified 2025-06-02). The GeoJSON resource is dated 2023-03-08,
+  the Shapefile is hosted on kacloud.karlsruhe.de.
+- **Fields:** `NUMMER` and `NAME`.
+- **The data:** 27 polygons, already in WGS84, 19,548 vertices. Simplified
+  at 1 m (*E3 revised*) to 4,122 vertices and 87 KB.
+- **Assignment:** all 166 sites assigned, 0 `null`. One point lay outside
+  every polygon, 15.7 m from Waldstadt's boundary, and the 100 m fallback
+  assigned it there.
+- **Sites per district:** Innenstadt-West 26, Durlach 24, Waldstadt 13,
+  Südweststadt 12, Innenstadt-Ost 11, Weststadt 10, …, down to 1 each in
+  Grünwinkel, Nordstadt and Stupferich. Every district has at least one site
+  today.
+
+**Verified:**
+- **`npm test`:** `scripts/test-districts.mjs` is part of the suite. It
+  covers holes, multipolygons, a shared edge, the fallback in metres, the
+  committed file, a snapshot annotated exactly as the build would compute it,
+  the build's wiring and the new item shape. The "no `null`" figure is
+  printed, not asserted, because E2 allows `null`.
+  - `test-changelog-feed.mjs` reads both item shapes.
+  - `test-attribution.mjs` guards the second credit: static, in the first
+    `<footer>`, word for word `DISTRICTS_ATTRIBUTION`, untouched by any
+    client module, no `data-i18n`.
+- **The build, simulated** against a mocked WFS:
+  - added and changed items carry their district, removed ones the district
+    from the previous snapshot;
+  - the feed names it after each title;
+  - the drift check holds.
+- **Browser, 35 of 35 checks:**
+  - the select lists "Alle Stadtteile" plus 27 districts in German order,
+    with counts equal to the snapshot;
+  - choosing Durlach narrows list and markers to 24, every row names
+    Durlach, and the status reads "24 Baustellen in Durlach";
+  - the outline is drawn and fitted into the uncovered map (zoom 13 → 12);
+  - the Sperrgrad numbers count within the district (9/14/1) and stand
+    still while toggling Sperrgrad, while the district numbers follow
+    Sperrgrad (Durlach 9 with "Voll");
+  - selecting a site leaves the zoom unchanged (A-11), and its popup names
+    the district;
+  - a live search resets the district, and a district clears the search
+    (field, reset button, circle);
+  - "Alle Stadtteile" returns to zoom 13 with all 166 sites;
+  - the statistics section follows "Wer baut?" and its 27 bars equal a
+    recomputation;
+  - the "Neu" tab shows "· Durlach" for new items and still renders older
+    string items;
+  - English at 320 px works, without overflow.
+- **Offline (service worker):** shell cache `v27` with 41 entries, the
+  boundaries included. With same-origin requests aborted, choosing Durlach
+  still narrows the list to 24 and draws the outline, and the offline marker
+  shows.
+- **Contrast of `--map-district`** against A-14's measured tile luminance:
+  `#6b2fa0` reaches 5.91:1 on the light tiles, `#b48ee8` 5.11:1 on the
+  darkened ones.
+
+**As built, beyond the decisions:**
+- **The district counts leave out the radius search.** A district choice
+  clears the search (E5), so a count inside the search radius would promise
+  a number the click does not deliver. E4's list (Restdauer, Verkehrsmittel,
+  Sperrgrad) already said so; this states it.
+- **`scripts/annotate-districts.mjs`** writes `district` into the committed
+  snapshot right after `area`, the key order `buildFeature()` uses, and
+  leaves `stand` alone. It runs again right before landing;
+  `test-districts.mjs` fails until it has.
+- **The search module exports `clearSearch()`**, which clears the search
+  without moving the map. The reset button adds the camera move on top.
+- **The outline has its own Leaflet pane** (z-index 390), so areas and markers
+  always lie on top of it.
+
+**Definition of Done: met.** The boundaries' licence and field names are
+recorded above.
+

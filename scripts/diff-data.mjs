@@ -156,13 +156,18 @@ export function changelogEntry(diff, stand, total, { firstFill = false } = {}) {
   if (firstFill) {
     return { stand, firstFill: true, total };
   }
+  // Since A-17/E10 every item carries its district: added and changed ones
+  // from the new snapshot, removed ones from the previous one (the diff hands
+  // over the feature of the side it comes from). Readers take both this shape
+  // and the older plain title strings while those are inside the 30-day window.
+  const item = (f) => ({ titel: titleOf(f), district: f.properties?.district ?? null });
   return cleanChangelogEntry({
     stand,
     firstFill: false,
-    hinzugefuegt: diff.added.map(titleOf),
-    entfernt: diff.removed.map(titleOf),
+    hinzugefuegt: diff.added.map(item),
+    entfernt: diff.removed.map(item),
     geaendert: diff.changed.map((c) => ({
-      titel: titleOf(c.feature),
+      ...item(c.feature),
       changes: c.changes.length ? c.changes : [GENERIC_CHANGE_NOTE],
     })),
   });
