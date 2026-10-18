@@ -11,8 +11,11 @@
 //   1. reads the portal metadata — licence, resource dates;
 //   2. fetches the GeoJSON and converts UTM to WGS84 if needed;
 //   3. keeps only { nr, name } per district, one feature per district;
-//   4. simplifies the rings only as far as no site in the committed snapshot
-//      changes its district and the file stays under MAX_BYTES (A-17/E3).
+//   4. simplifies the rings with the FINEST tolerance of at least
+//      MIN_TOLERANCE_M that changes no site's district in the committed
+//      snapshot and keeps the file under MAX_BYTES (A-17/E3). Finest, not
+//      coarsest: boundaries often run along streets, which is exactly where
+//      sites are, so a coarse outline would put future sites on the wrong side.
 //
 // Optional overrides when the field heuristics pick wrongly:
 //   NAME_KEY=<property> NR_KEY=<property> node scripts/fetch-districts.mjs
@@ -35,9 +38,11 @@ const DATASET_PAGE = `${PORTAL}/dataset/${DATASET_ID}`;
 // the metadata lists no GeoJSON resource.
 const FALLBACK_URL = `${PORTAL}/dataset/8474ba52-f851-4f4b-b05a-1cba9bbd1f4d/resource/2a7fd644-bc67-477a-bb9e-cf88f076b7af/download/stadtteile.json`;
 const MAX_BYTES = 150 * 1024;
-// Coarsest first: the first tolerance that changes no assignment and fits
-// MAX_BYTES wins. 0 = unsimplified.
+// Every tolerance is measured and reported; 0 = unsimplified. Below
+// MIN_TOLERANCE_M the file grows fast for no visible gain (at zoom 17 one
+// pixel is about 0.8 m).
 const TOLERANCES_M = [10, 6, 4, 3, 2, 1.5, 1, 0.5, 0];
+const MIN_TOLERANCE_M = 1;
 const M_PER_DEG = 111320;
 
 const report = [];
@@ -236,8 +241,7 @@ async function main() {
   // no assignment and fits MAX_BYTES.
   const lat0 = isUtm ? 49 : first[1];
   const frame = metricFrame(isUtm, lat0);
-  let chosen = null;
-  let exact = null;
+  const candidates = [];
   for (const tol of TOLERANCES_M) {
     const features = [...byName.values()].map((e) => {
       const polys = e.polys
@@ -257,17 +261,21 @@ async function main() {
       source: DATASET_PAGE,
       license: licence,
       ...(dataModified ? { dataModified } : {}),
+      simplifiedM: tol,
     };
     const text =
       JSON.stringify(header).replace(/}$/, ',"features":[\n') + features.map((f) => JSON.stringify(f)).join(',\n') + '\n]}\n';
     const bytes = Buffer.byteLength(text);
     const vertices = features.reduce((n, f) => n + vertexCount(f.geometry), 0);
     log(`Tolerance ${tol} m: ${vertices} vertices, ${(bytes / 1024).toFixed(1)} KB, assignments changed: ${changed}`);
-    if (changed === 0 && bytes <= MAX_BYTES && !chosen) chosen = { tol, text, bytes };
-    if (tol === 0) exact = { tol, text, bytes };
+    candidates.push({ tol, text, bytes, changed });
   }
-  // Nothing coarse qualified: keep the boundaries exact, whatever the size.
-  chosen ??= exact;
+  // The finest qualifying tolerance; if none qualifies, the exact boundaries,
+  // whatever the size.
+  const chosen =
+    candidates
+      .filter((c) => c.tol >= MIN_TOLERANCE_M && c.changed === 0 && c.bytes <= MAX_BYTES)
+      .sort((a, b) => a.tol - b.tol)[0] ?? candidates.find((c) => c.tol === 0);
 
   writeFileSync(OUT_FILE, chosen.text, 'utf8');
   log(`Written: data/districts.geojson — tolerance ${chosen.tol} m, ${(chosen.bytes / 1024).toFixed(1)} KB`);
