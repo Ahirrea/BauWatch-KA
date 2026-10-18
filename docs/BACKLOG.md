@@ -10,8 +10,12 @@ Suggested labels: `setup`, `data`, `frontend`, `a11y`, `docs`, `enhancement`.
 > [refinement process](./PROZESS.md).
 
 **Status legend:** ✅ done · 🟡 partial / open · ⬜ open
-**As of:** 2026-10-18 (**#39 added and done:** focus rings in the filter row
-were cut off. On a phone the district select's ring lost its top edge, and at
+**As of:** 2026-10-18 (**#40–#48 added and done:** nine findings of a
+`ponytail-review` of the whole repository. They cover multi-part cases
+reordered by the WFS, the precache, other sites' caches, the full-sheet camera,
+the marker-tap scroll, "bus" in street names, the legal pages' back links, the
+growing search bar and the CHANGELOG intro. Earlier the same day, **#39 added
+and done:** focus rings in the filter row were cut off. On a phone the district select's ring lost its top edge, and at
 every width the segment buttons' ring lost its top and bottom. It was reported
 from a phone on the day [A-16](./anforderungen/A-16-verlauf.md),
 [A-2](./anforderungen/A-2-baustellen-abo-feed.md) and
@@ -78,7 +82,8 @@ and dragging the outer one scrolled the whole feed out of the frame.)
 > **#39** (focus rings cut off in the filter row), found on a phone the same
 > day, is done. The same report led to
 > [A-18](./anforderungen/A-18-filter-zuruecksetzen.md), one reset for all
-> filters.
+> filters. **#40–#48**, nine findings of a review of the whole repository, are
+> done too.
 
 ---
 
@@ -838,6 +843,108 @@ alike. It is never entirely hidden, and that is what WCAG 2.4.11 asks.
 **DoD:** every focus ring in the filter row is complete at 320, 414 and
 1280 px in both schemes, and the row does not move. (Label: `a11y`,
 `frontend`)
+
+## Findings from the ponytail review (2026-10-18)
+
+A review of the whole repository with the `ponytail-review` skill: four parallel
+area reviews (pipeline, client, service worker and security, tests). Each
+finding was checked again at the lines it names. It produced 37 findings. The
+idea's originator chose the nine below to fix. Each was proven before and
+after the fix, by a replay, a test or a browser check. No cross-site scripting
+path was found: hostile text in every data field rendered as text.
+
+### ✅ #40 Multi-part cases change with the WFS order
+Status: done (2026-10-18)
+
+`dedupeFeatures()` took a case's first Point as the marker and joined its
+shapes in arrival order, and the WFS order changes between runs. Replaying the
+snapshot history from 2026-07-28: 38 of 201 data commits with a changed site
+were only reorderings, and 491 of 989 "geändert" lines were noise. The marker
+of Elisabeth-Großwendt-Straße flipped 61 m back and forth. The features are
+now sorted by geometry before merging; A-7 records "E8 revised again". An
+offline replay showed one re-pick of 39 cases with the generic note, so
+nothing reached the feed, and then no change in any order.
+**DoD:** the same parts give the same feature in any order
+(`test-build-data.mjs`). (Label: `data`)
+
+### ✅ #41 A new shell version could be precached with old files
+Status: done (2026-10-18)
+
+The install ran `cache.addAll(SHELL)` with the default cache mode, so the
+browser's HTTP cache could answer, and Pages keeps files fresh there for 10
+minutes. A version found within that time was filled with the previous
+version's files. It kept them until the next `CACHE_SHELL` bump; "Neu laden"
+ran old code. The shell is now fetched with `cache: 'reload'`. Checked against
+a Pages-like server (max-age=600): the new precache now holds the new files.
+**DoD:** test-pwa checks the install's `cache: 'reload'`. (Label: `frontend`)
+
+### ✅ #42 Activating deleted other sites' caches on the shared origin
+Status: done (2026-10-18)
+
+`activate` deleted every cache but its own two. All sites on
+ahirrea.github.io share the origin's cache storage; the Lieferkarte keeps
+`lieferkarte-shell/-data/-tiles-v6` there. It now deletes only `bauwatch-*`
+caches. Checked: a `lieferkarte-tiles-v6` cache now survives a BauWatch
+activation.
+**DoD:** test-pwa checks the prefix filter and the cache names. (Label:
+`frontend`)
+
+### ✅ #43 With a full sheet, district and search views landed wrong
+Status: done (2026-10-18)
+
+With the sheet at full, `chromeInsets()` left −24 px of map. A district fit hit
+zoom 15 at the wrong spot, and a search centred under the search bar. Views
+now aim at the half sheet. Measured at 414 px:
+- Durlach: zoom 15 → 12, visible after lowering 26 % → 100 %.
+- The search target: y=56 → y=232 in the free map.
+**DoD:** checked in the browser at 414 × 896. (Label: `frontend`)
+
+### ✅ #44 After a marker tap the list row was cut off
+Status: done (2026-10-18)
+
+On the collapsed sheet, a marker tap bottom-aligned the row with a 32-px
+sliver. Opening the sheet showed 24 of 118 px. A row taller than the visible
+box now aligns its top; now all 118 px are visible.
+**DoD:** checked in the browser at 414 × 896. (Label: `frontend`)
+
+### ✅ #45 "bus" in street names marked sites as ÖPNV-only
+Status: done (2026-10-18)
+
+The pattern matched "Busenbacher Str." and "Buschwiesenweg", so both sites
+were missing from the "Auto" filter. "bus" now counts only as a word end or
+before a bus word. Across all 248 snapshots only those street names change.
+**DoD:** both real titles and five bus words in `test-classify.mjs`. (Label:
+`data`)
+
+### ✅ #46 "Zurück zur Karte" mixed old and new files after a release
+Status: done (2026-10-18)
+
+The legal pages linked to `index.html`, which is not a shell path (only `./`
+is). After a release the page came from the network and its scripts from the
+old precache. The four links now point to `./`. Checked: the page stays
+consistent until the update.
+**DoD:** test-pwa compares page references with SHELL as written, and
+test-rechtstexte expects `./`. (Label: `frontend`)
+
+### ✅ #47 A growing search bar covered the zoom "+" and the sheet handle
+Status: done (2026-10-18)
+
+`--searchbar-bottom` was re-measured only when the head resized. On a phone,
+though, the search bar is `position: fixed`, outside the head. After "nicht
+gefunden" the bar reached 106 px while the variable stayed at 60 px. The
+observer now watches the bar too; the zoom control and a full sheet start
+below it.
+**DoD:** checked in the browser at 414 × 896. (Label: `frontend`)
+
+### ✅ #48 CHANGELOG.md repeated its intro before every entry
+Status: done (2026-10-18)
+
+The header cut ended at the first blank line, so the intro sentence stayed and
+came back with every run: 246 copies. `prependChangelogText()` now keeps
+everything from the first entry heading. The committed file lost exactly 245
+intro lines and their blank lines; all 246 entries stay.
+**DoD:** three prepends and the committed file in `test-build-data.mjs`.
+(Label: `data`)
 
 ---
 
