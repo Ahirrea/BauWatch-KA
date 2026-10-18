@@ -109,6 +109,31 @@ export function renderFilterCounts(base) {
   }
 }
 
+/** Whether any filter group is off "Alle"; the reset shows only then (A-18/E3). */
+export function filtersActive() {
+  return Object.values(state.filters).some((v) => v !== 'alle');
+}
+
+/**
+ * Every group back to "Alle" (A-18): what each group's own "Alle" does
+ * (A-12/E4), at once, in the state and in the segment buttons. The district
+ * select follows in the next render(), which rebuilds it from the state.
+ */
+export function resetFilters() {
+  for (const dim of Object.keys(state.filters)) state.filters[dim] = 'alle';
+  document.querySelectorAll('.filter-group .segments button').forEach((b) => {
+    const active = b.dataset.value === 'alle';
+    b.classList.toggle('is-active', active);
+    b.setAttribute('aria-pressed', String(active));
+  });
+}
+
+/** Shows the reset while a filter is active (A-18/E3); called from render(). */
+export function renderFilterReset() {
+  const btn = document.getElementById('filter-reset');
+  if (btn) btn.hidden = !filtersActive();
+}
+
 // On a phone the three groups share one horizontally scrolling row (A-14/E5);
 // a fade at the right edge says there is more — only while there is.
 function syncFade(row) {

@@ -12,7 +12,14 @@ import { el, prefersReducedMotion } from './ui/dom.js';
 import { KA_CENTER, featureKey } from './ui/geo.js';
 import { STAND_LOCALE, liesGespeicherteSprache, str, wireLanguageToggle } from './ui/text.js';
 import { liesGespeichertesFarbschema, wireThemeToggle } from './ui/theme.js';
-import { applyAmpel, filteredBase, renderFilterCounts, wireFilters } from './ui/filters.js';
+import {
+  applyAmpel,
+  filteredBase,
+  renderFilterCounts,
+  renderFilterReset,
+  resetFilters,
+  wireFilters,
+} from './ui/filters.js';
 import {
   applyAreaTier,
   bringAreaToFront,
@@ -112,6 +119,7 @@ function render() {
   renderStatus(list);
   renderFilterCounts(base);
   renderDistrictOptions();
+  renderFilterReset();
   // Auswahl beibehalten, falls noch sichtbar
   if (state.selectedId && hasListItem(state.selectedId)) {
     markSelected(state.selectedId);
@@ -241,6 +249,24 @@ wireDistrictFilter((name) => {
     if (bounds) fitInVisibleArea(bounds, { animate });
   }
   render();
+});
+
+// One reset for all four filter groups (A-18): what each group's "Alle" does,
+// at once. A chosen district takes its outline and camera with it, as "Alle
+// Stadtteile" does (E4); a radius search keeps its own × (E2).
+el('filter-reset').addEventListener('click', (e) => {
+  const btn = e.currentTarget;
+  // The button vanishes once used; focus it held goes to the selected tab,
+  // the nearest control that stays, rather than to <body> (E6).
+  const hadFocus = document.activeElement === btn;
+  const hadDistrict = state.filters.district !== 'alle';
+  resetFilters();
+  if (hadDistrict) {
+    clearDistrictOutline();
+    setViewInVisibleArea(KA_CENTER, 13, { animate: !prefersReducedMotion() });
+  }
+  render();
+  if (hadFocus) document.querySelector('.tabs [aria-selected="true"]')?.focus({ preventScroll: true });
 });
 
 // The radius search and its reset keep their views (A-11/E5) — centred in the

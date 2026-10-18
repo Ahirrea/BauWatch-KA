@@ -106,6 +106,13 @@
 
           <div class="status-row">
             <p class="list-status" id="list-status" role="status" aria-live="polite"></p>
+            <!-- One reset for all four filter groups, there only while one is off
+                 "Alle" (A-18). Outside #list-status on purpose: renderStatus()
+                 rewrites that live region with textContent, deleting any child. -->
+            <button type="button" class="filter-reset" id="filter-reset" hidden>
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18" /></svg>
+              <span data-i18n="filterReset">Filter zurücksetzen</span>
+            </button>
             <p class="stand" id="stand-zeile">
               <span data-i18n="standShort">Stand</span> <span id="stand" data-i18n="standLoading">wird geladen …</span>
               <span class="stand-offline" id="stand-offline" hidden data-i18n="standOffline">· offline, aus dem Gerätespeicher</span>

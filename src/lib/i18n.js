@@ -144,6 +144,8 @@ export const STRINGS = {
     listStatusEmptyDistrict: 'Keine Baustellen in {district} mit diesen Filtern.',
     filterDistrictLabel: 'Stadtteil',
     filterDistrictAll: 'Alle Stadtteile',
+    // A-18: one reset for all four filter groups
+    filterReset: 'Filter zurücksetzen',
     statsDistricts: 'Nach Stadtteil',
     statsDistrictsNone: 'Ohne Baustelle: {names}',
     statsDistrictUnknown: 'ohne Stadtteil',
@@ -302,6 +304,8 @@ export const STRINGS = {
     listStatusEmptyDistrict: 'No construction sites in {district} with these filters.',
     filterDistrictLabel: 'District',
     filterDistrictAll: 'All districts',
+    // A-18: one reset for all four filter groups
+    filterReset: 'Reset filters',
     statsDistricts: 'By district',
     statsDistrictsNone: 'No site: {names}',
     statsDistrictUnknown: 'no district',

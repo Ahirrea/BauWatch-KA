@@ -76,7 +76,9 @@ and dragging the outer one scrolled the whole feed out of the frame.)
 > **A-14 and A-15 are implemented**. #23, #33 and #35 are moot since then and
 > stay ✅ with a dated note. **A-16, A-2 and A-17 followed on 2026-10-18**, and
 > **#39** (focus rings cut off in the filter row), found on a phone the same
-> day, is done.
+> day, is done. The same report led to
+> [A-18](./anforderungen/A-18-filter-zuruecksetzen.md), one reset for all
+> filters.
 
 ---
 

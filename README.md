@@ -12,7 +12,7 @@ time period?"**
 - 🗺️ Full-screen map (Leaflet + OpenStreetMap) with a synchronized list in a panel on top — a bottom sheet on phones, a side panel on desktop
 - 🚧 Construction-site areas drawn on the map, not just point markers
 - 🚦 Traffic light for the closure severity, plain text instead of administrative codes, remaining duration
-- 🔎 Address/radius search (1.5 km), filters by closure severity (with counts), remaining duration, mode of transport
+- 🔎 Address/radius search (1.5 km), filters by closure severity (with counts), remaining duration, mode of transport; one tap on "Filter zurücksetzen" puts them all back
 - 🏘️ Districts: filter the sites by Stadtteil, see the chosen district outlined on the map, and the counts per district in the statistics
 - 📊 Statistics — what is being built, by whom, for how long, which modes of transport are affected, and how the number of open sites has developed day by day since July 2026 (all of Karlsruhe)
 - 🆕 "What's new?" — the data changes of the last 30 days, right in the app

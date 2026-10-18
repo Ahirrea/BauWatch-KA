@@ -187,20 +187,20 @@ count is announced by `#list-status` as before.
 
 ## Definition of Done
 
-- [ ] "Filter zurücksetzen" stands next to the count whenever any of the four
+- [x] "Filter zurücksetzen" stands next to the count whenever any of the four
   groups is off "Alle", and is absent otherwise.
-- [ ] One tap sets all four groups to "Alle": the state, the segment buttons
+- [x] One tap sets all four groups to "Alle": the state, the segment buttons
   (`aria-pressed`) and the select.
-- [ ] A chosen district's outline goes and the camera returns to the initial
+- [x] A chosen district's outline goes and the camera returns to the initial
   view. Without a district the camera does not move.
-- [ ] A radius search survives the reset.
-- [ ] The button sits outside `#list-status`, and the new count is still
+- [x] A radius search survives the reset.
+- [x] The button sits outside `#list-status`, and the new count is still
   announced.
-- [ ] Focus never falls to `<body>`, and a tap moves neither the sheet nor
+- [x] Focus never falls to `<body>`, and a tap moves neither the sheet nor
   focus into the panel body.
-- [ ] Label contrast is at least 4.5:1 in both schemes, the hit area is at
+- [x] Label contrast is at least 4.5:1 in both schemes, the hit area is at
   least 44 px tall without reaching the tabs, and the focus ring is complete.
-- [ ] The label is in DE and EN, `CACHE_SHELL` is bumped, and `npm test` and
+- [x] The label is in DE and EN, `CACHE_SHELL` is bumped, and `npm test` and
   the browser check are green; screenshots at 414 and 1280 px, light and
   dark.
 
@@ -214,3 +214,68 @@ count is announced by `#list-status` as before.
 4. `src/shell.css` and `src/lib/i18n.js`: the button's style and label.
 5. `sw.js`: `CACHE_SHELL`. v28 already carries #39 from the same release.
 6. Verify, then record the results here.
+
+## Implementation record (2026-10-18)
+
+Built on `ccr-0fb3ea8f-ywo45b` the same day, in one pass after the
+refinement. #39's focus-ring fix went first, from the same screenshot.
+
+**What was built:**
+- **The button:** it sits in `.status-row`, between `#list-status` and the
+  data stand.
+- **Logic:** `filtersActive()`, `resetFilters()` and `renderFilterReset()`
+  live in `src/ui/filters.js`. The reset sets the state and the segment
+  buttons, and the select follows in `render()`.
+- **Wiring:** a click handler in `src/app.js` takes the district's outline
+  and camera with it, as "Alle Stadtteile" does, and hands focus on per E6.
+- **Label:** `filterReset` is "Filter zurücksetzen" in DE and "Reset filters"
+  in EN.
+- **Shell cache:** v28, shared with #39.
+
+**Measured:**
+- **Browser check: 58/58.** It covers:
+  - each of the four groups alone and the originator's case (ÖPNV plus
+    Südweststadt: 2 sites, then one tap back to all 166, the outline gone);
+  - the camera, which lands exactly where "Alle Stadtteile" lands in the
+    same sheet state, at zoom 13. Without a district it stays put;
+  - a radius search, which survives with circle, text and status;
+  - an empty list (Wolfartsweier plus Gering), with message and button side
+    by side;
+  - the menu's language and theme toggles, untouched;
+  - a tap on the collapsed sheet: the sheet stays collapsed, and focus goes
+    to the selected tab rather than into the body or to `<body>`;
+  - the keyboard: Tab reaches the button with a visible ring, and Enter
+    resets and moves focus to `#tab-liste`;
+  - no page errors.
+- **Mutation: 8/8 seeded defects turned the check red.** They were:
+  - the reset skipping the district;
+  - no camera move;
+  - `render()` never showing the button;
+  - segment buttons left unsynced;
+  - the button moved inside the live region (deleted on the first render,
+    so the check crashes at the lookup);
+  - focus not handed on;
+  - the reset clearing the search too;
+  - a hit area of 28 px.
+- **Height (E5, measured):** with the button showing, the data stand wraps
+  at every width from 320 to 1280 px. The head grows from 121.81 to
+  141.16 px on a phone, so the collapsed sheet goes from 122 to 142 px while
+  a filter is active. On desktop the head grows from 215.05 to 234.39 px
+  inside the fixed panel. On desktop, count and button share one line.
+- **Hit area:** 45.32 × 156.72 px. It reaches no other control in the head,
+  and it ends 15.67 px above the tabs. The first cut, `inset: -0.75rem`, gave
+  43.7 px and was raised to `-0.8rem`.
+- **Contrast of the label:** 9.13:1 in light mode (`#1b4b73` on `#ffffff`)
+  and 6.10:1 in dark mode (`#6ba7d6` on `#1f2329`).
+- **Focus ring:** complete at 320, 414 and 1280 px in both schemes, measured
+  against every clipping ancestor.
+- **Layout:** nothing overflows the head sideways at 320 px. The label never
+  wraps inside the button (`white-space: nowrap`). In the empty case at
+  320 px the message wraps and the button takes a line of its own, checked
+  in DE and EN.
+- **`npm test`:** 1175 passed. The three new checks are the label's i18n
+  keys.
+
+**Screenshots:** at 414 px light and dark and 1280 px light and dark, with
+real tiles, in the originator's case, plus close-ups of the head. They were
+sent with the report, not committed.

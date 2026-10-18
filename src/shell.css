@@ -179,6 +179,37 @@ html:has(body.app) {
 .list-status.is-error {
   color: var(--red);
 }
+/* The reset for all filter groups (A-18/E5): a text button after the count,
+   on the count's baseline (inline-block, so the text sets it, not the icon).
+   Its hit area reaches 44 px in height without changing the line (A-14's
+   touch targets); `hidden` wins through `.app [hidden]`. */
+.filter-reset {
+  position: relative;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--accent);
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.filter-reset::after {
+  content: "";
+  position: absolute;
+  inset: -0.8rem -0.375rem;
+}
+.filter-reset svg {
+  width: 0.85em;
+  height: 0.85em;
+  margin-right: 0.25em;
+  vertical-align: -0.05em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
 .stand {
   margin: 0.05rem 0 0;
   font-size: 0.8rem;
