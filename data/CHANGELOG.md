@@ -2,6 +2,18 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 19.10.2026, 17:28 — 4 neu, 1 entfernt, 4 geändert (gesamt 182)
+
+- ➕ **Durlacher Allee 35-55/Seubertstr./Gerwigstr.37-48,**
+- ➕ **Ruschgraben, Karlsruher Str., Hagdornstr.**
+- ➕ **Scheffelstraße zw. Kaiserallee und Sophienstraße**
+- ➕ **Hildebrandstraße zw. Reichenbachstraße und Auer Straße**
+- ➖ ~~Reinhold-Frank-Straße zw. Amalinestraße und Sophienstraße~~
+- ✏️ Pfarrstraße Haus Nr.12-18 und Haus Nr. 43-51 — sonstige Angaben aktualisiert
+- ✏️ Knielinger Allee zw. Fachhochschule und Erzbergerstraße — Ende: 2026-10-23 → 2026-10-28
+- ✏️ Hirschstraße zw. Vorholzstraße u. Südendstraße — Ende: 2026-10-30 → 2026-10-21
+- ✏️ Haid-und-Neu-Straße zw. Hirtenweg und Karlsruher Straße — Ende: 2026-10-25 → 2026-11-20
+
 ## 19.10.2026, 06:17 — 15 neu, 2 entfernt (gesamt 179)
 
 - ➕ **Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße**

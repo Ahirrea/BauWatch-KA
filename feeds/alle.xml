@@ -6,9 +6,16 @@
   <link rel="self" type="application/atom+xml" href="https://ahirrea.github.io/BauWatch-KA/feeds/alle.xml"/>
   <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
   <icon>https://ahirrea.github.io/BauWatch-KA/icons/icon-192.png</icon>
-  <updated>2026-10-19T04:17:56.255Z</updated>
+  <updated>2026-10-19T15:28:25.222Z</updated>
   <author><name>BauWatch-KA</name></author>
   <rights>Datensatz „Baustellen&quot;, Stadt Karlsruhe, Lizenz CC-BY 4.0</rights>
+  <entry>
+    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-10-19T15:28:25.222Z</id>
+    <title>19.10.2026, 17:28 — 4 neu, 1 entfernt, 3 geändert</title>
+    <updated>2026-10-19T15:28:25.222Z</updated>
+    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
+    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Durlacher Allee 35-55/Seubertstr./Gerwigstr.37-48,&lt;/strong&gt; (Oststadt)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Ruschgraben, Karlsruher Str., Hagdornstr.&lt;/strong&gt; (Hagsfeld)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Scheffelstraße zw. Kaiserallee und Sophienstraße&lt;/strong&gt; (Weststadt)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Hildebrandstraße zw. Reichenbachstraße und Auer Straße&lt;/strong&gt; (Durlach)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Reinhold-Frank-Straße zw. Amalinestraße und Sophienstraße&lt;/s&gt; (Weststadt)&lt;/li&gt;&lt;li&gt;✏️ Knielinger Allee zw. Fachhochschule und Erzbergerstraße (Nordstadt) — Ende: 2026-10-23 → 2026-10-28&lt;/li&gt;&lt;li&gt;✏️ Hirschstraße zw. Vorholzstraße u. Südendstraße (Südweststadt) — Ende: 2026-10-30 → 2026-10-21&lt;/li&gt;&lt;li&gt;✏️ Haid-und-Neu-Straße zw. Hirtenweg und Karlsruher Straße (Rintheim) — Ende: 2026-10-25 → 2026-11-20&lt;/li&gt;&lt;/ul&gt;</content>
+  </entry>
   <entry>
     <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-10-19T04:17:56.255Z</id>
     <title>19.10.2026, 06:17 — 15 neu, 2 entfernt</title>
