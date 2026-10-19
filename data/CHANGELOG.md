@@ -2,6 +2,26 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 19.10.2026, 06:17 — 15 neu, 2 entfernt (gesamt 179)
+
+- ➕ **Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße**
+- ➕ **Lessingstraße zw. Sophienstraße und Kaiserallee**
+- ➕ **B36/ unterhalb Brücke L605**
+- ➕ **Schlössleweg zw. Badener Straße und Lußstraße, Lußstraße zw. Lußsteige und Schlössleweg**
+- ➕ **B10 Südtangente zwischen AS9 und AS10**
+- ➕ **Saarlandstraße zw. Neufeldstraße und Eggensteiner Straße**
+- ➕ **Neufeldstraße zw. Eggensteiner Straße und Saarlandstraße**
+- ➕ **Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße**
+- ➕ **Richard-Wagner-Straße zw. Schubertstraße und Bachstraße**
+- ➕ **Knielinger Allee zw. Fachhochschule und Erzbergerstraße**
+- ➕ **Hirschstraße zw. Kaiser- und Amalienstraße**
+- ➕ **Graf-Rhena-Str.2a**
+- ➕ **Am Fasanengarten zw. Emil-Gött-Straße und Parkstraße**
+- ➕ **Pfinztalstraße zw. seboldstraße und Pforzheimer Straße**
+- ➕ **Kastellstraße zw. Turmbergstraße und Stäffele**
+- ➖ ~~B36 Fahrtrichtung Karlsruhe, Ausfahrt Neureut-Süd~~
+- ➖ ~~Lessingstraße Einmündungsbereich Sophienstraße~~
+
 ## 18.10.2026, 20:33 — 17 geändert (gesamt 166)
 
 - ✏️ Essostraße — sonstige Angaben aktualisiert
