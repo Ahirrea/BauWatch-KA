@@ -2,6 +2,14 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 20.10.2026, 15:29 — 1 neu, 2 entfernt, 2 geändert (gesamt 181)
+
+- ➕ **Hirschstraße zw. Amalienstraße und Sophienstraße**
+- ➖ ~~Bannwaldallee zw. Griesbachstraße und Zufahrt Südtangente~~
+- ➖ ~~Knielinger Allee zw. Fachhochschule und Erzbergerstraße~~
+- ✏️ Lärchenweg zw. Fichtenweg und Donauschwabenstraße — Ende: 2026-10-30 → 2026-12-31
+- ✏️ Kaiserstraße zw. Kronenstraße und Adlerstraße — Beginn: 2026-09-30 → 2026-10-19; Ende: 2027-02-26 → 2026-11-06
+
 ## 20.10.2026, 06:28 — 3 neu, 3 entfernt (gesamt 182)
 
 - ➕ **Honsellstraße/ Lameyplatz zw. B36/ Starckstraße und Lameystraße/ Rheinstraße**

@@ -6,9 +6,16 @@
   <link rel="self" type="application/atom+xml" href="https://ahirrea.github.io/BauWatch-KA/feeds/alle.xml"/>
   <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
   <icon>https://ahirrea.github.io/BauWatch-KA/icons/icon-192.png</icon>
-  <updated>2026-10-20T04:28:57.643Z</updated>
+  <updated>2026-10-20T13:29:17.914Z</updated>
   <author><name>BauWatch-KA</name></author>
   <rights>Datensatz „Baustellen&quot;, Stadt Karlsruhe, Lizenz CC-BY 4.0</rights>
+  <entry>
+    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-10-20T13:29:17.914Z</id>
+    <title>20.10.2026, 15:29 — 1 neu, 2 entfernt, 2 geändert</title>
+    <updated>2026-10-20T13:29:17.914Z</updated>
+    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
+    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Hirschstraße zw. Amalienstraße und Sophienstraße&lt;/strong&gt; (Innenstadt-West)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Bannwaldallee zw. Griesbachstraße und Zufahrt Südtangente&lt;/s&gt; (Beiertheim-Bulach)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Knielinger Allee zw. Fachhochschule und Erzbergerstraße&lt;/s&gt; (Nordstadt)&lt;/li&gt;&lt;li&gt;✏️ Lärchenweg zw. Fichtenweg und Donauschwabenstraße (Neureut) — Ende: 2026-10-30 → 2026-12-31&lt;/li&gt;&lt;li&gt;✏️ Kaiserstraße zw. Kronenstraße und Adlerstraße (Innenstadt-Ost) — Beginn: 2026-09-30 → 2026-10-19; Ende: 2027-02-26 → 2026-11-06&lt;/li&gt;&lt;/ul&gt;</content>
+  </entry>
   <entry>
     <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-10-20T04:28:57.643Z</id>
     <title>20.10.2026, 06:28 — 3 neu, 3 entfernt</title>
@@ -372,12 +379,5 @@
     <updated>2026-09-21T04:33:41.534Z</updated>
     <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
     <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Hirschstraße zw. Vorholzstraße u. Südendstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Gleistrasse entlang Steinkreuzstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Seminarstraße zwischen Bismarckstraße und Moltkestraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Pfinztalstraße zw. Badener Straße u. Jägerstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Badener Straße zw. Grötzinger Straße u. Hengstplatz&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Bannwaldallee zw. Griesbachstraße und Zufahrt Südtangente&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Ernst-Friedrich-Straße zw. Gritznerstraße und Pfinztalstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Durlacher Allee zw. Dornwaldstraße und Ernst-Friedrich-Straße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Pforzheimer Straße zw. Pfinzstraße und Pfinztalstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Pfinztalstraße zw. Amalienbadstraße und Pforzheimer Straße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Marie-Alexandra-Straße zw. Karlstraße und Karolinenstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Gebietsausbau Hauptbahnstraße, Raiherwiesenstraße, Bleichstraße, Schinnrainstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Pfinztalstraße zw. Badener Straße u. Eichelgasse; Badener Straße zwischen Karl-Weysser-Straße und Pfintalstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Donauschwabenstrße zw. Föhrenweg und Kiefernweg&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Glogauer Straße, Königsberger Straße, Schweidnitzer Straße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Glogauer Straße zw. Lauenburger Straße und Kolberger Straße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Löätzener Straße zw. Glogauer Straße und Insterburger Straße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Kropsburgweg zw. Hambacher Straße u. Maxburgweg&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Helmholtzstraße zw. Röntgenstraße und Grashofstraße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Kreuzungsbereich Hirsch- / Vorholzstraße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Raiherwiesenstraße zw. Schinnrainstraße und Bleichstraße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Raiherwiesenstraße zw. Pfaffstraße und Bleichstraße&lt;/s&gt;&lt;/li&gt;&lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-09-20T04:35:29.943Z</id>
-    <title>20.09.2026, 06:35 — 3 entfernt</title>
-    <updated>2026-09-20T04:35:29.943Z</updated>
-    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
-    <content type="html">&lt;ul&gt;&lt;li&gt;➖ &lt;s&gt;B 3 Grötzinger Straße zw. Badener Straße u. Bergbahnstraße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Wendtstraße zw. Dragonerstraße und Ludwig-Marum-Straße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Hauptbahnstraße unterhalb der Brücke/Überführung im Zuge der Durlacher Allee&lt;/s&gt;&lt;/li&gt;&lt;/ul&gt;</content>
   </entry>
 </feed>
