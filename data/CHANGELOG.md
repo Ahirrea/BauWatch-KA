@@ -2,6 +2,14 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 20.10.2026, 21:56 — 2 neu, 3 entfernt (gesamt 180)
+
+- ➕ **Hirschstraße zw. Amalienstraße und Sophienstraße**
+- ➕ **Hölderlinstraße, Emil-Gött-Straße**
+- ➖ ~~Hirschstraße zw. Amalienstraße und Sophienstraße~~
+- ➖ ~~Albert-Schweitzer-Straße zw. Bertha-von-Suttner-Straße und Theodor-Heuss-Allee~~
+- ➖ ~~Reichenbachstraße zw. Ellmendinger Straße und Hildebrandstraße~~
+
 ## 20.10.2026, 15:29 — 1 neu, 2 entfernt, 2 geändert (gesamt 181)
 
 - ➕ **Hirschstraße zw. Amalienstraße und Sophienstraße**
