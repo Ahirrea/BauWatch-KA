@@ -2,6 +2,14 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 21.10.2026, 01:06 — 2 neu, 3 entfernt (gesamt 179)
+
+- ➕ **Südtangente zw. Fiduciastraße und Schwarzwaldkreuz**
+- ➕ **Gablonzer Str. 23**
+- ➖ ~~Honsellstraße/ Lameyplatz zw. B36/ Starckstraße und Lameystraße/ Rheinstraße~~
+- ➖ ~~B36/ unterhalb Brücke L605~~
+- ➖ ~~Ritterstraße zw. Zirkel und Kaiserstraße~~
+
 ## 20.10.2026, 21:56 — 2 neu, 3 entfernt (gesamt 180)
 
 - ➕ **Hirschstraße zw. Amalienstraße und Sophienstraße**

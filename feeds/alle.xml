@@ -6,9 +6,16 @@
   <link rel="self" type="application/atom+xml" href="https://ahirrea.github.io/BauWatch-KA/feeds/alle.xml"/>
   <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
   <icon>https://ahirrea.github.io/BauWatch-KA/icons/icon-192.png</icon>
-  <updated>2026-10-20T19:56:55.125Z</updated>
+  <updated>2026-10-20T23:06:51.887Z</updated>
   <author><name>BauWatch-KA</name></author>
   <rights>Datensatz „Baustellen&quot;, Stadt Karlsruhe, Lizenz CC-BY 4.0</rights>
+  <entry>
+    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-10-20T23:06:51.887Z</id>
+    <title>21.10.2026, 01:06 — 2 neu, 3 entfernt</title>
+    <updated>2026-10-20T23:06:51.887Z</updated>
+    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
+    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Südtangente zw. Fiduciastraße und Schwarzwaldkreuz&lt;/strong&gt; (Durlach)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Gablonzer Str. 23&lt;/strong&gt; (Mühlburg)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Honsellstraße/ Lameyplatz zw. B36/ Starckstraße und Lameystraße/ Rheinstraße&lt;/s&gt; (Mühlburg)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;B36/ unterhalb Brücke L605&lt;/s&gt; (Neureut)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Ritterstraße zw. Zirkel und Kaiserstraße&lt;/s&gt; (Innenstadt-West)&lt;/li&gt;&lt;/ul&gt;</content>
+  </entry>
   <entry>
     <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-10-20T19:56:55.125Z</id>
     <title>20.10.2026, 21:56 — 2 neu, 3 entfernt</title>
