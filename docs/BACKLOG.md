@@ -870,7 +870,14 @@ were only reorderings, and 491 of 989 "geändert" lines were noise. The marker
 of Elisabeth-Großwendt-Straße flipped 61 m back and forth. The features are
 now sorted by geometry before merging; A-7 records "E8 revised again". An
 offline replay showed one re-pick of 39 cases with the generic note, so
-nothing reached the feed, and then no change in any order.
+nothing reached the feed, and then no change in any order. In production the
+first run on the new code (2026-10-18, 20:33, commit `3798629`) re-picked 15
+cases; the replay's 39 came from the extra points its fixture had to invent.
+The same commit carries #45's two sites, all 17 lines with the generic note.
+One re-pick moved a site at a crossing on a district boundary
+(Sophienstraße/Reinhold-Frank-Straße) from Innenstadt-West to Weststadt. The
+next run found no change, and the four data commits up to 2026-10-20 carry a
+single generic note, for a polygon the city redrew.
 **DoD:** the same parts give the same feature in any order
 (`test-build-data.mjs`). (Label: `data`)
 

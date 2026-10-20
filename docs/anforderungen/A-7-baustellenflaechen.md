@@ -189,7 +189,9 @@ Replaying the snapshot history showed the result:
 so the same parts give the same marker and the same area in any order
 (BACKLOG #40, tested in `test-build-data.mjs`). The first run after the fix
 re-picks once. In an offline replay that was 39 cases, logged with the
-generic note and so absent from the feed (#28).
+generic note and so absent from the feed (#28). In production it was 15
+cases (2026-10-18, commit `3798629`): the replay had to invent the extra
+points. The runs up to 2026-10-20 showed no reordering.
 
 **E9 — Extend the quality report with a `hasArea` signal**, same pattern as
 the existing `hasVorgangsnummer`/`artKnown` per-case booleans in
