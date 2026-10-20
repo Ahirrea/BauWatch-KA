@@ -2,6 +2,15 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 20.10.2026, 06:28 — 3 neu, 3 entfernt (gesamt 182)
+
+- ➕ **Honsellstraße/ Lameyplatz zw. B36/ Starckstraße und Lameystraße/ Rheinstraße**
+- ➕ **Vorholzstraße zw. Karlstraße und Hirschstraße**
+- ➕ **Ritterstraße zw. Zirkel und Kaiserstraße**
+- ➖ ~~Hirschstraße zw. Amalinestraße und Sophienstraße~~
+- ➖ ~~Hirschstraße zw. Kaiser- und Amalienstraße~~
+- ➖ ~~Kastellstraße zw. Turmbergstraße und Stäffele~~
+
 ## 19.10.2026, 17:28 — 4 neu, 1 entfernt, 4 geändert (gesamt 182)
 
 - ➕ **Durlacher Allee 35-55/Seubertstr./Gerwigstr.37-48,**
