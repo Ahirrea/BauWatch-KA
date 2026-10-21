@@ -6,9 +6,16 @@
   <link rel="self" type="application/atom+xml" href="https://ahirrea.github.io/BauWatch-KA/feeds/alle.xml"/>
   <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
   <icon>https://ahirrea.github.io/BauWatch-KA/icons/icon-192.png</icon>
-  <updated>2026-10-21T13:39:10.159Z</updated>
+  <updated>2026-10-21T20:01:17.599Z</updated>
   <author><name>BauWatch-KA</name></author>
   <rights>Datensatz „Baustellen&quot;, Stadt Karlsruhe, Lizenz CC-BY 4.0</rights>
+  <entry>
+    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-10-21T20:01:17.599Z</id>
+    <title>21.10.2026, 22:01 — 1 neu, 1 geändert</title>
+    <updated>2026-10-21T20:01:17.599Z</updated>
+    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
+    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Pastor-Felke-Straße Kreuzungsbereich Werthmannstraße&lt;/strong&gt; (Oststadt)&lt;/li&gt;&lt;li&gt;✏️ Werthmannstraße zw. Pastor-Felke-Straße und Klosterweg (Oststadt) — Ende: 2026-10-23 → 2026-10-21&lt;/li&gt;&lt;/ul&gt;</content>
+  </entry>
   <entry>
     <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-10-21T13:39:10.159Z</id>
     <title>21.10.2026, 15:39 — 1 neu, 3 entfernt, 3 geändert</title>
@@ -386,12 +393,5 @@
     <updated>2026-09-22T04:29:39.820Z</updated>
     <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
     <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Hardtstraße zw. Lameystraße und Am Entenfang&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Pfinztalstraße zw. Badener Straße u. Eichelgasse&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Pfinztalstraße zw. Badener Straße u. Eichelgasse; Badener Straße zwischen Gymnasiumstraße und Pfintalstraße&lt;/s&gt;&lt;/li&gt;&lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-09-21T15:01:06.517Z</id>
-    <title>21.09.2026, 17:01 — 7 neu, 1 entfernt, 5 geändert</title>
-    <updated>2026-09-21T15:01:06.517Z</updated>
-    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
-    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Herrenstraße zw. Amalienstraße und Blumenstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Wendtstraße zw. Dragonerstraße und Ludwig-Marum-Straße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Herweghstraße zw. Struvestraße und Reinmuthstraße und Lorscher Straße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Akademiestraße zw. Hans-Thoma-Straße und Karlstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Pforzheimer Straße - Waldshuter Straße - Turmbergbad - Campingplatz Durlach - Bundestraßenkreuz B3 / B10&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Haid-und-Neu-Straße zw. Am Sportpark und Sinsheimer Straße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Battstraße, Göhrenstraße, Ortehnaustraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Battstraße, Göhrenstraße, Breisgaustraße, Ortehnaustraße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;✏️ Gebietsausbau Hauptbahnstraße, Raiherwiesenstraße, Bleichstraße, Schinnrainstraße — Sperrgrad: gering → teil; Info geändert&lt;/li&gt;&lt;li&gt;✏️ Karlstraße zw. Kaiserstraße und Akademiestraße — Ende: 2026-10-16 → 2026-10-30&lt;/li&gt;&lt;li&gt;✏️ Laubenweg zw. Siemensallee u. Kepplerstraße — Ende: 2026-10-02 → 2026-10-21&lt;/li&gt;&lt;li&gt;✏️ Löätzener Straße zw. Glogauer Straße und Insterburger Straße — Ende: 2026-10-04 → 2026-10-01&lt;/li&gt;&lt;li&gt;✏️ Geh- und Radweg entlang der VBK Gleistrasse zw. Schweidnitzerstraße bis Glogauer Straße — Sperrgrad: teil → voll; Ende: 2027-04-23 → 2026-11-06; Bezeichnung geändert; Info geändert&lt;/li&gt;&lt;/ul&gt;</content>
   </entry>
 </feed>

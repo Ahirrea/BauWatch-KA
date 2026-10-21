@@ -2,6 +2,11 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 21.10.2026, 22:01 — 1 neu, 1 geändert (gesamt 178)
+
+- ➕ **Pastor-Felke-Straße Kreuzungsbereich Werthmannstraße**
+- ✏️ Werthmannstraße zw. Pastor-Felke-Straße und Klosterweg — Ende: 2026-10-23 → 2026-10-21
+
 ## 21.10.2026, 15:39 — 1 neu, 3 entfernt, 3 geändert (gesamt 177)
 
 - ➕ **Hirschstraße zw. Amalienstraße und Kriegsstraße**
