@@ -2,6 +2,16 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 21.10.2026, 15:39 — 1 neu, 3 entfernt, 3 geändert (gesamt 177)
+
+- ➕ **Hirschstraße zw. Amalienstraße und Kriegsstraße**
+- ➖ ~~Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße~~
+- ➖ ~~Pastor-Felke-Straße Kreuzungsbereich Werthmannstraße~~
+- ➖ ~~Hildebrandstraße zw. Reichenbachstraße und Auer Straße~~
+- ✏️ Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße — Info geändert
+- ✏️ Hirschstraße zw. Vorholzstraße u. Südendstraße — Ende: 2026-10-21 → 2026-10-30
+- ✏️ Nürnberger Straße zw. Rechts der Alb und Sperberweg — Ende: 2026-11-09 → 2026-10-26
+
 ## 21.10.2026, 01:06 — 2 neu, 3 entfernt (gesamt 179)
 
 - ➕ **Südtangente zw. Fiduciastraße und Schwarzwaldkreuz**
