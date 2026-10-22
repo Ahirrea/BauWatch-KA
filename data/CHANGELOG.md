@@ -2,6 +2,10 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 22.10.2026, 21:55 — 1 neu (gesamt 175)
+
+- ➕ **Knielinger Allee zw. Fachhochschule und Erzbergerstraße**
+
 ## 22.10.2026, 15:40 — 2 geändert (gesamt 174)
 
 - ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — Ende: 2026-10-23 → 2026-11-13
