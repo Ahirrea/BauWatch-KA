@@ -6,9 +6,16 @@
   <link rel="self" type="application/atom+xml" href="https://ahirrea.github.io/BauWatch-KA/feeds/alle.xml"/>
   <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
   <icon>https://ahirrea.github.io/BauWatch-KA/icons/icon-192.png</icon>
-  <updated>2026-10-22T04:20:10.724Z</updated>
+  <updated>2026-10-22T13:40:56.915Z</updated>
   <author><name>BauWatch-KA</name></author>
   <rights>Datensatz „Baustellen&quot;, Stadt Karlsruhe, Lizenz CC-BY 4.0</rights>
+  <entry>
+    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-10-22T13:40:56.915Z</id>
+    <title>22.10.2026, 15:40 — 2 geändert</title>
+    <updated>2026-10-22T13:40:56.915Z</updated>
+    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
+    <content type="html">&lt;ul&gt;&lt;li&gt;✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg (Mühlburg) — Ende: 2026-10-23 → 2026-11-13&lt;/li&gt;&lt;li&gt;✏️ B10/ Kriegsstraße zw. Ritterstraße und Karlstor (Innenstadt-West) — Ende: 2026-10-31 → 2026-11-03&lt;/li&gt;&lt;/ul&gt;</content>
+  </entry>
   <entry>
     <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-10-22T04:20:10.724Z</id>
     <title>22.10.2026, 06:20 — 4 neu, 8 entfernt</title>
@@ -386,19 +393,5 @@
     <updated>2026-09-22T22:51:20.263Z</updated>
     <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
     <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Pfarrer-Blink-Straße zw. Untermühlstraße und Alte Karlsruher Straße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;L623/ Am Wetterbach zw. Zur Ziegelhütte und Bachstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Schückstraße zw. Tullastraße und Gustav-Specht-Straße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Am Berg zw. Hohenwetterbacher Straße und Heidenheimer Straße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;In den Weihergärten zw. Fröbelstraße und Eugen-Kleiber-Straße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;L 605 zwischen Hermann-Veit-Straße und Höhe Großoberfeld/ Wilhelm-Leuschner-Straße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Südtangente zw. Fiduciastraße und Schwarzwaldkreuz inkl. der Auf- und Abfahrten&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-09-22T13:18:59.391Z</id>
-    <title>22.09.2026, 15:18 — 1 neu, 1 entfernt</title>
-    <updated>2026-09-22T13:18:59.391Z</updated>
-    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
-    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Koellestraße 10-26 und 13-27a&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Pfinztalstraße zw. Badener Straße u. Eichelgasse; Badener Straße zwischen Karl-Weysser-Straße und Pfintalstraße&lt;/s&gt;&lt;/li&gt;&lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-09-22T04:29:39.820Z</id>
-    <title>22.09.2026, 06:29 — 1 neu, 2 entfernt</title>
-    <updated>2026-09-22T04:29:39.820Z</updated>
-    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
-    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Hardtstraße zw. Lameystraße und Am Entenfang&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Pfinztalstraße zw. Badener Straße u. Eichelgasse&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Pfinztalstraße zw. Badener Straße u. Eichelgasse; Badener Straße zwischen Gymnasiumstraße und Pfintalstraße&lt;/s&gt;&lt;/li&gt;&lt;/ul&gt;</content>
   </entry>
 </feed>

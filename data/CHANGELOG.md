@@ -2,6 +2,11 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 22.10.2026, 15:40 — 2 geändert (gesamt 174)
+
+- ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — Ende: 2026-10-23 → 2026-11-13
+- ✏️ B10/ Kriegsstraße zw. Ritterstraße und Karlstor — Ende: 2026-10-31 → 2026-11-03
+
 ## 22.10.2026, 06:20 — 4 neu, 8 entfernt (gesamt 174)
 
 - ➕ **Kaiserstraße zw. Ritterstraße und Herrenstraße**
