@@ -2,6 +2,21 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 22.10.2026, 06:20 — 4 neu, 8 entfernt (gesamt 174)
+
+- ➕ **Kaiserstraße zw. Ritterstraße und Herrenstraße**
+- ➕ **Sophienstraße zw. Yorckstraße und Uhlandstraße**
+- ➕ **Uhlandstraße zw. Sophienstraße und Draisstraße**
+- ➕ **Gleisübergänge Hinterwiesenweg zw. Kleingärtnerweg und Jagdstraße**
+- ➖ ~~Südtangente zw. Fiduciastraße und Schwarzwaldkreuz~~
+- ➖ ~~Gablonzer Str. 23~~
+- ➖ ~~Laubenweg zw. Siemensallee u. Kepplerstraße~~
+- ➖ ~~Hirschstraße zw. Amalienstraße und Kriegsstraße~~
+- ➖ ~~Amalienstraße Kreuzung Herrenstraße~~
+- ➖ ~~Herrenstraße zw. Amalienstraße und Blumenstraße~~
+- ➖ ~~Kaiserstraße zw. Herrenstraße und Ritterstraße~~
+- ➖ ~~Werthmannstraße zw. Pastor-Felke-Straße und Klosterweg~~
+
 ## 21.10.2026, 22:01 — 1 neu, 1 geändert (gesamt 178)
 
 - ➕ **Pastor-Felke-Straße Kreuzungsbereich Werthmannstraße**
