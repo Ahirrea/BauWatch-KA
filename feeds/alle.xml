@@ -6,9 +6,16 @@
   <link rel="self" type="application/atom+xml" href="https://ahirrea.github.io/BauWatch-KA/feeds/alle.xml"/>
   <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
   <icon>https://ahirrea.github.io/BauWatch-KA/icons/icon-192.png</icon>
-  <updated>2026-10-22T19:55:08.463Z</updated>
+  <updated>2026-10-22T23:09:59.479Z</updated>
   <author><name>BauWatch-KA</name></author>
   <rights>Datensatz „Baustellen&quot;, Stadt Karlsruhe, Lizenz CC-BY 4.0</rights>
+  <entry>
+    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-10-22T23:09:59.479Z</id>
+    <title>23.10.2026, 01:09 — 4 neu</title>
+    <updated>2026-10-22T23:09:59.479Z</updated>
+    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
+    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Südtangente zw. Fiduciastraße und Schwarzwaldkreuz&lt;/strong&gt; (Durlach)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;B36/ Am Entenfang Auffahrtsrampe zur B10/ Südtangente&lt;/strong&gt; (Mühlburg)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Karlstraße zw. Kaiserstraße und Akademiestraße&lt;/strong&gt; (Innenstadt-West)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Koyweg zw. Hinterwiesenweg und Elfmorgenbruch&lt;/strong&gt; (Rintheim)&lt;/li&gt;&lt;/ul&gt;</content>
+  </entry>
   <entry>
     <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-10-22T19:55:08.463Z</id>
     <title>22.10.2026, 21:55 — 1 neu</title>
@@ -393,12 +400,5 @@
     <updated>2026-09-23T22:52:06.974Z</updated>
     <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
     <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Pfinztalstraße zw. Badener Straße u. Eichelgasse; Badener Straße zwischen Karl-Weysser-Straße und Pfintalstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Ritterstraße zw. Am Schlossplatz und Bankhof&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Haid- u. Neu-Straße zw. Hirtenweg und Am Sportpark&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Am Berg zw. Hohenwetterbacher Straße und Heidenheimer Straße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;In den Weihergärten zw. Fröbelstraße und Eugen-Kleiber-Straße&lt;/s&gt;&lt;/li&gt;&lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-09-22T22:51:20.263Z</id>
-    <title>23.09.2026, 00:51 — 7 neu</title>
-    <updated>2026-09-22T22:51:20.263Z</updated>
-    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
-    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Pfarrer-Blink-Straße zw. Untermühlstraße und Alte Karlsruher Straße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;L623/ Am Wetterbach zw. Zur Ziegelhütte und Bachstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Schückstraße zw. Tullastraße und Gustav-Specht-Straße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Am Berg zw. Hohenwetterbacher Straße und Heidenheimer Straße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;In den Weihergärten zw. Fröbelstraße und Eugen-Kleiber-Straße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;L 605 zwischen Hermann-Veit-Straße und Höhe Großoberfeld/ Wilhelm-Leuschner-Straße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Südtangente zw. Fiduciastraße und Schwarzwaldkreuz inkl. der Auf- und Abfahrten&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;</content>
   </entry>
 </feed>

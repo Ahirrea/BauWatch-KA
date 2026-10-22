@@ -2,6 +2,13 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 23.10.2026, 01:09 — 4 neu (gesamt 179)
+
+- ➕ **Südtangente zw. Fiduciastraße und Schwarzwaldkreuz**
+- ➕ **B36/ Am Entenfang Auffahrtsrampe zur B10/ Südtangente**
+- ➕ **Karlstraße zw. Kaiserstraße und Akademiestraße**
+- ➕ **Koyweg zw. Hinterwiesenweg und Elfmorgenbruch**
+
 ## 22.10.2026, 21:55 — 1 neu (gesamt 175)
 
 - ➕ **Knielinger Allee zw. Fachhochschule und Erzbergerstraße**
