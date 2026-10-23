@@ -2,6 +2,11 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 23.10.2026, 21:53 — 2 geändert (gesamt 183)
+
+- ✏️ Ruschgraben, Karlsruher Str., Hagdornstr. — Ende: 2026-11-15 → 2026-12-06
+- ✏️ Kreuzstraße zw. Hebelstraße und Zähringer Straße — Ende: 2026-10-23 → 2026-11-16
+
 ## 23.10.2026, 15:16 — 4 neu, 5 geändert (gesamt 183)
 
 - ➕ **Bonner Straße zw. Siemensalleee und Karlsruher Straße**
