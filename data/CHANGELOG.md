@@ -2,6 +2,18 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 23.10.2026, 15:16 — 4 neu, 5 geändert (gesamt 183)
+
+- ➕ **Bonner Straße zw. Siemensalleee und Karlsruher Straße**
+- ➕ **Bonner Straße zw. Siemensallee und Bonner Platz**
+- ➕ **Adlerstraße zw. Zähringerstraße u. Kaiserstraße**
+- ➕ **Zähringerstraße 78**
+- ✏️ Reinhold-Frank-Straße zwischen Belfortstraße und Kaiserallee — Ende: 2026-11-13 → 2026-12-04
+- ✏️ Hirschstraße zw. Amalienstraße und Kaiserstraße — Ende: 2026-10-23 → 2026-11-11
+- ✏️ Hirschstraße zw. Amalienstraße und Kaiserstraße — Ende: 2026-10-23 → 2026-11-11
+- ✏️ Kaiserstraße zw. Kronenstraße und Adlerstraße — Ende: 2026-10-30 → 2026-11-27; Bezeichnung geändert; Info geändert
+- ✏️ Breslauer Straße Wohnwege 64 A - I und 66 A -L — Ende: 2026-10-31 → 2026-11-21
+
 ## 23.10.2026, 01:09 — 4 neu (gesamt 179)
 
 - ➕ **Südtangente zw. Fiduciastraße und Schwarzwaldkreuz**

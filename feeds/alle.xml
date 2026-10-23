@@ -6,9 +6,16 @@
   <link rel="self" type="application/atom+xml" href="https://ahirrea.github.io/BauWatch-KA/feeds/alle.xml"/>
   <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
   <icon>https://ahirrea.github.io/BauWatch-KA/icons/icon-192.png</icon>
-  <updated>2026-10-22T23:09:59.479Z</updated>
+  <updated>2026-10-23T13:16:56.706Z</updated>
   <author><name>BauWatch-KA</name></author>
   <rights>Datensatz „Baustellen&quot;, Stadt Karlsruhe, Lizenz CC-BY 4.0</rights>
+  <entry>
+    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-10-23T13:16:56.706Z</id>
+    <title>23.10.2026, 15:16 — 4 neu, 5 geändert</title>
+    <updated>2026-10-23T13:16:56.706Z</updated>
+    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
+    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Bonner Straße zw. Siemensalleee und Karlsruher Straße&lt;/strong&gt; (Nordweststadt)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Bonner Straße zw. Siemensallee und Bonner Platz&lt;/strong&gt; (Nordweststadt)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Adlerstraße zw. Zähringerstraße u. Kaiserstraße&lt;/strong&gt; (Innenstadt-Ost)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Zähringerstraße 78&lt;/strong&gt; (Innenstadt-Ost)&lt;/li&gt;&lt;li&gt;✏️ Reinhold-Frank-Straße zwischen Belfortstraße und Kaiserallee (Innenstadt-West) — Ende: 2026-11-13 → 2026-12-04&lt;/li&gt;&lt;li&gt;✏️ Hirschstraße zw. Amalienstraße und Kaiserstraße (Innenstadt-West) — Ende: 2026-10-23 → 2026-11-11&lt;/li&gt;&lt;li&gt;✏️ Hirschstraße zw. Amalienstraße und Kaiserstraße (Innenstadt-West) — Ende: 2026-10-23 → 2026-11-11&lt;/li&gt;&lt;li&gt;✏️ Kaiserstraße zw. Kronenstraße und Adlerstraße (Innenstadt-Ost) — Ende: 2026-10-30 → 2026-11-27; Bezeichnung geändert; Info geändert&lt;/li&gt;&lt;li&gt;✏️ Breslauer Straße Wohnwege 64 A - I und 66 A -L (Waldstadt) — Ende: 2026-10-31 → 2026-11-21&lt;/li&gt;&lt;/ul&gt;</content>
+  </entry>
   <entry>
     <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-10-22T23:09:59.479Z</id>
     <title>23.10.2026, 01:09 — 4 neu</title>
