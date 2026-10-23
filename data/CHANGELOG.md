@@ -2,6 +2,18 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 24.10.2026, 01:00 — 9 entfernt (gesamt 174)
+
+- ➖ ~~Südtangente zw. Fiduciastraße und Schwarzwaldkreuz~~
+- ➖ ~~Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee~~
+- ➖ ~~K9659 Kreisstraße P&R Platz Höhe Bahnhof Durlach~~
+- ➖ ~~Gewann Grabenort~~
+- ➖ ~~B36/ Am Entenfang Auffahrtsrampe zur B10/ Südtangente~~
+- ➖ ~~Bonner Straße zw. Siemensallee und Bonner Platz~~
+- ➖ ~~Karlstraße zw. Kaiserstraße und Akademiestraße~~
+- ➖ ~~Nikolausstraße zw. Lützowstraße und Allmendstraße~~
+- ➖ ~~Hirschberger Straße~~
+
 ## 23.10.2026, 21:53 — 2 geändert (gesamt 183)
 
 - ✏️ Ruschgraben, Karlsruher Str., Hagdornstr. — Ende: 2026-11-15 → 2026-12-06
