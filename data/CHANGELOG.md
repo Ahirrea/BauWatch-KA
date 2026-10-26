@@ -2,6 +2,13 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 26.10.2026, 16:04 — 2 neu, 2 geändert (gesamt 185)
+
+- ➕ **Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee**
+- ➕ **Nikolausstraße zw. Lützowstraße und Allmendstraße**
+- ✏️ Knielinger Allee zw. Fachhochschule und Erzbergerstraße — Beginn: 2026-10-19 → 2026-10-25; Ende: 2026-10-28 → 2026-10-27
+- ✏️ Finterstraße zwischen Baumeiserstraße und Ettlinger Straße — Sperrgrad: gering → voll
+
 ## 26.10.2026, 05:21 — 13 neu, 4 entfernt (gesamt 183)
 
 - ➕ **Tiroler Straße, Voralberger Straße, Wasgaustraße, Memeler Straße**
