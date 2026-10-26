@@ -2,6 +2,26 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 26.10.2026, 05:21 — 13 neu, 4 entfernt (gesamt 183)
+
+- ➕ **Tiroler Straße, Voralberger Straße, Wasgaustraße, Memeler Straße**
+- ➕ **Fuchsbau 1-19 und 23-35**
+- ➕ **Am Entenfang**
+- ➕ **Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße**
+- ➕ **Seminarstraße zwischen Bismarckstraße und Moltkestraße**
+- ➕ **Ritterstraße zw. Kriegsstraße und Hermann-Billing-Straße**
+- ➕ **Nürnberger Straße zw. Rechts der Alb und Sperberweg**
+- ➕ **Nikolausstraße zw. Allmendstraße und Lützowstraße**
+- ➕ **Vorarlberger Straße**
+- ➕ **Raiherwiesenstraße Ecke Schinnrainstraße**
+- ➕ **Hildebrandstraße zw. Reichenbachstraße und Auer Straße**
+- ➕ **Auf dem Schlössle**
+- ➕ **Karl-Martin-Graff-Straße zw. Gustav-Hofmann-Straße und Winkler-Dentz-Straße**
+- ➖ ~~Rintheimer Querallee und Büchiger Allee~~
+- ➖ ~~Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße~~
+- ➖ ~~Glogauer Straße zw. Beuthener Straße und Kösliner Straße~~
+- ➖ ~~Karl-Martin-Graff-Straße zw. Gustav-Hofmann-Straße und Winkler-Dentz-Straße~~
+
 ## 24.10.2026, 01:00 — 9 entfernt (gesamt 174)
 
 - ➖ ~~Südtangente zw. Fiduciastraße und Schwarzwaldkreuz~~

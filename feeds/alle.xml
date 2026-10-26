@@ -6,9 +6,16 @@
   <link rel="self" type="application/atom+xml" href="https://ahirrea.github.io/BauWatch-KA/feeds/alle.xml"/>
   <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
   <icon>https://ahirrea.github.io/BauWatch-KA/icons/icon-192.png</icon>
-  <updated>2026-10-23T23:00:12.122Z</updated>
+  <updated>2026-10-26T04:21:49.233Z</updated>
   <author><name>BauWatch-KA</name></author>
   <rights>Datensatz „Baustellen&quot;, Stadt Karlsruhe, Lizenz CC-BY 4.0</rights>
+  <entry>
+    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-10-26T04:21:49.233Z</id>
+    <title>26.10.2026, 05:21 — 13 neu, 4 entfernt</title>
+    <updated>2026-10-26T04:21:49.233Z</updated>
+    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
+    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Tiroler Straße, Voralberger Straße, Wasgaustraße, Memeler Straße&lt;/strong&gt; (Durlach)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Fuchsbau 1-19 und 23-35&lt;/strong&gt; (Hohenwettersbach)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Am Entenfang&lt;/strong&gt; (Mühlburg)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße&lt;/strong&gt; (Grünwinkel)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Seminarstraße zwischen Bismarckstraße und Moltkestraße&lt;/strong&gt; (Innenstadt-West)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Ritterstraße zw. Kriegsstraße und Hermann-Billing-Straße&lt;/strong&gt; (Südweststadt)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Nürnberger Straße zw. Rechts der Alb und Sperberweg&lt;/strong&gt; (Weiherfeld-Dammerstock)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Nikolausstraße zw. Allmendstraße und Lützowstraße&lt;/strong&gt; (Rüppurr)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Vorarlberger Straße&lt;/strong&gt; (Durlach)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Raiherwiesenstraße Ecke Schinnrainstraße&lt;/strong&gt; (Durlach)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Hildebrandstraße zw. Reichenbachstraße und Auer Straße&lt;/strong&gt; (Durlach)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Auf dem Schlössle&lt;/strong&gt; (Durlach)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Karl-Martin-Graff-Straße zw. Gustav-Hofmann-Straße und Winkler-Dentz-Straße&lt;/strong&gt; (Grötzingen)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Rintheimer Querallee und Büchiger Allee&lt;/s&gt; (Waldstadt)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße&lt;/s&gt; (Grünwinkel)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Glogauer Straße zw. Beuthener Straße und Kösliner Straße&lt;/s&gt; (Waldstadt)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Karl-Martin-Graff-Straße zw. Gustav-Hofmann-Straße und Winkler-Dentz-Straße&lt;/s&gt; (Grötzingen)&lt;/li&gt;&lt;/ul&gt;</content>
+  </entry>
   <entry>
     <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-10-23T23:00:12.122Z</id>
     <title>24.10.2026, 01:00 — 9 entfernt</title>
@@ -393,26 +400,5 @@
     <updated>2026-09-26T22:37:02.911Z</updated>
     <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
     <content type="html">&lt;ul&gt;&lt;li&gt;➖ &lt;s&gt;Bahnübergang Verlängerung Kolberger Straße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Dea-Scholven-Brücke&lt;/s&gt;&lt;/li&gt;&lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-09-25T23:14:29.963Z</id>
-    <title>26.09.2026, 01:14 — 1 neu, 11 entfernt</title>
-    <updated>2026-09-25T23:14:29.963Z</updated>
-    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
-    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Dea-Scholven-Brücke&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Wendtstraße zw. Kaiserallee und Ludwig-Marum-Straße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Litzenhardtstraße zw. Martinstraße u. Neue-Anlage-Straße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Südtangente zw. AS3 und AS4&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Donauschwabenstrße zw. Föhrenweg und Kiefernweg&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;B 36 Neureuter Straße zw. Rheinstraße und Siemensallee&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Ziegeleistraße zw. Weingartener Straße und Am Liepoldsacker&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Pfinzstraße zw. Pforzheiemr Straße und Durlacher Allee&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Rintheimer Hauptstraße von Jadstraße bis Mosbacherstraße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Frühlingstraße, Lohfeldstraße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;L 605 zwischen Hermann-Veit-Straße und Höhe Großoberfeld/ Wilhelm-Leuschner-Straße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Südtangente zw. Fiduciastraße und Schwarzwaldkreuz inkl. der Auf- und Abfahrten&lt;/s&gt;&lt;/li&gt;&lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-09-24T23:08:38.130Z</id>
-    <title>25.09.2026, 01:08 — 3 neu, 2 entfernt</title>
-    <updated>2026-09-24T23:08:38.130Z</updated>
-    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
-    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Südtangente zw. AS3 und AS4&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Pfinzstraße zw. Pforzheiemr Straße und Durlacher Allee&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;B36/ Neureuter Straße Höhe Gablonzer Straße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Ettlinger Allee zw. Zufahrt PSK (Höhe Nürnberger Straße) u. Ausfahrt PSK Anliegerfahrbahn Richtung Schwarzwaldkreuz&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Haid- u. Neu-Straße zw. Hirtenweg und Am Sportpark&lt;/s&gt;&lt;/li&gt;&lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-09-24T13:28:06.248Z</id>
-    <title>24.09.2026, 15:28 — 4 neu, 2 entfernt</title>
-    <updated>2026-09-24T13:28:06.248Z</updated>
-    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
-    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Pfinztalstraße zw. Marstallstaße und Karlsburgstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Ettlinger Allee zw. Zufahrt PSK (Höhe Nürnberger Straße) u. Ausfahrt PSK Anliegerfahrbahn Richtung Schwarzwaldkreuz&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Schückstraße zw. Tullastraße und Gustav-Specht-Straße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Tullastraße Gleisüberfahrt Höhe Schückstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Schückstraße zw. Tullastraße und Gustav-Specht-Straße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Danziger Straße 18, Etttlinger Allee vor Am Rüppurrer Schloß 1&lt;/s&gt;&lt;/li&gt;&lt;/ul&gt;</content>
   </entry>
 </feed>
