@@ -2,6 +2,28 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 27.10.2026, 15:18 — 11 neu, 6 entfernt, 2 geändert (gesamt 190)
+
+- ➕ **Emmy-Noether-Straße zw. Ada-Lovelace-Straße und Wilhem-Schickard-Straße**
+- ➕ **Bernhardusplatz, Adenauerring, Karl-Wilhelm-Straße, Bernhardtstraße**
+- ➕ **Lachnerstraße, Durlacher Allee, Georg.Friedrich-Straße, Rintheimer Straße, Veilchen Straße, Humnmboldt Straße**
+- ➕ **Essenweinstraße, Sternbergstraße,  Gerwigstraße, Veilchenstraße, Haizingerstraße**
+- ➕ **Gartenstraße zw. Weinbrennerplatz und Steinhäuserstraße**
+- ➕ **Lammstraße zw. Zirkel und Schlossplatz**
+- ➕ **Haid-und-Neu-Straße/Karl-Wilhelm-Platz**
+- ➕ **Kreuzungsbereich Hirsch- / Südendstraße Nordfahrbahn**
+- ➕ **Waldstraße zw. Ludwigsplatz und Bürgerstraße**
+- ➕ **Kaiserstraße zw. Kronenstraße und Adlerstraße**
+- ➕ **Lußstraße zw. Lußsteige und Schlössleweg**
+- ➖ ~~Lammstraße zw. Am Schlossplatz und Zirkel~~
+- ➖ ~~Brauerstraße zw. Gartenstraße u. Kriegstraße~~
+- ➖ ~~Knoten Brauerstraße / Reinhold-Frank-Straße / Kriegsstraße / Gartenstraße~~
+- ➖ ~~Ritterstraße zw. Kriegsstraße und Hermann-Billing-Straße~~
+- ➖ ~~Nürnberger Straße zw. Rechts der Alb und Sperberweg~~
+- ➖ ~~Kronenstraße, Kaiserstraße, Kronenplatz~~
+- ✏️ Herrmann-Billing-Straße zw. Ettlinger Straße und Ritterstraße — Beginn: 2026-09-13 → 2026-10-18; Ende: 2026-12-31 → 2026-12-24; Info geändert
+- ✏️ Kaiserstraße zw. Kronenstraße und Adlerstraße — Ende: 2026-11-06 → 2026-11-30
+
 ## 26.10.2026, 16:04 — 2 neu, 2 geändert (gesamt 185)
 
 - ➕ **Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee**
