@@ -2,6 +2,14 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 27.10.2026, 21:33 — 1 neu, 2 entfernt, 2 geändert (gesamt 189)
+
+- ➕ **Im Säuterich, Kremnitzer Straße, Hauerlandstraße, Preßburgerstraße Ostmarkstraße**
+- ➖ ~~Adlerstraße zw. Zähringerstraße und Kasierstraße~~
+- ➖ ~~Kaiserstraße zw. Kronenstraße und Adlerstraße~~
+- ✏️ Emmy-Noether-Straße zw. Ada-Lovelace-Straße und Wilhem-Schickard-Straße — Sperrgrad: teil → gering
+- ✏️ Kaiserstraße zw. Kreuzstraße und Kronenstraße — sonstige Angaben aktualisiert
+
 ## 27.10.2026, 15:18 — 11 neu, 6 entfernt, 2 geändert (gesamt 190)
 
 - ➕ **Emmy-Noether-Straße zw. Ada-Lovelace-Straße und Wilhem-Schickard-Straße**

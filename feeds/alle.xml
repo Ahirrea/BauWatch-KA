@@ -6,9 +6,16 @@
   <link rel="self" type="application/atom+xml" href="https://ahirrea.github.io/BauWatch-KA/feeds/alle.xml"/>
   <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
   <icon>https://ahirrea.github.io/BauWatch-KA/icons/icon-192.png</icon>
-  <updated>2026-10-27T14:18:11.151Z</updated>
+  <updated>2026-10-27T20:33:19.026Z</updated>
   <author><name>BauWatch-KA</name></author>
   <rights>Datensatz „Baustellen&quot;, Stadt Karlsruhe, Lizenz CC-BY 4.0</rights>
+  <entry>
+    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-10-27T20:33:19.026Z</id>
+    <title>27.10.2026, 21:33 — 1 neu, 2 entfernt, 1 geändert</title>
+    <updated>2026-10-27T20:33:19.026Z</updated>
+    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
+    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Im Säuterich, Kremnitzer Straße, Hauerlandstraße, Preßburgerstraße Ostmarkstraße&lt;/strong&gt; (Durlach)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Adlerstraße zw. Zähringerstraße und Kasierstraße&lt;/s&gt; (Innenstadt-Ost)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Kaiserstraße zw. Kronenstraße und Adlerstraße&lt;/s&gt; (Innenstadt-Ost)&lt;/li&gt;&lt;li&gt;✏️ Emmy-Noether-Straße zw. Ada-Lovelace-Straße und Wilhem-Schickard-Straße (Rintheim) — Sperrgrad: teil → gering&lt;/li&gt;&lt;/ul&gt;</content>
+  </entry>
   <entry>
     <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-10-27T14:18:11.151Z</id>
     <title>27.10.2026, 15:18 — 11 neu, 6 entfernt, 2 geändert</title>
