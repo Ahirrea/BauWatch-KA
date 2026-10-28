@@ -2,6 +2,10 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 28.10.2026, 21:54 — 1 entfernt (gesamt 189)
+
+- ➖ ~~Yorckstraße zw. Sophienstraße und Yorckplatz~~
+
 ## 28.10.2026, 15:59 — 1 neu, 1 entfernt, 7 geändert (gesamt 190)
 
 - ➕ **Glogauer Straße zw. Königsberger Straße und Im Eichbäumle**

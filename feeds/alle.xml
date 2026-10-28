@@ -6,9 +6,16 @@
   <link rel="self" type="application/atom+xml" href="https://ahirrea.github.io/BauWatch-KA/feeds/alle.xml"/>
   <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
   <icon>https://ahirrea.github.io/BauWatch-KA/icons/icon-192.png</icon>
-  <updated>2026-10-28T14:59:45.940Z</updated>
+  <updated>2026-10-28T20:54:50.249Z</updated>
   <author><name>BauWatch-KA</name></author>
   <rights>Datensatz „Baustellen&quot;, Stadt Karlsruhe, Lizenz CC-BY 4.0</rights>
+  <entry>
+    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-10-28T20:54:50.249Z</id>
+    <title>28.10.2026, 21:54 — 1 entfernt</title>
+    <updated>2026-10-28T20:54:50.249Z</updated>
+    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
+    <content type="html">&lt;ul&gt;&lt;li&gt;➖ &lt;s&gt;Yorckstraße zw. Sophienstraße und Yorckplatz&lt;/s&gt; (Weststadt)&lt;/li&gt;&lt;/ul&gt;</content>
+  </entry>
   <entry>
     <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-10-28T14:59:45.940Z</id>
     <title>28.10.2026, 15:59 — 1 neu, 1 entfernt, 4 geändert</title>
@@ -414,12 +421,5 @@
     <updated>2026-09-29T00:17:59.342Z</updated>
     <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
     <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Luisenstraße zw. Marienstraße und Wilhelmstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Ebertstraße zw. Albtalbahnhof und Ebertstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Reichenbachstraße zw. Ellmendinger Straße und Hildebrandstraße&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-09-28T16:41:11.306Z</id>
-    <title>28.09.2026, 18:41 — 3 neu, 1 entfernt, 5 geändert</title>
-    <updated>2026-09-28T16:41:11.306Z</updated>
-    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
-    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Zweibrückener Straße zw. Rehbuckel und Ebersteinstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Bahnübergang Verlängerung Kolberger Straße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Markgrafenstraße und Waldhornstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Ebertstraße zw. Albtalbahnhof und Ebertstraße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — Ende: 2026-10-02 → 2026-11-20&lt;/li&gt;&lt;li&gt;✏️ Zähringer Straße zw. Waldhornstraße und Kronenstraße — Ende: 2026-10-23 → 2026-11-27&lt;/li&gt;&lt;li&gt;✏️ Fritz-Erler-Straße zw. Markgrafenstraße u. Kaiserstraße — Ende: 2026-10-23 → 2026-11-27&lt;/li&gt;&lt;li&gt;✏️ Fritz-Haber-Weg — Ende: 2026-09-30 → 2026-11-30&lt;/li&gt;&lt;li&gt;✏️ Südendstraße zw. Brauerstraße und Boeckhstraße — Ende: 2026-10-31 → 2026-11-15&lt;/li&gt;&lt;/ul&gt;</content>
   </entry>
 </feed>
