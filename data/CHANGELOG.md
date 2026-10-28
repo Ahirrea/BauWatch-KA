@@ -2,6 +2,18 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 28.10.2026, 15:59 — 1 neu, 1 entfernt, 7 geändert (gesamt 190)
+
+- ➕ **Glogauer Straße zw. Königsberger Straße und Im Eichbäumle**
+- ➖ ~~Böhmerwaldstraße zw. Mecklenburger Straße und Ludwigsburger Straße / Thüringer Straße zw. Egerlandstraße und Esslinger Srraße~~
+- ✏️ Herrmann-Billing-Straße zw. Ettlinger Straße und Ritterstraße — Beginn: 2026-10-18 → 2026-10-21; Ende: 2026-12-24 → 2027-02-20
+- ✏️ Gartenstraße zw. Weinbrennerplatz und Steinhäuserstraße — sonstige Angaben aktualisiert
+- ✏️ Kaiserstraße zw. Adlerstraße und Kronenstraße — Bezeichnung geändert; Info geändert
+- ✏️ Tullastraße Gleisüberfahrt Höhe Schückstraße — Ende: 2026-10-30 → 2026-12-18
+- ✏️ Gartenstraße zwischen Steinhäuserstraße und Weinbrennerplatz/Kriegstraße — sonstige Angaben aktualisiert
+- ✏️ Kaiserstraße zw. Kronenstraße und Adlerstraße — sonstige Angaben aktualisiert
+- ✏️ Schückstraße zw. Tullastraße und Gustav-Specht-Straße — Ende: 2026-12-02 → 2026-12-18
+
 ## 28.10.2026, 06:14 — 7 neu, 6 entfernt (gesamt 190)
 
 - ➕ **Ottostraße zw. Edgar-Heller-Straße und Geisenrainweg**
