@@ -2,6 +2,22 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 28.10.2026, 06:14 — 7 neu, 6 entfernt (gesamt 190)
+
+- ➕ **Ottostraße zw. Edgar-Heller-Straße und Geisenrainweg**
+- ➕ **Yorckstraße zw. Sophienstraße und Yorckplatz**
+- ➕ **Leopoldstraße zw. Kaiserstraße und Stephanienstraße**
+- ➕ **Enzstraße zw. Mainstraße und Tauberstraße**
+- ➕ **Kaiserstraße zw. Kronenstraße und Adlerstraße**
+- ➕ **Gleiwitzer Straße zw. Glogauer Straße und Liegnitzer Straße**
+- ➕ **Glogauer Straße zw. Königsberger Straße und Neisser Straße**
+- ➖ ~~Scheffelstraße zw. Kaiserallee und Sophienstraße~~
+- ➖ ~~Am Sportpark zw. Gustav-Heinemann-Allee und Schweidnitzer Straße~~
+- ➖ ~~Knielinger Allee zw. Fachhochschule und Erzbergerstraße~~
+- ➖ ~~Nikolausstraße zw. Allmendstraße und Lützowstraße~~
+- ➖ ~~Auf dem Schlössle~~
+- ➖ ~~Lußstraße zw. Lußsteige und Schlössleweg~~
+
 ## 27.10.2026, 21:33 — 1 neu, 2 entfernt, 2 geändert (gesamt 189)
 
 - ➕ **Im Säuterich, Kremnitzer Straße, Hauerlandstraße, Preßburgerstraße Ostmarkstraße**

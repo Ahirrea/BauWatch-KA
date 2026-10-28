@@ -6,9 +6,16 @@
   <link rel="self" type="application/atom+xml" href="https://ahirrea.github.io/BauWatch-KA/feeds/alle.xml"/>
   <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
   <icon>https://ahirrea.github.io/BauWatch-KA/icons/icon-192.png</icon>
-  <updated>2026-10-27T20:33:19.026Z</updated>
+  <updated>2026-10-28T05:14:48.016Z</updated>
   <author><name>BauWatch-KA</name></author>
   <rights>Datensatz „Baustellen&quot;, Stadt Karlsruhe, Lizenz CC-BY 4.0</rights>
+  <entry>
+    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-10-28T05:14:48.016Z</id>
+    <title>28.10.2026, 06:14 — 7 neu, 6 entfernt</title>
+    <updated>2026-10-28T05:14:48.016Z</updated>
+    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
+    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Ottostraße zw. Edgar-Heller-Straße und Geisenrainweg&lt;/strong&gt; (Durlach)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Yorckstraße zw. Sophienstraße und Yorckplatz&lt;/strong&gt; (Weststadt)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Leopoldstraße zw. Kaiserstraße und Stephanienstraße&lt;/strong&gt; (Innenstadt-West)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Enzstraße zw. Mainstraße und Tauberstraße&lt;/strong&gt; (Weiherfeld-Dammerstock)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Kaiserstraße zw. Kronenstraße und Adlerstraße&lt;/strong&gt; (Innenstadt-Ost)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Gleiwitzer Straße zw. Glogauer Straße und Liegnitzer Straße&lt;/strong&gt; (Waldstadt)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Glogauer Straße zw. Königsberger Straße und Neisser Straße&lt;/strong&gt; (Waldstadt)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Scheffelstraße zw. Kaiserallee und Sophienstraße&lt;/s&gt; (Weststadt)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Am Sportpark zw. Gustav-Heinemann-Allee und Schweidnitzer Straße&lt;/s&gt; (Hagsfeld)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Knielinger Allee zw. Fachhochschule und Erzbergerstraße&lt;/s&gt; (Nordstadt)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Nikolausstraße zw. Allmendstraße und Lützowstraße&lt;/s&gt; (Rüppurr)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Auf dem Schlössle&lt;/s&gt; (Durlach)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Lußstraße zw. Lußsteige und Schlössleweg&lt;/s&gt; (Durlach)&lt;/li&gt;&lt;/ul&gt;</content>
+  </entry>
   <entry>
     <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-10-27T20:33:19.026Z</id>
     <title>27.10.2026, 21:33 — 1 neu, 2 entfernt, 1 geändert</title>
@@ -407,12 +414,5 @@
     <updated>2026-09-28T16:41:11.306Z</updated>
     <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
     <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Zweibrückener Straße zw. Rehbuckel und Ebersteinstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Bahnübergang Verlängerung Kolberger Straße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Markgrafenstraße und Waldhornstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Ebertstraße zw. Albtalbahnhof und Ebertstraße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — Ende: 2026-10-02 → 2026-11-20&lt;/li&gt;&lt;li&gt;✏️ Zähringer Straße zw. Waldhornstraße und Kronenstraße — Ende: 2026-10-23 → 2026-11-27&lt;/li&gt;&lt;li&gt;✏️ Fritz-Erler-Straße zw. Markgrafenstraße u. Kaiserstraße — Ende: 2026-10-23 → 2026-11-27&lt;/li&gt;&lt;li&gt;✏️ Fritz-Haber-Weg — Ende: 2026-09-30 → 2026-11-30&lt;/li&gt;&lt;li&gt;✏️ Südendstraße zw. Brauerstraße und Boeckhstraße — Ende: 2026-10-31 → 2026-11-15&lt;/li&gt;&lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-09-27T22:56:26.512Z</id>
-    <title>28.09.2026, 00:56 — 7 neu, 2 entfernt</title>
-    <updated>2026-09-27T22:56:26.512Z</updated>
-    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
-    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Laurentiusstraße zw. Neue Anlage Straße u. Martinstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Landgrabenstraße zw. Neue Anlage Straße u. Kreisel&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Brauerstraße zw. Roonstraße und Gartenstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Glogauer Straße zw. Königsberger Straße und Im Eichbäumle&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Ebertstraße zw. Albtalbahnhof und Ebertstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Rittnertstraße und Jean-Ritzert-Straße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Haid- u. Neu-Straße zw. Hirtenweg und Am Sportpark&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Zweibrückener Straße zw. Rehbuckel und Ebersteinstraße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Glogauer Straße zw. Liegnitzer Straße und Im Eichbäumle&lt;/s&gt;&lt;/li&gt;&lt;/ul&gt;</content>
   </entry>
 </feed>
