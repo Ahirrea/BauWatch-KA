@@ -2,6 +2,15 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 29.10.2026, 06:25 — 2 neu, 4 entfernt (gesamt 187)
+
+- ➕ **Ostring Kreuzungsbereich Durlacher Alllee**
+- ➕ **Pfalzstraße zw. Kirschstraße und Kastenwörthstraße**
+- ➖ ~~Haid-und-Neu-Straße/Karl-Wilhelm-Platz~~
+- ➖ ~~Leopoldstraße zw. Kaiserstraße und Stephanienstraße~~
+- ➖ ~~Enzstraße zw. Mainstraße und Tauberstraße~~
+- ➖ ~~Gleiwitzer Straße zw. Glogauer Straße und Liegnitzer Straße~~
+
 ## 28.10.2026, 21:54 — 1 entfernt (gesamt 189)
 
 - ➖ ~~Yorckstraße zw. Sophienstraße und Yorckplatz~~
