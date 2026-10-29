@@ -2,6 +2,16 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 29.10.2026, 16:07 — 2 neu, 2 entfernt, 3 geändert (gesamt 187)
+
+- ➕ **Hermann-Billing-Straße zw. Ettlinger Straße u. Beiertheimer Allee (Zufahrt Landratsamt)**
+- ➕ **Stabelstraße zw. Moltkestraße und Hildapromenade**
+- ➖ ~~Maximilianstraße zw. Weberstr. u. Stabelstr.~~
+- ➖ ~~Hirschstraße zw. Vorholzstraße u. Südendstraße~~
+- ✏️ Herrmann-Billing-Straße zw. Ettlinger Straße und Ritterstraße — Info geändert
+- ✏️ Ruschgraben, Karlsruher Str., Bruchsaler Str., Hagdornstr. — Ende: 2026-12-06 → 2027-02-20; Bezeichnung geändert; Info geändert
+- ✏️ Maximilianstraße zw. Stabelstraße und Weberstraße — Ende: 2026-10-30 → 2026-11-06
+
 ## 29.10.2026, 06:25 — 2 neu, 4 entfernt (gesamt 187)
 
 - ➕ **Ostring Kreuzungsbereich Durlacher Alllee**
