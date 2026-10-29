@@ -2,6 +2,10 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 29.10.2026, 21:59 — 1 entfernt (gesamt 186)
+
+- ➖ ~~Graf-Rhena-Str.2a~~
+
 ## 29.10.2026, 16:07 — 2 neu, 2 entfernt, 3 geändert (gesamt 187)
 
 - ➕ **Hermann-Billing-Straße zw. Ettlinger Straße u. Beiertheimer Allee (Zufahrt Landratsamt)**
