@@ -2,6 +2,12 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 30.10.2026, 15:58 — 1 entfernt, 2 geändert (gesamt 186)
+
+- ➖ ~~B10 Südtangente zwischen AS9 und AS10~~
+- ✏️ Vorarlberger Straße — Ende: 2026-10-31 → 2026-11-07; Info geändert
+- ✏️ Lußstraße zw. Lußsteige und Schlössleweg — Ende: 2026-10-30 → 2026-11-02
+
 ## 30.10.2026, 06:25 — 3 neu, 2 entfernt (gesamt 187)
 
 - ➕ **Wachhausstraße, Kieselweg, Egon-Langen-Straße**
