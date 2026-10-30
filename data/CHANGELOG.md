@@ -2,6 +2,14 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 30.10.2026, 06:25 — 3 neu, 2 entfernt (gesamt 187)
+
+- ➕ **Wachhausstraße, Kieselweg, Egon-Langen-Straße**
+- ➕ **Grenzstraße, Blattwiesenstraße, Alter Graben**
+- ➕ **Lußstraße zw. Lußsteige und Schlössleweg**
+- ➖ ~~Ostring Kreuzungsbereich Durlacher Alllee~~
+- ➖ ~~Uhlandstraße zw. Goethestraße und Sophienstraße~~
+
 ## 29.10.2026, 21:59 — 1 entfernt (gesamt 186)
 
 - ➖ ~~Graf-Rhena-Str.2a~~

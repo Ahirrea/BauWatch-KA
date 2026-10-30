@@ -6,9 +6,16 @@
   <link rel="self" type="application/atom+xml" href="https://ahirrea.github.io/BauWatch-KA/feeds/alle.xml"/>
   <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
   <icon>https://ahirrea.github.io/BauWatch-KA/icons/icon-192.png</icon>
-  <updated>2026-10-29T20:59:06.866Z</updated>
+  <updated>2026-10-30T05:25:21.307Z</updated>
   <author><name>BauWatch-KA</name></author>
   <rights>Datensatz „Baustellen&quot;, Stadt Karlsruhe, Lizenz CC-BY 4.0</rights>
+  <entry>
+    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-10-30T05:25:21.307Z</id>
+    <title>30.10.2026, 06:25 — 3 neu, 2 entfernt</title>
+    <updated>2026-10-30T05:25:21.307Z</updated>
+    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
+    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Wachhausstraße, Kieselweg, Egon-Langen-Straße&lt;/strong&gt; (Durlach)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Grenzstraße, Blattwiesenstraße, Alter Graben&lt;/strong&gt; (Durlach)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Lußstraße zw. Lußsteige und Schlössleweg&lt;/strong&gt; (Durlach)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Ostring Kreuzungsbereich Durlacher Alllee&lt;/s&gt; (Oststadt)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Uhlandstraße zw. Goethestraße und Sophienstraße&lt;/s&gt; (Weststadt)&lt;/li&gt;&lt;/ul&gt;</content>
+  </entry>
   <entry>
     <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-10-29T20:59:06.866Z</id>
     <title>29.10.2026, 21:59 — 1 entfernt</title>
@@ -414,12 +421,5 @@
     <updated>2026-09-30T14:49:29.077Z</updated>
     <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
     <content type="html">&lt;ul&gt;&lt;li&gt;➖ &lt;s&gt;Vogelsang&lt;/s&gt;&lt;/li&gt;&lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-09-29T23:35:34.964Z</id>
-    <title>30.09.2026, 01:35 — 3 neu, 2 entfernt</title>
-    <updated>2026-09-29T23:35:34.964Z</updated>
-    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
-    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Franz-Lust-Straße zw. Kußmaulstraße u. Knielinger Allee&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Ada-Lovelace-Straße (BV Emmy-Noether-Straße 17)&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Kieselweg&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Luisenstraße zw. Marienstraße und Wilhelmstraße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Haid- u. Neu-Straße zw. Hirtenweg und Am Sportpark&lt;/s&gt;&lt;/li&gt;&lt;/ul&gt;</content>
   </entry>
 </feed>
