@@ -2,6 +2,26 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 31.10.2026, 06:09 — 17 entfernt (gesamt 169)
+
+- ➖ ~~Ottostraße zw. Edgar-Heller-Straße und Geisenrainweg~~
+- ➖ ~~Kieselweg~~
+- ➖ ~~Lessingstraße zw. Sophienstraße und Kaiserallee~~
+- ➖ ~~Grenzstraße zw. Westmarkstraße und Kärtner Straße, Leußlerstraße, Westmarkstraße zw. Grenzstraße und Stegwiesenstraße~~
+- ➖ ~~Pfarrstraße Haus Nr.12-18 und Haus Nr. 43-51~~
+- ➖ ~~Feierabendweg~~
+- ➖ ~~Keplerstraße von Bodelschwinghstraße bis Zietenstraße~~
+- ➖ ~~Am Entenfang~~
+- ➖ ~~Vorholzstraße zw. Karlstraße und Hirschstraße~~
+- ➖ ~~Akademiestraße zw. Hans-Thoma-Straße und Karlstraße~~
+- ➖ ~~Karlstraße zw. Kaiserstraße und Akademiestraße~~
+- ➖ ~~Werderstraße zw. Marienstraße und Rüppurrer Straße~~
+- ➖ ~~Hölderlinstraße, Emil-Gött-Straße~~
+- ➖ ~~Ostmarkstraße zwischen Westmarkstraße und Kärntner Straße~~
+- ➖ ~~Ostmarkstraße zwischen Westmarkstraße und Kärntner Straße~~
+- ➖ ~~Raiherwiesenstraße Ecke Schinnrainstraße~~
+- ➖ ~~Hildebrandstraße zw. Reichenbachstraße und Auer Straße~~
+
 ## 30.10.2026, 15:58 — 1 entfernt, 2 geändert (gesamt 186)
 
 - ➖ ~~B10 Südtangente zwischen AS9 und AS10~~
