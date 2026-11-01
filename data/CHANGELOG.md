@@ -2,6 +2,26 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 01.11.2026, 06:39 — 3 neu, 14 entfernt (gesamt 158)
+
+- ➕ **Lammstraße zw. Am Schlossplatz und Zirkel**
+- ➕ **Luisenstraße zw. Rüppurrer Straße und Marienstraße**
+- ➕ **B 10 Augustenburgstraße Tunnel Grötzingen**
+- ➖ ~~Durlacher Allee 26 - 30; Lachnerstr.  1 - 11; Degenfeldstraße; Buntestraße 2 - 18; Gottesauer Str. 27 - 39~~
+- ➖ ~~Wolfartsweierer Straße zw. Durlacher Allee und Frühlingstraße und Sommerstraße zw. Frühlingstraße und Gottesauer Straße~~
+- ➖ ~~Gebietsausbau Hauptbahnstraße, Raiherwiesenstraße, Bleichstraße, Schinnrainstraße~~
+- ➖ ~~Beim Wasserturm, Taglöhnergärten~~
+- ➖ ~~Hirschstraße zw. Kaiserstraße und Sophienstraße~~
+- ➖ ~~Kaiserstraße, Hirschstraße, Amalinestraße~~
+- ➖ ~~Lammstraße zw. Zirkel und Schlossplatz~~
+- ➖ ~~Steinkreuzstraße zw. Ringstraße und Hohenbergstraße~~
+- ➖ ~~Richard-Wagner-Straße zw. Schubertstraße und Bachstraße~~
+- ➖ ~~Martin-Schongauer-Weg zw. Albrecht-Altdorf-Weg und Frans-Hals-Weg~~
+- ➖ ~~Bismarckstraße zw. Fichte- u. Seminarstraße~~
+- ➖ ~~Im Eichbäumle~~
+- ➖ ~~Thüringer Straße zw. Böhmerwaldstraße und Esslinger Straße~~
+- ➖ ~~Zweibrückener Straße zw. Rehbuckel und Ebersteinstraße~~
+
 ## 31.10.2026, 06:09 — 17 entfernt (gesamt 169)
 
 - ➖ ~~Ottostraße zw. Edgar-Heller-Straße und Geisenrainweg~~
