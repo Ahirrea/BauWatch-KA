@@ -2,6 +2,29 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 02.11.2026, 06:38 — 18 neu, 2 entfernt (gesamt 174)
+
+- ➕ **Südtangente zw. Schwarzwaldkreuz und A5**
+- ➕ **Zirkel zw. Kreuzstraße und Waldhornstraße**
+- ➕ **Karl-Wilhelm-Platz/Haid-und-Neu-Str./Georg-Friedrich-Straße/Rudolfstr./Bernhardstr./Melanchtonstr./Essenweinstr./Sternbergstr.**
+- ➕ **Gartenstraße zw. Lessingstraße und Brauerstraße**
+- ➕ **B3/Südtangente Kreuzungsbereiche Fiduciastraße und B3 Ortsumfahrung Wolfartsweier**
+- ➕ **K9659 Kreisstraße P&R Platz Höhe Bahnhof Durlach**
+- ➕ **Rheinhafenstraße zw. Schifferstraße und Agathenstraße**
+- ➕ **Scheffelstraße zw. Kaiserallee und Sophienstraße**
+- ➕ **Nikolausstraße zw. Allmendstraße und Lützowstraße**
+- ➕ **Rastatter Straße zw. Lange Straße und Herrenalber Straße/Pfauenstraße**
+- ➕ **Baumeisterstraße zw. Finterstraße und Ettinger Straße**
+- ➕ **Adenauerring zw. Engesserstraße und Am Fasanenplatz**
+- ➕ **Glogauer Straße zw. Lauenburger Straße und Kösliner Straße**
+- ➕ **Hirschberger Straße, Waldenburger Straße**
+- ➕ **Wasgaustraße zw. Tiroler Straße und Memeler Straße**
+- ➕ **Thüringer Straße zw. Esslinger Straße und Böhmerwaldstraße**
+- ➕ **Turmbergstraße zw. Posseltstraße und Wolfweg**
+- ➕ **Reichardtstraße/ Turmberg zw. Neisserstraße und Jean-Ritzert-Straße**
+- ➖ ~~Glogauer Straße zw. Lauenburger Straße und Kösliner Straße~~
+- ➖ ~~Waldenburger Straße~~
+
 ## 01.11.2026, 06:39 — 3 neu, 14 entfernt (gesamt 158)
 
 - ➕ **Lammstraße zw. Am Schlossplatz und Zirkel**
