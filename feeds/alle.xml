@@ -6,9 +6,16 @@
   <link rel="self" type="application/atom+xml" href="https://ahirrea.github.io/BauWatch-KA/feeds/alle.xml"/>
   <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
   <icon>https://ahirrea.github.io/BauWatch-KA/icons/icon-192.png</icon>
-  <updated>2026-11-02T05:38:40.938Z</updated>
+  <updated>2026-11-02T18:07:42.388Z</updated>
   <author><name>BauWatch-KA</name></author>
   <rights>Datensatz „Baustellen&quot;, Stadt Karlsruhe, Lizenz CC-BY 4.0</rights>
+  <entry>
+    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-11-02T18:07:42.388Z</id>
+    <title>02.11.2026, 19:07 — 5 neu, 3 entfernt, 4 geändert</title>
+    <updated>2026-11-02T18:07:42.388Z</updated>
+    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
+    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Wolfartsweierer Straße zw. Durlacher Allee und Frühlingstraße und Sommerstraße zw. Frühlingstraße und Gottesauer Straße&lt;/strong&gt; (Oststadt)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Bodelschwinghstraße zw. Siemensallee und Anliegerfahrbahn Siemensallee&lt;/strong&gt; (Mühlburg)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Lessingstraße zw. Sophienstraße und Kaiserallee&lt;/strong&gt; (Weststadt)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Zweibrückener Straße zw. Rehbuckel und Ebersteinstraße&lt;/strong&gt; (Hohenwettersbach)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Bergbahnstraße zwischen Am Steinbruch und Grötzinger Straße&lt;/strong&gt; (Durlach)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Karl-Wilhelm-Platz/Haid-und-Neu-Str./Georg-Friedrich-Straße/Rudolfstr./Bernhardstr./Melanchtonstr./Essenweinstr./Sternbergstr.&lt;/s&gt; (Oststadt)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Gartenstraße zw. Weinbrennerplatz und Steinhäuserstraße&lt;/s&gt; (Südweststadt)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Bergbahnstraße zw. B 3 Grötzinger Straße und Am Steinbruch&lt;/s&gt; (Durlach)&lt;/li&gt;&lt;li&gt;✏️ Bernhardusplatz, Adenauerring, Karl-Wilhelm-Straße, Bernhardtstraße (Oststadt) — Sperrgrad: teil → gering; Ende: 2026-12-31 → 2026-11-30&lt;/li&gt;&lt;li&gt;✏️ Lachnerstraße, Durlacher Allee, Georg.Friedrich-Straße, Rintheimer Straße, Veilchen Straße, Humnmboldt Straße (Oststadt) — Ende: 2026-12-31 → 2026-11-30&lt;/li&gt;&lt;li&gt;✏️ Essenweinstraße, Sternbergstraße,  Gerwigstraße, Veilchenstraße, Haizingerstraße (Oststadt) — Sperrgrad: teil → gering; Ende: 2026-12-31 → 2026-11-30&lt;/li&gt;&lt;li&gt;✏️ Lußstraße zw. Lußsteige und Schlössleweg (Durlach) — Ende: 2026-11-02 → 2026-11-03&lt;/li&gt;&lt;/ul&gt;</content>
+  </entry>
   <entry>
     <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-11-02T05:38:40.938Z</id>
     <title>02.11.2026, 06:38 — 18 neu, 2 entfernt</title>

@@ -2,6 +2,22 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 02.11.2026, 19:07 — 5 neu, 3 entfernt, 5 geändert (gesamt 176)
+
+- ➕ **Wolfartsweierer Straße zw. Durlacher Allee und Frühlingstraße und Sommerstraße zw. Frühlingstraße und Gottesauer Straße**
+- ➕ **Bodelschwinghstraße zw. Siemensallee und Anliegerfahrbahn Siemensallee**
+- ➕ **Lessingstraße zw. Sophienstraße und Kaiserallee**
+- ➕ **Zweibrückener Straße zw. Rehbuckel und Ebersteinstraße**
+- ➕ **Bergbahnstraße zwischen Am Steinbruch und Grötzinger Straße**
+- ➖ ~~Karl-Wilhelm-Platz/Haid-und-Neu-Str./Georg-Friedrich-Straße/Rudolfstr./Bernhardstr./Melanchtonstr./Essenweinstr./Sternbergstr.~~
+- ➖ ~~Gartenstraße zw. Weinbrennerplatz und Steinhäuserstraße~~
+- ➖ ~~Bergbahnstraße zw. B 3 Grötzinger Straße und Am Steinbruch~~
+- ✏️ Bernhardusplatz, Adenauerring, Karl-Wilhelm-Straße, Bernhardtstraße — Sperrgrad: teil → gering; Ende: 2026-12-31 → 2026-11-30
+- ✏️ Lachnerstraße, Durlacher Allee, Georg.Friedrich-Straße, Rintheimer Straße, Veilchen Straße, Humnmboldt Straße — Ende: 2026-12-31 → 2026-11-30
+- ✏️ Essenweinstraße, Sternbergstraße,  Gerwigstraße, Veilchenstraße, Haizingerstraße — Sperrgrad: teil → gering; Ende: 2026-12-31 → 2026-11-30
+- ✏️ Lußstraße zw. Lußsteige und Schlössleweg — Ende: 2026-11-02 → 2026-11-03
+- ✏️ Turmbergstraße zw. Posseltstraße und Wolfweg — sonstige Angaben aktualisiert
+
 ## 02.11.2026, 06:38 — 18 neu, 2 entfernt (gesamt 174)
 
 - ➕ **Südtangente zw. Schwarzwaldkreuz und A5**
