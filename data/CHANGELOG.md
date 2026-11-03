@@ -2,6 +2,13 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 03.11.2026, 12:47 — 2 neu, 1 entfernt, 1 geändert (gesamt 174)
+
+- ➕ **Kreuzungsbereich Hirsch- / Südendstraße Nordfahrbahn**
+- ➕ **Hermann-Billing-Straße zw. Beiertheimer Allee und Ettlinger Allee**
+- ➖ ~~Sonntagstraße Gleisüberfahrt Mathystraße~~
+- ✏️ Lachnerstraße, Durlacher Allee, Georg.Friedrich-Straße, Rintheimer Straße, Veilchen Straße, Humnmboldt Straße — Sperrgrad: teil → gering
+
 ## 03.11.2026, 03:08 — 3 entfernt (gesamt 173)
 
 - ➖ ~~Südtangente zw. Schwarzwaldkreuz und A5~~

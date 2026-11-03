@@ -6,9 +6,16 @@
   <link rel="self" type="application/atom+xml" href="https://ahirrea.github.io/BauWatch-KA/feeds/alle.xml"/>
   <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
   <icon>https://ahirrea.github.io/BauWatch-KA/icons/icon-192.png</icon>
-  <updated>2026-11-03T02:08:28.217Z</updated>
+  <updated>2026-11-03T11:47:20.015Z</updated>
   <author><name>BauWatch-KA</name></author>
   <rights>Datensatz „Baustellen&quot;, Stadt Karlsruhe, Lizenz CC-BY 4.0</rights>
+  <entry>
+    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-11-03T11:47:20.015Z</id>
+    <title>03.11.2026, 12:47 — 2 neu, 1 entfernt, 1 geändert</title>
+    <updated>2026-11-03T11:47:20.015Z</updated>
+    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
+    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Kreuzungsbereich Hirsch- / Südendstraße Nordfahrbahn&lt;/strong&gt; (Südweststadt)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Hermann-Billing-Straße zw. Beiertheimer Allee und Ettlinger Allee&lt;/strong&gt; (Südweststadt)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Sonntagstraße Gleisüberfahrt Mathystraße&lt;/s&gt; (Südweststadt)&lt;/li&gt;&lt;li&gt;✏️ Lachnerstraße, Durlacher Allee, Georg.Friedrich-Straße, Rintheimer Straße, Veilchen Straße, Humnmboldt Straße (Oststadt) — Sperrgrad: teil → gering&lt;/li&gt;&lt;/ul&gt;</content>
+  </entry>
   <entry>
     <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-11-03T02:08:28.217Z</id>
     <title>03.11.2026, 03:08 — 3 entfernt</title>
