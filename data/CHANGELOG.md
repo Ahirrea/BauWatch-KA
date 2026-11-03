@@ -2,6 +2,12 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 03.11.2026, 03:08 — 3 entfernt (gesamt 173)
+
+- ➖ ~~Südtangente zw. Schwarzwaldkreuz und A5~~
+- ➖ ~~Rastatter Straße zw. Lange Straße und Herrenalber Straße/Pfauenstraße~~
+- ➖ ~~Reichardtstraße/ Turmberg zw. Neisserstraße und Jean-Ritzert-Straße~~
+
 ## 02.11.2026, 19:07 — 5 neu, 3 entfernt, 5 geändert (gesamt 176)
 
 - ➕ **Wolfartsweierer Straße zw. Durlacher Allee und Frühlingstraße und Sommerstraße zw. Frühlingstraße und Gottesauer Straße**
