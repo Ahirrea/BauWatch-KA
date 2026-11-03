@@ -2,6 +2,14 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 03.11.2026, 20:22 — 2 neu, 1 entfernt, 2 geändert (gesamt 175)
+
+- ➕ **Scheffelstraße zw. Kaiserallee und Goethestraße**
+- ➕ **Ringstraße an Einmündung zu Steinbügelstraße**
+- ➖ ~~Scheffelstraße zw. Kaiserallee und Sophienstraße~~
+- ✏️ Emmy-Noether-Straße zw. Ada-Lovelace-Straße und Wilhem-Schickard-Straße — Ende: 2027-11-20 → 2026-12-11
+- ✏️ Scheffelstraße zw. Kaiserallee u. Sophienstraße — Sperrgrad: gering → teil; Ende: 2026-12-31 → 2027-12-31
+
 ## 03.11.2026, 12:47 — 2 neu, 1 entfernt, 1 geändert (gesamt 174)
 
 - ➕ **Kreuzungsbereich Hirsch- / Südendstraße Nordfahrbahn**
