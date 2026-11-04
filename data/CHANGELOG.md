@@ -2,6 +2,15 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 04.11.2026, 01:31 — 3 neu, 3 entfernt (gesamt 175)
+
+- ➕ **Gartenstraße zw. Weinbrennerplatz und Steinhäuserstraße**
+- ➕ **Gartenstraße zw. Jollystraße und Brauerstraße**
+- ➕ **Brauerstraße zw. Putlitzstraße u. Kriegstraße**
+- ➖ ~~B10/ Kriegsstraße zw. Ritterstraße und Karlstor~~
+- ➖ ~~Hermann-Billing-Straße zw. Beiertheimer Allee und Ettlinger Allee~~
+- ➖ ~~Lußstraße zw. Lußsteige und Schlössleweg~~
+
 ## 03.11.2026, 20:22 — 2 neu, 1 entfernt, 2 geändert (gesamt 175)
 
 - ➕ **Scheffelstraße zw. Kaiserallee und Goethestraße**

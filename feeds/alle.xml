@@ -6,9 +6,16 @@
   <link rel="self" type="application/atom+xml" href="https://ahirrea.github.io/BauWatch-KA/feeds/alle.xml"/>
   <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
   <icon>https://ahirrea.github.io/BauWatch-KA/icons/icon-192.png</icon>
-  <updated>2026-11-03T19:22:44.827Z</updated>
+  <updated>2026-11-04T00:31:53.765Z</updated>
   <author><name>BauWatch-KA</name></author>
   <rights>Datensatz „Baustellen&quot;, Stadt Karlsruhe, Lizenz CC-BY 4.0</rights>
+  <entry>
+    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-11-04T00:31:53.765Z</id>
+    <title>04.11.2026, 01:31 — 3 neu, 3 entfernt</title>
+    <updated>2026-11-04T00:31:53.765Z</updated>
+    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
+    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Gartenstraße zw. Weinbrennerplatz und Steinhäuserstraße&lt;/strong&gt; (Südweststadt)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Gartenstraße zw. Jollystraße und Brauerstraße&lt;/strong&gt; (Südweststadt)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Brauerstraße zw. Putlitzstraße u. Kriegstraße&lt;/strong&gt; (Südweststadt)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;B10/ Kriegsstraße zw. Ritterstraße und Karlstor&lt;/s&gt; (Innenstadt-West)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Hermann-Billing-Straße zw. Beiertheimer Allee und Ettlinger Allee&lt;/s&gt; (Südweststadt)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Lußstraße zw. Lußsteige und Schlössleweg&lt;/s&gt; (Durlach)&lt;/li&gt;&lt;/ul&gt;</content>
+  </entry>
   <entry>
     <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-11-03T19:22:44.827Z</id>
     <title>03.11.2026, 20:22 — 2 neu, 1 entfernt, 2 geändert</title>
@@ -414,12 +421,5 @@
     <updated>2026-10-05T17:02:40.618Z</updated>
     <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
     <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Hirschstraße zw. Amalienstraße und Kaiserstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Seydlitzstr. 4-24&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Keplerstraße von Bodelschwinghstraße bis Zietenstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Feierabendweg&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;✏️ Hirschstraße zw. Amalienstraße und Kaiserstraße — Ende: 2026-10-09 → 2026-10-23&lt;/li&gt;&lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-10-04T22:58:07.183Z</id>
-    <title>05.10.2026, 00:58 — 14 neu, 2 entfernt</title>
-    <updated>2026-10-04T22:58:07.183Z</updated>
-    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
-    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Maximilianstraße zw. Weberstr. u. Stabelstr.&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Reinhold-Frank-Straße zw. Amalinestraße und Sophienstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Bismarckstraße zw. Fichte- u. Seminarstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Blumentorstraße, Pfinzstraße, Friedrich-Eberle-Straße, Oberlinstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Südtangente zw. AS 5 und AS 7&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Maximilianstraße zw. Stabelstraße und Weberstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Leibnitzstraße zw. Südendstraße und Kolpingplatz&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Nikolausstraße zw. Lützowstraße und Allmendstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;K9654/Rittnertstraße zw. Jean-Ritzert-Straße und Lamprechtshof&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Baumeisterstraße zw. Finterstraße und Ettlinger Straße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Am Storrenacker Kreuzungsbereich Printzstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Rittnertstraße und Jean-Ritzert-Straße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Röntgenstraße zw. Südliche Hildapromenade und Röntgenstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Schlossplatz zw. Herrenstraße u. Zirkel&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Schlossplatz zw. Herrenstraße u. Zirkel&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Seminarstraße zw. Stephanienstraße und Bismarckstraße&lt;/s&gt;&lt;/li&gt;&lt;/ul&gt;</content>
   </entry>
 </feed>
