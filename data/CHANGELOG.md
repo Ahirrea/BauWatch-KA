@@ -2,6 +2,12 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 04.11.2026, 12:58 — 1 neu, 1 entfernt, 1 geändert (gesamt 175)
+
+- ➕ **Südtangente zw. Schwarzwaldkreuz und A5**
+- ➖ ~~Steinbügelstraße zw. Wettersteinstraße und Hörgelstraße~~
+- ✏️ Scheffelstraße zw. Kaiserallee und Goethestraße — Ende: 2026-11-28 → 2026-11-29
+
 ## 04.11.2026, 01:31 — 3 neu, 3 entfernt (gesamt 175)
 
 - ➕ **Gartenstraße zw. Weinbrennerplatz und Steinhäuserstraße**
