@@ -2,6 +2,15 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 04.11.2026, 20:40 — 1 neu, 1 entfernt, 4 geändert (gesamt 175)
+
+- ➕ **Essenweinstraße zw. Sternbergstraße und Humboldtstraße**
+- ➖ ~~Adenauerring zw. Engesserstraße und Am Fasanenplatz~~
+- ✏️ Südtangente zw. Schwarzwaldkreuz und A5 — Ende: 2026-12-18 → 2026-11-05
+- ✏️ Koyweg zw. Hinterwiesenweg und Elfmorgenbruch — Ende: 2026-11-13 → 2026-12-18
+- ✏️ Gleisübergänge Hinterwiesenweg zw. Kleingärtnerweg und Jagdstraße — Ende: 2026-11-17 → 2026-12-18
+- ✏️ An der Pfinz zw. "Sauerbrücke"/ Friedrichstraße und Im Gässle — Ende: 2026-12-30 → 2027-02-26; Bezeichnung geändert
+
 ## 04.11.2026, 12:58 — 1 neu, 1 entfernt, 1 geändert (gesamt 175)
 
 - ➕ **Südtangente zw. Schwarzwaldkreuz und A5**

@@ -6,9 +6,16 @@
   <link rel="self" type="application/atom+xml" href="https://ahirrea.github.io/BauWatch-KA/feeds/alle.xml"/>
   <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
   <icon>https://ahirrea.github.io/BauWatch-KA/icons/icon-192.png</icon>
-  <updated>2026-11-04T11:58:26.805Z</updated>
+  <updated>2026-11-04T19:40:40.218Z</updated>
   <author><name>BauWatch-KA</name></author>
   <rights>Datensatz „Baustellen&quot;, Stadt Karlsruhe, Lizenz CC-BY 4.0</rights>
+  <entry>
+    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-11-04T19:40:40.218Z</id>
+    <title>04.11.2026, 20:40 — 1 neu, 1 entfernt, 4 geändert</title>
+    <updated>2026-11-04T19:40:40.218Z</updated>
+    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
+    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Essenweinstraße zw. Sternbergstraße und Humboldtstraße&lt;/strong&gt; (Oststadt)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Adenauerring zw. Engesserstraße und Am Fasanenplatz&lt;/s&gt; (Innenstadt-Ost)&lt;/li&gt;&lt;li&gt;✏️ Südtangente zw. Schwarzwaldkreuz und A5 (Durlach) — Ende: 2026-12-18 → 2026-11-05&lt;/li&gt;&lt;li&gt;✏️ Koyweg zw. Hinterwiesenweg und Elfmorgenbruch (Rintheim) — Ende: 2026-11-13 → 2026-12-18&lt;/li&gt;&lt;li&gt;✏️ Gleisübergänge Hinterwiesenweg zw. Kleingärtnerweg und Jagdstraße (Rintheim) — Ende: 2026-11-17 → 2026-12-18&lt;/li&gt;&lt;li&gt;✏️ An der Pfinz zw. &amp;quot;Sauerbrücke&amp;quot;/ Friedrichstraße und Im Gässle (Grötzingen) — Ende: 2026-12-30 → 2027-02-26; Bezeichnung geändert&lt;/li&gt;&lt;/ul&gt;</content>
+  </entry>
   <entry>
     <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-11-04T11:58:26.805Z</id>
     <title>04.11.2026, 12:58 — 1 neu, 1 entfernt, 1 geändert</title>
@@ -421,12 +428,5 @@
     <updated>2026-10-06T01:15:02.590Z</updated>
     <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
     <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Heckerstraße zw. Eggensteiner Straße und Lönnsstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;K9652/Tiefentalstraße von Albert-Einstein-Straße bis Straße des Roten Kreuzes&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Ritterstraße zw. Zirkel und Kaiserstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Bert-Brecht-Straße Höhe Huas Nr. 3&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Durlacher Allee zw.Wilmar-Schwabe-Straße und K9659&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Petergraben 2&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Kurt-Schumacher-Straße zw. Wilhelm-Hausenstein-Allee und Josef-Schofer-Straße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;K9654/Rittnertstraße zw. Jean-Ritzert-Straße und Lamprechtshof&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Ritterstraße zw. Am Schlossplatz und Bankhof&lt;/s&gt;&lt;/li&gt;&lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-10-05T17:02:40.618Z</id>
-    <title>05.10.2026, 19:02 — 4 neu, 1 geändert</title>
-    <updated>2026-10-05T17:02:40.618Z</updated>
-    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
-    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Hirschstraße zw. Amalienstraße und Kaiserstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Seydlitzstr. 4-24&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Keplerstraße von Bodelschwinghstraße bis Zietenstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Feierabendweg&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;✏️ Hirschstraße zw. Amalienstraße und Kaiserstraße — Ende: 2026-10-09 → 2026-10-23&lt;/li&gt;&lt;/ul&gt;</content>
   </entry>
 </feed>
