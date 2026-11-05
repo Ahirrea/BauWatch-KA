@@ -6,9 +6,16 @@
   <link rel="self" type="application/atom+xml" href="https://ahirrea.github.io/BauWatch-KA/feeds/alle.xml"/>
   <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
   <icon>https://ahirrea.github.io/BauWatch-KA/icons/icon-192.png</icon>
-  <updated>2026-11-04T19:40:40.218Z</updated>
+  <updated>2026-11-05T00:48:49.344Z</updated>
   <author><name>BauWatch-KA</name></author>
   <rights>Datensatz „Baustellen&quot;, Stadt Karlsruhe, Lizenz CC-BY 4.0</rights>
+  <entry>
+    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-11-05T00:48:49.344Z</id>
+    <title>05.11.2026, 01:48 — 10 neu, 2 entfernt</title>
+    <updated>2026-11-05T00:48:49.344Z</updated>
+    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
+    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Im Weiherwald zw. Belchenstraße und Lohwiesenweg&lt;/strong&gt; (Weiherfeld-Dammerstock)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Bergbahnstraße Kreuzung Am Steinbruch&lt;/strong&gt; (Durlach)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Pfalzstraße zw. Langenackerstraße und Kastenwörtstraße&lt;/strong&gt; (Daxlanden)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Rheinstraße Gleisübergang Nuitstraße&lt;/strong&gt; (Mühlburg)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Yorckstraße zw. Sophienstraße und Yorckplatz&lt;/strong&gt; (Weststadt)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Weberstraße zw. Haydnplatz und Maximilianstraße&lt;/strong&gt; (Weststadt)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Reinhold-Frank-Straße zw. Belfortstraße und Mühlburger Tor&lt;/strong&gt; (Innenstadt-West)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Pfinztalstraße zw. Badener Straße u. Jägerstraße&lt;/strong&gt; (Durlach)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Badener Straße zw. Karl-Weysser-Straße und Pfinztalstraße&lt;/strong&gt; (Durlach)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Kastellstraße Kreuzung Bergbahnstraße&lt;/strong&gt; (Durlach)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Pfinztalstraße zw. Badener Straße u. Eichelgasse; Badener Straße zwischen Gymnasiumstraße und Pfintalstraße&lt;/s&gt; (Durlach)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Pfinztalstraße zw. Marstallstaße und Karlsburgstraße&lt;/s&gt; (Durlach)&lt;/li&gt;&lt;/ul&gt;</content>
+  </entry>
   <entry>
     <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-11-04T19:40:40.218Z</id>
     <title>04.11.2026, 20:40 — 1 neu, 1 entfernt, 4 geändert</title>

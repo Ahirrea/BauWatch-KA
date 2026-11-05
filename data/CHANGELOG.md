@@ -2,6 +2,21 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 05.11.2026, 01:48 — 10 neu, 2 entfernt (gesamt 183)
+
+- ➕ **Im Weiherwald zw. Belchenstraße und Lohwiesenweg**
+- ➕ **Bergbahnstraße Kreuzung Am Steinbruch**
+- ➕ **Pfalzstraße zw. Langenackerstraße und Kastenwörtstraße**
+- ➕ **Rheinstraße Gleisübergang Nuitstraße**
+- ➕ **Yorckstraße zw. Sophienstraße und Yorckplatz**
+- ➕ **Weberstraße zw. Haydnplatz und Maximilianstraße**
+- ➕ **Reinhold-Frank-Straße zw. Belfortstraße und Mühlburger Tor**
+- ➕ **Pfinztalstraße zw. Badener Straße u. Jägerstraße**
+- ➕ **Badener Straße zw. Karl-Weysser-Straße und Pfinztalstraße**
+- ➕ **Kastellstraße Kreuzung Bergbahnstraße**
+- ➖ ~~Pfinztalstraße zw. Badener Straße u. Eichelgasse; Badener Straße zwischen Gymnasiumstraße und Pfintalstraße~~
+- ➖ ~~Pfinztalstraße zw. Marstallstaße und Karlsburgstraße~~
+
 ## 04.11.2026, 20:40 — 1 neu, 1 entfernt, 4 geändert (gesamt 175)
 
 - ➕ **Essenweinstraße zw. Sternbergstraße und Humboldtstraße**
