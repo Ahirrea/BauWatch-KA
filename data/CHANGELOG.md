@@ -2,6 +2,16 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 05.11.2026, 13:05 — 2 neu, 2 entfernt, 3 geändert (gesamt 183)
+
+- ➕ **Breslauer Straße, Schweidnitzer Straße**
+- ➕ **Waldenburger Straße**
+- ➖ ~~Luisenstraße zw. Rüppurrer Straße und Marienstraße~~
+- ➖ ~~Hirschberger Straße, Waldenburger Straße~~
+- ✏️ Zirkel zw. Kreuzstraße und Waldhornstraße — Ende: 2026-12-31 → 2026-11-05
+- ✏️ Geh- und Radweg entlang der VBK Gleistrasse zw. Schweidnitzerstraße bis Glogauer Straße — Ende: 2026-11-06 → 2026-11-05
+- ✏️ B 10 Augustenburgstraße Tunnel Grötzingen — Ende: 2026-11-05 → 2026-11-06; Info geändert
+
 ## 05.11.2026, 01:48 — 10 neu, 2 entfernt (gesamt 183)
 
 - ➕ **Im Weiherwald zw. Belchenstraße und Lohwiesenweg**

@@ -6,9 +6,16 @@
   <link rel="self" type="application/atom+xml" href="https://ahirrea.github.io/BauWatch-KA/feeds/alle.xml"/>
   <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
   <icon>https://ahirrea.github.io/BauWatch-KA/icons/icon-192.png</icon>
-  <updated>2026-11-05T00:48:49.344Z</updated>
+  <updated>2026-11-05T12:05:40.713Z</updated>
   <author><name>BauWatch-KA</name></author>
   <rights>Datensatz „Baustellen&quot;, Stadt Karlsruhe, Lizenz CC-BY 4.0</rights>
+  <entry>
+    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-11-05T12:05:40.713Z</id>
+    <title>05.11.2026, 13:05 — 2 neu, 2 entfernt, 3 geändert</title>
+    <updated>2026-11-05T12:05:40.713Z</updated>
+    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
+    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Breslauer Straße, Schweidnitzer Straße&lt;/strong&gt; (Waldstadt)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Waldenburger Straße&lt;/strong&gt; (Waldstadt)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Luisenstraße zw. Rüppurrer Straße und Marienstraße&lt;/s&gt; (Südstadt)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Hirschberger Straße, Waldenburger Straße&lt;/s&gt; (Waldstadt)&lt;/li&gt;&lt;li&gt;✏️ Zirkel zw. Kreuzstraße und Waldhornstraße (Innenstadt-Ost) — Ende: 2026-12-31 → 2026-11-05&lt;/li&gt;&lt;li&gt;✏️ Geh- und Radweg entlang der VBK Gleistrasse zw. Schweidnitzerstraße bis Glogauer Straße (Waldstadt) — Ende: 2026-11-06 → 2026-11-05&lt;/li&gt;&lt;li&gt;✏️ B 10 Augustenburgstraße Tunnel Grötzingen (Grötzingen) — Ende: 2026-11-05 → 2026-11-06; Info geändert&lt;/li&gt;&lt;/ul&gt;</content>
+  </entry>
   <entry>
     <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-11-05T00:48:49.344Z</id>
     <title>05.11.2026, 01:48 — 10 neu, 2 entfernt</title>
@@ -428,12 +435,5 @@
     <updated>2026-10-06T23:42:54.695Z</updated>
     <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
     <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;L623/ Am Wetterbach zw. Wolfartsweier und Hohenwettersbach&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Gewann Grabenort&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Heckerstraße zw. Eggensteiner Straße und Lönnsstraße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;K9652/Tiefentalstraße von Albert-Einstein-Straße bis Straße des Roten Kreuzes&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Am Storrenacker Kreuzungsbereich Printzstraße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Ritterstraße zw. Zirkel und Kaiserstraße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Röntgenstraße zw. Südliche Hildapromenade und Röntgenstraße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Bert-Brecht-Straße Höhe Huas Nr. 3&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Durlacher Allee zw.Wilmar-Schwabe-Straße und K9659&lt;/s&gt;&lt;/li&gt;&lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-10-06T01:15:02.590Z</id>
-    <title>06.10.2026, 03:15 — 6 neu, 3 entfernt</title>
-    <updated>2026-10-06T01:15:02.590Z</updated>
-    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
-    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Heckerstraße zw. Eggensteiner Straße und Lönnsstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;K9652/Tiefentalstraße von Albert-Einstein-Straße bis Straße des Roten Kreuzes&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Ritterstraße zw. Zirkel und Kaiserstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Bert-Brecht-Straße Höhe Huas Nr. 3&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Durlacher Allee zw.Wilmar-Schwabe-Straße und K9659&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Petergraben 2&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Kurt-Schumacher-Straße zw. Wilhelm-Hausenstein-Allee und Josef-Schofer-Straße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;K9654/Rittnertstraße zw. Jean-Ritzert-Straße und Lamprechtshof&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Ritterstraße zw. Am Schlossplatz und Bankhof&lt;/s&gt;&lt;/li&gt;&lt;/ul&gt;</content>
   </entry>
 </feed>
