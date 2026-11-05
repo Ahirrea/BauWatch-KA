@@ -6,9 +6,16 @@
   <link rel="self" type="application/atom+xml" href="https://ahirrea.github.io/BauWatch-KA/feeds/alle.xml"/>
   <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
   <icon>https://ahirrea.github.io/BauWatch-KA/icons/icon-192.png</icon>
-  <updated>2026-11-05T12:05:40.713Z</updated>
+  <updated>2026-11-05T21:52:37.825Z</updated>
   <author><name>BauWatch-KA</name></author>
   <rights>Datensatz „Baustellen&quot;, Stadt Karlsruhe, Lizenz CC-BY 4.0</rights>
+  <entry>
+    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-11-05T21:52:37.825Z</id>
+    <title>05.11.2026, 22:52 — 3 neu, 2 entfernt, 1 geändert</title>
+    <updated>2026-11-05T21:52:37.825Z</updated>
+    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
+    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Rintheimer Querallee und Büchiger Allee&lt;/strong&gt; (Waldstadt)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Uhlandstraße zw. Goethestraße und Sophienstraße&lt;/strong&gt; (Weststadt)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Steinkreuzstraße zw. Ringstraße und Hohenbergstraße&lt;/strong&gt; (Wolfartsweier)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Sophienstraße zw. Yorckstraße und Uhlandstraße&lt;/s&gt; (Weststadt)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Uhlandstraße zw. Sophienstraße und Draisstraße&lt;/s&gt; (Weststadt)&lt;/li&gt;&lt;li&gt;✏️ Bonner Straße zw. Siemensallee und Karlsruher Straße (Nordweststadt) — Ende: 2027-03-13 → 2026-12-12; Bezeichnung geändert&lt;/li&gt;&lt;/ul&gt;</content>
+  </entry>
   <entry>
     <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-11-05T12:05:40.713Z</id>
     <title>05.11.2026, 13:05 — 2 neu, 2 entfernt, 3 geändert</title>

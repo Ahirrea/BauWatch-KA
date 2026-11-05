@@ -2,6 +2,15 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 05.11.2026, 22:52 — 3 neu, 2 entfernt, 1 geändert (gesamt 184)
+
+- ➕ **Rintheimer Querallee und Büchiger Allee**
+- ➕ **Uhlandstraße zw. Goethestraße und Sophienstraße**
+- ➕ **Steinkreuzstraße zw. Ringstraße und Hohenbergstraße**
+- ➖ ~~Sophienstraße zw. Yorckstraße und Uhlandstraße~~
+- ➖ ~~Uhlandstraße zw. Sophienstraße und Draisstraße~~
+- ✏️ Bonner Straße zw. Siemensallee und Karlsruher Straße — Ende: 2027-03-13 → 2026-12-12; Bezeichnung geändert
+
 ## 05.11.2026, 13:05 — 2 neu, 2 entfernt, 3 geändert (gesamt 183)
 
 - ➕ **Breslauer Straße, Schweidnitzer Straße**
