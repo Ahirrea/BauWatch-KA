@@ -2,6 +2,21 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 06.11.2026, 07:09 — 4 neu, 8 entfernt (gesamt 180)
+
+- ➕ **Rheinstraße Gleisübergang Nuitstraße**
+- ➕ **Maximilianstraße zw. Stabelstraße und Weberstraße**
+- ➕ **L 604 zw. Waldstadt/Theodor-Heuss-Allee und Eggenstein Höhe B 36**
+- ➕ **Glogauer Straße und Im Eichbäumle**
+- ➖ ~~Im Weiherwald zw. Belchenstraße und Lohwiesenweg~~
+- ➖ ~~Ebertstraße zw. Albtalbahnhof und Ebertstraße~~
+- ➖ ~~Südtangente zw. Schwarzwaldkreuz und A5~~
+- ➖ ~~Zirkel zw. Kreuzstraße und Waldhornstraße~~
+- ➖ ~~Pfalzstraße zw. Langenackerstraße und Kastenwörtstraße~~
+- ➖ ~~Rheinstraße Gleisübergang Nuitstraße~~
+- ➖ ~~Reinhold-Frank-Straße zw. Belfortstraße und Mühlburger Tor~~
+- ➖ ~~Geh- und Radweg entlang der VBK Gleistrasse zw. Schweidnitzerstraße bis Glogauer Straße~~
+
 ## 05.11.2026, 22:52 — 3 neu, 2 entfernt, 1 geändert (gesamt 184)
 
 - ➕ **Rintheimer Querallee und Büchiger Allee**

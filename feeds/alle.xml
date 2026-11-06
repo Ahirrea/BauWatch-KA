@@ -6,9 +6,16 @@
   <link rel="self" type="application/atom+xml" href="https://ahirrea.github.io/BauWatch-KA/feeds/alle.xml"/>
   <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
   <icon>https://ahirrea.github.io/BauWatch-KA/icons/icon-192.png</icon>
-  <updated>2026-11-05T21:52:37.825Z</updated>
+  <updated>2026-11-06T06:09:51.064Z</updated>
   <author><name>BauWatch-KA</name></author>
   <rights>Datensatz „Baustellen&quot;, Stadt Karlsruhe, Lizenz CC-BY 4.0</rights>
+  <entry>
+    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-11-06T06:09:51.064Z</id>
+    <title>06.11.2026, 07:09 — 4 neu, 8 entfernt</title>
+    <updated>2026-11-06T06:09:51.064Z</updated>
+    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
+    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Rheinstraße Gleisübergang Nuitstraße&lt;/strong&gt; (Mühlburg)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Maximilianstraße zw. Stabelstraße und Weberstraße&lt;/strong&gt; (Weststadt)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;L 604 zw. Waldstadt/Theodor-Heuss-Allee und Eggenstein Höhe B 36&lt;/strong&gt; (Waldstadt)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Glogauer Straße und Im Eichbäumle&lt;/strong&gt; (Waldstadt)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Im Weiherwald zw. Belchenstraße und Lohwiesenweg&lt;/s&gt; (Weiherfeld-Dammerstock)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Ebertstraße zw. Albtalbahnhof und Ebertstraße&lt;/s&gt; (Südweststadt)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Südtangente zw. Schwarzwaldkreuz und A5&lt;/s&gt; (Durlach)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Zirkel zw. Kreuzstraße und Waldhornstraße&lt;/s&gt; (Innenstadt-Ost)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Pfalzstraße zw. Langenackerstraße und Kastenwörtstraße&lt;/s&gt; (Daxlanden)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Rheinstraße Gleisübergang Nuitstraße&lt;/s&gt; (Mühlburg)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Reinhold-Frank-Straße zw. Belfortstraße und Mühlburger Tor&lt;/s&gt; (Innenstadt-West)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Geh- und Radweg entlang der VBK Gleistrasse zw. Schweidnitzerstraße bis Glogauer Straße&lt;/s&gt; (Waldstadt)&lt;/li&gt;&lt;/ul&gt;</content>
+  </entry>
   <entry>
     <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-11-05T21:52:37.825Z</id>
     <title>05.11.2026, 22:52 — 3 neu, 2 entfernt, 1 geändert</title>
@@ -435,12 +442,5 @@
     <updated>2026-10-07T15:26:50.566Z</updated>
     <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
     <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Engesserstr. 2-6/8-12 und Lehmannstr. 1-3&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Yburgweg zw. zw. Schliffkpfweg und Kreuzung Plättigweg&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;✏️ Bismarckstraße zw. Fichte- u. Seminarstraße — Ende: 2026-10-26 → 2026-10-31&lt;/li&gt;&lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-10-06T23:42:54.695Z</id>
-    <title>07.10.2026, 01:42 — 2 neu, 7 entfernt</title>
-    <updated>2026-10-06T23:42:54.695Z</updated>
-    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
-    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;L623/ Am Wetterbach zw. Wolfartsweier und Hohenwettersbach&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Gewann Grabenort&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Heckerstraße zw. Eggensteiner Straße und Lönnsstraße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;K9652/Tiefentalstraße von Albert-Einstein-Straße bis Straße des Roten Kreuzes&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Am Storrenacker Kreuzungsbereich Printzstraße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Ritterstraße zw. Zirkel und Kaiserstraße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Röntgenstraße zw. Südliche Hildapromenade und Röntgenstraße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Bert-Brecht-Straße Höhe Huas Nr. 3&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Durlacher Allee zw.Wilmar-Schwabe-Straße und K9659&lt;/s&gt;&lt;/li&gt;&lt;/ul&gt;</content>
   </entry>
 </feed>
