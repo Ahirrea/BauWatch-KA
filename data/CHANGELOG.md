@@ -2,6 +2,18 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 06.11.2026, 16:50 — 4 neu, 1 entfernt, 4 geändert (gesamt 183)
+
+- ➕ **B36/ Neureuter Straße  zw. Sudetenstraße und L605**
+- ➕ **Rintheimer Querallee und Büchiger Allee**
+- ➕ **Eisenlohrstraße zw. Kriegsstraße und Gustav-Heller-Platz**
+- ➕ **Haid- u.-Neu-Straße zw. Hirtenweg und Am Sportpark**
+- ➖ ~~Rintheimer Querallee und Büchiger Allee~~
+- ✏️ Hardtstraße zw. Lameystraße und Am Entenfang — Ende: 2026-11-20 → 2026-12-09; Info geändert
+- ✏️ Yorckstraße zw. Sophienstraße und Yorckplatz — Ende: 2026-11-06 → 2026-11-09
+- ✏️ Vorarlberger Straße — Ende: 2026-11-07 → 2026-11-14
+- ✏️ Wasgaustraße zw. Tiroler Straße und Memeler Straße — Ende: 2026-11-07 → 2026-11-14
+
 ## 06.11.2026, 07:09 — 4 neu, 8 entfernt (gesamt 180)
 
 - ➕ **Rheinstraße Gleisübergang Nuitstraße**
