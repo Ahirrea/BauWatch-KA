@@ -158,9 +158,11 @@ export function changelogEntry(diff, stand, total, { firstFill = false } = {}) {
   }
   // Since A-17/E10 every item carries its district: added and changed ones
   // from the new snapshot, removed ones from the previous one (the diff hands
-  // over the feature of the side it comes from). Readers take both this shape
-  // and the older plain title strings while those are inside the 30-day window.
-  const item = (f) => ({ titel: titleOf(f), district: f.properties?.district ?? null });
+  // over the feature of the side it comes from). Since A-19/E1 it also carries
+  // the vorgangsnummer, so the "Neu" tab can open the site on the map — titles
+  // are not unique. Readers take this shape, the A-17 one without `id` and the
+  // older plain title strings while those are inside the 30-day window.
+  const item = (f) => ({ titel: titleOf(f), district: f.properties?.district ?? null, id: f.properties?.id ?? null });
   return cleanChangelogEntry({
     stand,
     firstFill: false,

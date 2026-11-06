@@ -111,8 +111,8 @@ reach a site). *(Proposal, can be changed during implementation review.)*
 
 ### UX flow & states
 1. "Neu" tab open (any sheet height on a phone, any panel state on desktop).
-2. Linked entries render the title as a button-styled link (same text,
-   underline/accent, pointer cursor); not-linked entries look as today.
+2. Linked entries render the title as a link (same text, `--accent`,
+   underlined); not-linked entries look as today.
 3. Tap → if the feature is filtered out or outside the radius search: reset
    (E3), `render()`. Then on a phone: full → half (the tab is only readable
    at half or full, so the sheet always ends at half). Then `setViewInVisibleArea(point, max(zoom, 16))`, then `selectFeature(key)`
@@ -148,12 +148,14 @@ reach a site). *(Proposal, can be changed during implementation review.)*
 - Double tap / rapid taps: each one is a plain new selection.
 
 ### Accessibility
-- Real `<button type="button">` (or `<a>` with role semantics) per linked
-  title — keyboard reachable, Enter/Space work, visible focus ring
-  (#39's rules on clipping ancestors apply inside `#panel-body`).
-- Accessible name = title + district; a visually-hidden hint
-  "auf der Karte zeigen" / "show on map" (new i18n keys, via `str()`).
-- Animation respects `prefers-reduced-motion` like search does.
+- A real, focusable control per linked title — keyboard reachable, Enter
+  works, visible focus ring (#39's rules on clipping ancestors apply inside
+  `#panel-body`).
+- Accessible name = title + a visually-hidden hint "– auf der Karte zeigen"
+  / "– show on map" (`whatsNewShowOnMap`, via `str()`); the district follows
+  as text, as before.
+- No animation at all (see the implementation notes), so nothing to reduce
+  for `prefers-reduced-motion`.
 
 ### Test plan
 - `test-diff.mjs` (or `test-changelog-feed.mjs`): `changelogEntry()` items
@@ -182,6 +184,37 @@ reach a site). *(Proposal, can be changed during implementation review.)*
 - `feeds/alle.xml` unchanged; `npm test` green.
 - Browser check passed on phone and desktop, screenshots sent.
 - `CACHE_SHELL` bumped; `CLAUDE.md` updated; status `🏁` in the overview.
+
+## Implementation notes (2026-11-06)
+
+What the build-out added to the spec above — none of it changes a decision.
+
+- **A link, not a `<button>`.** The first cut used a button styled as a
+  link. Chromium lays a button out as an inline block even with
+  `display: inline`, so every title too long for the rest of the line
+  dropped below its ➕ instead of wrapping on from it (seen in the phone
+  screenshot). It is now `<a href="#" data-site>` with the navigation
+  prevented: it wraps like text, sits in the tab order, Enter activates it.
+  Space does not, which is what a link does.
+- **No camera animation.** The popup opens right after the view change, and
+  its autoPan has to start from the final view; opening it mid-flight is the
+  fit-then-open trap again. The jump is a cut, not a flight.
+- **An animation already in flight is waited out.** Tapping an entry right
+  after choosing a district (an animated fit) left the map at the district's
+  zoom 14 with the site 800 px off screen: `setView()` stops a pan animation
+  but not a zoom animation, which ends by moving to its own target after
+  ours. The handler waits for `zoomend` while Leaflet's private
+  `_animatingZoom` is set (the vendored copy is pinned). Caught by the
+  browser check, invisible to `npm test`.
+- **Backfill:** 62 of 62 entries matched a snapshot commit; the *oldest*
+  commit carrying an entry's `stand` is the run that wrote it (later commits
+  with the same `stand` are `annotate-districts.mjs` passes). 438 items got
+  an id; nothing else in the file changed, except that 106 pre-A-17 plain
+  title strings became `{ titel, district: null, id }` and pre-A-17 changed
+  items gained `district: null`. `feeds/alle.xml` is byte-identical.
+- **Not browser-tested:** the radius-search branch of E3 (Nominatim is not
+  reachable from the test environment). It uses the same `clearSearch()` /
+  `clearSearchCircle()` pair as the district filter does (A-17/E5).
 
 ## Implementation steps
 1. `changelogEntry()`: add `id`; extend tests.

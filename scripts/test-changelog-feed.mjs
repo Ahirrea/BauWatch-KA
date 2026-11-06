@@ -154,6 +154,15 @@ check('filterChangelogEntries survives malformed entries', filterChangelogEntrie
 // The committed feed itself must not carry generic notes any more.
 const committedFeed = readFileSync(join(ROOT, 'data', 'changelog.json'), 'utf8');
 check('data/changelog.json carries no generic-note entries', !committedFeed.includes(GENERIC_CHANGE_NOTE));
+// A-19/E1: every item names its case, so the "Neu" tab can open it on the map.
+// The committed window was backfilled from the snapshot history; a build that
+// stops writing `id` would leave new items unclickable without any error.
+{
+  const entries = JSON.parse(committedFeed);
+  const items = entries.flatMap((e) => [...(e.hinzugefuegt || []), ...(e.entfernt || []), ...(e.geaendert || [])]);
+  const missing = items.filter((i) => !i || typeof i !== 'object' || typeof i.id !== 'string' || i.id === '');
+  check(`every committed changelog item carries an id (${items.length - missing.length}/${items.length})`, missing.length === 0);
+}
 
 // --- 2. firstFill collapses to one synthetic entry -------------------------
 

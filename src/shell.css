@@ -614,6 +614,22 @@ html:has(body.app) {
 .whats-new-run li {
   font-size: 0.92rem;
 }
+/* A "Neu" entry whose site is in the snapshot (A-19): a link that wraps
+   like the text it replaces — the title in --accent, underlined. Not
+   --amber/--green: those are not text colours. */
+.whats-new-site {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+.whats-new-site:hover {
+  text-decoration-thickness: 2px;
+}
+.whats-new-site:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
 .whats-new-error {
   color: var(--red);
 }

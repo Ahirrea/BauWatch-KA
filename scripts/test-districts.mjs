@@ -114,9 +114,9 @@ if (committed) {
   const prev = [f('A', 'Alt', 'Durlach'), f('B', 'Bleibt', 'Oststadt')];
   const next = [f('B', 'Bleibt', 'Oststadt', '2027-01-31'), f('C', 'Neu', 'Mühlburg')];
   const entry = changelogEntry(diffFeatures(prev, next), '2026-10-18T04:00:00.000Z', next.length);
-  check('added items carry the district of the new snapshot', JSON.stringify(entry.hinzugefuegt) === JSON.stringify([{ titel: 'Neu', district: 'Mühlburg' }]));
-  check('removed items carry the district of the previous snapshot', JSON.stringify(entry.entfernt) === JSON.stringify([{ titel: 'Alt', district: 'Durlach' }]));
-  check('changed items carry title, district and the notes', entry.geaendert[0]?.titel === 'Bleibt' && entry.geaendert[0]?.district === 'Oststadt' && entry.geaendert[0]?.changes.length > 0);
+  check('added items carry district and id of the new snapshot (A-19/E1)', JSON.stringify(entry.hinzugefuegt) === JSON.stringify([{ titel: 'Neu', district: 'Mühlburg', id: 'C' }]));
+  check('removed items carry district and id of the previous snapshot (A-19/E1)', JSON.stringify(entry.entfernt) === JSON.stringify([{ titel: 'Alt', district: 'Durlach', id: 'A' }]));
+  check('changed items carry title, district, id and the notes', entry.geaendert[0]?.titel === 'Bleibt' && entry.geaendert[0]?.district === 'Oststadt' && entry.geaendert[0]?.id === 'B' && entry.geaendert[0]?.changes.length > 0);
 }
 
 if (failed > 0) {

@@ -27,6 +27,7 @@ import {
   clearSearchCircle,
   drawSearchCircle,
   fitInVisibleArea,
+  getMap,
   initMap,
   openPopup,
   renderAreas,
@@ -46,7 +47,7 @@ import {
 } from './ui/list.js';
 import { clearSearch, wireSearch } from './ui/search.js';
 import { districtFeature, loadDistricts, renderDistrictOptions, wireDistrictFilter } from './ui/districts.js';
-import { loadChangelog, renderChangelogBody } from './ui/feed.js';
+import { initFeed, loadChangelog, renderChangelogBody } from './ui/feed.js';
 import { initPanel, isDesktop, setSheet, sheetState, syncHandleLabel } from './ui/panel.js';
 import { wireMenu } from './ui/menu.js';
 import { refreshStats, showStats } from './ui/stats.js';
@@ -177,6 +178,9 @@ async function loadData() {
     state.geladen = true;
     render();
     refreshStats();
+    // The "Neu" tab links only sites in the snapshot (A-19/E4); if it was
+    // rendered before the data arrived, its links appear now.
+    renderChangelogBody();
     if (state.features.length === 0) {
       status.textContent = str('listStatusNoData');
     }
@@ -286,6 +290,48 @@ wireSearch({
   },
 });
 wireMenu();
+// A "Neu" entry shows its site (A-19): the fifth view that moves the camera —
+// an entry can be anywhere in Karlsruhe, so A-11's "selection never moves
+// the camera" (which stays for list and marker) cannot hold here (E2).
+const SITE_ZOOM = 16; // E5 — never zooms out if the user is closer already
+initFeed({
+  onShowSite(id) {
+    const key = featureKey({ properties: { id } });
+    const feature = state.features.find((f) => f._key === key);
+    if (!feature) return;
+    // Hidden by a filter or outside the radius search: everything back to
+    // "Alle" first, as A-18's reset does, plus the search (E3). Only then —
+    // a visible site leaves the filters alone.
+    if (!hasListItem(key)) {
+      if (state.filters.district !== 'alle') clearDistrictOutline();
+      resetFilters();
+      if (state.search) {
+        clearSearch();
+        clearSearchCircle();
+      }
+      render();
+    }
+    // The sheet first: setSheet() reports its target geometry at once, so
+    // the centring below already aims at the map the half sheet leaves (#43).
+    if (!isDesktop() && sheetState() === 'full') setSheet('half');
+    const [lon, lat] = feature.geometry.coordinates;
+    const map = getMap();
+    // No animation: the popup opens right after, and its autoPan must start
+    // from the final view — opening it during a flight is the fit-then-open
+    // trap from A-7/A-11 in another form.
+    const go = () => {
+      setViewInVisibleArea([lat, lon], Math.max(map.getZoom(), SITE_ZOOM), { animate: false });
+      selectFeature(key);
+    };
+    // A zoom animation still in flight (a district fit, a search) ends by
+    // moving to its own target — after our setView, which it then overwrites
+    // (measured: zoom 14, the site 800 px off screen). setView() stops a pan
+    // animation but not a zoom one, and Leaflet has no public flag for it;
+    // the vendored copy is pinned (vendor/leaflet/), so the private one holds.
+    if (map._animatingZoom) map.once('zoomend', go);
+    else go();
+  },
+});
 initList({ onSelect: selectFeature, onHover: setHoverKey });
 // The boundaries (precached shell file) fill the district select; the select
 // is rebuilt on every render, so whichever of the two loads lands last wins.
