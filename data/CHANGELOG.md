@@ -2,6 +2,21 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 07.11.2026, 06:39 — 12 entfernt (gesamt 171)
+
+- ➖ ~~Rintheimer Querallee und Büchiger Allee~~
+- ➖ ~~Rheinstraße Gleisübergang Nuitstraße~~
+- ➖ ~~Yorckstraße zw. Wichernstraße u. Yorckplatz~~
+- ➖ ~~Maximilianstraße zw. Stabelstraße und Weberstraße~~
+- ➖ ~~Stabelstraße zw. Moltkestraße und Hildapromenade~~
+- ➖ ~~Waldstraße zw. Ludwigsplatz und Bürgerstraße~~
+- ➖ ~~Nikolausstraße zw. Allmendstraße und Lützowstraße~~
+- ➖ ~~Kaiserstraße zw. Kronenstraße und Adlerstraße~~
+- ➖ ~~L 604 zw. Waldstadt/Theodor-Heuss-Allee und Eggenstein Höhe B 36~~
+- ➖ ~~Haid- u.-Neu-Straße zw. Hirtenweg und Am Sportpark~~
+- ➖ ~~Badener Straße zw. Karl-Weysser-Straße und Pfinztalstraße~~
+- ➖ ~~B 10 Augustenburgstraße Tunnel Grötzingen~~
+
 ## 06.11.2026, 16:50 — 4 neu, 1 entfernt, 4 geändert (gesamt 183)
 
 - ➕ **B36/ Neureuter Straße  zw. Sudetenstraße und L605**
