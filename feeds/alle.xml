@@ -6,9 +6,16 @@
   <link rel="self" type="application/atom+xml" href="https://ahirrea.github.io/BauWatch-KA/feeds/alle.xml"/>
   <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
   <icon>https://ahirrea.github.io/BauWatch-KA/icons/icon-192.png</icon>
-  <updated>2026-11-07T05:39:04.797Z</updated>
+  <updated>2026-11-08T05:41:13.686Z</updated>
   <author><name>BauWatch-KA</name></author>
   <rights>Datensatz „Baustellen&quot;, Stadt Karlsruhe, Lizenz CC-BY 4.0</rights>
+  <entry>
+    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-11-08T05:41:13.686Z</id>
+    <title>08.11.2026, 06:41 — 2 neu, 4 entfernt</title>
+    <updated>2026-11-08T05:41:13.686Z</updated>
+    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
+    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Herdweg zw. K9659/ Gewerbegebiet Auf der Breit und Alte Weingartener Straße&lt;/strong&gt; (Durlach)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Bahnübergang am Viehweg&lt;/strong&gt; (Grötzingen)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;B36/ Neureuter Straße  zw. Sudetenstraße und L605&lt;/s&gt; (Neureut)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Gartenstraße zwischen Steinhäuserstraße und Weinbrennerplatz/Kriegstraße&lt;/s&gt; (Südweststadt)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Gartenstraße zw. Steinhäuserstraße u. Weinbrennerplatz&lt;/s&gt; (Südweststadt)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Lessingstraße zw. Sophienstraße und Kaiserallee&lt;/s&gt; (Weststadt)&lt;/li&gt;&lt;/ul&gt;</content>
+  </entry>
   <entry>
     <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-11-07T05:39:04.797Z</id>
     <title>07.11.2026, 06:39 — 12 entfernt</title>
@@ -428,26 +435,5 @@
     <updated>2026-10-09T05:46:14.964Z</updated>
     <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
     <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Bahnübergang Belchenstraße/Im Weiherwald&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Strählerweg Höhe Nr. 20&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Engesserstr. 2-6/8-12 und Lehmannstr. 1-3&lt;/s&gt;&lt;/li&gt;&lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-10-08T21:13:37.744Z</id>
-    <title>08.10.2026, 23:13 — 1 entfernt, 1 geändert</title>
-    <updated>2026-10-08T21:13:37.744Z</updated>
-    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
-    <content type="html">&lt;ul&gt;&lt;li&gt;➖ &lt;s&gt;Freydorfstraße zw. Moltke- u. Grenadierstraße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;✏️ Lärchenweg zw. Zehntwaldstraße und Donauschwabenstraße — Ende: 2026-10-16 → 2026-10-14&lt;/li&gt;&lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-10-08T15:28:14.090Z</id>
-    <title>08.10.2026, 17:28 — 3 neu, 2 entfernt, 1 geändert</title>
-    <updated>2026-10-08T15:28:14.090Z</updated>
-    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
-    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Werderstraße zw. Marienstraße und Rüppurrer Straße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Am Fasanengarten zw. Emil-Gött-Straße und Parkstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Silcherstraße, Rabenweg, Buschwiesenweg&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Brauerstraße zw. Putlitzstraße u. Kriegstraße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Brauerstraße zw. Roonstraße und Gartenstraße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;✏️ Bergbahnstraße zw. B 3 Grötzinger Straße und Am Steinbruch — Ende: 2026-10-09 → 2026-11-02&lt;/li&gt;&lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-10-08T05:41:57.414Z</id>
-    <title>08.10.2026, 07:41 — 5 entfernt</title>
-    <updated>2026-10-08T05:41:57.414Z</updated>
-    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
-    <content type="html">&lt;ul&gt;&lt;li&gt;➖ &lt;s&gt;Weiherstraße zw. Basler-Tor-Straße und Brunnenhausstraße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Leibnitzstraße zw. Südendstraße und Kolpingplatz&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;L623/ Am Wetterbach zw. Wolfartsweier und Hohenwettersbach&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Yburgweg zw. zw. Schliffkpfweg und Kreuzung Plättigweg&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Petergraben 2&lt;/s&gt;&lt;/li&gt;&lt;/ul&gt;</content>
   </entry>
 </feed>

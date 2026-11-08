@@ -2,6 +2,15 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 08.11.2026, 06:41 — 2 neu, 4 entfernt (gesamt 169)
+
+- ➕ **Herdweg zw. K9659/ Gewerbegebiet Auf der Breit und Alte Weingartener Straße**
+- ➕ **Bahnübergang am Viehweg**
+- ➖ ~~B36/ Neureuter Straße  zw. Sudetenstraße und L605~~
+- ➖ ~~Gartenstraße zwischen Steinhäuserstraße und Weinbrennerplatz/Kriegstraße~~
+- ➖ ~~Gartenstraße zw. Steinhäuserstraße u. Weinbrennerplatz~~
+- ➖ ~~Lessingstraße zw. Sophienstraße und Kaiserallee~~
+
 ## 07.11.2026, 06:39 — 12 entfernt (gesamt 171)
 
 - ➖ ~~Rintheimer Querallee und Büchiger Allee~~
