@@ -2,6 +2,14 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 09.11.2026, 19:37 — 1 neu, 1 entfernt, 3 geändert (gesamt 179)
+
+- ➕ **Werderstraße zw. Marienstraße und Rüppurrer Straße**
+- ➖ ~~Werrenstraße Kreuzungsbereich Gänsbergstraße~~
+- ✏️ Yorckstraße zw. Sophienstraße und Yorckplatz — Ende: 2026-11-09 → 2026-11-10
+- ✏️ Weberstraße zw. Haydnplatz und Maximilianstraße — Beginn: 2026-11-04 → 2026-11-08; Ende: 2027-01-11 → 2026-12-22
+- ✏️ Maximilianstraße zw. Stabelstraße und Weberstraße — Beginn: 2026-11-05 → 2026-11-08; Ende: 2027-01-11 → 2026-12-22
+
 ## 09.11.2026, 06:51 — 14 neu, 4 entfernt (gesamt 179)
 
 - ➕ **Südtangente zw. Edeltruidtunnel und Abfahrt Honsellstraße**
