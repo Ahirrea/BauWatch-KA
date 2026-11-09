@@ -6,9 +6,16 @@
   <link rel="self" type="application/atom+xml" href="https://ahirrea.github.io/BauWatch-KA/feeds/alle.xml"/>
   <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
   <icon>https://ahirrea.github.io/BauWatch-KA/icons/icon-192.png</icon>
-  <updated>2026-11-08T05:41:13.686Z</updated>
+  <updated>2026-11-09T05:51:23.329Z</updated>
   <author><name>BauWatch-KA</name></author>
   <rights>Datensatz „Baustellen&quot;, Stadt Karlsruhe, Lizenz CC-BY 4.0</rights>
+  <entry>
+    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-11-09T05:51:23.329Z</id>
+    <title>09.11.2026, 06:51 — 14 neu, 4 entfernt</title>
+    <updated>2026-11-09T05:51:23.329Z</updated>
+    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
+    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Südtangente zw. Edeltruidtunnel und Abfahrt Honsellstraße&lt;/strong&gt; (Grünwinkel)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Karl-Wilhelm-Platz/Haid-und-Neu-Str./Georg-Friedrich-Straße/Rudolfstr./Bernhardstr./Melanchtonstr./Essenweinstr./Sternbergstr.&lt;/strong&gt; (Oststadt)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;B10 Südtangente zwischen AS9 und AS10&lt;/strong&gt; (Knielingen)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Rheinhafenstraße Kreuzungsbereich Kirschstraße&lt;/strong&gt; (Daxlanden)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Uhlandstraße zw. Sophienstraße und Draisstraße&lt;/strong&gt; (Weststadt)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Moltkestraße Höhe Erzbergerstraße&lt;/strong&gt; (Nordstadt)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Franken- zw. Graf-Rhena- und Südendstraße&lt;/strong&gt; (Südweststadt)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Rechts der Alb zw. Nürnberger Straße und Freiburger Straße und zw. Nürnberger Straße und Maria-Matheis-Straße&lt;/strong&gt; (Weiherfeld-Dammerstock)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Nürnberger Straße zw. Rechts der Alb und Sperberweg&lt;/strong&gt; (Weiherfeld-Dammerstock)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Sperberweg&lt;/strong&gt; (Weiherfeld-Dammerstock)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Haid-und-Neu-Straße zw. Tullastraße und Helmertstraße&lt;/strong&gt; (Oststadt)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Lissenstraße zw. Zufahrt Getränkemarkt u. Killisfeldstraße Anliegerfahrbahn&lt;/strong&gt; (Durlach)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;L623/ Am Wetterbach zw. Zur Ziegelhütte und Bachstraße&lt;/strong&gt; (Grünwettersbach)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Badener Straße zw. Karl-Weysser-Straße und Pfinztalstraße&lt;/strong&gt; (Durlach)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Uhlandstraße zw. Goethestraße und Sophienstraße&lt;/s&gt; (Weststadt)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Kreuzungsbereich Hirsch- / Südendstraße Nordfahrbahn&lt;/s&gt; (Südweststadt)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Ellmendinger Straße im Einmündungsbereich zur Lissenstraße&lt;/s&gt; (Durlach)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Kastellstraße Kreuzung Bergbahnstraße&lt;/s&gt; (Durlach)&lt;/li&gt;&lt;/ul&gt;</content>
+  </entry>
   <entry>
     <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-11-08T05:41:13.686Z</id>
     <title>08.11.2026, 06:41 — 2 neu, 4 entfernt</title>
@@ -414,26 +421,5 @@
     <updated>2026-10-12T05:35:23.862Z</updated>
     <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
     <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Kriegsstraße zw. Hirschstraße und Henriette-Obermüller-Straße (Karoline-Luise-Tunnel)&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Knoten Brauerstraße / Reinhold-Frank-Straße / Kriegsstraße / Gartenstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Bärenweg zw. Kirchfeldstraße und Alte Friedrichstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Freydorfstraße zw. Moltke- u. Grenadierstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Baumeisterstraße zw. Finterstraße und Ettinger Straße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Geh- und Radwegverbingung zw. Weiherfeldstraße und Schwarzwaldstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Nikolausstraße zw. Lützowstraße und Allmendstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Pfarrstraße Haus Nr.12-18 und Haus Nr. 43-51&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Ritterstraße zw. Kriegsstraße und Hermann-Billing-Straße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Hirschstraße zw. Südendstraße und Vorholzstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Adlerstraße zw. Kaiserstraße und Zirkel&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Glogauer Straße zw. Lauenburger Straße und Kolberger Straße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Gartenstraße zw. Brauerstraße und Einmündung Jollystraße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Baumeisterstraße zw. Finterstraße und Ettlinger Straße&lt;/s&gt;&lt;/li&gt;&lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-10-10T05:29:29.510Z</id>
-    <title>10.10.2026, 07:29 — 3 neu, 12 entfernt</title>
-    <updated>2026-10-10T05:29:29.510Z</updated>
-    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
-    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Pastor-Felke-Straße Kreuzungsbereich Werthmannstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Waldenburger Straße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Am Fasanengarten, Prakstr., Karl-Wilhelm-Str.&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Gut-Magnus-Straße, Wachhausstraße, Kieselweg,&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Yorckstraße zw. Wichernstraße u. Yorckplatz&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Gänsbergstraße zw. Werrenstraße und Wiesentalstraße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Südtangente zw. AS 5 und AS 7&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Werthmannstraße zw. Pastor-Felke-Straße und Kloserweg&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Hirschberger Straße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Hölderlinstraße, Emil-Gött-Straße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Rittnertstraße und Jean-Ritzert-Straße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Nowackanlage zw. Baumeisterstraße und Ettlinger Straße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Killisfeldstraße, Gudrunstraße, Oberwaldstraße, Dietrichstraße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Strählerweg Höhe Nr. 20&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Seydlitzstr. 4-24&lt;/s&gt;&lt;/li&gt;&lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-10-09T15:11:00.663Z</id>
-    <title>09.10.2026, 17:11 — 3 neu, 1 entfernt, 5 geändert</title>
-    <updated>2026-10-09T15:11:00.663Z</updated>
-    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
-    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Karl-Martin-Graff-Straße zw. Gustav-Hofmann-Straße und Winkler-Dentz-Straße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Albert-Schweitzer-Straße zw. Bertha-von-Suttner-Straße und Theodor-Heuss-Allee&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Karl-Martin-Graff-Straße zw. Gustav-Hofmann-Straße und Winkler-Dentz-Straße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;✏️ Ellmendinger Straße im Einmündungsbereich zur Lissenstraße — Ende: 2026-10-09 → 2026-11-08&lt;/li&gt;&lt;li&gt;✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — Ende: 2026-10-16 → 2026-10-23&lt;/li&gt;&lt;li&gt;✏️ Eisenlohrstraße zw. Gustav-Heller-Platz und Hübschstraße — Ende: 2026-10-10 → 2026-10-14&lt;/li&gt;&lt;li&gt;✏️ Haid-und-Neu-Straße zw. Am Sportpark und Sinsheimer Straße — Ende: 2026-10-12 → 2026-10-26&lt;/li&gt;&lt;li&gt;✏️ Glogauer Straße zw. Königsberger Straße und Im Eichbäumle — Ende: 2026-11-21 → 2026-10-13&lt;/li&gt;&lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-10-09T05:46:14.964Z</id>
-    <title>09.10.2026, 07:46 — 2 neu, 1 entfernt</title>
-    <updated>2026-10-09T05:46:14.964Z</updated>
-    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
-    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Bahnübergang Belchenstraße/Im Weiherwald&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Strählerweg Höhe Nr. 20&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Engesserstr. 2-6/8-12 und Lehmannstr. 1-3&lt;/s&gt;&lt;/li&gt;&lt;/ul&gt;</content>
   </entry>
 </feed>

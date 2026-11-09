@@ -2,6 +2,27 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 09.11.2026, 06:51 — 14 neu, 4 entfernt (gesamt 179)
+
+- ➕ **Südtangente zw. Edeltruidtunnel und Abfahrt Honsellstraße**
+- ➕ **Karl-Wilhelm-Platz/Haid-und-Neu-Str./Georg-Friedrich-Straße/Rudolfstr./Bernhardstr./Melanchtonstr./Essenweinstr./Sternbergstr.**
+- ➕ **B10 Südtangente zwischen AS9 und AS10**
+- ➕ **Rheinhafenstraße Kreuzungsbereich Kirschstraße**
+- ➕ **Uhlandstraße zw. Sophienstraße und Draisstraße**
+- ➕ **Moltkestraße Höhe Erzbergerstraße**
+- ➕ **Franken- zw. Graf-Rhena- und Südendstraße**
+- ➕ **Rechts der Alb zw. Nürnberger Straße und Freiburger Straße und zw. Nürnberger Straße und Maria-Matheis-Straße**
+- ➕ **Nürnberger Straße zw. Rechts der Alb und Sperberweg**
+- ➕ **Sperberweg**
+- ➕ **Haid-und-Neu-Straße zw. Tullastraße und Helmertstraße**
+- ➕ **Lissenstraße zw. Zufahrt Getränkemarkt u. Killisfeldstraße Anliegerfahrbahn**
+- ➕ **L623/ Am Wetterbach zw. Zur Ziegelhütte und Bachstraße**
+- ➕ **Badener Straße zw. Karl-Weysser-Straße und Pfinztalstraße**
+- ➖ ~~Uhlandstraße zw. Goethestraße und Sophienstraße~~
+- ➖ ~~Kreuzungsbereich Hirsch- / Südendstraße Nordfahrbahn~~
+- ➖ ~~Ellmendinger Straße im Einmündungsbereich zur Lissenstraße~~
+- ➖ ~~Kastellstraße Kreuzung Bergbahnstraße~~
+
 ## 08.11.2026, 06:41 — 2 neu, 4 entfernt (gesamt 169)
 
 - ➕ **Herdweg zw. K9659/ Gewerbegebiet Auf der Breit und Alte Weingartener Straße**
