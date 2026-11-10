@@ -2,6 +2,14 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 10.11.2026, 03:38 — 3 neu, 2 entfernt (gesamt 180)
+
+- ➕ **Ritterstraße zw. Zirkel und Kaiserstraße**
+- ➕ **Luisenstraße zw. Rüppurrer Straße und Marienstraße**
+- ➕ **Badener Straße zw. Karl-Weysser-Straße und Pfinztalstraße**
+- ➖ ~~Südtangente zw. Edeltruidtunnel und Abfahrt Honsellstraße~~
+- ➖ ~~Nürnberger Straße zw. Rechts der Alb und Sperberweg~~
+
 ## 09.11.2026, 19:37 — 1 neu, 1 entfernt, 3 geändert (gesamt 179)
 
 - ➕ **Werderstraße zw. Marienstraße und Rüppurrer Straße**
