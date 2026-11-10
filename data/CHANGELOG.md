@@ -2,6 +2,12 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 10.11.2026, 13:25 — 2 neu, 1 geändert (gesamt 182)
+
+- ➕ **Reichardtstraße/Turmberg Parkplatz bei der Bergstation**
+- ➕ **Wolfweg und Wirtschaftsweg unterhalb der Bergbahntrasse**
+- ✏️ Schlossplatz zw. Herrenstraße u. Zirkel — Ende: 2026-11-20 → 2026-11-22
+
 ## 10.11.2026, 03:38 — 3 neu, 2 entfernt (gesamt 180)
 
 - ➕ **Ritterstraße zw. Zirkel und Kaiserstraße**
