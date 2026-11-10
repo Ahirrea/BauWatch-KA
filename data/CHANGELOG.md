@@ -2,6 +2,13 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 10.11.2026, 22:44 — 2 neu, 2 geändert (gesamt 184)
+
+- ➕ **Jagdstraße von Rintheimer Hauptstr. bis Hinterwiesenweg**
+- ➕ **Drosselsangweg 1 bis Rintheimer Hauptstraße**
+- ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — Ende: 2026-11-13 → 2026-11-10
+- ✏️ Turmbergstraße zw. Posseltstraße und Wolfweg — Beginn: 2026-11-01 → 2026-11-08; Ende: 2026-11-19 → 2026-11-30
+
 ## 10.11.2026, 13:25 — 2 neu, 1 geändert (gesamt 182)
 
 - ➕ **Reichardtstraße/Turmberg Parkplatz bei der Bergstation**
