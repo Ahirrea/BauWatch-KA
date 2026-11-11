@@ -2,6 +2,10 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 11.11.2026, 23:38 — 1 entfernt (gesamt 183)
+
+- ➖ ~~Badener Straße zw. Karl-Weysser-Straße und Pfinztalstraße~~
+
 ## 11.11.2026, 17:00 — 2 neu, 2 entfernt, 2 geändert (gesamt 184)
 
 - ➕ **Vorbergstraße zw. Hohenbergstraße/Quellenstraße und Ringstraße**
