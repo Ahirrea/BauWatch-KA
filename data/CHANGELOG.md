@@ -2,6 +2,17 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 11.11.2026, 06:47 — 4 neu, 4 entfernt (gesamt 184)
+
+- ➕ **Siemensallee zw. B36/ Neureuter Straße und Laubenweg**
+- ➕ **Wielandtstraße zw. Rüppurrer Straße und Elisabeth-Großwendt-Straße**
+- ➕ **Karlsruher Straße Höhe Hagdornstraße/ Julius-Bender-Starße**
+- ➕ **Gänsbergstraße zw. Wiesentalstraße und Höhenstraße**
+- ➖ ~~Siemensallee zw. B36/ Neureuter Straße und Laubenweg~~
+- ➖ ~~Yorckstraße zw. Sophienstraße und Yorckplatz~~
+- ➖ ~~Badener Straße zw. Karl-Weysser-Straße und Pfinztalstraße~~
+- ➖ ~~Badener Straße zw. Karl-Weysser-Straße und Pfinztalstraße~~
+
 ## 10.11.2026, 22:44 — 2 neu, 2 geändert (gesamt 184)
 
 - ➕ **Jagdstraße von Rintheimer Hauptstr. bis Hinterwiesenweg**

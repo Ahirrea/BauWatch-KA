@@ -6,9 +6,16 @@
   <link rel="self" type="application/atom+xml" href="https://ahirrea.github.io/BauWatch-KA/feeds/alle.xml"/>
   <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
   <icon>https://ahirrea.github.io/BauWatch-KA/icons/icon-192.png</icon>
-  <updated>2026-11-10T21:44:22.327Z</updated>
+  <updated>2026-11-11T05:47:27.953Z</updated>
   <author><name>BauWatch-KA</name></author>
   <rights>Datensatz „Baustellen&quot;, Stadt Karlsruhe, Lizenz CC-BY 4.0</rights>
+  <entry>
+    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-11-11T05:47:27.953Z</id>
+    <title>11.11.2026, 06:47 — 4 neu, 4 entfernt</title>
+    <updated>2026-11-11T05:47:27.953Z</updated>
+    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
+    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Siemensallee zw. B36/ Neureuter Straße und Laubenweg&lt;/strong&gt; (Mühlburg)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Wielandtstraße zw. Rüppurrer Straße und Elisabeth-Großwendt-Straße&lt;/strong&gt; (Südstadt)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Karlsruher Straße Höhe Hagdornstraße/ Julius-Bender-Starße&lt;/strong&gt; (Hagsfeld)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Gänsbergstraße zw. Wiesentalstraße und Höhenstraße&lt;/strong&gt; (Stupferich)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Siemensallee zw. B36/ Neureuter Straße und Laubenweg&lt;/s&gt; (Mühlburg)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Yorckstraße zw. Sophienstraße und Yorckplatz&lt;/s&gt; (Weststadt)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Badener Straße zw. Karl-Weysser-Straße und Pfinztalstraße&lt;/s&gt; (Durlach)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Badener Straße zw. Karl-Weysser-Straße und Pfinztalstraße&lt;/s&gt; (Durlach)&lt;/li&gt;&lt;/ul&gt;</content>
+  </entry>
   <entry>
     <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-11-10T21:44:22.327Z</id>
     <title>10.11.2026, 22:44 — 2 neu, 2 geändert</title>
@@ -442,12 +449,5 @@
     <updated>2026-10-13T01:56:27.961Z</updated>
     <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
     <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Bonner Straße zw. Siemensallee und Bonner Platz&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Brauerstraße zw. Gartenstraße u. Kriegstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Zweibrückener Straße zw. Rehbuckel und Ebersteinstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Hirschberger Straße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Am Sportpark zw. Gustav-Heinemann-Allee und Schweidnitzer Straße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Böhmerwaldstraße zw. Thüringer Straßem und Mecklenburger Straße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Sonnenstraße zw. Hardtstraße und Steubenstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Zweibrückener Straße zw. Rehbuckel und Ebersteinstraße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Bahnübergang Belchenstraße/Im Weiherwald&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Hirschstraße zw. Südendstraße und Vorholzstraße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;✏️ Herrenstraße zw. Karlstraße und Amalienstraße — Ende: 2026-10-31 → 2027-01-31&lt;/li&gt;&lt;li&gt;✏️ Zirkel zw. Ritterstraße und Lammstraße — Ende: 2026-10-14 → 2026-11-14&lt;/li&gt;&lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-10-12T05:35:23.862Z</id>
-    <title>12.10.2026, 07:35 — 12 neu, 4 entfernt</title>
-    <updated>2026-10-12T05:35:23.862Z</updated>
-    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
-    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Kriegsstraße zw. Hirschstraße und Henriette-Obermüller-Straße (Karoline-Luise-Tunnel)&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Knoten Brauerstraße / Reinhold-Frank-Straße / Kriegsstraße / Gartenstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Bärenweg zw. Kirchfeldstraße und Alte Friedrichstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Freydorfstraße zw. Moltke- u. Grenadierstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Baumeisterstraße zw. Finterstraße und Ettinger Straße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Geh- und Radwegverbingung zw. Weiherfeldstraße und Schwarzwaldstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Nikolausstraße zw. Lützowstraße und Allmendstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Pfarrstraße Haus Nr.12-18 und Haus Nr. 43-51&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Ritterstraße zw. Kriegsstraße und Hermann-Billing-Straße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Hirschstraße zw. Südendstraße und Vorholzstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Adlerstraße zw. Kaiserstraße und Zirkel&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Glogauer Straße zw. Lauenburger Straße und Kolberger Straße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Gartenstraße zw. Brauerstraße und Einmündung Jollystraße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Baumeisterstraße zw. Finterstraße und Ettlinger Straße&lt;/s&gt;&lt;/li&gt;&lt;/ul&gt;</content>
   </entry>
 </feed>
