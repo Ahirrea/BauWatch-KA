@@ -6,9 +6,16 @@
   <link rel="self" type="application/atom+xml" href="https://ahirrea.github.io/BauWatch-KA/feeds/alle.xml"/>
   <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
   <icon>https://ahirrea.github.io/BauWatch-KA/icons/icon-192.png</icon>
-  <updated>2026-11-11T05:47:27.953Z</updated>
+  <updated>2026-11-11T16:00:02.057Z</updated>
   <author><name>BauWatch-KA</name></author>
   <rights>Datensatz „Baustellen&quot;, Stadt Karlsruhe, Lizenz CC-BY 4.0</rights>
+  <entry>
+    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-11-11T16:00:02.057Z</id>
+    <title>11.11.2026, 17:00 — 2 neu, 2 entfernt, 2 geändert</title>
+    <updated>2026-11-11T16:00:02.057Z</updated>
+    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
+    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Vorbergstraße zw. Hohenbergstraße/Quellenstraße und Ringstraße&lt;/strong&gt; (Wolfartsweier)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Badener Straße zw. Karl-Weysser-Straße und Pfinztalstraße&lt;/strong&gt; (Durlach)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;B10 Südtangente zwischen AS9 und AS10&lt;/s&gt; (Knielingen)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Eisenlohrstraße zw. Kriegsstraße und Gustav-Heller-Platz&lt;/s&gt; (Weststadt)&lt;/li&gt;&lt;li&gt;✏️ Reinhold-Frank-Straße zwischen Belfortstraße und Kaiserallee (Innenstadt-West) — Ende: 2026-12-04 → 2026-12-11&lt;/li&gt;&lt;li&gt;✏️ Rheinhafenstraße Kreuzungsbereich Kirschstraße (Daxlanden) — Ende: 2026-11-11 → 2026-12-11&lt;/li&gt;&lt;/ul&gt;</content>
+  </entry>
   <entry>
     <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-11-11T05:47:27.953Z</id>
     <title>11.11.2026, 06:47 — 4 neu, 4 entfernt</title>

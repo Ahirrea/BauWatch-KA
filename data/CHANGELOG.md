@@ -2,6 +2,15 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 11.11.2026, 17:00 — 2 neu, 2 entfernt, 2 geändert (gesamt 184)
+
+- ➕ **Vorbergstraße zw. Hohenbergstraße/Quellenstraße und Ringstraße**
+- ➕ **Badener Straße zw. Karl-Weysser-Straße und Pfinztalstraße**
+- ➖ ~~B10 Südtangente zwischen AS9 und AS10~~
+- ➖ ~~Eisenlohrstraße zw. Kriegsstraße und Gustav-Heller-Platz~~
+- ✏️ Reinhold-Frank-Straße zwischen Belfortstraße und Kaiserallee — Ende: 2026-12-04 → 2026-12-11
+- ✏️ Rheinhafenstraße Kreuzungsbereich Kirschstraße — Ende: 2026-11-11 → 2026-12-11
+
 ## 11.11.2026, 06:47 — 4 neu, 4 entfernt (gesamt 184)
 
 - ➕ **Siemensallee zw. B36/ Neureuter Straße und Laubenweg**
