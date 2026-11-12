@@ -2,6 +2,18 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 12.11.2026, 07:52 — 3 neu, 6 entfernt (gesamt 180)
+
+- ➕ **Holländerstraße zw. Hinter der Kirche und Valentinstraße**
+- ➕ **Kreuzungspunkte im Stadtgebiet, Arbeiten an den Verkehrsleitsystemen**
+- ➕ **Veilchenstraße zw. Gerwigstraße und Durlacher Allee**
+- ➖ ~~Hirschstraße zw. Amalienstraße und Kaiserstraße~~
+- ➖ ~~Hirschstraße zw. Amalienstraße und Kaiserstraße~~
+- ➖ ~~Ritterstraße zw. Zirkel und Kaiserstraße~~
+- ➖ ~~Wielandtstraße zw. Rüppurrer Straße und Elisabeth-Großwendt-Straße~~
+- ➖ ~~Herdweg zw. K9659/ Gewerbegebiet Auf der Breit und Alte Weingartener Straße~~
+- ➖ ~~Bahnübergang am Viehweg~~
+
 ## 11.11.2026, 23:38 — 1 entfernt (gesamt 183)
 
 - ➖ ~~Badener Straße zw. Karl-Weysser-Straße und Pfinztalstraße~~

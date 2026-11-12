@@ -6,9 +6,16 @@
   <link rel="self" type="application/atom+xml" href="https://ahirrea.github.io/BauWatch-KA/feeds/alle.xml"/>
   <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
   <icon>https://ahirrea.github.io/BauWatch-KA/icons/icon-192.png</icon>
-  <updated>2026-11-11T22:38:03.875Z</updated>
+  <updated>2026-11-12T06:52:56.128Z</updated>
   <author><name>BauWatch-KA</name></author>
   <rights>Datensatz „Baustellen&quot;, Stadt Karlsruhe, Lizenz CC-BY 4.0</rights>
+  <entry>
+    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-11-12T06:52:56.128Z</id>
+    <title>12.11.2026, 07:52 — 3 neu, 6 entfernt</title>
+    <updated>2026-11-12T06:52:56.128Z</updated>
+    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
+    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Holländerstraße zw. Hinter der Kirche und Valentinstraße&lt;/strong&gt; (Daxlanden)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Kreuzungspunkte im Stadtgebiet, Arbeiten an den Verkehrsleitsystemen&lt;/strong&gt; (Beiertheim-Bulach)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Veilchenstraße zw. Gerwigstraße und Durlacher Allee&lt;/strong&gt; (Oststadt)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Hirschstraße zw. Amalienstraße und Kaiserstraße&lt;/s&gt; (Innenstadt-West)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Hirschstraße zw. Amalienstraße und Kaiserstraße&lt;/s&gt; (Innenstadt-West)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Ritterstraße zw. Zirkel und Kaiserstraße&lt;/s&gt; (Innenstadt-West)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Wielandtstraße zw. Rüppurrer Straße und Elisabeth-Großwendt-Straße&lt;/s&gt; (Südstadt)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Herdweg zw. K9659/ Gewerbegebiet Auf der Breit und Alte Weingartener Straße&lt;/s&gt; (Durlach)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Bahnübergang am Viehweg&lt;/s&gt; (Grötzingen)&lt;/li&gt;&lt;/ul&gt;</content>
+  </entry>
   <entry>
     <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-11-11T22:38:03.875Z</id>
     <title>11.11.2026, 23:38 — 1 entfernt</title>
@@ -456,12 +463,5 @@
     <updated>2026-10-13T11:37:25.285Z</updated>
     <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
     <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Yorckstraße zw. Wichernstraße u. Yorckplatz&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Werthmannstraße zw. Pastor-Felke-Straße und Klosterweg&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Pfinztalstraße zw. Badener Straße u. Eichelgasse; Badener Straße zwischen Gymnasiumstraße und Pfintalstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Pfinztalstraße zw. Badener Straße u. Jägerstraße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Blumentorstraße, Pfinzstraße, Friedrich-Eberle-Straße, Oberlinstraße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Pfinztalstraße zw. Badener Straße u. Eichelgasse; Badener Straße zwischen Karl-Weysser-Straße und Pfintalstraße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Am Fasanengarten, Prakstr., Karl-Wilhelm-Str.&lt;/s&gt;&lt;/li&gt;&lt;li&gt;✏️ Thüringer Straße zw. Böhmerwaldstraße und Esslinger Straße — Info geändert&lt;/li&gt;&lt;li&gt;✏️ Am Sportpark zw. Gustav-Heinemann-Allee und Schweidnitzer Straße — Ende: 2026-10-26 → 2026-10-27&lt;/li&gt;&lt;li&gt;✏️ Pfinztalstraße zw. Marstallstaße und Karlsburgstraße — Ende: 2026-11-06 → 2026-11-04; Info geändert&lt;/li&gt;&lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-10-13T01:56:27.961Z</id>
-    <title>13.10.2026, 03:56 — 7 neu, 5 entfernt, 2 geändert</title>
-    <updated>2026-10-13T01:56:27.961Z</updated>
-    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
-    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Bonner Straße zw. Siemensallee und Bonner Platz&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Brauerstraße zw. Gartenstraße u. Kriegstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Zweibrückener Straße zw. Rehbuckel und Ebersteinstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Hirschberger Straße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Am Sportpark zw. Gustav-Heinemann-Allee und Schweidnitzer Straße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Böhmerwaldstraße zw. Thüringer Straßem und Mecklenburger Straße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Sonnenstraße zw. Hardtstraße und Steubenstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Zweibrückener Straße zw. Rehbuckel und Ebersteinstraße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Bahnübergang Belchenstraße/Im Weiherwald&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Hirschstraße zw. Südendstraße und Vorholzstraße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;✏️ Herrenstraße zw. Karlstraße und Amalienstraße — Ende: 2026-10-31 → 2027-01-31&lt;/li&gt;&lt;li&gt;✏️ Zirkel zw. Ritterstraße und Lammstraße — Ende: 2026-10-14 → 2026-11-14&lt;/li&gt;&lt;/ul&gt;</content>
   </entry>
 </feed>
