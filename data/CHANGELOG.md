@@ -2,6 +2,20 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 12.11.2026, 17:43 — 2 neu, 4 entfernt, 5 geändert (gesamt 178)
+
+- ➕ **Gartenstraße zw. Brauerstraße und Einmündung Jollystraße**
+- ➕ **Pfinztalstraße zw. Marstallstaße und Karlsburgstraße**
+- ➖ ~~Gartenstraße zw. Lessingstraße und Brauerstraße~~
+- ➖ ~~Gartenstraße zw. Jollystraße und Brauerstraße~~
+- ➖ ~~Baumeisterstraße zw. Finterstraße und Ettinger Straße~~
+- ➖ ~~L623/ Am Wetterbach zw. Zur Ziegelhütte und Bachstraße~~
+- ✏️ Emmy-Noether-Straße zw. Ada-Lovelace-Straße und Wilhem-Schickard-Straße — Sperrgrad: gering → teil; Ende: 2026-12-11 → 2026-12-02
+- ✏️ Kriegsstraße zw. Leopoldstraße u. Lessingstraße, Reinhold-Frank-Straße zwischen Kriegstraße u. Viktoriastraße — Ende: 2027-03-07 → 2027-03-28
+- ✏️ Pfinztalstraße zw. Badener Straße u. Jägerstraße, Badener Straße zw. Karl-Weysser-Straße und Pfinztalstraße — Bezeichnung geändert; Info geändert
+- ✏️ Sophienstraße Kreuzung Reinhold-Frank-Straße — Ende: 2027-07-04 → 2027-08-08
+- ✏️ Baumeisterstraße zw. Finterstraße und Ettinger Straße — Ende: 2026-11-15 → 2026-12-13
+
 ## 12.11.2026, 07:52 — 3 neu, 6 entfernt (gesamt 180)
 
 - ➕ **Holländerstraße zw. Hinter der Kirche und Valentinstraße**
