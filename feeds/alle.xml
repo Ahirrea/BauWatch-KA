@@ -6,9 +6,16 @@
   <link rel="self" type="application/atom+xml" href="https://ahirrea.github.io/BauWatch-KA/feeds/alle.xml"/>
   <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
   <icon>https://ahirrea.github.io/BauWatch-KA/icons/icon-192.png</icon>
-  <updated>2026-11-13T00:58:48.675Z</updated>
+  <updated>2026-11-13T12:01:41.651Z</updated>
   <author><name>BauWatch-KA</name></author>
   <rights>Datensatz „Baustellen&quot;, Stadt Karlsruhe, Lizenz CC-BY 4.0</rights>
+  <entry>
+    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-11-13T12:01:41.651Z</id>
+    <title>13.11.2026, 13:01 — 3 neu, 1 entfernt</title>
+    <updated>2026-11-13T12:01:41.651Z</updated>
+    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
+    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Weiherfeld Gebietsausbau&lt;/strong&gt; (Weiherfeld-Dammerstock)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße&lt;/strong&gt; (Grünwinkel)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Ottostraße, Dieselstraße&lt;/strong&gt; (Durlach)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße&lt;/s&gt; (Grünwinkel)&lt;/li&gt;&lt;/ul&gt;</content>
+  </entry>
   <entry>
     <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-11-13T00:58:48.675Z</id>
     <title>13.11.2026, 01:58 — 2 entfernt</title>

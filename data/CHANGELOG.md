@@ -2,6 +2,13 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 13.11.2026, 13:01 — 3 neu, 1 entfernt (gesamt 178)
+
+- ➕ **Weiherfeld Gebietsausbau**
+- ➕ **Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße**
+- ➕ **Ottostraße, Dieselstraße**
+- ➖ ~~Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße~~
+
 ## 13.11.2026, 01:58 — 2 entfernt (gesamt 176)
 
 - ➖ ~~Holländerstraße zw. Hinter der Kirche und Valentinstraße~~
