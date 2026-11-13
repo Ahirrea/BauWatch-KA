@@ -2,6 +2,11 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 13.11.2026, 01:58 — 2 entfernt (gesamt 176)
+
+- ➖ ~~Holländerstraße zw. Hinter der Kirche und Valentinstraße~~
+- ➖ ~~Veilchenstraße zw. Gerwigstraße und Durlacher Allee~~
+
 ## 12.11.2026, 17:43 — 2 neu, 4 entfernt, 5 geändert (gesamt 178)
 
 - ➕ **Gartenstraße zw. Brauerstraße und Einmündung Jollystraße**
