@@ -2,6 +2,11 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 13.11.2026, 22:53 — 1 neu, 1 geändert (gesamt 179)
+
+- ➕ **Kaiserstraße, Hirschstraße, Amalinestraße**
+- ✏️ Wasgaustraße zw. Tiroler Straße und Memeler Straße — Ende: 2026-11-14 → 2026-11-21
+
 ## 13.11.2026, 13:01 — 3 neu, 1 entfernt (gesamt 178)
 
 - ➕ **Weiherfeld Gebietsausbau**

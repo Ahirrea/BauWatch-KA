@@ -6,9 +6,16 @@
   <link rel="self" type="application/atom+xml" href="https://ahirrea.github.io/BauWatch-KA/feeds/alle.xml"/>
   <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
   <icon>https://ahirrea.github.io/BauWatch-KA/icons/icon-192.png</icon>
-  <updated>2026-11-13T12:01:41.651Z</updated>
+  <updated>2026-11-13T21:53:02.159Z</updated>
   <author><name>BauWatch-KA</name></author>
   <rights>Datensatz „Baustellen&quot;, Stadt Karlsruhe, Lizenz CC-BY 4.0</rights>
+  <entry>
+    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-11-13T21:53:02.159Z</id>
+    <title>13.11.2026, 22:53 — 1 neu, 1 geändert</title>
+    <updated>2026-11-13T21:53:02.159Z</updated>
+    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
+    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Kaiserstraße, Hirschstraße, Amalinestraße&lt;/strong&gt; (Innenstadt-West)&lt;/li&gt;&lt;li&gt;✏️ Wasgaustraße zw. Tiroler Straße und Memeler Straße (Durlach) — Ende: 2026-11-14 → 2026-11-21&lt;/li&gt;&lt;/ul&gt;</content>
+  </entry>
   <entry>
     <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-11-13T12:01:41.651Z</id>
     <title>13.11.2026, 13:01 — 3 neu, 1 entfernt</title>
@@ -449,19 +456,5 @@
     <updated>2026-10-15T04:15:27.266Z</updated>
     <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
     <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Reichenbachstraße zw. Ellmendinger Straße und Hildebrandstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Lärchenweg zw. Zehntwaldstraße und Donauschwabenstraße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Eisenlohrstraße zw. Gustav-Heller-Platz und Hübschstraße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Bahnübergang Verlängerung Kolberger Straße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Jollystraße zw. Roon- und Boeckhstraße&lt;/s&gt;&lt;/li&gt;&lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-10-14T20:06:26.811Z</id>
-    <title>14.10.2026, 22:06 — 4 geändert</title>
-    <updated>2026-10-14T20:06:26.811Z</updated>
-    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
-    <content type="html">&lt;ul&gt;&lt;li&gt;✏️ Essenweinstraße, Sternbergstraße,  Gerwigstraße, Veilchenstraße, Haizingerstraße — Sperrgrad: gering → teil; Info geändert&lt;/li&gt;&lt;li&gt;✏️ Uhlandstraße zw. Goethestraße und Sophienstraße — Beginn: 2026-09-13 → 2026-10-11; Ende: 2026-11-06 → 2026-10-29; Bezeichnung geändert&lt;/li&gt;&lt;li&gt;✏️ Rußweg zw. Langenbruchweg und Mastweidenweg — Ende: 2026-10-30 → 2026-12-22&lt;/li&gt;&lt;li&gt;✏️ K9659/ B10/ B3 — Ende: 2026-10-14 → 2026-10-15&lt;/li&gt;&lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-10-14T13:33:41.189Z</id>
-    <title>14.10.2026, 15:33 — 1 neu, 2 entfernt, 1 geändert</title>
-    <updated>2026-10-14T13:33:41.189Z</updated>
-    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
-    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Werrenstraße Kreuzungsbereich Gänsbergstraße&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Am Fasanengarten zw. Emil-Gött-Straße und Parkstraße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Ritterstraße zw. Kriegsstraße und Hermann-Billing-Straße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;✏️ Amalienstraße Kreuzung Herrenstraße — Ende: 2026-10-16 → 2026-10-21&lt;/li&gt;&lt;/ul&gt;</content>
   </entry>
 </feed>
