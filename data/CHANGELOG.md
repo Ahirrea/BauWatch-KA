@@ -2,6 +2,15 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 14.11.2026, 06:56 — 6 entfernt (gesamt 173)
+
+- ➖ ~~Durlacher Allee 35-55/Seubertstr./Gerwigstr.37-48,~~
+- ➖ ~~Kaiserstraße, Hirschstraße, Amalinestraße~~
+- ➖ ~~B3/Südtangente Kreuzungsbereiche Fiduciastraße und B3 Ortsumfahrung Wolfartsweier~~
+- ➖ ~~Rheinhafenstraße zw. Schifferstraße und Agathenstraße~~
+- ➖ ~~Landgrabenstraße zw. Neue Anlage Straße u. Kreisel~~
+- ➖ ~~Belfortstraße zw. Reinhold-Frank-Straße und Leopoldstraße~~
+
 ## 13.11.2026, 22:53 — 1 neu, 1 geändert (gesamt 179)
 
 - ➕ **Kaiserstraße, Hirschstraße, Amalinestraße**
