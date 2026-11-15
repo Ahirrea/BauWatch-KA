@@ -2,6 +2,15 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 15.11.2026, 06:58 — 6 entfernt (gesamt 167)
+
+- ➖ ~~Zirkel zw. Ritterstraße und Lammstraße~~
+- ➖ ~~Nikolausstraße zw. Lützowstraße und Allmendstraße~~
+- ➖ ~~Am Fasanengarten zw. Emil-Gött-Straße und Parkstraße~~
+- ➖ ~~Ringstraße an Einmündung zu Steinbügelstraße~~
+- ➖ ~~Vorarlberger Straße~~
+- ➖ ~~Zweibrückener Straße zw. Rehbuckel und Ebersteinstraße~~
+
 ## 14.11.2026, 06:56 — 6 entfernt (gesamt 173)
 
 - ➖ ~~Durlacher Allee 35-55/Seubertstr./Gerwigstr.37-48,~~
