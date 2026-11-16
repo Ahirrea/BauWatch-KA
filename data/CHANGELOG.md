@@ -2,6 +2,23 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 16.11.2026, 06:58 — 12 neu, 2 entfernt (gesamt 177)
+
+- ➕ **Adlerstraße 7-13**
+- ➕ **St.-Florian-Straße zw. Litzenhardtstraße und Wendehammer**
+- ➕ **Klauprechtstraße zw. Karlstraße und Hirschstraße**
+- ➕ **Graf-Rhena-Straße zw. Kolpingplatz/ Gebhardstraße und Sachsenstraße**
+- ➕ **Moltkestraße zw. Adenauerring und Hans-Thoma-Straße**
+- ➕ **Karlstraße zw. Herrenstraße und Amalienstraße**
+- ➕ **Nürnberger Straße zw. Speyerer Straße und Rechts der Alb**
+- ➕ **Sperberweg zw. Nürnberger Straße und Maria-Matheis-Straße**
+- ➕ **Ritterstraße zw. Kaiserstraße und Zirkel**
+- ➕ **Rastatter Straße zw. Herdwigstraße und Ostendorfstraße**
+- ➕ **Herrenalber Str. Nähe Nr. 34**
+- ➕ **Fiduciastraße zw. Ottostraße und Wachhausstraße**
+- ➖ ~~Südendstraße zw. Brauerstraße und Boeckhstraße~~
+- ➖ ~~Battstraße zw. Herrenalber Straße und Hegaustraße, Breisgaustraße~~
+
 ## 15.11.2026, 06:58 — 6 entfernt (gesamt 167)
 
 - ➖ ~~Zirkel zw. Ritterstraße und Lammstraße~~
