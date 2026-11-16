@@ -6,9 +6,16 @@
   <link rel="self" type="application/atom+xml" href="https://ahirrea.github.io/BauWatch-KA/feeds/alle.xml"/>
   <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
   <icon>https://ahirrea.github.io/BauWatch-KA/icons/icon-192.png</icon>
-  <updated>2026-11-16T05:58:36.365Z</updated>
+  <updated>2026-11-16T18:16:27.170Z</updated>
   <author><name>BauWatch-KA</name></author>
   <rights>Datensatz „Baustellen&quot;, Stadt Karlsruhe, Lizenz CC-BY 4.0</rights>
+  <entry>
+    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-11-16T18:16:27.170Z</id>
+    <title>16.11.2026, 19:16 — 6 neu, 4 entfernt, 2 geändert</title>
+    <updated>2026-11-16T18:16:27.170Z</updated>
+    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
+    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;B10/ Südtangente zw. Edeltrudtunnel und Rheinbrücke&lt;/strong&gt; (Mühlburg)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Waldshuter Str., Funkerstr., Schopfheimer Str., Lörracher Str,&lt;/strong&gt; (Durlach)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Landgrabenstraße zw. Neue Anlage Straße u. Kreisel&lt;/strong&gt; (Beiertheim-Bulach)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Helmholtzstraße zw. Röntgenstraße und Grashofstraße&lt;/strong&gt; (Weststadt)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Haid- u.-Neu-Straße zw. Hirtenweg und Am Sportpark&lt;/strong&gt; (Rintheim)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Schlesierstraße zw. Westmarkstraße u. Memeler Straße&lt;/strong&gt; (Durlach)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Nürnberger Straße zw. Speyerer Straße und Rechts der Alb&lt;/s&gt; (Weiherfeld-Dammerstock)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Sperberweg zw. Nürnberger Straße und Maria-Matheis-Straße&lt;/s&gt; (Weiherfeld-Dammerstock)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Kreuzstraße zw. Hebelstraße und Zähringer Straße&lt;/s&gt; (Innenstadt-Ost)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Glogauer Straße zw. Königsberger Straße und Neisser Straße&lt;/s&gt; (Waldstadt)&lt;/li&gt;&lt;li&gt;✏️ St.-Florian-Straße zw. Litzenhardtstraße und Wendehammer (Beiertheim-Bulach) — Ende: 2026-12-31 → 2026-12-23&lt;/li&gt;&lt;li&gt;✏️ Glogauer Straße zw. Königsberger Straße und Im Eichbäumle (Waldstadt) — Ende: 2026-11-23 → 2026-11-22&lt;/li&gt;&lt;/ul&gt;</content>
+  </entry>
   <entry>
     <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-11-16T05:58:36.365Z</id>
     <title>16.11.2026, 06:58 — 12 neu, 2 entfernt</title>

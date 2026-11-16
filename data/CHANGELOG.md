@@ -2,6 +2,21 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 16.11.2026, 19:16 — 6 neu, 4 entfernt, 2 geändert (gesamt 179)
+
+- ➕ **B10/ Südtangente zw. Edeltrudtunnel und Rheinbrücke**
+- ➕ **Waldshuter Str., Funkerstr., Schopfheimer Str., Lörracher Str,**
+- ➕ **Landgrabenstraße zw. Neue Anlage Straße u. Kreisel**
+- ➕ **Helmholtzstraße zw. Röntgenstraße und Grashofstraße**
+- ➕ **Haid- u.-Neu-Straße zw. Hirtenweg und Am Sportpark**
+- ➕ **Schlesierstraße zw. Westmarkstraße u. Memeler Straße**
+- ➖ ~~Nürnberger Straße zw. Speyerer Straße und Rechts der Alb~~
+- ➖ ~~Sperberweg zw. Nürnberger Straße und Maria-Matheis-Straße~~
+- ➖ ~~Kreuzstraße zw. Hebelstraße und Zähringer Straße~~
+- ➖ ~~Glogauer Straße zw. Königsberger Straße und Neisser Straße~~
+- ✏️ St.-Florian-Straße zw. Litzenhardtstraße und Wendehammer — Ende: 2026-12-31 → 2026-12-23
+- ✏️ Glogauer Straße zw. Königsberger Straße und Im Eichbäumle — Ende: 2026-11-23 → 2026-11-22
+
 ## 16.11.2026, 06:58 — 12 neu, 2 entfernt (gesamt 177)
 
 - ➕ **Adlerstraße 7-13**

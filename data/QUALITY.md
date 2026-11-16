@@ -1,11 +1,11 @@
 # Datenqualitäts-Report
 
-_Automatisch beim Daten-Build erzeugt. Stand: 16.11.2026, 06:58._
+_Automatisch beim Daten-Build erzeugt. Stand: 16.11.2026, 19:16._
 
 ## Pipeline
-- Rohdaten: **889** Features
-- nach Gemeinde-Filter (Karlsruhe): **484**
-- nach Deduplizierung (Vorgangsnummer): **177** Vorgänge
+- Rohdaten: **904** Features
+- nach Gemeinde-Filter (Karlsruhe): **488**
+- nach Deduplizierung (Vorgangsnummer): **179** Vorgänge
 - ohne verwertbare Geometrie übersprungen: **0**
 
 ## Leere Pflichtfelder
@@ -30,9 +30,9 @@ _Automatisch beim Daten-Build erzeugt. Stand: 16.11.2026, 06:58._
 - **unbekannte art-Kategorien:** keine (alle als Klartext erkannt)
 
 - **erkannte Sperrung-Werte → Ampel:**
-  - „mit Verkehrsbehinderung" (101×) → teil
-  - „mit Vollsperrung" (45×) → voll
-  - „mit Sperrung in eine Fahrtrichtung" (18×) → teil
+  - „mit Verkehrsbehinderung" (103×) → teil
+  - „mit Vollsperrung" (47×) → voll
+  - „mit Sperrung in eine Fahrtrichtung" (16×) → teil
   - „keine Verkehrsbehinderung" (13×) → gering
 
 ## Geometrie & Identität
@@ -40,6 +40,6 @@ _Automatisch beim Daten-Build erzeugt. Stand: 16.11.2026, 06:58._
 
 - **Vorgänge ohne Vorgangsnummer (Dedup-Fallback):** keine
 
-- **Vorgänge mit Fläche (properties.area):** 177 von 177
+- **Vorgänge mit Fläche (properties.area):** 179 von 179
 
 - **Vorgänge ohne Fläche (nur Punkt-Geometrie):** keine
