@@ -6,9 +6,16 @@
   <link rel="self" type="application/atom+xml" href="https://ahirrea.github.io/BauWatch-KA/feeds/alle.xml"/>
   <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
   <icon>https://ahirrea.github.io/BauWatch-KA/icons/icon-192.png</icon>
-  <updated>2026-11-17T13:00:08.212Z</updated>
+  <updated>2026-11-17T23:26:09.805Z</updated>
   <author><name>BauWatch-KA</name></author>
   <rights>Datensatz „Baustellen&quot;, Stadt Karlsruhe, Lizenz CC-BY 4.0</rights>
+  <entry>
+    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-11-17T23:26:09.805Z</id>
+    <title>18.11.2026, 00:26 — 1 neu, 1 entfernt, 2 geändert</title>
+    <updated>2026-11-17T23:26:09.805Z</updated>
+    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
+    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Belfortstraße zw. Reinhold-Frank-Straße und Leopoldstraße&lt;/strong&gt; (Innenstadt-West)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Herrenalber Str. Nähe Nr. 34&lt;/s&gt; (Rüppurr)&lt;/li&gt;&lt;li&gt;✏️ Reinhold-Frank-Straße zwischen Belfortstraße und Kaiserallee (Innenstadt-West) — Ende: 2026-12-11 → 2026-12-18&lt;/li&gt;&lt;li&gt;✏️ Kreuzungspunkte im Stadtgebiet, Arbeiten an den Verkehrsleitsystemen (Beiertheim-Bulach) — Info geändert&lt;/li&gt;&lt;/ul&gt;</content>
+  </entry>
   <entry>
     <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-11-17T13:00:08.212Z</id>
     <title>17.11.2026, 14:00 — 1 neu, 1 entfernt, 8 geändert</title>

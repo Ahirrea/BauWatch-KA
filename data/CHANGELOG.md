@@ -2,6 +2,13 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 18.11.2026, 00:26 — 1 neu, 1 entfernt, 2 geändert (gesamt 180)
+
+- ➕ **Belfortstraße zw. Reinhold-Frank-Straße und Leopoldstraße**
+- ➖ ~~Herrenalber Str. Nähe Nr. 34~~
+- ✏️ Reinhold-Frank-Straße zwischen Belfortstraße und Kaiserallee — Ende: 2026-12-11 → 2026-12-18
+- ✏️ Kreuzungspunkte im Stadtgebiet, Arbeiten an den Verkehrsleitsystemen — Info geändert
+
 ## 17.11.2026, 14:00 — 1 neu, 1 entfernt, 8 geändert (gesamt 180)
 
 - ➕ **Stephanienstraße zw. Karlstraße u. Leopoldstraße**
