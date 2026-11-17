@@ -6,9 +6,16 @@
   <link rel="self" type="application/atom+xml" href="https://ahirrea.github.io/BauWatch-KA/feeds/alle.xml"/>
   <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
   <icon>https://ahirrea.github.io/BauWatch-KA/icons/icon-192.png</icon>
-  <updated>2026-11-17T02:51:18.431Z</updated>
+  <updated>2026-11-17T13:00:08.212Z</updated>
   <author><name>BauWatch-KA</name></author>
   <rights>Datensatz „Baustellen&quot;, Stadt Karlsruhe, Lizenz CC-BY 4.0</rights>
+  <entry>
+    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-11-17T13:00:08.212Z</id>
+    <title>17.11.2026, 14:00 — 1 neu, 1 entfernt, 8 geändert</title>
+    <updated>2026-11-17T13:00:08.212Z</updated>
+    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
+    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Stephanienstraße zw. Karlstraße u. Leopoldstraße&lt;/strong&gt; (Innenstadt-West)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Stephanienstraße zwischen Hans-Thoma-Straße und Kaiserplatz&lt;/s&gt; (Innenstadt-West)&lt;/li&gt;&lt;li&gt;✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg (Mühlburg) — Info geändert&lt;/li&gt;&lt;li&gt;✏️ Augartenstraße Höhe Nr. 21 (Südstadt) — Ende: 2026-12-31 → 2027-09-30&lt;/li&gt;&lt;li&gt;✏️ Koellestraße 10-26 und 13-27a (Daxlanden) — Ende: 2026-12-31 → 2027-02-28&lt;/li&gt;&lt;li&gt;✏️ Seminarstraße zwischen Bismarckstraße und Moltkestraße (Innenstadt-West) — Beginn: 2026-10-25 → 2026-11-16&lt;/li&gt;&lt;li&gt;✏️ Moltkestraße zw. Wörthstraße u. Seminarstraße (Innenstadt-West) — Ende: 2027-03-24 → 2029-08-31; Bezeichnung geändert; Info geändert&lt;/li&gt;&lt;li&gt;✏️ Koyweg zw. Hinterwiesenweg und Elfmorgenbruch (Rintheim) — Ende: 2026-12-18 → 2026-11-25&lt;/li&gt;&lt;li&gt;✏️ Gleisübergänge Hinterwiesenweg zw. Kleingärtnerweg und Jagdstraße (Rintheim) — Ende: 2026-12-18 → 2026-11-25&lt;/li&gt;&lt;li&gt;✏️ Hauckstraße zw. Gymnasiumstraße und Karl-Weysser-Straße (Durlach) — Ende: 2026-11-22 → 2026-12-04&lt;/li&gt;&lt;/ul&gt;</content>
+  </entry>
   <entry>
     <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-11-17T02:51:18.431Z</id>
     <title>17.11.2026, 03:51 — 7 neu, 6 entfernt</title>
@@ -442,12 +449,5 @@
     <updated>2026-10-19T04:17:56.255Z</updated>
     <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
     <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße&lt;/strong&gt; (Grünwinkel)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Lessingstraße zw. Sophienstraße und Kaiserallee&lt;/strong&gt; (Weststadt)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;B36/ unterhalb Brücke L605&lt;/strong&gt; (Neureut)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Schlössleweg zw. Badener Straße und Lußstraße, Lußstraße zw. Lußsteige und Schlössleweg&lt;/strong&gt; (Durlach)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;B10 Südtangente zwischen AS9 und AS10&lt;/strong&gt; (Knielingen)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Saarlandstraße zw. Neufeldstraße und Eggensteiner Straße&lt;/strong&gt; (Knielingen)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Neufeldstraße zw. Eggensteiner Straße und Saarlandstraße&lt;/strong&gt; (Knielingen)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße&lt;/strong&gt; (Grünwinkel)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Richard-Wagner-Straße zw. Schubertstraße und Bachstraße&lt;/strong&gt; (Weststadt)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Knielinger Allee zw. Fachhochschule und Erzbergerstraße&lt;/strong&gt; (Nordstadt)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Hirschstraße zw. Kaiser- und Amalienstraße&lt;/strong&gt; (Innenstadt-West)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Graf-Rhena-Str.2a&lt;/strong&gt; (Südweststadt)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Am Fasanengarten zw. Emil-Gött-Straße und Parkstraße&lt;/strong&gt; (Oststadt)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Pfinztalstraße zw. seboldstraße und Pforzheimer Straße&lt;/strong&gt; (Durlach)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Kastellstraße zw. Turmbergstraße und Stäffele&lt;/strong&gt; (Durlach)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;B36 Fahrtrichtung Karlsruhe, Ausfahrt Neureut-Süd&lt;/s&gt; (Neureut)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Lessingstraße Einmündungsbereich Sophienstraße&lt;/s&gt; (Weststadt)&lt;/li&gt;&lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-10-18T04:08:27.807Z</id>
-    <title>18.10.2026, 06:08 — 1 neu, 2 entfernt</title>
-    <updated>2026-10-18T04:08:27.807Z</updated>
-    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
-    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;B36 Fahrtrichtung Karlsruhe, Ausfahrt Neureut-Süd&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Essenweinstraße, Sternbergstraße,  Gerwigstraße, Veilchenstraße, Haizingerstraße&lt;/s&gt;&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;K9654/ Rittnertstraße zw. B3 und Ortseingang Stupferich&lt;/s&gt;&lt;/li&gt;&lt;/ul&gt;</content>
   </entry>
 </feed>

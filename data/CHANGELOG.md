@@ -2,6 +2,19 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 17.11.2026, 14:00 — 1 neu, 1 entfernt, 8 geändert (gesamt 180)
+
+- ➕ **Stephanienstraße zw. Karlstraße u. Leopoldstraße**
+- ➖ ~~Stephanienstraße zwischen Hans-Thoma-Straße und Kaiserplatz~~
+- ✏️ Siemensallee zw. B36/ Neureuter Straße und Laubenweg — Info geändert
+- ✏️ Augartenstraße Höhe Nr. 21 — Ende: 2026-12-31 → 2027-09-30
+- ✏️ Koellestraße 10-26 und 13-27a — Ende: 2026-12-31 → 2027-02-28
+- ✏️ Seminarstraße zwischen Bismarckstraße und Moltkestraße — Beginn: 2026-10-25 → 2026-11-16
+- ✏️ Moltkestraße zw. Wörthstraße u. Seminarstraße — Ende: 2027-03-24 → 2029-08-31; Bezeichnung geändert; Info geändert
+- ✏️ Koyweg zw. Hinterwiesenweg und Elfmorgenbruch — Ende: 2026-12-18 → 2026-11-25
+- ✏️ Gleisübergänge Hinterwiesenweg zw. Kleingärtnerweg und Jagdstraße — Ende: 2026-12-18 → 2026-11-25
+- ✏️ Hauckstraße zw. Gymnasiumstraße und Karl-Weysser-Straße — Ende: 2026-11-22 → 2026-12-04
+
 ## 17.11.2026, 03:51 — 7 neu, 6 entfernt (gesamt 180)
 
 - ➕ **Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße**
