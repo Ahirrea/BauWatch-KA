@@ -2,6 +2,22 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 17.11.2026, 03:51 — 7 neu, 6 entfernt (gesamt 180)
+
+- ➕ **Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße**
+- ➕ **Bannwaldallee, Parkplatz Höhe Fuß- und Radweg Europahalle**
+- ➕ **Nürnberger Straße zw. Speyerer Straße und Rechts der Alb**
+- ➕ **Sperberweg zw. Nürnberger Straße und Maria-Matheis-Straße**
+- ➕ **Breslauer Straße Kreuzungsbereich Grünbergstraße**
+- ➕ **L623/ Am Wetterbach zw. Zur Ziegelhütte und Bachstraße**
+- ➕ **Am Storrenacker Höhe Interpneu**
+- ➖ ~~B10/ Südtangente zw. Edeltrudtunnel und Rheinbrücke~~
+- ➖ ~~Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße~~
+- ➖ ~~Landgrabenstraße zw. Neue Anlage Straße u. Kreisel~~
+- ➖ ~~Rechts der Alb zw. Nürnberger Straße und Freiburger Straße und zw. Nürnberger Straße und Maria-Matheis-Straße~~
+- ➖ ~~Nürnberger Straße zw. Rechts der Alb und Sperberweg~~
+- ➖ ~~Sperberweg~~
+
 ## 16.11.2026, 19:16 — 6 neu, 4 entfernt, 2 geändert (gesamt 179)
 
 - ➕ **B10/ Südtangente zw. Edeltrudtunnel und Rheinbrücke**
