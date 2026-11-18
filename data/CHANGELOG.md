@@ -2,6 +2,15 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 18.11.2026, 18:07 — 2 neu, 4 geändert (gesamt 178)
+
+- ➕ **Südendstraße zw. Brauerstraße und Boeckhstraße**
+- ➕ **Brücke über die Alb**
+- ✏️ Goethestraße zw. Uhlandstraße und Yorckstraße — Ende: 2026-11-20 → 2027-01-16
+- ✏️ Seminarstraße zwischen Bismarckstraße und Moltkestraße — Beginn: 2026-11-16 → 2026-11-17; Ende: 2026-12-23 → 2027-02-26; Info geändert
+- ✏️ Haid-und-Neu-Straße zw. Hirtenweg und Karlsruher Straße — Ende: 2026-11-20 → 2026-11-27; Info geändert
+- ✏️ Haid- u.-Neu-Straße zw. Hirtenweg und Am Sportpark — Ende: 2026-11-20 → 2026-11-27
+
 ## 18.11.2026, 07:58 — 4 entfernt (gesamt 176)
 
 - ➖ ~~Bergbahnstraße Kreuzung Am Steinbruch~~
