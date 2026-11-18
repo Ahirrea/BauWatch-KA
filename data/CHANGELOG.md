@@ -2,6 +2,13 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 18.11.2026, 07:58 — 4 entfernt (gesamt 176)
+
+- ➖ ~~Bergbahnstraße Kreuzung Am Steinbruch~~
+- ➖ ~~Breslauer Straße Kreuzungsbereich Grünbergstraße~~
+- ➖ ~~Brücke über Pfinzentlastungskanal Stusenseer Allee~~
+- ➖ ~~Am Storrenacker Höhe Interpneu~~
+
 ## 18.11.2026, 00:26 — 1 neu, 1 entfernt, 2 geändert (gesamt 180)
 
 - ➕ **Belfortstraße zw. Reinhold-Frank-Straße und Leopoldstraße**
