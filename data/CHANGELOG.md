@@ -2,6 +2,13 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 19.11.2026, 02:48 — 2 neu, 2 entfernt (gesamt 178)
+
+- ➕ **B36/ Neureuter Straße/ Anliegerfahrbahn**
+- ➕ **Douglasstraße zw. Kaiserstraße und Akademiestraße**
+- ➖ ~~Brücke über die Alb~~
+- ➖ ~~Karlsruher Straße Höhe Hagdornstraße/ Julius-Bender-Starße~~
+
 ## 18.11.2026, 18:07 — 2 neu, 4 geändert (gesamt 178)
 
 - ➕ **Südendstraße zw. Brauerstraße und Boeckhstraße**
