@@ -2,6 +2,12 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 19.11.2026, 13:44 — 3 geändert (gesamt 178)
+
+- ✏️ Hardtstraße zw. Lameystraße und Am Entenfang — Ende: 2026-12-09 → 2026-12-11
+- ✏️ Bernhardusplatz — Sperrgrad: voll → gering; Ende: 2026-12-31 → 2027-03-31
+- ✏️ L623/ Am Wetterbach zw. Bachgasse u. Busenbacher Straße — Ende: 2027-01-30 → 2026-12-22; Bezeichnung geändert; Info geändert
+
 ## 19.11.2026, 02:48 — 2 neu, 2 entfernt (gesamt 178)
 
 - ➕ **B36/ Neureuter Straße/ Anliegerfahrbahn**
