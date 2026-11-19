@@ -2,6 +2,14 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 19.11.2026, 23:58 — 2 neu, 3 geändert (gesamt 180)
+
+- ➕ **Glogauer Straße zw. Gleiwitzer Straße und Königsberger Straße**
+- ➕ **Geh- und Radweg entlang der VBK Gleistrasse zw. Schweidnitzerstraße bis Glogauer Straße**
+- ✏️ Pfinztalstraße zw. Badener Straße u. Jägerstraße, Badener Straße zw. Karl-Weysser-Straße und Pfinztalstraße — Info geändert
+- ✏️ Glogauer Straße zw. Lauenburger Straße und Kösliner Straße — Ende: 2026-11-23 → 2026-11-22
+- ✏️ Glogauer Straße und Im Eichbäumle — sonstige Angaben aktualisiert
+
 ## 19.11.2026, 13:44 — 3 geändert (gesamt 178)
 
 - ✏️ Hardtstraße zw. Lameystraße und Am Entenfang — Ende: 2026-12-09 → 2026-12-11
