@@ -2,6 +2,14 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 20.11.2026, 17:53 — 2 neu, 3 geändert (gesamt 183)
+
+- ➕ **Prinzenweg, Schneewittchenweg, Rotkäppchenweg, Hänselweg, Aschenbrödelweg, Steinmannstraße**
+- ➕ **Waldstraße zw. Ludwigsplatz und Bürgerstraße**
+- ✏️ Karlstraße 21 - 21A und und Waldstraße 40A und 40B — Sperrgrad: teil → gering
+- ✏️ Wasgaustraße zw. Tiroler Straße und Memeler Straße — Ende: 2026-11-21 → 2026-11-28
+- ✏️ Karl-Martin-Graff-Straße zw. Gustav-Hofmann-Straße und Winkler-Dentz-Straße — Ende: 2027-01-11 → 2026-12-18
+
 ## 20.11.2026, 07:51 — 3 neu, 2 entfernt (gesamt 181)
 
 - ➕ **Karlstraße 21 - 21A und und Waldstraße 40A und 40B**
