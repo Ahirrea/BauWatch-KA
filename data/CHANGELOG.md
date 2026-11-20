@@ -2,6 +2,14 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 20.11.2026, 07:51 — 3 neu, 2 entfernt (gesamt 181)
+
+- ➕ **Karlstraße 21 - 21A und und Waldstraße 40A und 40B**
+- ➕ **Geigersbergstraße zw. Ernst-Barlach-Straße und Lußsteige**
+- ➕ **Turmbergstraße zw. Am Burgweg und Kastellstraße**
+- ➖ ~~B36/ Neureuter Straße/ Anliegerfahrbahn~~
+- ➖ ~~Douglasstraße zw. Kaiserstraße und Akademiestraße~~
+
 ## 19.11.2026, 23:58 — 2 neu, 3 geändert (gesamt 180)
 
 - ➕ **Glogauer Straße zw. Gleiwitzer Straße und Königsberger Straße**
