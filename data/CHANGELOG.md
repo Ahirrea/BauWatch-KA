@@ -2,6 +2,19 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 21.11.2026, 02:17 — 2 neu, 8 entfernt (gesamt 177)
+
+- ➕ **B10/ Kriegsstraße zw. Badenwerkstraße/ Am Festplatz und Ettlinger Straße**
+- ➕ **Werftstraße Höhe Haus 13 bis 20**
+- ➖ ~~Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee~~
+- ➖ ~~Kreuzungspunkte im Stadtgebiet, Arbeiten an den Verkehrsleitsystemen~~
+- ➖ ~~Rastatter Straße zw. Herdwigstraße und Ostendorfstraße~~
+- ➖ ~~Adlerstraße zw. Zähringerstraße u. Kaiserstraße~~
+- ➖ ~~Kaiserstraße zw. Kreuzstraße und Kronenstraße~~
+- ➖ ~~Rintheimer Hauptstraße zw. Hirtenweg und Drosselsangweg~~
+- ➖ ~~Gleistrasse entlang Steinkreuzstraße~~
+- ➖ ~~Geigersbergstraße zw. Ernst-Barlach-Straße und Lußsteige~~
+
 ## 20.11.2026, 17:53 — 2 neu, 3 geändert (gesamt 183)
 
 - ➕ **Prinzenweg, Schneewittchenweg, Rotkäppchenweg, Hänselweg, Aschenbrödelweg, Steinmannstraße**
