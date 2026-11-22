@@ -2,6 +2,13 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 22.11.2026, 07:17 — 2 neu, 2 entfernt (gesamt 177)
+
+- ➕ **B10/ K9657/Südtangente zw. Edeltrudtunnel und Honsellstraße**
+- ➕ **K 9675 zw. AS3 und AS4 (Edeltrudtunnel)**
+- ➖ ~~Werftstraße Höhe Haus 13 bis 20~~
+- ➖ ~~Breslauer Straße Wohnwege 64 A - I und 66 A -L~~
+
 ## 21.11.2026, 02:17 — 2 neu, 8 entfernt (gesamt 177)
 
 - ➕ **B10/ Kriegsstraße zw. Badenwerkstraße/ Am Festplatz und Ettlinger Straße**
