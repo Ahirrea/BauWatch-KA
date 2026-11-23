@@ -2,6 +2,19 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 23.11.2026, 15:18 — 2 neu, 4 entfernt, 4 geändert (gesamt 182)
+
+- ➕ **Fuß- und Radweg zw. Wolfartsweierer Brücke und Mastweidenweg**
+- ➕ **Ellmendinger Straße im Einmündungsbereich zur Lissenstraße**
+- ➖ ~~Herrmann-Billing-Straße zw. Ettlinger Straße und Ritterstraße~~
+- ➖ ~~Prinzenweg, Schneewittchenweg, Rotkäppchenweg, Hänselweg, Aschenbrödelweg, Steinmannstraße~~
+- ➖ ~~Fuchsbau 1-19 und 23-35~~
+- ➖ ~~Lissenstraße zw. Zufahrt Getränkemarkt u. Killisfeldstraße Anliegerfahrbahn~~
+- ✏️ Wolfartsweierer Straße zw. Durlacher Allee und Frühlingstraße und Sommerstraße zw. Frühlingstraße und Gottesauer Straße — Ende: 2026-12-23 → 2026-12-17
+- ✏️ Durlacher Allee/ Pfinztalstraße/ Pforzheimer Straße/ Ernst-Friedrich-Straße — Ende: 2026-11-28 → 2026-12-04
+- ✏️ Badener Straße zw. Pfinztalstraße und Karl-Weyser-Straße — Ende: 2026-12-06 → 2026-12-04
+- ✏️ Grötzinger Straße zw. Karl-Weysser-Straße und Gymnasiumstraße — Ende: 2026-12-05 → 2026-12-04
+
 ## 23.11.2026, 01:43 — 18 neu, 11 entfernt (gesamt 184)
 
 - ➕ **Gartenstraße zw. Brauerstraße u. Kriegstraße**

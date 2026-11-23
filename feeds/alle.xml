@@ -6,9 +6,16 @@
   <link rel="self" type="application/atom+xml" href="https://ahirrea.github.io/BauWatch-KA/feeds/alle.xml"/>
   <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
   <icon>https://ahirrea.github.io/BauWatch-KA/icons/icon-192.png</icon>
-  <updated>2026-11-23T00:43:21.322Z</updated>
+  <updated>2026-11-23T14:18:21.424Z</updated>
   <author><name>BauWatch-KA</name></author>
   <rights>Datensatz „Baustellen&quot;, Stadt Karlsruhe, Lizenz CC-BY 4.0</rights>
+  <entry>
+    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-11-23T14:18:21.424Z</id>
+    <title>23.11.2026, 15:18 — 2 neu, 4 entfernt, 4 geändert</title>
+    <updated>2026-11-23T14:18:21.424Z</updated>
+    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
+    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Fuß- und Radweg zw. Wolfartsweierer Brücke und Mastweidenweg&lt;/strong&gt; (Durlach)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Ellmendinger Straße im Einmündungsbereich zur Lissenstraße&lt;/strong&gt; (Durlach)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Herrmann-Billing-Straße zw. Ettlinger Straße und Ritterstraße&lt;/s&gt; (Südweststadt)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Prinzenweg, Schneewittchenweg, Rotkäppchenweg, Hänselweg, Aschenbrödelweg, Steinmannstraße&lt;/s&gt; (Rüppurr)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Fuchsbau 1-19 und 23-35&lt;/s&gt; (Hohenwettersbach)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Lissenstraße zw. Zufahrt Getränkemarkt u. Killisfeldstraße Anliegerfahrbahn&lt;/s&gt; (Durlach)&lt;/li&gt;&lt;li&gt;✏️ Wolfartsweierer Straße zw. Durlacher Allee und Frühlingstraße und Sommerstraße zw. Frühlingstraße und Gottesauer Straße (Oststadt) — Ende: 2026-12-23 → 2026-12-17&lt;/li&gt;&lt;li&gt;✏️ Durlacher Allee/ Pfinztalstraße/ Pforzheimer Straße/ Ernst-Friedrich-Straße (Durlach) — Ende: 2026-11-28 → 2026-12-04&lt;/li&gt;&lt;li&gt;✏️ Badener Straße zw. Pfinztalstraße und Karl-Weyser-Straße (Durlach) — Ende: 2026-12-06 → 2026-12-04&lt;/li&gt;&lt;li&gt;✏️ Grötzinger Straße zw. Karl-Weysser-Straße und Gymnasiumstraße (Durlach) — Ende: 2026-12-05 → 2026-12-04&lt;/li&gt;&lt;/ul&gt;</content>
+  </entry>
   <entry>
     <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-11-23T00:43:21.322Z</id>
     <title>23.11.2026, 01:43 — 18 neu, 11 entfernt</title>
