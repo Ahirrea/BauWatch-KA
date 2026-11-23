@@ -2,6 +2,38 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 23.11.2026, 01:43 — 18 neu, 11 entfernt (gesamt 184)
+
+- ➕ **Gartenstraße zw. Brauerstraße u. Kriegstraße**
+- ➕ **Gartenstraße zw. Lessingstraße und Brauerstraße**
+- ➕ **Brauerstraße zw. Roonstraße und Gartenstaße**
+- ➕ **Haltestellenumbau, Vollsperrung**
+- ➕ **Glogauer Straße zw. Lauenburger Straße und Kösliner Straße**
+- ➕ **Durlacher Allee/ Pfinztalstraße/ Pforzheimer Straße/ Ernst-Friedrich-Straße**
+- ➕ **Badener Straße zw. Pfinztalstraße und Karl-Weyser-Straße**
+- ➕ **Ebertstraße 1 - 41**
+- ➕ **Gartenstraße zw. Jollystraße und Brauerstraße**
+- ➕ **Brauerstraße zw. Gartenstraße u. Kriegstraße**
+- ➕ **Knoten Brauerstraße / Reinhold-Frank-Straße / Kriegsstraße / Gartenstraße**
+- ➕ **K 9675 zw. AS3 und AS4 (Edeltrudtunnel)**
+- ➕ **Herrenstraße zw. Zirkel und Kaiserstraße**
+- ➕ **Schlossplatz zw. Herrenstraße u. Zirkel**
+- ➕ **Rastatter Straße zw. Ostendorfstraße und Hedwigstraße**
+- ➕ **An der Roßweid 18**
+- ➕ **Grötzinger Straße zw. Karl-Weysser-Straße und Gymnasiumstraße**
+- ➕ **Strählerweg Höhe Nr. 57/39**
+- ➖ ~~B10/ Kriegsstraße zw. Badenwerkstraße/ Am Festplatz und Ettlinger Straße~~
+- ➖ ~~Durlacher Allee zw. Dornwaldstraße und Ernst-Friedrich-Straße~~
+- ➖ ~~Pforzheimer Straße zw. Pfinzstraße und Pfinztalstraße~~
+- ➖ ~~Pfinztalstraße zw. Badener Straße u. Jägerstraße, Badener Straße zw. Karl-Weysser-Straße und Pfinztalstraße~~
+- ➖ ~~Schlossplatz zw. Herrenstraße u. Zirkel~~
+- ➖ ~~Glogauer Straße zw. Königsberger Straße und Im Eichbäumle~~
+- ➖ ~~Glogauer Straße zw. Lauenburger Straße und Kösliner Straße~~
+- ➖ ~~Haid-und-Neu-Straße zw. Am Sportpark und Sinsheimer Straße~~
+- ➖ ~~Ernst-Friedrich-Straße zw. Gritznerstraße und Pfinztalstraße~~
+- ➖ ~~Pfinztalstraße zw. Amalienbadstraße und Pforzheimer Straße~~
+- ➖ ~~Pfinztalstraße zw. Marstallstaße und Karlsburgstraße~~
+
 ## 22.11.2026, 07:17 — 2 neu, 2 entfernt (gesamt 177)
 
 - ➕ **B10/ K9657/Südtangente zw. Edeltrudtunnel und Honsellstraße**
