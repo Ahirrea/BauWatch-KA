@@ -2,6 +2,16 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 24.11.2026, 15:42 — 2 neu, 2 entfernt, 3 geändert (gesamt 180)
+
+- ➕ **Kreuzungspunkte im Stadtgebiet, Arbeiten an den Verkehrsleitsystemen**
+- ➕ **Waldenburger Straße bis Ende Hirschberger Straße**
+- ➖ ~~Essostraße~~
+- ➖ ~~Glogauer Straße zw. Gleiwitzer Straße und Königsberger Straße~~
+- ✏️ Breslauer Straße, Schweidnitzer Straße — Ende: 2026-12-04 → 2026-11-24
+- ✏️ Marie-Alexandra-Straße zw. Karlstraße und Karolinenstraße — Ende: 2026-12-31 → 2026-12-23
+- ✏️ Schlesierstraße zw. Westmarkstraße u. Memeler Straße — Sperrgrad: teil → gering
+
 ## 24.11.2026, 03:50 — 2 entfernt (gesamt 180)
 
 - ➖ ~~Bärenweg zw. Kirchfeldstraße und Alte Friedrichstraße~~
