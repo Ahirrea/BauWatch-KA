@@ -2,6 +2,11 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 24.11.2026, 03:50 — 2 entfernt (gesamt 180)
+
+- ➖ ~~Bärenweg zw. Kirchfeldstraße und Alte Friedrichstraße~~
+- ➖ ~~Strählerweg Höhe Nr. 57/39~~
+
 ## 23.11.2026, 15:18 — 2 neu, 4 entfernt, 4 geändert (gesamt 182)
 
 - ➕ **Fuß- und Radweg zw. Wolfartsweierer Brücke und Mastweidenweg**
