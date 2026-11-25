@@ -6,9 +6,16 @@
   <link rel="self" type="application/atom+xml" href="https://ahirrea.github.io/BauWatch-KA/feeds/alle.xml"/>
   <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
   <icon>https://ahirrea.github.io/BauWatch-KA/icons/icon-192.png</icon>
-  <updated>2026-11-24T14:42:35.289Z</updated>
+  <updated>2026-11-25T00:31:38.333Z</updated>
   <author><name>BauWatch-KA</name></author>
   <rights>Datensatz „Baustellen&quot;, Stadt Karlsruhe, Lizenz CC-BY 4.0</rights>
+  <entry>
+    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-11-25T00:31:38.333Z</id>
+    <title>25.11.2026, 01:31 — 4 neu, 3 entfernt, 1 geändert</title>
+    <updated>2026-11-25T00:31:38.333Z</updated>
+    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
+    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;B36 zw. Messe Karlsruhe und Pulverhausstraße&lt;/strong&gt; (Daxlanden)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Eisenlohrstraße zw. Kriegsstraße und Bunsenstraße&lt;/strong&gt; (Weststadt)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Glogauer Straße zw. Liegnitzer Straße und Im Eichbäumle&lt;/strong&gt; (Waldstadt)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Verbindungsweg zw. Schweidnitzer Straße und Waldenburger Straße&lt;/strong&gt; (Waldstadt)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;B10/ K9657/Südtangente zw. Edeltrudtunnel und Honsellstraße&lt;/s&gt; (Mühlburg)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Breslauer Straße, Schweidnitzer Straße&lt;/s&gt; (Waldstadt)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;K 9675 zw. AS3 und AS4 (Edeltrudtunnel)&lt;/s&gt; (Beiertheim-Bulach)&lt;/li&gt;&lt;li&gt;✏️ L623/ Talstraße zw. Im Brunnenfeld und Henrie-Arnaud-Straße (Palmbach) — Ende: 2026-12-18 → 2027-03-13; Bezeichnung geändert&lt;/li&gt;&lt;/ul&gt;</content>
+  </entry>
   <entry>
     <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-11-24T14:42:35.289Z</id>
     <title>24.11.2026, 15:42 — 2 neu, 2 entfernt, 3 geändert</title>

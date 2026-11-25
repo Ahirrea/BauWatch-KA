@@ -2,6 +2,17 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 25.11.2026, 01:31 — 4 neu, 3 entfernt, 1 geändert (gesamt 181)
+
+- ➕ **B36 zw. Messe Karlsruhe und Pulverhausstraße**
+- ➕ **Eisenlohrstraße zw. Kriegsstraße und Bunsenstraße**
+- ➕ **Glogauer Straße zw. Liegnitzer Straße und Im Eichbäumle**
+- ➕ **Verbindungsweg zw. Schweidnitzer Straße und Waldenburger Straße**
+- ➖ ~~B10/ K9657/Südtangente zw. Edeltrudtunnel und Honsellstraße~~
+- ➖ ~~Breslauer Straße, Schweidnitzer Straße~~
+- ➖ ~~K 9675 zw. AS3 und AS4 (Edeltrudtunnel)~~
+- ✏️ L623/ Talstraße zw. Im Brunnenfeld und Henrie-Arnaud-Straße — Ende: 2026-12-18 → 2027-03-13; Bezeichnung geändert
+
 ## 24.11.2026, 15:42 — 2 neu, 2 entfernt, 3 geändert (gesamt 180)
 
 - ➕ **Kreuzungspunkte im Stadtgebiet, Arbeiten an den Verkehrsleitsystemen**
