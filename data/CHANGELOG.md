@@ -2,6 +2,11 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 26.11.2026, 14:42 — 1 entfernt, 1 geändert (gesamt 181)
+
+- ➖ ~~Isoldestraße zw. Stösserstraße und Niebelungenstraße~~
+- ✏️ L623/ Talstraße zw. Im Brunnenfeld und Henrie-Arnaud-Straße — Ende: 2027-03-13 → 2027-03-31
+
 ## 26.11.2026, 01:07 — 6 neu, 5 entfernt, 2 geändert (gesamt 182)
 
 - ➕ **Boeckhstraße zw. Putlitzstraße und Südendstraße**
