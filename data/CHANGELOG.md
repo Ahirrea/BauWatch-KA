@@ -2,6 +2,22 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 26.11.2026, 01:07 — 6 neu, 5 entfernt, 2 geändert (gesamt 182)
+
+- ➕ **Boeckhstraße zw. Putlitzstraße und Südendstraße**
+- ➕ **Jean-Ritzert-Straße zw. Sepp-Herberger-Weg und Schützenhaus Durlach**
+- ➕ **Eggensteiner Straße zw. Saarlandstraße und Dreikönigstraße**
+- ➕ **Boeckhstraße zw. Putlitzstraße und Südendstraße**
+- ➕ **Fasanenstraße zw. Kaiserstraße und Fasanenplatz**
+- ➕ **Am Fasanengarten zw. Emil-Gött-Straße und Parkstraße**
+- ➖ ~~B36 zw. Messe Karlsruhe und Pulverhausstraße~~
+- ➖ ~~Fuß- und Radweg zw. Wolfartsweierer Brücke und Mastweidenweg~~
+- ➖ ~~Koyweg zw. Hinterwiesenweg und Elfmorgenbruch~~
+- ➖ ~~Gleisübergänge Hinterwiesenweg zw. Kleingärtnerweg und Jagdstraße~~
+- ➖ ~~Pfinztalstraße zw. seboldstraße und Pforzheimer Straße~~
+- ✏️ Kreuzungspunkte im Stadtgebiet, Arbeiten an den Verkehrsleitsystemen — Ende: 2026-11-25 → 2026-12-11
+- ✏️ Rußweg zw. Langenbruchweg und Mastweidenweg — Ende: 2026-12-22 → 2026-12-18
+
 ## 25.11.2026, 01:31 — 4 neu, 3 entfernt, 1 geändert (gesamt 181)
 
 - ➕ **B36 zw. Messe Karlsruhe und Pulverhausstraße**
