@@ -2,6 +2,15 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 27.11.2026, 01:28 — 1 neu, 3 entfernt, 2 geändert (gesamt 179)
+
+- ➕ **B36 Ausfahrt Neureut Süd**
+- ➖ ~~Boeckhstraße zw. Putlitzstraße und Südendstraße~~
+- ➖ ~~Eisenlohrstraße zw. Kriegsstraße und Bunsenstraße~~
+- ➖ ~~Eggensteiner Straße zw. Saarlandstraße und Dreikönigstraße~~
+- ✏️ Tiroler Straße, Voralberger Straße, Wasgaustraße, Memeler Straße — Sperrgrad: teil → gering; Ende: 2026-11-30 → 2026-12-19
+- ✏️ Werderstraße zw. Marienstraße und Rüppurrer Straße — Ende: 2026-11-27 → 2026-11-30
+
 ## 26.11.2026, 14:42 — 1 entfernt, 1 geändert (gesamt 181)
 
 - ➖ ~~Isoldestraße zw. Stösserstraße und Niebelungenstraße~~
