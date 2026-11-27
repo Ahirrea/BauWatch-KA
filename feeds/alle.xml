@@ -6,9 +6,16 @@
   <link rel="self" type="application/atom+xml" href="https://ahirrea.github.io/BauWatch-KA/feeds/alle.xml"/>
   <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
   <icon>https://ahirrea.github.io/BauWatch-KA/icons/icon-192.png</icon>
-  <updated>2026-11-27T13:40:10.382Z</updated>
+  <updated>2026-11-27T23:58:38.283Z</updated>
   <author><name>BauWatch-KA</name></author>
   <rights>Datensatz „Baustellen&quot;, Stadt Karlsruhe, Lizenz CC-BY 4.0</rights>
+  <entry>
+    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-11-27T23:58:38.283Z</id>
+    <title>28.11.2026, 00:58 — 1 neu, 15 entfernt, 1 geändert</title>
+    <updated>2026-11-27T23:58:38.283Z</updated>
+    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
+    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Hermann-Billing-Straße zw. Ettlinger Straße und Am Festplatz/ Badenwerkstraße&lt;/strong&gt; (Südweststadt)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;B36 Ausfahrt Neureut Süd&lt;/s&gt; (Neureut)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Wachhausstraße, Kieselweg, Egon-Langen-Straße&lt;/s&gt; (Durlach)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Grenzstraße, Blattwiesenstraße, Alter Graben&lt;/s&gt; (Durlach)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Hermann-Billing-Straße zw. Ettlinger Straße u. Beiertheimer Allee (Zufahrt Landratsamt)&lt;/s&gt; (Südweststadt)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Ottostraße, Dieselstraße&lt;/s&gt; (Durlach)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;K9659 Kreisstraße P&amp;amp;R Platz Höhe Bahnhof Durlach&lt;/s&gt; (Durlach)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Moltkestraße Höhe Erzbergerstraße&lt;/s&gt; (Nordstadt)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Waldstraße zw. Ludwigsplatz und Bürgerstraße&lt;/s&gt; (Innenstadt-West)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Rastatter Straße zw. Ostendorfstraße und Hedwigstraße&lt;/s&gt; (Rüppurr)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Kaiserstraße zw. Kronenstraße und Adlerstraße&lt;/s&gt; (Innenstadt-Ost)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Fritz-Erler-Straße zw. Markgrafenstraße u. Kaiserstraße&lt;/s&gt; (Innenstadt-Ost)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Zähringer Straße zw. Waldhornstraße und Kronenstraße&lt;/s&gt; (Innenstadt-Ost)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Haid-und-Neu-Straße zw. Hirtenweg und Karlsruher Straße&lt;/s&gt; (Rintheim)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Haid- u.-Neu-Straße zw. Hirtenweg und Am Sportpark&lt;/s&gt; (Rintheim)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Pforzheimer Straße - Waldshuter Straße - Turmbergbad - Campingplatz Durlach - Bundestraßenkreuz B3 / B10&lt;/s&gt; (Durlach)&lt;/li&gt;&lt;li&gt;✏️ Honsellstraße zw. B36/ Starckstraße und Kurzheckweg (Mühlburg) — Ende: 2026-12-05 → 2026-12-03&lt;/li&gt;&lt;/ul&gt;</content>
+  </entry>
   <entry>
     <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-11-27T13:40:10.382Z</id>
     <title>27.11.2026, 14:40 — 1 neu, 2 geändert</title>
@@ -428,19 +435,5 @@
     <updated>2026-10-29T05:25:40.859Z</updated>
     <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
     <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Ostring Kreuzungsbereich Durlacher Alllee&lt;/strong&gt; (Oststadt)&lt;/li&gt;&lt;li&gt;➕ &lt;strong&gt;Pfalzstraße zw. Kirschstraße und Kastenwörthstraße&lt;/strong&gt; (Daxlanden)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Haid-und-Neu-Straße/Karl-Wilhelm-Platz&lt;/s&gt; (Oststadt)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Leopoldstraße zw. Kaiserstraße und Stephanienstraße&lt;/s&gt; (Innenstadt-West)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Enzstraße zw. Mainstraße und Tauberstraße&lt;/s&gt; (Weiherfeld-Dammerstock)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Gleiwitzer Straße zw. Glogauer Straße und Liegnitzer Straße&lt;/s&gt; (Waldstadt)&lt;/li&gt;&lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-10-28T20:54:50.249Z</id>
-    <title>28.10.2026, 21:54 — 1 entfernt</title>
-    <updated>2026-10-28T20:54:50.249Z</updated>
-    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
-    <content type="html">&lt;ul&gt;&lt;li&gt;➖ &lt;s&gt;Yorckstraße zw. Sophienstraße und Yorckplatz&lt;/s&gt; (Weststadt)&lt;/li&gt;&lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:ahirrea.github.io,2026:BauWatch-KA/changes/2026-10-28T14:59:45.940Z</id>
-    <title>28.10.2026, 15:59 — 1 neu, 1 entfernt, 4 geändert</title>
-    <updated>2026-10-28T14:59:45.940Z</updated>
-    <link rel="alternate" type="text/html" href="https://ahirrea.github.io/BauWatch-KA/"/>
-    <content type="html">&lt;ul&gt;&lt;li&gt;➕ &lt;strong&gt;Glogauer Straße zw. Königsberger Straße und Im Eichbäumle&lt;/strong&gt; (Waldstadt)&lt;/li&gt;&lt;li&gt;➖ &lt;s&gt;Böhmerwaldstraße zw. Mecklenburger Straße und Ludwigsburger Straße / Thüringer Straße zw. Egerlandstraße und Esslinger Srraße&lt;/s&gt; (Grünwettersbach)&lt;/li&gt;&lt;li&gt;✏️ Herrmann-Billing-Straße zw. Ettlinger Straße und Ritterstraße (Südweststadt) — Beginn: 2026-10-18 → 2026-10-21; Ende: 2026-12-24 → 2027-02-20&lt;/li&gt;&lt;li&gt;✏️ Kaiserstraße zw. Adlerstraße und Kronenstraße (Innenstadt-Ost) — Bezeichnung geändert; Info geändert&lt;/li&gt;&lt;li&gt;✏️ Tullastraße Gleisüberfahrt Höhe Schückstraße (Oststadt) — Ende: 2026-10-30 → 2026-12-18&lt;/li&gt;&lt;li&gt;✏️ Schückstraße zw. Tullastraße und Gustav-Specht-Straße (Oststadt) — Ende: 2026-12-02 → 2026-12-18&lt;/li&gt;&lt;/ul&gt;</content>
   </entry>
 </feed>

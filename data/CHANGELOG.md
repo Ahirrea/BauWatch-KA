@@ -2,6 +2,26 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 28.11.2026, 00:58 — 1 neu, 15 entfernt, 1 geändert (gesamt 166)
+
+- ➕ **Hermann-Billing-Straße zw. Ettlinger Straße und Am Festplatz/ Badenwerkstraße**
+- ➖ ~~B36 Ausfahrt Neureut Süd~~
+- ➖ ~~Wachhausstraße, Kieselweg, Egon-Langen-Straße~~
+- ➖ ~~Grenzstraße, Blattwiesenstraße, Alter Graben~~
+- ➖ ~~Hermann-Billing-Straße zw. Ettlinger Straße u. Beiertheimer Allee (Zufahrt Landratsamt)~~
+- ➖ ~~Ottostraße, Dieselstraße~~
+- ➖ ~~K9659 Kreisstraße P&R Platz Höhe Bahnhof Durlach~~
+- ➖ ~~Moltkestraße Höhe Erzbergerstraße~~
+- ➖ ~~Waldstraße zw. Ludwigsplatz und Bürgerstraße~~
+- ➖ ~~Rastatter Straße zw. Ostendorfstraße und Hedwigstraße~~
+- ➖ ~~Kaiserstraße zw. Kronenstraße und Adlerstraße~~
+- ➖ ~~Fritz-Erler-Straße zw. Markgrafenstraße u. Kaiserstraße~~
+- ➖ ~~Zähringer Straße zw. Waldhornstraße und Kronenstraße~~
+- ➖ ~~Haid-und-Neu-Straße zw. Hirtenweg und Karlsruher Straße~~
+- ➖ ~~Haid- u.-Neu-Straße zw. Hirtenweg und Am Sportpark~~
+- ➖ ~~Pforzheimer Straße - Waldshuter Straße - Turmbergbad - Campingplatz Durlach - Bundestraßenkreuz B3 / B10~~
+- ✏️ Honsellstraße zw. B36/ Starckstraße und Kurzheckweg — Ende: 2026-12-05 → 2026-12-03
+
 ## 27.11.2026, 14:40 — 1 neu, 3 geändert (gesamt 180)
 
 - ➕ **Honsellstraße zw. B36/ Starckstraße und Kurzheckweg**
