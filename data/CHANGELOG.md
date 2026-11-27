@@ -2,6 +2,13 @@
 
 Automatisch von der Daten-Action gepflegt. Neueste Änderung zuerst.
 
+## 27.11.2026, 14:40 — 1 neu, 3 geändert (gesamt 180)
+
+- ➕ **Honsellstraße zw. B36/ Starckstraße und Kurzheckweg**
+- ✏️ Wolfartsweierer Straße zw. Durlacher Allee und Frühlingstraße und Sommerstraße zw. Frühlingstraße und Gottesauer Straße — Ende: 2026-12-17 → 2027-02-28
+- ✏️ Stephanienstraße zw. Karlstraße u. Leopoldstraße — sonstige Angaben aktualisiert
+- ✏️ Waldstraße zw. Ludwigsplatz und Bürgerstraße — Sperrgrad: voll → teil
+
 ## 27.11.2026, 01:28 — 1 neu, 3 entfernt, 2 geändert (gesamt 179)
 
 - ➕ **B36 Ausfahrt Neureut Süd**
